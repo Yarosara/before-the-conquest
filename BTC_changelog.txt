@@ -10,9 +10,10 @@ gfx/interface
 - new icon "Triarch" governament
 
 gfx/traits
-- new icon "Valyrian Armor"
+- new icon "Valyrian Armor" (improved colors)
+- new icon "Lightbringer" (new look)
 
 history/characters
-- added "Edrick the Black Bear" #House Mormont
-- added "Daryn the Little Bear" #House Mormont
-- added "Lyra the Wise Wolf" #House Stark
+- added "Edrick the Black Bear" (House Mormont)
+- added "Daryn the Little Bear" (House Mormont)
+- added "Lyra the Wise Wolf" (House Stark)
