@@ -9970,7 +9970,7 @@
 	
 	religion="old_gods"
 	culture="northman"
-		
+	
 	add_trait="longclaw"
 	add_trait="strong"
 	add_trait="touched_by_fate"
