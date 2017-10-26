@@ -9970,9 +9970,10 @@
 	
 	religion="old_gods"
 	culture="northman"
-	
+		
 	add_trait="longclaw"
 	add_trait="strong"
+	add_trait="touched_by_fate"
 	
 	7969.1.1 = {birth="7969.1.1"}
 	7976.1.1 = {add_trait = brownbear}
