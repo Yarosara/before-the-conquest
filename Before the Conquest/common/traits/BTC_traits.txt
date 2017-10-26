@@ -36,8 +36,8 @@ exalted_blood = {
 	ruler_designer_cost = -30
 }
 touched_by_fate = {
-	monthly_character_prestige = 0.1
-	general_opinnion = 5
+	monthly_character_prestige = 0.05
+	general_opinion = 5
 
 	ruler_designer_cost = -200
 }
