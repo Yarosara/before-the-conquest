@@ -1,0 +1,227 @@
+#Dragons!
+dragon_egg = {	
+	monthly_character_prestige = 0.75
+	ruler_designer_cost = 50
+}
+# child_dragon = {
+	# cached = yes
+	# opposites =  {
+		# dragon_slayer
+	# }	
+	# monthly_character_prestige = 1.0
+	# vassal_opinion = 5
+	# opposite_opinion = -25
+	# customizer = no
+# }
+# wild_dragon = {
+	# cached = yes
+	# opposites =  {
+		# dragon_slayer
+	# }	
+	# monthly_character_prestige = -0.2
+	# vassal_opinion = -5
+	# opposite_opinion = -25
+	# customizer = no
+# }
+dragon_rider = {
+	cached = yes	
+	opposites =  {
+		dragon_slayer
+	}
+	monthly_character_prestige = 1.0
+	vassal_opinion = 10
+	opposite_opinion = -25
+	martial = 10
+	ambition_opinion = -10 # Against those they want something from
+	ai_ambition = 75
+	command_modifier = {
+		morale_offence = 0.4
+		morale_defence = 0.4
+	}
+	ruler_designer_cost = 100
+	
+	child_compliment = COMPL_DRAGON
+	male_compliment = COMPL_DRAGONLORD
+	female_compliment = COMPL_DRAGONLADY
+}
+dragon_slayer = {	
+	monthly_character_prestige = 0.25
+	general_opinion = 15
+	customizer = no
+	dragon_slaying = 4				   
+	
+	male_compliment = COMPL_DRAGONBANE
+	female_compliment = COMPL_DRAGONBANE
+	child_compliment = COMPL_HERO
+}
+dragon = {
+	#education = yes
+	learning = -50
+	stewardship = -50
+	diplomacy = -50
+	intrigue = -50
+	cached = yes	
+	cannot_marry = yes
+	cannot_inherit = yes 
+	immortal = yes
+	incapacitating = yes # Will need a regent
+	customizer = no
+	fertility = -10
+	ai_ambition = -100
+	can_hold_titles = no
+}
+wounded_dragon = {
+	is_health = yes
+	martial = -10
+	health = -1
+	customizer = no
+}
+maimed_dragon = {
+	is_health = yes
+	martial = -20
+	health = -2
+	customizer = no
+}
+dragon_fake = { #"Dragon"
+	learning = -5
+	customizer = no
+	fertility = -0.2
+	ai_ambition = 100
+	vassal_opinion = -10
+}
+fed_to_dragon ={
+	customizer = no
+	is_illness = yes
+	is_epidemic = yes
+	health = -1
+}
+dragon_dreams = {
+	birth = 1
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
+	
+	monthly_character_piety = 1
+	
+	intrigue = 4
+	
+	same_opinion = 15
+	high_valyrian_opinion = 10
+	combat_rating = 1.17
+	
+	male_insult = INSULT_ABOMINATION
+	female_insult = INSULT_ABOMINATION
+	child_insult_adj = INSULT_WIERD
+}
+#Dragon appearance traits
+dragon_1 = { customizer = no hidden = yes }
+dragon_2 = { customizer = no hidden = yes }
+dragon_3 = { customizer = no hidden = yes }
+dragon_4 = { customizer = no hidden = yes }
+dragon_5 = { customizer = no hidden = yes }
+dragon_6 = { customizer = no hidden = yes }
+dragon_7 = { customizer = no hidden = yes }
+dragon_8 = { customizer = no hidden = yes }
+dragon_9 = { customizer = no hidden = yes }
+dragon_10 = { customizer = no hidden = yes }
+dragon_11 = { customizer = no hidden = yes }
+dragon_12 = { customizer = no hidden = yes }
+dragon_13 = { customizer = no hidden = yes }
+dragon_14 = { customizer = no hidden = yes }
+dragon_15 = { customizer = no hidden = yes }
+dragon_16 = { customizer = no hidden = yes }
+dragon_17 = { customizer = no hidden = yes }
+dragon_18 = { customizer = no hidden = yes }
+dragon_19 = { customizer = no hidden = yes }
+dragon_20 = { customizer = no hidden = yes }
+dragon_21 = { customizer = no hidden = yes }
+dragon_22 = { customizer = no hidden = yes }
+dragon_23 = { customizer = no hidden = yes }
+dragon_24 = { customizer = no hidden = yes }
+dragon_25 = { customizer = no hidden = yes }
+dragon_26 = { customizer = no hidden = yes }
+
+#new dragon traits
+wroth_dragon = {
+	opposites = {
+		obedient_dragon
+	}
+	combat_rating = 5
+	customizer = no
+}
+obedient_dragon = {
+	opposites = {
+		wroth_dragon
+	}
+	combat_rating = 3
+	customizer = no
+}
+lazy_dragon = {
+	opposites = {
+		playful_dragon
+	}
+	customizer = no
+}
+playful_dragon = {
+	opposites = {
+		lazy_dragon
+		shy_dragon
+	}
+	combat_rating = -5
+	customizer = no
+}
+ravenous_dragon = {
+	combat_rating = -3
+	customizer = no
+}
+lunatic_dragon = {
+	customizer = no
+	combat_rating = 5
+	monthly_character_prestige = 1.5
+}
+affectionate_dragon = {
+	opposites = {
+		shy_dragon
+	}
+	customizer = no
+}
+shy_dragon = {
+	opposites = {
+		affectionate_dragon
+		playful_dragon
+	}
+	customizer = no
+}
+strong_dragon = {
+	customizer = no
+	
+	martial = 5
+	monthly_character_prestige = 1.5
+}
+nimble_dragon = {
+	customizer = no
+	combat_rating = 8
+	martial = -4
+}
+fertile_dragon = {
+	customizer = no
+}
+sickly_dragon = {
+	customizer = no
+	
+	martial = -10
+	health = -4
+}
+fair_dragon = {
+	opposites = {
+		ugly_dragon
+	}
+	customizer = no
+	monthly_character_prestige = 3
+}
+ugly_dragon = {
+	opposites = {
+		fair_dragon
+	}
+	customizer = no
+	monthly_character_prestige = 1.5
+}
