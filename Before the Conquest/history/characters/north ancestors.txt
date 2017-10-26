@@ -9965,8 +9965,8 @@
 17102 = {
 	name="Edrick"
 	dynasty=102
-	dna="cflccskfhfm"
-	prp="ce0dck00000000"
+	dna="bglbfbifgaj"
+	prp="0j0cck00000000"
 	
 	religion="old_gods"
 	culture="northman"
@@ -9997,6 +9997,7 @@
 	add_trait="quick"
 			
 	7970.1.1 = {birth="8107.3.1" }
+	7989.1.1 = {give_nickname = nick_the_wise_wolf}
 	8009.1.1 = {death="8009.1.1"}
 }
 
