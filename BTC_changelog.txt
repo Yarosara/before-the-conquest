@@ -7,9 +7,9 @@ V.0.1 - Black Bear's Tale
 
 general/traits
 - added exalted traits (blue heart)
-	* added "Exalted Blood"
-	* added "Touched by Fate"
-	* added "Blessed by R'hllor"
+  > added "Exalted Blood"
+  > added "Touched by Fate"
+  > added "Blessed by R'hllor"
 
 gfx/interface
 - new icon "Nighswatch" governament
