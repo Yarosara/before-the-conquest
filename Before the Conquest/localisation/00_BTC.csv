@@ -1,7 +1,7 @@
-#CODE	ENGLISH	FRENCH	GERMAN		SPANISH									x
-exalted_blood	Exalted Blood	Sang Sacré			Sangre Sagrado									x
-exalted_blood_desc	The blood of ancient kings courses through this character's veins, awakened by a sacred covenant.	Le sang des anciens rois traverse les veines de ce personnage, éveillé par une alliance sacrée.			La sangre de los reyes antiguos corre por las venas de este personaje, despertado por un pacto sagrado.									x
-touched_by_fate	Touched by Fate	Touché par le Destin			Tocado por el Destino									x
-touched_by_fate_desc	The invisible hand of fate guides this character towards great things.	La main invisible du destin guide ce personnage vers de grandes choses.			La mano invisible del destino guía a este personaje hacia grandes cosas.									x
-blessed_by_rhllor	Blessed by R'hllor	Béni par R'hllor			Bendecido por R'hllor									
-blessed_by_rhllor_desc	This character's soul burns with the Lord of Light's fire and is destined to seek eternally for Azor Ahai reborn.	L'âme de ce personnage brûle avec le feu du Seigneur de Lumière et est destinée à rechercher éternellement pour Azor Ahai renaissant.			La alma de este personaje arde con el fuego del Señor de la Luz y está destinado a buscar eternamente por Azor Ahai renacido.									
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+exalted_blood;Exalted Blood;Sang Sacré;;;Sangre Sagrado;;;;;;;;;x
+exalted_blood_desc;The blood of ancient kings courses through this character's veins, awakened by a sacred convenant.;Le sang des anciens rois traverse les veines de ce personnage, éveillé par une alliance sacrée.;;;La sangre de los reyes antiguos corre por las venas de este personaje, despertado por un pacto sagrado.;;;;;;;;;x
+touched_by_fate;Touched by Fate;Touché Par Le Destin;;;Tocado Por El Destino;;;;;;;;;x
+touched_by_fate_desc;The invisible hand of fate guides this character towards great things.;La main invisible du destin guide ce personnage vers de grandes choses.;;;La mano invisible del destino guía a este personaje hacia grandes cosas.;;;;;;;;;x
+blessed_by_rhllor;Blessed by R'hllor;Béni Par R'hllor;;;Bendecido Por R'hllor;;;;;;;;;
+blessed_by_rhllor_desc;This character's soul burns with the Lord of Light's fire and is destined to seek eternally for Azor Ahai reborn.;L'âme de ce personnage brûle avec le feu du Seigneur de Lumière et est destinée à rechercher éternellement pour Azor Ahai renaissant.;;;La alma de este personaje arde con el fuego del Señor de la Luz y está destinado a buscar eternamente por Azor Ahai renacido.;;;;;;;;;
