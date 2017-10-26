@@ -1,0 +1,24 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_trait_exalted_blood"
+		texturefile = "gfx/traits/exalted_blood.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+		spriteType = {
+		name = "GFX_trait_touched_by_fate"
+		texturefile = "gfx/traits/touched_by_fate.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+		spriteType = {
+		name = "GFX_trait_blessed_by_rhllor"
+		texturefile = "gfx/traits/blessed_by_rhllor.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}
