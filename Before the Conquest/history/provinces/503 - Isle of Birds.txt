@@ -1,0 +1,41 @@
+# County Title
+title = c_isle_of_birds
+
+# Settlements
+max_settlements = 7
+
+b_swan_gate = castle
+b_tucano = city
+b_the_birds = temple
+b_parakeet_keep = castle
+
+
+# Misc
+culture = summer_islander
+religion = summer_rel
+
+#History
+7000.1.1 = {
+	b_swan_gate = ca_asoiaf_summerisland_basevalue_1
+	b_swan_gate = ca_asoiaf_summerisland_basevalue_2
+	b_swan_gate = ca_asoiaf_summerisland_basevalue_3
+	b_swan_gate = ca_asoiaf_summerisland_basevalue_4
+	b_swan_gate = ca_asoiaf_summerisland_basevalue_5
+	b_swan_gate = ca_cellar_1
+	b_swan_gate = ca_cellar_2
+	
+	b_tucano = ct_asoiaf_summerisland_basevalue_1
+	b_tucano = ct_asoiaf_summerisland_basevalue_2
+	b_tucano = ct_asoiaf_summerisland_basevalue_3
+	b_tucano = ct_asoiaf_summerisland_basevalue_4	
+	
+	b_the_birds = tp_monastery_1
+	b_the_birds = tp_monastery_2
+	b_the_birds = tp_monastery_3
+	b_the_birds = tp_town_1
+	b_the_birds = tp_wall_1
+	b_the_birds = tp_wall_2
+	
+	b_parakeet_keep = ca_asoiaf_summerisland_basevalue_1
+	b_parakeet_keep = ca_asoiaf_summerisland_basevalue_2
+}
