@@ -9971,11 +9971,11 @@
 	religion="old_gods"
 	culture="northman"
 	
-	diplomacy = 4
-	martial = 7
-	stewardship = 5
-	intrigue = 0
-	learning = 5
+	diplomacy = 5
+	martial = 8
+	stewardship = 6
+	intrigue = 2
+	learning = 4
 	
 	disallow_random_traits = yes
 	
@@ -10015,9 +10015,14 @@
 	
 	add_trait="quick"
 			
-	7970.1.1 = {birth="8107.3.1" }
+	7970.1.1 = {birth="8107.3.1"}
+	7977.1.1 = {add_trait = kind}
+	7980.1.1 = {add_trait = proud}
+	7982.1.1 = {add_trait = honest}
+	7985.1.1 = {add_trait = trained_warrior}
 	7988.1.1 = {add_trait = grey_eminence}
-	7989.1.1 = {give_nickname = nick_the_wise_wolf}
+	7989.1.1 = {give_nickname = nick_the_wise_wolf
+				add_trait = erudite}
 	8009.1.1 = {death="8009.1.1"}
 }
 
