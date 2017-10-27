@@ -1,0 +1,24 @@
+#House Tomburu
+7970.1.1 = { 
+	holder=100304032 
+	law = succ_seniority
+	law = true_cognatic_succession
+		effect = { 
+		holder_scope = { set_dynasty_flag = prefers_cognatic }
+	}
+} # Tapuhuru (nc)
+7995.1.1 = { holder=103304032 } # Pharos (nc)
+8016.1.1 = { holder=104304032 } # Simbhar (nc)
+8041.1.1 = { holder=107304032 } # Lusaxharo (nc)
+8068.1.1 = { holder=111304032 } # Quhuru (nc)
+8094.1.1 = { holder=113304032 } # Makhan (nc)
+8122.1.1 = { holder=121304032 } # Quhuru (nc)
+8142.1.1 = { holder=122304032 } # Udo (nc)
+8155.1.1 = { holder=125304032 } # Jalataya (nc)
+8189.1.1 = { holder=129304032 } # Isodo (nc)
+8221.1.1 = { holder=130304032 } # Isodo (nc)
+8229.1.1 = { holder=131304032 } # Jalabhar (nc)
+8259.1.1 = { holder=137304032 } # Jalabhar (nc)
+8295.1.1 = { holder=141304032 } # Gatubhar (nc)
+
+
