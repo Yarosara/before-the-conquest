@@ -1,0 +1,613 @@
+#Summer Islander
+304000 = {
+	name="Xho"
+	culture = summer_islander
+}
+304001 = {
+	name="Bone"
+	culture = summer_islander
+}
+304002 = {
+	name="Mo"
+	culture = summer_islander
+}
+304003 = {
+	name="Qho" #nc
+	culture = summer_islander
+}
+304004 = {
+	name="Xhoan" #nc
+	culture = summer_islander
+}
+304005 = {
+	name="Qo" #canon
+	culture = summer_islander
+}
+304006 = {
+	name="Xhanu" #nc
+	culture = summer_islander
+}
+304007 = {
+	name="Luxho" #nc
+	culture = summer_islander
+}
+304008 = {
+	name="Xhaxos" #nc
+	culture = summer_islander
+}
+304010 = {
+	name="Uxo" #nc
+	culture = summer_islander
+}
+304011 = {
+	name="Agbelu" #nc
+	culture = summer_islander
+}
+304012 = {
+	name="Ajaxos" #nc
+	culture = summer_islander
+}
+304013 = {
+	name="Alukho" #nc
+	culture = summer_islander
+}
+304014 = {
+	name="Banho" #nc
+	culture = summer_islander
+}
+304015 = {
+	name="Biabaku" #nc
+	culture = summer_islander
+}
+304016 = {
+	name="Bado" #nc
+	culture = summer_islander
+}
+304017 = {
+	name="Dako" #nc
+	culture = summer_islander
+}
+304018 = {
+	name="Qhoqua" #c
+	culture = summer_islander
+}
+304019 = {
+	name="Ekwensu" #nc
+	culture = summer_islander
+}
+304020 = {
+	name="Ebaharo" #nc
+	culture = summer_islander
+}
+304021 = {
+	name="Gowonu" #nc
+	culture = summer_islander
+}
+304022 = {
+	name="Iroxho" #nc
+	culture = summer_islander
+}
+304023 = {
+	name="Jaluru" #nc
+	culture = summer_islander
+}
+304024 = {
+	name="Kano" #nc
+	culture = summer_islander
+}
+304025 = {
+	name="Karomo" #nc
+	culture = summer_islander
+}
+304026 = {
+	name="Monye" #nc
+	culture = summer_islander
+}
+304027 = {
+	name="Ojokolu" #nc
+	culture = summer_islander
+}
+304028 = {
+	name="Onuxho" #nc
+	culture = summer_islander
+}
+304029 = {
+	name="Rotumu" #nc
+	culture = summer_islander
+}
+304031 = {
+	name="Solaju" #nc
+	culture = summer_islander
+}
+304032 = {
+	name="Tomburu" #nc
+	culture = summer_islander
+	coat_of_arms=
+	{
+		data=
+			{
+0 0 0 36 8 0 1 					}
+			religion="summer_rel"
+	}
+}
+304033 = {
+	name="Ubo" #nc
+	culture = summer_islander
+}
+304034 = {
+	name="Umaru" #nc
+	culture = summer_islander
+}
+304035 = {
+	name="Xhurabo" #nc
+	culture = summer_islander
+}
+304036 = {
+	name="Xhone" #nc
+	culture = summer_islander
+}
+304037 = {
+	name="Xaq" #canon
+	culture = summer_islander
+}
+304038 = {
+	name="Nyrolu" #nc
+	culture = summer_islander
+}
+
+304039 = {
+	name="Jallone" #nc
+	culture = summer_islander
+}
+304040 = {
+	name="Turalu" #nc
+	culture = summer_islander
+}
+304041 = {
+	name="Jho" #nc
+	culture = summer_islander
+}
+304042 = {
+	name="Ro" #nc
+	culture = summer_islander
+}
+304043 = {
+	name="Keitu" #nc
+	culture = summer_islander
+}
+304044 = {
+	name="Ballono" #nc
+	culture = summer_islander
+}
+304045 = {
+	name="Sanxho" #nc
+	culture = summer_islander
+}
+304046 = {
+	name="Bo" #nc
+	culture = summer_islander
+}
+304047 = {
+	name="Falukho" #nc
+	culture = summer_islander
+}
+304048 = {
+	name="Guyjukho" #nc
+	culture = summer_islander
+}
+304049 = {
+	name="Syjho" #nc
+	culture = summer_islander
+}
+304050 = {
+	name="Okanulo" #nc
+	culture = summer_islander
+}
+304051 = {
+	name="Lho"
+	culture = summer_islander
+}
+304052 = {
+	name="Ko"
+	culture = summer_islander
+}
+304053 = {
+	name="Xhorulu"
+	culture = summer_islander
+}
+304054 = {
+	name="Enyaxho" #nc
+	culture = summer_islander
+}
+304055 = {
+	name = "Sa"
+	culture = summer_islander
+}
+304056 = {
+	name = "Rhaa"
+	culture = summer_islander
+}
+304057 = {
+	name = "Xaqu"
+	culture = summer_islander
+}
+304058 = {
+	name = "Qhona"
+	culture = summer_islander
+}
+304059 = {
+	name = "Rhadan"
+	culture = summer_islander
+}
+304060 = {
+	name = "Raaxa"
+	culture = summer_islander
+}
+304061 = {
+	name = "Soqu"
+	culture = summer_islander
+}
+304062 = {
+	name = "Doqos"
+	culture = summer_islander
+}
+304063 = {
+	name = "Taqos"
+	culture = summer_islander
+}
+304064 = {
+	name = "Xala"
+	culture = summer_islander
+}
+304065 = {
+	name = "Toqu"
+	culture = summer_islander
+}
+304066 = {
+	name = "Zala"
+	culture = summer_islander
+}
+304067 = {
+	name = "Xam"
+	culture = summer_islander
+}
+304068 = {
+	name = "Raaqu"
+	culture = summer_islander
+}
+304069 = {
+	name = "Qhamas"
+	culture = summer_islander
+}
+304070 = {
+	name = "Daama"
+	culture = summer_islander
+}
+304071 = {
+	name = "Rhaamo"
+	culture = summer_islander
+}
+304072 = {
+	name = "Saaxon"
+	culture = summer_islander
+}
+304073 = {
+	name = "Zhaalas"
+	culture = summer_islander
+}
+304074 = {
+	name = "Choda"
+	culture = summer_islander
+}
+304075 = {
+	name = "Chaaqu"
+	culture = summer_islander
+}
+304076 = {
+	name = "Roqa"
+	culture = summer_islander
+}
+304077 = {
+	name = "Xas"
+	culture = summer_islander
+}
+304078 = {
+	name = "Zhaqu"
+	culture = summer_islander
+}
+##Basilisk Islander
+305000 = {
+	name="Salukho" #nc
+	culture = basilisk_islander
+}
+305001 = {
+	name="Bone" #nc
+	culture = basilisk_islander
+}
+305002 = {
+	name = Chamo
+	culture = basilisk_islander
+}
+305003 = {
+	name = Rado
+	culture = basilisk_islander
+}
+305004 = {
+	name = Cho
+	culture = basilisk_islander
+}
+305005 = {
+	name = Tadaq
+	culture = basilisk_islander
+}
+305006 = {
+	name = Zhaxaq
+	culture = basilisk_islander
+}
+305007 = {
+	name = Qoda
+	culture = basilisk_islander
+}
+305008 = {
+	name = Qha
+	culture = basilisk_islander
+}
+305009 = {
+	name = Rhoqu
+	culture = basilisk_islander
+}
+305010 = {
+	name = Xa
+	culture = basilisk_islander
+}
+305011 = {
+	name = Rhoqa
+	culture = basilisk_islander
+}
+305012 = {
+	name = Xhaaras
+	culture = basilisk_islander
+}
+305013 = {
+	name = Xhaa
+	culture = basilisk_islander
+}
+305014 = {
+	name = Raaqu
+	culture = basilisk_islander
+}
+305015 = {
+	name = Xham
+	culture = basilisk_islander
+}
+305016 = {
+	name = Zhol
+	culture = basilisk_islander
+}
+305017 = {
+	name = Tomo
+	culture = basilisk_islander
+}
+305018 = {
+	name = Xaq
+	culture = basilisk_islander
+}
+305019 = {
+	name = Sad
+	culture = basilisk_islander
+}
+305020 = {
+	name = Xara
+	culture = basilisk_islander
+}
+305021 = {
+	name = Zhoqu
+	culture = basilisk_islander
+}
+305022 = {
+	name = Xhoxa
+	culture = basilisk_islander
+}
+305023 = {
+	name = Qhaara
+	culture = basilisk_islander
+}
+305024 = {
+	name = Dano
+	culture = basilisk_islander
+}
+
+##Naathi
+306000 = {
+	name="Adaeze" #nc
+	culture = naathi
+}
+306001 = {
+	name="Azubuike" #nc
+	culture = naathi
+}
+306002 = {
+	name="Boipelo" #nc
+	culture = naathi
+}
+306003 = {
+	name="Chibueze" #nc
+	culture = naathi
+}
+306004 = {
+	name="Chinwe" #nc
+	culture = naathi
+}
+306005 = {
+	name="Emem" #nc
+	culture = naathi
+}
+306006 = {
+	name="Farai" #nc
+	culture = naathi
+}
+306007 = {
+	name="Ife" #nc
+	culture = naathi
+}
+306008 = {
+	name="Jumaane" #nc
+	culture = naathi
+}
+306009 = {
+	name="Kizwe" #nc
+	culture = naathi
+}
+306010 = {
+	name="Kwadwo" #nc
+	culture = naathi
+}
+306011 = {
+	name="Melisizwe" #nc
+	culture = naathi
+}
+306012 = {
+	name="Masoze" #nc
+	culture = naathi
+}
+306013 = {
+	name="Nontle" #nc
+	culture = naathi
+}
+306014 = {
+	name="Nyah" #nc
+	culture = naathi
+}
+306015 = {
+	name="Olamide" #nc
+	culture = naathi
+}
+306016 = {
+	name="Rumbidzai" #nc
+	culture = naathi
+}
+306017 = {
+	name="Sizwe" #nc
+	culture = naathi
+}
+306018 = {
+	name="Tendai" #nc
+	culture = naathi
+}
+306019 = {
+	name="Uzome" #nc
+	culture = naathi
+}
+306020 = {
+	name="Yewande" #nc
+	culture = naathi
+}
+306021 = {
+	name="Zuberei" #nc
+	culture = naathi
+}
+
+##Brindlemen
+307000 = {
+	name = Klirug
+	culture = brindlemen
+}
+307001 = {
+	name = Xikork
+	culture = brindlemen
+}
+307002 = {
+	name = Dekog
+	culture = brindlemen
+}
+307003 = {
+	name = Yozug
+	culture = brindlemen
+}
+307004 = {
+	name = Darerag
+	culture = brindlemen
+}
+307005 = {
+	name = Ekukorg
+	culture = brindlemen
+}
+307006 = {
+	name = Zamirot
+	culture = brindlemen
+}
+307007 = {
+	name = Urerog
+	culture = brindlemen
+}
+307008 = {
+	name = Drisikorg
+	culture = brindlemen
+}
+307009 = {
+	name = Weruk
+	culture = brindlemen
+}
+307010 = {
+	name = Digrut
+	culture = brindlemen
+}
+307011 = {
+	name = Yirek
+	culture = brindlemen
+}
+307012 = {
+	name = Werag
+	culture = brindlemen
+}
+307013 = {
+	name = Totikug
+	culture = brindlemen
+}
+307014 = {
+	name = Obokur
+	culture = brindlemen
+}
+307015 = {
+	name = Euzir
+	culture = brindlemen
+}
+307016 = {
+	name = Yudurek
+	culture = brindlemen
+}
+307017 = {
+	name = Vodakog
+	culture = brindlemen
+}
+307018 = {
+	name = Wogrut
+	culture = brindlemen
+}
+307019 = {
+	name = Glakor
+	culture = brindlemen
+}
+307020 = {
+	name = Vrugut
+	culture = brindlemen
+}
+307021 = {
+	name = Bagruk
+	culture = brindlemen
+}
+307022 = {
+	name = Konk
+	culture = brindlemen
+}
+307023 = {
+	name = Minozar
+	culture = brindlemen
+}
+307024 = {
+	name = Weezur
+	culture = brindlemen
+}
+
+
+
