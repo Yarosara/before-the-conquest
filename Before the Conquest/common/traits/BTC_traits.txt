@@ -46,7 +46,6 @@ exalted_blood = {
 }
 touched_by_fate = {
 	monthly_character_prestige = 0.05
-	general_opinion = 5
 
 	ruler_designer_cost = -200
 }
