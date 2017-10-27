@@ -1,0 +1,324 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+emperor_summer_islander;High King;Grand Roi;;;Gran Rey;;;;;;;;;x
+emperor_female_summer_islander;High Queen;Grande Reine;;;Gran Reina;;;;;;;;;x
+emperor_foa_summer_islander;Your Grace;Votre Grâce;Your Grace;Your Grace;Su Excelencia;;;;;;;;;x
+emperor_foa_female_summer_islander;Your Grace;Votre Grâce;Your Grace;Your Grace;Su Excelencia;;;;;;;;;x
+emperor_title_ruler_consort_summer_islander;High King;Grand Roi;;;Gran Rey;;;;;;;;;x
+emperor_title_ruler_consort_female_summer_islander;Queen;Reine;Queen;Queen;Reina;;;;;;;;;x
+emperor_title_queen_mother_female_summer_islander;Queen Mother;Reine Douairière;Queen Mother;Queen Mother;Reina Madre;;;;;;;;;x
+empire_of_summer_islander;High Kingdom of;Grand Royaume des;;;Gran Reino de;;;;;;;;;x
+emperor_title_prince_summer_islander;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+emperor_title_prince_female_summer_islander;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+king_summer_islander;King;Roi;King;King;Rey;;;;;;;;;x
+king_female_summer_islander;Queen;Reine;Queen;Queen;Reina;;;;;;;;;x
+king_title_ruler_consort_summer_islander;King;Roi;King;King;Rey;;;;;;;;;x
+king_title_ruler_consort_female_summer_islander;Queen;Reine;Queen;Queen;Reina;;;;;;;;;x
+kingdom_of_summer_islander;Kingdom of;Royaume des;Kingdom of;Kingdom of;Reino de;;;;;;;;;x
+king_foa_summer_islander;Your Grace;Votre Grâce;Your Grace;Your Grace;Su Excelencia;;;;;;;;;x
+king_foa_female_summer_islander;Your Grace;Votre Grâce;Your Grace;Your Grace;Su Excelencia;;;;;;;;;x
+title_prince_summer_islander;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+title_prince_female_summer_islander;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+title_queen_mother_summer_islander;Queen Mother;Reine Douairière;Queen Mother;Queen Mother;Reina Madre;;;;;;;;;x
+duke_summer_islander;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+duke_female_summer_islander;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+duke_title_ruler_consort_summer_islander;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+duke_title_ruler_consort_female_summer_islander;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+duchy_of_summer_islander;Principality of;Principauté de ;;;Principado de;;;;;;;;;x
+duke_foa_summer_islander;My Prince;Mon Prince;My Prince;My Prince;Mi Príncipe;;;;;;;;;x
+duke_foa_female_summer_islander;My Princess;Ma Princesse;My Princess;My Princess;Mi Princesa;;;;;;;;;x
+LP_king_summer_islander;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+LP_king_female_summer_islander;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+LP_king_title_ruler_consort_summer_islander;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+LP_king_title_ruler_consort_female_summer_islander;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+LP_kingdom_of_summer_islander;Principality of;Principauté de ;;;Principado de;;;;;;;;;x
+LP_king_foa_summer_islander;My Prince;Mon Prince;My Prince;My Prince;Mi Príncipe;;;;;;;;;x
+LP_king_foa_female_summer_islander;My Princess;Ma Princesse;My Princess;My Princess;Mi Princesa;;;;;;;;;x
+duke_naathi;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+duke_female_naathi;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+duke_title_ruler_consort_naathi;Prince;Prince;Prince;Prince;Príncipe;;;;;;;;;x
+duke_title_ruler_consort_female_naathi;Princess;Princesse;Princess;Princess;Princesa;;;;;;;;;x
+duchy_of_naathi;Principality of;Principauté de ;;;Principado de;;;;;;;;;x
+duke_foa_naathi;My Prince;Mon Prince;My Prince;My Prince;Mi Príncipe;;;;;;;;;x
+duke_foa_female_naathi;My Princess;Ma Princesse;My Princess;My Princess;Mi Princesa;;;;;;;;;x
+job_physician_summer_rel_group;Court Physician;Guérisseur;;;Curandero;;;;;;;;;x
+family_palace_baron_summer_islander;Prince;Prince;;;Príncipe;;;;;;;;;x
+family_palace_baron_female_summer_islander;Princess;Princesse;;;Princesa;;;;;;;;;x
+family_palace_baron_foa_summer_islander;Your Excellency;Votre Excellence;;;Su Excelencia;;;;;;;;;x
+city_duke_summer_islander;Prince;Prince;;;Príncipe;;;;;;;;;x
+city_duke_female_summer_islander;Princess;Princesse;;;Princesa;;;;;;;;;x
+city_duchy_summer_islander;City;Cité Libre;;;Ciudad Libre;;;;;;;;;x
+city_duchy_of_summer_islander;City of;Cité Libre de;;;Ciudad Libre de;;;;;;;;;x
+city_king_summer_islander;Grand Prince;Prince;;;Gran Príncipe;;;;;;;;;x
+city_king_female_summer_islander;Princess;Princesse;;;Princesa;;;;;;;;;x
+city_kingdom_summer_islander;Principality;Principauté;;;Principado;;;;;;;;;x
+city_kingdom_of_summer_islander;Principality of;Principauté de ;;;Principado de;;;;;;;;;x
+e_summer_sea;The Summer Sea;La Mer d'Eté;;;El Mar del Verano;;;;;;;;;x
+k_summer_islands;The Summer Islands;Iles d'Eté;;;Las Islas del Verano;;;;;;;;;x
+k_summer_islands_adj;Summer Islander;Estivien;;;Estiveña;;;;;;;;;x
+d_walano;Walano;Walano;;;Walano;;;;;;;;;x
+d_last_lament;Last Lament;Dernière Plainte;;;Último Lamento;;;;;;;;;x
+d_tall_trees_valley;Tall Trees Town;Grand Banian;;;Árboles Altos;;;;;;;;;x
+d_sweet_lotus_vale;Sweet Lotus Vale;Val au Doux Lotus;;;Valle del Loto Dulce;;;;;;;;;x
+d_west_jhala;West Jhala;Jhala Occidentale;;;Jhala Occidental;;;;;;;;;x
+d_parrot_bay;Parrot Bay;Baie aux Perroquets;;;Bahía del Loro;;;;;;;;;x
+d_indigo_straits;Indigo Straits;Détroits Indigo;;;Estrechos del Índigo;;;;;;;;;x
+d_red_flower_vale;Red Flower Vale;Val-aux-Pivoines;;;Valle de la Flor Roja;;;;;;;;;x
+d_golden_head;Golden Head;Pointe Dorée;;;Cabo Dorado;;;;;;;;;x
+d_the_three_exiles;The Three Exiles;Les Trois Exils;;;Las Tres Exiliadas;;;;;;;;;x
+d_moluu;Moluu;Moluu;;;Moluu;;;;;;;;;x
+d_omburu;Omburu;Omburu;;;Omboru;;;;;;;;;x
+c_lotus_port;Lotus Port;Pointe-Lotus;;;Puerto del Loto;;;;;;;;;x
+c_ambershore;Ambershore;Ambrerive;;;Costa del Ámbar;;;;;;;;;x
+c_jalabuxon;Jalabuxon;Jalabuxon;;;Selva de la Canela;;;;;;;;;x
+c_isle_of_women;Isle of Women;Ile des Femmes;;;Isla de las Mujeres;;;;;;;;;x
+c_last_lament ;Last Lament;Dernière Plainte;;;Último Lamento;;;;;;;;;x
+c_lotus_valley;Lotus Valley;Val aux Lotus;;;Valle del Loto;;;;;;;;;x
+c_stonehead;Stonehead;Tête de Pierre;;;Cabeza de Piedra;;;;;;;;;x
+c_mantisleaf;Jhahar;Jhahar;;;Colinas del Loto;;;;;;;;;x
+c_tall_trees_town;Tall Trees Town;Grand Banian;;;Árboles Altos;;;;;;;;;x
+c_the_citrus_coves;The Citrus Groves;Les Criques d'Agrumes;;;Huerto de Cítricos;;;;;;;;;x
+c_kone_forest;Kone Forest;Forêt de Kone;;;Árboles Parlantes;;;;;;;;;x
+c_koj;Koj;Koj;;;Koj;;;;;;;;;x
+c_isle_of_birds;Isle of Birds;Ile-aux-Oiseaux;;;Isla de los Pájaros;;;;;;;;;x
+c_ebonhead;Ebonhead;Tête d'Ebène;;;Cabo de Ébano;;;;;;;;;x
+c_sweetwater;Sweetwater;Eaudouce;;;Loto Dulce;;;;;;;;;x
+c_lotus_hills;Lotus Hills;Collines du Lotus;;;Flecha de Jhahar;;;;;;;;;x
+c_doquu;Doquu;Doquu;;;Doquu;;;;;;;;;x
+c_bloodwood;Bloodwood;Boisang;;;Palos de Sangre;;;;;;;;;x
+c_golden_mountains;Golden Mountains;Montagnes Dorées;;;Montañas Doradas;;;;;;;;;x
+c_parrotshore;Parrotshore;Rivage du Perroquet;;;Pico del Loro;;;;;;;;;x
+c_the_bones;The Bones;Les Os;;;Los Huesos;;;;;;;;;x
+c_xon;Xon;Xon;;;Xon;;;;;;;;;x
+c_ebonhills;Ebonhills;Collines Ebènes;;;Colinas de Ébano;;;;;;;;;x
+c_indigoshore;Indigoshore;Rivindigo;;;Playas del Índigo;;;;;;;;;x
+c_kalalula;Kalalula;Kalalula;;;Costa de la Pimienta;;;;;;;;;x
+c_scarlethead;Scarlethead;Tête-Ecarlate;;;Costa Esmeralda;;;;;;;;;x
+c_red_flower_bay;Red Flower Bay;Baie Pivoine;;;Flor Roja;;;;;;;;;x
+c_jhalavale;Jhalavale;Jhalavale;;;Hoya de Jhala;;;;;;;;;x
+c_highgrove;Highgrove;Grande-Crique;;;Pieles de Plata;;;;;;;;;x
+c_rotu_forest;Rotu Forest;Forêt de Rotu;;;Bosque Áureo;;;;;;;;;x
+c_goldenheart;Goldenheart;Coeur-Dorée;;;Aurocorazón;;;;;;;;;x
+c_tamarinu;Tamarinu;Tamarinu;;;Nuez Moscada;;;;;;;;;x
+c_lizard_head;Lizard Head;Tête de Lézard;;;Cabeza de Lagarto;;;;;;;;;x
+c_the_singing_stones;The Singing Stones;Les Pierres qui Chantent;;;Rocas Cantarinas;;;;;;;;;x
+c_golden_exile;Golden Exile;Exil Doré;;;Exilio Dorado;;;;;;;;;x
+c_little_exile;Little Exile;Petit Exil;;;Pequeño Exilio;;;;;;;;;x
+c_orange_exile;Orange Exile;Exil Orange;;;Exilio Naranja;;;;;;;;;x
+c_moluu;Moluu;Moluu;;;Moluu;;;;;;;;;x
+c_isle_of_love;Isle of Love;Ile d'Amour;;;Isla del Amor;;;;;;;;;x
+c_fragrant_isle;Fragrant Isle;Ile Parfumée;;;Isla Fragancia;;;;;;;;;x
+c_qetzalu;Qetzalu;Qetzalu;;;Puerto Quetzal;;;;;;;;;x
+c_heartvale;Heartvale;Valcoeur;;;Costa Rica;;;;;;;;;x
+c_naked_forest;Naked Forest;Forêt Nue;;;Bosque Fértil;;;;;;;;;x
+c_smiling_cliffs;Smiling Cliffs;Falaises Souriantes;;;Costa Alegre;;;;;;;;;x
+c_xhala;Xhala;Xhala;;;Amaranto;;;;;;;;;x
+c_cape_omburu;Cape Omburu;Cap Omburu;;;Madreperla;;;;;;;;;x
+b_summer_palace;Summer Palace;Palais d'Eté;;;Palacio del Verano;;;;;;;;;x
+b_lotus_port;Lotus Point;Pointe-Lotus;;;Puerto del Loto;;;;;;;;;x
+b_the_summer_temple;The Summer;L'Eté;;;El Verano;;;;;;;;;x
+b_summervine;Summervine;Estivin;;;Palacio de Ámbar;;;;;;;;;x
+b_sweet_harbour;Sweet Harbour;Dolceport;;;Puerto Ámbar;;;;;;;;;x
+b_redfletcher;Redfletcher;Rouge-Flèche;;;Canelas;;;;;;;;;x
+b_fair_hill;Fair Hill;Colline des Foires;;;Palacete de Nymeria;;;;;;;;;x
+b_whorestown;Whorestown;Bourg-Catin;;;las Mujeres;;;;;;;;;x
+b_last_keep;Last Keep;Dernier Fort;;;Último Torreón;;;;;;;;;x
+b_last_lament;Last Lament;Dernière Plainte;;;Último Lamento;;;;;;;;;x
+b_ardor;Ardor;Ardor;;;El Ardor;;;;;;;;;x
+b_lilac_hill;Lilacgrove;Rivage des Lilas;;;Árbol del Loto;;;;;;;;;x
+b_xhon_orchard;Xhonula;Xhonula;;;Punta Loto;;;;;;;;;x
+b_stonehead;Stonehead;Tête de Pierre;;;Cabeza de Piedra;;;;;;;;;x
+b_lumbersloft;Lumbersloft;Grenier à Bois;;;El Vergel;;;;;;;;;x
+b_tall_tree_hall;Tall Tree Hall;Fort-Banian;;;Árbolalto;;;;;;;;;x
+b_tall_trees_town;Tall Trees Town;Grand Banian;;;Árboles Altos;;;;;;;;;x
+b_the_trees;The Trees;Les Banians;;;Los Árboles;;;;;;;;;x
+b_noj;Noj;Noj;;;Granadinas;;;;;;;;;x
+b_treecross;Treecross;Arbre-Croix;;;Huerto de Cítricos;;;;;;;;;x
+b_kone_keep;Kone Keep;Fort de Kone;;;Palacio Parlante;;;;;;;;;x
+b_kojalu;Kojalu;Kojalu;;;Puerto de Koj;;;;;;;;;x
+b_koj_harbour;Koj Harbour;Port-Koj;;;Koj;;;;;;;;;x
+b_the_arrows;The Arrows;Les Flèches;;;El Astillero;;;;;;;;;x
+b_swan_gate;Swan Gate;Porte du Cygne;;;Puerta del Cisne;;;;;;;;;
+b_tucano;Tucano;Tucano;;;Atalaya del Volatero;;;;;;;;;x
+b_the_birds;The Birds;Les Oiseaux;;;Los Pájaros;;;;;;;;;x
+b_parakeet_keep;Parakeet Keep;Fort Parakeet;;;Torre Periquito;;;;;;;;;x
+b_flock_hill;Flock Hill;Cheptelline;;;Nido de Aves;;;;;;;;;x
+b_horizon_point;Horizon Point;Ligne-d'Horizon;;;Pájara;;;;;;;;;x
+b_feather_bay;Feather Bay;Baie de Plumes;;;Bahía de Plumas;;;;;;;;;x
+b_ebon_rock;Ebonrock;Roc-Ebène;;;Peña de Ébano;;;;;;;;;x
+b_ebonhead;Ebonhead;Tête-Ebène;;;Cabo de Ébano;;;;;;;;;x
+b_the_vales;The Vales;Les Vals;;;Los Valles;;;;;;;;;x
+b_sweet_keep;Sweet Keep;Dolcefort;;;Torre Dulce;;;;;;;;;x
+b_lemonfield;Lemonfield;Les Citronniers;;;Limera;;;;;;;;;x
+b_taqhalo;Taqhalo;Taqhalo;;;Loto Dulce;;;;;;;;;x
+b_valeswatch;Valeswatch;Tours-des-Vals;;;Flecha de Jhahar;;;;;;;;;x
+b_kojhanu;Kojhanu;Kojhanu;;;Jhahar;;;;;;;;;x
+b_doqunon;Doqunon;Doqunon;;;Doquu;;;;;;;;;x
+b_far_harbour;Far Harbour;Port-Loin;;;Puerto Lejano;;;;;;;;;x
+b_blood_keep;Blood Keep;Fort-Sang;;;Palacio de la Sangre;;;;;;;;;x
+b_kilipulo;Kilipulo;Kilipulo;;;Palos de Sangre;;;;;;;;;x
+b_the_sea;The Sea;La Mer;;;El Mar;;;;;;;;;x
+b_featherbush;Featherbush;Plumebosc;;;Plumadorada;;;;;;;;;x
+b_isle_of_quivers;Isle of Quivers;Ile des Carquois;;;Los Arcos;;;;;;;;;x
+b_moparulu;Moparulu;Moparulu;;;Pico del Loro;;;;;;;;;x
+b_parrotport;Parrotport;Port-Perroquet;;;Puerto del Loro;;;;;;;;;x
+b_the_parrots;The Parrots;Les Perroquets;;;Los Loros;;;;;;;;;x
+b_great_bone;Great Bone;Grand Os;;;Gran Hueso;;;;;;;;;x
+b_green_bone;Green Bone;Os Vert;;;Hueso Verde;;;;;;;;;x
+b_summer_bone;Summer Bone;Os d'Eté;;;Hueso del Verano;;;;;;;;;x
+b_tower_of_xon;Tower of Xon;Tour de Xon;;;Torre de Xon;;;;;;;;;x
+b_azurulon;Azurulon;Azurulon;;;Xon;;;;;;;;;x
+b_ebonwatch;Ebonwatch;Tour-Ebène;;;Torre de Ébano;;;;;;;;;x
+b_shorestower;Shorestower;Tour du Rivage;;;Palacio del Índigo;;;;;;;;;x
+b_inhula_bay;Inhula Bay;Baie d'Inhula;;;Playa del Estrecho;;;;;;;;;x
+b_the_straits;The Straits;Les Détroits;;;Los Estrechos;;;;;;;;;x
+b_kalapool;Kalapool;Kalapool;;;Poza de la Pimienta;;;;;;;;;x
+b_scarletcave;Scarlet Cave;Grotte Ecarlate;;;Torre Esmeralda;;;;;;;;;x
+b_red_palace;Red Palace;Palais Rouge;;;Palacio Rojo;;;;;;;;;x
+b_summercove;Summercove;Crique d'Eté;;;Flor Roja;;;;;;;;;x
+b_the_flowers;The Flowers;Les Fleurs;;;Las Flores;;;;;;;;;x
+b_petal_hill;Petal Hill;Colline des Pétales;;;Palacio de los Pétalos;;;;;;;;;x
+b_sunshadow;Sunshadow;Solombre;;;Umbrías;;;;;;;;;x
+b_grovesfort;Grovesfort;Fort-Bosquet;;;Palacio de Plata;;;;;;;;;x
+b_haljuno;Haljuno;Haljuno;;;Pieles de Plata;;;;;;;;;x
+b_ambercross;Ambercross;Ambre-Croix;;;Mata de Plátanos;;;;;;;;;x
+b_rotuxon;Rotuxon;Rotuxon;;;Fuerte Áureo;;;;;;;;;x
+b_lumberscross;Lumberscross;Croix-Bois;;;Serrería;;;;;;;;;x
+b_golden_lodge;Golden Lodge;Pavillon Doré;;;Palacio Dorado;;;;;;;;;x
+b_hearthaven;Hearthaven;Havrecoeur;;;Aurocorazón;;;;;;;;;x
+b_the_goldenhearts;The Goldenhearts;Les Cœurs-d'or;;;Los Bosques;;;;;;;;;x
+b_bownulu;Bownulu;Bownulu;;;Nuez Moscada;;;;;;;;;x
+b_iguanulo;Iguanulo;Iguanulo;;;Cabeza de Lagarto;;;;;;;;;x
+b_lizardhole;Lizardhole;Trou-du-Lézard;;;Lagartija;;;;;;;;;x
+b_singstone;Singstone;Pierre-Chant;;;Roca Cantarina;;;;;;;;;x
+b_passioncove;Passion Cove;Crique de la Passion;;;Extraña Melodía;;;;;;;;;x
+b_bountystone;Bountystone;Pierre-Prime;;;Pico Serrado;;;;;;;;;x
+b_hall_of_exiles;Hall of Exiles;Fort des Exils;;;Torre del Exiliado;;;;;;;;;x
+b_capybaral;Capybaral;Capybaral;;;Exilio Dorado;;;;;;;;;x
+b_the_islands;The Islands;Les Îles;;;Las Islas;;;;;;;;;x
+b_feathersrock;Feathersrock;Plumeroc;;;Torre del Desterrado;;;;;;;;;x
+b_little_bay;Little Bay;Petite Baie;;;Pequeño Exilio;;;;;;;;;x
+b_westwake;Westwake;Ouestveille;;;Torre del Expulsado;;;;;;;;;x
+b_nyrolu_grove;Nyrolu Grove;Bosquet de Nyrolu;;;Exilio Naranja;;;;;;;;;x
+b_monyuxon;Monyuxon;Monyuxon;;;Moluu;;;;;;;;;x
+b_port_moluu;Port Moluu;Port-Moluu;;;Puerto de Moluu;;;;;;;;;x
+b_coupling;Coupling;Accouple;;;Los Dioses;;;;;;;;;x
+b_lovers_den;Lover's Den;Repaire d'Amour;;;Guarida del Amor;;;;;;;;;x
+b_loroxhal;Loroxhal;Loroxhal;;;Amorosa;;;;;;;;;x
+b_ecstasy;Ecstasy;Ecstasy;;;El Amor;;;;;;;;;x
+b_fragrant_house;Fragrant House;Maison Parfumée;;;Palacio Perfumado;;;;;;;;;x
+b_qetzalu_hill;Qetzalu Hill;Colline de Qetzalu;;;Quetzal;;;;;;;;;x
+b_green_gorge;Green Gorge;Gorge Verte;;;Puerto Quetzal;;;;;;;;;x
+b_heart_hall;Heart Hall;Fort-Cœur;;;Palacio de las Gemas;;;;;;;;;x
+b_ombunu;Ombunu;Ombunu;;;Gemas;;;;;;;;;x
+b_plenty;Plenty;Abondance;;;La Abundancia;;;;;;;;;x
+b_naked_den;Naked Den;Repaire Nu;;;Jardín del Edén;;;;;;;;;x
+b_jalloxhu;Jalloxho;Jalloxho;;;Génesis;;;;;;;;;x
+b_agbeluxon;Agbeluxon;Agbeluxon;;;Jardín de la Alegría;;;;;;;;;x
+b_smiling_watch;Smiling Watch;Tour Souriante;;;Lujuria;;;;;;;;;x
+b_xhalalu;Xhalalu;Xhalalu;;;Palacio de Amaranto;;;;;;;;;x
+b_turakuno;Turakuno;Turakuno;;;Amaranto;;;;;;;;;x
+b_quiversbush;Quiversbush;Boscarquois;;;Palacio de Nácar;;;;;;;;;x
+b_lovershead;Lovershead;Tête-de-l'Amant;;;Playa de las Perlas;;;;;;;;;x
+b_jolkunon;Jolkunon;Jolkunon;;;Árboles Parlantes;;;;;;;;;x
+k_sothoryos;Sothoryos;Sothoryos;;;Sothoryos;;;;;;;;;x
+d_naath;Naath;Naath;;;Naath;;;;;;;;;x
+c_naath;Naath;Naath;;;Naath;;;;;;;;;x
+b_naath;Naath;Naath;;;Naath;;;;;;;;;x
+b_naath_town;Naath;Naath;;;las Mariposas;;;;;;;;;x
+b_naath_temple;Naath;Naath;;;la Armonía;;;;;;;;;x
+d_gogossos;Gogossos;Gogossos;;;Gogossos;;;;;;;;;x
+c_gogossos;Gogossos;Gogossos;;;Gogossos;;;;;;;;;x
+c_gogossos_adj;Gogossos;Gogossos;;;Gogossí;;;;;;;;;x
+b_gogossos;Gogossos;Gogossos;;;Gogossos;;;;;;;;;x
+b_gogossos_castle;Gogossos;Gogossos;;;Gogossos;;;;;;;;;x
+b_gogossos_temple;Gogossos;Gogossos;;;Gogossos;;;;;;;;;x
+b_gogossos_4;Bandos;;;;;;;;;;;;;x
+b_gogossos_5;Basilisk Port;;;;;;;;;;;;;x
+b_gogossos_6;Erelnyr;;;;;;;;;;;;;x
+b_gogossos_7;Hestios;;;;;;;;;;;;;x
+c_basiliskpoint;Basilisk Point;Pointe du Basilic;;;Punta Basilisco;;;;;;;;;x
+b_basiliskpoint;Basilisk Point;Pointe du Basilic;;;Punta Basilisco;;;;;;;;;x
+b_basiliskpoint_castle;Basilisk Point;Pointe du Basilic;;;Punta Basilisco;;;;;;;;;x
+b_basiliskpoint_temple;Basilisk Point;Pointe du Basilic;;;Punta Basilisco;;;;;;;;;x
+d_zamettar;Zamettar;Zamettar;;;Zamettar;;;;;;;;;x
+c_zamettar;Zamettar;Zamettar;;;Zamettar;;;;;;;;;x
+b_zamettar;Zamettar;Zamettar;;;Zamettar;;;;;;;;;x
+b_zamettar_castle;Zamettar;Zamettar;;;Zamettar;;;;;;;;;x
+b_zamettar_temple;Zamettar;Zamettar;;;Zamettar;;;;;;;;;x
+c_vyarash;Vyarash;Vyarash;;;Vyarash;;;;;;;;;x
+b_vyarash;Vyarash;Vyarash;;;Vyarash;;;;;;;;;x
+b_vyarash_castle;Vyarash;Vyarash;;;Vyarash;;;;;;;;;x
+b_vyarash_temple;Vyarash;Vyarash;;;Vyarash;;;;;;;;;x
+d_yeen;Yeen;Yêen;;;Yeen;;;;;;;;;x
+c_yeen;Yeen;Yêen;;;Yeen;;;;;;;;;x
+b_yeen;Yeen;Yêen;;;Yeen;;;;;;;;;x
+b_yeen_castle;Yeen;Yêen;;;Yeen;;;;;;;;;x
+b_yeen_temple;Yeen;Yêen;;;Yeen;;;;;;;;;x
+c_gomorosh;Gomorosh;Gomorosh;;;Zamoyos;;;;;;;;;x
+b_gomorosh;Gomorosh;Gomorosh;;;Zamoyos;;;;;;;;;x
+b_gomorosh_castle;Gomorosh;Gomorosh;;;Zamoyos;;;;;;;;;x
+b_gomorosh_temple;Gomorosh;Gomorosh;;;Zamoyos;;;;;;;;;x
+d_gorosh;Gorosh;Gorosh;;;Gorosh;;;;;;;;;x
+c_gorosh;Gorosh;Gorosh;;;Gorosh;;;;;;;;;x
+b_gorosh;Gorosh;Gorosh;;;Gorosh;;;;;;;;;x
+b_gorosh_castle;Gorosh;Gorosh;;;Gorosh;;;;;;;;;x
+b_gorosh_temple;Gorosh;Gorosh;;;Gorosh;;;;;;;;;x
+c_wyvernpoint;Wyvern Point;Cap de la Vouivre;;;Punta Guiverno;;;;;;;;;x
+b_wyvernpoint;Wyvern Point;Cap de la Vouivre;;;Punta Guiverno;;;;;;;;;x
+b_wyvernpoint_castle;Wyvern Point;Cap de la Vouivre;;;Punta Guiverno;;;;;;;;;x
+b_wyvernpoint_temple;Wyvern Point;Cap de la Vouivre;;;Punta Guiverno;;;;;;;;;x
+b_lotus_hill;Lotus Hill;Colline du Lotus;;;Jardín del Loto;;;;;;;;;x
+b_summervale;Summervale;Val d'Eté;;;Triángulo Estival;;;;;;;;;x
+b_shorerise;Shorerise;Hautrivage;;;Cayo Ámbar;;;;;;;;;x
+b_belunon;Belunon;Belunon;;;Resina;;;;;;;;;x
+b_jala_cave;Jala Cave;Grotte de Jala;;;Canela en Rama;;;;;;;;;x
+b_orxon;Orxon;Orxon;;;Aguacanela;;;;;;;;;x
+b_prerunon;Prerunon;Prerunon;;;Abulu;;;;;;;;;x
+b_jerunon;Jerunon;Jerunon;;;Último Consuelo;;;;;;;;;x
+b_kyxon;Kyxon;Kyxon;;;Último Adiós;;;;;;;;;x
+b_lotusbridge;Loutusbridge;Pont-Lotus;;;Puente del Loto;;;;;;;;;x
+b_stonecliff;Stonecliff;Falpierre;;;Farallón;;;;;;;;;x
+b_mantistone;Mantistone;Mantispierre;;;Cerro del Loto;;;;;;;;;x
+b_wydoj;Wydoj;Wydoj;;;Árbol Sonriente;;;;;;;;;x
+b_etujon;Etujon;Etujon;;;Posada del Árbol;;;;;;;;;x
+b_lime_cove;Lime Cove;Citcrique;;;Cayo Mandarina;;;;;;;;;x
+b_crosstree;Crosstree;Croix-Bois;;;Puerto Locuaz;;;;;;;;;x
+b_prurunon;Prurunon;Prurunon;;;Nave Cisne;;;;;;;;;x
+b_agraxon;Agraxon;Agraxon;;;Carta Náutica;;;;;;;;;x
+b_arrowgate;Arrowgate;Porte-Flèche;;;Jardín del Ebanista;;;;;;;;;x
+b_ulon;Ulon;Ulon;;;La Caoba;;;;;;;;;x
+b_rerranu;Rerranu;Rerranu;;;Fuente la Higuera;;;;;;;;;x
+b_wethill;Wethill;Colline-Humide;;;Ribaflecha;;;;;;;;;x
+b_misanu;Misanu;Misanu;;;Playa Lejana;;;;;;;;;x
+b_dwijuu;Dwijuu;Dwijuu;;;Roque del Sur;;;;;;;;;x
+b_bowsmouth;Bowsmouth;Bouches-de-l'Arc;;;Naranja Sanguina;;;;;;;;;x
+b_mount_lejabu;Mount Lejabu;Mont Lejabu;;;El Pomelo;;;;;;;;;x
+b_jeranulu;Jeranulu;Jeranulu;;;Parque del Loro;;;;;;;;;x
+b_red_bone;Red Bone;Osrouge;;;Hueso Rojo;;;;;;;;;x
+b_south_bone;South Bone;Sudos;;;Hueso del Sur;;;;;;;;;x
+b_monkey_harbour;Monkey Harbour;Port-Singe;;;Puerto del Mono;;;;;;;;;x
+b_pevulon;Pevulon;Pevulon;;;Playa del Mono;;;;;;;;;x
+b_ebontown;Ebontown;Ebèneville;;;El Cañameral;;;;;;;;;x
+b_ajarulo;Ajarulo;Ajarulo;;;Embarcadero;;;;;;;;;x
+b_kalabridge;Kalabridge;Kalapont;;;Pimentel;;;;;;;;;x
+b_scarlet_fort;Scarlet Fort;Fort-Ecarlate;;;Punta Esmeralda;;;;;;;;;x
+b_sevigulu;Sevigulu;Sevigulu;;;Amapolas;;;;;;;;;x
+b_nudelnon;Nudelnon;Nudelnon;;;Cerezo del Valle;;;;;;;;;x
+b_frenaxu;Frenaxu;Frenaxu;;;Afloramiento;;;;;;;;;x
+b_miriralu;Miriralu;Miriralu;;;Las Piñas;;;;;;;;;x
+b_kedulo;Kedulo;Kedulo;;;Puerto Áureo;;;;;;;;;x
+b_umunon;Umunon;Umunon;;;Puerto Corazón;;;;;;;;;x
+b_golden_nest;Golden Nest;Nidoré;;;Puerto Nogales;;;;;;;;;x
+b_elders_house;Elder's House;Maison-des-Anciens;;;Guarida del Gavial;;;;;;;;;x
+b_drumstone;Drumstone;Pierre-Timbale;;;Peñón Cantarín;;;;;;;;;x
+b_goldtree;Goldtree;Arbredor;;;Peñón Dorado;;;;;;;;;x
+b_abiliru;Abiliru;Abiliru;;;Pequeño Escollo;;;;;;;;;x
+b_zivudo;Zivudo;Zivudo;;;Peñón Naranja;;;;;;;;;x
+b_passion_bay;Passion Bay;Baie de la Passion;;;Fruta de la Pasión;;;;;;;;;x
+b_paranulon;Paranulon;Paranulon;;;Almíbar;;;;;;;;;x
+b_hidden_beach;Hidden Beach;Cacheplage;;;Playa Oculta;;;;;;;;;x
+b_golden_nose;Golden Nose;Nez-d'Or;;;Jardín de los Aromas;;;;;;;;;x
+b_alejuno;Alejuno;Alejuno;;;Puerto Rico;;;;;;;;;x
+b_monkeys_den;Monkey's Den;Repaire-des-Singes;;;Manada Roja;;;;;;;;;x
+b_pearl_palace;The Pearl Palace;Le Palais des Perles;;;Palacio de Perla;;;;;;;;;x
+b_mantisleaf;Mantisleaf;Mantefeuille;;;Ronda Nocturna;;;;;;;;;x
