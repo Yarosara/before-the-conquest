@@ -1,0 +1,250 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+e_north;The North;Le Nord;;;El Norte;;;;;;;;;x
+e_north_adj;Northern;Nordien;;;Norteña;;;;;;;;;x
+k_north;The North;Nord;The North;The North;El Norte;;;;;;;;;x
+k_north_adj;Northern;Nordien;Northern;Northern;Norteña;;;;;;;;;x
+e_first_men;The First Men;Premiers Hommes;;;Primeros Hombres;;;;;;;;;x
+e_first_men_adj;First Men;Premiers Hommes;;;Primeros Hombres;;;;;;;;;x
+d_northclans;North Clans;Clans du Nord;North Clans;North Clans;Clanes del Norte;;;;;;;;;x
+C_NORTH_ROAD;North Road;Route du Nord;;;Camino del Norte;;;;;;;;;x
+c_crowsedge;Crow's Edge;Frontière des Corbeaux;Crow's Edge;Crow's Edge;Linde del Cuervo;;;;;;;;;x
+b_burley;Burley;Burley;;;Fortín de Burley;;;;;;;;;x
+b_wullseat;Wull's Seat;Siège des Wull;Wull's Seat;Wull's Seat;Asiento de Wull;;;;;;;;;x
+b_bucketon;Bucketon;Sceauville;Bucketon;Bucketon;Cubo Grande;;;;;;;;;x
+b_coldcove;Cold Cove;Froide-Crique;Cold Cove;Cold Cove;Cala Fría;;;;;;;;;x
+c_arrendell;Arrendell;Val d'Arren;Arrendell;Arrendell;Hondonada de Arren;;;;;;;;;x
+b_wolfscroft;Wolfscroft;Grangeloup;Wolfscroft;Wolfscroft;Nudo de Knott;;;;;;;;;x
+b_arwoodtower;Arwood Tower;Tour Arwood;Arwood Tower;Arwood Tower;El Mimbre;;;;;;;;;x
+b_knottheartglen;Knottheart Glen;Vallée Knottcoeur;Knottheart Glen;Knottheart Glen;Hoya de Mimbre;;;;;;;;;x
+c_pinesend;Pinesend;Cime-des-Pins;Pinesend;Pinesend;Fin del Pinar;;;;;;;;;x
+b_firmont;Firmont;Firmont;Firmont;Firmont;Fin del Pinar;;;;;;;;;x
+b_harclay;Harclay;Harclay;Harclay;Harclay;Fortín de Harclay;;;;;;;;;x
+b_treesedge;Treesedge;Frontarbre;Treesedge;Treesedge;Últimospinos;;;;;;;;;x
+b_highwoodhall;Highwood Hall;Hautarbre;Highwood Hall;Highwood Hall;Luna Menguante;;;;;;;;;x
+c_shadowmoor;Shadowmoor;Lande Ombreuse;Shadowmoor;Shadowmoor;Páramo Sombrío;;;;;;;;;x
+b_moorhold;Moorhold;Forlande;Moorhold;Moorhold;Fortín del Páramo;;;;;;;;;x
+b_darkwood;Darkwood;Boisombre;Darkwood;Darkwood;Cardosaltos;;;;;;;;;x
+b_highheath;High Heath;Grande Bruyère;High Heath;High Heath;Último Páramo;;;;;;;;;x
+d_lasthearth;Last Hearth;Âtre-lès-Confins;Last Hearth;Last Hearth;Último Hogar;;;;;;;;;x
+c_lasthearth;Last Hearth;Âtre-lès-Confins;Last Hearth;Last Hearth;Último Hogar;;;;;;;;;x
+b_lasthearth;Last Hearth;Âtre-lès-Confins;Last Hearth;Last Hearth;Último Hogar;;;;;;;;;x
+b_woodhaven;Woodhaven;Boyrefuge;Woodhaven;Woodhaven;Guarida del Gigante;;;;;;;;;x
+b_fellber;Fellber;Fellber;Fellber;Fellber;Cadenas Rotas;;;;;;;;;x
+b_northwold;Northwold;Plateau du Nord;Northwold;Northwold;Cerro del Norte;;;;;;;;;x
+c_aylesvale;Highpoint;Hautpoint;;;Punto Álgido;;;;;;;;;x
+b_aylestor;Highpoint;Hautpoint;;;Punto Álgido;;;;;;;;;x
+b_lakehold;Whitewood;Boisblanc;;;Bosquenevado;;;;;;;;;x
+b_deepcroft;Deepcroft;Grangebas;Deepcroft;Deepcroft;Colina Blanca;;;;;;;;;x
+c_lastriver;Last River;Ultime;Last River;Last River;Río Último;;;;;;;;;x
+b_northpost;Northpost;Poste-Nord;Northpost;Northpost;Posta del Norte;;;;;;;;;x
+b_ashkeep;Ashkeep;Fort-Cendre;Ashkeep;Ashkeep;Fuerteúltimo;;;;;;;;;x
+b_snowmelthall;Snowmelt Hall;Dégel;Snowmelt Hall;Snowmelt Hall;Torre Deshielo;;;;;;;;;x
+c_lonelyhills;Lonely Hills;Collines Solitaires;Lonely Hills;Lonely Hills;Colinas Solitarias;;;;;;;;;x
+b_loftyfort;Lofty Fort;Haut-Castel;Lofty Fort;Lofty Fort;Fuerte Altivo;;;;;;;;;x
+b_longlaketown;Longlake Town;Granlac-Ville;Longlake Town;Longlake Town;Lagolargo;;;;;;;;;x
+b_umberleigh;Umberleigh;Ombleleigh;Umberleigh;Umberleigh;Claro del Gigante;;;;;;;;;x
+d_karhold;Karhold;Karhold;Karhold;Karhold;Bastión Kar;;;;;;;;;x
+c_karhold;Karhold;Karhold;Karhold;Karhold;Bastión Kar;;;;;;;;;x
+b_karhold;Karhold;Karhold;Karhold;Karhold;Bastión Kar;;;;;;;;;x
+b_barbleton;Barbleton;Barbleville;Barbleton;Barbleton;Sol de Invierno;;;;;;;;;x
+b_eastharbor;Eastharbor;Havre-Orient;Eastharbor;Eastharbor;Puerto de Karl;;;;;;;;;x
+b_snowdell;Snowdell;Vallée des Neiges;Snowdell;Snowdell;Valnevado;;;;;;;;;x
+b_greyclifftower;Greycliff Tower;Tour Rocgris;Greycliff Tower;Greycliff Tower;Torregrís;;;;;;;;;x
+c_sealshore;Seal Shore;Baie des Phoques;Seal Shore;Seal Shore;Costa de las Focas;;;;;;;;;x
+b_fisherhall;Fisherhall;Poiscaille;Fisherhall;Fisherhall;Torre del Pescador;;;;;;;;;x
+b_wintrackpost;Wintrack Post;Pistiver;Wintrack Post;Wintrack Post;Posta del Invierno;;;;;;;;;x
+c_eastmelt;Eastmelt;Fontes Orientales;Eastmelt;Eastmelt;Último Deshielo;;;;;;;;;x
+b_karlspost;Karlspost;Karlposte;Karlspost;Karlspost;Posta de Karl;;;;;;;;;x
+b_eastmelt;Eastmelt;Fontes Orientales;Eastmelt;Eastmelt;Derretimiento Oriental;;;;;;;;;x
+c_bearisland;Bear Island;Île-aux-Ours;Bear Island;Bear Island;Isla del Oso;;;;;;;;;x
+b_bearislandhall;Mormont Keep;Fort-Mormont;Bear Island Hall;Bear Island Hall;Torreón Mormont;;;;;;;;;x
+b_woodfootwatch;Woodfoot Watch;Guet Piébois;Woodfoot Watch;Woodfoot Watch;Atalaya Piedemadera;;;;;;;;;x
+b_bearstone;Bearstone;Pierours;Bearstone;Bearstone;Piedraoso;;;;;;;;;x
+b_bearwood;Bearwood;Bois-aux-Ours;Bearwood;Bearwood;Bosque del Oso;;;;;;;;;x
+d_skagos;Skagos;Skagos;Skagos;Skagos;Skagos;;;;;;;;;x
+c_kingshouse;Kingshouse;Maisonroy;Kingshouse;Kingshouse;Casarreal;;;;;;;;;x
+b_kingshouse;Kingshouse;Maisonroy;Kingshouse;Kingshouse;Casarreal;;;;;;;;;x
+b_snowrow;Snowrow;Défilé des Neiges;Snowrow;Snowrow;Arponada;;;;;;;;;x
+c_deepdown;Deepdown;Fonprofond;Deepdown;Deepdown;Profundidades;;;;;;;;;x
+b_deepdown;Deepdown;Profondeurs;Deepdown;Deepdown;Profundidades;;;;;;;;;x
+b_weirrocks;Weirrocks;Rocavalanche;Weirrocks;Weirrocks;Rocalud;;;;;;;;;x
+c_driftwoodhall;Driftwood Hall;Bois-flotté;Driftwood Hall;Driftwood Hall;Madera de Deriva;;;;;;;;;x
+b_driftwoodhall;Driftwood Hall;Bois-flotté;Driftwood Hall;Driftwood Hall;Madera de Deriva;;;;;;;;;x
+b_blizzardbarrow;Blizzardbarrow;Tertres-glacés;Blizzardbarrow;Blizzardbarrow;Ventisca;;;;;;;;;x
+d_rills;The Rills;Les Rus;The Rills;The Rills;Los Riachuelos;;;;;;;;;x
+c_rills;The Rills;Les Rus;The Rills;The Rills;Los Riachuelos;;;;;;;;;x
+b_highbrooktower;Highbrook Tower;Tour Haut-Ruisseau;Highbrook Tower;Highbrook Tower;Los Riachuelos;;;;;;;;;x
+b_coldbrooke;Coldbrooke;Froid-Ruisseau;Coldbrooke;Coldbrooke;Ramblafría;;;;;;;;;x
+b_runletfort;Runlet Fort;Fort Ruisselet;Runlet Fort;Runlet Fort;Fuerte Arroyo;;;;;;;;;x
+c_seadragonpoint;Sea Dragon Point;Presqu'île de Merdragon;Sea Dragon Point;Sea Dragon Point;Punta Dragón Marino;;;;;;;;;x
+b_seadragonwatch;Sea Dragon Watch;Tour Merdragon;Sea Dragon Watch;Sea Dragon Watch;Atalaya Dragón Marino;;;;;;;;;x
+b_dragonport;Dragonport;Dragonport;Dragonport;Dragonport;Puertodragón;;;;;;;;;x
+c_bluehills;Blackpool;Noirétang;Blue Hills;Blue Hills;Pozanegra;;;;;;;;;x
+b_firsenfort;Blackpool;Noirétang;Firsenfort;Firsenfort;Pozanegra;;;;;;;;;x
+b_bluetower;Blue Tower;Tour Bleue;Blue Tower;Blue Tower;Pizarral;;;;;;;;;x
+c_stonyshore;Stony Shore;Roches;Stony Shore;Stony Shore;Costa Pedregosa;;;;;;;;;x
+b_reaverswatch;Reaverswatch;Gardravage;Reaverswatch;Reaverswatch;Atalaya del Saqueador;;;;;;;;;x
+b_anglerage;Anglerage;Anglerage;Anglerage;Anglerage;Anzuelo;;;;;;;;;x
+c_witheredheath;Withered Heath;Bruyère Fanée;Withered Heath;Withered Heath;Brezal Marchito;;;;;;;;;x
+b_skysmeet;Skysmeet;Perceciel;Skysmeet;Skysmeet;Forja del Cielo;;;;;;;;;x
+b_wetrocks;Wetrocks;Rocmouille;Wetrocks;Wetrocks;Herraduras;;;;;;;;;x
+c_blazewatercoast;Rillwater Crossing;Rillwater Crossing;Rillwater Crossing;Rillwater Crossing;Cruce del Regato;;;;;;;;;x
+b_saltspearkeep;Rillwater Crossing;Rillwater Crossing;Rillwater Crossing;Rillwater Crossing;Cruce del Regato;;;;;;;;;x
+b_thesalt;The Salt;Le Sel;The Salt;The Salt;La Sal;;;;;;;;;x
+d_wolfswood;Wolfswood;Bois-aux-Loups;Wolfswood;Wolfswood;Bosque de los Lobos;;;;;;;;;x
+c_deepwood;Deepwood;Motte-la-Forêt;Deepwood;Deepwood;Bosquespeso;;;;;;;;;x
+b_deepwoodmotte;Deepwood;Motte-la-Forêt;Deepwood;Deepwood;Bosquespeso;;;;;;;;;x
+b_frostypoint;Frosty Point;Cap Glacial;Frosty Point;Frosty Point;Punta Escarcha;;;;;;;;;x
+b_shadythicket;Shady Thicket;Fourré Ombragé;Shady Thicket;Shady Thicket;Espesura Umbría;;;;;;;;;x
+b_wulfhall;Wulfhall;Domaine du Loup;Wulfhall;Wulfhall;Puño de Hierro;;;;;;;;;x
+c_blackgrove;Ironrath;Ironrath;Blackgrove;Blackgrove;Castrohierro;;;;;;;;;x
+b_blackgrove;Ironrath;Ironrath;Blackgrove;Blackgrove;Castrohierro;;;;;;;;;x
+b_copsetor;Copsetor;Copsetor;Copsetor;Copsetor;Quebracho Herrado;;;;;;;;;x
+c_kingsgrove;King's Grove;Fourré du Roi;King's Grove;King's Grove;Arboleda del Rey;;;;;;;;;x
+b_tumbledown_tower;Tumbledown Tower;Tour Eparse;Tumbledown Tower;Tumbledown Tower;Arboleda del Rey;;;;;;;;;x
+b_brierscroft;Brierscroft;Grange des Ronces;Brierscroft;Brierscroft;Zarzal;;;;;;;;;x
+b_harclayhall;Harclay Hall;Domaine Harclay;Harclay Hall;Harclay Hall;Tallada;;;;;;;;;x
+c_wolfswood;Wolfswood;Bois-aux-Loups;Wolfswood;Wolfswood;Bosque de los Lobos;;;;;;;;;x
+b_forestrefuge;Forest Refuge;Refuge Forestier;Forest Refuge;Forest Refuge;Refugio del Bosque;;;;;;;;;x
+b_croftersclearing;Crofter's Clearing;Clairière des Fermiers;Crofter's Clearing;Crofter's Clearing;Claro del Aparcero;;;;;;;;;x
+b_wolfwoodhide;Wolfwood Hide;Cache du Bois-aux-Loups;Wolfwood Hide;Wolfwood Hide;Escondite del Lobo;;;;;;;;;x
+c_acorngrove;Acorn Grove;Eglantiers;Acorn Grove;Acorn Grove;Soto Bellota;;;;;;;;;x
+b_grovefort;Grovefort;Fort-Bosquet;Grovefort;Grovefort;Fuerte Bellota;;;;;;;;;x
+b_weirskags;Weirskags;Weirskags;Weirskags;Weirskags;Leñadora;;;;;;;;;x
+d_barrowlands;Barrowlands;Les Tertres;Barrowlands;Barrowlands;Los Túmulos;;;;;;;;;x
+c_barrowton;Barrowton;Tertre-bourg;Barrowton;Barrowton;Fuerte Túmulo;;;;;;;;;x
+b_highbarrow;Barrow Hall;La Tertrée;;;Torre Túmulo;;;;;;;;;x
+b_barrowton;Barrowton;Tertre-bourg;Barrowton;Barrowton;Fuerte Túmulo;;;;;;;;;x
+b_godshill;Godshill;Colline des Dieux;Godshill;Godshill;Cerro de los Dioses;;;;;;;;;x
+b_harwoodshold;Harwood's Hold;Fort Harwood;Harwood's Hold;Harwood's Hold;Bastión Robusto;;;;;;;;;x
+c_torrhenssquare;Torrhen's Square;Quart-Torrhen;Torrhen's Square;Torrhen's Square;Ciudadela de Torrhen;;;;;;;;;x
+b_torrhenssquare;Torrhen's Square;Quart-Torrhen;Torrhen's Square;Torrhen's Square;Ciudadela de Torrhen;;;;;;;;;x
+b_henslaketon;Henslaketon;Poulailler;Henslaketon;Henslaketon;Villar del Lago;;;;;;;;;x
+b_eastedgebarrens;Eastedge Barrens;Morteterre de l'Est;Eastedge Barrens;Eastedge Barrens;Pinocentinela;;;;;;;;;x
+c_spearmouth;Spearmouth;Cheflance;;;Gran Túmulo;;;;;;;;;x
+b_spearmouth;Spearmouth;Cheflance;;;Boca de la Lanza;;;;;;;;;x
+b_lowbarrow;Lowbarrow;Tertre-bas;Lowbarrow;Lowbarrow;Gran Túmulo;;;;;;;;;x
+b_goldgrass;Goldgrass;Herbe-d'Or;Goldgrass;Goldgrass;Hierba Dorada;;;;;;;;;x
+b_bentbarrow;Bentbarrow;Tertres-pliés;Bentbarrow;Bentbarrow;Túmulo Robusto;;;;;;;;;x
+c_fever;Fever;Fièvre;Fever;Fever;Fiebre;;;;;;;;;x
+b_dunfort;Dunfort;Dunfort;Dunfort;Dunfort;Fuerte Fiebre;;;;;;;;;x
+b_feverreef;Feverreef;Récif de la Fièvre;Feverreef;Feverreef;Cañada Juncosa;;;;;;;;;x
+d_winterfell;Winterfell;Winterfell;Winterfell;Winterfell;Invernalia;;;;;;;;;x
+c_winterfell;Winterfell;Winterfell;Winterfell;Winterfell;Invernalia;;;;;;;;;x
+b_winterfell;Winterfell;Winterfell;Winterfell;Winterfell;Invernalia;;;;;;;;;x
+b_wintertown;Wintertown;la Ville d'hiver;Wintertown;Wintertown;Las Inviernas;;;;;;;;;x
+b_winterwood;Winterwood;Bois d'hiver;Winterwood;Winterwood;Bosqueinvierno;;;;;;;;;x
+b_whitegate;Whitegate;Blanche-Porte;Whitegate;Whitegate;Aguastermales;;;;;;;;;x
+b_coldstream;Coldstream;Courant Froid;;;Puertablanca;;;;;;;;;x
+b_brandonburgh;Brandonburgh;Brandonbourg;Brandonburgh;Brandonburgh;Aldeahuargo;;;;;;;;;x
+c_castlecerwyn;Castle Cerwyn;Castel-Cerwyn;Castle Cerwyn;Castle Cerwyn;Castillo Cerwyn;;;;;;;;;x
+b_castlecerwyn;Castle Cerwyn;Castel-Cerwyn;Castle Cerwyn;Castle Cerwyn;Castillo Cerwyn;;;;;;;;;x
+b_theeagletower;The Eagle Tower;La Tour de l'Aigle;The Eagle Tower;The Eagle Tower;Hacha de Batalla;;;;;;;;;x
+c_dawnforest;Dawnforest;Forêt de l'Aube;Dawnforest;Dawnforest;Bosque del Alba;;;;;;;;;x
+b_glencastle;Glencastle;Valcastel;Glencastle;Glencastle;Pino Nevado;;;;;;;;;x
+b_childrenscopse;Children's Copse;Taillis des Enfants;Children's Copse;Children's Copse;Molinar;;;;;;;;;x
+c_kingscourse;King's Course;Voie Royale;King's Course;King's Course;Curso Real;;;;;;;;;x
+b_wayfarerswatch;Wayfarer's Watch;Tour de Bel Accueil;Wayfarer's Watch;Wayfarer's Watch;Lobera;;;;;;;;;x
+b_travelton;Travelton;Périple;Travelton;Travelton;Fonda del Caminante;;;;;;;;;x
+b_southerway;Southerway;Voie du Sud;Southerway;Southerway;Vereda del Sur;;;;;;;;;x
+d_dreadfort;The Dreadfort;Fort-Terreur;The Dreadfort;The Dreadfort;Fuerte Terror;;;;;;;;;x
+c_dreadfort;The Dreadfort;Fort-Terreur;The Dreadfort;The Dreadfort;Fuerte Terror;;;;;;;;;x
+b_dreadfort;The Dreadfort;Fort-Terreur;The Dreadfort;The Dreadfort;Fuerte Terror;;;;;;;;;x
+b_weeping;Weeping;Larmoyante;Weeping;Weeping;Llorona;;;;;;;;;x
+b_windygrove;Windy Grove;Bois-Venteux;Windy Grove;Windy Grove;Fronda Ventosa;;;;;;;;;x
+b_fleischerskeep;Fleischer's Keep;Fort-Fleischer;Fleischer's Keep;Fleischer's Keep;Espada Afilada;;;;;;;;;x
+b_boltongate;Boltongate;Porte Bolton;Boltongate;Boltongate;Desolladero;;;;;;;;;x
+c_weepingbay;Weeping Bay;Baie Larmoyante;Weeping Bay;Weeping Bay;Bahía Llorosa;;;;;;;;;x
+b_rangersrefuge;Ranger's Refuge;Refuge des Patrouilleurs;Ranger's Refuge;Ranger's Refuge;Rastro de Pisadas;;;;;;;;;x
+b_gancliff;Gancliff;Falaise de Gan;Gancliff;Gancliff;Paso Ligero;;;;;;;;;x
+c_sheepsheadhills;Sheepshead Hills;Collines des Toisonnées;Sheepshead Hills;Sheepshead Hills;Colina Cabeza de Oveja;;;;;;;;;x
+b_shepherdshearth;Shepherd's Hearth;Cœur de Berger;Shepherd's Hearth;Shepherd's Hearth;Hogar del Pastor;;;;;;;;;x
+b_brokenbranchhead;Brokenbranch Head;Branchecassé;Brokenbranch Head;Brokenbranch Head;Fresnedal;;;;;;;;;x
+c_overton;Overton;Overton;Overton;Overton;Las Lágrimas;;;;;;;;;x
+b_thenarrowseerstower;The Narrow Seer's Tower;La Tour du Voyant;The Narrow Seer's Tower;The Narrow Seer's Tower;Atalaya de las Lágrimas;;;;;;;;;x
+b_overton;Overton;Overton;Overton;Overton;Ribera Alta;;;;;;;;;x
+b_weeperford;Weeperford;Gué des Pleurs;Weeperford;Weeperford;Vadollorón;;;;;;;;;x
+d_whiteharbor;White Harbor;Blancport;White Harbor;White Harbor;Puerto Blanco;;;;;;;;;x
+c_whiteharbor;White Harbor;Blancport;White Harbor;White Harbor;Puerto Blanco;;;;;;;;;x
+b_newcastle;New Castle;Châteauneuf;New Castle;New Castle;Nueva Fortaleza;;;;;;;;;x
+b_whiteharbor;White Harbor;Blancport;White Harbor;White Harbor;Puerto Blanco;;;;;;;;;x
+b_wolfsden;Wolf's Den;Repaire des Loups;Wolf's Den;Wolf's Den;Guarida del Lobo;;;;;;;;;x
+b_septofsnow;Snow;Neiges;Schnee;;las Nieves;;;;;;;;;x
+b_hardmead;Hardmead;Prédur;Hardmead;Hardmead;Puerto Exterior;;;;;;;;;x
+b_alethorp;Alethorp;Alethorpe;Alethorp;Alethorp;Islote de la Foca;;;;;;;;;x
+c_whiteknife;White Knife;Blanchedague;White Knife;White Knife;Cuchillo Blanco;;;;;;;;;x
+b_whitecreekcastle;White Creek Castle;Château Rusblanc;White Creek Castle;White Creek Castle;Vigía del Cuchillo Blanco;;;;;;;;;x
+b_chalkchildsseat;Chalkchilds Seat;Bourg-Livide;Chalkchilds Seat;Chalkchilds Seat;Arroyada;;;;;;;;;x
+b_brokersbrook;Brokersbrook;Casse-ruisseau;Brokersbrook;Brokersbrook;Corrientes;;;;;;;;;x
+c_ethering;Ethering;Ether;Ethering;Ethering;Cinturón de Musgo;;;;;;;;;x
+b_ethersfort;Ethersfort;Fort-Ether;Ethersfort;Ethersfort;Fuerte Musgo;;;;;;;;;x
+b_etherington;Etherington;Etherville;Etherington;Etherington;Villamusgo;;;;;;;;;x
+b_ethersgrove;Ethersgrove;Bois-Ether;Ethersgrove;Ethersgrove;Bosque del Musgo;;;;;;;;;x
+c_whitford;Whitford;Blangué;Whitford;Whitford;Vadoblanco;;;;;;;;;x
+b_fordswatch;Fordswatch;Gardegué;Fordswatch;Fordswatch;Atalaya del Vado;;;;;;;;;x
+b_whitfordtown;Whitford Town;Bourg-Blangué;Whitford Town;Whitford Town;Vadoblanco;;;;;;;;;x
+b_waterley;Waterley;Eauley;Waterley;Waterley;Los Remos;;;;;;;;;x
+c_oldcastle;Oldcastle;Châteauvieux;Oldcastle;Oldcastle;Castillo Viejo;;;;;;;;;x
+b_oldcastle;Oldcastle;Châteauvieux;Oldcastle;Oldcastle;Castillo Viejo;;;;;;;;;x
+b_bitesmouthtown;Bitesmouth Town;La Morsure;Bitesmouth Town;Bitesmouth Town;Boca del Mordisco;;;;;;;;;x
+b_thetooth;The Tooth;La Dent;The Tooth;The Tooth;Llavero;;;;;;;;;x
+d_hornwood;The Broken Branch;Brèchesaigue;;;Rama Rota;;;;;;;;;x
+c_hornwood;Hornwood;Corbois;Hornwood;Hornwood;Bosque del Cuerno;;;;;;;;;x
+b_castlehornwood;Castle Hornwood;Château Corbois;Castle Hornwood;Castle Hornwood;Bosque del Cuerno;;;;;;;;;x
+b_hunterslodge;Hunter's Lodge;Gîtes des Chasseurs;Hunter's Lodge;Hunter's Lodge;Cabaña del Cazador;;;;;;;;;x
+b_hightree;Hightree;Granarbre;Hightree;Hightree;Bosque del Cuerno;;;;;;;;;x
+b_manvers;Manvers;Manvers;Mooseton;Mooseton;Villar de Alces;;;;;;;;;x
+b_bullstone;Bullstone;Cornepierre;;;Piedracuerno;;;;;;;;;x
+c_ramsgate;Ramsgate;Porte-Béline;Ramsgate;Ramsgate;Puerta del Carnero;;;;;;;;;x
+b_ramsgate;Ramsgate;Porte-Béline;Ramsgate;Ramsgate;Puerta del Carnero;;;;;;;;;x
+b_fleecemarket;Fleecemarket;Marché aux Toisons;Fleecemarket;Fleecemarket;Venta de Lanas;;;;;;;;;x
+b_thebrokenbranchsmouth;The Brokenbranch's Mouth;La Bouche du Casse-ruisseau;The Brokenbranch's Mouth;The Brokenbranch's Mouth;Boca del Rama Rota;;;;;;;;;x
+c_widowswatch;Widow's Watch;La Veuve;Widow's Watch;Widow's Watch;Atalaya de la Viuda;;;;;;;;;x
+b_widowswatch;Widow's Watch;La Veuve;Widow's Watch;Widow's Watch;Atalaya de la Viuda;;;;;;;;;x
+b_westraton;Westraton;Ponent;Westraton;Westraton;Levantina;;;;;;;;;x
+b_isfield;Isfield;Ispré;Isfield;Isfield;Tómbolo;;;;;;;;;x
+b_jaw_hill;Jaw Hill;Colline de la Mâchoire;;;Poza de Marea;;;;;;;;;x
+d_theneck;The Neck;Le Neck;The Neck;The Neck;El Cuello;;;;;;;;;x
+c_greywaterwatch;Greywater Watch;Fort-Griseaux;Greywater Watch;Greywater Watch;Atalaya de Aguasgrises;;;;;;;;;x
+b_greywaterwatch;Greywater Watch;Fort-Griseaux;Greywater Watch;Greywater Watch;Atalaya de Aguasgrises;;;;;;;;;x
+b_thegreydun;The Grey Dun;Le Dun Gris;The Grey Dun;The Grey Dun;Charca Gris;;;;;;;;;x
+b_thesunkgrove;The Sunk Grove;Bosquets-Mouillés;The Sunk Grove;The Sunk Grove;Pantanal;;;;;;;;;x
+b_reedhall;Reedhall;L'Arche des Roseaux;Reedhall;Reedhall;Junco;;;;;;;;;x
+c_moatcailin;Moat Cailin;Moat Cailin;Moat Cailin;Moat Cailin;Foso Cailin;;;;;;;;;x
+b_childrenstower;Children's Tower;La Tour des Enfants;Children's Tower;Children's Tower;Torre de los Niños;;;;;;;;;x
+b_gatehousetower;Gatehouse Tower;Tour du Concierge;Gatehouse Tower;Gatehouse Tower;Torre de la Entrada;;;;;;;;;x
+b_drunkardstower;Drunkard's Tower;Tour du Pochard;Drunkard's Tower;Drunkard's Tower;Torre del Borracho;;;;;;;;;x
+b_elkstone;Elkstone;Elkpierre;Elkstone;Elkstone;La Fosa;;;;;;;;;x
+c_greycrann;Greycrann;Butte Grise;Greycrann;Greycrann;Ciénaga Gris;;;;;;;;;x
+b_tammscrannog;Tamm's Crannog;Crannog de Tamm;Tamm's Crannog;Tamm's Crannog;Turbera;;;;;;;;;x
+b_floathold;Floathold;Fort-Flots;Floathold;Floathold;Turba Negra;;;;;;;;;x
+c_churwell;Churwell;Churwell;Churwell;Churwell;Marjal;;;;;;;;;x
+b_churwellcrannog;Churwell Crannog;Crannog de Churwell;Churwell Crannog;Churwell Crannog;Fuerte Marjal;;;;;;;;;x
+b_churwellford;Churwellford;Gué de Churwell;Churwellford;Churwellford;Marisma;;;;;;;;;x
+c_silvereed;Silvereed;Roseaux d'Argent;Silvereed;Silvereed;Cañas Plateadas;;;;;;;;;x
+b_fendun;Fendun;Fendun;Fendun;Fendun;Cañaveral;;;;;;;;;x
+b_toirnsbog;Toirn's Bog;Marais de Toirn;Toirn's Bog;Toirn's Bog;El Carrizal;;;;;;;;;x
+d_flintsfinger;Flint's Finger;Pouce-Flint;Flint's Finger;Flint's Finger;Dedo de Pedernal;;;;;;;;;x
+c_flintsfinger;Flint's Finger;Pouce-Flint;Flint's Finger;Flint's Finger;Dedo de Pedernal;;;;;;;;;x
+b_flintsfinger;Flint's Finger;Pouce-Flint;Flint's Finger;Flint's Finger;Dedo de Pedernal;;;;;;;;;x
+b_flintsthumb;Flint's Thumb;Annulaire de Flint;Flint's Thumb;Flint's Thumb;Los Pedernales;;;;;;;;;x
+c_capekraken;Cape Kraken;Cap Kraken;Cape Kraken;Cape Kraken;Cabo Kraken;;;;;;;;;x
+b_greencliffe;Greencliffe;Verfalaise;Greencliffe;Greencliffe;Los Tentáculos;;;;;;;;;x
+b_ringrock;Ringrock;Bagueroc;Ringrock;Ringrock;Caladero;;;;;;;;;x
+c_flintcliffs;Flint Cliffs;Falaises de Flint;Flint Cliffs;Flint Cliffs;Acantilados de Pedernal;;;;;;;;;x
+b_clifftower;Clifftower;Tour Falaise;Clifftower;Clifftower;Torre del Acantilado;;;;;;;;;x
+b_arrowgrassroad;Arrow Grass Road;Route Flècheherbe;Arrow Grass Road;Arrow Grass Road;La Junquera;;;;;;;;;x
+b_sallybrook;Sallybrook;Sallyrus;;;Nuevo Tritón;;;;;;;;;x
+c_flintkeep;Breakstone Hill;Colline Rompierre;Flint Keep;Flint Keep;Colina Piedrarrota;;;;;;;;;x
+b_flintkeep;Breakstone Hill;Colline Rompierre;Flint Keep;Flint Keep;Colina Piedrarrota;;;;;;;;;x
+b_brinmore;Brinmore;Brinmore;Brinmore;Brinmore;La Cuna de Flint;;;;;;;;;x
+b_woodend;Woodend;Boscfin;Woodend;Woodend;Fin del Bosque;;;;;;;;;x
+b_cray;Cray;Cray;;;Humedal;;;;;;;;;x
+duke_hill_clansman;The;Le;;;El;;;;;;;;;x
+duke_female_hill_clansman;The;La;;;La;;;;;;;;;x
+count_hill_clansman;The;Le;;;El;;;;;;;;;x
+count_female_hill_clansman;The;La;;;La;;;;;;;;;x
+baron_hill_clansman;The;Le;;;El;;;;;;;;;x
+baron_female_hill_clansman;The;La;;;La;;;;;;;;;x
+b_thorpe;Thorpe;;;;;;;;;;;;;x
+d_stonyshore;Stony Shore;;;;;;;;;;;;;x
