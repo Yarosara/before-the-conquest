@@ -35,8 +35,14 @@ exalted_blood = {
 	
 	ruler_designer_cost = -25
 	
+	male_compliment = COMPL_NOBLE
+	female_compliment = COMPL_NOBLE
+	male_compliment_adj = COMPL_HONOURABLE
+	female_compliment_adj = COMPL_WORTHY
 	male_compliment_adj = COMPL_PROUD
 	female_compliment_adj = COMPL_PROUD
+	child_compliment_adj = COMPL_NICE
+
 }
 touched_by_fate = {
 	monthly_character_prestige = 0.05
