@@ -1,0 +1,1934 @@
+# SPECIAL TRAIT FLAGS
+#
+# pilgrimage = yes		- The character is away and will need a regent, but does not lose any wards, etc
+# incapacitating = yes	- The character is essentially a vegetable
+# immortal = yes		- The character will not die of age or poor health, but can be executed (and killed by event effects)
+# inherit_chance = X	- Chance of passing on the trait to children
+# birth = X				- How many characters out of 10000 are born with this trait (when not inherited)
+
+############
+# EDUCATION
+############
+#level 1: you suck
+#level 2: you know what you are doing
+#level 3: you're an expert
+#level 4: you're a genius
+
+# INTRIGUE OUTCOMES
+amateurish_plotter = { #1
+	attribute = intrigue
+	education = yes
+	intrigue = 1 #2
+	male_insult_adj = INSULT_SCHEMING
+	female_insult_adj = INSULT_SCHEMING
+	child_insult_adj = INSULT_STUPID
+}
+flamboyant_schemer = { #2 
+	attribute = intrigue
+	education = yes
+	diplomacy = 1
+	intrigue = 3
+	
+	male_insult_adj = INSULT_SCHEMING
+	female_insult_adj = INSULT_SCHEMING
+	child_insult_adj = INSULT_STUPID
+}
+intricate_webweaver = { #3
+	attribute = intrigue
+	education = yes
+	diplomacy = 2
+	intrigue = 4
+	monthly_character_prestige = 0.05
+	
+	male_compliment_adj = COMPL_CLEVER
+	female_compliment_adj = COMPL_CLEVER
+	male_insult_adj = INSULT_SCHEMING
+	female_insult_adj = INSULT_SCHEMING
+	child_insult_adj = INSULT_STUPID
+}
+elusive_shadow = { #4
+	attribute = intrigue
+	education = yes
+	diplomacy = 2
+	intrigue = 6
+	monthly_character_prestige = 0.1
+	
+	male_compliment_adj = COMPL_CLEVER
+	female_compliment_adj = COMPL_CLEVER
+	male_insult_adj = INSULT_SCHEMING
+	female_insult_adj = INSULT_SCHEMING
+	child_insult_adj = INSULT_STUPID
+}
+
+# DIPLOMACY OUTCOMES
+naive_appeaser = { #5
+	attribute = diplomacy
+	education = yes
+	diplomacy = 1 #2
+
+	male_insult_adj = INSULT_TWOFACED
+	female_insult_adj = INSULT_TWOFACED
+	child_insult_adj = INSULT_STUPID
+}
+underhanded_rogue = { #6
+	attribute = diplomacy
+	education = yes
+	diplomacy = 3
+	intrigue = 1
+
+	male_insult_adj = INSULT_TWOFACED
+	female_insult_adj = INSULT_TWOFACED
+	child_insult_adj = INSULT_STUPID
+}
+charismatic_negotiator = { #7
+	attribute = diplomacy
+	education = yes
+	diplomacy = 4
+	intrigue = 2
+	monthly_character_prestige = 0.05
+	
+	male_compliment_adj = COMPL_ELOQUENT
+	female_compliment_adj = COMPL_ELOQUENT
+	child_compliment_adj = COMPL_NICE
+	male_insult_adj = INSULT_TWOFACED
+	female_insult_adj = INSULT_TWOFACED
+	child_insult_adj = INSULT_STUPID
+}
+grey_eminence = { #8
+	attribute = diplomacy
+	education = yes
+	diplomacy = 6
+	intrigue = 2	
+	monthly_character_prestige = 0.1
+	
+	male_compliment_adj = COMPL_ELOQUENT
+	female_compliment_adj = COMPL_ELOQUENT
+	child_compliment_adj = COMPL_NICE
+	male_insult_adj = INSULT_TWOFACED
+	female_insult_adj = INSULT_TWOFACED
+	child_insult_adj = INSULT_STUPID
+}
+
+# STEWARDSHIP OUTCOMES
+indulgent_wastrel = { #9
+	attribute = stewardship
+	education = yes
+	stewardship = 2
+	global_tax_modifier = -0.01 #0.05
+
+	male_insult_adj = INSULT_MISERLY
+	female_insult_adj = INSULT_MISERLY
+	child_insult_adj = INSULT_STUPID
+}
+thrifty_clerk = { #10
+	attribute = stewardship
+	education = yes
+	stewardship = 4
+	#monthly_character_prestige = 0.1
+	#global_tax_modifier = 0.1
+
+	male_insult_adj = INSULT_MISERLY
+	female_insult_adj = INSULT_MISERLY
+	child_insult_adj = INSULT_STUPID
+}
+fortune_builder = { #11	
+	attribute = stewardship
+	education = yes
+	stewardship = 6
+	monthly_character_prestige = 0.05 #0.2
+	global_tax_modifier = 0.05 #0.15
+
+	male_compliment_adj = COMPL_THRIFTY
+	female_compliment_adj = COMPL_THRIFTY
+	child_compliment_adj = COMPL_CLEVER
+	male_insult_adj = INSULT_MISERLY
+	female_insult_adj = INSULT_MISERLY
+	child_insult_adj = INSULT_STUPID
+}
+midas_touched = { #12
+	attribute = stewardship
+	education = yes
+	stewardship = 6
+	monthly_character_prestige = 0.1 #0.5
+	global_tax_modifier = 0.1 #0.15
+
+	male_compliment_adj = COMPL_THRIFTY
+	female_compliment_adj = COMPL_THRIFTY
+	child_compliment_adj = COMPL_CLEVER
+	male_insult_adj = INSULT_MISERLY
+	female_insult_adj = INSULT_MISERLY
+	child_insult_adj = INSULT_STUPID
+}
+
+# MARTIAL OUTCOMES
+misguided_warrior = { #13
+	attribute = martial
+	education = yes
+	martial = 2
+}
+tough_soldier = { #14
+	attribute = martial
+	education = yes
+	martial = 4
+	leadership_traits = 1
+}
+skilled_tactician = { #15
+	attribute = martial
+	education = yes
+	martial = 6
+	monthly_character_prestige = 0.05 #0.1
+	leadership_traits = 2
+}
+brilliant_strategist = { #16
+	attribute = martial
+	education = yes
+	martial = 8
+	monthly_character_prestige = 0.1 #0.2
+	leadership_traits = 3
+}
+
+########## ECCLESIASTICAL OUTCOMES
+detached_priest = { #17
+	attribute = learning
+	education = yes
+	martial = -1
+	learning = 3
+	
+	male_insult_adj = INSULT_DRIVELING
+	female_insult_adj = INSULT_DRIVELING
+	child_insult_adj = INSULT_STUPID
+}
+martial_cleric = { #18
+	attribute = learning
+	education = yes
+	martial = -1
+	learning = 4
+	stewardship = 1
+	
+	male_insult_adj = INSULT_DRIVELING
+	female_insult_adj = INSULT_DRIVELING
+	child_insult_adj = INSULT_STUPID
+}
+scholarly_theologian = { #19
+	attribute = learning
+	education = yes
+	martial = -1
+	learning = 6
+	stewardship = 1
+	monthly_character_prestige = 0.05
+
+	male_compliment_adj = COMPL_LEARNED
+	female_compliment_adj = COMPL_LEARNED
+	child_compliment_adj = COMPL_CLEVER
+	male_insult_adj = INSULT_DRIVELING
+	female_insult_adj = INSULT_DRIVELING
+	child_insult_adj = INSULT_STUPID
+}
+mastermind_theologian = { #20
+	attribute = learning
+	education = yes
+	martial = -1
+	learning = 8
+	stewardship = 1
+	monthly_character_prestige = 0.1
+	
+	male_compliment_adj = COMPL_LEARNED
+	female_compliment_adj = COMPL_LEARNED
+	child_compliment_adj = COMPL_CLEVER
+	male_insult_adj = INSULT_DRIVELING
+	female_insult_adj = INSULT_DRIVELING
+	child_insult_adj = INSULT_STUPID
+}
+
+########################
+# HEALTH - Events
+########################
+
+stressed = { #21
+	is_health = yes
+	intrigue = -1
+	stewardship = -1
+	health = -1
+	fertility = -0.1
+	customizer = no
+}
+depressed = { #22
+	is_health = yes
+	diplomacy = -1
+	stewardship = -1
+	martial = -1
+	intrigue = -1
+	health = -1
+	fertility = -0.05
+	customizer = no
+		
+	male_insult_adj = INSULT_LUGUBRIOUS
+	female_insult_adj = INSULT_LUGUBRIOUS
+	male_insult = INSULT_GRUMBLER
+	female_insult = INSULT_GRUMBLER
+}
+lunatic = { #23
+	is_health = yes
+	# Highly event driven
+	
+	vassal_opinion = -5
+	sex_appeal_opinion = -10
+	same_opinion = 5
+	
+	ai_rationality = -50
+	
+		
+	male_insult = INSULT_LUNATIC
+	female_insult = INSULT_BAT
+	male_insult_adj = INSULT_DEMENTED
+	female_insult_adj = INSULT_CRAZED
+	child_insult_adj = INSULT_CRAZY
+}
+possessed = { # Highly event driven
+	is_health = yes
+	
+	sex_appeal_opinion = -10
+	same_opinion = 5
+	
+	ai_rationality = -40
+	
+	male_insult = INSULT_WARLOCK
+	female_insult = INSULT_DEVIL_WOMAN
+	child_insult = INSULT_DEVIL
+	male_insult_adj = INSULT_DEMONIC
+	female_insult_adj = INSULT_DEMONIC
+}
+ill = { #25
+	is_health = yes
+	is_illness = yes
+	
+	opposites =  {
+		pneumonic
+	}
+	
+	combat_rating = -2
+	
+	martial = -1
+	health = -2
+	fertility = -0.1
+	customizer = no
+}
+pneumonic = { #26
+	is_health = yes
+	is_illness = yes
+	
+	opposites =  {
+		ill
+	}
+	
+	combat_rating = -2
+	
+	diplomacy_penalty = -2
+	stewardship_penalty = -2
+	martial_penalty = -2
+	intrigue_penalty = -2
+	learning_penalty = -2
+	health_penalty = -4
+	fertility_penalty = -0.5
+	customizer = no
+}
+syphilitic = { #27
+	is_health = yes
+	is_illness = yes
+	inherit_chance = 10
+	
+	sex_appeal_opinion = -30
+	
+	combat_rating = -2
+	
+	diplomacy_penalty = -1
+	stewardship_penalty = -1
+	martial_penalty = -1
+	intrigue_penalty = -1
+	learning_penalty = -1
+	
+	health_penalty = -1
+	fertility_penalty = -0.2
+	customizer = no
+	
+	male_insult_adj = INSULT_SYPHILITIC
+	female_insult_adj = INSULT_SYPHILITIC
+	child_insult_adj = INSULT_UGLY
+}
+leper = { #28
+	is_health = yes
+	is_illness = yes
+	diplomacy_penalty = -2
+	health_penalty = -2
+	fertility_penalty = -0.2
+	
+	sex_appeal_opinion = -50
+	same_opinion = 5
+	
+	vassal_opinion = -10
+	customizer = no
+		
+	combat_rating = -2
+	
+	male_insult = INSULT_LEPER
+	female_insult = INSULT_LEPER
+	male_insult_adj = INSULT_UNCLEAN
+	female_insult_adj = INSULT_UNCLEAN
+	child_insult_adj = INSULT_UGLY
+}
+wounded = { #29
+	is_health = yes
+	
+	opposites =  {
+		maimed
+	}
+	
+	combat_rating = -2
+	
+	martial = -1
+	health = -1
+	customizer = no
+}
+maimed = { #30
+	is_health = yes
+	
+	opposites =  {
+		wounded
+	}
+	
+	combat_rating = -4
+	
+	sex_appeal_opinion = -15
+	same_opinion = 5
+	
+	martial = -2
+	health = -2
+	
+	male_insult = INSULT_CRIPPLE
+	male_insult_adj = INSULT_USELESS
+	female_insult_adj = INSULT_USELESS
+}
+infirm = { #31
+	is_health = yes
+
+	diplomacy = -3
+	intrigue = -3
+	stewardship = -3
+	martial = -3
+	learning = -3
+	
+	health = -1
+	fertility = -0.3
+	
+	ai_rationality = -10
+	customizer = no
+	
+	dothraki_opinion = -10
+		
+	combat_rating = -4
+	
+	male_insult = INSULT_DODDERER
+	male_insult_adj = INSULT_SENILE
+	female_insult_adj = INSULT_SENILE
+	child_insult_adj = INSULT_STUPID
+}
+incapable = { #32
+	is_health = yes
+	
+	incapacitating = yes # Will need a regent
+	
+	diplomacy = -100
+	intrigue = -100
+	stewardship = -100
+	martial = -100
+	learning = -100
+	
+	health = -3
+	fertility = -10
+	customizer = no
+	
+	dothraki_opinion = -10
+	fear_modifier = -50
+	
+	combat_rating = -999
+	
+	male_insult = INSULT_VEGETABLE
+	female_insult = INSULT_VEGETABLE
+	male_insult_adj = INSULT_USELESS
+	female_insult_adj = INSULT_USELESS
+}
+drunkard = { #33
+	is_health = yes
+	
+	stewardship = -2
+	health = -1
+
+	general_opinion = -5
+	same_opinion = 10
+	church_opinion = -5
+	sex_appeal_opinion = -5
+	combat_rating = -0.83
+	
+	ai_rationality = -5
+		
+	male_insult = INSULT_DRUNKARD
+	female_insult = INSULT_DRUNKARD
+	male_insult_adj = INSULT_BESOTTED
+	female_insult_adj = INSULT_BESOTTED
+	child_insult_adj = INSULT_STUPID
+}
+has_tuberculosis = { #34
+	is_epidemic = yes
+	is_illness = yes
+	
+	health_penalty = -2
+	
+	combat_rating = -5.17
+	
+	customizer = no
+}
+has_typhoid_fever = { #35
+	is_epidemic = yes
+	is_illness = yes
+	
+	health_penalty = -3
+	
+	combat_rating = -5.17
+	
+	customizer = no
+}
+has_typhus = { #36
+	is_epidemic = yes
+	is_illness = yes
+	
+	health_penalty = -3
+	
+	combat_rating = -5.17
+	
+	customizer = no
+
+	child_insult_adj = INSULT_SMELLY
+}
+has_bubonic_plague = { #37
+	is_epidemic = yes
+	is_illness = yes
+	
+	health_penalty = -7
+	
+	combat_rating = -5.17
+	
+	customizer = no
+
+	male_insult_adj = INSULT_DECAYING
+	female_insult_adj = INSULT_DECAYING
+	child_insult_adj = INSULT_SMELLY
+}
+has_measles = { #38
+	is_epidemic = yes
+	is_illness = yes
+	
+	health_penalty = -2
+	
+	combat_rating = -5.17
+	
+	customizer = no
+}
+has_small_pox = { #39
+	is_epidemic = yes
+	is_illness = yes
+
+	health_penalty = -2
+	
+	combat_rating = -5.17
+	
+	customizer = no
+}
+
+############################
+# HARD STATUS - DO NOT REMOVE!
+############################
+
+crusader = { #40
+	martial = 2
+	
+	church_opinion = 15
+	same_opinion_if_same_religion = 15
+	
+	ai_zeal = 10
+	customizer = no
+		
+	male_compliment = COMPL_CRUSADER
+	female_compliment = COMPL_CRUSADER
+}
+
+bastard = { #41
+	diplomacy = -2
+	same_opinion = 5
+	
+	customizer = no
+	
+	male_insult = INSULT_BASTARD
+	male_insult_adj = INSULT_BASEBORN
+}
+twin = { #42
+	twin_opinion = 25
+	
+	customizer = no
+}
+legit_bastard = { #43
+	diplomacy = -1
+		
+	male_insult = INSULT_BASTARD
+	male_insult_adj = INSULT_BASEBORN
+}
+pregnant = { #44
+	spouse_opinion = 15
+	customizer = no
+}
+excommunicated = { #45
+	diplomacy = -5
+	the_seven_opinion = -20
+	customizer = no
+
+	male_insult = INSULT_RENEGADE
+	female_insult = INSULT_RENEGADE
+	child_insult = INSULT_DEVIL
+	male_insult_adj = INSULT_GODLESS
+	female_insult_adj = INSULT_GODLESS
+	child_insult_adj = INSULT_EVIL
+}
+kinslayer = { #46
+	diplomacy = -3
+	
+	general_opinion = -25
+	dynasty_opinion = -30	
+	dothraki_opinion = 25 #dont care about kinslaying
+	
+	monthly_character_piety = -1
+	customizer = no
+	
+	male_insult = INSULT_KINSLAYER
+	female_insult = INSULT_KINSLAYER
+}
+homosexual = { #47
+	sex_appeal_opinion = 30 # Only to those of the same sex
+	general_opinion = -5
+	
+	#More sexually liberal cultures
+	dornish_opinion = 5
+	summer_islander_opinion = 5
+	
+	fertility = -0.15
+	
+	ruler_designer_cost = 0
+	
+	male_insult = INSULT_SODOMITE
+	male_insult_adj = INSULT_EFFEMINATE
+	female_insult = INSULT_LESBIAN
+	female_insult_adj = INSULT_SAPPHIC
+	child_insult = INSULT_PEABRAIN
+	child_insult_adj = CRAZY
+}
+
+#####################
+# POSSIBLY CONGENITAL
+#####################
+
+clubfooted = { #48
+	birth = 50
+	inherit_chance = 40
+	both_parent_has_trait_inherit_chance = 80
+		
+	sex_appeal_opinion = -10
+	same_opinion = 5
+	dothraki_opinion = -10
+	
+	martial = -1
+	
+	combat_rating = -4
+		
+	male_insult = INSULT_CLUBFOOT
+	female_insult = INSULT_CLUBFOOT
+	male_insult_adj = INSULT_LIMPING
+	female_insult_adj = INSULT_LIMPING
+}
+harelip = { #49
+	birth = 50
+	inherit_chance = 30
+	both_parent_has_trait_inherit_chance = 60
+	sex_appeal_opinion = -10
+	same_opinion = 5
+	dothraki_opinion = -10
+	
+	diplomacy = -1
+		
+	male_insult = INSULT_HARELIP
+	female_insult = INSULT_HARELIP
+	male_insult_adj = INSULT_CLEFT_LIPPED
+	female_insult_adj = INSULT_CLEFT_LIPPED
+}
+hunchback = { #50
+	birth = 50
+	inherit_chance = 30
+	both_parent_has_trait_inherit_chance = 60
+	
+	sex_appeal_opinion = -30
+	same_opinion = 5
+	dothraki_opinion = -10
+	
+	vassal_opinion = -5
+	
+	combat_rating = -4
+	
+	martial = -1
+	ruler_designer_cost = -8
+		
+	male_insult = INSULT_HUNCHBACK
+	female_insult = INSULT_HUNCHBACK
+	male_insult_adj = INSULT_CROOKED
+	female_insult_adj = INSULT_CROOKED
+}
+lisp = { #51
+	birth = 50
+	inherit_chance = 30
+	both_parent_has_trait_inherit_chance = 60
+	
+	sex_appeal_opinion = -5
+	same_opinion = 5
+	
+	diplomacy = -1
+	ruler_designer_cost = -4
+		
+	male_insult = INSULT_LISPER
+	female_insult = INSULT_LISPER
+	male_insult_adj = INSULT_FALTERING
+	female_insult_adj = INSULT_FALTERING
+	child_insult_adj = INSULT_STUPID
+}
+stutter = { #52
+	birth = 50
+	inherit_chance = 40
+	both_parent_has_trait_inherit_chance = 80
+	
+	same_opinion = 5
+	
+	diplomacy = -1
+	ruler_designer_cost = -4
+			
+	male_insult_adj = INSULT_STUTTERING
+	female_insult_adj = INSULT_STUTTERING
+	child_insult_adj = INSULT_STUPID
+}
+fair = { #53
+	birth = 500
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80									  
+	
+	sex_appeal_opinion = 30
+	
+	opposites =  {
+		ugly
+	}
+	
+	diplomacy = 1
+		
+	female_compliment = COMPL_BEAUTY
+	female_compliment_adj = COMPL_FAIR
+	male_compliment = COMPL_CHARMER
+	male_compliment_adj = COMPL_HANDSOME
+	child_compliment_adj = COMPL_PRETTY
+}
+ugly = { #54
+	birth = 100
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
+	
+	sex_appeal_opinion = -20
+	
+	opposites =  {
+		fair
+	}
+	
+	diplomacy = -1
+	
+	male_insult = INSULT_GROTESQUE
+	female_insult = INSULT_GORGON
+	female_insult = INSULT_TROLL
+	male_insult_adj = INSULT_HIDEOUS
+	female_insult_adj = INSULT_HIDEOUS
+	child_insult_adj = INSULT_UGLY
+}
+dwarf = { #55  
+	birth = 25
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
+	
+	opposites =  {
+		tall
+	}	
+	
+	sex_appeal_opinion = -20
+	same_opinion = 5
+	general_opinion = -5
+	tribal_opinion = -20
+	dothraki_opinion = -15
+	
+	martial = -1
+		
+	combat_rating = -4
+	
+	male_insult = INSULT_DWARF
+	female_insult = INSULT_DWARF
+	male_insult_adj = INSULT_LITTLE
+	female_insult_adj = INSULT_LITTLE
+	child_insult_adj = INSULT_STUPID
+}
+genius = { #56
+	birth = 50
+	inherit_chance = 25
+	both_parent_has_trait_inherit_chance = 50									  
+	
+	opposites =  {
+		imbecile
+		slow
+		quick
+		dull
+	}
+	
+	diplomacy = 5
+	intrigue = 5
+	stewardship = 5
+	martial = 5
+	learning = 5
+	
+	combat_rating = 2
+	dragon_hatching = 1
+	dragon_taming = 2
+	
+	ai_rationality = 30
+	
+	vassal_opinion = 5
+	
+	male_compliment = COMPL_GENIUS
+	male_compliment_adj = COMPL_BRILLIANT
+	female_compliment = COMPL_GENIUS
+	female_compliment_adj = COMPL_BRILLIANT
+	child_compliment = COMPL_SMARTY
+	child_compliment_adj = COMPL_CLEVER
+}
+quick = { #57
+	birth = 100
+	inherit_chance = 40
+	both_parent_has_trait_inherit_chance = 80
+	
+	opposites =  {
+		imbecile
+		slow
+		genius
+		dull
+	}
+	
+	diplomacy = 3
+	intrigue = 3
+	stewardship = 3
+	martial = 3
+	learning = 3
+	
+	combat_rating = 1.17
+	dragon_hatching = 0.25
+	dragon_taming = 0.5
+	
+	ai_rationality = 15
+}
+slow = { #58
+	birth = 100
+	inherit_chance = 40
+	both_parent_has_trait_inherit_chance = 80
+	
+	opposites =  {
+		imbecile
+		quick
+		genius
+		shrewd
+	}
+	
+	diplomacy = -3
+	intrigue = -3
+	stewardship = -3
+	martial = -3
+	learning = -3
+	
+	ai_rationality = -15
+	
+	combat_rating = -1.17
+	dragon_hatching = -0.25
+	dragon_taming = -1
+		
+	male_insult = INSULT_DULLARD
+	female_insult = INSULT_NITWIT
+	male_insult_adj = INSULT_DIM
+	female_insult_adj = INSULT_VACUOUS
+}
+imbecile = { #59
+	birth = 50
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
+	
+	sex_appeal_opinion = -30
+	
+	opposites =  {
+		slow
+		quick
+		genius
+	}
+	
+	diplomacy = -8
+	intrigue = -8
+	stewardship = -8
+	martial = -8
+	learning = -8
+	
+	ai_rationality = -30
+	
+	combat_rating = -2
+	dragon_hatching = -0.25
+	dragon_taming = -2
+	
+	vassal_opinion = -10
+		
+	male_insult = INSULT_IMBECILE
+	female_insult = INSULT_IMBECILE
+	child_insult = INSULT_PEABRAIN
+	male_insult_adj = INSULT_IDIOT
+	female_insult_adj = INSULT_IDIOT
+}
+inbred = { #60
+	inbred = yes
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
+	
+	sex_appeal_opinion = -30
+	
+	fertility = -0.3
+	health = -1.5
+	diplomacy = -5
+	intrigue = -5
+	stewardship = -5
+	martial = -5
+	learning = -5
+		
+	vassal_opinion = -10
+	
+	ai_rationality = -20
+		
+	male_insult = INSULT_ABOMINATION
+	female_insult = INSULT_FREAK
+	child_insult = INSULT_TROLL
+	male_insult_adj = INSULT_MONSTROUS
+	female_insult_adj = INSULT_HIDEOUS
+	child_insult_adj = INSULT_UGLY
+}
+strong = { #61
+	birth = 100
+	inherit_chance = 25
+	both_parent_has_trait_inherit_chance = 50
+	
+	opposites =  {
+		weak
+	}
+	
+	diplomacy = 1
+	martial = 2
+	
+	health = 1
+	fertility = 0.1
+	
+	combat_rating = 2
+	dragon_taming = 1
+	
+	sex_appeal_opinion = 10
+	vassal_opinion = 5
+	#tribal_opinion = 10
+	dothraki_opinion = 10
+	
+	male_compliment_adj = COMPL_STRONG
+}
+weak = { #62
+	birth = 100
+	inherit_chance = 25
+	both_parent_has_trait_inherit_chance = 50
+	
+	opposites =  {
+		strong
+	}
+	
+	health = -1.0
+	fertility = -0.05
+	
+	martial = -1
+	combat_rating = -2
+	dragon_taming = -1
+	
+	sex_appeal_opinion = -10
+	vassal_opinion = -5
+	#tribal_opinion = -10
+	dothraki_opinion = -15
+	
+	male_insult = INSULT_WEAKLING
+}
+
+
+################################################
+# LIFESTYLE - Events - only 1 lifestyle (adult)
+################################################
+
+celibate = { #63
+
+	opposites =  {
+		hedonist
+		lustful
+		seducer
+		seductress
+	}
+	fertility = -10.0
+	
+	church_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 10
+	summer_rel_opinion = -10
+	dothraki_opinion = -10
+	
+	monthly_character_piety = 1
+	customizer = no
+	ai_zeal = 30
+	
+	male_compliment = COMPL_VIRTUOUS
+	female_compliment = COMPL_VIRTUOUS
+	child_compliment_adj = COMPL_NICE
+	male_insult = INSULT_UNMANLY
+	female_insult = INSULT_FRIGID
+	child_insult_adj = INSULT_STUPID
+}
+hedonist = { #64
+	lifestyle = yes
+	
+	opposites =  {
+		celibate
+		chaste
+	}
+
+	fertility = 0.2
+		
+	diplomacy = 2
+	intrigue = 1
+	opposite_opinion = -5
+	same_opinion = 10
+	
+	church_opinion = -5
+	
+	monthly_character_piety = -0.5
+	
+	ai_zeal = -30
+	ruler_designer_cost = 10
+	
+	male_insult = INSULT_DEBAUCHER
+	female_insult = INSULT_DEBAUCHER
+	child_insult = INSULT_HAYBRAIN
+	male_insult_adj = INSULT_PERVERTED
+	female_insult_adj = INSULT_DEGENERATE
+	child_insult_adj = INSULT_CRAZY
+}
+scholar = { #65
+	lifestyle = yes
+	
+	learning = 3
+	dragon_hatching = 0.25
+	
+	same_opinion = 10
+	
+	ruler_designer_cost = 10
+	
+	male_compliment = COMPL_SCHOLAR
+	female_compliment = COMPL_SCHOLAR
+	child_compliment = COMPL_SMARTY
+	male_compliment_adj = COMPL_LEARNED
+	female_compliment_adj = COMPL_LEARNED
+	child_compliment_adj = COMPL_CLEVER
+	male_insult = INSULT_BOOKWORM
+	female_insult = INSULT_BOOKWORM
+	child_insult = INSULT_BORE
+	male_insult_adj = INSULT_SQUINTEYED
+	female_insult_adj = INSULT_SQUINTEYED
+}
+gardener = { #66
+	lifestyle = yes
+	
+	stewardship = 2
+	learning = 1
+	
+	same_opinion = 10
+	drowned_god_opinion = -2
+	ironborn_opinion = -2
+	
+	ruler_designer_cost = 10
+	
+	male_insult = INSULT_TREEHUGGER
+	female_insult = INSULT_TREEHUGGER
+}
+mystic = { #67
+	lifestyle = yes
+	
+	intrigue = 1
+	
+	same_opinion = 10
+	dothraki_opinion = -15
+	
+	male_compliment = COMPL_MYSTIC
+	female_compliment = COMPL_MYSTIC
+	
+	ruler_designer_cost = 10
+	
+	dragon_hatching = 0.25
+	
+	male_compliment = COMPL_SCHOLAR
+	female_compliment = COMPL_SCHOLAR
+	child_compliment = COMPL_SMARTY
+	male_compliment_adj = COMPL_LEARNED
+	female_compliment_adj = COMPL_LEARNED
+	child_compliment_adj = COMPL_CLEVER
+	male_insult = INSULT_OCCULTIST
+	female_insult = INSULT_OCCULTIST
+	child_insult = INSULT_DEVIL
+	male_insult_adj = INSULT_GODLESS
+	female_insult_adj = INSULT_GODLESS
+	child_insult_adj = INSULT_WEIRD
+}
+impaler = { #68
+	lifestyle = yes
+
+	intrigue = 2
+	learning = 1
+	
+	opposites = {
+		kind
+		charitable
+	}	
+	
+	same_opinion = 10
+	nath_pagan_opinion = -10
+	fear_modifier = 20
+	
+	ai_honor = -15
+		
+	male_insult = INSULT_TORTURER
+	female_insult = INSULT_TORTURER
+	male_insult_adj = INSULT_EVIL
+	female_insult_adj = INSULT_EVIL
+	child_insult_adj = INSULT_WICKED
+	
+	ruler_designer_cost = 10
+}
+duelist = { #69
+	lifestyle = yes
+	
+	martial = 1
+	
+	same_opinion = 10
+	
+	ruler_designer_cost = 10
+	
+	male_compliment = COMPL_BLADEMASTER
+	female_compliment = COMPL_CHAMPION
+}
+hunter = { #70
+	lifestyle = yes
+	
+	martial = 1
+	diplomacy = 1
+	
+	same_opinion = 10
+	
+	ruler_designer_cost = 10
+	
+	male_compliment = COMPL_HUNTMASTER
+}
+# Way of Life DLC: No longer a lifestyle trait
+poet = {
+	diplomacy = 1
+	
+	same_opinion = 10
+	
+	male_compliment = COMPL_POET
+	female_compliment = COMPL_POET
+	
+	ruler_designer_cost = 4
+}
+
+# Way of Life DLC: No longer a lifestyle trait
+falconer = {
+	diplomacy = 1
+	
+	same_opinion = 10
+	
+	ruler_designer_cost = 4
+}
+
+#################################################################
+# PERSONALITY - Events, should happen more often during childhood
+#################################################################
+
+# THE SEVEN SINS AND VIRTUES
+lustful = { #73
+	personality = yes
+	opposites =  {
+		chaste
+		celibate
+	}
+	
+	vice = yes
+	
+	fertility = 0.2
+	
+	intrigue = 1
+	
+	church_opinion = -5
+	summer_rel_opinion = 10
+	
+	monthly_character_piety = -0.25
+	
+	ai_greed = 20
+	ai_zeal = -10
+		
+	male_insult = INSULT_LECHER
+	male_insult_adj = INSULT_LECHEROUS
+	child_insult = INSULT_TROLL
+	child_insult_adj = INSULT_CREEPY
+	female_insult = INSULT_TROLLOP
+	female_insult_adj = INSULT_WANTON
+	male_compliment_adj = COMPL_VIVACIOUS
+	female_compliment_adj = COMPL_VIVACIOUS
+	female_compliment_adj = COMPL_NICE
+}
+chaste = { #74
+	personality = yes
+	opposites =  {
+		lustful
+		hedonist
+	}
+	fertility = -0.15
+	learning = 1
+	
+	church_opinion = 5
+	opposite_opinion = -5
+	summer_rel_opinion = -10
+	
+	monthly_character_piety = 0.5
+	
+	ai_zeal = 10
+		
+	male_compliment_adj = COMPL_CHASTE
+	female_compliment_adj = COMPL_CHASTE
+	child_compliment_adj = COMPL_NICE
+	male_insult = INSULT_PRUDE
+	female_insult = INSULT_PRUNE
+	child_insult = INSULT_PIGFACE
+	female_insult_adj = INSULT_PRUDISH
+	child_insult_adj = INSULT_STUPID
+}
+gluttonous = { #75
+	personality = yes
+	opposites =  {
+		temperate
+	}
+	
+	vice = yes
+	
+	sex_appeal_opinion = -15
+	church_opinion = -5
+	same_opinion = 5
+	
+	stewardship = -2
+	
+	ai_greed = 20
+	ai_zeal = -10
+		
+	male_insult = INSULT_GLUTTON
+	male_insult_adj = INSULT_GORGING
+	female_insult = INSULT_GLUTTON
+	female_insult_adj = INSULT_GORGING
+	child_insult = INSULT_PIGFACE
+	child_insult_adj = INSULT_FLABBY
+}
+temperate = { #76
+	personality = yes
+	opposites =  {
+		gluttonous
+	}
+	
+	church_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	stewardship = 2
+	
+	ai_greed = -20
+	ai_zeal = 10
+		
+	male_insult = INSULT_BORE
+	female_insult = INSULT_BORE
+	male_compliment_adj = COMPL_LEVELHEADED
+	female_compliment_adj = COMPL_PLEASANT
+	child_compliment_adj = COMPL_NICE
+}
+greedy = { #77
+	personality = yes
+	opposites =  {
+		charitable
+		content
+	}
+	
+	vice = yes
+	
+	global_tax_modifier = 0.1
+	diplomacy = -1
+	
+	ai_honor = -10
+	ai_ambition = 15
+	ai_greed = 100
+		
+	male_insult_adj = INSULT_COVETOUS
+	female_insult_adj = INSULT_VENAL
+	child_insult_adj = INSULT_STUPID
+}
+charitable = { #78
+	personality = yes
+	opposites =  {
+		greedy
+		cruel
+		impaler
+	}
+	diplomacy = 3
+	
+	church_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 5
+	drowned_god_opinion = -5
+	
+	ai_honor = 10
+	ai_ambition = -15
+	ai_greed = -100
+	
+	ai_zeal = 10
+		
+	male_compliment_adj = COMPL_GOOD
+	female_compliment_adj = COMPL_GOOD
+}
+slothful = { #79
+	personality = yes
+	opposites =  {
+		diligent
+	}
+	
+	vice = yes
+	
+	vassal_opinion = -5
+	
+	diplomacy = -1
+	intrigue = -1
+	stewardship = -1
+	martial = -1
+	learning = -1
+	
+	ai_ambition = -10
+	
+	ai_greed = 10
+	ai_zeal = -10
+	
+	dragon_hatching = -0.25
+		
+	male_insult = INSULT_IDLER
+	female_insult = INSULT_IDLER
+	male_insult_adj = INSULT_INDOLENT
+	female_insult_adj = INSULT_INDOLENT
+	child_insult_adj = INSULT_LAZY
+}
+diligent = { #80
+	personality = yes
+	opposites =  {
+		slothful
+	}
+	
+	vassal_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	diplomacy = 1
+	intrigue = 1
+	stewardship = 1
+	martial = 1
+	learning = 1
+	
+	ai_greed = -10
+	ai_zeal = 10
+		
+	male_compliment_adj = COMPL_DILIGENT
+	female_compliment_adj = COMPL_DILIGENT
+}
+envious = { #81
+	personality = yes
+	opposites =  {
+		kind
+		content
+	}
+	
+	vice = yes
+	
+	intrigue = 2
+	diplomacy = -1
+	
+	liege_opinion = -15
+	ambition_opinion = -15
+	
+	ai_ambition = 20
+	ai_honor = -10
+		
+	male_insult_adj = INSULT_ENVIOUS
+	female_insult_adj = INSULT_ENVIOUS
+}
+kind = { #82
+	personality = yes
+	opposites =  {
+		envious
+		cruel
+		impaler
+	}
+	intrigue = -2
+	diplomacy = 2
+	
+	vassal_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 5
+	nath_pagan_opinion = 10
+	fear_modifier = -20
+	
+	ai_honor = 10
+		
+	male_insult_adj = INSULT_SOFT
+	male_compliment_adj = COMPL_KINDLY
+	female_compliment_adj = COMPL_KINDHEARTED
+}
+wroth = { #83
+	personality = yes
+	opposites =  {
+		patient
+	}
+	
+	vice = yes
+	
+	diplomacy = -1
+	intrigue = -1
+	martial = 1 #former 3
+	fear_modifier = 10
+	
+	ai_ambition = 10
+	ai_rationality = -10
+	ai_honor = -5
+	
+	dragon_hatching = -0.25
+		
+	male_insult_adj = INSULT_RAGING
+	female_insult = INSULT_HARRIDAN
+	child_insult = INSULT_MEANIE
+}
+patient = { #84
+	personality = yes
+	opposites =  {
+		wroth
+	}
+	diplomacy = 1
+	intrigue = 1
+	stewardship = 1
+	learning = 1
+	opposite_opinion = -5
+	fear_modifier = -10
+	
+	ai_rationality = 10
+	
+	command_modifier = {
+		defence = 0.2
+	}
+		
+	male_insult = INSULT_SPIDER
+	female_insult = INSULT_SPIDER
+	child_insult = INSULT_DONKEY
+}
+proud = { #85
+	personality = yes
+	opposites =  {
+		humble
+	}
+	
+	vice = yes
+	
+	monthly_character_prestige = 0.5
+	ambition_opinion = -10
+	
+	ai_ambition = 10
+		
+	male_compliment_adj = COMPL_PROUD
+	female_compliment_adj = COMPL_PROUD
+}
+humble = { #86
+	personality = yes
+	opposites =  {
+		proud
+		ambitious
+	}
+	
+	monthly_character_piety = 1
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	ai_ambition = -10
+		
+	male_compliment_adj = COMPL_HUMBLE
+	female_compliment_adj = COMPL_HUMBLE
+	male_insult_adj = INSULT_GROVELING
+	female_insult_adj = INSULT_GROVELING
+	child_insult_adj = INSULT_STUPID
+}
+
+# OTHER
+
+deceitful = { #87
+	personality = yes
+	opposites =  {
+		honest
+	}
+	
+	intrigue = 3
+	diplomacy = -2
+	
+	opposite_opinion = -5
+	
+	ai_honor = -25
+	combat_rating = 1.17
+	
+	ruler_designer_cost = 2
+		
+	male_insult_adj = INSULT_DECEITFUL
+	female_insult_adj = INSULT_DECEITFUL
+	child_insult_adj = INSULT_WICKED
+}
+honest = { #88
+	personality = yes
+	opposites =  {
+		deceitful
+	}
+	
+	intrigue = -2
+	diplomacy = 3
+	
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	ai_honor = 25
+	combat_rating = -1.17
+		
+	male_compliment_adj = COMPL_SINCERE
+	female_compliment_adj = COMPL_FORTHRIGHT
+	child_compliment_adj = COMPL_GOOD
+}
+craven = { #89
+	personality = yes
+	opposites =  {
+		brave
+	}
+	
+	vassal_opinion = -5
+	dothraki_opinion = -5
+	drowned_god_opinion = -2
+	ironborn_opinion = -2
+	
+	martial = -2
+	
+	combat_rating = -2
+	dragon_hatching = -0.25
+	
+	command_modifier = {
+		morale_defence = -0.2
+	}
+		
+	male_insult = INSULT_COWARD
+	male_insult_adj = INSULT_CRAVEN
+	female_insult_adj = INSULT_WUSSY
+	child_insult_adj = INSULT_WUSSY
+}
+brave = { #90
+	personality = yes
+	opposites =  {
+		craven
+	}
+	
+	vassal_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 5
+	dothraki_opinion = 5
+	drowned_god_opinion = 2
+	ironborn_opinion = 2
+	
+	martial = 2
+	
+	combat_rating = 2
+	dragon_hatching = 0.25
+	dragon_taming = 1
+	
+	command_modifier = {
+		morale_defence = 0.1
+	}
+		
+	male_compliment_adj = COMPL_BRAVE
+	female_compliment_adj = COMPL_BRAVE
+}
+shy = { #91
+	personality = yes
+	opposites =  {
+		gregarious
+	}
+	
+	diplomacy = -2
+		
+	male_insult_adj = INSULT_TIMID
+	female_insult_adj = INSULT_COY
+	child_insult_adj = INSULT_STUPID
+	female_compliment_adj = COMPL_DEMURE
+	child_compliment_adj = COMPL_NICE
+}
+gregarious = { #92
+	personality = yes
+	opposites =  {
+		shy
+	}
+	
+	sex_appeal_opinion = 5
+	same_opinion = 5
+	
+	vassal_opinion = 5
+	
+	diplomacy = 2
+		
+	male_compliment = COMPL_WIT
+	male_compliment_adj = COMPL_AFFABLE
+	female_compliment = COMPL_WIT
+	female_compliment_adj = COMPL_FETCHING
+	child_compliment_adj = COMPL_NICE
+	child_compliment_adj = COMPL_HERO	
+}
+ambitious = { #93
+	personality = yes
+	opposites =  {
+		content
+		humble
+	}
+	
+	intrigue = 2
+	stewardship = 2
+	diplomacy = 2
+	martial = 2
+	learning = 2
+	
+	same_opinion = -5
+	ambition_opinion = -25 # Against those they want something from
+	dothraki_opinion = 5
+	drowned_god_opinion = 2
+	ironborn_opinion = 2
+	
+	ai_ambition = 40
+	ai_zeal = 10
+
+	male_insult_adj = INSULT_RAPACIOUS
+	female_insult_adj = INSULT_GRASPING
+	male_insult_adj = INSULT_RAPACIOUS
+	female_insult_adj = INSULT_GRASPING
+	child_insult_adj = INSULT_WICKED
+}
+content = { #94
+	personality = yes
+	opposites =  {
+		ambitious
+		greedy
+		envious
+	}
+	
+	intrigue = -1
+	
+	liege_opinion = 25
+	dothraki_opinion = -5
+	drowned_god_opinion = -2
+	ironborn_opinion = -2
+	
+	monthly_character_piety = 0.5
+	
+	ai_ambition = -40
+	ai_zeal = -10
+	
+	ruler_designer_cost = 20
+
+	male_insult_adj = INSULT_SPINELESS
+	female_insult_adj = INSULT_SPINELESS
+}
+arbitrary = { #95
+	personality = yes
+	opposites =  {
+		just
+	}
+	
+	stewardship = -2
+	learning = -1
+	
+	vassal_opinion = -5
+	
+	ai_rationality = -20
+	ai_honor = -10
+	ai_zeal = -10
+		
+	male_insult = INSULT_SCATTERBRAIN
+	female_insult = INSULT_SCATTERBRAIN
+	child_insult_adj = INSULT_IDIOT
+	male_insult_adj = INSULT_ERRATIC
+	female_insult_adj = INSULT_ERRATIC
+	child_insult_adj = INSULT_WICKED
+	male_compliment = COMPL_ROGUE
+	male_compliment_adj = COMPL_RAFFISH
+	female_compliment = COMPL_DEVIL
+	female_compliment_adj = COMPL_IMPISH
+	child_compliment = COMPL_SMARTY
+	child_compliment_adj = COMPL_CLEVER
+}
+just = { #96
+	personality = yes
+	opposites =  {
+		arbitrary
+	}
+	
+	stewardship = 2
+	learning = 1
+	
+	vassal_opinion = 5
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	ai_rationality = 20
+	ai_honor = 10
+	ai_zeal = 10
+		
+	male_compliment_adj = COMPL_JUST
+	female_compliment_adj = COMPL_JUST
+	child_compliment_adj = COMPL_NICE
+}
+cynical = { #97
+	personality = yes
+	opposites = {
+		zealous
+	}
+	
+	intrigue = 2
+	
+	church_opinion = -5
+	opposite_opinion = -5
+	same_opinion = 5
+	
+	monthly_character_piety = -0.2
+	
+	ai_rationality = 10
+	ai_zeal = -100
+		
+	male_compliment_adj = COMPL_WRY
+	female_compliment_adj = COMPL_WRY
+	child_compliment_adj = COMPL_CLEVER
+	male_insult = INSULT_UNBELIEVER
+	female_insult = INSULT_UNBELIEVER
+	child_insult = INSULT_DEVIL
+}
+zealous = { #98
+	personality = yes
+	opposites =  {
+		cynical
+	}
+	
+	martial = 2
+	
+	church_opinion = 5
+	infidel_opinion = -25
+	opposite_opinion = -5
+	same_opinion_if_same_religion = 15
+	
+	monthly_character_piety = 1
+	
+	ai_rationality = -10
+	ai_zeal = 100
+		
+	male_insult = INSULT_FANATIC
+	female_insult = INSULT_FANATIC
+	child_insult = INSULT_BORE
+	male_insult_adj = INSULT_NARROWMINDED
+	female_insult_adj = INSULT_NARROWMINDED
+	child_insult_adj = INSULT_NASTY
+	male_compliment_adj = COMPL_RIGHTEOUS
+	female_compliment_adj = COMPL_RIGHTEOUS
+	child_compliment_adj = COMPL_GOOD
+}
+paranoid = { #99
+	personality = yes
+	opposites =  {
+		trusting
+	}
+	
+	intrigue = 2
+	diplomacy = -1
+	
+	ai_honor = -10
+		
+	male_insult_adj = INSULT_PARANOID
+	female_insult_adj = INSULT_PARANOID
+	child_insult_adj = INSULT_GROUCHY
+}
+trusting = { #100
+	personality = yes
+	opposites =  {
+		paranoid
+	}
+	
+	intrigue = -2
+	diplomacy = 1
+	
+	ai_honor = 10
+		
+	male_insult = INSULT_FOOL
+	female_insult = INSULT_FOOL
+	male_insult_adj = INSULT_GULLIBLE
+	female_insult_adj = INSULT_GULLIBLE
+	child_insult_adj = INSULT_STUPID
+}
+cruel = { #101
+	personality = yes
+	opposites =  {
+		kind
+		charitable
+	}
+	
+	intrigue = 1
+	diplomacy = -1
+	
+	general_opinion = -5
+	vassal_opinion = -5
+	sex_appeal_opinion = -5
+	dothraki_opinion = 5
+	drowned_god_opinion = 2
+	ironborn_opinion = 2
+	nath_pagan_opinion = -10
+	
+	fear_modifier = 20
+	
+	ai_honor = -10
+	ai_greed = 10
+	
+	command_modifier = {
+		morale_offence = 0.1
+	}
+		
+	male_insult = INSULT_BRUTE
+	female_insult = INSULT_FIEND
+	child_insult = INSULT_TROLL
+	male_insult_adj = INSULT_CRUEL
+	female_insult_adj = INSULT_CALLOUS
+	child_insult_adj = INSULT_WICKED
+}
+
+#Leadership traits
+light_foot_leader = {
+	leader = yes
+	
+	command_modifier = {
+		light_infantry = 0.2
+	}
+}
+
+heavy_infantry_leader = {
+	leader = yes
+	
+	command_modifier = {
+		heavy_infantry = 0.2
+	}
+}
+
+cavalry_leader = {
+	leader = yes
+	
+	command_modifier = {
+		cavalry = 0.2
+	}
+	dothraki_opinion = 2
+}
+
+inspiring_leader = {
+	leader = yes
+	
+	command_modifier = {
+		morale_offence = 0.15
+		morale_defence = 0.15
+	}
+}
+
+trickster = {
+	leader = yes
+	
+	command_modifier = {
+		random = 0.3
+	}
+}
+
+organizer = {
+	leader = yes
+	
+	command_modifier = {
+		speed = 0.2
+		retreat = 0.1
+	}
+}
+
+defensive_leader = {
+	leader = yes
+	
+	command_modifier = {
+		defence = 0.25
+		damage = -0.1
+	}
+}
+
+# Renamed to "Direct Leader"
+experimenter = {
+	leader = yes
+	
+	command_modifier = {
+		center = 0.2
+	}
+}
+
+flanker = {
+	leader = yes
+	
+	command_modifier = {
+		flank = 0.2
+	}
+}
+
+aggressive_leader = {
+	leader = yes
+	
+	command_modifier = {
+		pursue = 0.25
+		damage = 0.1
+		defence = -0.1
+	}
+}
