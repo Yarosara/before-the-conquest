@@ -9971,13 +9971,24 @@
 	religion="old_gods"
 	culture="northman"
 	
+	diplomacy = 4
+	martial = 7
+	stewardship = 5
+	intrigue = 0
+	learning = 5
+	
+	disallow_random_traits = yes
+	
 	add_trait="longclaw"
 	add_trait="strong"
 	add_trait="touched_by_fate"
 	
 	7969.1.1 = {birth="7969.1.1"}
-	7976.1.1 = {add_trait = brownbear}
-	7985.1.1 = {add_trait = tough_soldier add_trait = master_warrior}
+	7976.1.1 = {add_trait = brave}
+	7981.1.1 = {add_trait = trusting}
+	7985.1.1 = {add_trait = tough_soldier 
+				add_trait = master_warrior
+				add_trait = unyielding_leader}
 	7986.1.1 = {add_spouse=18102}
 	7986.1.1 = {add_trait = content}
 	7989.1.1 = {give_nickname = nick_the_black_bear}
