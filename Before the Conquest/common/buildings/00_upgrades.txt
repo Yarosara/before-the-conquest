@@ -1,0 +1,626 @@
+castle = {
+
+	ca_upgrade_bv_1 = {
+		desc = ca_upgrade_bv_1_desc
+		potential = {
+			NOT = { region = world_beyond_the_wall }
+			NOT = { region = world_dothraki }
+			NOT = { region = world_ifeqevron }
+			NOT = { region = world_jogos_nhai }
+			NOT = {
+				county = {
+					OR = {
+						title = c_castle_black
+						title = c_eastwatch
+						title = c_shadow_tower
+					}
+				}
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+			FROMFROM = {
+				NOT = { has_building = ca_asoiaf_reach_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_westerland_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_vale_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_storm_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_crown_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_ironislands_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_dorne_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_river_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_north_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_essos_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_summerisland_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_qarth_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_ghiscari_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_lhazareen_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_eastern_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_ibben_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_yiti_basevalue_1 }
+				NOT = { has_building = ca_asoiaf_sarnor_basevalue_1 }
+			}	
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 100
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ca_upgrade_bv_2 = {
+		desc = ca_upgrade_bv_2_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ca_asoiaf_reach_basevalue_1
+					has_building = ca_asoiaf_westerland_basevalue_1
+					has_building = ca_asoiaf_vale_basevalue_1
+					has_building = ca_asoiaf_storm_basevalue_1
+					has_building = ca_asoiaf_crown_basevalue_1
+					has_building = ca_asoiaf_ironislands_basevalue_1
+					has_building = ca_asoiaf_dorne_basevalue_1
+					has_building = ca_asoiaf_river_basevalue_1
+					has_building = ca_asoiaf_north_basevalue_1
+					has_building = ca_asoiaf_essos_basevalue_1
+					has_building = ca_asoiaf_summerisland_basevalue_1
+					has_building = ca_asoiaf_qarth_basevalue_1
+					has_building = ca_asoiaf_ghiscari_basevalue_1
+					has_building = ca_asoiaf_lhazareen_basevalue_1
+					has_building = ca_asoiaf_eastern_basevalue_1
+					has_building = ca_asoiaf_ibben_basevalue_1
+					has_building = ca_asoiaf_yiti_basevalue_1
+					has_building = ca_asoiaf_sarnor_basevalue_1
+				}
+				NOT = { has_building = ca_asoiaf_reach_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_westerland_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_vale_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_storm_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_crown_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_ironislands_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_dorne_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_river_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_north_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_essos_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_summerisland_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_qarth_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_ghiscari_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_lhazareen_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_eastern_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_ibben_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_yiti_basevalue_2 }
+				NOT = { has_building = ca_asoiaf_sarnor_basevalue_2 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }			
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 150
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ca_upgrade_bv_3 = {
+		desc = ca_upgrade_bv_3_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ca_asoiaf_reach_basevalue_2
+					has_building = ca_asoiaf_westerland_basevalue_2
+					has_building = ca_asoiaf_vale_basevalue_2
+					has_building = ca_asoiaf_storm_basevalue_2
+					has_building = ca_asoiaf_crown_basevalue_2
+					has_building = ca_asoiaf_ironislands_basevalue_2
+					has_building = ca_asoiaf_dorne_basevalue_2
+					has_building = ca_asoiaf_river_basevalue_2
+					has_building = ca_asoiaf_north_basevalue_2
+					has_building = ca_asoiaf_essos_basevalue_2
+					has_building = ca_asoiaf_summerisland_basevalue_2
+					has_building = ca_asoiaf_qarth_basevalue_2
+					has_building = ca_asoiaf_ghiscari_basevalue_2
+					has_building = ca_asoiaf_lhazareen_basevalue_2
+					has_building = ca_asoiaf_eastern_basevalue_2
+					has_building = ca_asoiaf_ibben_basevalue_2
+					has_building = ca_asoiaf_yiti_basevalue_2
+					has_building = ca_asoiaf_sarnor_basevalue_2
+				}
+				NOT = { has_building = ca_asoiaf_reach_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_westerland_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_vale_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_storm_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_crown_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_ironislands_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_dorne_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_river_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_north_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_essos_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_summerisland_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_qarth_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_ghiscari_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_lhazareen_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_eastern_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_ibben_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_yiti_basevalue_3 }
+				NOT = { has_building = ca_asoiaf_sarnor_basevalue_3 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 200
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ca_upgrade_bv_4 = {
+		desc = ca_upgrade_bv_4_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ca_asoiaf_reach_basevalue_3
+					has_building = ca_asoiaf_westerland_basevalue_3
+					has_building = ca_asoiaf_vale_basevalue_3
+					has_building = ca_asoiaf_storm_basevalue_3
+					has_building = ca_asoiaf_crown_basevalue_3
+					has_building = ca_asoiaf_ironislands_basevalue_3
+					has_building = ca_asoiaf_dorne_basevalue_3
+					has_building = ca_asoiaf_river_basevalue_3
+					has_building = ca_asoiaf_north_basevalue_3
+					has_building = ca_asoiaf_essos_basevalue_3
+					has_building = ca_asoiaf_summerisland_basevalue_3
+					has_building = ca_asoiaf_qarth_basevalue_3
+					has_building = ca_asoiaf_ghiscari_basevalue_3
+					has_building = ca_asoiaf_lhazareen_basevalue_3
+					has_building = ca_asoiaf_eastern_basevalue_3
+					has_building = ca_asoiaf_ibben_basevalue_3
+					has_building = ca_asoiaf_yiti_basevalue_3
+					has_building = ca_asoiaf_sarnor_basevalue_3
+				}
+				NOT = { has_building = ca_asoiaf_reach_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_westerland_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_vale_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_storm_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_crown_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_ironislands_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_dorne_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_river_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_north_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_essos_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_summerisland_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_qarth_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_ghiscari_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_lhazareen_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_eastern_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_ibben_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_yiti_basevalue_4 }
+				NOT = { has_building = ca_asoiaf_sarnor_basevalue_4 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }			
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 300
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ca_upgrade_bv_5 = {
+		desc = ca_upgrade_bv_5_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ca_asoiaf_reach_basevalue_4
+					has_building = ca_asoiaf_westerland_basevalue_4
+					has_building = ca_asoiaf_vale_basevalue_4
+					has_building = ca_asoiaf_storm_basevalue_4
+					has_building = ca_asoiaf_crown_basevalue_4
+					has_building = ca_asoiaf_ironislands_basevalue_4
+					has_building = ca_asoiaf_dorne_basevalue_4
+					has_building = ca_asoiaf_river_basevalue_4
+					has_building = ca_asoiaf_north_basevalue_4
+					has_building = ca_asoiaf_essos_basevalue_4
+					has_building = ca_asoiaf_summerisland_basevalue_4
+					has_building = ca_asoiaf_qarth_basevalue_4
+					has_building = ca_asoiaf_ghiscari_basevalue_4
+					has_building = ca_asoiaf_lhazareen_basevalue_4
+					has_building = ca_asoiaf_eastern_basevalue_4
+					has_building = ca_asoiaf_ibben_basevalue_4
+					has_building = ca_asoiaf_yiti_basevalue_4
+					has_building = ca_asoiaf_sarnor_basevalue_4
+				}
+				NOT = { has_building = ca_asoiaf_reach_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_westerland_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_vale_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_storm_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_crown_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_ironislands_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_dorne_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_river_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_north_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_essos_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_summerisland_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_qarth_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_ghiscari_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_lhazareen_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_eastern_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_ibben_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_yiti_basevalue_5 }
+				NOT = { has_building = ca_asoiaf_sarnor_basevalue_5 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 400
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ca_upgrade_bv_6 = {
+		desc = ca_upgrade_bv_6_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ca_asoiaf_reach_basevalue_5
+					has_building = ca_asoiaf_westerland_basevalue_5
+					has_building = ca_asoiaf_vale_basevalue_5
+					has_building = ca_asoiaf_storm_basevalue_5
+					has_building = ca_asoiaf_crown_basevalue_5
+					has_building = ca_asoiaf_ironislands_basevalue_5
+					has_building = ca_asoiaf_dorne_basevalue_5
+					has_building = ca_asoiaf_river_basevalue_5
+					has_building = ca_asoiaf_north_basevalue_5
+					has_building = ca_asoiaf_essos_basevalue_5
+					has_building = ca_asoiaf_summerisland_basevalue_5
+					has_building = ca_asoiaf_qarth_basevalue_5
+					has_building = ca_asoiaf_ghiscari_basevalue_5
+					has_building = ca_asoiaf_lhazareen_basevalue_5
+					has_building = ca_asoiaf_eastern_basevalue_5
+					has_building = ca_asoiaf_ibben_basevalue_5
+					has_building = ca_asoiaf_yiti_basevalue_5
+					has_building = ca_asoiaf_sarnor_basevalue_5
+				}
+				NOT = { has_building = ca_asoiaf_reach_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_westerland_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_vale_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_storm_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_crown_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_ironislands_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_dorne_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_river_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_north_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_essos_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_summerisland_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_qarth_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_ghiscari_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_lhazareen_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_eastern_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_ibben_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_yiti_basevalue_6 }
+				NOT = { has_building = ca_asoiaf_sarnor_basevalue_6 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 600
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+}
+city = {
+	ct_upgrade_bv_1 = {
+		desc = ct_upgrade_bv_1_desc
+		potential = {
+			NOT = { region = world_beyond_the_wall }
+			NOT = { region = world_dothraki }
+			NOT = { region = world_ifeqevron }
+			NOT = { region = world_jogos_nhai }
+			NOT = {
+				county = {
+					OR = {
+						title = c_castle_black
+						title = c_eastwatch
+						title = c_shadow_tower
+					}
+				}
+			}
+			FROMFROM = {
+				NOT = { has_building = ct_asoiaf_reach_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_westerland_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_vale_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_storm_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_crown_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_ironislands_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_dorne_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_river_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_north_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_essos_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_summerisland_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_qarth_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_ghiscari_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_lhazareen_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_eastern_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_ibben_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_yiti_basevalue_1 }
+				NOT = { has_building = ct_asoiaf_sarnor_basevalue_1 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }			
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 200
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ct_upgrade_bv_2 = {
+		desc = ct_upgrade_bv_2_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ct_asoiaf_reach_basevalue_1
+					has_building = ct_asoiaf_westerland_basevalue_1
+					has_building = ct_asoiaf_vale_basevalue_1
+					has_building = ct_asoiaf_storm_basevalue_1
+					has_building = ct_asoiaf_crown_basevalue_1
+					has_building = ct_asoiaf_ironislands_basevalue_1
+					has_building = ct_asoiaf_dorne_basevalue_1
+					has_building = ct_asoiaf_river_basevalue_1
+					has_building = ct_asoiaf_north_basevalue_1
+					has_building = ct_asoiaf_essos_basevalue_1
+					has_building = ct_asoiaf_summerisland_basevalue_1
+					has_building = ct_asoiaf_qarth_basevalue_1
+					has_building = ct_asoiaf_ghiscari_basevalue_1
+					has_building = ct_asoiaf_lhazareen_basevalue_1
+					has_building = ct_asoiaf_eastern_basevalue_1
+					has_building = ct_asoiaf_ibben_basevalue_1
+					has_building = ct_asoiaf_yiti_basevalue_1
+					has_building = ct_asoiaf_sarnor_basevalue_1
+				}
+				NOT = { has_building = ct_asoiaf_reach_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_westerland_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_vale_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_storm_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_crown_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_ironislands_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_dorne_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_river_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_north_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_essos_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_summerisland_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_qarth_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_ghiscari_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_lhazareen_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_eastern_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_ibben_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_yiti_basevalue_2 }
+				NOT = { has_building = ct_asoiaf_sarnor_basevalue_2 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }			
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 150
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ct_upgrade_bv_3 = {
+		desc = ct_upgrade_bv_3_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ct_asoiaf_reach_basevalue_2
+					has_building = ct_asoiaf_westerland_basevalue_2
+					has_building = ct_asoiaf_vale_basevalue_2
+					has_building = ct_asoiaf_storm_basevalue_2
+					has_building = ct_asoiaf_crown_basevalue_2
+					has_building = ct_asoiaf_ironislands_basevalue_2
+					has_building = ct_asoiaf_dorne_basevalue_2
+					has_building = ct_asoiaf_river_basevalue_2
+					has_building = ct_asoiaf_north_basevalue_2
+					has_building = ct_asoiaf_essos_basevalue_2
+					has_building = ct_asoiaf_summerisland_basevalue_2
+					has_building = ct_asoiaf_qarth_basevalue_2
+					has_building = ct_asoiaf_ghiscari_basevalue_2
+					has_building = ct_asoiaf_lhazareen_basevalue_2
+					has_building = ct_asoiaf_eastern_basevalue_2
+					has_building = ct_asoiaf_ibben_basevalue_2
+					has_building = ct_asoiaf_yiti_basevalue_2
+					has_building = ct_asoiaf_sarnor_basevalue_2
+				}
+				NOT = { has_building = ct_asoiaf_reach_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_westerland_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_vale_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_storm_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_crown_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_ironislands_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_dorne_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_river_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_north_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_essos_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_summerisland_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_qarth_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_ghiscari_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_lhazareen_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_eastern_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_ibben_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_yiti_basevalue_3 }
+				NOT = { has_building = ct_asoiaf_sarnor_basevalue_3 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 200
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ct_upgrade_bv_4 = {
+		desc = ct_upgrade_bv_4_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ct_asoiaf_reach_basevalue_3
+					has_building = ct_asoiaf_westerland_basevalue_3
+					has_building = ct_asoiaf_vale_basevalue_3
+					has_building = ct_asoiaf_storm_basevalue_3
+					has_building = ct_asoiaf_crown_basevalue_3
+					has_building = ct_asoiaf_ironislands_basevalue_3
+					has_building = ct_asoiaf_dorne_basevalue_3
+					has_building = ct_asoiaf_river_basevalue_3
+					has_building = ct_asoiaf_north_basevalue_3
+					has_building = ct_asoiaf_essos_basevalue_3
+					has_building = ct_asoiaf_summerisland_basevalue_3
+					has_building = ct_asoiaf_qarth_basevalue_3
+					has_building = ct_asoiaf_ghiscari_basevalue_3
+					has_building = ct_asoiaf_lhazareen_basevalue_3
+					has_building = ct_asoiaf_eastern_basevalue_3
+					has_building = ct_asoiaf_ibben_basevalue_3
+					has_building = ct_asoiaf_yiti_basevalue_3
+					has_building = ct_asoiaf_sarnor_basevalue_3
+				}
+				NOT = { has_building = ct_asoiaf_reach_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_westerland_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_vale_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_storm_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_crown_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_ironislands_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_dorne_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_river_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_north_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_essos_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_summerisland_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_qarth_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_ghiscari_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_lhazareen_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_eastern_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_ibben_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_yiti_basevalue_4 }
+				NOT = { has_building = ct_asoiaf_sarnor_basevalue_4 }
+			}	
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 300
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ct_upgrade_bv_5 = {
+		desc = ct_upgrade_bv_5_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ct_asoiaf_reach_basevalue_4
+					has_building = ct_asoiaf_westerland_basevalue_4
+					has_building = ct_asoiaf_vale_basevalue_4
+					has_building = ct_asoiaf_storm_basevalue_4
+					has_building = ct_asoiaf_crown_basevalue_4
+					has_building = ct_asoiaf_ironislands_basevalue_4
+					has_building = ct_asoiaf_dorne_basevalue_4
+					has_building = ct_asoiaf_river_basevalue_4
+					has_building = ct_asoiaf_north_basevalue_4
+					has_building = ct_asoiaf_essos_basevalue_4
+					has_building = ct_asoiaf_summerisland_basevalue_4
+					has_building = ct_asoiaf_qarth_basevalue_4
+					has_building = ct_asoiaf_ghiscari_basevalue_4
+					has_building = ct_asoiaf_lhazareen_basevalue_4
+					has_building = ct_asoiaf_eastern_basevalue_4
+					has_building = ct_asoiaf_ibben_basevalue_4
+					has_building = ct_asoiaf_yiti_basevalue_4
+					has_building = ct_asoiaf_sarnor_basevalue_4
+				}
+				NOT = { has_building = ct_asoiaf_reach_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_westerland_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_vale_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_storm_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_crown_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_ironislands_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_dorne_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_river_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_north_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_essos_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_summerisland_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_qarth_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_ghiscari_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_lhazareen_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_eastern_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_ibben_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_yiti_basevalue_5 }
+				NOT = { has_building = ct_asoiaf_sarnor_basevalue_5 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 400
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+	
+	ct_upgrade_bv_6 = {
+		desc = ct_upgrade_bv_6_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					has_building = ct_asoiaf_reach_basevalue_5
+					has_building = ct_asoiaf_westerland_basevalue_5
+					has_building = ct_asoiaf_vale_basevalue_5
+					has_building = ct_asoiaf_storm_basevalue_5
+					has_building = ct_asoiaf_crown_basevalue_5
+					has_building = ct_asoiaf_ironislands_basevalue_5
+					has_building = ct_asoiaf_dorne_basevalue_5
+					has_building = ct_asoiaf_river_basevalue_5
+					has_building = ct_asoiaf_north_basevalue_5
+					has_building = ct_asoiaf_essos_basevalue_5
+					has_building = ct_asoiaf_summerisland_basevalue_5
+					has_building = ct_asoiaf_qarth_basevalue_5
+					has_building = ct_asoiaf_ghiscari_basevalue_5
+					has_building = ct_asoiaf_lhazareen_basevalue_5
+					has_building = ct_asoiaf_eastern_basevalue_5
+					has_building = ct_asoiaf_ibben_basevalue_5
+					has_building = ct_asoiaf_yiti_basevalue_5
+					has_building = ct_asoiaf_sarnor_basevalue_5
+				}
+				NOT = { has_building = ct_asoiaf_reach_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_westerland_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_vale_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_storm_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_crown_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_ironislands_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_dorne_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_river_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_north_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_essos_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_summerisland_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_qarth_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_ghiscari_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_lhazareen_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_eastern_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_ibben_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_yiti_basevalue_6 }
+				NOT = { has_building = ct_asoiaf_sarnor_basevalue_6 }
+			}
+			#FROM = { NOT = { culture = dothraki } NOT = { culture = jogos_nhai } }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		extra_tech_building_start = 10.0 # Never get at start of game
+		build_time = 0
+		gold_cost = 600
+		local_tax_modifier = -0.33
+		levy_size = -0.2
+	}
+}
