@@ -1,0 +1,26 @@
+# 33 - Bear Island
+
+# County Title
+title = c_bearisland
+
+# Settlements
+max_settlements = 4
+b_bearislandhall = castle
+b_woodfootwatch = castle
+b_bearstone = city
+#b_bearwood = temple
+
+# Misc
+culture = northman
+religion = old_gods
+
+# History
+
+6000.1.1 = {
+	b_bearislandhall = ca_asoiaf_north_basevalue_1
+	b_bearislandhall = ca_asoiaf_north_basevalue_2
+	b_bearislandhall = ca_asoiaf_north_basevalue_3
+	b_woodfootwatch = ca_asoiaf_north_basevalue_1
+	b_bearstone = ct_asoiaf_north_basevalue_1
+	b_bearstone = ct_asoiaf_north_basevalue_2
+}
