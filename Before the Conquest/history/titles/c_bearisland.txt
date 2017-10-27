@@ -1,0 +1,57 @@
+
+4614.1.1 = {
+	holder = 356066 #Ravos Hoare
+}
+4620.1.1 = {
+	holder = 0
+}
+
+6000.1.1={
+	liege = "e_north"
+	law = succ_primogeniture
+}
+7985.1.1={
+	holder = 17102 
+}
+7999.1.1={
+	liege="k_north"
+}
+8009.1.1={
+	holder = 16102
+}
+8044.1.1={
+	holder = 15102
+}
+8063.1.1={
+	holder = 14102
+}
+8088.1.1={
+	holder = 13102 # Alwin Mormont
+}
+8118.1.1={
+	holder = 10020102 # Joren Mormont
+}
+8128.1.1={
+    holder = 12102 # Theon Mormont
+}
+8160.1.1={
+	holder = 10102 	
+}
+8176.1.1={
+	holder = 9102
+}
+8221.1.1={
+	holder = 8102
+}
+8247.1.1={
+	holder = 1102
+}
+8272.1.1={
+	holder =336
+}
+8281.1.1={
+	holder = 102
+}
+8293.6.1 = {
+	holder = 2102
+}
