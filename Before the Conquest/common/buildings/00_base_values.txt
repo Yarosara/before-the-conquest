@@ -1,0 +1,4504 @@
+castle = {
+
+	###Balancing buildings###
+
+	# ca_asoiaf_basevalue_1 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 60
+		# heavy_infantry = 150
+		# light_cavalry = 30
+		# knights = 4
+		# ai_creation_factor = 0
+		# tax_income = 0.3
+		# fort_level = 1
+	# }
+	# ca_asoiaf_basevalue_2 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ca_asoiaf_basevalue_1
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 90
+		# heavy_infantry = 225
+		# light_cavalry = 45
+		# knights = 6
+		# ai_creation_factor = 0
+		# tax_income = 0.56
+		# fort_level = 1
+	# }
+	# ca_asoiaf_basevalue_3 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ca_asoiaf_basevalue_2
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 135
+		# heavy_infantry = 335
+		# light_cavalry = 65
+		# knights = 9
+		# ai_creation_factor = 0
+		# tax_income = 0.85
+		# fort_level = 1
+	# }
+	# ca_asoiaf_basevalue_4 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ca_asoiaf_basevalue_3
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 200
+		# heavy_infantry = 500
+		# light_cavalry = 95
+		# knights = 12
+		# ai_creation_factor = 0
+		# tax_income = 1.25
+		# fort_level = 1
+	# }
+	# ca_asoiaf_basevalue_5 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ca_asoiaf_basevalue_4
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 307
+		# heavy_infantry = 750
+		# light_cavalry = 140
+		# knights = 18
+		# ai_creation_factor = 0
+		# tax_income = 1.87
+		# fort_level = 1
+		# garrison_size = 0.25
+	# }
+	# ca_asoiaf_basevalue_6 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ca_asoiaf_basevalue_5
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 450
+		# heavy_infantry = 1125
+		# light_cavalry = 210
+		# knights = 27
+		# ai_creation_factor = 0
+		# tax_income = 2.8
+		# fort_level = 1
+		# garrison_size = 0.25
+	# }
+	
+	ca_asoiaf_north_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		trigger = { always = no }
+		potential = {
+			OR = {
+				region = world_north
+				county = {
+					title = c_thenn
+				}
+			}
+		}
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 56
+		heavy_infantry = 139
+		light_cavalry = 43
+		knights = 6
+		ai_creation_factor = 0
+		tax_income = 0.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_north_basevalue_1
+	}
+	ca_asoiaf_north_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			OR = {
+				region = world_north
+				county = {
+					title = c_thenn
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_north_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 84
+		heavy_infantry = 208
+		light_cavalry = 65
+		knights = 9
+		ai_creation_factor = 0
+		tax_income = 0.45
+		fort_level = 1
+		convert_to_city = ct_asoiaf_north_basevalue_2
+	}
+	ca_asoiaf_north_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			OR = {
+				region = world_north
+				county = {
+					title = c_thenn
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_north_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 125
+		heavy_infantry = 310
+		light_cavalry = 95
+		knights = 14
+		ai_creation_factor = 0
+		tax_income = 0.68
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_north_basevalue_3
+	}
+	ca_asoiaf_north_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			OR = {
+				region = world_north
+				county = {
+					title = c_thenn
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_north_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 184
+		heavy_infantry = 458
+		light_cavalry = 145
+		knights = 20
+		ai_creation_factor = 0
+		tax_income = 1
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_north_basevalue_4
+	}
+	ca_asoiaf_north_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			OR = {
+				region = world_north
+				county = {
+					title = c_thenn
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_north_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 275
+		heavy_infantry = 689
+		light_cavalry = 215
+		knights = 29
+		ai_creation_factor = 0
+		tax_income = 1.59
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_north_basevalue_5
+	}
+	ca_asoiaf_north_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			OR = {
+				region = world_north
+				county = {
+					title = c_thenn
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_north_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 417
+		heavy_infantry = 1039
+		light_cavalry = 316
+		knights = 40
+		ai_creation_factor = 0
+		tax_income = 2.24
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_north_basevalue_6
+	}
+	
+	ca_asoiaf_river_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 52
+		heavy_infantry = 131
+		light_cavalry = 54
+		knights = 7
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_river_basevalue_1
+	}
+	ca_asoiaf_river_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_river_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 78
+		heavy_infantry = 196
+		light_cavalry = 81
+		knights = 11
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_river_basevalue_2
+	}
+	ca_asoiaf_river_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_river_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 115
+		heavy_infantry = 293
+		light_cavalry = 121
+		knights = 15
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_river_basevalue_3
+	}
+	ca_asoiaf_river_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_river_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 170
+		heavy_infantry = 432
+		light_cavalry = 182
+		knights = 23
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_river_basevalue_4
+	}
+	ca_asoiaf_river_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_river_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 255
+		heavy_infantry = 648
+		light_cavalry = 271
+		knights = 34
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_river_basevalue_5
+	}
+	ca_asoiaf_river_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_river_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 384
+		heavy_infantry = 974
+		light_cavalry = 404
+		knights = 50
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_river_basevalue_6
+	}
+	ca_asoiaf_dorne_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 48
+		heavy_infantry = 49
+		light_cavalry = 25
+		pikemen = 97
+		horse_archers = 25
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_dorne_basevalue_1
+	}
+	ca_asoiaf_dorne_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_dorne_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 73
+		heavy_infantry = 73
+		light_cavalry = 37
+		pikemen = 146
+		horse_archers = 37
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_dorne_basevalue_2
+	}
+	ca_asoiaf_dorne_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_dorne_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 108
+		heavy_infantry = 108
+		light_cavalry = 55
+		pikemen = 218
+		horse_archers = 55
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_dorne_basevalue_3
+	}
+	ca_asoiaf_dorne_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_dorne_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 161
+		heavy_infantry = 161
+		light_cavalry = 82
+		pikemen = 321
+		horse_archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_dorne_basevalue_4
+	}
+	ca_asoiaf_dorne_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_dorne_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 241
+		heavy_infantry = 241
+		light_cavalry = 122
+		pikemen = 482
+		horse_archers = 122
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_dorne_basevalue_5
+	}
+	ca_asoiaf_dorne_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_dorne_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 362
+		heavy_infantry = 362
+		light_cavalry = 182
+		pikemen = 724
+		horse_archers = 182
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_dorne_basevalue_6
+	}
+	
+	ca_asoiaf_ironislands_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		trigger = { always = no }
+		potential = {
+			region = world_iron_isles
+		}
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 60
+		heavy_infantry = 184
+		ai_creation_factor = 0
+		tax_income = 0.3
+		galleys = 5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ironislands_basevalue_1
+	}
+	ca_asoiaf_ironislands_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ironislands_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 90
+		heavy_infantry = 276
+		ai_creation_factor = 0
+		tax_income = 0.56
+		galleys = 5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ironislands_basevalue_2
+	}
+	ca_asoiaf_ironislands_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ironislands_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 135
+		heavy_infantry = 409
+		ai_creation_factor = 0
+		tax_income = 0.85
+		galleys = 5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ironislands_basevalue_3
+	}
+	ca_asoiaf_ironislands_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ironislands_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 200
+		heavy_infantry = 607
+		ai_creation_factor = 0
+		tax_income = 1.25
+		galleys = 9
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ironislands_basevalue_4
+	}
+	ca_asoiaf_ironislands_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ironislands_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 307
+		heavy_infantry = 908
+		ai_creation_factor = 0
+		tax_income = 1.87
+		galleys = 12
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_ironislands_basevalue_5
+	}
+	ca_asoiaf_ironislands_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ironislands_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 458
+		heavy_infantry = 1362
+		ai_creation_factor = 0
+		tax_income = 2.8
+		galleys = 19
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_ironislands_basevalue_6
+	}
+	ca_asoiaf_crown_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 52
+		heavy_infantry = 131
+		light_cavalry = 54
+		knights = 7
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_crown_basevalue_1
+	}
+	ca_asoiaf_crown_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_crown_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 78
+		heavy_infantry = 196
+		light_cavalry = 81
+		knights = 11
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_crown_basevalue_2
+	}
+	ca_asoiaf_crown_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_crown_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 115
+		heavy_infantry = 293
+		light_cavalry = 121
+		knights = 15
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_crown_basevalue_3
+	}
+	ca_asoiaf_crown_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_crown_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 170
+		heavy_infantry = 432
+		light_cavalry = 182
+		knights = 23
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_crown_basevalue_4
+	}
+	ca_asoiaf_crown_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_crown_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 255
+		heavy_infantry = 648
+		light_cavalry = 271
+		knights = 34
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_crown_basevalue_5
+	}
+	ca_asoiaf_crown_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_crown_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 384
+		heavy_infantry = 974
+		light_cavalry = 404
+		knights = 50
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_crown_basevalue_6
+	}
+
+	ca_asoiaf_storm_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 50
+		heavy_infantry = 153
+		light_cavalry = 36
+		knights = 5
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_storm_basevalue_1
+	}
+	ca_asoiaf_storm_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_storm_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 75
+		heavy_infantry = 230
+		light_cavalry = 54
+		knights = 7
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_storm_basevalue_2
+	}
+	ca_asoiaf_storm_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_storm_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 111
+		heavy_infantry = 342
+		light_cavalry = 80
+		knights = 11
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_storm_basevalue_3
+	}
+	ca_asoiaf_storm_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_storm_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 163
+		heavy_infantry = 507
+		light_cavalry = 121
+		knights = 16
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_storm_basevalue_4
+	}
+	ca_asoiaf_storm_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_storm_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 246
+		heavy_infantry = 758
+		light_cavalry = 180
+		knights = 24
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_storm_basevalue_5
+	}
+	ca_asoiaf_storm_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_storm_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 369
+		heavy_infantry = 1142
+		light_cavalry = 267
+		knights = 34
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_storm_basevalue_6
+	}
+	
+
+	ca_asoiaf_vale_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 52
+		heavy_infantry = 131
+		light_cavalry = 54
+		knights = 7
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_vale_basevalue_1
+	}
+	ca_asoiaf_vale_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_vale_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 78
+		heavy_infantry = 196
+		light_cavalry = 81
+		knights = 11
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_vale_basevalue_2
+	}
+	ca_asoiaf_vale_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_vale_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 115
+		heavy_infantry = 293
+		light_cavalry = 121
+		knights = 15
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_vale_basevalue_3
+	}
+	ca_asoiaf_vale_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_vale_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 170
+		heavy_infantry = 432
+		light_cavalry = 182
+		knights = 23
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_vale_basevalue_4
+	}
+	ca_asoiaf_vale_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_vale_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 255
+		heavy_infantry = 648
+		light_cavalry = 271
+		knights = 34
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_vale_basevalue_5
+	}
+	ca_asoiaf_vale_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_vale_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 384
+		heavy_infantry = 974
+		light_cavalry = 404
+		knights = 50
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_vale_basevalue_6
+	}
+	
+	ca_asoiaf_westerland_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 50
+		heavy_infantry = 126
+		light_cavalry = 60
+		knights = 8
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_westerland_basevalue_1
+	}
+	ca_asoiaf_westerland_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_westerland_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 75
+		heavy_infantry = 189
+		light_cavalry = 90
+		knights = 12
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_westerland_basevalue_2
+	}
+	ca_asoiaf_westerland_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_westerland_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 112
+		heavy_infantry = 282
+		light_cavalry = 133
+		knights = 17
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_westerland_basevalue_3
+	}
+	ca_asoiaf_westerland_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_westerland_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 165
+		heavy_infantry = 416
+		light_cavalry = 200
+		knights = 26
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_westerland_basevalue_4
+	}
+	ca_asoiaf_westerland_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_westerland_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 245
+		heavy_infantry = 625
+		light_cavalry = 300
+		knights = 38
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_westerland_basevalue_5
+	}
+	ca_asoiaf_westerland_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_westerland_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 370
+		heavy_infantry = 936
+		light_cavalry = 449
+		knights = 57
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_westerland_basevalue_6
+	}
+	
+	ca_asoiaf_reach_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 52
+		heavy_infantry = 131
+		light_cavalry = 54
+		knights = 7
+		ai_creation_factor = 0
+		tax_income = 0.5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_reach_basevalue_1
+	}
+	ca_asoiaf_reach_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_reach_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 78
+		heavy_infantry = 196
+		light_cavalry = 81
+		knights = 11
+		ai_creation_factor = 0
+		tax_income = 0.75
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_reach_basevalue_2
+	}
+	ca_asoiaf_reach_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_reach_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 115
+		heavy_infantry = 293
+		light_cavalry = 121
+		knights = 15
+		ai_creation_factor = 0
+		tax_income = 1.125
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_reach_basevalue_3
+	}
+	ca_asoiaf_reach_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_reach_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 170
+		heavy_infantry = 432
+		light_cavalry = 182
+		knights = 23
+		ai_creation_factor = 0
+		tax_income = 1.69
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_reach_basevalue_4
+	}
+	ca_asoiaf_reach_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_reach_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 255
+		heavy_infantry = 648
+		light_cavalry = 271
+		knights = 34
+		ai_creation_factor = 0
+		tax_income = 2.5
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_reach_basevalue_5
+	}
+	ca_asoiaf_reach_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_reach_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 384
+		heavy_infantry = 974
+		light_cavalry = 404
+		knights = 50
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_reach_basevalue_6
+	}
+
+	ca_asoiaf_essos_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 120
+		heavy_infantry = 300
+		light_cavalry = 60
+		knights = 8
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_essos_basevalue_1
+	}
+	ca_asoiaf_essos_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_essos_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 180
+		heavy_infantry = 450
+		light_cavalry = 90
+		knights = 12
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_essos_basevalue_2
+	}
+	ca_asoiaf_essos_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_essos_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 270
+		heavy_infantry = 670
+		light_cavalry = 130
+		knights = 18
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_essos_basevalue_3
+	}
+	ca_asoiaf_essos_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_essos_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 402
+		heavy_infantry = 1000
+		light_cavalry = 190
+		knights = 24
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_essos_basevalue_4
+	}
+	ca_asoiaf_essos_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_essos_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 600
+		heavy_infantry = 1500
+		light_cavalry = 280
+		knights =36
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_essos_basevalue_5
+	}
+	ca_asoiaf_essos_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_essos_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 900
+		heavy_infantry = 2250
+		light_cavalry = 420
+		knights = 54
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_essos_basevalue_6
+	}
+	
+	ca_asoiaf_summerisland_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		trigger = { always = no }
+		potential = {
+			region = world_summer_sea
+		}
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 49
+		heavy_infantry = 102
+		light_cavalry = 12
+		archers = 82
+		galleys = 7
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		archers_offensive = 0.5
+		archers_defensive = 0.5
+		archers_morale = 0.25
+		
+		convert_to_city = ct_asoiaf_summerisland_basevalue_1
+	}
+	ca_asoiaf_summerisland_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_summerisland_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 73
+		heavy_infantry = 153
+		light_cavalry = 18
+		archers = 121
+		galleys = 5
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_summerisland_basevalue_2
+	}
+	ca_asoiaf_summerisland_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_summerisland_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 109
+		heavy_infantry = 230
+		light_cavalry = 27
+		archers = 181
+		galleys = 6
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_summerisland_basevalue_3
+	}
+	ca_asoiaf_summerisland_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_summerisland_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 165
+		heavy_infantry = 346
+		light_cavalry = 41
+		archers = 272
+		galleys = 8
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_summerisland_basevalue_4
+	}
+	ca_asoiaf_summerisland_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_summerisland_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 247
+		heavy_infantry = 519
+		light_cavalry = 62
+		archers = 408
+		galleys = 12
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_summerisland_basevalue_5
+	}
+	ca_asoiaf_summerisland_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_summerisland_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 370
+		heavy_infantry = 778
+		light_cavalry = 93
+		archers = 611
+		galleys = 17
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_summerisland_basevalue_6
+	}
+
+	ca_asoiaf_qarth_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 120
+		heavy_infantry = 300
+		light_cavalry = 30
+		camel_cavalry = 30
+		knights = 8
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_qarth_basevalue_1
+	}
+	ca_asoiaf_qarth_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_qarth_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 180
+		heavy_infantry = 450
+		light_cavalry = 45
+		camel_cavalry = 45
+		knights = 12
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_qarth_basevalue_2
+	}
+	ca_asoiaf_qarth_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_qarth_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 270
+		heavy_infantry = 670
+		light_cavalry = 65
+		camel_cavalry = 65
+		knights = 18
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_qarth_basevalue_3
+	}
+	ca_asoiaf_qarth_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_qarth_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 402
+		heavy_infantry = 1000
+		light_cavalry = 95
+		camel_cavalry = 95
+		knights = 24
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_qarth_basevalue_4
+	}
+	ca_asoiaf_qarth_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_qarth_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 600
+		heavy_infantry = 1500
+		light_cavalry = 140
+		camel_cavalry = 140
+		knights =36
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_qarth_basevalue_5
+	}
+	ca_asoiaf_qarth_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_qarth_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 900
+		heavy_infantry = 2250
+		light_cavalry = 210
+		camel_cavalry = 210
+		knights = 54
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_qarth_basevalue_6
+	}
+
+	ca_asoiaf_ghiscari_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 120
+		pikemen = 100
+		heavy_infantry = 200
+		light_cavalry = 60
+		knights = 8
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ghiscari_basevalue_1
+	}
+	ca_asoiaf_ghiscari_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ghiscari_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 180
+		pikemen = 150
+		heavy_infantry = 300
+		light_cavalry = 90
+		knights = 12
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ghiscari_basevalue_2
+	}
+	ca_asoiaf_ghiscari_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ghiscari_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 270
+		pikemen = 225
+		heavy_infantry = 445
+		light_cavalry = 130
+		knights = 18
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ghiscari_basevalue_3
+	}
+	ca_asoiaf_ghiscari_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ghiscari_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 400
+		pikemen = 335
+		heavy_infantry = 665
+		light_cavalry = 190
+		knights = 24
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ghiscari_basevalue_4
+	}
+	ca_asoiaf_ghiscari_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ghiscari_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 600
+		pikemen = 500
+		heavy_infantry = 1000
+		light_cavalry = 280
+		knights =36
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_ghiscari_basevalue_5
+	}
+	ca_asoiaf_ghiscari_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ghiscari_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 900
+		pikemen = 750
+		heavy_infantry = 1500
+		light_cavalry = 420
+		knights = 54
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_ghiscari_basevalue_6
+	}
+	
+	ca_asoiaf_lhazareen_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 270
+		heavy_infantry = 100
+		light_cavalry = 60
+		archers = 50
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_lhazareen_basevalue_1
+	}
+	ca_asoiaf_lhazareen_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_lhazareen_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 405
+		heavy_infantry = 150
+		light_cavalry = 90
+		archers = 75
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_lhazareen_basevalue_2
+	}
+	ca_asoiaf_lhazareen_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_lhazareen_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 600
+		heavy_infantry = 220
+		light_cavalry = 130
+		archers = 110
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_lhazareen_basevalue_3
+	}
+	ca_asoiaf_lhazareen_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_lhazareen_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 895
+		heavy_infantry = 330
+		light_cavalry = 190
+		archers = 165
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_lhazareen_basevalue_4
+	}
+	ca_asoiaf_lhazareen_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_lhazareen_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 1350
+		heavy_infantry = 500
+		light_cavalry = 280
+		archers = 250
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_lhazareen_basevalue_5
+	}
+	ca_asoiaf_lhazareen_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_lhazareen_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 2025
+		heavy_infantry = 750
+		light_cavalry = 420
+		archers = 375
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_lhazareen_basevalue_6
+	}
+	
+	ca_asoiaf_nighswatch_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			county = {
+				OR = {
+					title = c_castle_black
+					title = c_eastwatch
+					title = c_shadow_tower
+				}
+			}
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 56
+		heavy_infantry = 93
+		light_cavalry = 43
+		knights = 6
+		archers = 46
+		ai_creation_factor = 0
+		tax_income = -3.75
+		fort_level = 1
+	}
+	ca_asoiaf_nighswatch_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			county = {
+				OR = {
+					title = c_castle_black
+					title = c_eastwatch
+					title = c_shadow_tower
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_nighswatch_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 84
+		heavy_infantry = 138
+		light_cavalry = 65
+		knights = 9
+		archers = 69
+		ai_creation_factor = 0
+		tax_income = 0.35
+		fort_level = 1
+	}
+	ca_asoiaf_nighswatch_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			county = {
+				OR = {
+					title = c_castle_black
+					title = c_eastwatch
+					title = c_shadow_tower
+				}
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_nighswatch_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 125
+		heavy_infantry = 207
+		light_cavalry = 95
+		knights = 14
+		archers = 103
+		ai_creation_factor = 0
+		tax_income = 0.35
+		fort_level = 1
+	}
+
+	ca_asoiaf_eastern_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 120
+		heavy_infantry = 300
+		light_cavalry = 60
+		knights = 8
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_eastern_basevalue_1
+	}
+	ca_asoiaf_eastern_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_eastern_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 180
+		heavy_infantry = 450
+		light_cavalry = 90
+		knights = 12
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_eastern_basevalue_2
+	}
+	ca_asoiaf_eastern_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_eastern_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 270
+		heavy_infantry = 670
+		light_cavalry = 130
+		knights = 18
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_eastern_basevalue_3
+	}
+	ca_asoiaf_eastern_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_eastern_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 400
+		heavy_infantry = 1000
+		light_cavalry = 190
+		knights = 24
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_eastern_basevalue_4
+	}
+	ca_asoiaf_eastern_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_eastern_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 600
+		heavy_infantry = 1500
+		light_cavalry = 280
+		knights =36
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_eastern_basevalue_5
+	}
+	ca_asoiaf_eastern_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_eastern_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 900
+		heavy_infantry = 2250
+		light_cavalry = 420
+		knights = 54
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_eastern_basevalue_6
+	}
+
+	ca_asoiaf_yiti_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 240
+		heavy_infantry = 600
+		light_cavalry = 120
+		knights = 16
+		galleys = 15
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_yiti_basevalue_1
+	}
+	ca_asoiaf_yiti_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_yiti_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 360
+		heavy_infantry = 900
+		light_cavalry = 180
+		knights = 24
+		galleys = 18
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_yiti_basevalue_2
+	}
+	ca_asoiaf_yiti_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_yiti_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 540
+		heavy_infantry = 1340
+		light_cavalry = 260
+		knights = 36
+		galleys = 25
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_yiti_basevalue_3
+	}
+	ca_asoiaf_yiti_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_yiti_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 800
+		heavy_infantry = 2000
+		light_cavalry = 380
+		knights = 40
+		galleys = 35
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_yiti_basevalue_4
+	}
+	ca_asoiaf_yiti_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_yiti_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 1213
+		heavy_infantry = 3195
+		light_cavalry = 560
+		knights = 72
+		galleys = 50
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_yiti_basevalue_5
+	}
+	ca_asoiaf_yiti_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_yiti_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1800
+		heavy_infantry = 4500
+		light_cavalry = 840
+		knights = 108
+		ai_creation_factor = 0
+		galleys = 76
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_yiti_basevalue_6
+	}
+	
+	ca_asoiaf_ibben_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		trigger = { always = no }
+		potential = {
+			region = world_ibben
+		}
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 60
+		heavy_infantry = 184
+		ai_creation_factor = 0
+		tax_income = 0.3
+		galleys = 5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ibben_basevalue_1
+	}
+	ca_asoiaf_ibben_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ibben_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 90
+		heavy_infantry = 276
+		ai_creation_factor = 0
+		tax_income = 0.56
+		galleys = 5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ibben_basevalue_2
+	}
+	ca_asoiaf_ibben_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ibben_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 135
+		heavy_infantry = 409
+		ai_creation_factor = 0
+		tax_income = 0.85
+		galleys = 5
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ibben_basevalue_3
+	}
+	ca_asoiaf_ibben_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ibben_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 200
+		heavy_infantry = 607
+		ai_creation_factor = 0
+		tax_income = 1.25
+		galleys = 9
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_ibben_basevalue_4
+	}
+	ca_asoiaf_ibben_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ibben_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 307
+		heavy_infantry = 908
+		ai_creation_factor = 0
+		tax_income = 1.87
+		galleys = 12
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_ibben_basevalue_5
+	}
+	ca_asoiaf_ibben_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_ibben_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 458
+		heavy_infantry = 1362
+		ai_creation_factor = 0
+		tax_income = 2.8
+		galleys = 19
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_ibben_basevalue_6
+	}
+	
+	ca_asoiaf_sarnor_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 110
+		heavy_infantry = 290
+		light_cavalry = 60
+		knights = 18
+		chariots = 10
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_sarnor_basevalue_1
+	}
+	ca_asoiaf_sarnor_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_sarnor_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 165
+		heavy_infantry = 435
+		light_cavalry = 90
+		knights = 27
+		chariots = 15
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_sarnor_basevalue_2
+	}
+	ca_asoiaf_sarnor_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_sarnor_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 245
+		heavy_infantry = 650
+		light_cavalry = 135
+		knights = 40
+		chariots = 20
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_sarnor_basevalue_3
+	}
+	ca_asoiaf_sarnor_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_sarnor_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 274
+		heavy_infantry = 720
+		light_cavalry = 150
+		knights = 45
+		chariots = 30
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_sarnor_basevalue_4
+	}
+	ca_asoiaf_sarnor_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_sarnor_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 412
+		heavy_infantry = 1088
+		light_cavalry = 218
+		knights = 64
+		chariots = 45
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_sarnor_basevalue_5
+	}
+	ca_asoiaf_sarnor_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_sarnor_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 619
+		heavy_infantry = 1628
+		light_cavalry = 334
+		knights = 90
+		chariots = 65
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_sarnor_basevalue_6
+	}
+	ca_asoiaf_asshai_basevalue_1 = {
+		desc = ca_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 120
+		heavy_infantry = 349
+		archers = 34
+		light_cavalry = -15
+		ai_creation_factor = 0
+		tax_income = 0.3
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_asshai_basevalue_1
+	}
+	ca_asoiaf_asshai_basevalue_2 = {
+		desc = ca_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_asshai_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 180
+		heavy_infantry = 500
+		archers = 52
+		ai_creation_factor = 0
+		tax_income = 0.56
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_asshai_basevalue_2
+	}
+	ca_asoiaf_asshai_basevalue_3 = {
+		desc = ca_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_asshai_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 270
+		heavy_infantry = 744
+		archers = 74
+		ai_creation_factor = 0
+		tax_income = 0.85
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_asshai_basevalue_3
+	}
+	ca_asoiaf_asshai_basevalue_4 = {
+		desc = ca_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_asshai_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 402
+		heavy_infantry = 1100
+		archers = 114
+		ai_creation_factor = 0
+		tax_income = 1.25
+		fort_level = 1
+		
+		convert_to_city = ct_asoiaf_asshai_basevalue_4
+	}
+	ca_asoiaf_asshai_basevalue_5 = {
+		desc = ca_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_asshai_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 600
+		heavy_infantry = 1660
+		archers = 156
+		ai_creation_factor = 0
+		tax_income = 1.87
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_asshai_basevalue_5
+	}
+	ca_asoiaf_asshai_basevalue_6 = {
+		desc = ca_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ca_asoiaf_asshai_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 900
+		heavy_infantry = 2485
+		archers = 239
+		ai_creation_factor = 0
+		tax_income = 2.8
+		fort_level = 1
+		garrison_size = 0.25
+		
+		convert_to_city = ct_asoiaf_asshai_basevalue_6
+	}
+}
+ # City
+city = {
+	###Balancing buildings###
+	
+	# ct_asoiaf_basevalue_1 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 75
+		# archers = 40
+		# ai_creation_factor = 0
+		# tax_income = 0.5
+		# fort_level = 1
+	# }
+	# ct_asoiaf_basevalue_2 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ct_asoiaf_basevalue_1
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 110
+		# archers = 60
+		# ai_creation_factor = 0
+		# tax_income = 0.75
+		# fort_level = 1
+	# }
+	# ct_asoiaf_basevalue_3 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ct_asoiaf_basevalue_2
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 165
+		# archers = 90
+		# ai_creation_factor = 0
+		# tax_income = 1.1
+		# fort_level = 1
+	# }
+	# ct_asoiaf_basevalue_4 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ct_asoiaf_basevalue_3
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 250
+		# archers = 135
+		# ai_creation_factor = 0
+		# tax_income = 1.7
+		# fort_level = 1
+	# }
+	# ct_asoiaf_basevalue_5 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ct_asoiaf_basevalue_4
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 375
+		# archers = 202
+		# ai_creation_factor = 0
+		# tax_income = 2.5
+		# fort_level = 1
+		# garrison_size = 0.25
+	# }
+	# ct_asoiaf_basevalue_6 = {
+		# potential = {
+			# kingdom = {
+				# NOT = { title = k_riverlands }
+				# NOT = { title = k_north }
+				# NOT = { title = k_stormlands }
+				# NOT = { title = k_dorne }
+				# NOT = { title = k_iron_isles }
+				# NOT = { title = k_crownlands }
+				# NOT = { title = k_vale }
+			# }
+		# }
+		# trigger = { always = no }
+		# upgrades_from = ct_asoiaf_basevalue_5
+		# gold_cost = 2000
+		# build_time = 730
+		# light_infantry = 560
+		# archers = 300
+		# ai_creation_factor = 0
+		# tax_income = 3.75
+		# fort_level = 1
+		# garrison_size = 0.25
+	# }
+	
+	ct_asoiaf_north_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_north
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 75
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_north_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_north	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_north_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 110
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_north_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_north	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_north_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 165
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_north_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_north	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_north_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 250
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_north_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_north	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_north_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 375
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_north_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_north	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_north_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 560
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_westerland_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 37
+		archers = 40
+		pikemen = 38
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_westerland_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_westerland_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 55
+		archers = 60
+		pikemen = 55
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_westerland_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_westerland_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 82
+		archers = 90
+		pikemen = 83
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_westerland_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_westerland_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 125
+		archers = 135
+		pikemen = 125
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_westerland_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_westerland_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 187
+		archers = 202
+		pikemen = 188
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_westerland_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_westerlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_westerland_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 280
+		archers = 300
+		pikemen = 280
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_river_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 75
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_river_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_river_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 110
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_river_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_river_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 165
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_river_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_river_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 250
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_river_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_river_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 375
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_river_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_riverlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_river_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 560
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_dorne_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 37
+		archers = 40
+		pikemen = 38
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_dorne_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_dorne_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 55
+		archers = 60
+		pikemen = 55
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_dorne_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_dorne_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 82
+		archers = 90
+		pikemen = 83
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_dorne_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_dorne_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 125
+		archers = 135
+		pikemen = 125
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_dorne_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_dorne_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 187
+		archers = 202
+		pikemen = 188
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_dorne_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_dorne
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_dorne_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 280
+		archers = 300
+		pikemen = 280
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_ironislands_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 48
+		heavy_infantry = 19
+		light_cavalry = 8
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+		galleys = 3
+	}
+	ct_asoiaf_ironislands_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ironislands_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 71
+		heavy_infantry = 28
+		light_cavalry = 11
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+		galleys = 1
+	}
+	ct_asoiaf_ironislands_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ironislands_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 107
+		heavy_infantry = 41
+		light_cavalry = 17
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+		galleys = 3
+	}
+	ct_asoiaf_ironislands_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ironislands_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 162
+		heavy_infantry = 63
+		light_cavalry = 25
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		galleys = 4
+	}
+	ct_asoiaf_ironislands_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ironislands_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 243
+		heavy_infantry = 94
+		light_cavalry = 38
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+		galleys = 6
+	}
+	ct_asoiaf_ironislands_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_iron_isles
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ironislands_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 364
+		heavy_infantry = 146
+		light_cavalry = 56
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+		galleys = 8
+	}
+	ct_asoiaf_crown_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 75
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_crown_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_crown_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 110
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_crown_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_crown_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 165
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_crown_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_crown_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 250
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_crown_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_crown_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 375
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_crown_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_crownlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_crown_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 560
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	
+	ct_asoiaf_storm_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 75
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_storm_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_storm_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 110
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_storm_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_storm_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 165
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_storm_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_storm_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 250
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_storm_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_storm_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 375
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_storm_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_stormlands
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_storm_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 560
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+
+	ct_asoiaf_vale_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 75
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_vale_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_vale_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 110
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_vale_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_vale_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 165
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_vale_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_vale_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 250
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_vale_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_vale_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 375
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_vale_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_vale	
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_vale_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 560
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_reach_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 75
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_reach_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_reach_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 110
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_reach_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_reach_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 165
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_reach_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_reach_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 250
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_reach_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_reach_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 375
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_reach_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_reach
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_reach_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 560
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 5.5
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+
+	ct_asoiaf_essos_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 153
+		archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_essos_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_essos_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 221
+		archers = 127
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_essos_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_essos_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 337
+		archers = 181
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_essos_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_essos_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 530
+		archers = 272
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_essos_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_essos_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 751
+		archers = 413
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_essos_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_free_cities
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_essos_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1129
+		archers = 627
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_summerisland_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 55
+		archers = 60
+		galleys = 4
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+		
+		archers_offensive = 0.5
+		archers_defensive = 0.5
+		archers_morale = 0.25
+	}
+	ct_asoiaf_summerisland_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_summerisland_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 80
+		archers = 90
+		galleys = 2
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_summerisland_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_summerisland_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 120
+		archers = 135
+		galleys = 3
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_summerisland_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_summerisland_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 180
+		archers = 205
+		galleys = 4
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_summerisland_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_summerisland_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 275
+		archers = 300
+		galleys = 6
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_summerisland_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_summer_sea
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_summerisland_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 410
+		archers = 450
+		galleys = 9
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+
+	ct_asoiaf_qarth_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 115
+		archers = 82
+		camel_cavalry = 35
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_qarth_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_qarth_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 165
+		archers = 127
+		camel_cavalry = 55
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_qarth_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_qarth_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 250
+		archers = 181
+		camel_cavalry = 80
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_qarth_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_qarth_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 375
+		archers = 272
+		camel_cavalry = 125
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_qarth_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_qarth_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 565
+		archers = 413
+		camel_cavalry = 185
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_qarth_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			OR = {
+				region = world_qarth
+				region = world_moraq
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_qarth_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 840
+		archers = 627
+		camel_cavalry = 280
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+
+	ct_asoiaf_ghiscari_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 153
+		archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_ghiscari_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ghiscari_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 221
+		archers = 127
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_ghiscari_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ghiscari_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 337
+		archers = 181
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_ghiscari_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ghiscari_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 530
+		archers = 272
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_ghiscari_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ghiscari_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 751
+		archers = 413
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_ghiscari_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_ghiscar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ghiscari_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1129
+		archers = 627
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_lhazareen_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 153
+		archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_lhazareen_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_lhazareen_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 221
+		archers = 127
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_lhazareen_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_lhazareen_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 337
+		archers = 181
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_lhazareen_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_lhazareen_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 530
+		archers = 272
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_lhazareen_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_lhazareen_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 751
+		archers = 413
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_lhazareen_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_lhazar
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_lhazareen_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1129
+		archers = 627
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+
+	ct_asoiaf_eastern_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 153
+		archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_eastern_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_eastern_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 221
+		archers = 127
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_eastern_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_eastern_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 337
+		archers = 181
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_eastern_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_eastern_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 530
+		archers = 272
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_eastern_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_eastern_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 751
+		archers = 413
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_eastern_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			OR = {
+				region = world_bone_mountains
+				region = world_nghai
+			}
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_eastern_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1129
+		archers = 627
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+
+	ct_asoiaf_yiti_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 307
+		archers = 160
+		galleys = 7
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_yiti_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_yiti_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 458
+		archers = 241
+		galleys = 9
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_yiti_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_yiti_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 675
+		archers = 363
+		galleys = 13
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_yiti_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_yiti_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 1015
+		archers = 548
+		galleys = 18
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_yiti_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_yiti_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 1539
+		archers = 820
+		galleys = 26
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_yiti_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_yi_ti
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_yiti_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 2275
+		archers = 1213
+		galleys = 38
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	
+	ct_asoiaf_ibben_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 48
+		heavy_infantry = 19
+		light_cavalry = 8
+		archers = 40
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+		galleys = 3
+	}
+	ct_asoiaf_ibben_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ibben_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 71
+		heavy_infantry = 28
+		light_cavalry = 11
+		archers = 60
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+		galleys = 1
+	}
+	ct_asoiaf_ibben_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ibben_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 107
+		heavy_infantry = 41
+		light_cavalry = 17
+		archers = 90
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+		galleys = 3
+	}
+	ct_asoiaf_ibben_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ibben_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 162
+		heavy_infantry = 63
+		light_cavalry = 25
+		archers = 135
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		galleys = 4
+	}
+	ct_asoiaf_ibben_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ibben_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 243
+		heavy_infantry = 94
+		light_cavalry = 38
+		archers = 202
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+		galleys = 6
+	}
+	ct_asoiaf_ibben_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_ibben
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_ibben_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 364
+		heavy_infantry = 146
+		light_cavalry = 56
+		archers = 300
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+		galleys = 8
+	}
+	
+	ct_asoiaf_sarnor_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 153
+		archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_sarnor_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_sarnor_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 221
+		archers = 127
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_sarnor_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_sarnor_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 337
+		archers = 181
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_sarnor_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_sarnor_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 530
+		archers = 272
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_sarnor_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_sarnor_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 751
+		archers = 413
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_sarnor_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_sarnor
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_sarnor_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1129
+		archers = 627
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_asshai_basevalue_1 = {
+		desc = ct_asoiaf_basevalue_1_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 153
+		archers = 82
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_asshai_basevalue_2 = {
+		desc = ct_asoiaf_basevalue_2_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_asshai_basevalue_1
+		gold_cost = 300
+		build_time = 730
+		light_infantry = 221
+		archers = 127
+		ai_creation_factor = 0
+		tax_income = 1.5
+		fort_level = 1
+	}
+	ct_asoiaf_asshai_basevalue_3 = {
+		desc = ct_asoiaf_basevalue_3_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_asshai_basevalue_2
+		gold_cost = 400
+		build_time = 730
+		light_infantry = 337
+		archers = 181
+		ai_creation_factor = 0
+		tax_income = 1.9
+		fort_level = 1
+	}
+	ct_asoiaf_asshai_basevalue_4 = {
+		desc = ct_asoiaf_basevalue_4_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_asshai_basevalue_3
+		gold_cost = 600
+		build_time = 730
+		light_infantry = 530
+		archers = 272
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+	}
+	ct_asoiaf_asshai_basevalue_5 = {
+		desc = ct_asoiaf_basevalue_5_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_asshai_basevalue_4
+		gold_cost = 800
+		build_time = 730
+		light_infantry = 751
+		archers = 413
+		ai_creation_factor = 0
+		tax_income = 3.3
+		fort_level = 1
+		garrison_size = 0.25
+	}
+	ct_asoiaf_asshai_basevalue_6 = {
+		desc = ct_asoiaf_basevalue_6_desc
+		potential = {
+			region = world_asshai
+		}
+		trigger = { always = no }
+		upgrades_from = ct_asoiaf_asshai_basevalue_5
+		gold_cost = 1200
+		build_time = 730
+		light_infantry = 1129
+		archers = 627
+		ai_creation_factor = 0
+		tax_income = 4.6
+		fort_level = 1
+		garrison_size = 0.25
+	}
+}
