@@ -6325,11 +6325,9 @@
 	
 	disallow_random_traits = yes
 	
-	add_trait = exalted_blood
-	add_trait = dragon_dreams
-		
 	7961.12.19 = {birth="7961.12.19"
-
+		add_trait = genius
+		add_trait = dragon_dreams
 		effect = {
 			dynasty = none
 			set_character_flag = dragon_intel_dragonpit 
@@ -6343,10 +6341,8 @@
 	7980.8.12 = { #lost her eye while a slave
 		add_trait = one_eyed
 		add_trait = scarred}
-	7982.11.8 = { #kills a slaver and takes his stuff
-		add_trait = valyrian_armour
-		add_trait = dragon_egg}
-	7984.8.29 = { #is give the nickname "stranger" by the islanders
+	7982.11.8 = {add_trait = dragon_egg}
+	7984.8.29 = {
 		give_nickname = nick_the_stranger
 		add_trait = trusting
 		add_trait = back_seat_leader}
@@ -6382,13 +6378,12 @@
 
 	disallow_random_traits = yes
 	
-	add_trait = exalted_blood
-	add_trait = dragon_dreamd
-	
 	father=100304032
 	mother=400304032
 
 	7979.6.15 = {birth="7979.6.15"
+		add_trait = genius
+		add_trait = dragon_dreams
 		effect = {
 			set_character_flag = dragon_intel_dragonpit 
 			set_character_flag = dragon_intel_eggs
@@ -6396,45 +6391,17 @@
 			set_character_flag = dragon_intel_rebirth
 		}
 	}
-	7982.11.8 = {
-		add_trait = curious}
-	7986.3.1 = {
-		add_trait = poor_warrior}
-	7986.8.27 = {
-		remove_trait = poor_warrior
-		add_trait = trained_warrior}
-	7990.3.15 = {
-		add_trait = valyrian_armour
+	7990.3.15 = {add_trait = valyrian_armour
 		add_trait = dragon_egg
-	7991.6.4 = {
-		remove_trait = trained_warrior
-		add_trait = skilled_warrior}
-	7991.12.11 = {
-		add_trait = willful}
-	7992.5.10 = {
-		remove_trait = skilled_warrior
 		add_trait = master_warrior}
-	7993.6.19 = {
-		remove_trait = rowdy
-		add_trait = brave}
-	7993.10.1 = {
-		remove_trait = curious
-		add_trait = shrewd}
-	7994.1.7 = {
-		remove_trait = willful
-		add_trait = ambitious}
-	7994.2.14 = {
-		add_trait = zealous}
-	7995.9.5 = {
-		give_nickname = nick_the_fox}
-	7995.8.7 = {
-		add_trait = brilliant_strategist}	
-	7995.10.16 = {
-		add_trait = jungle_terrain_leader}
-	7995.12.3 = {
-		add_trait = holy_warrior}
-	8016.1.1 = {
-		death = {death_reason = death_missing}}
+	7993.6.19 = {add_trait = brave}
+	7994.1.7 = {add_trait = ambitious}
+	7994.2.14 = {add_trait = humble}
+	7995.9.5 = {give_nickname = nick_the_fox}
+	7995.8.7 = {add_trait = brilliant_strategist}	
+	7995.10.16 = {add_trait = jungle_terrain_leader}
+	7995.12.3 = {add_trait = holy_warrior}
+	8016.1.1 = {death = {death_reason = death_missing}}
 }
 104304032 = {
 	name="Simbhar"	# a lord
@@ -6444,8 +6411,6 @@
 	culture="summer_islander"
 
 	disallow_random_traits = yes
-
-	add_trait = exalted_blood
 	
 	father=100304032
 	mother=400304032
@@ -6454,15 +6419,12 @@
 	7991.5.23 = {add_trait = rowdy}
 	7991.4.17 = {add_trait = willful}
 	7992.4.5 = {add_trait = curious}	
-	7998.10.8 = {
-		remove_trait = curious
-		add_trait = cynical}
-	8001.12.13 = {
-		remove_trait = willful
-		add_trait = stubborn}	
-	8002.7.1 = {
-		remove_trait = rowdy
-		add_trait = brawny}
+	7998.10.8 = {remove_trait = curious}
+	7998.10.8 = {add_trait = cynical}
+	8001.12.13 = {remove_trait = willful}
+	8001.12.13 = {add_trait = stubborn}	
+	8001.12.13 = {remove_trait = rowdy}
+	8001.12.13 = {add_trait = brawny}
 	8004.4.22 = {add_trait=trained_warrior}
 	8005.1.1 = {add_spouse=404304032}
 	8041.1.1 = {death="8041.1.1"}
