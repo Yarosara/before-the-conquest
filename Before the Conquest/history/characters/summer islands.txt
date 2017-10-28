@@ -6407,7 +6407,7 @@
 	7995.8.7 = {add_trait = brilliant_strategist}
 	7995.10.16 = {add_trait = jungle_terrain_leader}
 	7995.11.3 = {add_trait = holy_warrior}
-	7995.12.18 = {add_trait = organizer
+	7995.12.18 = {add_trait = organizer}
 	8016.1.1 = {death = {death_reason = death_missing}}
 }
 104304032 = {
