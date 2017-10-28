@@ -6325,9 +6325,11 @@
 	
 	disallow_random_traits = yes
 	
+	add_trait = exalted_blood
+	add_trait = dragon_dreams
+		
 	7961.12.19 = {birth="7961.12.19"
-		add_trait = genius
-		add_trait = dragon_dreams
+
 		effect = {
 			dynasty = none
 			set_character_flag = dragon_intel_dragonpit 
@@ -6336,13 +6338,14 @@
 			set_character_flag = dragon_intel_rebirth
 		}
 	}
-	7977.2.27 = {
+	7979.2.27 = {
 		add_trait = brilliant_strategist}
-	7980.8.12 = { #lost her eye due to reasons
+	7980.8.12 = { #lost her eye while a slave
 		add_trait = one_eyed
 		add_trait = scarred}
 	7982.11.8 = { #kills a slaver and takes his stuff
-		add_trait = strangers_mercy}
+		add_trait = valyrian_armour
+		add_trait = dragon_egg}
 	7984.8.29 = { #is give the nickname "stranger" by the islanders
 		give_nickname = nick_the_stranger
 		add_trait = trusting
@@ -6353,7 +6356,7 @@
 	7986.5.7 = { #adopts the culture of the island
 		culture = "summer_islander"
 		add_trait = lustful
-		add_trait = ambitious}
+		add_trait = content}
 	7987.2.14 = {
 		religion = "summer_rel"
 		add_trait = flanker}
@@ -6373,20 +6376,19 @@
 	learning = 9
 	health = 10
 	fertility = 0.4
-	wealth = 61732
 	
 	religion="summer_rel"
 	culture="summer_islander"
 
 	disallow_random_traits = yes
 	
+	add_trait = exalted_blood
+	add_trait = dragon_dreamd
+	
 	father=100304032
 	mother=400304032
 
 	7979.6.15 = {birth="7979.6.15"
-		add_trait = immortal
-		add_trait = genius
-		add_trait = dragon_dreams
 		effect = {
 			set_character_flag = dragon_intel_dragonpit 
 			set_character_flag = dragon_intel_eggs
@@ -6394,20 +6396,16 @@
 			set_character_flag = dragon_intel_rebirth
 		}
 	}
-	7985.1.9 = {
-		give_nickname = nick_the_dreamer}
+	7982.11.8 = {
+		add_trait = curious}
 	7986.3.1 = {
 		add_trait = poor_warrior}
 	7986.8.27 = {
 		remove_trait = poor_warrior
 		add_trait = trained_warrior}
-	7988.11.8 = {
-		add_trait = willful}
-	7990.2.11 = {
-		add_trait = conscientious}
 	7990.3.15 = {
+		add_trait = valyrian_armour
 		add_trait = dragon_egg
-		add_trait = strangers_mercy}
 	7991.6.4 = {
 		remove_trait = trained_warrior
 		add_trait = skilled_warrior}
@@ -6416,25 +6414,26 @@
 	7992.5.10 = {
 		remove_trait = skilled_warrior
 		add_trait = master_warrior}
-	7993.10.1 = {
+	7993.6.19 = {
 		remove_trait = rowdy
 		add_trait = brave}
+	7993.10.1 = {
+		remove_trait = curious
+		add_trait = shrewd}
 	7994.1.7 = {
 		remove_trait = willful
-		add_trait = ambition}
+		add_trait = ambitious}
+	7994.2.14 = {
+		add_trait = zealous}
+	7995.9.5 = {
+		give_nickname = nick_the_fox}
 	7995.8.7 = {
 		add_trait = brilliant_strategist}	
 	7995.10.16 = {
 		add_trait = jungle_terrain_leader}
-	7995.11.8 = {
-		remove_trait = conscientious
-		add_trait = diligent}
 	7995.12.3 = {
 		add_trait = holy_warrior}
-	7995.1.1 = {
-		add_trait = dragon_egg}		
 	8016.1.1 = {
-		remove_trait = immortal
 		death = {death_reason = death_missing}}
 }
 104304032 = {
@@ -6444,7 +6443,9 @@
 	religion="summer_rel"
 	culture="summer_islander"
 
-	disallow_random_traits = yes		
+	disallow_random_traits = yes
+
+	add_trait = exalted_blood
 	
 	father=100304032
 	mother=400304032
@@ -6487,6 +6488,7 @@
 	father=100304032
 	mother=400304032
 
+	add_trait = exalted_blood
 	add_trait = weak
 
 	7990.3.15 = {birth="7990.3.15"}
