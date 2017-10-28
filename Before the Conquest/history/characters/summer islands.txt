@@ -6303,6 +6303,7 @@
 				add_trait = skilled_warrior
 				add_trait = jungle_terrain_leader}
 	7984.1.1 = {add_spouse=400304032}
+	7984.1.1 = {add_trait = strangers_mercy}
 	7995.1.1 = {death = {death_reason = death_battle killer = 100304028}}
 }
 400304032 = {
@@ -6333,6 +6334,7 @@
 			set_character_flag = dragon_intel_dragonpit 
 			set_character_flag = dragon_intel_eggs
 			set_character_flag = dragon_intel_dynamic
+			set_character_flag = dragon_intel_smoking_sea
 			set_character_flag = dragon_intel_rebirth
 		}
 	}
@@ -6341,7 +6343,6 @@
 	7980.8.12 = { #lost her eye while a slave
 		add_trait = one_eyed
 		add_trait = scarred}
-	7982.11.8 = {add_trait = valyrian_armour}
 	7982.11.8 = {add_trait = dragon_egg}
 	7984.8.29 = {
 		give_nickname = nick_the_stranger
@@ -6370,7 +6371,7 @@
 	martial = 11
 	stewardship = 5
 	intrigue = 7
-	learning = 9
+	learning = 8
 	health = 10
 	fertility = 0.7
 	
@@ -6389,20 +6390,22 @@
 			set_character_flag = dragon_intel_dragonpit 
 			set_character_flag = dragon_intel_eggs
 			set_character_flag = dragon_intel_dynamic
+			set_character_flag = dragon_intel_smoking_sea
 			set_character_flag = dragon_intel_rebirth
 		}
 	}
-	7990.3.15 = {add_trait = valyrian_armour
-		add_trait = dragon_egg
-		add_trait = master_warrior}
+	7990.3.15 = {add_trait = dragon_egg}
+	7990.3.15 = {add_trait = master_warrior}
 	7991.6.19 = {add_trait = brave}
-	7992.9.30 = {add_trait = zealous}
+	7992.9.30 = {add_trait = shrewd}
+	7992.10.4 = {give_nickname = nick_the_fox}
 	7994.1.7 = {add_trait = ambitious}
 	7994.2.14 = {add_trait = humble}
-	7995.9.5 = {give_nickname = nick_the_fox}
-	7995.8.7 = {add_trait = brilliant_strategist}	
+	7995.1.1 = {add_trait = strangers_mercy}
+	7995.8.7 = {add_trait = brilliant_strategist}
 	7995.10.16 = {add_trait = jungle_terrain_leader}
 	7995.12.3 = {add_trait = holy_warrior}
+	
 	8016.1.1 = {death = {death_reason = death_missing}}
 }
 104304032 = {
