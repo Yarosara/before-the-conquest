@@ -635,7 +635,7 @@ homosexual = { #47
 #####################
 
 clubfooted = { #48
-	birth = 200
+	birth = 100
 	inherit_chance = 40
 	both_parent_has_trait_inherit_chance = 80
 		
@@ -653,7 +653,7 @@ clubfooted = { #48
 	female_insult_adj = INSULT_LIMPING
 }
 harelip = { #49
-	birth = 200
+	birth = 100
 	inherit_chance = 40
 	both_parent_has_trait_inherit_chance = 60
 	sex_appeal_opinion = -10
@@ -668,7 +668,7 @@ harelip = { #49
 	female_insult_adj = INSULT_CLEFT_LIPPED
 }
 hunchback = { #50
-	birth = 200
+	birth = 100
 	inherit_chance = 40
 	both_parent_has_trait_inherit_chance = 60
 	
@@ -689,7 +689,7 @@ hunchback = { #50
 	female_insult_adj = INSULT_CROOKED
 }
 lisp = { #51
-	birth = 200
+	birth = 100
 	inherit_chance = 40
 	both_parent_has_trait_inherit_chance = 60
 	
@@ -706,7 +706,7 @@ lisp = { #51
 	child_insult_adj = INSULT_STUPID
 }
 stutter = { #52
-	birth = 300
+	birth = 250
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
@@ -739,7 +739,7 @@ fair = { #53
 	child_compliment_adj = COMPL_PRETTY
 }
 ugly = { #54
-	birth = 500
+	birth = 250
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
@@ -817,7 +817,7 @@ genius = { #56
 	child_compliment_adj = COMPL_CLEVER
 }
 quick = { #57
-	birth = 500
+	birth = 250
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
@@ -841,7 +841,7 @@ quick = { #57
 	ai_rationality = 15
 }
 slow = { #58
-	birth = 250
+	birth = 100
 	inherit_chance = 40
 	both_parent_has_trait_inherit_chance = 60
 	
@@ -870,7 +870,7 @@ slow = { #58
 	female_insult_adj = INSULT_VACUOUS
 }
 imbecile = { #59
-	birth = 100
+	birth = 50
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
@@ -929,7 +929,7 @@ inbred = { #60
 	child_insult_adj = INSULT_UGLY
 }
 strong = { #61
-	birth = 1000
+	birth = 500
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
@@ -954,7 +954,7 @@ strong = { #61
 	male_compliment_adj = COMPL_STRONG
 }
 weak = { #62
-	birth = 500
+	birth = 250
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
