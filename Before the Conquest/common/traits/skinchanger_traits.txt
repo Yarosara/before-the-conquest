@@ -1,0 +1,123 @@
+greensight = {
+	birth = 10
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
+	
+	intrigue = 2
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	
+	male_insult = INSULT_ABOMINATION
+	female_insult = INSULT_ABOMINATION
+	child_insult_adj = INSULT_WIERD
+}
+cotf= {
+	customizer = no
+	health = 1000
+	fertility = -50.0
+	cannot_marry = yes
+	cannot_inherit = yes
+	can_hold_titles = no
+	general_opinion = -30
+	same_opinion = 30
+}
+crow = {
+	diplomacy = 1
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 0.64
+}
+wolf = {
+	martial = 2
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 1.17
+}
+sea_lion = {
+	martial = 1
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+}
+whale = {
+	diplomacy = 1
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+}
+eagle = {
+	martial = 4
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 1.17
+}
+shadowcat = {
+	martial = 1
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 1.17
+}
+boar = {
+	martial = 1
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 0.64
+}
+snowbear = {
+	martial = 3
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 1.17
+}
+direwolf = {
+	martial = 3
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	ruler_designer_cost = 30
+	combat_rating = 2
+}
+dog = {
+	martial = 1
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 0.64
+}
+brownbear = {
+	martial = 3
+	monthly_character_piety = 1
+	same_opinion = 5
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	combat_rating = 1.17
+}
