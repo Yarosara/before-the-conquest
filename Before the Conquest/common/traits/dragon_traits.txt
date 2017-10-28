@@ -96,7 +96,7 @@ fed_to_dragon ={
 	health = -1
 }
 dragon_dreams = {
-	birth = 1
+	birth = 10
 	inherit_chance = 50
 	both_parent_has_trait_inherit_chance = 80
 	
