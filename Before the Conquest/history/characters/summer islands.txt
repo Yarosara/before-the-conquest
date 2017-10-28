@@ -6341,6 +6341,7 @@
 	7980.8.12 = { #lost her eye while a slave
 		add_trait = one_eyed
 		add_trait = scarred}
+	7982.11.8 = {add_trait = valyrian_armour}
 	7982.11.8 = {add_trait = dragon_egg}
 	7984.8.29 = {
 		give_nickname = nick_the_stranger
@@ -6371,7 +6372,7 @@
 	intrigue = 7
 	learning = 9
 	health = 10
-	fertility = 0.4
+	fertility = 0.7
 	
 	religion="summer_rel"
 	culture="summer_islander"
@@ -6394,7 +6395,8 @@
 	7990.3.15 = {add_trait = valyrian_armour
 		add_trait = dragon_egg
 		add_trait = master_warrior}
-	7993.6.19 = {add_trait = brave}
+	7991.6.19 = {add_trait = brave}
+	7992.9.30 = {add_trait = zealous}
 	7994.1.7 = {add_trait = ambitious}
 	7994.2.14 = {add_trait = humble}
 	7995.9.5 = {give_nickname = nick_the_fox}
@@ -6450,7 +6452,6 @@
 	father=100304032
 	mother=400304032
 
-	add_trait = exalted_blood
 	add_trait = weak
 
 	7990.3.15 = {birth="7990.3.15"}
