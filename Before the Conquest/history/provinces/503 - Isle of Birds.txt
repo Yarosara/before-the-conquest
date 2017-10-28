@@ -21,7 +21,6 @@ religion = summer_rel
 	b_swan_gate = ca_asoiaf_summerisland_basevalue_3
 	b_swan_gate = ca_asoiaf_summerisland_basevalue_4
 	b_swan_gate = ca_asoiaf_summerisland_basevalue_5
-	b_swan_gate = ca_cellar_2
 	
 	b_tucano = ct_asoiaf_summerisland_basevalue_1
 	b_tucano = ct_asoiaf_summerisland_basevalue_2
