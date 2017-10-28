@@ -14,9 +14,9 @@ fashionable = {
 	female_compliment_adj = COMPL_ELEGANT
 }
 tall = { #Renamed to GIant.
-	birth=100
-	inherit_chance = 25
-	both_parent_has_trait_inherit_chance = 50
+	birth = 500
+	inherit_chance = 50
+	both_parent_has_trait_inherit_chance = 80
 	
 	opposites =  {
 		dwarf
