@@ -159,7 +159,7 @@ character_event = {
 					}
 					if = {
 						limit = { 
-							NOT = { has_character_flag = sword_chosen }
+							NOT = { has_character_flag = sword_chosen }					  
 							NOT = { crabspincer = { is_alive = yes } }
 						}
 						set_character_flag = crabspincer
@@ -365,7 +365,7 @@ character_event = {
 			clr_character_flag = strangers_mercy
 		}
 		if = {
-			limit = { has_character_flag = palemoon }
+		limit = { has_character_flag = palemoon }
 			add_trait = palemoon
 			clr_character_flag = palemoon
 		}
@@ -522,10 +522,6 @@ character_event = {
 		if = {
 			limit = { trait = strangers_mercy }
 			remove_trait = strangers_mercy
-		}
-		if = {
-			limit = { trait = palemoon }
-			remove_trait = palemoon
 		}
 		if = {
 			limit = { trait = vigilance }
@@ -1044,7 +1040,7 @@ character_event = {
 		create_random_steward = {
 			random_traits = yes
 			dynasty = NONE
-			
+			female = no
 			add_trait = blacksmith
 		}
 		new_character = {
@@ -1055,13 +1051,14 @@ character_event = {
 				10 = { add_trait = selfish }
 				10 = { add_trait = envious }
 				10 = { add_trait = deceitful }
-				120 = { add_trait = diligent}
+				120 = { }
 			}
 			random_list = {
-				20 = { change_stewardship = 2}
+				20 = { }
+				10 = { change_stewardship = 2 }
 				10 = { change_stewardship = 4 }
 				10 = { change_stewardship = 6 }
-				10 = { change_stewardship = 8 }
+				10 = { change_stewardship = 8 }				   
 				10 = { change_learning = 2 }
 				10 = { change_learning = 4 }
 				10 = { change_learning = 6 }			
@@ -1071,10 +1068,9 @@ character_event = {
 		capital_scope = {
 			ROOT = {
 				create_random_steward = {
-					female = yes
 					random_traits = yes
 					dynasty = NONE
-					
+					female = yes
 					add_trait = blacksmith
 				}
 				new_character = {
@@ -1085,13 +1081,13 @@ character_event = {
 						10 = { add_trait = selfish }
 						10 = { add_trait = envious }
 						10 = { add_trait = deceitful }
-						120 = { add_trait = diligent}
+						120 = { }
 					}
 					random_list = {
-						20 = { change_stewardship = 2}
+						20 = { }
+						10 = { change_stewardship = 2 }
 						10 = { change_stewardship = 4 }
 						10 = { change_stewardship = 6 }
-						10 = { change_stewardship = 8 }
 						10 = { change_learning = 2 }
 						10 = { change_learning = 4 }
 						10 = { change_learning = 6 }			
@@ -1141,7 +1137,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = "EVTOPTC250285" #These two are useless, find me a better blacksmith!
+		name = "EVTOPTC250285" #You two are useless, bring me more.
 		wealth = -50
 		hidden_tooltip = { 
 			character_event = { id = 250285 days = 1 } 
@@ -1741,122 +1737,88 @@ character_event = {
 		}
 		if = { 
 			limit = { FROM = { trait = anger } }
-			FROM = { remove_trait = anger
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = anger }
 			add_trait = anger
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = black_death } }
-			FROM = { remove_trait = black_death
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = black_death }
 			add_trait = black_death
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = compassion } }
-			FROM = { remove_trait = compassion
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = compassion }
 			add_trait = compassion
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = blackpaw } }
-			FROM = { remove_trait = blackpaw
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = blackpaw }
 			add_trait = blackpaw
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = del_pino } }
-			FROM = { remove_trait = del_pino
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = del_pino }
 			add_trait = del_pino
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = gold_sword } }
-			FROM = { remove_trait = gold_sword
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = gold_sword }
 			add_trait = gold_sword
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = happyness} }
-			FROM = { remove_trait = happyness
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = happyness }
 			add_trait = happyness
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = hubris } }
-			FROM = { remove_trait = hubris
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = hubris }
 			add_trait = hubris
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = justice } }
-			FROM = { remove_trait = justice
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = justice }
 			add_trait = justice
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = kingmaker } }
-			FROM = { remove_trait = kingmaker
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = kingmaker }
 			add_trait = kingmaker
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = passion } }
-			FROM = { remove_trait = passion
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = passion }
 			add_trait = passion
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = rage } }
-			FROM = { remove_trait = rage
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = rage }
 			add_trait = rage
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = sightblinder } }
-			FROM = { remove_trait = sightblinder
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = sightblinder }
 			add_trait = sightblinder
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = the_monarchist } }
-			FROM = { remove_trait = the_monarchist
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = the_monarchist }
 			add_trait = the_monarchist
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = the_usurper } }
-			FROM = { remove_trait = the_usurper
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = the_usurper }
 			add_trait = the_usurper
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = worldeater} }
-			FROM = { remove_trait = worldeater
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = worldeater }
 			add_trait = worldeater
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 		if = { 
 			limit = { FROM = { trait = worlds_envy } }
-			FROM = { remove_trait = worlds_envy
-			remove_character_modifier = owns_valyrian_steel_sword }
+			FROM = { remove_trait = worlds_envy }
 			add_trait = worlds_envy
-			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
 		}
 
 		clr_character_flag = reforge_valyrian_steel
@@ -2036,121 +1998,87 @@ character_event = {
 			if = { 
 				limit = { trait = anger }
 				remove_trait = anger
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = anger
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = anger }
 			}
 			if = { 
 				limit = { trait = black_death }
 				remove_trait = black_death
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = black_death
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = black_death }
 			}
 			if = { 
 				limit = { trait = compassion }
 				remove_trait = compassion
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = compassion
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = compassion }
 			}
 			if = { 
 				limit = { trait = blackpaw }
 				remove_trait = blackpaw
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = blackpaw
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = blackpaw }
 			}
 			if = { 
 				limit = { trait = del_pino }
 				remove_trait = del_pino
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = del_pino
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = del_pino }
 			}
 			if = { 
 				limit = { trait = gold_sword }
 				remove_trait = gold_sword
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = gold_sword
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = gold_sword }
 			}
 			if = { 
 				limit = { trait = happyness }
 				remove_trait = happyness
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = happyness
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = happyness }
 			}
 			if = { 
 				limit = { trait = hubris }
 				remove_trait = hubris
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = hubris
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = hubris }
 			}
 			if = { 
 				limit = { trait = justice }
 				remove_trait = justice
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = justice
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = justice }
 			}
 			if = { 
 				limit = { trait = kingmaker }
 				remove_trait = kingmaker
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = kingmaker
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = kingmaker }
 			}
 			if = { 
 				limit = { trait = passion }
 				remove_trait = passion
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = passion
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = passion }
 			}
 			if = { 
 				limit = { trait = rage }
 				remove_trait = rage
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = rage
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = rage }
 			}
 			if = { 
 				limit = { trait = sightblinder }
 				remove_trait = sightblinder
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = sightblinder
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = sightblinder }
 			}
 			if = { 
 				limit = { trait = the_monarchist }
 				remove_trait = the_monarchist
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = the_monarchist
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = the_monarchist }
 			}
 			if = { 
 				limit = { trait = the_usurper }
 				remove_trait = the_usurper
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = the_usurper
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = the_usurper }
 			}
 			if = { 
 				limit = { trait = worldeater }
 				remove_trait = worldeater
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = worldeater
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }				}
+				ROOT = { add_trait = worldeater }
 			}
 			if = { 
 				limit = { trait = worlds_envy }
 				remove_trait = worlds_envy
-				remove_character_modifier = owns_valyrian_steel_sword
-				ROOT = { add_trait = worlds_envy 
-				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+				ROOT = { add_trait = worlds_envy }
 			}	
 			if = {
 				limit = { ROOT = { has_character_flag = blacksmith_murdered } }
@@ -2334,7 +2262,6 @@ character_event = {
 					trait = oathkeeper
 					trait = crabspincer
 					trait = strangers_mercy
-					trait = palemoon
 					trait = anger
 					trait = black_death
 					trait = compassion
@@ -2355,6 +2282,7 @@ character_event = {
 					trait = worlds_envy
 					trait = vigilance
 					trait = orphan_maker
+					trait = palemoon
 					trait = truth
 					trait = lamentation
 					trait = poison

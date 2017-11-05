@@ -7877,15 +7877,6 @@ character_event = { #Sword owner surrenders
 				}
 			}
 			if = {
-				limit = { trait = palemoon }
-				remove_trait = palemoon
-				ROOT = { add_trait = palemoon prestige = 50 }
-				opinion = {
-					who = ROOT
-					modifier = opinion_stole_palemoon
-					years = 100
-				}
-			}
 				limit = { trait = vigilance }
 				remove_trait = vigilance
 				ROOT = { add_trait = vigilance prestige = 50 }
@@ -7902,6 +7893,16 @@ character_event = { #Sword owner surrenders
 				opinion = {
 					who = ROOT
 					modifier = opinion_stole_orphan_maker
+					years = 100
+				}
+			}
+			if = {
+				limit = { trait = palemoon }
+				remove_trait = palemoon
+				ROOT = { add_trait = palemoon prestige = 50 }
+				opinion = {
+					who = ROOT
+					modifier = opinion_stole_palemoon
 					years = 100
 				}
 			}
@@ -8372,20 +8373,7 @@ character_event = { #Sword owner defeated
 				}
 			}
 			if = {
-				limit = { trait = palemoon }
-				if = {
-					limit = { is_alive = yes }
-					remove_trait = palemoon
-				}
-				ROOT = { add_trait = palemoon prestige = 50 }
-				opinion = {
-					who = ROOT
-					modifier = opinion_stole_palemoon
-					years = 100
-				}
-			}
-			if = {
-			limit = { trait = vigilance }
+				limit = { trait = vigilance }
 				if = {
 					limit = { is_alive = yes }
 					remove_trait = vigilance
@@ -8407,6 +8395,19 @@ character_event = { #Sword owner defeated
 				opinion = {
 					who = ROOT
 					modifier = opinion_stole_orphan_maker
+					years = 100
+				}
+			}
+			if = {
+				limit = { trait = palemoon }
+				if = {
+					limit = { is_alive = yes }
+					remove_trait = palemoon
+				}
+				ROOT = { add_trait = palemoon prestige = 50 }
+				opinion = {
+					who = ROOT
+					modifier = opinion_stole_palemoon
 					years = 100
 				}
 			}
@@ -9271,19 +9272,9 @@ character_event = {
 				}
 				character_event = { id = raid_events.103 }	
 				set_character_flag = sword_event
-			}
+			}	
 			if = { 
 				limit = { 
-					trait = palemoon
-					NOT = { has_character_flag = sword_event }
-					FROM = {
-						any_realm_character = {
-							has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_palemoon }
-						}
-					}
-				}
-				character_event = { id = raid_events.103 }	
-				set_character_flag = sword_event
 					trait = vigilance
 					NOT = { has_character_flag = sword_event }
 					FROM = {
@@ -9308,6 +9299,19 @@ character_event = {
 				character_event = { id = raid_events.103 }	
 				set_character_flag = sword_event
 			}	
+			if = { 
+				limit = { 
+					trait = palemoon
+					NOT = { has_character_flag = sword_event }
+					FROM = {
+						any_realm_character = {
+							has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_palemoon }
+						}
+					}
+				}
+				character_event = { id = raid_events.103 }	
+				set_character_flag = sword_event
+			}
 			if = { 
 				limit = { 
 					trait = truth
@@ -9727,13 +9731,9 @@ character_event = {
 							}
 						}
 						AND = {
-							trait = palemoon
+							trait = vigilance
 							FROM = {
 								any_realm_character = {
-									has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_palemoon }
-								}
-							}
-						}
 									has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_vigilance }
 								}
 							}
@@ -9743,6 +9743,14 @@ character_event = {
 							FROM = {
 								any_realm_character = {
 									has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_orphan_maker }
+								}
+							}
+						}
+						AND = {
+							trait = palemoon
+							FROM = {
+								any_realm_character = {
+									has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_palemoon }
 								}
 							}
 						}
@@ -10440,19 +10448,6 @@ character_event = {
 			}			
 		}
 		if = { 
-			limit = { trait = palemoon }		
-			FROM = { 
-				FROM = {
-					random_realm_character = {
-						limit = { has_opinion_modifier = { who = ROOT modifier = opinion_stole_palemoon } }
-						ROOT = { remove_trait = palemoon  }
-						add_trait = palemoon
-						hidden_tooltip = { character_event = { id = raid_events.104 } }	 						
-					}
-				}	
-			}			
-		}
-		if = { 
 			limit = { trait = vigilance }		
 			FROM = { 
 				FROM = {
@@ -10473,6 +10468,19 @@ character_event = {
 						limit = { has_opinion_modifier = { who = ROOT modifier = opinion_stole_orphan_maker } }
 						ROOT = { remove_trait = orphan_maker  }
 						add_trait = orphan_maker
+						hidden_tooltip = { character_event = { id = raid_events.104 } }	 						
+					}
+				}	
+			}			
+		}
+		if = { 
+			limit = { trait = palemoon }		
+			FROM = { 
+				FROM = {
+					random_realm_character = {
+						limit = { has_opinion_modifier = { who = ROOT modifier = opinion_stole_palemoon } }
+						ROOT = { remove_trait = palemoon  }
+						add_trait = palemoon
 						hidden_tooltip = { character_event = { id = raid_events.104 } }	 						
 					}
 				}	

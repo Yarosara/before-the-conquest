@@ -1,0 +1,24 @@
+# 387 - Lake of Myrth
+
+# County Title
+title = c_lakeofmyrth
+
+# Settlements
+max_settlements = 3
+
+b_lakeofmyrth_castle = castle
+b_lakeofmyrth = city
+b_lakeofmyrth_temple = temple
+
+# Misc
+culture = pentosi
+religion = rhllor
+
+# History
+6000.1.1 = {
+	b_lakeofmyrth = ct_asoiaf_essos_basevalue_1
+	b_lakeofmyrth = ct_asoiaf_essos_basevalue_2
+	
+	b_lakeofmyrth_castle = ca_asoiaf_essos_basevalue_1
+	b_lakeofmyrth_castle = ca_asoiaf_essos_basevalue_2
+}

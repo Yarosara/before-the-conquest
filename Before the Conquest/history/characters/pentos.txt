@@ -1,0 +1,9691 @@
+####################  Merchants
+
+
+###House Mopatis###
+600000040 = {
+	name="Illyrio"	
+	religion="rhllor"
+	culture="pentosi"	
+	dna="chbfh0b0fe0" 
+	properties="0d00b0"
+	
+	martial = 4
+	diplomacy = 12
+	intrigue = 16
+	stewardship = 10
+	learning = 8
+	
+	add_trait="elusive_shadow"
+	add_trait="genius"
+	add_trait="patient"
+	add_trait="deceitful"
+	add_trait="gregarious"
+	add_trait="cynical"
+	#add_trait="ambitious" #its not for himself
+	#add_trait="arbitrary"
+	
+	8243.1.1 = {birth="8243.1.1"}
+	8259.1.1 = {
+		add_trait=skilled_warrior
+	}
+	8269.1.1 = {
+		dynasty = 300519 #grew respectable and married cousin of Prince of Pentos
+		add_spouse = 131174356 #D'han
+	}
+	8280.1.1 = {
+		add_trait="gluttonous" #Becomes Fat
+		remove_trait=skilled_warrior
+	}
+	8290.1.1 = {
+		add_spouse=400300519
+	}
+	8295.1.1 = {
+		effect = { set_character_flag = has_dany_dragon_eggs }
+	}
+	8295.1.1= { add_trait = widowed }
+	8298.1.1 = {
+		effect = { clr_character_flag = has_dany_dragon_eggs }
+	}
+}
+400300519 = {
+	name="Serra"	
+	female=yes
+	religion="rhllor"
+	culture="lysene"	
+
+	add_trait="fair"
+
+	8264.1.1 = {birth="8264.1.1"}
+	8295.1.1={
+		# Died of plague
+		add_trait="has_bubonic_plague"
+		death = { death_reason = death_trait }
+	}
+}
+100300519 = {
+	name="Pynto"	
+	dynasty = 300519
+	religion="rhllor"
+	culture="pentosi"	
+	father=600000040
+	mother=131174356
+	8275.1.1 = {birth="8275.1.1"}
+	8291.1.1 = {
+		add_trait=trained_warrior
+	}
+}
+101300519 = {
+	name="Brea"	
+	female=yes
+	dynasty = 300519
+	religion="rhllor"
+	culture="pentosi"	
+	father=600000040
+	mother=131174356
+	8279.1.1 = {birth="8279.1.1"}
+}
+102300519 = {
+	name="Lucerre"	
+	female=yes
+	dynasty = 300519
+	religion="rhllor"
+	culture="pentosi"	
+	father=600000040
+	mother=400300519
+	8291.1.1 = {birth="8291.1.1"}
+}
+103300519 = {
+	name="Lotho"	
+	dynasty = 300519
+	religion="rhllor"
+	culture="pentosi"	
+	father=600000040
+	mother=400300519
+	8293.1.1 = {birth="8293.1.1"}
+}
+###House Theltis###
+100300526 = {
+	name="Gyleno"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7955.1.1 = {birth="7955.1.1"}
+	7971.1.1 = {add_trait=poor_warrior}
+	7973.1.1 = {add_spouse=400300526}
+	8015.1.1 = {death="8015.1.1"}
+}
+400300526 = {
+	name="Alia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7955.1.1 = {birth="7955.1.1"}
+	8015.1.1 = {death="8015.1.1"}
+}
+101300526 = {
+	name="Jaqen"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300526
+	mother=400300526
+
+	7975.1.1 = {birth="7975.1.1"}
+	7991.1.1 = {add_trait=trained_warrior}
+	7993.1.1 = {add_spouse=401300526}
+	8054.1.1 = {death="8054.1.1"}
+}
+401300526 = {
+	name="Denia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7975.1.1 = {birth="7975.1.1"}
+	8054.1.1 = {death="8054.1.1"}
+}
+102300526 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300526
+	mother=400300526
+
+	7976.1.1 = {birth="7976.1.1"}
+	8020.1.1 = {death="8020.1.1"}
+}
+103300526 = {
+	name="Moredea"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300526
+	mother=400300526
+
+	7977.1.1 = {birth="7977.1.1"}
+	8005.1.1 = {death="8005.1.1"}
+}
+104300526 = {
+	name="Gyleno"	# not a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300526
+	mother=400300526
+
+	7979.1.1 = {birth="7979.1.1"}
+	7995.1.1 = {add_trait=trained_warrior}
+	8051.1.1 = {death="8051.1.1"}
+}
+105300526 = {
+	name="Gylora"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300526
+	mother=400300526
+
+	7981.1.1 = {birth="7981.1.1"}
+	8037.1.1 = {death="8037.1.1"}
+}
+106300526 = {
+	name="Lothea"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101300526
+	mother=401300526
+
+	7995.1.1 = {birth="7995.1.1"}
+	8039.1.1 = {death="8039.1.1"}
+}
+107300526 = {
+	name="Jaqen"	# not a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101300526
+	mother=401300526
+
+	7998.1.1 = {birth="7998.1.1"}
+	8014.1.1 = {add_trait=skilled_warrior}
+	8016.1.1 = {add_spouse=407300526}
+	8042.1.1 = {death="8042.1.1"}
+}
+407300526 = {
+	name="Lothea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7998.1.1 = {birth="7998.1.1"}
+	8042.1.1 = {death="8042.1.1"}
+}
+108300526 = {
+	name="Tregar"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101300526
+	mother=401300526
+
+	8001.1.1 = {birth="8001.1.1"}
+	8017.1.1 = {add_trait=master_warrior}
+	8019.1.1 = {add_spouse=408300526}
+	8060.1.1 = {death="8060.1.1"}
+}
+408300526 = {
+	name="Lucerre"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8001.1.1 = {birth="8001.1.1"}
+	8060.1.1 = {death="8060.1.1"}
+}
+109300526 = {
+	name="Cossoma"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101300526
+	mother=401300526
+
+	8003.1.1 = {birth="8003.1.1"}
+	8062.1.1 = {death="8062.1.1"}
+}
+110300526 = {
+	name="Syrea"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101300526
+	mother=401300526
+
+	8004.1.1 = {birth="8004.1.1"}
+	8079.1.1 = {death="8079.1.1"}
+}
+111300526 = {
+	name="Bellegere"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=107300526
+	mother=407300526
+
+	8033.1.1 = {birth="8033.1.1"}
+	8100.1.1 = {death="8100.1.1"}
+}
+112300526 = {
+	name="Lotho"	# not a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=107300526
+	mother=407300526
+
+	8035.1.1 = {birth="8035.1.1"}
+	8051.1.1 = {add_trait=trained_warrior}
+	8102.1.1 = {death="8102.1.1"}
+}
+113300526 = {
+	name="Bellegere"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=107300526
+	mother=407300526
+
+	8037.1.1 = {birth="8037.1.1"}
+	8053.1.1 = {death = {death_reason = death_murder}}
+}
+114300526 = {
+	name="Narbo"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300526
+	mother=408300526
+
+	8027.1.1 = {birth="8027.1.1"}
+	8043.1.1 = {add_trait=master_warrior}
+	8045.1.1 = {add_spouse=414300526}
+	8085.1.1 = {death = {death_reason = death_accident}}
+}
+414300526 = {
+	name="Izembara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8027.1.1 = {birth="8027.1.1"}
+	8085.1.1 = {death="8085.1.1"}
+}
+115300526 = {
+	name="Gyloro"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300526
+	mother=414300526
+
+	8052.1.1 = {birth="8052.1.1"}
+	8068.1.1 = {add_trait=poor_warrior}
+	8070.1.1 = {add_spouse=415300526}
+	8087.1.1 = {death = {death_reason = death_battle}}
+}
+415300526 = {
+	name="Serra"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8052.1.1 = {birth="8052.1.1"}
+	8087.1.1 = {death="8087.1.1"}
+}
+116300526 = {
+	name="Orbelo"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300526
+	mother=414300526
+
+	8054.1.1 = {birth="8054.1.1"}
+	8070.1.1 = {add_trait=trained_warrior}
+	8072.1.1 = {add_spouse=416300526}
+	8108.1.1 = {death = {death_reason = death_accident}}
+}
+416300526 = {
+	name="Lothea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8054.1.1 = {birth="8054.1.1"}
+	8108.1.1 = {death="8108.1.1"}
+}
+117300526 = {
+	name="Bellonara"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300526
+	mother=414300526
+
+	8056.1.1 = {birth="8056.1.1"}
+	8125.1.1 = {death="8125.1.1"}
+}
+118300526 = {
+	name="Taena"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300526
+	mother=414300526
+
+	8058.1.1 = {birth="8058.1.1"}
+	8081.1.1 = {death="8081.1.1"}
+}
+119300526 = {
+	name="Izembaro"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115300526
+	mother=415300526
+
+	8076.1.1 = {birth="8076.1.1"}
+	8092.1.1 = {add_trait=poor_warrior}
+	8094.1.1 = {add_spouse=419300526}
+	8143.1.1 = {death = {death_reason = death_murder}}
+}
+419300526 = {
+	name="Betharios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8076.1.1 = {birth="8076.1.1"}
+	8143.1.1 = {death="8143.1.1"}
+}
+120300526 = {
+	name="S'vrone"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116300526
+	mother=416300526
+
+	8086.1.1 = {birth="8086.1.1"}
+	8125.1.1 = {death="8125.1.1"}
+}
+121300526 = {
+	name="Lothea"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116300526
+	mother=416300526
+
+	8087.1.1 = {birth="8087.1.1"}
+	8147.1.1 = {death="8147.1.1"}
+}
+122300526 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116300526
+	mother=416300526
+
+	8090.1.1 = {birth="8090.1.1"}
+	8135.1.1 = {death="8135.1.1"}
+}
+123300526 = {
+	name="Ternesio"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119300526
+	mother=419300526
+
+	8109.1.1 = {birth="8109.1.1"}
+	8125.1.1 = {add_trait=trained_warrior}
+	8127.1.1 = {add_spouse=423300526}
+	8165.1.1 = {death="8165.1.1"}
+}
+423300526 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8109.1.1 = {birth="8109.1.1"}
+	8165.1.1 = {death="8165.1.1"}
+}
+124300526 = {
+	name="Moredo"	# not a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119300526
+	mother=419300526
+
+	8110.1.1 = {birth="8110.1.1"}
+	8126.1.1 = {add_trait=trained_warrior}
+	8128.1.1 = {add_spouse=424300526}
+	8149.1.1 = {death = {death_reason = death_murder}}
+}
+424300526 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8110.1.1 = {birth="8110.1.1"}
+	8149.1.1 = {death="8149.1.1"}
+}
+125300526 = {
+	name="Gyleno"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=123300526
+	mother=423300526
+
+	8134.1.1 = {birth="8134.1.1"}
+	8150.1.1 = {add_trait=trained_warrior}
+	8152.1.1 = {add_spouse=425300526}
+	8187.1.1 = {death = {death_reason = death_accident}}
+}
+425300526 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8134.1.1 = {birth="8134.1.1"}
+	8187.1.1 = {death="8187.1.1"}
+}
+126300526 = {
+	name="Ordello"	# Prince of Pentos
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=124300526
+	mother=424300526
+
+	8141.1.1 = {birth="8141.1.1"}
+	8157.1.1 = {add_trait=poor_warrior}
+	8186.1.1 = {death="8186.1.1"}
+}
+127300526 = {
+	name="Ternesia"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=124300526
+	mother=424300526
+
+	8143.1.1 = {birth="8143.1.1"}
+	8218.1.1 = {death="8218.1.1"}
+}
+128300526 = {
+	name="Daario"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300526
+	mother=425300526
+
+	8158.1.1 = {birth="8158.1.1"}
+	8174.1.1 = {add_trait=poor_warrior}
+	8176.1.1 = {add_spouse=428300526}
+	8211.1.1 = {death="8211.1.1"}
+}
+428300526 = {
+	name="Ezzere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8158.1.1 = {birth="8158.1.1"}
+	8211.1.1 = {death="8211.1.1"}
+}
+129300526 = {
+	name="Denyo"	# Prince of Pentos
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300526
+	mother=425300526
+
+	8160.1.1 = {birth="8160.1.1"}
+	8176.1.1 = {add_trait=poor_warrior}
+	8195.4.1 = {death = {death_reason = death_execution} } 
+}
+130300526 = {
+	name="Ordello"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300526
+	mother=425300526
+
+	8162.1.1 = {birth="8162.1.1"}
+	8178.1.1 = {add_trait=poor_warrior}
+	8180.1.1 = {add_spouse=430300526}
+	8220.1.1 = {death="8220.1.1"}
+}
+430300526 = {
+	name="Myrmellios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8162.1.1 = {birth="8162.1.1"}
+	8220.1.1 = {death="8220.1.1"}
+}
+131300526 = {
+	name="Luco"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300526
+	mother=425300526
+
+	8165.1.1 = {birth="8165.1.1"}
+	8181.1.1 = {add_trait=poor_warrior}
+	8183.1.1 = {add_spouse=431300526}
+	8228.1.1 = {death="8228.1.1"}
+}
+431300526 = {
+	name="Jaqea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8165.1.1 = {birth="8165.1.1"}
+	8228.1.1 = {death="8228.1.1"}
+}
+132300526 = {
+	name="Mero"	# Prince of Pentos
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300526
+	mother=425300526
+
+	8167.1.1 = {birth="8167.1.1"}
+	8183.1.1 = {add_trait=poor_warrior}
+	8196.1.1 = {death = {death_reason = death_execution}}
+}
+133300526 = {
+	name="Taena"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=128300526
+	mother=428300526
+
+	8179.1.1 = {birth="8179.1.1"}
+	8222.1.1 = {death="8222.1.1"}
+}
+134300526 = {
+	name="Terro"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130300526
+	mother=430300526
+
+	8181.1.1 = {birth="8181.1.1"}
+	8197.1.1 = {add_trait=master_warrior}
+	8199.1.1 = {add_spouse=434300526}
+	8237.1.1 = {death="8237.1.1"}
+}
+434300526 = {
+	name="Nohia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8181.1.1 = {birth="8181.1.1"}
+	8237.1.1 = {death="8237.1.1"}
+}
+135300526 = {
+	name="Bellegere"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=131300526
+	mother=431300526
+
+	8191.1.1 = {birth="8191.1.1"}
+	8240.1.1 = {death="8240.1.1"}
+}
+136300526 = {
+	name="Syrio"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=131300526
+	mother=431300526
+
+	8192.1.1 = {birth="8192.1.1"}
+	8208.1.1 = {add_trait=trained_warrior}
+	8210.1.1 = {add_spouse=436300526}
+	8250.1.1 = {death="8250.1.1"}
+}
+436300526 = {
+	name="S'vrone"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8192.1.1 = {birth="8192.1.1"}
+	8250.1.1 = {death="8250.1.1"}
+}
+137300526 = {
+	name="Ferrego"	# Prince of Pentos
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=131300526
+	mother=431300526
+
+	8194.1.1 = {birth="8194.1.1"}
+	8210.1.1 = {add_trait=poor_warrior}
+	8249.1.1 = {death = {death_reason = death_accident}}
+}
+138300526 = {
+	name="Jaqea"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=134300526
+	mother=434300526
+
+	8199.1.1 = {birth="8199.1.1"}
+	8226.1.1 = {death="8226.1.1"}
+}
+139300526 = {
+	name="Ferrega"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=134300526
+	mother=434300526
+
+	8200.1.1 = {birth="8200.1.1"}
+	8263.1.1 = {death="8263.1.1"}
+}
+140300526 = {
+	name="Ternesio"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=136300526
+	mother=436300526
+
+	8214.1.1 = {birth="8214.1.1"}
+	8230.1.1 = {add_trait=trained_warrior}
+	8232.1.1 = {add_spouse=440300526}
+	8276.1.1 = {death="8276.1.1"}
+}
+440300526 = {
+	name="Qarria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8214.1.1 = {birth="8214.1.1"}
+	8276.1.1 = {death="8276.1.1"}
+}
+141300526 = {
+	name="Brusco"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=136300526
+	mother=436300526
+
+	8217.1.1 = {birth="8217.1.1"}
+	8233.1.1 = {add_trait=trained_warrior}
+	8235.1.1 = {add_spouse=441300526}
+	8277.1.1 = {death="8277.1.1"}
+}
+441300526 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8217.1.1 = {birth="8217.1.1"}
+	8277.1.1 = {death="8277.1.1"}
+}
+181300526 = {
+	name="Luco"	# Prince of Pentos
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=136300526
+	mother=436300526
+
+	8220.1.1 = {birth="8220.1.1"}
+	8236.1.1 = {add_trait=trained_warrior}
+	8277.1.1 = {death="8277.1.1"}
+}
+142300526 = {
+	name="Ezzere"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=140300526
+	mother=440300526
+
+	8243.1.1 = {birth="8243.1.1"}
+}
+143300526 = {
+	name="Ordello"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=140300526
+	mother=440300526
+
+	8244.1.1 = {birth="8244.1.1"}
+	8260.1.1 = {add_trait=trained_warrior}
+	8262.1.1 = {add_spouse=443300526}
+	8281.1.1 = {death = {death_reason = death_battle}}
+}
+443300526 = {
+	name="Jaqea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8244.1.1 = {birth="8244.1.1"}
+	8281.1.1 = {death="8281.1.1"}
+}
+144300526 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=141300526
+	mother=441300526
+
+	8242.1.1 = {birth="8242.1.1"}
+	8295.1.1 = {death="8295.1.1"}
+}
+145300526 = {
+	name="Ordello"	# a lord, canon, poisoned by mushroom
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=141300526
+	mother=441300526
+
+	8244.1.1 = {birth="8244.1.1"}
+	8260.1.1 = {add_trait=poor_warrior}
+	8262.1.1 = {add_spouse=445300526}
+	8299.6.1 = {
+		add_trait = ill		
+		death = {
+			death_reason = death_murder_unknown_poison
+		}
+	}
+}
+445300526 = {
+	name="Torma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8244.1.1 = {birth="8244.1.1"}
+}
+146300526 = {
+	name="Taena"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=141300526
+	mother=441300526
+
+	8247.1.1 = {birth="8247.1.1"}
+	8296.1.1 = {death="8296.1.1"}
+}
+147300526 = {
+	name="Torma"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=143300526
+	mother=443300526
+
+	8272.1.1 = {birth="8272.1.1"}
+}
+148300526 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=145300526
+	mother=445300526
+
+	8271.1.1 = {birth="8271.1.1"}
+}
+149300526 = {
+	name="Tycho"	# a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=145300526
+	mother=445300526
+
+	8274.1.1 = {birth="8274.1.1"}
+	8290.1.1 = {add_trait=poor_warrior}
+}
+150300526 = {
+	name="Taena"	# not a lord
+	female=yes
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=145300526
+	mother=445300526
+
+	8275.1.1 = {birth="8275.1.1"}
+}
+151300526 = {
+	name="Lotho"	# not a lord
+	dynasty=300526
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=145300526
+	mother=445300526
+
+	8277.1.1 = {birth="8277.1.1"}
+	8293.1.1 = {add_trait=trained_warrior}
+	8319.1.1 = {death = {death_reason = death_accident}}
+}
+###House D'han###
+100174356 = {
+	name="Ordello"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7965.1.1 = {birth="7965.1.1"}
+	7981.1.1 = {add_trait=trained_warrior}
+	7983.1.1 = {add_spouse=400174356}
+	8037.1.1 = {death="8037.1.1"}
+}
+400174356 = {
+	name="Umma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7965.1.1 = {birth="7965.1.1"}
+	8037.1.1 = {death="8037.1.1"}
+}
+101174356 = {
+	name="Serenei"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174356
+	mother=400174356
+
+	7985.1.1 = {birth="7985.1.1"}
+	8044.1.1 = {death = {death_reason = death_murder}}
+}
+102174356 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174356
+	mother=400174356
+
+	7986.1.1 = {birth="7986.1.1"}
+	8063.1.1 = {death="8063.1.1"}
+}
+103174356 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174356
+	mother=400174356
+
+	7989.1.1 = {birth="7989.1.1"}
+	8060.1.1 = {death="8060.1.1"}
+}
+104174356 = {
+	name="Tregar"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174356
+	mother=400174356
+
+	7991.1.1 = {birth="7991.1.1"}
+	8007.1.1 = {add_trait=trained_warrior}
+	8009.1.1 = {add_spouse=404174356}
+	8050.1.1 = {death="8050.1.1"}
+}
+404174356 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7991.1.1 = {birth="7991.1.1"}
+	8050.1.1 = {death="8050.1.1"}
+}
+105174356 = {
+	name="Pynto"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104174356
+	mother=404174356
+
+	8017.1.1 = {birth="8017.1.1"}
+	8033.1.1 = {add_trait=poor_warrior}
+	8035.1.1 = {add_spouse=405174356}
+	8072.1.1 = {death="8072.1.1"}
+}
+405174356 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8017.1.1 = {birth="8017.1.1"}
+	8072.1.1 = {death="8072.1.1"}
+}
+106174356 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104174356
+	mother=404174356
+
+	8018.1.1 = {birth="8018.1.1"}
+	8047.1.1 = {death="8047.1.1"}
+}
+107174356 = {
+	name="Roro"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104174356
+	mother=404174356
+
+	8020.1.1 = {birth="8020.1.1"}
+	8036.1.1 = {add_trait=trained_warrior}
+	8038.1.1 = {add_spouse=407174356}
+	8076.1.1 = {death="8076.1.1"}
+}
+407174356 = {
+	name="Mera"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8020.1.1 = {birth="8020.1.1"}
+	8076.1.1 = {death="8076.1.1"}
+}
+108174356 = {
+	name="Tregar"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105174356
+	mother=405174356
+
+	8048.1.1 = {birth="8048.1.1"}
+	8064.1.1 = {add_trait=master_warrior}
+	8066.1.1 = {add_spouse=408174356}
+	8104.1.1 = {death="8104.1.1"}
+}
+408174356 = {
+	name="Meralyia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8048.1.1 = {birth="8048.1.1"}
+	8104.1.1 = {death="8104.1.1"}
+}
+109174356 = {
+	name="Terrios"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105174356
+	mother=405174356
+
+	8049.1.1 = {birth="8049.1.1"}
+	8096.1.1 = {death="8096.1.1"}
+}
+110174356 = {
+	name="Roro"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105174356
+	mother=405174356
+
+	8052.1.1 = {birth="8052.1.1"}
+	8068.1.1 = {add_trait=poor_warrior}
+	8070.1.1 = {add_spouse=410174356}
+	8114.1.1 = {death="8114.1.1"}
+}
+410174356 = {
+	name="Terrios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8052.1.1 = {birth="8052.1.1"}
+	8114.1.1 = {death="8114.1.1"}
+}
+111174356 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105174356
+	mother=405174356
+
+	8053.1.1 = {birth="8053.1.1"}
+	8111.1.1 = {death = {death_reason = death_murder}}
+}
+112174356 = {
+	name="Lotho"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=107174356
+	mother=407174356
+
+	8048.1.1 = {birth="8048.1.1"}
+	8064.1.1 = {add_trait=trained_warrior}
+	8066.1.1 = {add_spouse=412174356}
+	8081.1.1 = {death="8081.1.1"}
+}
+412174356 = {
+	name="Myrmellios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8048.1.1 = {birth="8048.1.1"}
+	8081.1.1 = {death="8081.1.1"}
+}
+113174356 = {
+	name="Areo"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=112174356
+	mother=412174356
+
+	8069.1.1 = {birth="8069.1.1"}
+	8085.1.1 = {add_trait=poor_warrior}
+	8087.1.1 = {add_spouse=413174356}
+	8128.1.1 = {death="8128.1.1"}
+}
+413174356 = {
+	name="Meralyia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8069.1.1 = {birth="8069.1.1"}
+	8128.1.1 = {death="8128.1.1"}
+}
+114174356 = {
+	name="Meralyn"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108174356
+	mother=408174356
+
+	8066.1.1 = {birth="8066.1.1"}
+	8082.1.1 = {add_trait=skilled_warrior}
+	8124.1.1 = {death="8124.1.1"}
+}
+115174356 = {
+	name="Myrmello"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174356
+	mother=410174356
+
+	8073.1.1 = {birth="8073.1.1"}
+	8089.1.1 = {add_trait=master_warrior}
+	8091.1.1 = {add_spouse=415174356}
+	8143.1.1 = {death="8143.1.1"}
+}
+415174356 = {
+	name="Rogga"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8073.1.1 = {birth="8073.1.1"}
+	8143.1.1 = {death="8143.1.1"}
+}
+116174356 = {
+	name="Moreo"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174356
+	mother=410174356
+
+	8074.1.1 = {birth="8074.1.1"}
+	8090.1.1 = {add_trait=poor_warrior}
+	8093.1.1 = {death="8093.1.1"}
+}
+117174356 = {
+	name="Oro"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174356
+	mother=410174356
+
+	8076.1.1 = {birth="8076.1.1"}
+	8092.1.1 = {add_trait=trained_warrior}
+	8121.1.1 = {death="8121.1.1"}
+}
+118174356 = {
+	name="Moredea"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174356
+	mother=410174356
+
+	8078.1.1 = {birth="8078.1.1"}
+	8135.1.1 = {death="8135.1.1"}
+}
+119174356 = {
+	name="Tormo"	# Prince of Pentos
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113174356
+	mother=413174356
+
+	8089.1.1 = {birth="8089.1.1"}
+	8105.1.1 = {add_trait=poor_warrior}
+	8107.1.1 = {add_spouse=419174356}
+	8139.1.1 = {death="8139.1.1"}
+}
+419174356 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8089.1.1 = {birth="8089.1.1"}
+	8139.1.1 = {death="8139.1.1"}
+}
+120174356 = {
+	name="Lanna"	# Not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115174356
+	mother=415174356
+
+	8100.1.1 = {birth="8100.1.1"}
+	8151.1.1 = {death="8151.1.1"}
+}
+121174356 = {
+	name="Lanna"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119174356
+	mother=419174356
+
+	8120.1.1 = {birth="8120.1.1"}
+	8156.1.1 = {death="8156.1.1"}
+}
+122174356 = {
+	name="Joss"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119174356
+	mother=419174356
+
+	8123.1.1 = {birth="8123.1.1"}
+	8139.1.1 = {add_trait=trained_warrior}
+	8141.1.1 = {add_spouse=422174356}
+	8157.1.1 = {death="8157.1.1"}
+}
+422174356 = {
+	name="Serala"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8123.1.1 = {birth="8123.1.1"}
+	8157.1.1 = {death="8157.1.1"}
+}
+123174356 = {
+	name="Tagganaro"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119174356
+	mother=419174356
+
+	8125.1.1 = {birth="8125.1.1"}
+	8141.1.1 = {add_trait=poor_warrior}
+	8143.1.1 = {add_spouse=423174356}
+	8185.1.1 = {death = {death_reason = death_execution}}
+}
+423174356 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8125.1.1 = {birth="8125.1.1"}
+	8185.1.1 = {death="8185.1.1"}
+}
+124174356 = {
+	name="Lanna"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119174356
+	mother=419174356
+
+	8128.1.1 = {birth="8128.1.1"}
+	8173.1.1 = {death="8173.1.1"}
+}
+125174356 = {
+	name="Yorko"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=123174356
+	mother=423174356
+
+	8148.1.1 = {birth="8148.1.1"}
+	8164.1.1 = {add_trait=trained_warrior}
+	8166.1.1 = {add_spouse=425174356}
+	8178.1.1 = {death="8178.1.1"}
+}
+425174356 = {
+	name="Ferrega"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8148.1.1 = {birth="8148.1.1"}
+	8178.1.1 = {death="8178.1.1"}
+}
+126174356 = {
+	name="Daario"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=123174356
+	mother=423174356
+
+	8151.1.1 = {birth="8151.1.1"}
+	8167.1.1 = {add_trait=trained_warrior}
+	8169.1.1 = {add_spouse=426174356}
+	8212.1.1 = {death="8212.1.1"}
+}
+426174356 = {
+	name="Meralyia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8151.1.1 = {birth="8151.1.1"}
+	8212.1.1 = {death="8212.1.1"}
+}
+127174356 = {
+	name="Qarro"	# Prince of Pentos
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125174356
+	mother=425174356
+
+	8177.1.1 = {birth="8177.1.1"}
+	8193.1.1 = {add_trait=poor_warrior}
+	8213.1.1 = {death = {death_reason = death_execution}}
+}
+128174356 = {
+	name="Noho"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=126174356
+	mother=426174356
+
+	8176.1.1 = {birth="8176.1.1"}
+	8192.1.1 = {add_trait=trained_warrior}
+	8194.1.1 = {add_spouse=428174356}
+	8217.1.1 = {death="8217.1.1"}
+}
+428174356 = {
+	name="Ternesia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8176.1.1 = {birth="8176.1.1"}
+	8217.1.1 = {death="8217.1.1"}
+}
+129174356 = {
+	name="Illyrio"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=128174356
+	mother=428174356
+
+	8207.1.1 = {birth="8207.1.1"}
+	8223.1.1 = {add_trait=trained_warrior}
+	8225.1.1 = {add_spouse=429174356}
+	8238.1.1 = {death="8238.1.1"}
+}
+429174356 = {
+	name="Narba"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8207.1.1 = {birth="8207.1.1"}
+	8238.1.1 = {death="8238.1.1"}
+}
+130174356 = {
+	name="Gyleno"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=128174356
+	mother=428174356
+
+	8210.1.1 = {birth="8210.1.1"}
+	8226.1.1 = {add_trait=poor_warrior}
+	8228.1.1 = {add_spouse=430174356}
+	8278.1.1 = {death="8278.1.1"}
+}
+430174356 = {
+	name="Lothea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8210.1.1 = {birth="8210.1.1"}
+	8278.1.1 = {death="8278.1.1"}
+}
+131174356 = {
+	name="Torma"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=129174356
+	mother=429174356
+
+	8232.1.1 = {birth="8232.1.1"}
+	8285.1.1 = {death="8285.1.1"}
+}
+132174356 = {
+	name="Tregar"	# Prince of Pentos
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174356
+	mother=430174356
+
+	8233.1.1 = {birth="8233.1.1"}
+	8290.1.1 = {death = {death_reason = death_execution}}
+}
+133174356 = {
+	name="Areo"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174356
+	mother=430174356
+
+	8236.1.1 = {birth="8236.1.1"}
+	8252.1.1 = {add_trait=poor_warrior}
+	8254.1.1 = {add_spouse=433174356}
+	8281.1.1 = {death="8281.1.1"}
+}
+433174356 = {
+	name="Lanna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8236.1.1 = {birth="8236.1.1"}
+	8281.1.1 = {death="8281.1.1"}
+}
+134174356 = {
+	name="Ternesio"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174356
+	mother=430174356
+
+	8239.1.1 = {birth="8239.1.1"}
+	8255.1.1 = {add_trait=trained_warrior}
+	8257.1.1 = {add_spouse=434174356}
+	8292.1.1 = {death="8292.1.1"}
+}
+434174356 = {
+	name="Denia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8239.1.1 = {birth="8239.1.1"}
+	8292.1.1 = {death="8292.1.1"}
+}
+135174356 = {
+	name="Bellegere"	# not a lord
+	female=yes
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133174356
+	mother=433174356
+
+	8265.1.1 = {birth="8265.1.1"}
+}
+136174356 = {
+	name="Moredo"	# a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133174356
+	mother=433174356
+
+	8268.1.1 = {birth="8268.1.1"}
+	8284.1.1 = {add_trait=skilled_warrior}
+	8286.1.1 = {add_spouse=436174356}
+}
+436174356 = {
+	name="Ferrega"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8268.1.1 = {birth="8268.1.1"}
+}
+137174356 = {
+	name="Cossomo"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=134174356
+	mother=434174356
+
+	8274.1.1 = {birth="8274.1.1"}
+	8290.1.1 = {add_trait=trained_warrior}
+}
+138174356 = {
+	name="Ollo"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=134174356
+	mother=434174356
+
+	8275.1.1 = {birth="8275.1.1"}
+	8291.1.1 = {add_trait=poor_warrior}
+}
+139174356 = {
+	name="Terro"	# not a lord
+	dynasty=174356
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=136174356
+	mother=436174356
+
+	8286.1.1 = {birth="8286.1.1"}
+	8302.1.1 = {add_trait=poor_warrior}
+}
+###House Narratys
+100300012 = {
+	name="Yorko"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7944.1.1 = {birth="7944.1.1"}
+	7960.1.1 = {add_trait=poor_warrior}
+	7962.1.1 = {add_spouse=400300012}
+	8006.1.1 = {death="8006.1.1"}
+}
+400300012 = {
+	name="Mera"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7944.1.1 = {birth="7944.1.1"}
+	8006.1.1 = {death="8006.1.1"}
+}
+101300012 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300012
+	mother=400300012
+
+	7971.1.1 = {birth="7971.1.1"}
+	8026.1.1 = {death="8026.1.1"}
+}
+102300012 = {
+	name="Narbo"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300012
+	mother=400300012
+
+	7972.1.1 = {birth="7972.1.1"}
+	7988.1.1 = {add_trait=trained_warrior}
+	7990.1.1 = {add_spouse=402300012}
+	8032.1.1 = {death="8032.1.1"}
+}
+402300012 = {
+	name="Izembara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7972.1.1 = {birth="7972.1.1"}
+	8032.1.1 = {death="8032.1.1"}
+}
+103300012 = {
+	name="Oro"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300012
+	mother=402300012
+
+	7995.1.1 = {birth="7995.1.1"}
+	8011.1.1 = {add_trait=poor_warrior}
+	8013.1.1 = {add_spouse=403300012}
+	8045.1.1 = {death = {death_reason = death_accident}}
+}
+403300012 = {
+	name="Yorka"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7995.1.1 = {birth="7995.1.1"}
+	8045.1.1 = {death="8045.1.1"}
+}
+104300012 = {
+	name="Pynta"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300012
+	mother=402300012
+
+	7998.1.1 = {birth="7998.1.1"}
+	8066.1.1 = {death = {death_reason = death_accident}}
+}
+105300012 = {
+	name="Luco"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300012
+	mother=402300012
+
+	8000.1.1 = {birth="8000.1.1"}
+	8016.1.1 = {add_trait=trained_warrior}
+	8018.1.1 = {add_spouse=405300012}
+	8078.1.1 = {death="8078.1.1"}
+}
+405300012 = {
+	name="Jaqea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8000.1.1 = {birth="8000.1.1"}
+	8078.1.1 = {death="8078.1.1"}
+}
+106300012 = {
+	name="Noho"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300012
+	mother=402300012
+
+	8003.1.1 = {birth="8003.1.1"}
+	8019.1.1 = {add_trait=trained_warrior}
+	8055.1.1 = {death = {death_reason = death_accident}}
+}
+107300012 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103300012
+	mother=403300012
+
+	8028.1.1 = {birth="8028.1.1"}
+	8073.1.1 = {death="8073.1.1"}
+}
+108300012 = {
+	name="Qarro"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105300012
+	mother=405300012
+
+	8032.1.1 = {birth="8032.1.1"}
+	8048.1.1 = {add_trait=trained_warrior}
+	8050.1.1 = {add_spouse=408300012}
+	8085.1.1 = {death="8085.1.1"}
+}
+408300012 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8032.1.1 = {birth="8032.1.1"}
+	8085.1.1 = {death="8085.1.1"}
+}
+109300012 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105300012
+	mother=405300012
+
+	8033.1.1 = {birth="8033.1.1"}
+	8088.1.1 = {death="8088.1.1"}
+}
+110300012 = {
+	name="Orios"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105300012
+	mother=405300012
+
+	8036.1.1 = {birth="8036.1.1"}
+	8099.1.1 = {death="8099.1.1"}
+}
+111300012 = {
+	name="Denyo"	# Prince of Pentos
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=105300012
+	mother=405300012
+
+	8037.1.1 = {birth="8037.1.1"}
+	8053.1.1 = {add_trait=poor_warrior}
+	8078.1.1 = {death = {death_reason = death_murder}}
+}
+112300012 = {
+	name="Izembaro"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300012
+	mother=408300012
+
+	8066.1.1 = {birth="8066.1.1"}
+	8082.1.1 = {add_trait=trained_warrior}
+	8084.1.1 = {add_spouse=412300012}
+	8128.1.1 = {death="8128.1.1"}
+}
+412300012 = {
+	name="Lothea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8066.1.1 = {birth="8066.1.1"}
+	8128.1.1 = {death="8128.1.1"}
+}
+113300012 = {
+	name="Narba"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300012
+	mother=408300012
+
+	8069.1.1 = {birth="8069.1.1"}
+	8134.1.1 = {death="8134.1.1"}
+}
+114300012 = {
+	name="Denyo"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300012
+	mother=408300012
+
+	8071.1.1 = {birth="8071.1.1"}
+	8087.1.1 = {add_trait=poor_warrior}
+	8089.1.1 = {add_spouse=414300012}
+	8130.1.1 = {death = {death_reason = death_murder}}
+}
+414300012 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8071.1.1 = {birth="8071.1.1"}
+	8130.1.1 = {death="8130.1.1"}
+}
+115300012 = {
+	name="Torma"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300012
+	mother=408300012
+
+	8073.1.1 = {birth="8073.1.1"}
+	8142.1.1 = {death="8142.1.1"}
+}
+116300012 = {
+	name="Illyrio"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=112300012
+	mother=412300012
+
+	8091.1.1 = {birth="8091.1.1"}
+	8107.1.1 = {add_trait=poor_warrior}
+	8115.1.1 = {death="8115.1.1"}
+}
+117300012 = {
+	name="Denyo"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=112300012
+	mother=412300012
+
+	8092.1.1 = {birth="8092.1.1"}
+	8108.1.1 = {add_trait=poor_warrior}
+	8110.1.1 = {add_spouse=417300012}
+	8135.1.1 = {death="8135.1.1"}
+}
+417300012 = {
+	name="Serala"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8092.1.1 = {birth="8092.1.1"}
+	8135.1.1 = {death="8135.1.1"}
+}
+118300012 = {
+	name="Allaquo"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300012
+	mother=414300012
+
+	8091.1.1 = {birth="8091.1.1"}
+	8107.1.1 = {add_trait=poor_warrior}
+	8109.1.1 = {add_spouse=418300012}
+	8148.1.1 = {death="8148.1.1"}
+}
+418300012 = {
+	name="Tagganaria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8091.1.1 = {birth="8091.1.1"}
+	8148.1.1 = {death="8148.1.1"}
+}
+119300012 = {
+	name="Cossomo"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300012
+	mother=414300012
+
+	8093.1.1 = {birth="8093.1.1"}
+	8109.1.1 = {add_trait=poor_warrior}
+	8147.1.1 = {death="8147.1.1"}
+}
+120300012 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300012
+	mother=414300012
+
+	8095.1.1 = {birth="8095.1.1"}
+	8146.1.1 = {death="8146.1.1"}
+}
+121300012 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300012
+	mother=414300012
+
+	8097.1.1 = {birth="8097.1.1"}
+	8151.1.1 = {death="8151.1.1"}
+}
+122300012 = {
+	name="Brea"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300012
+	mother=418300012
+
+	8117.1.1 = {birth="8117.1.1"}
+	8151.1.1 = {death="8151.1.1"}
+}
+123300012 = {
+	name="Gyloro"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300012
+	mother=418300012
+
+	8120.1.1 = {birth="8120.1.1"}
+	8136.1.1 = {add_trait=trained_warrior}
+	8138.1.1 = {add_spouse=423300012}
+	8156.1.1 = {death="8156.1.1"}
+}
+423300012 = {
+	name="Orios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8120.1.1 = {birth="8120.1.1"}
+	8156.1.1 = {death="8156.1.1"}
+}
+124300012 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=117300012
+	mother=417300012
+
+	8117.1.1 = {birth="8117.1.1"}
+	8160.1.1 = {death="8160.1.1"}
+}
+125300012 = {
+	name="Terrios"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=117300012
+	mother=417300012
+
+	8119.1.1 = {birth="8119.1.1"}
+	8162.1.1 = {death="8162.1.1"}
+}
+126300012 = {
+	name="Tormo"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=117300012
+	mother=417300012
+
+	8121.1.1 = {birth="8121.1.1"}
+	8137.1.1 = {add_trait=poor_warrior}
+	8164.1.1 = {death="8164.1.1"}
+}
+127300012 = {
+	name="Tagganaria"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=123300012
+	mother=423300012
+
+	8145.1.1 = {birth="8145.1.1"}
+	8170.1.1 = {death="8170.1.1"}
+}
+128300012 = {
+	name="Roggo"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=123300012
+	mother=423300012
+
+	8147.1.1 = {birth="8147.1.1"}
+	8163.1.1 = {add_trait=skilled_warrior}
+	8165.1.1 = {add_spouse=428300012}
+	8198.1.1 = {death="8198.1.1"}
+}
+428300012 = {
+	name="Nohia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8147.1.1 = {birth="8147.1.1"}
+	8198.1.1 = {death="8198.1.1"}
+}
+129300012 = {
+	name="Syrea"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=128300012
+	mother=428300012
+
+	8174.1.1 = {birth="8174.1.1"}
+	8204.1.1 = {death="8204.1.1"}
+}
+130300012 = {
+	name="Ordello"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=128300012
+	mother=428300012
+
+	8176.1.1 = {birth="8176.1.1"}
+	8192.1.1 = {add_trait=trained_warrior}
+	8194.1.1 = {add_spouse=430300012}
+	8231.1.1 = {death="8231.1.1"}
+}
+430300012 = {
+	name="Pynta"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8176.1.1 = {birth="8176.1.1"}
+	8231.1.1 = {death="8231.1.1"}
+}
+131300012 = {
+	name="Nevio"	# canon, Prince of Pentos
+	dynasty=300012
+	
+	diplomacy=8
+	intrigue=8
+	stewardship=5
+	martial=4
+	learning=5
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=128300012
+	mother=428300012
+	
+	add_trait=charismatic_negotiator
+	add_trait=patient
+	add_trait=ruthless
+	add_trait=authoritative
+
+	8177.1.1 = {birth="8177.1.1"}
+	8193.1.1 = {add_trait=poor_warrior}
+	8208.1.1 = {death="8208.1.1"}
+}
+132300012 = {
+	name="Meralyn"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130300012
+	mother=430300012
+
+	8196.1.1 = {birth="8196.1.1"}
+	8212.1.1 = {add_trait=trained_warrior}
+	8214.1.1 = {add_spouse=432300012}
+	8240.1.1 = {death="8240.1.1"}
+}
+432300012 = {
+	name="Yna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8196.1.1 = {birth="8196.1.1"}
+	8240.1.1 = {death="8240.1.1"}
+}
+133300012 = {
+	name="Mero"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130300012
+	mother=430300012
+
+	8197.1.1 = {birth="8197.1.1"}
+	8213.1.1 = {add_trait=master_warrior}
+	8215.1.1 = {add_spouse=433300012}
+	8238.1.1 = {death="8238.1.1"}
+}
+433300012 = {
+	name="Pynta"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8197.1.1 = {birth="8197.1.1"}
+	8238.1.1 = {death="8238.1.1"}
+}
+134300012 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130300012
+	mother=430300012
+
+	8200.1.1 = {birth="8200.1.1"}
+	8269.1.1 = {death="8269.1.1"}
+}
+135300012 = {
+	name="Ordello"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=132300012
+	mother=432300012
+
+	8220.1.1 = {birth="8220.1.1"}
+	8236.1.1 = {add_trait=poor_warrior}
+	8238.1.1 = {add_spouse=435300012}
+	8281.1.1 = {death="8281.1.1"}
+}
+435300012 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8220.1.1 = {birth="8220.1.1"}
+	8281.1.1 = {death="8281.1.1"}
+}
+136300012 = {
+	name="Taena"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=132300012
+	mother=432300012
+
+	8221.1.1 = {birth="8221.1.1"}
+	8300.1.1 = {death="8300.1.1"}
+}
+137300012 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=135300012
+	mother=435300012
+
+	8248.1.1 = {birth="8248.1.1"}
+}
+138300012 = {
+	name="Qarro"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300012
+	mother=433300012
+
+	8225.1.1 = {birth="8225.1.1"}
+	8241.1.1 = {add_trait=trained_warrior}
+	8243.1.1 = {add_spouse=438300012}
+	8278.1.1 = {death="8278.1.1"}
+}
+438300012 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8225.1.1 = {birth="8225.1.1"}
+	8278.1.1 = {death="8278.1.1"}
+}
+139300012 = {
+	name="Beqqo"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300012
+	mother=433300012
+
+	8227.1.1 = {birth="8227.1.1"}
+	8243.1.1 = {add_trait=master_warrior}
+	8275.1.1 = {death="8275.1.1"}
+}
+140300012 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300012
+	mother=433300012
+
+	8229.1.1 = {birth="8229.1.1"}
+	8296.1.1 = {death="8296.1.1"}
+}
+141300012 = {
+	name="Myrmello"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+	
+	add_trait = ruthless
+	add_trait = diligent
+
+	father=133300012
+	mother=433300012
+
+	8232.1.1 = {birth="8232.1.1"}
+	8248.1.1 = {add_trait=skilled_warrior}
+	8259.1.1 = {add_claim = k_pentos }
+	8264.1.1 = {death="8264.1.1"}
+}
+142300012 = {
+	name="Tregar"	# a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=138300012
+	mother=438300012
+
+	8244.1.1 = {birth="8244.1.1"}
+	8260.1.1 = {add_trait=poor_warrior}
+	8262.1.1 = {add_spouse=442300012}
+}
+442300012 = {
+	name="Narba"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8244.1.1 = {birth="8244.1.1"}
+}
+143300012 = {
+	name="Cossomo"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=138300012
+	mother=438300012
+
+	8245.1.1 = {birth="8245.1.1"}
+	8261.1.1 = {add_trait=trained_warrior}
+	8263.1.1 = {add_spouse=443300012}
+}
+443300012 = {
+	name="Gylenios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8245.1.1 = {birth="8245.1.1"}
+}
+145300012 = {
+	name="Terrios"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=138300012
+	mother=438300012
+
+	8251.1.1 = {birth="8251.1.1"}
+}
+146300012 = {
+	name="Joss"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=142300012
+	mother=442300012
+
+	8266.1.1 = {birth="8266.1.1"}
+	8282.1.1 = {add_trait=skilled_warrior}
+}
+147300012 = {
+	name="Brea"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=142300012
+	mother=442300012
+
+	8269.1.1 = {birth="8269.1.1"}
+}
+148300012 = {
+	name="Yna"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=142300012
+	mother=442300012
+
+	8270.1.1 = {birth="8270.1.1"}
+}
+149300012 = {
+	name="Ternesio"	# Prince of Pentos
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=142300012
+	mother=442300012
+
+	8271.1.1 = {birth="8271.1.1"}
+	8287.1.1 = {add_trait=poor_warrior}
+}
+150300012 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=142300012
+	mother=442300012
+
+	8274.1.1 = {birth="8274.1.1"}
+}
+151300012 = {
+	name="Cossomo"	# not a lord
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=143300012
+	mother=443300012
+
+	8274.1.1 = {birth="8274.1.1"}
+	8290.1.1 = {add_trait=master_warrior}
+}
+152300012 = {
+	name="Brea"	# not a lord
+	female=yes
+	dynasty=300012
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=143300012
+	mother=443300012
+
+	8277.1.1 = {birth="8277.1.1"}
+}
+###House Myrakis
+100174366 = {
+	name="Roggo"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7960.1.1 = {birth="7960.1.1"}
+	7976.1.1 = {add_trait=poor_warrior}
+	7978.1.1 = {add_spouse=400174366}
+	8019.1.1 = {death="8019.1.1"}
+}
+400174366 = {
+	name="Myrmellios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7960.1.1 = {birth="7960.1.1"}
+	8019.1.1 = {death="8019.1.1"}
+}
+101174366 = {
+	name="Ferrega"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174366
+	mother=400174366
+
+	7984.1.1 = {birth="7984.1.1"}
+	8054.1.1 = {death="8054.1.1"}
+}
+102174366 = {
+	name="Moredo"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174366
+	mother=400174366
+
+	7987.1.1 = {birth="7987.1.1"}
+	8003.1.1 = {add_trait=trained_warrior}
+	8005.1.1 = {add_spouse=402174366}
+	8027.1.1 = {death="8027.1.1"}
+}
+402174366 = {
+	name="Serra"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7987.1.1 = {birth="7987.1.1"}
+	8027.1.1 = {death="8027.1.1"}
+}
+103174366 = {
+	name="Ordello"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174366
+	mother=400174366
+
+	7988.1.1 = {birth="7988.1.1"}
+	8004.1.1 = {add_trait=poor_warrior}
+	8012.1.1 = {death = {death_reason = death_battle}}
+}
+104174366 = {
+	name="Denyo"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102174366
+	mother=402174366
+
+	8014.1.1 = {birth="8014.1.1"}
+	8030.1.1 = {add_trait=poor_warrior}
+	8032.1.1 = {add_spouse=404174366}
+	8089.1.1 = {death="8089.1.1"}
+}
+404174366 = {
+	name="Narba"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8014.1.1 = {birth="8014.1.1"}
+	8089.1.1 = {death="8089.1.1"}
+}
+105174366 = {
+	name="Jaqen"	# Prince of Pentos
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102174366
+	mother=402174366
+
+	8017.1.1 = {birth="8017.1.1"}
+	8033.1.1 = {add_trait=poor_warrior}
+	8064.1.1 = {death = {death_reason = death_execution }}
+}
+106174366 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104174366
+	mother=404174366
+
+	8039.1.1 = {birth="8039.1.1"}
+	8088.1.1 = {death="8088.1.1"}
+}
+107174366 = {
+	name="Torma"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104174366
+	mother=404174366
+
+	8041.1.1 = {birth="8041.1.1"}
+	8105.1.1 = {death="8105.1.1"}
+}
+108174366 = {
+	name="Brusco"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104174366
+	mother=404174366
+
+	8043.1.1 = {birth="8043.1.1"}
+	8059.1.1 = {add_trait=trained_warrior}
+	8061.1.1 = {add_spouse=408174366}
+	8098.1.1 = {death="8098.1.1"}
+}
+408174366 = {
+	name="Denia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8043.1.1 = {birth="8043.1.1"}
+	8098.1.1 = {death="8098.1.1"}
+}
+109174366 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108174366
+	mother=408174366
+
+	8066.1.1 = {birth="8066.1.1"}
+	8117.1.1 = {death="8117.1.1"}
+}
+110174366 = {
+	name="Allaquo"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108174366
+	mother=408174366
+
+	8068.1.1 = {birth="8068.1.1"}
+	8084.1.1 = {add_trait=skilled_warrior}
+	8086.1.1 = {add_spouse=410174366}
+	8122.1.1 = {death="8122.1.1"}
+}
+410174366 = {
+	name="Doreah"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8068.1.1 = {birth="8068.1.1"}
+	8122.1.1 = {death="8122.1.1"}
+}
+111174366 = {
+	name="Izembaro"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108174366
+	mother=408174366
+
+	8071.1.1 = {birth="8071.1.1"}
+	8087.1.1 = {add_trait=poor_warrior}
+	8110.1.1 = {death="8110.1.1"}
+}
+112174366 = {
+	name="Luco"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108174366
+	mother=408174366
+
+	8074.1.1 = {birth="8074.1.1"}
+	8090.1.1 = {add_trait=poor_warrior}
+	8119.1.1 = {death="8119.1.1"}
+}
+113174366 = {
+	name="Cossoma"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174366
+	mother=410174366
+
+	8091.1.1 = {birth="8091.1.1"}
+	8120.1.1 = {death="8120.1.1"}
+}
+114174366 = {
+	name="Lotho"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174366
+	mother=410174366
+
+	8093.1.1 = {birth="8093.1.1"}
+	8109.1.1 = {add_trait=trained_warrior}
+	8111.1.1 = {add_spouse=414174366}
+	8171.1.1 = {death="8171.1.1"}
+}
+414174366 = {
+	name="Meralyia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8093.1.1 = {birth="8093.1.1"}
+	8171.1.1 = {death="8171.1.1"}
+}
+115174366 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174366
+	mother=410174366
+
+	8095.1.1 = {birth="8095.1.1"}
+	8140.1.1 = {death="8140.1.1"}
+}
+116174366 = {
+	name="Gyloro"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174366
+	mother=410174366
+
+	8097.1.1 = {birth="8097.1.1"}
+	8113.1.1 = {add_trait=poor_warrior}
+	8115.1.1 = {add_spouse=416174366}
+	8175.1.1 = {death="8175.1.1"}
+}
+416174366 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8097.1.1 = {birth="8097.1.1"}
+	8175.1.1 = {death="8175.1.1"}
+}
+117174366 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114174366
+	mother=414174366
+
+	8122.1.1 = {birth="8122.1.1"}
+	8175.1.1 = {death="8175.1.1"}
+}
+118174366 = {
+	name="Mera"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114174366
+	mother=414174366
+
+	8125.1.1 = {birth="8125.1.1"}
+	8185.1.1 = {death="8185.1.1"}
+}
+119174366 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116174366
+	mother=416174366
+
+	8124.1.1 = {birth="8124.1.1"}
+	8181.1.1 = {death="8181.1.1"}
+}
+120174366 = {
+	name="Terro"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116174366
+	mother=416174366
+
+	8125.1.1 = {birth="8125.1.1"}
+	8141.1.1 = {add_trait=poor_warrior}
+	8143.1.1 = {add_spouse=420174366}
+	8182.1.1 = {death="8182.1.1"}
+}
+420174366 = {
+	name="Lanna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8125.1.1 = {birth="8125.1.1"}
+	8182.1.1 = {death="8182.1.1"}
+}
+121174366 = {
+	name="Syrio"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116174366
+	mother=416174366
+
+	8126.1.1 = {birth="8126.1.1"}
+	8142.1.1 = {add_trait=poor_warrior}
+	8179.1.1 = {death="8179.1.1"}
+}
+122174366 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116174366
+	mother=416174366
+
+	8128.1.1 = {birth="8128.1.1"}
+	8158.1.1 = {death="8158.1.1"}
+}
+123174366 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120174366
+	mother=420174366
+
+	8156.1.1 = {birth="8156.1.1"}
+	8194.1.1 = {death="8194.1.1"}
+}
+124174366 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120174366
+	mother=420174366
+
+	8157.1.1 = {birth="8157.1.1"}
+	8202.1.1 = {death="8202.1.1"}
+}
+125174366 = {
+	name="Brusco"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120174366
+	mother=420174366
+
+	8160.1.1 = {birth="8160.1.1"}
+	8176.1.1 = {add_trait=trained_warrior}
+	8178.1.1 = {add_spouse=425174366}
+	8200.1.1 = {death="8200.1.1"}
+}
+425174366 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8160.1.1 = {birth="8160.1.1"}
+	8200.1.1 = {death="8200.1.1"}
+}
+126174366 = {
+	name="Ternesio"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125174366
+	mother=425174366
+
+	8188.1.1 = {birth="8188.1.1"}
+	8204.1.1 = {add_trait=poor_warrior}
+	8206.1.1 = {add_spouse=426174366}
+	8258.1.1 = {death="8258.1.1"}
+}
+426174366 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8188.1.1 = {birth="8188.1.1"}
+	8258.1.1 = {death="8258.1.1"}
+}
+127174366 = {
+	name="Meralyn"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125174366
+	mother=425174366
+
+	8191.1.1 = {birth="8191.1.1"}
+	8207.1.1 = {add_trait=poor_warrior}
+	8209.1.1 = {add_spouse=427174366}
+	8225.1.1 = {death="8225.1.1"}
+}
+427174366 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8191.1.1 = {birth="8191.1.1"}
+	8225.1.1 = {death="8225.1.1"}
+}
+128174366 = {
+	name="Brea"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=126174366
+	mother=426174366
+
+	8212.1.1 = {birth="8212.1.1"}
+	8260.1.1 = {death="8260.1.1"}
+}
+129174366 = {
+	name="Terro"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127174366
+	mother=427174366
+
+	8222.1.1 = {birth="8222.1.1"}
+	8238.1.1 = {add_trait=poor_warrior}
+	8240.1.1 = {add_spouse=429174366}
+	8285.1.1 = {death="8285.1.1"}
+}
+429174366 = {
+	name="Orios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8222.1.1 = {birth="8222.1.1"}
+	8285.1.1 = {death="8285.1.1"}
+}
+130174366 = {
+	name="Moreo"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127174366
+	mother=427174366
+
+	8224.1.1 = {birth="8224.1.1"}
+	8240.1.1 = {add_trait=poor_warrior}
+	8242.1.1 = {add_spouse=430174366}
+	8290.1.1 = {death="8290.1.1"}
+}
+430174366 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8224.1.1 = {birth="8224.1.1"}
+	8290.1.1 = {death="8290.1.1"}
+}
+131174366 = {
+	name="Serala"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=129174366
+	mother=429174366
+
+	8249.1.1 = {birth="8249.1.1"}
+}
+132174366 = {
+	name="Joss"	# a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174366
+	mother=430174366
+
+	8258.1.1 = {birth="8258.1.1"}
+	8274.1.1 = {add_trait=trained_warrior}
+	8276.1.1 = {add_spouse=432174366}
+}
+432174366 = {
+	name="Mera"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8258.1.1 = {birth="8258.1.1"}
+}
+133174366 = {
+	name="Orbelo"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174366
+	mother=430174366
+
+	8260.1.1 = {birth="8260.1.1"}
+	8276.1.1 = {add_trait=trained_warrior}
+	8278.1.1 = {add_spouse=433174366}
+}
+433174366 = {
+	name="Alia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8260.1.1 = {birth="8260.1.1"}
+}
+134174366 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174366
+	mother=430174366
+
+	8263.1.1 = {birth="8263.1.1"}
+}
+135174366 = {
+	name="Ezzere"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130174366
+	mother=430174366
+
+	8266.1.1 = {birth="8266.1.1"}
+}
+136174366 = {
+	name="Ternesio"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=132174366
+	mother=432174366
+
+	8290.1.1 = {birth="8290.1.1"}
+	8306.1.1 = {add_trait=poor_warrior}
+}
+137174366 = {
+	name="Groleo"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=132174366
+	mother=432174366
+
+	8292.1.1 = {birth="8292.1.1"}
+	8308.1.1 = {add_trait=poor_warrior}
+}
+138174366 = {
+	name="Qarro"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133174366
+	mother=433174366
+
+	8288.1.1 = {birth="8288.1.1"}
+	8304.1.1 = {add_trait=poor_warrior}
+}
+139174366 = {
+	name="Luco"	# not a lord
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133174366
+	mother=433174366
+
+	8291.1.1 = {birth="8291.1.1"}
+	8307.1.1 = {add_trait=skilled_warrior}
+}
+142174366 = {
+	name="Myrmellios"	# not a lord
+	female=yes
+	dynasty=174366
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133174366
+	mother=433174366
+
+	8298.1.1 = {birth="8298.1.1"}
+}
+###Hosue Estatis###
+100174360 = {
+	name="Luco"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7966.1.1 = {birth="7966.1.1"}
+	7982.1.1 = {add_trait=trained_warrior}
+	7984.1.1 = {add_spouse=400174360}
+	8025.1.1 = {death="8025.1.1"}
+}
+400174360 = {
+	name="Yorka"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7966.1.1 = {birth="7966.1.1"}
+	8025.1.1 = {death="8025.1.1"}
+}
+101174360 = {
+	name="Meralyia"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174360
+	mother=400174360
+
+	7991.1.1 = {birth="7991.1.1"}
+	8047.1.1 = {death="8047.1.1"}
+}
+102174360 = {
+	name="Narbo"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174360
+	mother=400174360
+
+	7992.1.1 = {birth="7992.1.1"}
+	8008.1.1 = {add_trait=poor_warrior}
+	8010.1.1 = {add_spouse=402174360}
+	8057.1.1 = {death="8057.1.1"}
+}
+402174360 = {
+	name="Bellonara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7992.1.1 = {birth="7992.1.1"}
+	8057.1.1 = {death="8057.1.1"}
+}
+103174360 = {
+	name="Mero"	# Prince of Pentos
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174360
+	mother=400174360
+
+	7994.1.1 = {birth="7994.1.1"}
+	8010.1.1 = {add_trait=trained_warrior}
+	8012.1.1 = {add_spouse=403174360}
+	8043.1.1 = {death="8043.1.1"}
+}
+403174360 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7994.1.1 = {birth="7994.1.1"}
+	8043.1.1 = {death="8043.1.1"}
+}
+104174360 = {
+	name="Narba"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174360
+	mother=400174360
+
+	7996.1.1 = {birth="7996.1.1"}
+	8029.1.1 = {death="8029.1.1"}
+}
+105174360 = {
+	name="Roro"	# not a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100174360
+	mother=400174360
+
+	7999.1.1 = {birth="7999.1.1"}
+	8015.1.1 = {add_trait=trained_warrior}
+	8038.1.1 = {death="8038.1.1"}
+}
+106174360 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102174360
+	mother=402174360
+
+	8020.1.1 = {birth="8020.1.1"}
+	8077.1.1 = {death="8077.1.1"}
+}
+107174360 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103174360
+	mother=403174360
+
+	8022.1.1 = {birth="8022.1.1"}
+	8054.1.1 = {death="8054.1.1"}
+}
+108174360 = {
+	name="Tyanna"	# of Pentos, married Meagor. Was his spouse at the same time as Alys Harroway
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+	
+	intrigue=9
+	learning=10
+
+	father=103174360
+	mother=403174360
+
+	8023.1.1 = {birth="8023.1.1"}
+	8039.1.1 = {add_trait=lustful add_trait=proud add_trait=elusive_shadow add_trait=red_priest}
+	8048.1.1 = {death={death_reason = death_execution
+	killer=77005}}
+}
+109174360 = {
+	name="Izembaro"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103174360
+	mother=403174360
+
+	8024.1.1 = {birth="8024.1.1"}
+	8040.1.1 = {add_trait=poor_warrior}
+	8042.1.1 = {add_spouse=409174360}
+	8094.1.1 = {death="8094.1.1"}
+}
+409174360 = {
+	name="Betharios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8024.1.1 = {birth="8024.1.1"}
+	8094.1.1 = {death="8094.1.1"}
+}
+110174360 = {
+	name="Ezzelyno"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109174360
+	mother=409174360
+
+	8049.1.1 = {birth="8049.1.1"}
+	8065.1.1 = {add_trait=poor_warrior}
+	8067.1.1 = {add_spouse=410174360}
+	8109.1.1 = {death="8109.1.1"}
+}
+410174360 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8049.1.1 = {birth="8049.1.1"}
+	8109.1.1 = {death="8109.1.1"}
+}
+111174360 = {
+	name="Narbo"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109174360
+	mother=409174360
+
+	8051.1.1 = {birth="8051.1.1"}
+	8067.1.1 = {add_trait=poor_warrior}
+	8069.1.1 = {add_spouse=411174360}
+	8126.1.1 = {death="8126.1.1"}
+}
+171174360 = {
+	name="Byan"	# Prince of Pentos
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109174360
+	mother=409174360
+
+	8053.1.1 = {birth="8053.1.1"}
+	8067.1.1 = {add_trait=poor_warrior}
+	8122.1.1 = {death="8122.1.1"}
+}
+411174360 = {
+	name="Ezzere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8051.1.1 = {birth="8051.1.1"}
+	8126.1.1 = {death="8126.1.1"}
+}
+112174360 = {
+	name="Jaqea"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174360
+	mother=410174360
+
+	8083.1.1 = {birth="8083.1.1"}
+	8155.1.1 = {death = {death_reason = death_murder}}
+}
+113174360 = {
+	name="Collio"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174360
+	mother=410174360
+
+	8084.1.1 = {birth="8084.1.1"}
+	8100.1.1 = {add_trait=skilled_warrior}
+	8102.1.1 = {add_spouse=413174360}
+	8137.1.1 = {death="8137.1.1"}
+}
+413174360 = {
+	name="Serra"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8084.1.1 = {birth="8084.1.1"}
+	8137.1.1 = {death="8137.1.1"}
+}
+114174360 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174360
+	mother=410174360
+
+	8087.1.1 = {birth="8087.1.1"}
+	8146.1.1 = {death="8146.1.1"}
+}
+115174360 = {
+	name="Yorko"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=110174360
+	mother=410174360
+
+	8089.1.1 = {birth="8089.1.1"}
+	8105.1.1 = {add_trait=poor_warrior}
+	8107.1.1 = {add_spouse=415174360}
+	8143.1.1 = {death = {death_reason = death_murder}}
+}
+415174360 = {
+	name="Jaqea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8089.1.1 = {birth="8089.1.1"}
+	8143.1.1 = {death="8143.1.1"}
+}
+116174360 = {
+	name="Ezzere"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=111174360
+	mother=411174360
+
+	8084.1.1 = {birth="8084.1.1"}
+	8121.1.1 = {death = {death_reason = death_accident}}
+}
+117174360 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=111174360
+	mother=411174360
+
+	8086.1.1 = {birth="8086.1.1"}
+	8112.1.1 = {death="8112.1.1"}
+}
+118174360 = {
+	name="Mero"	# not a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=111174360
+	mother=411174360
+
+	8089.1.1 = {birth="8089.1.1"}
+	8105.1.1 = {add_trait=poor_warrior}
+	8141.1.1 = {death="8141.1.1"}
+}
+119174360 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113174360
+	mother=413174360
+
+	8113.1.1 = {birth="8113.1.1"}
+	8157.1.1 = {death="8157.1.1"}
+}
+120174360 = {
+	name="Serenei"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113174360
+	mother=413174360
+
+	8116.1.1 = {birth="8116.1.1"}
+	8177.1.1 = {death="8177.1.1"}
+}
+121174360 = {
+	name="Yollo"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115174360
+	mother=415174360
+
+	8123.1.1 = {birth="8123.1.1"}
+	8139.1.1 = {add_trait=poor_warrior}
+	8141.1.1 = {add_spouse=421174360}
+	8198.1.1 = {death="8198.1.1"}
+}
+421174360 = {
+	name="Yna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8123.1.1 = {birth="8123.1.1"}
+	8198.1.1 = {death="8198.1.1"}
+}
+122174360 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115174360
+	mother=415174360
+
+	8126.1.1 = {birth="8126.1.1"}
+	8159.1.1 = {death="8159.1.1"}
+}
+123174360 = {
+	name="Umma"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115174360
+	mother=415174360
+
+	8127.1.1 = {birth="8127.1.1"}
+	8191.1.1 = {death="8191.1.1"}
+}
+124174360 = {
+	name="Ferrego"	# Prince of Pentos
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115174360
+	mother=415174360
+
+	8130.1.1 = {birth="8130.1.1"}
+	8146.1.1 = {add_trait=skilled_warrior}
+	8155.1.1 = {death = {death_reason = death_execution } }
+}
+125174360 = {
+	name="Meralyn"	# not a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115174360
+	mother=415174360
+
+	8132.1.1 = {birth="8132.1.1"}
+	8148.1.1 = {add_trait=poor_warrior}
+	8175.1.1 = {death="8175.1.1"}
+}
+126174360 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=121174360
+	mother=421174360
+
+	8157.1.1 = {birth="8157.1.1"}
+	8176.1.1 = {death="8176.1.1"}
+}
+127174360 = {
+	name="Groleo"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=121174360
+	mother=421174360
+
+	8159.1.1 = {birth="8159.1.1"}
+	8175.1.1 = {add_trait=trained_warrior}
+	8177.1.1 = {add_spouse=427174360}
+	8223.1.1 = {death="8223.1.1"}
+}
+427174360 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8159.1.1 = {birth="8159.1.1"}
+	8223.1.1 = {death="8223.1.1"}
+}
+128174360 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=121174360
+	mother=421174360
+
+	8162.1.1 = {birth="8162.1.1"}
+	8218.1.1 = {death="8218.1.1"}
+}
+129174360 = {
+	name="Collio"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127174360
+	mother=427174360
+
+	8178.1.1 = {birth="8178.1.1"}
+	8194.1.1 = {add_trait=skilled_warrior}
+	8196.1.1 = {add_spouse=429174360}
+	8248.1.1 = {death="8248.1.1"}
+}
+429174360 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8178.1.1 = {birth="8178.1.1"}
+	8248.1.1 = {death="8248.1.1"}
+}
+130174360 = {
+	name="Izembaro"	# not a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127174360
+	mother=427174360
+
+	8180.1.1 = {birth="8180.1.1"}
+	8196.1.1 = {add_trait=poor_warrior}
+	8200.1.1 = {death = {death_reason = death_accident}}
+}
+131174360 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127174360
+	mother=427174360
+
+	8181.1.1 = {birth="8181.1.1"}
+	8220.1.1 = {death="8220.1.1"}
+}
+132174360 = {
+	name="Orios"	# not a lord
+	female=yes
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=129174360
+	mother=429174360
+
+	8212.1.1 = {birth="8212.1.1"}
+	8267.1.1 = {death="8267.1.1"}
+}
+133174360 = {
+	name="Mero"	# a lord
+	dynasty=55926
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=129174360
+	mother=429174360
+
+	8215.1.1 = {birth="8215.1.1"}
+	8231.1.1 = {add_trait=trained_warrior}
+	8233.1.1 = {add_spouse=433174360}
+	8269.1.1 = {death="8269.1.1"}
+}
+433174360 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8215.1.1 = {birth="8215.1.1"}
+	8270.1.1 = {death="8270.1.1"}
+}
+
+
+#################  Nobles
+
+###  House Kaporys
+100069127 = {
+	name="Collio"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7958.1.1 = {birth="7958.1.1"}
+	7974.1.1 = {add_trait=poor_warrior}
+	7976.1.1 = {add_spouse=400069127}
+	8036.1.1 = {death="8036.1.1"}
+}
+400069127 = {
+	name="Narba"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7958.1.1 = {birth="7958.1.1"}
+	8036.1.1 = {death="8036.1.1"}
+}
+100169127 = {
+	name="Syrio"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069127
+	mother=400069127
+
+	7981.1.1 = {birth="7981.1.1"}
+	7996.1.1 = {add_trait=poor_warrior}
+	8003.1.1 = {death="8003.1.1"}
+}
+100269127 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069127
+	mother=400069127
+
+	7982.1.1 = {birth="7982.1.1"}
+	8034.1.1 = {death="8034.1.1"}
+}
+100369127 = {
+	name="Syrio"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069127
+	mother=400069127
+
+	7983.1.1 = {birth="7983.1.1"}
+	7999.1.1 = {add_trait=trained_warrior}
+	8001.1.1 = {add_spouse=400369127}
+	8039.1.1 = {death="8039.1.1"}
+}
+400369127 = {
+	name="Yna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7983.1.1 = {birth="7983.1.1"}
+	8039.1.1 = {death="8039.1.1"}
+}
+100469127 = {
+	name="Moreo"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069127
+	mother=400069127
+
+	7985.1.1 = {birth="7985.1.1"}
+	8001.1.1 = {add_trait=trained_warrior}
+	8033.1.1 = {death="8033.1.1"}
+}
+100569127 = {
+	name="Rogga"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369127
+	mother=400369127
+
+	8008.1.1 = {birth="8008.1.1"}
+	8068.1.1 = {death="8068.1.1"}
+}
+100669127 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369127
+	mother=400369127
+
+	8011.1.1 = {birth="8011.1.1"}
+	8047.1.1 = {death="8047.1.1"}
+}
+100769127 = {
+	name="Torma"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369127
+	mother=400369127
+
+	8013.1.1 = {birth="8013.1.1"}
+	8090.1.1 = {death="8090.1.1"}
+}
+100869127 = {
+	name="Qarro"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369127
+	mother=400369127
+
+	8016.1.1 = {birth="8016.1.1"}
+	8032.1.1 = {add_trait=skilled_warrior}
+	8034.1.1 = {add_spouse=400869127}
+	8086.1.1 = {death="8086.1.1"}
+}
+400869127 = {
+	name="Talea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8016.1.1 = {birth="8016.1.1"}
+	8086.1.1 = {death="8086.1.1"}
+}
+100969127 = {
+	name="Allaquo"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100869127
+	mother=400869127
+
+	8051.1.1 = {birth="8051.1.1"}
+	8067.1.1 = {add_trait=skilled_warrior}
+	8069.1.1 = {add_spouse=400969127}
+	8107.1.1 = {death="8107.1.1"}
+}
+400969127 = {
+	name="Terrios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8051.1.1 = {birth="8051.1.1"}
+	8107.1.1 = {death="8107.1.1"}
+}
+101069127 = {
+	name="Qarro"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969127
+	mother=400969127
+
+	8078.1.1 = {birth="8078.1.1"}
+	8094.1.1 = {add_trait=poor_warrior}
+	8096.1.1 = {add_spouse=401069127}
+	8141.1.1 = {death="8141.1.1"}
+}
+401069127 = {
+	name="Qarria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8078.1.1 = {birth="8078.1.1"}
+	8141.1.1 = {death="8141.1.1"}
+}
+101169127 = {
+	name="Lotho"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969127
+	mother=400969127
+
+	8081.1.1 = {birth="8081.1.1"}
+	8097.1.1 = {add_trait=trained_warrior}
+	8144.1.1 = {death = {death_reason = death_accident}}
+}
+101269127 = {
+	name="Izembaro"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969127
+	mother=400969127
+
+	8083.1.1 = {birth="8083.1.1"}
+	8099.1.1 = {add_trait=poor_warrior}
+	8126.1.1 = {death="8126.1.1"}
+}
+101369127 = {
+	name="Illyrio"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969127
+	mother=400969127
+
+	8084.1.1 = {birth="8084.1.1"}
+	8100.1.1 = {add_trait=trained_warrior}
+	8121.1.1 = {death="8121.1.1"}
+}
+101469127 = {
+	name="Rogga"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069127
+	mother=401069127
+
+	8097.1.1 = {birth="8097.1.1"}
+	8166.1.1 = {death = {death_reason = death_accident}}
+}
+101569127 = {
+	name="Collio"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069127
+	mother=401069127
+
+	8099.1.1 = {birth="8099.1.1"}
+	8115.1.1 = {add_trait=trained_warrior}
+	8117.1.1 = {add_spouse=401569127}
+	8153.1.1 = {death="8153.1.1"}
+}
+401569127 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8099.1.1 = {birth="8099.1.1"}
+	8153.1.1 = {death="8153.1.1"}
+}
+101669127 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069127
+	mother=401069127
+
+	8102.1.1 = {birth="8102.1.1"}
+	8158.1.1 = {death="8158.1.1"}
+}
+101769127 = {
+	name="Lucerre"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069127
+	mother=401069127
+
+	8104.1.1 = {birth="8104.1.1"}
+	8139.1.1 = {death="8139.1.1"}
+}
+101869127 = {
+	name="Ferrego"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101569127
+	mother=401569127
+
+	8124.1.1 = {birth="8124.1.1"}
+	8140.1.1 = {add_trait=poor_warrior}
+	8142.1.1 = {add_spouse=401869127}
+	8166.1.1 = {death = {death_reason = death_accident}}
+}
+401869127 = {
+	name="Gylora"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8124.1.1 = {birth="8124.1.1"}
+	8166.1.1 = {death="8166.1.1"}
+}
+101969127 = {
+	name="Talea"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101569127
+	mother=401569127
+
+	8127.1.1 = {birth="8127.1.1"}
+	8171.1.1 = {death="8171.1.1"}
+}
+102069127 = {
+	name="Brusco"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101569127
+	mother=401569127
+
+	8128.1.1 = {birth="8128.1.1"}
+	8144.1.1 = {add_trait=master_warrior}
+	8186.1.1 = {death="8186.1.1"}
+}
+102169127 = {
+	name="Umma"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101569127
+	mother=401569127
+
+	8129.1.1 = {birth="8129.1.1"}
+	8181.1.1 = {death="8181.1.1"}
+}
+102269127 = {
+	name="Lanna"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869127
+	mother=401869127
+
+	8142.1.1 = {birth="8142.1.1"}
+	8200.1.1 = {death="8200.1.1"}
+}
+102369127 = {
+	name="Lucerre"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869127
+	mother=401869127
+
+	8143.1.1 = {birth="8143.1.1"}
+	8181.1.1 = {death="8181.1.1"}
+}
+102469127 = {
+	name="Ferrega"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869127
+	mother=401869127
+
+	8145.1.1 = {birth="8145.1.1"}
+	8221.1.1 = {death = {death_reason = death_accident}}
+}
+102569127 = {
+	name="Brusco"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869127
+	mother=401869127
+
+	8147.1.1 = {birth="8147.1.1"}
+	8163.1.1 = {add_trait=trained_warrior}
+	8165.1.1 = {add_spouse=402569127}
+	8179.1.1 = {death="8179.1.1"}
+}
+402569127 = {
+	name="Rogga"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8147.1.1 = {birth="8147.1.1"}
+	8179.1.1 = {death="8179.1.1"}
+}
+102669127 = {
+	name="Ordello"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102569127
+	mother=402569127
+
+	8174.1.1 = {birth="8174.1.1"}
+	8190.1.1 = {add_trait=poor_warrior}
+	8192.1.1 = {add_spouse=402669127}
+	8248.1.1 = {death="8248.1.1"}
+}
+402669127 = {
+	name="Ezzere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8174.1.1 = {birth="8174.1.1"}
+	8248.1.1 = {death="8248.1.1"}
+}
+102769127 = {
+	name="Yna"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102569127
+	mother=402569127
+
+	8177.1.1 = {birth="8177.1.1"}
+	8209.1.1 = {death="8209.1.1"}
+}
+102869127 = {
+	name="Ollo"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669127
+	mother=402669127
+
+	8195.1.1 = {birth="8195.1.1"}
+	8211.1.1 = {add_trait=poor_warrior}
+	8213.1.1 = {add_spouse=402869127}
+	8253.1.1 = {death="8253.1.1"}
+}
+402869127 = {
+	name="Serala"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8195.1.1 = {birth="8195.1.1"}
+	8253.1.1 = {death="8253.1.1"}
+}
+102969127 = {
+	name="Torma"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669127
+	mother=402669127
+
+	8197.1.1 = {birth="8197.1.1"}
+	8261.1.1 = {death="8261.1.1"}
+}
+103069127 = {
+	name="Orios"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669127
+	mother=402669127
+
+	8200.1.1 = {birth="8200.1.1"}
+	8229.1.1 = {death="8229.1.1"}
+}
+103169127 = {
+	name="Yna"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669127
+	mother=402669127
+
+	8203.1.1 = {birth="8203.1.1"}
+	8283.1.1 = {death="8283.1.1"}
+}
+103269127 = {
+	name="Gylora"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669127
+	mother=402669127
+
+	8206.1.1 = {birth="8206.1.1"}
+	8265.1.1 = {death="8265.1.1"}
+}
+103369127 = {
+	name="Ternesio"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102869127
+	mother=402869127
+
+	8219.1.1 = {birth="8219.1.1"}
+	8235.1.1 = {add_trait=poor_warrior}
+	8237.1.1 = {add_spouse=403369127}
+	8273.1.1 = {death="8273.1.1"}
+}
+403369127 = {
+	name="Tycha"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8219.1.1 = {birth="8219.1.1"}
+	8273.1.1 = {death="8273.1.1"}
+}
+103469127 = {
+	name="Byan"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103369127
+	mother=403369127
+
+	8247.1.1 = {birth="8247.1.1"}
+	8263.1.1 = {add_trait=trained_warrior}
+	8270.1.1 = {death = {death_reason = death_battle}}
+}
+103569127 = {
+	name="Yorko"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103369127
+	mother=403369127
+
+	8250.1.1 = {birth="8250.1.1"}
+	8266.1.1 = {add_trait=trained_warrior}
+	8268.1.1 = {add_spouse=403569127}
+	8283.1.1 = {death="8283.1.1"}
+}
+403569127 = {
+	name="Bellonara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8250.1.1 = {birth="8250.1.1"}
+	8283.1.1 = {death="8283.1.1"}
+}
+103669127 = {
+	name="S'vrone"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103369127
+	mother=403369127
+
+	8252.1.1 = {birth="8252.1.1"}
+}
+103769127 = {
+	name="Moreo"	# a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103569127
+	mother=403569127
+
+	8275.1.1 = {birth="8275.1.1"}
+	8291.1.1 = {add_trait=poor_warrior}
+	8293.1.1 = {add_spouse=403769127}
+}
+403769127 = {
+	name="Tagganaria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8275.1.1 = {birth="8275.1.1"}
+}
+103869127 = {
+	name="Yna"	# not a lord
+	female=yes
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103569127
+	mother=403569127
+
+	8278.1.1 = {birth="8278.1.1"}
+}
+103969127 = {
+	name="Ferrego"	# not a lord
+	dynasty=69127
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103569127
+	mother=403569127
+
+	8281.1.1 = {birth="8281.1.1"}
+	8297.1.1 = {add_trait=skilled_warrior}
+}
+
+###  House Lumitits
+100069126 = {
+	name="Denyo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7955.1.1 = {birth="7955.1.1"}
+	7971.1.1 = {add_trait=poor_warrior}
+	7973.1.1 = {add_spouse=400069126}
+	8032.1.1 = {death="8032.1.1"}
+}
+400069126 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7955.1.1 = {birth="7955.1.1"}
+	8032.1.1 = {death="8032.1.1"}
+}
+100169126 = {
+	name="Orbelo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069126
+	mother=400069126
+
+	7978.1.1 = {birth="7978.1.1"}
+	7994.1.1 = {add_trait=trained_warrior}
+	7996.1.1 = {add_spouse=400169126}
+	8037.1.1 = {death="8037.1.1"}
+}
+400169126 = {
+	name="Ezzere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7978.1.1 = {birth="7978.1.1"}
+	8037.1.1 = {death="8037.1.1"}
+}
+100269126 = {
+	name="Nohia"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169126
+	mother=400169126
+
+	8005.1.1 = {birth="8005.1.1"}
+	8049.1.1 = {death="8049.1.1"}
+}
+100369126 = {
+	name="Ezzelyno"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169126
+	mother=400169126
+
+	8007.1.1 = {birth="8007.1.1"}
+	8023.1.1 = {add_trait=trained_warrior}
+	8025.1.1 = {add_spouse=400369126}
+	8043.1.1 = {death="8043.1.1"}
+}
+400369126 = {
+	name="Brea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8007.1.1 = {birth="8007.1.1"}
+	8043.1.1 = {death="8043.1.1"}
+}
+100469126 = {
+	name="Orbelo"	# not a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169126
+	mother=400169126
+
+	8008.1.1 = {birth="8008.1.1"}
+	8024.1.1 = {add_trait=trained_warrior}
+	8063.1.1 = {death="8063.1.1"}
+}
+100569126 = {
+	name="Taena"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169126
+	mother=400169126
+
+	8011.1.1 = {birth="8011.1.1"}
+	8063.1.1 = {death="8063.1.1"}
+}
+100669126 = {
+	name="Orbelo"	# not a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169126
+	mother=400169126
+
+	8013.1.1 = {birth="8013.1.1"}
+	8029.1.1 = {add_trait=skilled_warrior}
+	8068.1.1 = {death="8068.1.1"}
+}
+100769126 = {
+	name="Ezzere"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369126
+	mother=400369126
+
+	8028.1.1 = {birth="8028.1.1"}
+	8090.1.1 = {death="8090.1.1"}
+}
+100869126 = {
+	name="Moreo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369126
+	mother=400369126
+
+	8029.1.1 = {birth="8029.1.1"}
+	8045.1.1 = {add_trait=poor_warrior}
+	8047.1.1 = {add_spouse=400869126}
+	8061.1.1 = {death="8061.1.1"}
+}
+400869126 = {
+	name="Betharios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8029.1.1 = {birth="8029.1.1"}
+	8061.1.1 = {death="8061.1.1"}
+}
+100969126 = {
+	name="Beqqo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100869126
+	mother=400869126
+
+	8048.1.1 = {birth="8048.1.1"}
+	8064.1.1 = {add_trait=poor_warrior}
+	8066.1.1 = {add_spouse=400969126}
+	8080.1.1 = {death="8080.1.1"}
+}
+400969126 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8048.1.1 = {birth="8048.1.1"}
+	8080.1.1 = {death="8080.1.1"}
+}
+101069126 = {
+	name="Gyloro"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969126
+	mother=400969126
+
+	8067.1.1 = {birth="8067.1.1"}
+	8083.1.1 = {add_trait=trained_warrior}
+	8085.1.1 = {add_spouse=401069126}
+	8104.1.1 = {death="8104.1.1"}
+}
+401069126 = {
+	name="Alia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8067.1.1 = {birth="8067.1.1"}
+	8104.1.1 = {death="8104.1.1"}
+}
+101169126 = {
+	name="Myrmello"	# not a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969126
+	mother=400969126
+
+	8069.1.1 = {birth="8069.1.1"}
+	8085.1.1 = {add_trait=trained_warrior}
+	8131.1.1 = {death="8131.1.1"}
+}
+101269126 = {
+	name="Tormo"	# not a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969126
+	mother=400969126
+
+	8072.1.1 = {birth="8072.1.1"}
+	8088.1.1 = {add_trait=trained_warrior}
+	8120.1.1 = {death="8120.1.1"}
+}
+101369126 = {
+	name="Cossomo"	# not a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969126
+	mother=400969126
+
+	8075.1.1 = {birth="8075.1.1"}
+	8091.1.1 = {add_trait=skilled_warrior}
+	8150.1.1 = {death="8150.1.1"}
+}
+101469126 = {
+	name="Terro"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069126
+	mother=401069126
+
+	8093.1.1 = {birth="8093.1.1"}
+	8109.1.1 = {add_trait=poor_warrior}
+	8111.1.1 = {add_spouse=401469126}
+	8144.1.1 = {death="8144.1.1"}
+}
+401469126 = {
+	name="Pynta"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8093.1.1 = {birth="8093.1.1"}
+	8144.1.1 = {death="8144.1.1"}
+}
+101569126 = {
+	name="Tagganaria"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101469126
+	mother=401469126
+
+	8118.1.1 = {birth="8118.1.1"}
+	8155.1.1 = {death="8155.1.1"}
+}
+101669126 = {
+	name="Roggo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101469126
+	mother=401469126
+
+	8120.1.1 = {birth="8120.1.1"}
+	8136.1.1 = {add_trait=skilled_warrior}
+	8138.1.1 = {add_spouse=401669126}
+	8173.1.1 = {death="8173.1.1"}
+}
+401669126 = {
+	name="Izembara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8120.1.1 = {birth="8120.1.1"}
+	8173.1.1 = {death="8173.1.1"}
+}
+101769126 = {
+	name="Orios"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101469126
+	mother=401469126
+
+	8122.1.1 = {birth="8122.1.1"}
+	8167.1.1 = {death="8167.1.1"}
+}
+101869126 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101469126
+	mother=401469126
+
+	8123.1.1 = {birth="8123.1.1"}
+	8152.1.1 = {death="8152.1.1"}
+}
+101969126 = {
+	name="Moredo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101669126
+	mother=401669126
+
+	8142.1.1 = {birth="8142.1.1"}
+	8158.1.1 = {add_trait=poor_warrior}
+	8160.1.1 = {add_spouse=401969126}
+	8174.1.1 = {death="8174.1.1"}
+}
+401969126 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8142.1.1 = {birth="8142.1.1"}
+	8174.1.1 = {death="8174.1.1"}
+}
+102069126 = {
+	name="Joss"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969126
+	mother=401969126
+
+	8160.1.1 = {birth="8160.1.1"}
+	8176.1.1 = {add_trait=trained_warrior}
+	8178.1.1 = {add_spouse=402069126}
+	8235.1.1 = {death="8235.1.1"}
+}
+402069126 = {
+	name="Yna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8160.1.1 = {birth="8160.1.1"}
+	8235.1.1 = {death="8235.1.1"}
+}
+102169126 = {
+	name="Terro"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069126
+	mother=402069126
+
+	8193.1.1 = {birth="8193.1.1"}
+	8209.1.1 = {add_trait=master_warrior}
+	8211.1.1 = {add_spouse=402169126}
+	8240.1.1 = {death="8240.1.1"}
+}
+402169126 = {
+	name="Rogga"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8193.1.1 = {birth="8193.1.1"}
+	8240.1.1 = {death="8240.1.1"}
+}
+102269126 = {
+	name="Terrios"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069126
+	mother=402069126
+
+	8196.1.1 = {birth="8196.1.1"}
+	8252.1.1 = {death="8252.1.1"}
+}
+102369126 = {
+	name="Jaqea"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069126
+	mother=402069126
+
+	8197.1.1 = {birth="8197.1.1"}
+	8250.1.1 = {death="8250.1.1"}
+}
+102469126 = {
+	name="Ternesia"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102169126
+	mother=402169126
+
+	8212.1.1 = {birth="8212.1.1"}
+	8245.1.1 = {death="8245.1.1"}
+}
+102569126 = {
+	name="Tagganaro"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102169126
+	mother=402169126
+
+	8215.1.1 = {birth="8215.1.1"}
+	8231.1.1 = {add_trait=trained_warrior}
+	8233.1.1 = {add_spouse=402569126}
+	8266.1.1 = {death="8266.1.1"}
+}
+402569126 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8215.1.1 = {birth="8215.1.1"}
+	8266.1.1 = {death="8266.1.1"}
+}
+102669126 = {
+	name="Allaquo"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102569126
+	mother=402569126
+
+	8235.1.1 = {birth="8235.1.1"}
+	8251.1.1 = {add_trait=poor_warrior}
+	8253.1.1 = {add_spouse=402669126}
+	8290.1.1 = {death="8290.1.1"}
+}
+402669126 = {
+	name="Mellario"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8235.1.1 = {birth="8235.1.1"}
+	8290.1.1 = {death="8290.1.1"}
+}
+102769126 = {
+	name="Daario"	# a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669126
+	mother=402669126
+
+	8254.1.1 = {birth="8254.1.1"}
+	8270.1.1 = {add_trait=master_warrior}
+	8272.1.1 = {add_spouse=402769126}
+}
+402769126 = {
+	name="Torma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8254.1.1 = {birth="8254.1.1"}
+}
+102869126 = {
+	name="Denyo"	# not a lord
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669126
+	mother=402669126
+
+	8257.1.1 = {birth="8257.1.1"}
+	8273.1.1 = {add_trait=poor_warrior}
+	8298.1.1 = {death="8298.1.1"}
+}
+102969126 = {
+	name="Yorka"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669126
+	mother=402669126
+
+	8259.1.1 = {birth="8259.1.1"}
+	8294.1.1 = {death = {death_reason = death_execution}}
+}
+103069126 = {
+	name="Izembara"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102669126
+	mother=402669126
+
+	8261.1.1 = {birth="8261.1.1"}
+}
+103169126 = {
+	name="Myrmellios"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102769126
+	mother=402769126
+
+	8288.1.1 = {birth="8288.1.1"}
+}
+103269126 = {
+	name="Lucerre"	# not a lord
+	female=yes
+	dynasty=69126
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102769126
+	mother=402769126
+
+	8289.1.1 = {birth="8289.1.1"}
+}
+
+###  House Lysandys
+100069125 = {
+	name="Tregar"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7959.1.1 = {birth="7959.1.1"}
+	7975.1.1 = {add_trait=poor_warrior}
+	7977.1.1 = {add_spouse=400069125}
+	8027.1.1 = {death="8027.1.1"}
+}
+400069125 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7959.1.1 = {birth="7959.1.1"}
+	8027.1.1 = {death="8027.1.1"}
+}
+100169125 = {
+	name="Lucerre"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069125
+	mother=400069125
+
+	7985.1.1 = {birth="7985.1.1"}
+	8049.1.1 = {death="8049.1.1"}
+}
+100269125 = {
+	name="Narbo"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069125
+	mother=400069125
+
+	7988.1.1 = {birth="7988.1.1"}
+	8004.1.1 = {add_trait=trained_warrior}
+	8006.1.1 = {add_spouse=400269125}
+	8029.1.1 = {death="8029.1.1"}
+}
+400269125 = {
+	name="Mera"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7988.1.1 = {birth="7988.1.1"}
+	8029.1.1 = {death="8029.1.1"}
+}
+100369125 = {
+	name="Qarro"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069125
+	mother=400069125
+
+	7991.1.1 = {birth="7991.1.1"}
+	8007.1.1 = {add_trait=poor_warrior}
+	8058.1.1 = {death="8058.1.1"}
+}
+100469125 = {
+	name="Gyloro"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069125
+	mother=400069125
+
+	7992.1.1 = {birth="7992.1.1"}
+	8008.1.1 = {add_trait=poor_warrior}
+	8071.1.1 = {death="8071.1.1"}
+}
+100569125 = {
+	name="Gyleno"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100269125
+	mother=400269125
+
+	8006.1.1 = {birth="8006.1.1"}
+	8022.1.1 = {add_trait=poor_warrior}
+	8024.1.1 = {add_spouse=400569125}
+	8045.1.1 = {death="8045.1.1"}
+}
+400569125 = {
+	name="Terrios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8006.1.1 = {birth="8006.1.1"}
+	8045.1.1 = {death="8045.1.1"}
+}
+100669125 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100269125
+	mother=400269125
+
+	8009.1.1 = {birth="8009.1.1"}
+	8069.1.1 = {death="8069.1.1"}
+}
+100769125 = {
+	name="Denyo"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100569125
+	mother=400569125
+
+	8040.1.1 = {birth="8040.1.1"}
+	8056.1.1 = {add_trait=poor_warrior}
+	8058.1.1 = {add_spouse=400769125}
+	8082.1.1 = {death="8082.1.1"}
+}
+400769125 = {
+	name="Yorka"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8040.1.1 = {birth="8040.1.1"}
+	8082.1.1 = {death="8082.1.1"}
+}
+100869125 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100569125
+	mother=400569125
+
+	8043.1.1 = {birth="8043.1.1"}
+	8096.1.1 = {death="8096.1.1"}
+}
+100969125 = {
+	name="Yorko"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769125
+	mother=400769125
+
+	8066.1.1 = {birth="8066.1.1"}
+	8082.1.1 = {add_trait=poor_warrior}
+	8084.1.1 = {add_spouse=400969125}
+	8097.1.1 = {death="8097.1.1"}
+}
+400969125 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8066.1.1 = {birth="8066.1.1"}
+	8097.1.1 = {death="8097.1.1"}
+}
+101069125 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769125
+	mother=400769125
+
+	8069.1.1 = {birth="8069.1.1"}
+	8090.1.1 = {death = {death_reason = death_murder}}
+}
+101169125 = {
+	name="Orbelo"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769125
+	mother=400769125
+
+	8071.1.1 = {birth="8071.1.1"}
+	8087.1.1 = {add_trait=master_warrior}
+	8125.1.1 = {death="8125.1.1"}
+}
+101269125 = {
+	name="Gylora"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769125
+	mother=400769125
+
+	8074.1.1 = {birth="8074.1.1"}
+	8133.1.1 = {death="8133.1.1"}
+}
+101369125 = {
+	name="Groleo"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969125
+	mother=400969125
+
+	8088.1.1 = {birth="8088.1.1"}
+	8104.1.1 = {add_trait=trained_warrior}
+	8106.1.1 = {add_spouse=401369125}
+	8157.1.1 = {death="8157.1.1"}
+}
+401369125 = {
+	name="Ternesia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8088.1.1 = {birth="8088.1.1"}
+	8157.1.1 = {death="8157.1.1"}
+}
+101469125 = {
+	name="Lothea"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969125
+	mother=400969125
+
+	8091.1.1 = {birth="8091.1.1"}
+	8150.1.1 = {death="8150.1.1"}
+}
+101569125 = {
+	name="Ordello"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969125
+	mother=400969125
+
+	8094.1.1 = {birth="8094.1.1"}
+	8110.1.1 = {add_trait=trained_warrior}
+	8152.1.1 = {death="8152.1.1"}
+}
+101669125 = {
+	name="Orbelo"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101369125
+	mother=401369125
+
+	8114.1.1 = {birth="8114.1.1"}
+	8130.1.1 = {add_trait=poor_warrior}
+	8152.1.1 = {death="8152.1.1"}
+}
+101769125 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101369125
+	mother=401369125
+
+	8117.1.1 = {birth="8117.1.1"}
+	8193.1.1 = {death="8193.1.1"}
+}
+101869125 = {
+	name="Yorko"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101369125
+	mother=401369125
+
+	8120.1.1 = {birth="8120.1.1"}
+	8136.1.1 = {add_trait=trained_warrior}
+	8138.1.1 = {add_spouse=401869125}
+	8179.1.1 = {death="8179.1.1"}
+}
+401869125 = {
+	name="Talea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8120.1.1 = {birth="8120.1.1"}
+	8179.1.1 = {death="8179.1.1"}
+}
+101969125 = {
+	name="Tregar"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869125
+	mother=401869125
+
+	8144.1.1 = {birth="8144.1.1"}
+	8160.1.1 = {add_trait=poor_warrior}
+	8162.1.1 = {add_spouse=401969125}
+	8192.1.1 = {death="8192.1.1"}
+}
+401969125 = {
+	name="Umma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8144.1.1 = {birth="8144.1.1"}
+	8192.1.1 = {death="8192.1.1"}
+}
+102069125 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869125
+	mother=401869125
+
+	8147.1.1 = {birth="8147.1.1"}
+	8210.1.1 = {death="8210.1.1"}
+}
+102169125 = {
+	name="Cossoma"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869125
+	mother=401869125
+
+	8149.1.1 = {birth="8149.1.1"}
+	8206.1.1 = {death="8206.1.1"}
+}
+102269125 = {
+	name="Areo"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969125
+	mother=401969125
+
+	8164.1.1 = {birth="8164.1.1"}
+	8180.1.1 = {add_trait=poor_warrior}
+	8182.1.1 = {add_spouse=402269125}
+	8214.1.1 = {death="8214.1.1"}
+}
+402269125 = {
+	name="Qarria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8164.1.1 = {birth="8164.1.1"}
+	8214.1.1 = {death="8214.1.1"}
+}
+102369125 = {
+	name="Joss"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969125
+	mother=401969125
+
+	8167.1.1 = {birth="8167.1.1"}
+	8183.1.1 = {add_trait=trained_warrior}
+	8238.1.1 = {death="8238.1.1"}
+}
+102469125 = {
+	name="Roro"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102269125
+	mother=402269125
+
+	8187.1.1 = {birth="8187.1.1"}
+	8203.1.1 = {add_trait=poor_warrior}
+	8205.1.1 = {add_spouse=402469125}
+	8237.1.1 = {death="8237.1.1"}
+}
+402469125 = {
+	name="Mellario"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8187.1.1 = {birth="8187.1.1"}
+	8237.1.1 = {death="8237.1.1"}
+}
+102569125 = {
+	name="Lotho"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102269125
+	mother=402269125
+
+	8188.1.1 = {birth="8188.1.1"}
+	8204.1.1 = {add_trait=poor_warrior}
+	8214.1.1 = {death = {death_reason = death_accident}}
+}
+102669125 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102469125
+	mother=402469125
+
+	8221.1.1 = {birth="8221.1.1"}
+	8272.1.1 = {death="8272.1.1"}
+}
+102769125 = {
+	name="Syrea"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102469125
+	mother=402469125
+
+	8222.1.1 = {birth="8222.1.1"}
+	8263.1.1 = {death="8263.1.1"}
+}
+102869125 = {
+	name="Pynto"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102469125
+	mother=402469125
+
+	8223.1.1 = {birth="8223.1.1"}
+	8239.1.1 = {add_trait=skilled_warrior}
+	8241.1.1 = {add_spouse=402869125}
+	8282.1.1 = {death="8282.1.1"}
+}
+402869125 = {
+	name="Nohia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8223.1.1 = {birth="8223.1.1"}
+	8282.1.1 = {death="8282.1.1"}
+}
+102969125 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102469125
+	mother=402469125
+
+	8226.1.1 = {birth="8226.1.1"}
+	8267.1.1 = {death="8267.1.1"}
+}
+103069125 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102469125
+	mother=402469125
+
+	8229.1.1 = {birth="8229.1.1"}
+	8272.1.1 = {death="8272.1.1"}
+}
+103169125 = {
+	name="Myrmello"	# a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102869125
+	mother=402869125
+
+	8249.1.1 = {birth="8249.1.1"}
+	8265.1.1 = {add_trait=skilled_warrior}
+	8267.1.1 = {add_spouse=403169125}
+}
+403169125 = {
+	name="Lanna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8249.1.1 = {birth="8249.1.1"}
+}
+103269125 = {
+	name="Terrios"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102869125
+	mother=402869125
+
+	8250.1.1 = {birth="8250.1.1"}
+	8295.1.1 = {death="8295.1.1"}
+}
+103369125 = {
+	name="Myrmello"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102869125
+	mother=402869125
+
+	8251.1.1 = {birth="8251.1.1"}
+	8267.1.1 = {add_trait=trained_warrior}
+	8290.1.1 = {death = {death_reason = death_battle}}
+}
+103469125 = {
+	name="Meralyn"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102869125
+	mother=402869125
+
+	8254.1.1 = {birth="8254.1.1"}
+	8270.1.1 = {add_trait=poor_warrior}
+	8295.1.1 = {death="8295.1.1"}
+}
+103569125 = {
+	name="Nohia"	# not a lord
+	female=yes
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102869125
+	mother=402869125
+
+	8257.1.1 = {birth="8257.1.1"}
+}
+103669125 = {
+	name="Noho"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103169125
+	mother=403169125
+
+	8267.1.1 = {birth="8267.1.1"}
+	8283.1.1 = {add_trait=trained_warrior}
+}
+103769125 = {
+	name="Byan"	# not a lord
+	dynasty=69125
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103169125
+	mother=403169125
+
+	8269.1.1 = {birth="8269.1.1"}
+	8285.1.1 = {add_trait=skilled_warrior}
+}
+
+###  House Thelius
+100069124 = {
+	name="Daario"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7952.1.1 = {birth="7952.1.1"}
+	7968.1.1 = {add_trait=poor_warrior}
+	7970.1.1 = {add_spouse=400069124}
+	8024.1.1 = {death="8024.1.1"}
+}
+400069124 = {
+	name="Yorka"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7952.1.1 = {birth="7952.1.1"}
+	8024.1.1 = {death="8024.1.1"}
+}
+100169124 = {
+	name="Tycho"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069124
+	mother=400069124
+
+	7971.1.1 = {birth="7971.1.1"}
+	7987.1.1 = {add_trait=poor_warrior}
+	7989.1.1 = {add_spouse=400169124}
+	8030.1.1 = {death="8030.1.1"}
+}
+400169124 = {
+	name="Lanna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7971.1.1 = {birth="7971.1.1"}
+	8030.1.1 = {death="8030.1.1"}
+}
+100269124 = {
+	name="Orios"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169124
+	mother=400169124
+
+	7990.1.1 = {birth="7990.1.1"}
+	8036.1.1 = {death="8036.1.1"}
+}
+100369124 = {
+	name="Ollo"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169124
+	mother=400169124
+
+	7991.1.1 = {birth="7991.1.1"}
+	8007.1.1 = {add_trait=poor_warrior}
+	8009.1.1 = {add_spouse=400369124}
+	8048.1.1 = {death = {death_reason = death_accident}}
+}
+400369124 = {
+	name="Mellario"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7991.1.1 = {birth="7991.1.1"}
+	8048.1.1 = {death="8048.1.1"}
+}
+100469124 = {
+	name="Pynto"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169124
+	mother=400169124
+
+	7992.1.1 = {birth="7992.1.1"}
+	8008.1.1 = {add_trait=skilled_warrior}
+	8025.1.1 = {death = {death_reason = death_murder}}
+}
+100569124 = {
+	name="Moredea"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169124
+	mother=400169124
+
+	7993.1.1 = {birth="7993.1.1"}
+	8059.1.1 = {death="8059.1.1"}
+}
+100669124 = {
+	name="Terro"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369124
+	mother=400369124
+
+	8017.1.1 = {birth="8017.1.1"}
+	8033.1.1 = {add_trait=trained_warrior}
+	8035.1.1 = {add_spouse=400669124}
+	8071.1.1 = {death="8071.1.1"}
+}
+400669124 = {
+	name="Terrios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8017.1.1 = {birth="8017.1.1"}
+	8071.1.1 = {death="8071.1.1"}
+}
+100769124 = {
+	name="Ferrego"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369124
+	mother=400369124
+
+	8020.1.1 = {birth="8020.1.1"}
+	8036.1.1 = {add_trait=trained_warrior}
+	8083.1.1 = {death="8083.1.1"}
+}
+100869124 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369124
+	mother=400369124
+
+	8021.1.1 = {birth="8021.1.1"}
+	8071.1.1 = {death="8071.1.1"}
+}
+100969124 = {
+	name="Bellonara"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369124
+	mother=400369124
+
+	8022.1.1 = {birth="8022.1.1"}
+	8062.1.1 = {death="8062.1.1"}
+}
+101069124 = {
+	name="Beqqo"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100669124
+	mother=400669124
+
+	8040.1.1 = {birth="8040.1.1"}
+	8056.1.1 = {add_trait=trained_warrior}
+	8058.1.1 = {add_spouse=401069124}
+	8096.1.1 = {death="8096.1.1"}
+}
+401069124 = {
+	name="Betharios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8040.1.1 = {birth="8040.1.1"}
+	8096.1.1 = {death="8096.1.1"}
+}
+101169124 = {
+	name="Lanna"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100669124
+	mother=400669124
+
+	8043.1.1 = {birth="8043.1.1"}
+	8081.1.1 = {death="8081.1.1"}
+}
+101269124 = {
+	name="Daario"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100669124
+	mother=400669124
+
+	8045.1.1 = {birth="8045.1.1"}
+	8061.1.1 = {add_trait=trained_warrior}
+	8081.1.1 = {death="8081.1.1"}
+}
+101369124 = {
+	name="Beqqo"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069124
+	mother=401069124
+
+	8067.1.1 = {birth="8067.1.1"}
+	8083.1.1 = {add_trait=skilled_warrior}
+	8091.1.1 = {death = {death_reason = death_accident}}
+}
+101469124 = {
+	name="Ferrego"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069124
+	mother=401069124
+
+	8070.1.1 = {birth="8070.1.1"}
+	8086.1.1 = {add_trait=master_warrior}
+	8088.1.1 = {add_spouse=401469124}
+	8129.1.1 = {death="8129.1.1"}
+}
+401469124 = {
+	name="Myrmellios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8070.1.1 = {birth="8070.1.1"}
+	8129.1.1 = {death="8129.1.1"}
+}
+101569124 = {
+	name="Roro"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069124
+	mother=401069124
+
+	8071.1.1 = {birth="8071.1.1"}
+	8087.1.1 = {add_trait=poor_warrior}
+	8138.1.1 = {death="8138.1.1"}
+}
+101669124 = {
+	name="Collio"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101469124
+	mother=401469124
+
+	8096.1.1 = {birth="8096.1.1"}
+	8112.1.1 = {add_trait=poor_warrior}
+	8114.1.1 = {add_spouse=401669124}
+	8150.1.1 = {death="8150.1.1"}
+}
+401669124 = {
+	name="Brea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8096.1.1 = {birth="8096.1.1"}
+	8150.1.1 = {death="8150.1.1"}
+}
+101769124 = {
+	name="Cossoma"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101469124
+	mother=401469124
+
+	8097.1.1 = {birth="8097.1.1"}
+	8148.1.1 = {death="8148.1.1"}
+}
+101869124 = {
+	name="Meralyn"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101669124
+	mother=401669124
+
+	8117.1.1 = {birth="8117.1.1"}
+	8133.1.1 = {add_trait=skilled_warrior}
+	8135.1.1 = {add_spouse=401869124}
+	8153.1.1 = {death="8153.1.1"}
+}
+401869124 = {
+	name="Yorka"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8117.1.1 = {birth="8117.1.1"}
+	8153.1.1 = {death="8153.1.1"}
+}
+101969124 = {
+	name="Izembara"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101669124
+	mother=401669124
+
+	8119.1.1 = {birth="8119.1.1"}
+	8188.1.1 = {death="8188.1.1"}
+}
+102069124 = {
+	name="Byan"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869124
+	mother=401869124
+
+	8136.1.1 = {birth="8136.1.1"}
+	8152.1.1 = {add_trait=poor_warrior}
+	8154.1.1 = {add_spouse=402069124}
+	8176.1.1 = {death="8176.1.1"}
+}
+402069124 = {
+	name="Gylenios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8136.1.1 = {birth="8136.1.1"}
+	8176.1.1 = {death="8176.1.1"}
+}
+102169124 = {
+	name="Ternesia"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869124
+	mother=401869124
+
+	8137.1.1 = {birth="8137.1.1"}
+	8204.1.1 = {death="8204.1.1"}
+}
+102269124 = {
+	name="Moreo"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069124
+	mother=402069124
+
+	8155.1.1 = {birth="8155.1.1"}
+	8171.1.1 = {add_trait=skilled_warrior}
+	8173.1.1 = {add_spouse=402269124}
+	8215.1.1 = {death="8215.1.1"}
+}
+402269124 = {
+	name="Cossoma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8155.1.1 = {birth="8155.1.1"}
+	8215.1.1 = {death="8215.1.1"}
+}
+102369124 = {
+	name="Ternesio"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069124
+	mother=402069124
+
+	8156.1.1 = {birth="8156.1.1"}
+	8172.1.1 = {add_trait=poor_warrior}
+	8233.1.1 = {death="8233.1.1"}
+}
+102469124 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069124
+	mother=402069124
+
+	8159.1.1 = {birth="8159.1.1"}
+	8211.1.1 = {death="8211.1.1"}
+}
+102569124 = {
+	name="Lotho"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069124
+	mother=402069124
+
+	8160.1.1 = {birth="8160.1.1"}
+	8176.1.1 = {add_trait=poor_warrior}
+	8216.1.1 = {death="8216.1.1"}
+}
+102669124 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102269124
+	mother=402269124
+
+	8178.1.1 = {birth="8178.1.1"}
+	8234.1.1 = {death="8234.1.1"}
+}
+102769124 = {
+	name="Meralyn"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102269124
+	mother=402269124
+
+	8179.1.1 = {birth="8179.1.1"}
+	8195.1.1 = {add_trait=skilled_warrior}
+	8197.1.1 = {add_spouse=402769124}
+	8224.1.1 = {death="8224.1.1"}
+}
+402769124 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8179.1.1 = {birth="8179.1.1"}
+	8224.1.1 = {death="8224.1.1"}
+}
+102869124 = {
+	name="Umma"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102269124
+	mother=402269124
+
+	8182.1.1 = {birth="8182.1.1"}
+	8255.1.1 = {death="8255.1.1"}
+}
+102969124 = {
+	name="Allaquo"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102769124
+	mother=402769124
+
+	8200.1.1 = {birth="8200.1.1"}
+	8216.1.1 = {add_trait=master_warrior}
+	8218.1.1 = {add_spouse=402969124}
+	8275.1.1 = {death="8275.1.1"}
+}
+402969124 = {
+	name="Jaqea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8200.1.1 = {birth="8200.1.1"}
+	8275.1.1 = {death="8275.1.1"}
+}
+103069124 = {
+	name="Rogga"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102769124
+	mother=402769124
+
+	8202.1.1 = {birth="8202.1.1"}
+	8263.1.1 = {death="8263.1.1"}
+}
+103169124 = {
+	name="Myrmellios"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102969124
+	mother=402969124
+
+	8228.1.1 = {birth="8228.1.1"}
+	8280.1.1 = {death="8280.1.1"}
+}
+103269124 = {
+	name="Gylora"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102969124
+	mother=402969124
+
+	8229.1.1 = {birth="8229.1.1"}
+	8289.1.1 = {death="8289.1.1"}
+}
+103369124 = {
+	name="Tagganaro"	# a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102969124
+	mother=402969124
+
+	8232.1.1 = {birth="8232.1.1"}
+	8248.1.1 = {add_trait=skilled_warrior}
+	8250.1.1 = {add_spouse=403369124}
+}
+403369124 = {
+	name="Serala"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8232.1.1 = {birth="8232.1.1"}
+}
+103469124 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103369124
+	mother=403369124
+
+	8265.1.1 = {birth="8265.1.1"}
+}
+103569124 = {
+	name="Bellonara"	# not a lord
+	female=yes
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103369124
+	mother=403369124
+
+	8268.1.1 = {birth="8268.1.1"}
+}
+103669124 = {
+	name="Gyloro"	# not a lord
+	dynasty=69124
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103369124
+	mother=403369124
+
+	8271.1.1 = {birth="8271.1.1"}
+	8287.1.1 = {add_trait=trained_warrior}
+}
+
+###  House Myrenolys
+100069123 = {
+	name="Ordello"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7957.1.1 = {birth="7957.1.1"}
+	7973.1.1 = {add_trait=poor_warrior}
+	7975.1.1 = {add_spouse=400069123}
+	8032.1.1 = {death="8032.1.1"}
+}
+400069123 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7957.1.1 = {birth="7957.1.1"}
+	8032.1.1 = {death="8032.1.1"}
+}
+100169123 = {
+	name="Lotho"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100069123
+	mother=400069123
+
+	7986.1.1 = {birth="7986.1.1"}
+	8002.1.1 = {add_trait=poor_warrior}
+	8004.1.1 = {add_spouse=400169123}
+	8042.1.1 = {death="8042.1.1"}
+}
+400169123 = {
+	name="Ferrega"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7986.1.1 = {birth="7986.1.1"}
+	8042.1.1 = {death="8042.1.1"}
+}
+100269123 = {
+	name="Tormo"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169123
+	mother=400169123
+
+	8004.1.1 = {birth="8004.1.1"}
+	8020.1.1 = {add_trait=poor_warrior}
+	8022.1.1 = {add_spouse=400269123}
+	8063.1.1 = {death="8063.1.1"}
+}
+400269123 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8004.1.1 = {birth="8004.1.1"}
+	8063.1.1 = {death="8063.1.1"}
+}
+100369123 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169123
+	mother=400169123
+
+	8005.1.1 = {birth="8005.1.1"}
+	8036.1.1 = {death="8036.1.1"}
+}
+100469123 = {
+	name="Groleo"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100269123
+	mother=400269123
+
+	8026.1.1 = {birth="8026.1.1"}
+	8042.1.1 = {add_trait=poor_warrior}
+	8044.1.1 = {add_spouse=400469123}
+	8069.1.1 = {death="8069.1.1"}
+}
+400469123 = {
+	name="Doreah"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8026.1.1 = {birth="8026.1.1"}
+	8069.1.1 = {death="8069.1.1"}
+}
+100569123 = {
+	name="Gyleno"	# not a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100269123
+	mother=400269123
+
+	8029.1.1 = {birth="8029.1.1"}
+	8045.1.1 = {add_trait=poor_warrior}
+	8056.1.1 = {death="8056.1.1"}
+}
+100669123 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100269123
+	mother=400269123
+
+	8030.1.1 = {birth="8030.1.1"}
+	8064.1.1 = {death="8064.1.1"}
+}
+100769123 = {
+	name="Moredo"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100469123
+	mother=400469123
+
+	8059.1.1 = {birth="8059.1.1"}
+	8075.1.1 = {add_trait=poor_warrior}
+	8077.1.1 = {add_spouse=400769123}
+	8103.1.1 = {death="8103.1.1"}
+}
+400769123 = {
+	name="Talea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8059.1.1 = {birth="8059.1.1"}
+	8103.1.1 = {death="8103.1.1"}
+}
+100869123 = {
+	name="Lucerre"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100469123
+	mother=400469123
+
+	8060.1.1 = {birth="8060.1.1"}
+	8126.1.1 = {death="8126.1.1"}
+}
+100969123 = {
+	name="Joss"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769123
+	mother=400769123
+
+	8087.1.1 = {birth="8087.1.1"}
+	8103.1.1 = {add_trait=skilled_warrior}
+	8105.1.1 = {add_spouse=400969123}
+	8146.1.1 = {death = {death_reason = death_accident}}
+}
+400969123 = {
+	name="S'vrone"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8087.1.1 = {birth="8087.1.1"}
+	8146.1.1 = {death="8146.1.1"}
+}
+101069123 = {
+	name="Byan"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969123
+	mother=400969123
+
+	8113.1.1 = {birth="8113.1.1"}
+	8129.1.1 = {add_trait=poor_warrior}
+	8131.1.1 = {add_spouse=401069123}
+	8172.1.1 = {death="8172.1.1"}
+}
+401069123 = {
+	name="Alia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8113.1.1 = {birth="8113.1.1"}
+	8172.1.1 = {death="8172.1.1"}
+}
+101169123 = {
+	name="Terro"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069123
+	mother=401069123
+
+	8146.1.1 = {birth="8146.1.1"}
+	8162.1.1 = {add_trait=poor_warrior}
+	8164.1.1 = {add_spouse=401169123}
+	8194.1.1 = {death="8194.1.1"}
+}
+401169123 = {
+	name="Tycha"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8146.1.1 = {birth="8146.1.1"}
+	8194.1.1 = {death="8194.1.1"}
+}
+101269123 = {
+	name="Tregar"	# not a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069123
+	mother=401069123
+
+	8149.1.1 = {birth="8149.1.1"}
+	8165.1.1 = {add_trait=poor_warrior}
+	8208.1.1 = {death="8208.1.1"}
+}
+101369123 = {
+	name="Gyleno"	# not a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069123
+	mother=401069123
+
+	8151.1.1 = {birth="8151.1.1"}
+	8167.1.1 = {add_trait=poor_warrior}
+	8207.1.1 = {death="8207.1.1"}
+}
+101469123 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101069123
+	mother=401069123
+
+	8154.1.1 = {birth="8154.1.1"}
+	8208.1.1 = {death = {death_reason = death_accident}}
+}
+101569123 = {
+	name="Oro"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101169123
+	mother=401169123
+
+	8174.1.1 = {birth="8174.1.1"}
+	8190.1.1 = {add_trait=trained_warrior}
+	8192.1.1 = {add_spouse=401569123}
+	8226.1.1 = {death="8226.1.1"}
+}
+401569123 = {
+	name="Tycha"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8174.1.1 = {birth="8174.1.1"}
+	8226.1.1 = {death="8226.1.1"}
+}
+101669123 = {
+	name="Daario"	# Prince of Pentos
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101169123
+	mother=401169123
+
+	8175.1.1 = {birth="8175.1.1"}
+	8191.1.1 = {add_trait=poor_warrior}
+	8195.6.1 = {death = {death_reason = death_execution} } 
+}
+101769123 = {
+	name="Gyleno"	# not a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101169123
+	mother=401169123
+
+	8176.1.1 = {birth="8176.1.1"}
+	8192.1.1 = {add_trait=poor_warrior}
+	8222.1.1 = {death="8222.1.1"}
+}
+101869123 = {
+	name="Mera"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101569123
+	mother=401569123
+
+	8195.1.1 = {birth="8195.1.1"}
+	8233.1.1 = {death = {death_reason = death_murder}}
+}
+101969123 = {
+	name="Collio"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101569123
+	mother=401569123
+
+	8196.1.1 = {birth="8196.1.1"}
+	8212.1.1 = {add_trait=poor_warrior}
+	8214.1.1 = {add_spouse=401969123}
+	8246.1.1 = {death="8246.1.1"}
+}
+401969123 = {
+	name="Doreah"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8196.1.1 = {birth="8196.1.1"}
+	8246.1.1 = {death="8246.1.1"}
+}
+102069123 = {
+	name="Bellonara"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969123
+	mother=401969123
+
+	8228.1.1 = {birth="8228.1.1"}
+	8268.1.1 = {death="8268.1.1"}
+}
+102169123 = {
+	name="Ternesio"	# a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969123
+	mother=401969123
+
+	8231.1.1 = {birth="8231.1.1"}
+	8247.1.1 = {add_trait=poor_warrior}
+	8249.1.1 = {add_spouse=402169123}
+}
+402169123 = {
+	name="Gylora"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8231.1.1 = {birth="8231.1.1"}
+}
+102269123 = {
+	name="Ternesia"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969123
+	mother=401969123
+
+	8233.1.1 = {birth="8233.1.1"}
+}
+102369123 = {
+	name="Ferrega"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969123
+	mother=401969123
+
+	8236.1.1 = {birth="8236.1.1"}
+}
+102469123 = {
+	name="Orbelo"	# not a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101969123
+	mother=401969123
+
+	8238.1.1 = {birth="8238.1.1"}
+	8254.1.1 = {add_trait=trained_warrior}
+	8299.1.1 = {death="8299.1.1"}
+}
+102569123 = {
+	name="Myrmello"	# not a lord
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102169123
+	mother=402169123
+
+	8259.1.1 = {birth="8259.1.1"}
+	8275.1.1 = {add_trait=poor_warrior}
+	8277.1.1 = {add_spouse=402569123}
+}
+402569123 = {
+	name="Bellonara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8259.1.1 = {birth="8259.1.1"}
+}
+102669123 = {
+	name="Orbela"	# not a lord
+	female=yes
+	dynasty=69123
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102569123
+	mother=402569123
+
+	8281.1.1 = {birth="8281.1.1"}
+}
+
+###  House Torgodorio
+100300015 = {
+	name="Allaquo"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7958.1.1 = {birth="7958.1.1"}
+	7974.1.1 = {add_trait=poor_warrior}
+	7976.1.1 = {add_spouse=200300015}
+	8036.1.1 = {death="8036.1.1"}
+}
+200300015 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7958.1.1 = {birth="7958.1.1"}
+	8036.1.1 = {death="8036.1.1"}
+}
+101300015 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300015
+	mother=200300015
+
+	7981.1.1 = {birth="7981.1.1"}
+	8043.1.1 = {death="8043.1.1"}
+}
+102300015 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300015
+	mother=200300015
+
+	7983.1.1 = {birth="7983.1.1"}
+	8052.1.1 = {death="8052.1.1"}
+}
+103300015 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300015
+	mother=200300015
+
+	7986.1.1 = {birth="7986.1.1"}
+	8043.1.1 = {death="8043.1.1"}
+}
+104300015 = {
+	name="Moredo"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300015
+	mother=200300015
+
+	7988.1.1 = {birth="7988.1.1"}
+	8004.1.1 = {add_trait=trained_warrior}
+	8006.1.1 = {add_spouse=204300015}
+	8040.1.1 = {death="8040.1.1"}
+}
+204300015 = {
+	name="Orios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7988.1.1 = {birth="7988.1.1"}
+	8040.1.1 = {death="8040.1.1"}
+}
+105300015 = {
+	name="Gylora"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300015
+	mother=200300015
+
+	7990.1.1 = {birth="7990.1.1"}
+	8037.1.1 = {death="8037.1.1"}
+}
+106300015 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300015
+	mother=204300015
+
+	8016.1.1 = {birth="8016.1.1"}
+	8071.1.1 = {death="8071.1.1"}
+}
+107300015 = {
+	name="Yorko"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300015
+	mother=204300015
+
+	8019.1.1 = {birth="8019.1.1"}
+	8035.1.1 = {add_trait=skilled_warrior}
+	8037.1.1 = {add_spouse=207300015}
+	8054.1.1 = {death="8054.1.1"}
+}
+207300015 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8019.1.1 = {birth="8019.1.1"}
+	8054.1.1 = {death="8054.1.1"}
+}
+108300015 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300015
+	mother=204300015
+
+	8020.1.1 = {birth="8020.1.1"}
+	8021.1.1 = {death="8021.1.1"}
+}
+109300015 = {
+	name="Joss"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=107300015
+	mother=207300015
+
+	8048.1.1 = {birth="8048.1.1"}
+	8064.1.1 = {add_trait=trained_warrior}
+	8066.1.1 = {add_spouse=209300015}
+	8106.1.1 = {death="8106.1.1"}
+}
+209300015 = {
+	name="Umma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8048.1.1 = {birth="8048.1.1"}
+	8106.1.1 = {death="8106.1.1"}
+}
+110300015 = {
+	name="Roro"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=107300015
+	mother=207300015
+
+	8051.1.1 = {birth="8051.1.1"}
+	8067.1.1 = {add_trait=master_warrior}
+	8126.1.1 = {death="8126.1.1"}
+}
+111300015 = {
+	name="Areo"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109300015
+	mother=209300015
+
+	8083.1.1 = {birth="8083.1.1"}
+	8099.1.1 = {add_trait=poor_warrior}
+	8101.1.1 = {add_spouse=211300015}
+	8117.1.1 = {death="8117.1.1"}
+}
+211300015 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8083.1.1 = {birth="8083.1.1"}
+	8117.1.1 = {death="8117.1.1"}
+}
+112300015 = {
+	name="Tregar"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109300015
+	mother=209300015
+
+	8086.1.1 = {birth="8086.1.1"}
+	8102.1.1 = {add_trait=trained_warrior}
+	8118.1.1 = {death="8118.1.1"}
+}
+113300015 = {
+	name="Doreah"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109300015
+	mother=209300015
+
+	8089.1.1 = {birth="8089.1.1"}
+	8132.1.1 = {death="8132.1.1"}
+}
+114300015 = {
+	name="Ordello"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=111300015
+	mother=211300015
+
+	8109.1.1 = {birth="8109.1.1"}
+	8125.1.1 = {add_trait=poor_warrior}
+	8127.1.1 = {add_spouse=214300015}
+	8179.1.1 = {death="8179.1.1"}
+}
+214300015 = {
+	name="Serra"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8109.1.1 = {birth="8109.1.1"}
+	8179.1.1 = {death="8179.1.1"}
+}
+115300015 = {
+	name="Jaqen"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300015
+	mother=214300015
+
+	8135.1.1 = {birth="8135.1.1"}
+	8151.1.1 = {add_trait=poor_warrior}
+	8153.1.1 = {add_spouse=215300015}
+	8202.1.1 = {death="8202.1.1"}
+}
+215300015 = {
+	name="Betharios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8135.1.1 = {birth="8135.1.1"}
+	8202.1.1 = {death="8202.1.1"}
+}
+116300015 = {
+	name="Byan"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115300015
+	mother=215300015
+
+	8161.1.1 = {birth="8161.1.1"}
+	8177.1.1 = {add_trait=trained_warrior}
+	8179.1.1 = {add_spouse=216300015}
+	8219.1.1 = {death="8219.1.1"}
+}
+216300015 = {
+	name="Serra"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8161.1.1 = {birth="8161.1.1"}
+	8219.1.1 = {death="8219.1.1"}
+}
+117300015 = {
+	name="Ollo"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=115300015
+	mother=215300015
+
+	8164.1.1 = {birth="8164.1.1"}
+	8180.1.1 = {add_trait=skilled_warrior}
+	8204.1.1 = {death="8204.1.1"}
+}
+118300015 = {
+	name="Moreo"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=116300015
+	mother=216300015
+
+	8183.1.1 = {birth="8183.1.1"}
+	8199.1.1 = {add_trait=poor_warrior}
+	8201.1.1 = {add_spouse=218300015}
+	8241.1.1 = {death="8241.1.1"}
+}
+218300015 = {
+	name="Ferrega"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8183.1.1 = {birth="8183.1.1"}
+	8241.1.1 = {death="8241.1.1"}
+}
+119300015 = {
+	name="Rogga"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300015
+	mother=218300015
+
+	8210.1.1 = {birth="8210.1.1"}
+	8266.1.1 = {death="8266.1.1"}
+}
+120300015 = {
+	name="Roro"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300015
+	mother=218300015
+
+	8211.1.1 = {birth="8211.1.1"}
+	8227.1.1 = {add_trait=poor_warrior}
+	8229.1.1 = {add_spouse=220300015}
+	8254.1.1 = {death="8254.1.1"}
+}
+220300015 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8211.1.1 = {birth="8211.1.1"}
+	8254.1.1 = {death="8254.1.1"}
+}
+121300015 = {
+	name="Jaqen"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300015
+	mother=218300015
+
+	8214.1.1 = {birth="8214.1.1"}
+	8230.1.1 = {add_trait=poor_warrior}
+	8245.1.1 = {death="8245.1.1"}
+}
+122300015 = {
+	name="Gyleno"	# a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120300015
+	mother=220300015
+
+	8233.1.1 = {birth="8233.1.1"}
+	8249.1.1 = {add_trait=trained_warrior}
+	8251.1.1 = {add_spouse=222300015}
+}
+222300015 = {
+	name="Lothea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8233.1.1 = {birth="8233.1.1"}
+}
+123300015 = {
+	name="Tycho"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120300015
+	mother=220300015
+
+	8234.1.1 = {birth="8234.1.1"}
+	8250.1.1 = {add_trait=poor_warrior}
+	8278.1.1 = {death="8278.1.1"}
+}
+124300015 = {
+	name="Ollo"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120300015
+	mother=220300015
+
+	8235.1.1 = {birth="8235.1.1"}
+	8251.1.1 = {add_trait=poor_warrior}
+	8291.1.1 = {death = {death_reason = death_murder}}
+}
+125300015 = {
+	name="Gyloro"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120300015
+	mother=220300015
+
+	8237.1.1 = {birth="8237.1.1"}
+	8253.1.1 = {add_trait=skilled_warrior}
+}
+126300015 = {
+	name="Roro"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300015
+	mother=222300015
+
+	8262.1.1 = {birth="8262.1.1"}
+	8278.1.1 = {add_trait=trained_warrior}
+	8280.1.1 = {add_spouse=226300015}
+}
+226300015 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8262.1.1 = {birth="8262.1.1"}
+}
+127300015 = {
+	name="Tycho"	# not a lord
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300015
+	mother=222300015
+
+	8264.1.1 = {birth="8264.1.1"}
+	8280.1.1 = {add_trait=trained_warrior}
+}
+128300015 = {
+	name="Narba"	# not a lord
+	female=yes
+	dynasty=300015
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300015
+	mother=222300015
+
+	8267.1.1 = {birth="8267.1.1"}
+}
+
+###  House Obizos
+100300013 = {
+	name="Gyloro"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7962.1.1 = {birth="7962.1.1"}
+	7978.1.1 = {add_trait=poor_warrior}
+	7980.1.1 = {add_spouse=200300013}
+	8042.1.1 = {death="8042.1.1"}
+}
+200300013 = {
+	name="Meralyia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7962.1.1 = {birth="7962.1.1"}
+	8042.1.1 = {death="8042.1.1"}
+}
+101300013 = {
+	name="Ferrega"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300013
+	mother=200300013
+
+	7987.1.1 = {birth="7987.1.1"}
+	8032.1.1 = {death = {death_reason = death_murder}}
+}
+102300013 = {
+	name="Cossomo"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300013
+	mother=200300013
+
+	7990.1.1 = {birth="7990.1.1"}
+	8006.1.1 = {add_trait=trained_warrior}
+	8008.1.1 = {add_spouse=202300013}
+	8060.1.1 = {death="8060.1.1"}
+}
+202300013 = {
+	name="Gylora"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7990.1.1 = {birth="7990.1.1"}
+	8060.1.1 = {death="8060.1.1"}
+}
+103300013 = {
+	name="Ordello"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300013
+	mother=202300013
+
+	8010.1.1 = {birth="8010.1.1"}
+	8026.1.1 = {add_trait=poor_warrior}
+	8028.1.1 = {add_spouse=203300013}
+	8085.1.1 = {death="8085.1.1"}
+}
+203300013 = {
+	name="Orios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8010.1.1 = {birth="8010.1.1"}
+	8085.1.1 = {death="8085.1.1"}
+}
+104300013 = {
+	name="Bellegere"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300013
+	mother=202300013
+
+	8012.1.1 = {birth="8012.1.1"}
+	8075.1.1 = {death="8075.1.1"}
+}
+105300013 = {
+	name="Orbelo"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300013
+	mother=202300013
+
+	8014.1.1 = {birth="8014.1.1"}
+	8030.1.1 = {add_trait=trained_warrior}
+	8068.1.1 = {death="8068.1.1"}
+}
+106300013 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102300013
+	mother=202300013
+
+	8015.1.1 = {birth="8015.1.1"}
+	8065.1.1 = {death = {death_reason = death_accident}}
+}
+107300013 = {
+	name="Lanna"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103300013
+	mother=203300013
+
+	8036.1.1 = {birth="8036.1.1"}
+	8114.1.1 = {death="8114.1.1"}
+}
+108300013 = {
+	name="Myrmello"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103300013
+	mother=203300013
+
+	8037.1.1 = {birth="8037.1.1"}
+	8053.1.1 = {add_trait=trained_warrior}
+	8055.1.1 = {add_spouse=208300013}
+	8094.1.1 = {death="8094.1.1"}
+}
+208300013 = {
+	name="Mera"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8037.1.1 = {birth="8037.1.1"}
+	8094.1.1 = {death="8094.1.1"}
+}
+109300013 = {
+	name="Syrio"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300013
+	mother=208300013
+
+	8057.1.1 = {birth="8057.1.1"}
+	8073.1.1 = {add_trait=skilled_warrior}
+	8075.1.1 = {add_spouse=209300013}
+	8115.1.1 = {death="8115.1.1"}
+}
+209300013 = {
+	name="Ternesia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8057.1.1 = {birth="8057.1.1"}
+	8115.1.1 = {death="8115.1.1"}
+}
+110300013 = {
+	name="Narbo"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300013
+	mother=208300013
+
+	8060.1.1 = {birth="8060.1.1"}
+	8076.1.1 = {add_trait=skilled_warrior}
+	8095.1.1 = {death="8095.1.1"}
+}
+111300013 = {
+	name="Roro"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300013
+	mother=208300013
+
+	8063.1.1 = {birth="8063.1.1"}
+	8079.1.1 = {add_trait=skilled_warrior}
+	8120.1.1 = {death="8120.1.1"}
+}
+112300013 = {
+	name="Ternesia"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=108300013
+	mother=208300013
+
+	8066.1.1 = {birth="8066.1.1"}
+	8143.1.1 = {death="8143.1.1"}
+}
+113300013 = {
+	name="Qarro"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109300013
+	mother=209300013
+
+	8080.1.1 = {birth="8080.1.1"}
+	8096.1.1 = {add_trait=poor_warrior}
+	8098.1.1 = {add_spouse=213300013}
+	8123.1.1 = {death="8123.1.1"}
+}
+213300013 = {
+	name="Brea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8080.1.1 = {birth="8080.1.1"}
+	8123.1.1 = {death="8123.1.1"}
+}
+114300013 = {
+	name="Alia"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=109300013
+	mother=209300013
+
+	8082.1.1 = {birth="8082.1.1"}
+	8137.1.1 = {death="8137.1.1"}
+}
+115300013 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113300013
+	mother=213300013
+
+	8100.1.1 = {birth="8100.1.1"}
+	8165.1.1 = {death="8165.1.1"}
+}
+116300013 = {
+	name="Qarria"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113300013
+	mother=213300013
+
+	8103.1.1 = {birth="8103.1.1"}
+	8148.1.1 = {death="8148.1.1"}
+}
+117300013 = {
+	name="Izembara"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113300013
+	mother=213300013
+
+	8106.1.1 = {birth="8106.1.1"}
+	8159.1.1 = {death="8159.1.1"}
+}
+118300013 = {
+	name="Illyrio"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=113300013
+	mother=213300013
+
+	8108.1.1 = {birth="8108.1.1"}
+	8124.1.1 = {add_trait=trained_warrior}
+	8126.1.1 = {add_spouse=218300013}
+	8165.1.1 = {death="8165.1.1"}
+}
+218300013 = {
+	name="Moredea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8108.1.1 = {birth="8108.1.1"}
+	8165.1.1 = {death="8165.1.1"}
+}
+119300013 = {
+	name="Moredo"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300013
+	mother=218300013
+
+	8135.1.1 = {birth="8135.1.1"}
+	8151.1.1 = {add_trait=poor_warrior}
+	8153.1.1 = {add_spouse=219300013}
+	8200.1.1 = {death="8200.1.1"}
+}
+219300013 = {
+	name="Umma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8135.1.1 = {birth="8135.1.1"}
+	8200.1.1 = {death="8200.1.1"}
+}
+120300013 = {
+	name="Lanna"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300013
+	mother=218300013
+
+	8137.1.1 = {birth="8137.1.1"}
+	8182.1.1 = {death = {death_reason = death_accident}}
+}
+121300013 = {
+	name="Allaquo"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300013
+	mother=218300013
+
+	8140.1.1 = {birth="8140.1.1"}
+	8156.1.1 = {add_trait=trained_warrior}
+	8194.1.1 = {death="8194.1.1"}
+}
+122300013 = {
+	name="Moreo"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119300013
+	mother=219300013
+
+	8161.1.1 = {birth="8161.1.1"}
+	8177.1.1 = {add_trait=poor_warrior}
+	8179.1.1 = {add_spouse=222300013}
+	8226.1.1 = {death="8226.1.1"}
+}
+222300013 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8161.1.1 = {birth="8161.1.1"}
+	8226.1.1 = {death="8226.1.1"}
+}
+123300013 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119300013
+	mother=219300013
+
+	8162.1.1 = {birth="8162.1.1"}
+	8209.1.1 = {death="8209.1.1"}
+}
+124300013 = {
+	name="Groleo"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119300013
+	mother=219300013
+
+	8165.1.1 = {birth="8165.1.1"}
+	8181.1.1 = {add_trait=trained_warrior}
+	8209.1.1 = {death="8209.1.1"}
+}
+125300013 = {
+	name="Gylenios"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=119300013
+	mother=219300013
+
+	8168.1.1 = {birth="8168.1.1"}
+	8224.1.1 = {death="8224.1.1"}
+}
+126300013 = {
+	name="Terro"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300013
+	mother=222300013
+
+	8190.1.1 = {birth="8190.1.1"}
+	8206.1.1 = {add_trait=poor_warrior}
+	8211.1.1 = {death="8211.1.1"}
+}
+127300013 = {
+	name="Pynto"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300013
+	mother=222300013
+
+	8193.1.1 = {birth="8193.1.1"}
+	8209.1.1 = {add_trait=trained_warrior}
+	8211.1.1 = {add_spouse=227300013}
+	8258.1.1 = {death = {death_reason = death_accident}}
+}
+227300013 = {
+	name="S'vrone"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8193.1.1 = {birth="8193.1.1"}
+	8258.1.1 = {death="8258.1.1"}
+}
+128300013 = {
+	name="Byan"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300013
+	mother=222300013
+
+	8196.1.1 = {birth="8196.1.1"}
+	8212.1.1 = {add_trait=poor_warrior}
+	8251.1.1 = {death="8251.1.1"}
+}
+129300013 = {
+	name="Brea"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=122300013
+	mother=222300013
+
+	8197.1.1 = {birth="8197.1.1"}
+	8229.1.1 = {death="8229.1.1"}
+}
+130300013 = {
+	name="Byan"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127300013
+	mother=227300013
+
+	8219.1.1 = {birth="8219.1.1"}
+	8235.1.1 = {add_trait=trained_warrior}
+	8237.1.1 = {add_spouse=230300013}
+	8271.1.1 = {death="8271.1.1"}
+}
+230300013 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8219.1.1 = {birth="8219.1.1"}
+	8271.1.1 = {death="8271.1.1"}
+}
+131300013 = {
+	name="Oro"	# not a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127300013
+	mother=227300013
+
+	8220.1.1 = {birth="8220.1.1"}
+	8236.1.1 = {add_trait=poor_warrior}
+	8262.1.1 = {death="8262.1.1"}
+}
+132300013 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=127300013
+	mother=227300013
+
+	8221.1.1 = {birth="8221.1.1"}
+	8258.1.1 = {death="8258.1.1"}
+}
+133300013 = {
+	name="Pynto"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130300013
+	mother=230300013
+
+	8246.1.1 = {birth="8246.1.1"}
+	8262.1.1 = {add_trait=skilled_warrior}
+	8264.1.1 = {add_spouse=233300013}
+	8277.1.1 = {death="8277.1.1"}
+}
+233300013 = {
+	name="Yorka"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8246.1.1 = {birth="8246.1.1"}
+	8277.1.1 = {death="8277.1.1"}
+}
+134300013 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=130300013
+	mother=230300013
+
+	8249.1.1 = {birth="8249.1.1"}
+}
+135300013 = {
+	name="Daario"	# a lord
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300013
+	mother=233300013
+
+	8269.1.1 = {birth="8269.1.1"}
+	8285.1.1 = {add_trait=poor_warrior}
+	8287.1.1 = {add_spouse=235300013}
+}
+235300013 = {
+	name="Yna"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8269.1.1 = {birth="8269.1.1"}
+}
+136300013 = {
+	name="Serala"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=135300013
+	mother=235300013
+
+	8295.1.1 = {birth="8295.1.1"}
+}
+137300013 = {
+	name="Lothea"	# not a lord
+	female=yes
+	dynasty=300013
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=135300013
+	mother=235300013
+
+	8298.1.1 = {birth="8298.1.1"}
+}
+
+###  House Virginion
+100300014 = {
+	name="Roro"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7958.1.1 = {birth="7958.1.1"}
+	7974.1.1 = {add_trait=poor_warrior}
+	7976.1.1 = {add_spouse=200300014}
+	8034.1.1 = {death="8034.1.1"}
+}
+200300014 = {
+	name="Orbela"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7958.1.1 = {birth="7958.1.1"}
+	8034.1.1 = {death="8034.1.1"}
+}
+101300014 = {
+	name="Luco"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300014
+	mother=200300014
+
+	7983.1.1 = {birth="7983.1.1"}
+	7999.1.1 = {add_trait=master_warrior}
+	8001.1.1 = {add_spouse=201300014}
+	8037.1.1 = {death="8037.1.1"}
+}
+201300014 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7983.1.1 = {birth="7983.1.1"}
+	8037.1.1 = {death="8037.1.1"}
+}
+102300014 = {
+	name="Tycha"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100300014
+	mother=200300014
+
+	7984.1.1 = {birth="7984.1.1"}
+	8053.1.1 = {death="8053.1.1"}
+}
+103300014 = {
+	name="Denyo"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101300014
+	mother=201300014
+
+	8007.1.1 = {birth="8007.1.1"}
+	8023.1.1 = {add_trait=skilled_warrior}
+	8025.1.1 = {add_spouse=203300014}
+	8042.1.1 = {death="8042.1.1"}
+}
+203300014 = {
+	name="Taena"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8007.1.1 = {birth="8007.1.1"}
+	8042.1.1 = {death="8042.1.1"}
+}
+104300014 = {
+	name="Ezzelyno"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103300014
+	mother=203300014
+
+	8039.1.1 = {birth="8039.1.1"}
+	8055.1.1 = {add_trait=poor_warrior}
+	8057.1.1 = {add_spouse=204300014}
+	8079.1.1 = {death="8079.1.1"}
+}
+204300014 = {
+	name="Cossoma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8039.1.1 = {birth="8039.1.1"}
+	8079.1.1 = {death="8079.1.1"}
+}
+105300014 = {
+	name="Umma"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=103300014
+	mother=203300014
+
+	8040.1.1 = {birth="8040.1.1"}
+	8091.1.1 = {death="8091.1.1"}
+}
+106300014 = {
+	name="Tycho"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300014
+	mother=204300014
+
+	8062.1.1 = {birth="8062.1.1"}
+	8078.1.1 = {add_trait=poor_warrior}
+	8080.1.1 = {add_spouse=206300014}
+	8109.1.1 = {death="8109.1.1"}
+}
+206300014 = {
+	name="Narba"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8062.1.1 = {birth="8062.1.1"}
+	8109.1.1 = {death="8109.1.1"}
+}
+107300014 = {
+	name="Daario"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300014
+	mother=204300014
+
+	8064.1.1 = {birth="8064.1.1"}
+	8080.1.1 = {add_trait=poor_warrior}
+	8120.1.1 = {death="8120.1.1"}
+}
+108300014 = {
+	name="Yorko"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300014
+	mother=204300014
+
+	8065.1.1 = {birth="8065.1.1"}
+	8081.1.1 = {add_trait=trained_warrior}
+	8096.1.1 = {death = {death_reason = death_battle}}
+}
+109300014 = {
+	name="Tregar"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300014
+	mother=204300014
+
+	8066.1.1 = {birth="8066.1.1"}
+	8082.1.1 = {add_trait=poor_warrior}
+	8098.1.1 = {death="8098.1.1"}
+}
+110300014 = {
+	name="Tormo"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=104300014
+	mother=204300014
+
+	8067.1.1 = {birth="8067.1.1"}
+	8083.1.1 = {add_trait=poor_warrior}
+	8123.1.1 = {death="8123.1.1"}
+}
+111300014 = {
+	name="Tagganaria"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=106300014
+	mother=206300014
+
+	8082.1.1 = {birth="8082.1.1"}
+	8137.1.1 = {death="8137.1.1"}
+}
+112300014 = {
+	name="Ezzelyno"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=106300014
+	mother=206300014
+
+	8085.1.1 = {birth="8085.1.1"}
+	8101.1.1 = {add_trait=trained_warrior}
+	8103.1.1 = {add_spouse=212300014}
+	8149.1.1 = {death="8149.1.1"}
+}
+212300014 = {
+	name="Qarria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8085.1.1 = {birth="8085.1.1"}
+	8149.1.1 = {death="8149.1.1"}
+}
+113300014 = {
+	name="Umma"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=106300014
+	mother=206300014
+
+	8088.1.1 = {birth="8088.1.1"}
+	8152.1.1 = {death="8152.1.1"}
+}
+114300014 = {
+	name="Gyloro"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=112300014
+	mother=212300014
+
+	8103.1.1 = {birth="8103.1.1"}
+	8119.1.1 = {add_trait=poor_warrior}
+	8121.1.1 = {add_spouse=214300014}
+	8163.1.1 = {death="8163.1.1"}
+}
+214300014 = {
+	name="Ezzere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8103.1.1 = {birth="8103.1.1"}
+	8163.1.1 = {death="8163.1.1"}
+}
+115300014 = {
+	name="Ezzere"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=112300014
+	mother=212300014
+
+	8104.1.1 = {birth="8104.1.1"}
+	8154.1.1 = {death="8154.1.1"}
+}
+116300014 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300014
+	mother=214300014
+
+	8127.1.1 = {birth="8127.1.1"}
+	8180.1.1 = {death="8180.1.1"}
+}
+117300014 = {
+	name="Pynta"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300014
+	mother=214300014
+
+	8129.1.1 = {birth="8129.1.1"}
+	8164.1.1 = {death="8164.1.1"}
+}
+118300014 = {
+	name="Denyo"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300014
+	mother=214300014
+
+	8131.1.1 = {birth="8131.1.1"}
+	8147.1.1 = {add_trait=trained_warrior}
+	8149.1.1 = {add_spouse=218300014}
+	8181.1.1 = {death="8181.1.1"}
+}
+218300014 = {
+	name="Serenei"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8131.1.1 = {birth="8131.1.1"}
+	8181.1.1 = {death="8181.1.1"}
+}
+119300014 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=114300014
+	mother=214300014
+
+	8133.1.1 = {birth="8133.1.1"}
+	8201.1.1 = {death="8201.1.1"}
+}
+120300014 = {
+	name="Ordello"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300014
+	mother=218300014
+
+	8159.1.1 = {birth="8159.1.1"}
+	8175.1.1 = {add_trait=poor_warrior}
+	8177.1.1 = {add_spouse=220300014}
+	8190.1.1 = {death="8190.1.1"}
+}
+220300014 = {
+	name="Orios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8159.1.1 = {birth="8159.1.1"}
+	8190.1.1 = {death="8190.1.1"}
+}
+121300014 = {
+	name="Tormo"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300014
+	mother=218300014
+
+	8162.1.1 = {birth="8162.1.1"}
+	8178.1.1 = {add_trait=poor_warrior}
+	8208.1.1 = {death="8208.1.1"}
+}
+122300014 = {
+	name="Cossomo"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300014
+	mother=218300014
+
+	8164.1.1 = {birth="8164.1.1"}
+	8180.1.1 = {add_trait=trained_warrior}
+	8221.1.1 = {death="8221.1.1"}
+}
+123300014 = {
+	name="Jaqen"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=118300014
+	mother=218300014
+
+	8167.1.1 = {birth="8167.1.1"}
+	8183.1.1 = {add_trait=skilled_warrior}
+	8224.1.1 = {death="8224.1.1"}
+}
+124300014 = {
+	name="Illyrio"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=120300014
+	mother=220300014
+
+	8179.1.1 = {birth="8179.1.1"}
+	8195.1.1 = {add_trait=poor_warrior}
+	8197.1.1 = {add_spouse=224300014}
+	8232.1.1 = {death="8232.1.1"}
+}
+224300014 = {
+	name="Nohia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8179.1.1 = {birth="8179.1.1"}
+	8232.1.1 = {death="8232.1.1"}
+}
+125300014 = {
+	name="Luco"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=124300014
+	mother=224300014
+
+	8197.1.1 = {birth="8197.1.1"}
+	8213.1.1 = {add_trait=skilled_warrior}
+	8215.1.1 = {add_spouse=225300014}
+	8255.1.1 = {death="8255.1.1"}
+}
+225300014 = {
+	name="Torma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8197.1.1 = {birth="8197.1.1"}
+	8255.1.1 = {death="8255.1.1"}
+}
+126300014 = {
+	name="Bellonara"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=124300014
+	mother=224300014
+
+	8200.1.1 = {birth="8200.1.1"}
+	8247.1.1 = {death="8247.1.1"}
+}
+127300014 = {
+	name="Ordello"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=124300014
+	mother=224300014
+
+	8201.1.1 = {birth="8201.1.1"}
+	8217.1.1 = {add_trait=trained_warrior}
+	8247.1.1 = {death = {death_reason = death_murder}}
+}
+128300014 = {
+	name="Tregar"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=124300014
+	mother=224300014
+
+	8204.1.1 = {birth="8204.1.1"}
+	8220.1.1 = {add_trait=master_warrior}
+	8283.1.1 = {death="8283.1.1"}
+}
+129300014 = {
+	name="Lotho"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300014
+	mother=225300014
+
+	8221.1.1 = {birth="8221.1.1"}
+	8237.1.1 = {add_trait=skilled_warrior}
+	8239.1.1 = {add_spouse=229300014}
+	8295.1.1 = {death="8295.1.1"}
+}
+229300014 = {
+	name="Torma"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8221.1.1 = {birth="8221.1.1"}
+	8295.1.1 = {death="8295.1.1"}
+}
+130300014 = {
+	name="Meralyia"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300014
+	mother=225300014
+
+	8223.1.1 = {birth="8223.1.1"}
+	8282.1.1 = {death = {death_reason = death_murder}}
+}
+131300014 = {
+	name="Mellario"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300014
+	mother=225300014
+
+	8225.1.1 = {birth="8225.1.1"}
+	8285.1.1 = {death="8285.1.1"}
+}
+132300014 = {
+	name="Talea"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=125300014
+	mother=225300014
+
+	8226.1.1 = {birth="8226.1.1"}
+	8297.1.1 = {death = {death_reason = death_murder}}
+}
+133300014 = {
+	name="Byan"	# a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=129300014
+	mother=229300014
+
+	8254.1.1 = {birth="8254.1.1"}
+	8270.1.1 = {add_trait=poor_warrior}
+	8311.1.1 = {death="8311.1.1"}
+}
+233300014 = {
+	name="Mera"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8254.1.1 = {birth="8254.1.1"}
+	8272.1.1 = {add_spouse=133300014}
+	8311.1.1 = {death="8311.1.1"}
+}
+134300014 = {
+	name="Talea"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300014
+	mother=233300014
+
+	8276.1.1 = {birth="8276.1.1"}
+}
+135300014 = {
+	name="Moredo"	# not a lord
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300014
+	mother=233300014
+
+	8274.1.1 = {birth="8274.1.1"}
+	8290.1.1 = {add_trait=poor_warrior}
+	8292.1.1 = {add_spouse=235300014}
+}
+235300014 = {
+	name="Izembara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8274.1.1 = {birth="8274.1.1"}
+}
+136300014 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=133300014
+	mother=233300014
+
+	8280.1.1 = {birth="8280.1.1"}
+}
+137300014 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=135300014
+	mother=235300014
+
+	8297.1.1 = {birth="8297.1.1"}
+}
+138300014 = {
+	name="Jaqea"	# not a lord
+	female=yes
+	dynasty=300014
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=135300014
+	mother=235300014
+
+	8299.1.1 = {birth="8299.1.1"}
+}
+
+####  House Myrth
+10121 = {
+	name="Baldo"	# a lord
+	dynasty=69157
+	dna="ckakdwejhmx"
+	prp="oc0dik00000000"
+
+	diplomacy = 5
+	martial = 7
+	stewardship = 6
+	intrigue = 4
+	learning = 5
+	
+	religion="rhllor"
+	culture="pentosi"
+	
+	disallow_random_traits = yes
+	
+	add_trait = skilled_tactician
+	add_trait = palemoon
+	add_trait = fire_obsessed
+	add_trait = zealous
+	add_trait = brave
+	add_trait = holy_warrior
+	add_trait = siege_leader
+
+	7977.12.7 = {birth="7977.12.7"}
+	7986.8.1 = {add_trait=master_warrior}
+	7995.1.1 = {add_spouse=10122}
+	8036.1.1 = {death="8036.1.1"}
+}
+10122 = {
+	name="Naniah"
+	female=yes
+	dna="aghgezcbhmh"
+	prp="ne0hff00000000"
+
+	religion="rhllor"
+	culture="pentosi"
+	
+	diplomacy = 6
+	martial = 2
+	stewardship = 6
+	intrigue = 5
+	learning = 4
+	health = 6.5
+	fertility = 0.8
+	
+	disallow_random_traits = yes
+	
+	add_trait = charismatic_negotiator
+	add_trait = fashionable
+	add_trait = honest
+	add_trait = shy
+	add_trait = kind
+	add_trait = trusting
+
+	7978.3.12 = {birth="7978.3.12"}
+	7978.3.12 = {add_trait = fair}
+	8036.1.1 = {death="8036.1.1"}
+}
+100169157 = {
+	name="Byan"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7998.1.1 = {birth="7998.1.1"}
+	7996.1.1 = {add_spouse=400169157}
+	8043.1.1 = {death="8043.1.1"}
+}
+400169157 = {
+	name="Nohia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	7999.1.1 = {birth="7979.1.1"}
+	8043.1.1 = {death="8043.1.1"}
+}
+100369157 = {
+	name="Jaqen"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100169157
+	mother=400169157
+
+	8005.1.1 = {birth="8005.1.1"}
+	8021.1.1 = {add_trait=poor_warrior}
+	8023.1.1 = {add_spouse=400369157}
+	8082.1.1 = {death="8082.1.1"}
+}
+400369157 = {
+	name="Bellegere"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8005.1.1 = {birth="8005.1.1"}
+	8082.1.1 = {death="8082.1.1"}
+}
+100469157 = {
+	name="Denyo"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369157
+	mother=400369157
+
+	8030.1.1 = {birth="8030.1.1"}
+	8046.1.1 = {add_trait=trained_warrior}
+	8048.1.1 = {add_spouse=400469157}
+	8088.1.1 = {death="8088.1.1"}
+}
+400469157 = {
+	name="Alia"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8030.1.1 = {birth="8030.1.1"}
+	8088.1.1 = {death="8088.1.1"}
+}
+100569157 = {
+	name="Serenei"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369157
+	mother=400369157
+
+	8032.1.1 = {birth="8032.1.1"}
+	8086.1.1 = {death="8086.1.1"}
+}
+100669157 = {
+	name="Myrmello"	# not a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100369157
+	mother=400369157
+
+	8035.1.1 = {birth="8035.1.1"}
+	8051.1.1 = {add_trait=trained_warrior}
+	8099.1.1 = {death="8099.1.1"}
+}
+100769157 = {
+	name="Moreo"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100469157
+	mother=400469157
+
+	8055.1.1 = {birth="8055.1.1"}
+	8071.1.1 = {add_trait=poor_warrior}
+	8073.1.1 = {add_spouse=400769157}
+	8111.1.1 = {death="8111.1.1"}
+}
+400769157 = {
+	name="S'vrone"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8055.1.1 = {birth="8055.1.1"}
+	8111.1.1 = {death="8111.1.1"}
+}
+100869157 = {
+	name="Izembaro"	# not a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100469157
+	mother=400469157
+
+	8056.1.1 = {birth="8056.1.1"}
+	8072.1.1 = {add_trait=trained_warrior}
+	8113.1.1 = {death="8113.1.1"}
+}
+100969157 = {
+	name="Brusco"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769157
+	mother=400769157
+
+	8078.1.1 = {birth="8078.1.1"}
+	8094.1.1 = {add_trait=poor_warrior}
+	8096.1.1 = {add_spouse=400969157}
+	8117.1.1 = {death="8117.1.1"}
+}
+400969157 = {
+	name="Gylora"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8078.1.1 = {birth="8078.1.1"}
+	8117.1.1 = {death="8117.1.1"}
+}
+101069157 = {
+	name="Serra"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100769157
+	mother=400769157
+
+	8080.1.1 = {birth="8080.1.1"}
+	8156.1.1 = {death="8156.1.1"}
+}
+101169157 = {
+	name="Myrmello"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969157
+	mother=400969157
+
+	8097.1.1 = {birth="8097.1.1"}
+	8113.1.1 = {add_trait=poor_warrior}
+	8115.1.1 = {add_spouse=401169157}
+	8134.1.1 = {death="8134.1.1"}
+}
+401169157 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8097.1.1 = {birth="8097.1.1"}
+	8134.1.1 = {death="8134.1.1"}
+}
+101269157 = {
+	name="Yorka"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=100969157
+	mother=400969157
+
+	8098.1.1 = {birth="8098.1.1"}
+	8152.1.1 = {death="8152.1.1"}
+}
+101369157 = {
+	name="Moredo"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101169157
+	mother=401169157
+
+	8122.1.1 = {birth="8122.1.1"}
+	8138.1.1 = {add_trait=poor_warrior}
+	8140.1.1 = {add_spouse=401369157}
+	8182.1.1 = {death="8182.1.1"}
+}
+401369157 = {
+	name="Qarria"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8122.1.1 = {birth="8122.1.1"}
+	8182.1.1 = {death="8182.1.1"}
+}
+101469157 = {
+	name="Izembara"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101369157
+	mother=401369157
+
+	8150.1.1 = {birth="8150.1.1"}
+	8181.1.1 = {death="8181.1.1"}
+}
+101569157 = {
+	name="Denia"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101369157
+	mother=401369157
+
+	8153.1.1 = {birth="8153.1.1"}
+	8192.1.1 = {death="8192.1.1"}
+}
+101669157 = {
+	name="Cossomo"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101369157
+	mother=401369157
+
+	8155.1.1 = {birth="8155.1.1"}
+	8171.1.1 = {add_trait=trained_warrior}
+	8173.1.1 = {add_spouse=401669157}
+	8199.1.1 = {death="8199.1.1"}
+}
+401669157 = {
+	name="Syrea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8155.1.1 = {birth="8155.1.1"}
+	8199.1.1 = {death="8199.1.1"}
+}
+101769157 = {
+	name="Areo"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101669157
+	mother=401669157
+
+	8176.1.1 = {birth="8176.1.1"}
+	8192.1.1 = {add_trait=trained_warrior}
+	8194.1.1 = {add_spouse=401769157}
+	8232.1.1 = {death="8232.1.1"}
+}
+401769157 = {
+	name="Serala"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8176.1.1 = {birth="8176.1.1"}
+	8232.1.1 = {death="8232.1.1"}
+}
+105069157 = {
+	name="Collio"	#Prince of Pentos
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101669157
+	mother=401669157
+
+	8178.1.1 = {birth="8178.1.1"}
+	8194.1.1 = {add_trait=trained_warrior}
+	8195.10.1 = {death = {death_reason = death_execution} } 
+}
+101869157 = {
+	name="Orbelo"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101769157
+	mother=401769157
+
+	8201.1.1 = {birth="8201.1.1"}
+	8217.1.1 = {add_trait=poor_warrior}
+	8219.1.1 = {add_spouse=401869157}
+	8241.1.1 = {death="8241.1.1"}
+}
+401869157 = {
+	name="Terrios"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8201.1.1 = {birth="8201.1.1"}
+	8241.1.1 = {death="8241.1.1"}
+}
+101969157 = {
+	name="Rogga"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101769157
+	mother=401769157
+
+	8202.1.1 = {birth="8202.1.1"}
+	8225.1.1 = {death="8225.1.1"}
+}
+102069157 = {
+	name="Yorko"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=101869157
+	mother=401869157
+
+	8221.1.1 = {birth="8221.1.1"}
+	8237.1.1 = {add_trait=skilled_warrior}
+	8239.1.1 = {add_spouse=402069157}
+	8277.1.1 = {death="8277.1.1"}
+}
+402069157 = {
+	name="Pynta"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8221.1.1 = {birth="8221.1.1"}
+	8277.1.1 = {death="8277.1.1"}
+}
+102169157 = {
+	name="Lothea"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069157
+	mother=402069157
+
+	8246.1.1 = {birth="8246.1.1"}
+	8291.1.1 = {death="8291.1.1"}
+}
+102269157 = {
+	name="Roro"	# not a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069157
+	mother=402069157
+
+	8247.1.1 = {birth="8247.1.1"}
+	8263.1.1 = {add_trait=poor_warrior}
+	8268.1.1 = {death="8268.1.1"}
+}
+102369157 = {
+	name="Syrio"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069157
+	mother=402069157
+
+	8250.1.1 = {birth="8250.1.1"}
+	8266.1.1 = {add_trait=trained_warrior}
+	8268.1.1 = {add_spouse=402369157}
+	8281.1.1 = {death="8281.1.1"}
+}
+402369157 = {
+	name="Jaqea"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8250.1.1 = {birth="8250.1.1"}
+	8281.1.1 = {death="8281.1.1"}
+}
+102469157 = {
+	name="Orios"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102069157
+	mother=402069157
+
+	8253.1.1 = {birth="8253.1.1"}
+	8280.1.1 = {death="8280.1.1"}
+}
+102569157 = {
+	name="Jaqen"	# a lord
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102369157
+	mother=402369157
+
+	8274.1.1 = {birth="8274.1.1"}
+	8290.1.1 = {add_trait=poor_warrior}
+	8292.1.1 = {add_spouse=402569157}
+}
+402569157 = {
+	name="Bellonara"
+	female=yes
+
+	religion="rhllor"
+	culture="pentosi"
+
+	8274.1.1 = {birth="8274.1.1"}
+}
+102669157 = {
+	name="Myrmellios"	# not a lord
+	female=yes
+	dynasty=69157
+
+	religion="rhllor"
+	culture="pentosi"
+
+	father=102369157
+	mother=402369157
+
+	8276.1.1 = {birth="8276.1.1"}
+}
+

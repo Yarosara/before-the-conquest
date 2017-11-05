@@ -1,0 +1,3226 @@
+###Myrman###
+360 = { # DUPLICATE §§§§§§
+	name="of Myr"
+	culture = myrman
+}
+300507 = {
+	name = "of Myr"
+	culture = myrman
+}
+300525 = {
+	name = "Trellos"
+	culture = myrman
+}
+300534 = {
+	name = "Uteuran"
+	culture = myrman
+}
+300516 = {
+	name = "Lornel"
+	culture = myrman
+}
+174355 = {
+	name="Rhegan"
+	culture = myrman
+}
+300700 = {
+	name="Drahar"
+	culture = myrman
+}
+301700 = {
+	name="Naelor"
+	culture = myrman
+}
+#non-cano for random
+300701 = {
+	name="Pimman"
+	culture = myrman
+}
+300702 = {
+	name="Sordios"
+	culture = myrman
+}
+300703 = {
+	name="Albersan"
+	culture = myrman
+}
+300704 = {
+	name="Allegel"
+	culture = myrman
+}
+300705 = {
+	name="Varghan"
+	culture = myrman
+}
+300706 = {
+	name="Saldorys"
+	culture = myrman
+}
+300707 = {
+	name="Mercor"
+	culture = myrman
+}
+300708 = {
+	name="Lavelos"
+	culture = myrman
+}
+300709 = {
+	name="Dynanar"
+	culture = myrman
+}
+300710 = {
+	name="Baerrys"
+	culture = myrman
+}
+300711 = {
+	name="Anerelar"
+	culture = myrman
+}
+300712 = {
+	name="Stassanar"
+	culture = myrman
+}
+300713 = {
+	name="Iranin"
+	culture = myrman
+}
+11300713 = {
+	name="Lashare"
+	culture = myrman
+}
+
+
+
+##Lysene##
+1386 = {
+	name="Ormollen"
+	culture = lysene
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 14
+			texture_internal = 9
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+300505 = {
+	name = "of Lys"
+	culture = lysene
+}
+300523 = {
+	name = "Lohar"
+	culture = lysene
+}
+300532 = {
+	name = "Assadyrn"
+	culture = lysene
+}
+300539 = {
+	name = "Marr"
+	culture = lysene
+}
+300540 = {
+	name = "Galeros"
+	culture = lysene
+}
+56821 = {
+	name="Quanis"
+	culture = lysene
+}
+300546 = {
+	name = "Sathmantes"
+	culture = lysene
+}
+55925 = {
+	name="Erosenes"
+	culture = lysene
+}
+55999 = {
+	name="Rogare"
+	culture = lysene
+}
+#Pirate
+982367 = {
+	name = "Cithien"
+	culture = lysene
+}
+982368 = {
+	name = "Adorean"
+	culture = lysene
+}
+982369 = {
+	name = "Trynna"
+	culture = lysene
+}
+982370 = {
+	name = "Saan"
+	culture = lysene
+}
+982371 = {
+	name = "Etollan"
+	culture = lysene
+}
+982372 = {
+	name = "Berases"
+	culture = lysene
+}
+982373 = {
+	name = "Ibilis"
+	culture = lysene
+}
+982374 = {
+	name = "Porevos"
+	culture = lysene
+}
+#other non canon
+300600 = {
+	name="Mopios"
+	culture = lysene
+}
+300601 = {
+	name="Nestyr"
+	culture = lysene
+}
+300602 = {
+	name="Hartar"
+	culture = lysene
+}
+300603 = {
+	name="Ahrerris"
+	culture = lysene
+}
+300604 = {
+	name="Iranyris"
+	culture = lysene
+}
+300605 = {
+	name="Sorryr"
+	culture = lysene
+}
+300606 = {
+	name="Faenyl"
+	culture = lysene
+}
+300607 = {
+	name="Drennolis"
+	culture = lysene
+}
+300608 = {
+	name="Maroran"
+	culture = lysene
+}
+300609 = {
+	name = "Celivias"
+	culture = lysene
+}
+##Norvosi##
+9108 = {
+	name="of Norvos"
+	culture = norvosi
+}
+9109 = {
+	name="Hotah"
+	culture = norvosi
+}
+300504 = {
+	name = "of Norvos"
+	culture = norvosi
+}
+300522 = {
+	name = "Nyelossos"
+	culture = norvosi
+}
+300531 = {
+	name = "Daryth"
+	culture = norvosi
+}
+300561 = {
+	name = "Morvdys"
+	culture = norvosi
+}
+300562 = {
+	name = "Narlan"
+	culture = norvosi
+}
+300563 = {
+	name = "Votyris"
+	culture = norvosi
+}
+69116 = {
+	name = "Vortar"
+	culture = norvosi
+}
+69117 = {
+	name = "Hortyr"
+	culture = norvosi
+}
+69118 = {
+	name = "Andredyos"
+	culture = norvosi
+}
+69119 = {
+	name = "Mortosh"
+	culture = norvosi
+}
+69120 = {
+	name = "Maloros"
+	culture = norvosi
+}
+69121 = {
+	name = "Bartyr"
+	culture = norvosi
+}
+69122 = {
+	name = "Bertran"
+	culture = norvosi
+}
+69156 = {
+	name = "Notarys"
+	culture = norvosi
+}
+300800 = {
+	name = "Hartanar"
+	culture = norvosi
+}
+300801 = {
+	name = "Sorrah"
+	culture = norvosi
+}
+300802 = {
+	name = "Ostohr"
+	culture = norvosi
+}
+300803 = {
+	name = "Phassyl"
+	culture = norvosi
+}
+300804 = {
+	name = "Ormenohr"
+	culture = norvosi
+}
+300805 = {
+	name = "Stassorlan"
+	culture = norvosi
+}
+300806 = {
+	name = "Orlin"
+	culture = norvosi
+}
+300807 = {
+	name = "Naeros"
+	culture = norvosi
+}
+
+
+##Braavosi##
+300000 = {
+	name="Del Pino"
+	culture = braavosi
+}
+300001 = {
+	name="Nestoris"
+	culture = braavosi
+}
+300002 = {
+	name="Velaron"
+	culture = braavosi
+}
+300003 = {
+	name="Dimittis"
+	culture = braavosi
+}
+300004 = {
+	name="Zalyne"
+	culture = braavosi
+}
+300005 = {
+	name="Lostayn"
+	culture = braavosi
+}
+300509 = {
+	name = "of Braavos"
+	culture = braavosi
+}
+300511 = {
+	name = "Antaryon"
+	culture = braavosi
+}
+300512 = {
+	name = "Volentin"
+	culture = braavosi
+}
+300513 = {
+	name = "Otherys"
+	culture = braavosi
+}
+300514 = {
+	name = "Terys"
+	culture = braavosi
+}
+300515 = {
+	name = "Prestayn"
+	culture = braavosi
+}
+300518 = {
+	name = "Parnel"
+	culture = braavosi
+}
+300527 = {
+	name = "Forel"
+	culture = braavosi
+}
+300536 = {
+	name = "Manterys"
+	culture = braavosi
+}
+300541 = {
+	name = "Tendyris"
+	culture = braavosi
+}
+300547 = {
+	name = "Fregar"
+	culture = braavosi
+}
+174370 = {
+	name="of Braavos"
+	culture = braavosi
+}
+700010 = {
+	name="Vaar"
+	culture = braavosi
+}
+700011 = {
+	name="Gresayn"
+	culture = braavosi
+}
+700012 = {
+	name="Demetrys"
+	culture = braavosi
+}
+700013 = {
+	name="Pristris"
+	culture = braavosi
+}
+700014 = {
+	name="Ferys"
+	culture = braavosi
+}
+700015 = {
+	name="Ydorys"
+	culture = braavosi
+}
+700016 = {
+	name="Saar"
+	culture = braavosi
+}
+700017 = {
+	name="Malhorvys"
+	culture = braavosi
+}
+700018 = {
+	name="Vollyr"
+	culture = braavosi
+}
+700019 = {
+	name="Irnatis"
+	culture = braavosi
+}
+700020 = {
+	name="Sorrohrin"
+	culture = braavosi
+}
+700021 = {
+	name="Ennaenor"
+	culture = braavosi
+}
+700022 = {
+	name="Marerion"
+	culture = braavosi
+}
+700023 = {
+	name="Ostaan"
+	culture = braavosi
+}
+700024 = {
+	name="Gasparyon"
+	culture = braavosi
+}
+700025 = {
+	name="Ferys"
+	culture = braavosi
+}
+700026 = {
+	name="Dothare"
+	culture = braavosi
+}
+##Pentosi##
+300010 = {
+	name="Pinno"
+	culture = pentosi
+}
+300011 = {
+	name="Giulis"
+	culture = pentosi
+}
+300012 = {
+	name="Narratys"
+	culture = pentosi
+}
+300013 = {
+	name="Obizos"
+	culture = pentosi
+}
+300014 = {
+	name="Virginion"
+	culture = pentosi
+}
+300015 = {
+	name="Torgodorio"
+	culture = pentosi
+}
+300508 = {
+	name = "of Pentos"
+	culture = pentosi
+}
+300517 = {
+	name = "Allaquo"
+	culture = pentosi
+}
+
+300519 = {
+	name = "Mopatis"
+	culture = pentosi
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 14
+			texture_internal = 8
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+300526 = {
+	name = "Thelis"
+	culture = pentosi
+}
+300535 = {
+	name = "Atredeys"
+	culture = pentosi
+}
+174356 = {
+	name="D'han"
+	culture = pentosi
+}
+174360 = {
+	name="Istarion"
+	culture = pentosi
+}
+174366 = {
+	name="Myrakis"
+	culture = pentosi
+}
+55926 = {
+	name="Estatis"
+	culture = pentosi
+}
+69123 = {
+	name = "Myrenolys"
+	culture = pentosi
+}
+69124 = {
+	name = "Thelius"
+	culture = pentosi
+}
+69125 = {
+	name = "Lysandys"
+	culture = pentosi
+}
+69126 = {
+	name = "Lumitits"
+	culture = pentosi
+}
+69127 = {
+	name = "Kaporys"
+	culture = pentosi
+}
+69157 = {
+	name = "Myrth"
+	culture = pentosi
+	coat_of_arms=
+	{
+		data=
+		{
+0 0 0 151 13 9 0 					}
+			religion="rhllor"
+			
+	}
+}
+300900 = {
+	name = "Flaerys"
+	culture = pentosi
+}
+300901 = {
+	name = "Phassios"
+	culture = pentosi
+}
+300902 = {
+	name = "Baharis"
+	culture = pentosi
+}
+300903 = {
+	name = "Paenaar"
+	culture = pentosi
+}
+300904 = {
+	name = "Vhassoris"
+	culture = pentosi
+}
+300905 = {
+	name = "Pahranar"
+	culture = pentosi
+}
+300906 = {
+	name = "Arsenys"
+	culture = pentosi
+}
+## Band of Nine dynasties ##
+11300905 = {
+	name = "Nine Eyes"
+	culture = pentosi
+}
+11300906 = {
+	name = "Butcher"
+	culture = pentosi
+}
+11300907 = {
+	name = "of the Stepstones"
+	culture = lysene
+}
+
+##Tyroshi##
+300020 = {
+	name="Badraddin"
+	culture = tyroshi
+}
+300021 = {
+	name="Ilyas"
+	culture = tyroshi
+}
+300022 = {
+	name="Murad"
+	culture = tyroshi
+}
+300023 = {
+	name="Nazzar"
+	culture = tyroshi
+}
+300024 = {
+	name="Zokan"
+	culture = tyroshi
+}
+300025 = {
+	name="Zafrir"
+	culture = tyroshi
+}
+300506 = {
+	name = "of Tyrosh"
+	culture = tyroshi
+}
+300521 = {
+	name = "Naharis"
+	culture = tyroshi
+}
+300524 = {
+	name = "Xenos"
+	culture = tyroshi
+}
+300533 = {
+	name = "Ryndoon"
+	culture = tyroshi
+}
+301533 = {
+	name = "Lectris"
+	culture = tyroshi
+}
+300542 = {
+	name = "Uhoris"
+	culture = tyroshi
+}
+300543 = {
+	name = "Adarys"
+	culture = tyroshi
+}
+300544 = {
+	name = "Tumitis"
+	culture = tyroshi
+}
+300545 = {
+	name = "Quaynis"
+	culture = tyroshi
+}
+174400 = {
+	name="Jayn"
+	culture = tyroshi
+}
+300200 = {
+	name = "Vollyr"
+	culture = tyroshi
+}
+300201 = {
+	name = "Mopin"
+	culture = tyroshi
+}
+300202 = {
+	name = "Ormorlan"
+	culture = tyroshi
+}
+300203 = {
+	name = "Dynohrin"
+	culture = tyroshi
+}
+300204 = {
+	name = "Brenyl"
+	culture = tyroshi
+}
+300205 = {
+	name = "Ennys"
+	culture = tyroshi
+}
+300206 = {
+	name = "Vynenohr"
+	culture = tyroshi
+}
+
+
+##Volantene##
+300530 = {
+	name = "Ptolos"
+	culture = volantene
+}
+300538 = {
+	name = "Edoryen"
+	culture = volantene
+}
+305600 = {
+	name = "Egros"
+	culture = volantene
+}
+305601 = {
+	name = "Gelteon"
+	culture = volantene
+}
+305602 = {
+	name = "Huran"
+	culture = volantene
+}
+305603 = {
+	name = "Ilagonis"
+	culture = volantene
+}
+305604 = {
+	name = "Jevayen"
+	culture = volantene
+}
+305605 = {
+	name = "Kirines"
+	culture = volantene
+}
+305606 = {
+	name = "Logoros"
+	culture = volantene
+}
+305607 = {
+	name = "Morgvis"
+	culture = volantene
+}
+305608 = {
+	name = "Meryen"
+	culture = volantene
+}
+305609 = {
+	name = "Edoryen"
+	culture = volantene
+}
+305610 = {
+	name = "Nekepar"
+	culture = volantene
+}
+305611 = {
+	name = "Pekos"
+	culture = volantene
+}
+305612 = {
+	name = "Qilonos"
+	culture = volantene
+}
+305613 = {
+	name = "Rulloros"
+	culture = volantene
+}
+305614 = {
+	name = "Sapris"
+	culture = volantene
+}
+305615 = {
+	name = "Robiras"
+	culture = volantene
+}
+305616 = {
+	name = "Tikunis"
+	culture = volantene
+}
+305617 = {
+	name = "Valas"
+	culture = volantene
+}
+305618 = {
+	name = "Volnyros"
+	culture = volantene
+}
+305619 = {
+	name = "Zoklas"
+	culture = volantene
+}
+69141 = {
+	name = "Marsiglio"
+	culture = volantene
+}
+69142 = {
+	name = "Isnardo"
+	culture = volantene
+}
+69143 = {
+	name = "Rannovar"
+	culture = volantene
+}
+69144 = {
+	name = "Olivirana"
+	culture = volantene
+}
+69145 = {
+	name = "Dhoru"
+	culture = volantene
+}
+69146 = {
+	name = "Lomberys"
+	culture = volantene
+}
+69203 = {
+	name = "Stogarys"
+	culture = volantene
+}
+69204 = {
+	name = "Nefatis"
+	culture = volantene
+}
+305620 = {
+	name = "Dynion"
+	culture = volantene
+}
+
+##Qohorik##
+174354 = {
+	name="Hoat"
+	culture = qohorik
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 14
+			texture_internal = 7
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+	}
+}
+300500 = {
+	name = "of Qohor"
+	culture = qohorik
+}
+300520 = {
+	name = "Zhander"
+	culture = qohorik
+}
+300529 = {
+	name = "Reymnos"
+	culture = qohorik
+}
+300564 = {
+	name = "Togott"
+	culture = qohorik
+}
+300565 = {
+	name = "Baroat"
+	culture = qohorik
+}
+300567 = {
+	name = "Qarit"
+	culture = qohorik
+}
+69128 = {
+	name = "Nartos"
+	culture = qohorik
+}
+69129 = {
+	name = "Voatar"
+	culture = qohorik
+}
+69130 = {
+	name = "Taladorys"
+	culture = qohorik
+}
+69131 = {
+	name = "Ragat"
+	culture = qohorik
+}
+69132 = {
+	name = "Rolgott"
+	culture = qohorik
+}
+69133 = {
+	name = "Malavott"
+	culture = qohorik
+}
+69134 = {
+	name = "Corlott"
+	culture = qohorik
+}
+400100 = {
+	name = "Irnonnit"
+	culture = qohorik
+}
+400101 = {
+	name = "Irnen"
+	culture = qohorik
+}
+400102 = {
+	name = "Ostorlat"
+	culture = qohorik
+}
+400103 = {
+	name = "Aenerat"
+	culture = qohorik
+}
+400104 = {
+	name = "Hotinar"
+	culture = qohorik
+}
+400105 = {
+	name = "Phassenohr"
+	culture = qohorik
+}
+400106 = {
+	name = "Baerrin"
+	culture = qohorik
+}
+400107 = {
+	name = "Drennerion"
+	culture = qohorik
+}
+
+
+
+##Lorathi##
+300510 = {
+	name = "of Lorath"
+	culture = lorathi
+}
+300528 = {
+	name = "Naylan"
+	culture = lorathi
+}
+300537 = {
+	name = "Reltis"
+	culture = lorathi
+}
+300548 = {
+	name = "Oloryon"
+	culture = lorathi
+}
+300549 = {
+	name = "Lathtis"
+	culture = lorathi
+}
+300560 = {
+	name = "Vazollen"
+	culture = lorathi
+}
+69135 = {
+	name = "H'Ghai"
+	culture = lorathi
+}
+69136 = {
+	name = "Kaldorys"
+	culture = lorathi
+}
+69137 = {
+	name = "N'Ghan"
+	culture = lorathi
+}
+69138 = {
+	name = "N'Rahl"
+	culture = lorathi
+}
+69139 = {
+	name = "Dalthor"
+	culture = lorathi
+}
+69140 = {
+	name = "Delyios"
+	culture = lorathi
+}
+400200 = {
+	name = "Ormyris"
+	culture = lorathi
+}
+400201 = {
+	name = "Pahryl"
+	culture = lorathi
+}
+400202 = {
+	name = "Dirrirah"
+	culture = lorathi
+}
+400203 = {
+	name = "Nestaar"
+	culture = lorathi
+}
+400204 = {
+	name = "Ahrel"
+	culture = lorathi
+}
+400205 = {
+	name = "Mopyris"
+	culture = lorathi
+}
+400206 = {
+	name = "Hartel"
+	culture = lorathi
+}
+400207 = {
+	name = "Naherah"
+	culture = lorathi
+}
+400208 = {
+	name = "Nahen"
+	culture = lorathi
+}
+
+##Qartheen##
+#non-canon for random
+350006 = {
+	name = "Qar Xath"
+	culture = qartheen
+}
+350007 = {
+	name = "Matathon"
+	culture = qartheen
+}
+350008 = {
+	name = "Qar Qethos"
+	culture = qartheen
+}
+350009 = {
+	name = "Hayasawan"
+	culture = qartheen
+}
+350010 = {
+	name = "Aramaxos"
+	culture = qartheen
+}
+350011 = {
+	name = "Sothanon"
+	culture = qartheen
+}
+350012 = {
+	name = "Qar Kis"
+	culture = qartheen
+}
+350013 = {
+	name = "Merelos"
+	culture = qartheen
+}
+350014 = {
+	name = "Duqathon"
+	culture = qartheen
+}
+350015 = {
+	name = "Qar Yath"
+	culture = qartheen
+}
+350016 = {
+	name = "Barthos"
+	culture = qartheen
+}
+350017 = {
+	name = "Exos"
+	culture = qartheen
+}
+350018 = {
+	name = "Qar Veth"
+	culture = qartheen
+}
+350019 = {
+	name = "Vaqarawan"
+	culture = qartheen
+}
+350020 = {
+	name = "Alegos"
+	culture = qartheen
+}
+350021 = {
+	name = "Xhore"
+	culture = qartheen
+}
+69158 = {
+	name = "Gosymion"
+	culture = qartheen
+}
+69159 = {
+	name = "Eleglos"
+	culture = qartheen
+}
+69160 = {
+	name = "Qar Xarnath"
+	culture = qartheen
+}
+69161 = {
+	name = "Qar Reqos"
+	culture = qartheen
+}
+69162 = {
+	name = "Verelin"
+	culture = qartheen
+}
+69163 = {
+	name = "Telcontis"
+	culture = qartheen
+}
+350022 = { #derived from greek names
+	name = "Qar Zurlos"
+	culture = qartheen
+}
+350023 = {
+	name = "Qar Sannas"
+	culture = qartheen
+}
+350024 = {
+	name = "Qar Pethis"
+	culture = qartheen
+}
+350025 = {
+	name = "Qar Baxas"
+	culture = qartheen
+}
+350026 = {
+	name = "Qar Cathas"
+	culture = qartheen
+}
+350027 = {
+	name = "Qar Rem"
+	culture = qartheen
+}
+350028 = {
+	name = "Qar Maxos"
+	culture = qartheen
+}
+350029 = {
+	name = "Qar Panagaxos"
+	culture = qartheen
+}
+350030 = {
+	name = "Qar Baxas"
+	culture = qartheen
+}
+350031 = {
+	name = "Loris"
+	culture = qartheen
+}
+350032 = {
+	name = "Zethos"
+	culture = qartheen
+}
+350033 = {
+	name = "Manellas"
+	culture = qartheen
+}
+350034 = {
+	name = "Stanis"
+	culture = qartheen
+}
+350035 = {
+	name = "Spithos"
+	culture = qartheen
+}
+350036 = {
+	name = "Manellan"
+	culture = qartheen
+}
+350037 = {
+	name = "Zaros"
+	culture = qartheen
+}
+350038 = {
+	name = "Metaxas"
+	culture = qartheen
+}
+350039 = {
+	name = "Remith"
+	culture = qartheen
+}
+350040 = {
+	name = "Marxos"
+	culture = qartheen
+}
+350041 = {
+	name = "Vallis"
+	culture = qartheen
+}
+350042 = {
+	name = "Papaliath"
+	culture = qartheen
+}
+350043 = {
+	name = "Livas"
+	culture = qartheen
+}
+350044 = {
+	name = "Roxos"
+	culture = qartheen
+}
+350045 = {
+	name = "Lillith"
+	culture = qartheen
+}
+350046 = {
+	name = "Remis"
+	culture = qartheen
+}
+350047 = {
+	name = "Floros"
+	culture = qartheen
+}
+350048 = {
+	name = "Costath"
+	culture = qartheen
+}
+350049 = {
+	name = "Manixas"
+	culture = qartheen
+}
+350050 = {
+	name = "Xhardos"
+	culture = qartheen
+}
+
+#canon
+350000 = {
+	name = "Daxos"
+	culture = qartheen
+}
+350001 = {
+	name = "Emeros"
+	culture = qartheen
+}
+350002 = {
+	name = "Mallarawan"
+	culture = qartheen
+}
+350003 = {
+	name = "Qar Deeth"
+	culture = qartheen
+}
+350004 = {
+	name = "Urrathon"
+	culture = qartheen
+}
+350005 = {
+	name = "Qar Maath"
+	culture = qartheen
+}
+
+##Old Andal##
+174999 = {
+	name="of the Hill"
+	culture = old_andal
+}
+174900 = {
+	name="Hill"
+	culture = old_andal
+}
+174901 = {
+	name="Willow"
+	culture = old_andal
+}
+174902 = {
+	name="Bridgeman"
+	culture = old_andal
+}
+174903 = {
+	name="Goldhood"
+	culture = old_andal
+}
+174904 = {
+	name="Hope"
+	culture = old_andal
+}
+174905 = {
+	name="Spring"
+	culture = old_andal
+}
+174906 = {
+	name="Trench"
+	culture = old_andal
+}
+174907 = {
+	name="Paget"
+	culture = old_andal
+}
+174908 = {
+	name="Pane"
+	culture = old_andal
+}
+174909 = {
+	name="Greatwood"
+	culture = old_andal
+}
+174910 = {
+	name="Bluefort"
+	culture = old_andal
+}
+174911 = {
+	name="Baring"
+	culture = old_andal
+}
+174912 = {
+	name="Craven"
+	culture = old_andal
+}
+174913 = {
+	name="Egerton"
+	culture = old_andal
+}
+174914 = {
+	name="Greyfox"
+	culture = old_andal
+}
+174915 = {
+	name="Sevenwaters"
+	culture = old_andal
+}
+174916 = {
+	name="Lamber"
+	culture = old_andal
+}
+174917 = {
+	name="Lorassyon"
+	culture = old_andal
+}
+
+##Sarnor##
+56800 = {
+	name="Alexi"
+	culture = sarnorian
+}
+56801 = {
+	name="Chinwalla"
+	culture = sarnorian
+}
+56802 = {
+	name="Dholakia"
+	culture = sarnorian
+}
+56803 = {
+	name="Doshi"
+	culture = sarnorian
+}
+56804 = {
+	name="Godhania"
+	culture = sarnorian
+}
+56805 = {
+	name="Gajjar"
+	culture = sarnorian
+}
+56806 = {
+	name="Jariwala"
+	culture = sarnorian
+}
+56807 = {
+	name="Kamdar"
+	culture = sarnorian
+}
+56808 = {
+	name="Kotak"
+	culture = sarnorian
+}
+56809 = {
+	name="Macwan"
+	culture = sarnorian
+}
+56810 = {
+	name="Nayak"
+	culture = sarnorian
+}
+56811 = {
+	name="Pathak"
+	culture = sarnorian
+}
+56812 = {
+	name="Rathod"
+	culture = sarnorian
+}
+56813 = {
+	name="Suthar"
+	culture = sarnorian
+}
+56814 = {
+	name="Sheladia"
+	culture = sarnorian
+}
+56815 = {
+	name="Tripathi"
+	culture = sarnorian
+}
+56816 = {
+	name="Thakar"
+	culture = sarnorian
+}
+56817 = {
+	name="Visaria"
+	culture = sarnorian
+}
+56818 = {
+	name="Bhuva"
+	culture = sarnorian
+}
+56819 = {
+	name="Juthani"
+	culture = sarnorian
+}
+56820 = {
+	name="Odedara"
+	culture = sarnorian
+}
+56822 = {
+	name="Amai"
+	culture = sarnorian
+}
+56823 = {
+	name="Asher"
+	culture = sarnorian
+}
+##Omber##
+51800 = {
+	name="Daevan"
+	culture = omberi
+}
+51801 = {
+	name = "Chouzhar"
+	culture = omberi
+}
+51802 = {
+	name = "Acramien"
+	culture = omberi
+}
+51803 = {
+	name = "Ziozhar"
+	culture = omberi
+}
+51804 = {
+	name = "Uzorael"
+	culture = omberi
+}
+51805 = {
+	name = "Bidan"
+	culture = omberi
+}
+51806 = {
+	name = "Zeikar"
+	culture = omberi
+}
+51807 = {
+	name = "Pruvras"
+	culture = omberi
+}
+51808 = {
+	name = "Xazis"
+	culture = omberi
+}
+51809 = {
+	name = "Sacular"
+	culture = omberi
+}
+51810 = {
+	name = "Icreizis"
+	culture = omberi
+}
+51811 = {
+	name = "Noukai"
+	culture = omberi
+}
+51812 = {
+	name = "Fiolak"
+	culture = omberi
+}
+51813 = {
+	name = "Maezar"
+	culture = omberi
+}
+51814 = {
+	name = "Orovras"
+	culture = omberi
+}
+51815 = {
+	name = "Huqur"
+	culture = omberi
+}
+51816 = {
+	name = "Kioxius"
+	culture = omberi
+}
+51817 = {
+	name = "Abrudulus"
+	culture = omberi
+}
+51818 = {
+	name = "Ihelazar"
+	culture = omberi
+}
+51819 = {
+	name = "Vaughor"
+	culture = omberi
+}
+51820 = {
+	name = "Ekai"
+	culture = omberi
+}
+51821 = {
+	name = "Epralos"
+	culture = omberi
+}
+51822 = {
+	name = "Shavras"
+	culture = omberi
+}
+51823 = {
+	name = "Zhar"
+	culture = omberi
+}
+51824 = {
+	name = "Azis"
+	culture = omberi
+}
+
+##Lhazar##
+55900 = {
+	name="Athvillar"
+	culture = lhazareen
+}
+55901 = {
+	name="Drogikh"
+	culture = lhazareen
+}
+55902 = {
+	name="Oqet"
+	culture = lhazareen
+}
+55903 = {
+	name="Veltor"
+	culture = lhazareen
+}
+55904 = {
+	name="Rakh"
+	culture = lhazareen
+}
+55905 = {
+	name="Qiaseh"
+	culture = lhazareen
+}
+55906 = {
+	name="Loqam"
+	culture = lhazareen
+}
+55907 = {
+	name="Mawizzi"
+	culture = lhazareen
+}
+55908 = {
+	name="Asher"
+	culture = lhazareen
+}
+55909 = {
+	name="Nevak"
+	culture = lhazareen
+}
+55910 = {
+	name="Ozzir"
+	culture = lhazareen
+}
+55911 = {
+	name="Yamori"
+	culture = lhazareen
+}
+55912 = {
+	name="Zhowak"
+	culture = lhazareen
+}
+55913 = {
+	name="Zoqwa"
+	culture = lhazareen
+}
+55914 = {
+	name="Chafka"
+	culture = lhazareen
+}
+55915 = {
+	name="Janha"
+	culture = lhazareen
+}
+55916 = {
+	name="Izven"
+	culture = lhazareen
+}
+55917 = {
+	name="Fasqoyi"
+	culture = lhazareen
+}
+55918 = {
+	name="Gizikh"
+	culture = lhazareen
+}
+55919 = {
+	name="Hemikh"
+	culture = lhazareen
+}
+55920 = {
+	name="Fozaki"
+	culture = lhazareen
+}
+55921 = {
+	name="Gillosor"
+	culture = lhazareen
+}
+55922 = {
+	name="Elainat"
+	culture = lhazareen
+}
+55923 = {
+	name="Shiqethi"
+	culture = lhazareen
+}
+55924 = {
+	name="Sorfosor"
+	culture = lhazareen
+}
+
+##Ibben##
+55927 = {
+	name="Moth"
+	culture = ibbenese
+}
+55928 = {
+	name="Bartogg"
+	culture = ibbenese
+}
+55929 = {
+	name="Joth"
+	culture = ibbenese
+}
+55930 = {
+	name="Rollosh"
+	culture = ibbenese
+}
+55931 = {
+	name="Sluggolsh"
+	culture = ibbenese
+}
+400300 = {
+	name="Kruvvar"
+	culture = ibbenese
+}
+400301 = {
+	name="Aggarak"
+	culture = ibbenese
+}
+400302 = {
+	name="Drakhan"
+	culture = ibbenese
+}
+400303 = {
+	name="Srulog"
+	culture = ibbenese
+}
+400304 = {
+	name="Uriggoth"
+	culture = ibbenese
+}
+400305 = {
+	name="Grorak"
+	culture = ibbenese
+}
+400306 = {
+	name="Jorath"
+	culture = ibbenese
+}
+400307 = {
+	name="Kramman"
+	culture = ibbenese
+}
+400308 = {
+	name="Stekath"
+	culture = ibbenese
+}
+400309 = {
+	name="Thodog"
+	culture = ibbenese
+}
+400310 = {
+	name="Srather"
+	culture = ibbenese
+}
+400311 = {
+	name="Bomhor"
+	culture = ibbenese
+}
+400312 = {
+	name="Gunar"
+	culture = ibbenese
+}
+400313 = {
+	name="Stathar"
+	culture = ibbenese
+}
+400314 = {
+	name="Trovoth"
+	culture = ibbenese
+}
+400315 = {
+	name="Brorlag"
+	culture = ibbenese
+}
+400316 = {
+	name="Danthor"
+	culture = ibbenese
+}
+400317 = {
+	name="Gavvath"
+	culture = ibbenese
+}
+
+##Moraqi##
+559326 = {
+	name="Faruud"
+	culture = farosi
+}
+559336 = {
+	name="Jabbour"
+	culture = farosi
+}
+55932 = {
+	name="Aladda"
+	culture = farosi
+}
+69164 = {
+	name="Malhallador"
+	culture = farosi
+}
+55933 = {
+	name="Jaffarala"
+	culture = moraqi
+}
+55934 = {
+	name="Masih"
+	culture = moraqi
+}
+55935 = {
+	name="Kazemi"
+	culture = moraqi
+}
+55936 = {
+	name="Mahabhar"
+	culture = zabhadi
+}
+55937 = {
+	name="Dallal"
+	culture = zabhadi
+}
+55938 = {
+	name="Ghanem"
+	culture = zabhadi
+}
+55939 = {
+	name="Hallafa"
+	culture = vahari
+}
+55940 = {
+	name="Kamali"
+	culture = vahari
+}
+55941 = {
+	name="Dajani"
+	culture = vahari
+}
+55942 = {
+	name="Kataan"
+	culture = asabhadi
+}
+55943 = {
+	name="Issa"
+	culture = asabhadi
+}
+55944 = {
+	name="Kassis"
+	culture = asabhadi
+}
+69165 = {
+	name="Kalzarria"
+	culture = asabhadi
+}
+
+##Hyrkooni##
+55945 = {
+	name="Paavola"
+	culture = kayakayanayan
+}
+55946 = {
+	name="Mikkola"
+	culture = kayakayanayan
+}
+55947 = {
+	name="Malinen"
+	culture = kayakayanayan
+}
+55948 = {
+	name="Anttila"
+	culture = samyrianan
+}
+55949 = {
+	name="Tannous"
+	culture = samyrianan
+}
+55950 = {
+	name="Kivimaki"
+	culture = samyrianan
+}
+55951 = {
+	name="Laurila"
+	culture = bayasabhadi
+}
+55952 = {
+	name="Siimes"
+	culture = bayasabhadi
+}
+55953 = {
+	name="Vuorinen"
+	culture = bayasabhadi
+}
+
+400400 = {
+	name="Ahtisaari"
+	culture = hyrkooni
+}
+400401 = {
+	name="Asikainen"
+	culture = kayakayanayan
+}
+400402 = {
+	name="Aaltonen"
+	culture = samyrianan
+}
+400403 = {
+	name="Eerola"
+	culture = bayasabhadi
+}
+400404 = {
+	name="Heikkila"
+	culture = hyrkooni
+}
+400405 = {
+	name="Hakamies"
+	culture = kayakayanayan
+}
+400406 = {
+	name="Hakkarainen"
+	culture = samyrianan
+}
+400407 = {
+	name="Harjula"
+	culture = bayasabhadi
+}
+400408 = {
+	name="Isometsa"
+	culture = hyrkooni
+}
+400409 = {
+	name="Ikonen"
+	culture = kayakayanayan
+}
+400410 = {
+	name="Junttila"
+	culture = samyrianan
+}
+400411 = {
+	name="Jaakola"
+	culture = bayasabhadi
+}
+400412 = {
+	name="Korpela"
+	culture = hyrkooni
+}
+400413 = {
+	name="Koivula"
+	culture = kayakayanayan
+}
+400414 = {
+	name="Kankkunen"
+	culture = samyrianan
+}
+400415 = {
+	name="Knuutila"
+	culture = bayasabhadi
+}
+400416 = {
+	name="Laakso"
+	culture = hyrkooni
+}
+400417 = {
+	name="Laukkanen"
+	culture = kayakayanayan
+}
+400418 = {
+	name="Lehtola"
+	culture = samyrianan
+}
+400419 = {
+	name="Markkula"
+	culture = bayasabhadi
+}
+400420 = {
+	name="Malinen"
+	culture = hyrkooni
+}
+400421 = {
+	name="Myllyla"
+	culture = kayakayanayan
+}
+400422 = {
+	name="Nykanen"
+	culture = samyrianan
+}
+400423 = {
+	name="Niinisto"
+	culture = bayasabhadi
+}
+400424 = {
+	name="Oksanen"
+	culture = hyrkooni
+}
+400425 = {
+	name="Pekkala"
+	culture = kayakayanayan
+}
+400426 = {
+	name="Pirhonen"
+	culture = samyrianan
+}
+400427 = {
+	name="Reijonen"
+	culture = bayasabhadi
+}
+400428 = {
+	name="Siltala"
+	culture = hyrkooni
+}
+400429 = {
+	name="Saarinen"
+	culture = kayakayanayan
+}
+400430 = {
+	name="Seppala"
+	culture = samyrianan
+}
+400431 = {
+	name="Tikkanen"
+	culture = bayasabhadi
+}
+400432 = {
+	name="Tuomela"
+	culture = hyrkooni
+}
+400433 = {
+	name="Uotila"
+	culture = kayakayanayan
+}
+400434 = {
+	name="Vayrynen"
+	culture = samyrianan
+}
+400435 = {
+	name="Vanhatalo"
+	culture = bayasabhadi
+}
+
+
+##Yi Ti##
+69166 = {
+	name="Pol"
+	culture = yi_ti
+}
+69167 = {
+	name="Tengo"
+	culture = yi_ti
+}
+69168 = {
+	name="Ku"
+	culture = yi_ti
+}
+69169 = {
+	name="Maoloq"
+	culture = yi_ti
+}
+55954 = {
+	name="Bu"
+	culture = yi_ti
+}
+55955 = {
+	name="Mengo"
+	culture = yi_ti
+}
+55956 = {
+	name="Har"
+	culture = yi_ti
+}
+55957 = {
+	name="Choq"
+	culture = yi_ti
+}
+55958 = {
+	name="Jar"
+	culture = yi_ti
+}
+55959 = {
+	name="Loq"
+	culture = yi_ti
+}
+69191 = {
+	name = "Mu"
+	culture = yi_ti
+}
+69192 = {
+	name = "Dol"
+	culture = yi_ti
+}
+69193 = {
+	name = "Mao"
+	culture = yi_ti
+}
+69194 = {
+	name = "Cao"
+	culture = yi_ti
+}
+69195 = {
+	name = "Liu"
+	culture = yi_ti
+}
+69196 = {
+	name = "Han"
+	culture = yi_ti
+}
+69197 = {
+	name = "Poq"
+	culture = yi_ti
+}
+69198 = {
+	name = "Sol"
+	culture = yi_ti
+}
+69199 = {
+	name = "Du"
+	culture = yi_ti
+}
+69100 = {
+	name = "Moq"
+	culture = yi_ti
+}
+69101 = {
+	name = "Chang"
+	culture = yi_ti
+}
+69102 = {
+	name = "Cha"
+	culture = yi_ti
+}
+69103 = {
+	name = "Gai"
+	culture = yi_ti
+}
+69104 = {
+	name = "Lai"
+	culture = yi_ti
+}
+69105 = {
+	name = "Chol"
+	culture = yi_ti
+}
+69106 = {
+	name = "Woq"
+	culture = yi_ti
+}
+69107 = {
+	name = "Lu"
+	culture = yi_ti
+}
+69108 = {
+	name = "Cai"
+	culture = yi_ti
+}
+69109 = {
+	name = "Sai"
+	culture = yi_ti
+}
+69110 = {
+	name = "Toq"
+	culture = yi_ti
+}
+69111 = {
+	name = "Lao"
+	culture = yi_ti
+}
+69112 = {
+	name = "Roq"
+	culture = yi_ti
+}
+69999 = {
+	name = "Yao"
+	culture = yi_ti
+}
+69214 = {
+	name = "Su"
+	culture = yi_ti
+}
+55960 = {
+	name="Yoq"
+	culture = yi_ti
+}
+55961 = {
+	name="Gu"
+	culture = yi_ti
+}
+
+65961 = {
+	name="Lo"
+	culture = yi_ti
+}
+65962 = {
+	name="Chai"
+	culture = yi_ti
+}
+65963 = {
+	name="Lo"
+	culture = yi_ti
+}
+65964 = {
+	name="Ma Lo"
+	culture = yi_ti
+}
+
+65965 = {
+	name = "Li"
+	culture = yi_ti
+}
+65966 = {
+	name = "Chen"
+	culture = yi_ti
+}
+65967 = {
+	name = "Zha"
+	culture = yi_ti
+}
+65968 = {
+	name = "Zho"
+	culture = yi_ti
+}
+65969 = {
+	name = "Wu"
+	culture = yi_ti
+}
+65970 = {
+	name = "Xu"
+	culture = yi_ti
+}
+65971 = {
+	name = "Xu Lo"
+	culture = yi_ti
+}
+65972 = {
+	name = "Sun"
+	culture = yi_ti
+}
+65973 = {
+	name = "He Lo"
+	culture = yi_ti
+}
+65974 = {
+	name = "Lin"
+	culture = yi_ti
+}
+65975 = {
+	name = "Luo"
+	culture = yi_ti
+}
+65976 = {
+	name = "Xie"
+	culture = yi_ti
+}
+65977 = {
+	name = "Son"
+	culture = yi_ti
+}
+65978 = {
+	name = "Tan"
+	culture = yi_ti
+}
+65979 = {
+	name = "Han"
+	culture = yi_ti
+}
+65980 = {
+	name = "Pen"
+	culture = yi_ti
+}
+65981 = {
+	name = "Zen"
+	culture = yi_ti
+}
+65982 = {
+	name = "Taq"
+	culture = yi_ti
+}
+65983 = {
+	name = "Yua"
+	culture = yi_ti
+}
+65984 = {
+	name = "Yu"
+	culture = yi_ti
+}
+65985 = {
+	name = "Cai"
+	culture = yi_ti
+}
+65986 = {
+	name = "Du"
+	culture = yi_ti
+}
+65987 = {
+	name = "Ye"
+	culture = yi_ti
+}
+65988 = {
+	name = "Su"
+	culture = yi_ti
+}
+65989 = {
+	name = "Wei"
+	culture = yi_ti
+}
+65990 = {
+	name = "Dinq"
+	culture = yi_ti
+}
+65991 = {
+	name = "Ren"
+	culture = yi_ti
+}
+65992 = {
+	name = "Yao"
+	culture = yi_ti
+}
+65993 = {
+	name = "Tan"
+	culture = yi_ti
+}
+65994 = {
+	name = "Tal"
+	culture = yi_ti
+}
+65995 = {
+	name = "Wan"
+	culture = yi_ti
+}
+65996 = {
+	name = "Qia"
+	culture = yi_ti
+}
+65997 = {
+	name = "Yi"
+	culture = yi_ti
+}
+65998 = {
+	name = "Mo"
+	culture = yi_ti
+}
+65999 = {
+	name = "Mol"
+	culture = yi_ti
+}
+66000 = {
+	name = "Dai"
+	culture = yi_ti
+}
+
+##Lengi##
+55962 = {
+	name="Chandesh"
+	culture = lengi
+}
+55963 = {
+	name = Alhazred
+	culture = lengi
+}
+55964 = {
+	name = Akeley
+	culture = lengi
+}
+55965 = {
+	name = Chandraputra
+	culture = lengi
+}
+55966 = {
+	name = Crom-Ya
+	culture = lengi
+}
+55967 = {
+	name = Eibon
+	culture = lengi
+}
+55968 = {
+	name = K'Mool
+	culture = lengi
+}
+55969 = {
+	name = Hoag
+	culture = lengi
+}
+55970 = {
+	name = Schacabao
+	culture = lengi
+}
+55971 = {
+	name = Klarkash
+	culture = lengi
+}
+55972 = {
+	name = Kirowan
+	culture = lengi
+}
+55973 = {
+	name = Luveh
+	culture = lengi
+}
+55974 = {
+	name = Keraphf
+	culture = lengi
+}
+55975 = {
+	name = Mylakhrion
+	culture = lengi
+}
+55976 = {
+	name = Zamacona
+	culture = lengi
+}
+55977 = {
+	name = Zarnak
+	culture = lengi
+}
+55978 = {
+	name = Mezzamalech
+	culture = lengi
+}
+55979 = {
+	name = Amon-Gorloth
+	culture = lengi
+}
+55980 = {
+	name = Aphoom-Zhah
+	culture = lengi
+}
+55981 = {
+	name = Apocolothoth
+	culture = lengi
+}
+55982 = {
+	name = Atlach-Nacha
+	culture = lengi
+}
+55983 = {
+	name = Z'uqqa-Mogg
+	culture = lengi
+}
+55984 = {
+	name = B’gnu-Thun
+	culture = lengi
+}
+55985 = {
+	name = Bugg-Shash
+	culture = lengi
+}
+55986 = {
+	name = Coinchenn
+	culture = lengi
+}
+55987 = {
+	name = Ghadamon
+	culture = lengi
+}
+55988 = {
+	name = Gtuhanai
+	culture = lengi
+}
+55989 = {
+	name = Gurathnaka
+	culture = lengi
+}
+55990 = {
+	name = Juk-Shabb
+	culture = lengi
+}
+55991 = {
+	name = Ryujin
+	culture = lengi
+}
+55992 = {
+	name = Gwandu
+	culture = lengi
+}
+55993 = {
+	name = Mnomquah
+	culture = lengi
+}
+55994 = {
+	name = Mordiggian
+	culture = lengi
+}
+55995 = {
+	name = Nssu-Ghahnb
+	culture = lengi
+}
+55996 = {
+	name = Psuchawrl
+	culture = lengi
+}
+55997 = {
+	name = Ptar-Axtlan
+	culture = lengi
+}
+55998 = {
+	name = Uttaus
+	culture = lengi
+}
+
+56000 = {
+	name = Shaikorth
+	culture = lengi
+}
+56001 = {
+	name = Shaurash
+	culture = lengi
+}
+56002 = {
+	name = Shterot
+	culture = lengi
+}
+56003 = {
+	name = Uitzilcapac
+	culture = lengi
+}
+56004 = {
+	name = Vhuzompha
+	culture = lengi
+}
+56005 = {
+	name = Xalafu
+	culture = lengi
+}
+56006 = {
+	name = Xinlurgash
+	culture = lengi
+}
+56007 = {
+	name = Yog-Sapha
+	culture = lengi
+}
+56008 = {
+	name = Zindarak
+	culture = lengi
+}
+56009 = {
+	name = Zushakon
+	culture = lengi
+}
+56010 = {
+	name = "Rhan-Tegoth"
+	culture = lengi
+}
+##N'Ghai##
+69206 = {
+	name = "Jeung"
+	culture = nghai
+}
+69207 = {
+	name = "Hawang"
+	culture = nghai
+}
+69208 = {
+	name = "Owyang"
+	culture = nghai
+}
+
+###Asshai'i## 
+32900 = {
+	name = "Adrahasis"
+	culture = asshai
+}
+32901 = {
+	name = "Adiur"
+	culture = asshai
+}
+32902 = {
+	name = "Belibni"
+	culture = asshai
+}
+32903 = {
+	name = "Belsumiscun"
+	culture = asshai
+}
+32904 = {
+	name = "Cit"
+	culture = asshai
+}
+32905 = {
+	name = "Dilgan"
+	culture = asshai
+}
+32906 = {
+	name = "Enzuna"
+	culture = asshai
+}
+32907 = {
+	name = "Gudea"
+	culture = asshai
+}
+32908 = {
+	name = "Istarsumesses"
+	culture = asshai
+}
+32909 = {
+	name = "Izdubar"
+	culture = asshai
+}
+32910 = {
+	name = "Kastubili"
+	culture = asshai
+}
+32911 = {
+	name = "Lidunnamu"
+	culture = asshai
+}
+32912 = {
+	name = "Mulagunnuna"
+	culture = asshai
+}
+32913 = {
+	name = "Multhe"
+	culture = asshai
+}
+32914 = {
+	name = "Nabonahid"
+	culture = asshai
+}
+32915 = {
+	name = "Nabonidus"
+	culture = asshai
+}
+32916 = {
+	name = "Nabu-Ikbi"
+	culture = asshai
+}
+32917 = {
+	name = "Namtar"
+	culture = asshai
+}
+32918 = {
+	name = "Neriglissar"
+	culture = asshai
+}
+32919 = {
+	name = "Nin-Ridu"
+	culture = asshai
+}
+32920 = {
+	name = "Orchamus"
+	culture = asshai
+}
+32921 = {
+	name = "Otoug"
+	culture = asshai
+}
+32922 = {
+	name = "Serakh"
+	culture = asshai
+}
+32923 = {
+	name = "Sharyukin"
+	culture = asshai
+}
+32924 = {
+	name = "Sisuthrus"
+	culture = asshai
+}
+32925 = {
+	name = "Turtak"
+	culture = asshai
+}
+32926 = {
+	name = "Urhammu"
+	culture = asshai
+}
+32927 = {
+	name = "Urhamsi"
+	culture = asshai
+}
+32928 = {
+	name = "Zabu"
+	culture = asshai
+}
+32929 = {
+	name = "Zaidu"
+	culture = asshai
+}
+32930 = {
+	name = "Zicu"
+	culture = asshai
+}
+32931 = {
+	name = "Utultar"
+	culture = asshai
+}
+32932 = {
+	name = "Nahid-maruduk"
+	culture = asshai
+}
+32933 = {
+	name = "Itti-ili-nibi"
+	culture = asshai
+}
+32934 = {
+	name = "Nabonahid"
+	culture = asshai
+}
+32935 = {
+	name = "Ea-nasir"
+	culture = asshai
+}
+32936 = {
+	name = "Dipatusu"
+	culture = asshai
+}
+32937 = {
+	name = "Lakhmu"
+	culture = asshai
+}
+32938 = {
+	name = "Dakuri"
+	culture = asshai
+}
+32939 = {
+	name = "Shuzigash"
+	culture = asshai
+}
+32940 = {
+	name = "Nigsummunu"
+	culture = asshai
+}
+32941 = {
+	name = "Abu-waqar"
+	culture = asshai
+}
+32942 = {
+	name = "Sadudu"
+	culture = asshai
+}
+32943 = {
+	name = "Ubar"
+	culture = asshai
+}
+32944 = {
+	name = "Shamash"
+	culture = asshai
+}
+32945 = {
+	name = "Agum-Kakrime"
+	culture = asshai
+}
+32946 = {
+	name = "Samas-ibni"
+	culture = asshai
+}
+32947 = {
+	name = "Puzur-Ishtar"
+	culture = asshai
+}
+32948 = {
+	name = "Buzur-sa-di-rabi"
+	culture = asshai
+}
+32949 = {
+	name = "Nebuchadnezzar"
+	culture = asshai
+}
+32950 = {
+	name = "Zamana"
+	culture = asshai
+}
+32951 = {
+	name = "Sarkimuna"
+	culture = asshai
+}
+32952 = {
+	name = "Rimsin"
+	culture = asshai
+}
+32953 = {
+	name = "Naram-Sin"
+	culture = asshai
+}
+32954 = {
+	name = "Balashi"
+	culture = asshai
+}
+32955 = {
+	name = "Ayadaragalama"
+	culture = asshai
+}
+32956 = {
+	name = "Maruduk-sapik-zirrat"
+	culture = asshai
+}
+32957 = {
+	name = "Anunnaki"
+	culture = asshai
+}
+32958 = {
+	name = "Ilgi"
+	culture = asshai
+}
+32959 = {
+	name = "Sutur-cit"
+	culture = asshai
+}
+
+33900 = {
+	name = "Erishti-Aya"
+	culture = shadowlander
+}
+33901 = {
+	name = "Nin-marki"
+	culture = shadowlander
+}
+33902 = {
+	name = "Gula"
+	culture = shadowlander
+}
+33903 = {
+	name = "Isthar"
+	culture = shadowlander
+}
+33904 = {
+	name = "Ninsunu"
+	culture = shadowlander
+}
+33905 = {
+	name = "Humusi"
+	culture = shadowlander
+}
+33906 = {
+	name = "Kalumtum"
+	culture = shadowlander
+}
+33907 = {
+	name = "Banunu"
+	culture = shadowlander
+}
+33908 = {
+	name = "Belessunu"
+	culture = shadowlander
+}
+33909 = {
+	name = "Adeeshuduggaat"
+	culture = shadowlander
+}
+33910 = {
+	name = "Darice"
+	culture = shadowlander
+}
+33911 = {
+	name = "Ahassunu"
+	culture = shadowlander
+}
+33912 = {
+	name = "Zirat-banit"
+	culture = shadowlander
+}
+33913 = {
+	name = "Tabni-Ishtar"
+	culture = shadowlander
+}
+33914 = {
+	name = "Zirratbanit"
+	culture = shadowlander
+}
+33915 = {
+	name = "Atanah-ili"
+	culture = shadowlander
+}
+33916 = {
+	name = "Ia"
+	culture = shadowlander
+}
+33917 = {
+	name = "Belit"
+	culture = shadowlander
+}
+33918 = {
+	name = "Atanah-ili"
+	culture = shadowlander
+}
+33919 = {
+	name = "Ashlultum"
+	culture = shadowlander
+}
+33920 = {
+	name = "Tiamat"
+	culture = shadowlander
+}
+33921 = {
+	name = "Ubalnu"
+	culture = shadowlander
+}
+33922 = {
+	name = "Gemekaa"
+	culture = shadowlander
+}
+33923 = {
+	name = "Mummu"
+	culture = shadowlander
+}
+33924 = {
+	name = "Kissare"
+	culture = shadowlander
+}
+33925 = {
+	name = "Davke"
+	culture = shadowlander
+}
+33926 = {
+	name = "Belessunu"
+	culture = shadowlander
+}
+33927 = {
+	name = "Kishar"
+	culture = shadowlander
+}
+33928 = {
+	name = "Bibi"
+	culture = shadowlander
+}
+33929 = {
+	name = "Tashmitum"
+	culture = shadowlander
+}
+33930 = {
+	name = "Aralu"
+	culture = shadowlander
+}
+33931 = {
+	name = "Enheduana"
+	culture = shadowlander
+}
+33932 = {
+	name = "Damkina"
+	culture = shadowlander
+}
+33933 = {
+	name = "Beltis"
+	culture = shadowlander
+}
+33934 = {
+	name = "Mummu"
+	culture = shadowlander
+}
+33935 = {
+	name = "Istar"
+	culture = shadowlander
+}
+33936 = {
+	name = "Ashlultum"
+	culture = shadowlander
+}
+33937 = {
+	name = "Anagalshu"
+	culture = shadowlander
+}
+33938 = {
+	name = "Beletsunu"
+	culture = shadowlander
+}
+33939 = {
+	name = "Davcina"
+	culture = shadowlander
+}
+
+
+##Grey Waste##
+703800 = {
+	name = "Bazox"
+	culture = grey_waste
+}
+703801 = {
+	name = "Grirox"
+	culture = grey_waste
+}
+703802 = {
+	name = "Gagron"
+	culture = grey_waste
+}
+703803 = {
+	name = "Ziqywr"
+	culture = grey_waste
+}
+703804 = {
+	name = "Handawr"
+	culture = grey_waste
+}
+703805 = {
+	name = "Croskeg"
+	culture = grey_waste
+}
+703806 = {
+	name = "Betrok"
+	culture = grey_waste
+}
+703807 = {
+	name = "Lydram"
+	culture = grey_waste
+}
+703808 = {
+	name = "Bligmowr"
+	culture = grey_waste
+}
+703809 = {
+	name = "Chogmul"
+	culture = grey_waste
+}
+703810 = {
+	name = "Lurcyg"
+	culture = grey_waste
+}
+703811 = {
+	name = "Leky"
+	culture = grey_waste
+}
+703812 = {
+	name = "Glunrax"
+	culture = grey_waste
+}
+703813 = {
+	name = "Zotru"
+	culture = grey_waste
+}
+703814 = {
+	name = "Chebdes"
+	culture = grey_waste
+}
+703815 = {
+	name = "Jegma"
+	culture = grey_waste
+}
+703816 = {
+	name = "Sigmywr"
+	culture = grey_waste
+}
+703817 = {
+	name = "Ligmid"
+	culture = grey_waste
+}
+703818 = {
+	name = "Grotrar"
+	culture = grey_waste
+}
+703819 = {
+	name = "Bigmyg"
+	culture = grey_waste
+}
+703820 = {
+	name = "Glercal"
+	culture = grey_waste
+}
+
+#Essarian
+662900 = {
+	name = "Pahryris"
+	culture = essarian
+}
+662901 = {
+	name = "Naeyor"
+	culture = essarian
+}
+662902 = {
+	name = "Iranoran"
+	culture = essarian
+}
+662903 = {
+	name = "Hestyrion"
+	culture = essarian
+}
+662904 = {
+	name = "Naerys"
+	culture = essarian
+}
+662905 = {
+	name = "Paenoran"
+	culture = essarian
+}
+662906 = {
+	name = "Sorrerion"
+	culture = essarian
+}
+662907 = {
+	name = "Drennion"
+	culture = essarian
+}
+662908 = {
+	name = "Marymion"
+	culture = essarian
+}
+662909 = {
+	name = "Pahrassar"
+	culture = essarian
+}
+662910 = {
+	name = "Orlos"
+	culture = essarian
+}
+662911 = {
+	name = "Essohrin"
+	culture = essarian
+}
+662912 = {
+	name = "Sorryl"
+	culture = essarian
+}
+662913 = {
+	name = "Ostos"
+	culture = essarian
+}
+662914 = {
+	name = "Paenohrin"
+	culture = essarian
+}
+662915 = {
+	name = "Vhassoran"
+	culture = essarian
+}
+662916 = {
+	name = "Hestelion"
+	culture = essarian
+}
+662917 = {
+	name = "Nahiris"
+	culture = essarian
+}
+662918 = {
+	name = "Dynyris"
+	culture = essarian
+}
+662919 = {
+	name = "Forah"
+	culture = essarian
+}
+662920 = {
+	name = "Brenen"
+	culture = essarian
+}
+662921 = {
+	name = "Stassyl"
+	culture = essarian
+}
+662922 = {
+	name = "Essyris"
+	culture = essarian
+}
+662923 = {
+	name = "Aenyris"
+	culture = essarian
+}
+662924 = {
+	name = "Mopen"
+	culture = essarian
+}
+662925 = {
+	name = "Ennymion"
+	culture = essarian
+}
+662926 = {
+	name = "Dynah"
+	culture = essarian
+}
+662927 = {
+	name = "Flaerel"
+	culture = essarian
+}
+662928 = {
+	name = "Vollion"
+	culture = essarian
+}
+662929 = {
+	name = "Ahryr"
+	culture = essarian
+}
+662930 = {
+	name = "Maros"
+	culture = essarian
+}
+##
+
+###Goggogosi
+723350 = {
+	name = "Paenohrin"
+	culture = gogossosi
+}
+723351 = {
+	name = "Brenaris"
+	culture = gogossosi
+}
+723352 = {
+	name = "Nahion"
+	culture = gogossosi
+}
+723353 = {
+	name = "Vhassorlan"
+	culture = gogossosi
+}
+723354 = {
+	name = "Ennyrion"
+	culture = gogossosi
+}
+723355 = {
+	name = "Forin"
+	culture = gogossosi
+}
+723356 = {
+	name = "Anerion"
+	culture = gogossosi
+}
+723357 = {
+	name = "Baharan"
+	culture = gogossosi
+}
+723358 = {
+	name = "Aenolis"
+	culture = gogossosi
+}
+723359 = {
+	name = "Stelar"
+	culture = gogossosi
+}
+723360 = {
+	name = "Sanoran"
+	culture = gogossosi
+}
+723361 = {
+	name = "Orlerris"
+	culture = gogossosi
+}
+723362 = {
+	name = "Eranos"
+	culture = gogossosi
+}
+723363 = {
+	name = "Forymion"
+	culture = gogossosi
+}
+723364 = {
+	name = "Brenohrin"
+	culture = gogossosi
+}
+723365 = {
+	name = "Hestaris"
+	culture = gogossosi
+}
+723366 = {
+	name = "Stassyr"
+	culture = gogossosi
+}
+723367 = {
+	name = "Eranios"
+	culture = gogossosi
+}
+723368 = {
+	name = "Hotorlan"
+	culture = gogossosi
+}
+723369 = {
+	name = "Bahinar"
+	culture = gogossosi
+}
+723370 = {
+	name = "Moporlan"
+	culture = gogossosi
+}
+723371 = {
+	name = "Sorryl"
+	culture = gogossosi
+}
+723372 = {
+	name = "Marion"
+	culture = gogossosi
+}
+723373 = {
+	name = "Aenorlan"
+	culture = gogossosi
+}
+723374 = {
+	name = "Sorranor"
+	culture = gogossosi
+}
+723375 = {
+	name = "Hestiros"
+	culture = gogossosi
+}
+723376 = {
+	name = "Phassel"
+	culture = gogossosi
+}
+723377 = {
+	name = "Maronnis"
+	culture = gogossosi
+}
+723378 = {
+	name = "Stassenohr"
+	culture = gogossosi
+}
+723379 = {
+	name = "Nesten"
+	culture = gogossosi
+}

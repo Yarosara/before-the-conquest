@@ -1,0 +1,18 @@
+600.1.1={
+	liege="k_pentos"
+}
+
+7995.1.1 = { holder=10121 } # Baldo (nc)
+8036.1.1 = { holder=100169157 } # Byan (nc)
+8043.1.1 = { holder=100369157 } # Jaqen (nc)
+8082.1.1 = { holder=100469157 } # Denyo (nc)
+8088.1.1 = { holder=100769157 } # Moreo (nc)
+8111.1.1 = { holder=100969157 } # Brusco (nc)
+8117.1.1 = { holder=101169157 } # Myrmello (nc)
+8134.1.1 = { holder=101369157 } # Moredo (nc)
+8182.1.1 = { holder=101669157 } # Cossomo (nc)
+8199.1.1 = { holder=101769157 } # Areo (nc)
+8232.1.1 = { holder=101869157 } # Orbelo (nc)
+8241.1.1 = { holder=102069157 } # Yorko (nc)
+8277.1.1 = { holder=102369157 } # Syrio (nc)
+8281.1.1 = { holder=102569157 } # Jaqen (nc)

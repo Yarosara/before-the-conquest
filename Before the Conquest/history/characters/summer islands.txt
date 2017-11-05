@@ -6303,7 +6303,6 @@
 				add_trait = skilled_warrior
 				add_trait = jungle_terrain_leader}
 	7984.1.1 = {add_spouse=400304032}
-	7984.1.1 = {add_trait = strangers_mercy}
 	7995.1.1 = {death = {death_reason = death_battle killer = 100304028}}
 }
 400304032 = {
@@ -6370,7 +6369,7 @@
 	prp="0d0dbk00000000"
 	
 	diplomacy = 7
-	martial = 11
+	martial = 10
 	stewardship = 5
 	intrigue = 7
 	learning = 8
@@ -6403,7 +6402,6 @@
 	7992.10.4 = {give_nickname = nick_the_dreamer}
 	7994.1.7 = {add_trait = ambitious}
 	7994.2.14 = {add_trait = diligent}
-	7995.1.1 = {add_trait = strangers_mercy}
 	7995.8.7 = {add_trait = brilliant_strategist}
 	7995.10.16 = {add_trait = jungle_terrain_leader}
 	7995.11.3 = {add_trait = holy_warrior}
