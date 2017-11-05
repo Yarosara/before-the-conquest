@@ -1,0 +1,5355 @@
+# Targetted decisions are possible vs _all_ other characters and shown are in the Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# filter = [self/court/home_court/vassals/sub_realm/realm/dynasty/all] ('self' MUST be set for decisions targetting only the taker, the other filter types can be set to lessen CPU load)
+# ai_target_filter = [self/court/home_court/vassals/sub_realm/realm/dynasty/all] (which characters for which the AI evaluates the decision.)
+#	court: all characters in the AI's host court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	home_court: all characters in the AI's home court, including prisoners, and characters currently away (wards, prisoners, etc)
+#	vassals: direct vassal rulers of the AI's employer
+#	sub_realm: all characters below the AI's employer
+#	realm: all characters in the same top realm as the AI
+#	dynasty: all members of the same dynasty
+#	all: all living characters (Avoid if possible. VERY CPU-HEAVY!)
+#	
+
+targetted_decisions = {
+	give_valyrian_sword_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = valyrian_steel
+		}
+		potential = {	
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { trait = valyrian_steel }
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { character = FROM }			
+		}
+		allow = {		
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = valyrian_steel hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } } #sword ownership check
+			add_trait = valyrian_steel
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }					
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 0.2
+				is_female = yes
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_ice_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = ice
+		}
+		potential = {	
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }	
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 59 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }			
+		}
+		allow = {		
+			FROM = { NOT = { trait = incapable } }		
+		}			
+		effect = {
+			FROM = { remove_trait = ice hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = ice
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 59 }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							#trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_longclaw_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = longclaw
+		}
+		potential = {	
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 102 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }			
+		}
+		allow = {			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = longclaw hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = longclaw
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 102 } #Mormont
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							#trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_longclaw_snow_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = longclaw_snow
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 102 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }
+		}
+		allow = {		
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = longclaw_snow  hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			if = {
+				limit = { dynasty = 102 }
+				add_trait = longclaw
+			}
+			if = {
+				limit = { NOT = { dynasty = 102 } }
+				add_trait = longclaw_snow
+			}
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							#trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_blackfyre_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = blackfyre			
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 496 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }
+		}
+		allow = {			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = blackfyre hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = blackfyre
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				if = {
+					limit = {
+						trait = bastard
+						dynasty = 496
+						can_press_claims_trigger = yes
+						NOR = {
+							trait = eunuch
+							trait = disinherited
+							trait = drowned
+						}
+					}
+					remove_trait = bastard
+					add_trait = legit_bastard
+					dynasty = 57
+					set_dynasty_flag = has_dynamic_coa
+					if = {
+						limit = {
+							has_bastard_nickname_trigger = yes
+						}
+						remove_nickname = yes
+					}
+				}
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = PREV
+							NOT = { character = ROOT }
+							NOT = { character = PREV }
+						}
+						opinion = {
+							who = PREV
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 57 }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					dynasty = 496
+					OR = {
+						trait = honorable
+						NOT = { trait = arbitrary }
+						NOT = { trait = lunatic }
+						ROOT = { NOT = { martial = 15 } }
+					}	
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = { dynasty = 496 }
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							#trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_brightroar_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = brightroar
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 190 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = brightroar hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = brightroar
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 190 }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							#trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_heartsbane_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = heartsbane
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 296 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}		
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = heartsbane hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = heartsbane
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 296 }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							#trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_nightfall_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = nightfall
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 122 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = nightfall hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = nightfall
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							#trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_darksister_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = darksister
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 496 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = darksister hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = darksister
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				if = {
+					limit = { dynasty = 496 }#traditionally goes to targaryen warriors
+					set_character_flag = given_darksister
+					any_dynasty_member = {
+						limit = {
+							is_close_relative = FROM
+							NOT = { character = ROOT }
+							NOT = { character = FROM }
+							OR = {
+								trait = skilled_warrior
+								trait = master_warrior
+							}
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+				if = {
+					limit = { NOT = { dynasty = 496 } }
+					FROM = {
+						any_child = {
+							limit = {
+								OR = {
+									is_primary_heir = yes
+									AND = {
+										martial = 10
+										is_female = no
+									}	
+								}
+								NOT = { character = ROOT }
+							}
+							opinion = {
+								who = FROM
+								modifier = opinion_didnt_give_sword_to_me
+								months = 60
+							}									
+						}
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = PREV
+							NOT = { character = ROOT }
+							NOT = { character = PREV }
+						}
+						opinion = {
+							who = PREV
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}	
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FROM = { NOT = { dynasty = 496 } }
+				NOT = { is_child_of = FROM }
+			}
+			modifier = { #targs will only give this to great warriors
+				factor = 0
+				FROM = { dynasty = 496 }
+				OR = {
+					NOT = { is_close_relative = FROM }
+					NOT = {
+						OR = {
+							trait = skilled_warrior
+							trait = master_warrior
+						}
+					}
+					has_character_modifier = owns_valyrian_steel_sword
+					FROM = {
+						has_character_flag = given_darksister
+						NOT = { trait = blackfyre }
+						OR = {
+							trait = skilled_warrior
+							trait = master_warrior
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							dynasty = 496 #targs will give this to great warriors
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = ladyforlorn
+							trait = redrain
+							#trait = darksister
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_ladyforlorn_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = ladyforlorn
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 176 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }			
+		}
+		allow = {			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = ladyforlorn hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = ladyforlorn
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				if = {
+					limit = { dynasty = 176 }#traditionally goes to corbray warriors
+					set_character_flag = given_ladyforlorn
+					any_dynasty_member = {
+						limit = {
+							is_close_relative = FROM
+							NOT = { character = ROOT }
+							NOT = { character = FROM }
+							OR = {
+								trait = skilled_warrior
+								trait = master_warrior
+							}
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+				if = {
+					limit = { NOT = { dynasty = 176 } }
+					FROM = {
+						any_child = {
+							limit = {
+								OR = {
+									is_primary_heir = yes
+									AND = {
+										martial = 10
+										is_female = no
+									}	
+								}
+								NOT = { character = ROOT }
+							}
+							opinion = {
+								who = FROM
+								modifier = opinion_didnt_give_sword_to_me
+								months = 60
+							}									
+						}
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = PREV
+							NOT = { character = ROOT }
+							NOT = { character = PREV }
+						}
+						opinion = {
+							who = PREV
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FROM = { NOT = { dynasty = 176 } }
+				NOT = { is_child_of = FROM }
+			}
+			modifier = { #corbrays will only give this to great warriors
+				factor = 0
+				FROM = { dynasty = 176 }
+				OR = {
+					NOT = { is_close_relative = FROM }
+					NOT = {
+						OR = {
+							trait = skilled_warrior
+							trait = master_warrior
+						}
+					}
+					FROM = {
+						has_character_flag = given_darksister
+						OR = {
+							trait = skilled_warrior
+							trait = master_warrior
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							dynasty = 176 #Corbrays will give this to great warriors
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							#trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_redrain_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = redrain
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { 
+						NOT = { 
+							OR = {
+								dynasty = 121
+								dynasty = 197
+							}
+						} 
+					}
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = redrain hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = redrain
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					OR = {
+						dynasty = 121
+						dynasty = 197
+					}
+				}	
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							#trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+
+	give_widowswail_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = widowswail
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { 
+						NOT = { 
+							OR = {
+								dynasty = 190
+								dynasty = 59
+							}
+						} 
+					}
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = widowswail hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = widowswail
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { NOT = { trait = brightroar } dynasty = 190 }
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							#trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+
+	give_oathkeeper_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = oathkeeper
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 59 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = oathkeeper hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = oathkeeper
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					dynasty = 190 
+					NOT = { trait = brightroar } 
+					NOT = { trait = widowswail }
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							#trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	
+	give_crabspincer_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = crabspincer
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 50 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = crabspincer hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = crabspincer
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 50 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							#trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_strangers_mercy_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = strangers_mercy
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }	
+			NOT = { character = FROM }
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = strangers_mercy hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = strangers_mercy
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							#trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+give_palemoon_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = palemoon
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 69157 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}	
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = palemoon hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = palemoon
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 69157 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							#trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_vigilance_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = vigilance
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 285 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = vigilance hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = vigilance
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 285 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							#trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_orphan_maker_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = orphan_maker
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 247 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = orphan_maker hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = orphan_maker
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 247 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							#trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_truth_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = truth
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 55999 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = truth hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = truth
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 55999 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							#trait = truth
+							trait = lamentation
+							trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_lamentation_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = lamentation
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 187 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = lamentation hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = lamentation
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 187 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							#trait = lamentation
+							trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_poison_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			trait = poison
+		}
+		potential = {
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			
+			OR = {
+				dynasty = FROM
+				AND = {
+					FROM = { NOT = { dynasty = 982375 } }
+					OR = {
+						same_realm = FROM
+						is_close_relative = FROM
+					}
+				}	
+			}
+			NOT = { character = FROM }	
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = poison hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = poison
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { is_child_of = FROM }
+			}
+			modifier = {
+				factor = 0
+				FROM = { dynasty = 187 }
+			}
+			modifier = {
+				factor = 0
+				FROM = { 
+					NOT = {
+						OR = {
+							trait = dawn 
+							trait = ice 
+							trait = longclaw 
+							trait = longclaw_snow 
+							trait = blackfyre 
+							trait = brightroar
+							trait = heartsbane 
+							trait = nightfall
+							trait = darksister
+							trait = ladyforlorn
+							trait = redrain
+							trait = widowswail
+							trait = oathkeeper
+							trait = crabspincer
+							trait = strangers_mercy
+							trait = palemoon
+							trait = vigilance
+							trait = orphan_maker
+							trait = truth
+							trait = lamentation
+							#trait = poison
+						}
+					}	
+				}	
+			}
+			modifier = {
+				factor = 0.02 # Slow it down a bit
+			}
+			modifier = {
+				factor = 2
+				is_primary_heir = yes
+			}
+			modifier = {
+				factor = 2.5
+				is_female = no
+			}
+			modifier = {
+				factor = 0.2
+				trait = bastard
+			}
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior
+			}
+			modifier = {
+				factor = 2.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 4
+				trait = master_warrior
+			}
+		}
+	}
+	give_anger_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = anger
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = anger }		
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = anger hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = anger
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_black_death_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = black_death
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = black_death }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = black_death hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = black_death
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_compassion_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = compassion
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = compassion }
+			NOT = { character = FROM }				
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = compassion hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = compassion
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_blackpaw_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = blackpaw
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = blackpaw }
+			NOT = { character = FROM }				
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = blackpaw hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = blackpaw
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_del_pino_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = del_pino
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = del_pino }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = del_pino hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = del_pino
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_el_swordo_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = el_swordo
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = el_swordo }		
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = el_swordo hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = el_swordo
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_gold_sword_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = gold_sword
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = gold_sword }		
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = gold_sword hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = gold_sword
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_happyness_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = happyness
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = happyness }		
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = happyness hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = happyness
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_hubris_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = hubris
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = hubris }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = hubris hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = hubris
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_justice_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = justice
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = justice }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = justice hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = justice
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_kingmaker_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = kingmaker
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = kingmaker }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = kingmaker hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = kingmaker
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_passion_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = passion
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = passion }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = passion hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = passion
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_rage_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = rage
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = rage }		
+			NOT = { character = FROM }		
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = rage hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = rage
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_sightblinder_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = sightblinder
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = sightblinder }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = sightblinder hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = sightblinder
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_the_monarchist_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = the_monarchist
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = the_monarchist }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = the_monarchist hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = the_monarchist
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_the_usurper_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = the_usurper
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = the_usurper }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = the_usurper hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = the_usurper
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_worldeater_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = worldeater
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = worldeater }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = worldeater hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = worldeater
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_worlds_envy_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont remake swords
+			trait = worlds_envy
+		}
+		potential = {
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { trait = dragon }
+			NOT = { trait = worlds_envy }	
+			NOT = { character = FROM }			
+		}
+		allow = {
+			
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = worlds_envy hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } }
+			add_trait = worlds_envy
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	give_valyrian_armour_to_son = {
+		ai_target_filter = dynasty
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			ai = no #AI wont give away armour
+			trait = valyrian_armour
+		}
+		potential = {	
+			OR = {
+				dynasty = FROM
+				same_realm = FROM
+				is_close_relative = FROM
+			}
+			NOT = { trait = valyrian_armour }
+			NOT = { trait = dragon }
+			NOT = { culture_group = unoccupied_group } NOT = { culture_group = winter_group }
+			NOT = { character = FROM }			
+		}
+		allow = {		
+			FROM = { NOT = { trait = incapable } }
+		}			
+		effect = {
+			FROM = { remove_trait = valyrian_armour hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } } #sword ownership check
+			add_trait = valyrian_armour
+			#add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			if = {
+				limit = { dynasty = FROM }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+				FROM = {
+					any_child = {
+						limit = {
+							OR = {
+								is_primary_heir = yes
+								AND = {
+									martial = 10
+									is_female = no
+								}	
+							}
+							NOT = { character = ROOT }					
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			if = {
+				limit = { NOT = { dynasty = FROM } }
+				opinion = {
+					who = FROM
+					modifier = opinion_gave_sword_to_me
+					months = 360
+					multiplier = 2
+				}
+				FROM = {
+					any_dynasty_member = {
+						limit = {
+							is_alive = yes
+							is_close_relative = FROM
+							NOT = { character = FROM }
+							NOT = { character = ROOT }
+						}
+						opinion = {
+							who = FROM
+							modifier = opinion_didnt_give_sword_to_me
+							months = 60
+						}									
+					}
+				}	
+			}
+			hidden_tooltip = { 
+				letter_event = { id = 250276 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+decisions = {
+	claim_dawn = {
+		potential = {
+			dynasty = 16
+			OR = {
+				trait = master_warrior
+				ai = no
+			}	
+			age = 16
+			OR = {
+				trait = knight #to reduce decision spam, want to allow any dayne, not just landed ones.
+				dynasty_head = { NOT = { religion = the_seven } }
+			}	
+			NOT = { trait = dawn }
+			NOT = { dawn = { is_alive = yes	} }						  
+		}
+		allow = {
+			trait = master_warrior
+			OR = {
+				trait = knight
+				NOT = { religion = the_seven }
+			}	
+			custom_tooltip = {
+				text = TOOLTIP_claim_dawn_calc
+				hidden_tooltip = {
+					calc_true_if = {
+						amount = 2
+						trait = just
+						trait = kind
+						trait = brave
+						trait = diligent
+						trait = honorable
+						trait = patient
+					}
+				}
+			}
+			NOT = { trait = infirm }
+			NOT = { trait = incapable }
+			NOT = { trait = cruel }
+			NOT = { trait = deceitful }
+			NOT = { trait = drunkard }
+			NOT = { trait = impaler }
+			NOT = { trait = gluttonous }
+			NOT = { trait = greedy }
+			NOT = { trait = slothful }
+			NOT = { trait = craven }
+			NOT = { trait = arbitrary }
+			NOT = { trait = ruthless }
+			NOT = { trait = dwarf }
+			NOT = { is_weak_trigger = yes }
+			custom_tooltip = {
+				text = "TOOLTIPclaim_dawn_dishonorable"
+				hidden_tooltip = {
+					NOT = { trait = dishonorable1 }
+					NOT = { trait = dishonorable2 }
+					NOT = { trait = dishonorable3 }
+					NOT = { trait = dishonorable4 }
+					NOT = { trait = dishonorable5 }
+					NOT = { trait = dishonorable6 }
+					NOT = { trait = dishonorable7 }
+					NOT = { trait = dishonorable8 }
+					NOT = { trait = dishonorable9 }
+					NOT = { trait = dishonorable10 }
+				}
+			}
+		}
+		effect = {
+			add_trait = dawn
+			give_nickname = nick_the_sword_of_the_morning
+			hidden_tooltip = {
+				character_event = { id = valyrian_steel.150 }
+				any_playable_ruler = {
+					limit = { 
+						ai = no 
+						NOT = { character = ROOT }
+						OR = {
+							dynasty = ROOT
+							is_close_relative = ROOT
+							same_realm = ROOT
+							culture_group = ROOT
+							religion_group = ROOT
+						}
+					}
+					character_event = { id = valyrian_steel.151 } #ya im lazy
+				}
+			}	
+	
+		}
+		ai_will_do = { factor = 100 }
+	}
+	
+	# ai_give_darksister_to_son = {
+		# potential = {
+			# ai = yes
+			# trait = darksister
+			# trait = blackfyre
+			# any_child = {
+				# age = 14
+				# dynasty = ROOT
+				# NOT = { trait = maester }
+				# NOT = { trait = archmaester }
+				# NOT = { trait = septon }
+				# NOT = { trait = dragon }
+				# OR = {
+					# is_female = no
+					# martial = 16
+				# }
+				# OR = {
+					# NOT = { trait = bastard }
+					# martial = 20
+				# }
+			# }	
+		# }
+		# allow = {
+		# }			
+		# effect = {
+			# remove_trait = darksister
+			# random_child = {
+				# limit = {
+					# age = 14
+					# dynasty = ROOT
+					# NOT = { trait = maester }
+					# NOT = { trait = archmaester }
+					# NOT = { trait = septon }
+					# NOT = { trait = dragon }
+					# OR = {
+						# is_female = no
+						# martial = 16
+					# }
+					# OR = {
+						# NOT = { trait = bastard }
+						# martial = 20
+					# }
+				# }
+				# add_trait = darksister	
+				# opinion = {
+					# who = ROOT
+					# modifier = opinion_gave_sword_to_me
+					# months = 360
+				# }
+				# any_sibling = {
+					# limit = {
+						# OR = {
+							# is_primary_heir = yes
+							# AND = {
+								# martial = 10
+								# is_female = no
+							# }	
+						# }
+					# }
+					# opinion = {
+						# who = ROOT
+						# modifier = opinion_didnt_give_sword_to_me
+						# months = 60
+					# }									
+				# }
+			# }		
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0.02 # Slow it down a bit
+			# }
+		# }
+	# }
+	# ai_give_longclaw_to_son = {
+		# potential = {
+			# ai = yes
+			# trait = longclaw_snow 
+			# trait = ice
+			# any_child = {
+				# age = 14
+				# dynasty = ROOT
+				# NOT = { trait = maester }
+				# NOT = { trait = archmaester }
+				# NOT = { trait = septon }
+				# NOT = { trait = dragon }
+				# OR = {
+					# is_female = no
+					# martial = 16
+				# }
+				# OR = {
+					# NOT = { trait = bastard }
+					# martial = 20
+				# }
+			# }	
+		# }
+		# allow = {
+		# }			
+		# effect = {
+			# remove_trait = longclaw_snow 
+			# random_child = {
+				# limit = {
+					# age = 14
+					# dynasty = ROOT
+					# NOT = { trait = maester }
+					# NOT = { trait = archmaester }
+					# NOT = { trait = septon }
+					# NOT = { trait = dragon }
+					# OR = {
+						# is_female = no
+						# martial = 16
+					# }
+					# OR = {
+						# NOT = { trait = bastard }
+						# martial = 20
+					# }
+				# }
+				# add_trait = longclaw_snow 
+				# opinion = {
+					# who = ROOT
+					# modifier = opinion_gave_sword_to_me
+					# months = 360
+				# }
+				# any_sibling = {
+					# limit = {
+						# OR = {
+							# is_primary_heir = yes
+							# AND = {
+								# martial = 10
+								# is_female = no
+							# }	
+						# }
+					# }
+					# opinion = {
+						# who = ROOT
+						# modifier = opinion_didnt_give_sword_to_me
+						# months = 60
+					# }									
+				# }
+			# }		
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0.02 # Slow it down a bit
+			# }
+		# }
+	# }
+	# ai_give_oathkeeper_to_son = {
+		# potential = {
+			# ai = yes
+			# trait = widowswail
+			# trait = oathkeeper
+			# any_child = {
+				# age = 14
+				# dynasty = ROOT
+				# NOT = { trait = maester }
+				# NOT = { trait = archmaester }
+				# NOT = { trait = septon }
+				# NOT = { trait = dragon }
+				# OR = {
+					# is_female = no
+					# martial = 16
+				# }
+				# OR = {
+					# NOT = { trait = bastard }
+					# martial = 20
+				# }
+			# }	
+		# }
+		# allow = {
+		# }			
+		# effect = {
+			# remove_trait = oathkeeper
+			# random_child = {
+				# limit = {
+					# age = 14
+					# dynasty = ROOT
+					# NOT = { trait = maester }
+					# NOT = { trait = archmaester }
+					# NOT = { trait = septon }
+					# NOT = { trait = dragon }
+					# OR = {
+						# is_female = no
+						# martial = 16
+					# }
+					# OR = {
+						# NOT = { trait = bastard }
+						# martial = 20
+					# }
+				# }
+				# add_trait = oathkeeper
+				# opinion = {
+					# who = ROOT
+					# modifier = opinion_gave_sword_to_me
+					# months = 360
+				# }
+				# any_sibling = {
+					# limit = {
+						# OR = {
+							# is_primary_heir = yes
+							# AND = {
+								# martial = 10
+								# is_female = no
+							# }	
+						# }
+					# }
+					# opinion = {
+						# who = ROOT
+						# modifier = opinion_didnt_give_sword_to_me
+						# months = 60
+					# }									
+				# }
+			# }		
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0.02 # Slow it down a bit
+			# }
+		# }
+	# }
+	reforge_valyrian_steel = {
+		potential = {
+			ai = no
+			trait = valyrian_steel
+			NOT = { has_character_flag = reforge_valyrian_steel }
+		}
+		allow = {
+			wealth = 100
+			trait = valyrian_steel
+			has_character_modifier = owns_valyrian_steel_sword
+		}			
+		effect = {
+			wealth = -100
+			character_event = { id = 250285 }
+			set_character_flag = reforge_valyrian_steel
+		}
+	}
+}
