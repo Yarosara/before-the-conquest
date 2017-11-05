@@ -1,0 +1,2370 @@
+################################
+###Written by Rodri, knuckey, fashbinder###
+################################
+
+namespace = valyrian_steel
+
+#Inform inherited sword
+character_event = {   
+	id = 250277
+	picture = "GFX_evt_valyrian_steel"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = EVTDESC250277
+		trigger = {
+			NOT = { has_character_flag = blacksmith_died }
+		}
+	}
+	
+	desc = {
+		text = EVTDESC250277B
+		trigger = {
+			has_character_flag = blacksmith_died
+		}
+	}
+	
+	immediate = { 
+		add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+	}
+	
+	option = {
+		name = {
+			text = "EVTOPTA250277"
+			trigger = {
+				NOT = { has_house_words_trigger = yes }
+			}
+		}
+		name = {
+			text = "EVTOPTGETHOUSEWORDS"
+			trigger = {
+				has_house_words_trigger = yes
+			}
+		} 
+		clr_character_flag = blacksmith_died
+	}
+}
+#Inform granted sword
+letter_event = {   
+	id = 250276
+	desc = "EVTDESC250276"
+	picture = "GFX_evt_valyrian_steel"
+	
+	is_triggered_only = yes
+	show_from_from = yes
+	
+	option = {
+		name = {
+			text = "EVTOPTA250276"
+			trigger = {
+				NOT = { has_house_words_trigger = yes }
+			}
+		}
+		name = {
+			text = "EVTOPTGETHOUSEWORDS"
+			trigger = {
+				has_house_words_trigger = yes
+			}
+		} 
+	}
+}
+
+character_event = {
+	id = 250278
+	desc = "EVTDESC250278"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+	only_playable = yes
+
+	trigger = {
+		NOT = { has_character_modifier = owns_valyrian_steel_sword }
+		NOT = { trait = dawn }
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 2
+			trait = master_warrior
+		}
+		modifier = {
+			factor = 1.5
+			trait = skilled_warrior
+		}
+		modifier = {
+			factor = 0.66
+			trait = poor_warrior
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				OR = {
+					trait = master_warrior
+					trait = skilled_warrior
+					trait = trained_warrior
+					trait = poor_warrior
+				}	
+			}	
+		}
+		modifier = {
+			factor = 1.1
+			martial = 15
+		}
+		modifier = {
+			factor = 1.1
+			martial = 18
+		}
+		modifier = {
+			factor = 1.1
+			martial = 21
+		}
+		modifier = {
+			factor = 1.1
+			martial = 24
+		}
+		modifier = {
+			factor = 1.5
+			trait = brave
+		}
+		modifier = {
+			factor = 0.66
+			trait = craven
+		}
+	}
+	
+	immediate = {
+		hidden_tooltip = {
+			random_list = {
+				95 = {
+					set_character_flag = valyrian_steel
+				}
+				5 = {
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { strangers_mercy = { is_alive = yes } }
+						}
+						set_character_flag = strangers_mercy
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { palemoon = { is_alive = yes } }
+						}
+						set_character_flag = palemoon
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { crabspincer = { is_alive = yes } }
+						}
+						set_character_flag = crabspincer
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { truth = { is_alive = yes } }
+						}
+						set_character_flag = truth
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { lamentation = { is_alive = yes } }
+						}
+						set_character_flag = lamentation
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { poison = { is_alive = yes } }
+						}
+						set_character_flag = poison
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { vigilance = { is_alive = yes } }
+						}
+						set_character_flag = vigilance
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { orphan_maker = { is_alive = yes } }
+						}
+						set_character_flag = orphan_maker
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { longclaw_snow = { is_alive = yes } } 
+							NOT = { longclaw = { is_alive = yes } }
+						}
+						random_list = {
+							50 = { set_character_flag = longclaw }
+							50 = { set_character_flag = longclaw_snow }
+						}	
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { ladyforlorn = { is_alive = yes } }
+						}
+						set_character_flag = ladyforlorn
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { redrain = { is_alive = yes } }
+						}
+						set_character_flag = redrain
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { nightfall = { is_alive = yes } }
+						}
+						set_character_flag = nightfall
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { heartsbane = { is_alive = yes } }
+						}
+						set_character_flag = heartsbane
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { ice = { is_alive = yes } }
+						}
+						set_character_flag = ice
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { darksister = { is_alive = yes } }
+						}
+						set_character_flag = darksister
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+							NOT = { blackfyre = { is_alive = yes } }
+						}
+						set_character_flag = blackfyre
+						set_character_flag = sword_chosen
+					}
+					if = {
+						limit = { 
+							NOT = { has_character_flag = sword_chosen }
+						}
+						set_character_flag = valyrian_steel
+					}
+				}
+			}
+			clr_character_flag = sword_chosen
+		}	
+	}
+	
+	option = {
+		name = {
+			text = "EVTOPTA250278"
+			trigger = {
+				NOT = { has_house_words_trigger = yes }
+			}
+		}
+		name = {
+			text = "EVTOPTGETHOUSEWORDS"
+			trigger = {
+				has_house_words_trigger = yes
+			}
+		} 
+		add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		if = {
+			limit = { has_character_flag = valyrian_steel }
+			add_trait = valyrian_steel
+			clr_character_flag = valyrian_steel
+		}
+		if = {
+			limit = { has_character_flag = longclaw }
+			add_trait = longclaw
+			clr_character_flag = longclaw
+		}
+		if = {
+			limit = { has_character_flag = longclaw_snow }
+			add_trait = longclaw_snow
+			clr_character_flag = longclaw_snow
+		}
+		if = {
+			limit = { has_character_flag = heartsbane }
+			add_trait = heartsbane
+			clr_character_flag = heartsbane
+		}
+		if = {
+			limit = { has_character_flag = ice }
+			add_trait = ice
+			clr_character_flag = ice
+		}
+		if = {
+			limit = { has_character_flag = blackfyre }
+			add_trait = blackfyre
+			clr_character_flag = blackfyre
+		}
+		if = {
+			limit = { has_character_flag = nightfall }
+			add_trait = nightfall
+			clr_character_flag = nightfall
+		}
+		if = {
+			limit = { has_character_flag = darksister }
+			add_trait = darksister
+			hidden_tooltip = { 
+				random_province = {
+					limit = { has_province_flag = dark_sister_location }
+					clr_province_flag = dark_sister_location
+				}
+			}
+			clr_character_flag = darksister
+		}
+		if = {
+			limit = { has_character_flag = ladyforlorn }
+			add_trait = ladyforlorn
+			clr_character_flag = ladyforlorn
+		}
+		if = {
+			limit = { has_character_flag = redrain }
+			add_trait = redrain
+			clr_character_flag = redrain
+		}
+		if = {
+			limit = { has_character_flag = crabspincer }
+			add_trait = crabspincer
+			clr_character_flag = crabspincer
+		}
+		if = {
+			limit = { has_character_flag = strangers_mercy }
+			add_trait = strangers_mercy
+			clr_character_flag = strangers_mercy
+		}
+		if = {
+			limit = { has_character_flag = palemoon }
+			add_trait = palemoon
+			clr_character_flag = palemoon
+		}
+		if = {
+			limit = { has_character_flag = vigilance }
+			add_trait = vigilance
+			clr_character_flag = vigilance
+		}
+		if = {
+			limit = { has_character_flag = orphan_maker }
+			add_trait = orphan_maker
+			clr_character_flag = orphan_maker
+		}
+		if = {
+			limit = { has_character_flag = truth }
+			add_trait = truth
+			clr_character_flag = truth
+		}
+		if = {
+			limit = { has_character_flag = lamentation }
+			add_trait = lamentation
+			clr_character_flag = lamentation
+		}
+		if = {
+			limit = { has_character_flag = poison }
+			add_trait = poison
+			clr_character_flag = poison
+		}
+		prestige = 100
+	}
+}
+
+character_event = {
+	id = 250279
+	desc = "EVTDESC250279"
+	picture = "GFX_evt_valyrian_steel"
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_character_modifier = owns_valyrian_steel_sword
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			trait = master_warrior
+		}
+		modifier = {
+			factor = 0.66
+			trait = skilled_warrior
+		}
+		modifier = {
+			factor = 1.5
+			trait = poor_warrior
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				OR = {
+					trait = master_warrior
+					trait = skilled_warrior
+					trait = trained_warrior
+					trait = poor_warrior
+				}	
+			}	
+		}
+		modifier = {
+			factor = 0.9
+			martial = 15
+		}
+		modifier = {
+			factor = 0.9
+			martial = 18
+		}
+		modifier = {
+			factor = 0.9
+			martial = 21
+		}
+		modifier = {
+			factor = 0.9
+			martial = 24
+		}
+		modifier = {
+			factor = 0.66
+			trait = brave
+		}
+		modifier = {
+			factor = 1.5
+			trait = craven
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA250279"
+		remove_character_modifier = owns_valyrian_steel_sword
+		if = {
+			limit = { trait = valyrian_steel }
+			remove_trait = valyrian_steel
+		}
+		if = {
+			limit = { trait = ice }
+			remove_trait = ice
+		}
+		if = {
+			limit = { trait = longclaw }
+			remove_trait = longclaw
+		}
+		if = {
+			limit = { trait = blackfyre }
+			remove_trait = blackfyre
+		}
+		if = {
+			limit = { trait = longclaw_snow }
+			remove_trait = longclaw_snow
+		}
+		if = {
+			limit = { trait = brightroar }
+			remove_trait = brightroar
+		}
+		if = {
+			limit = { trait = heartsbane }
+			remove_trait = heartsbane
+		}
+		if = {
+			limit = { trait = nightfall }
+			remove_trait = nightfall
+		}
+		if = {
+			limit = { trait = darksister }
+			remove_trait = darksister
+		}
+		if = {
+			limit = { trait = ladyforlorn }
+			remove_trait = ladyforlorn
+		}
+		if = {
+			limit = { trait = redrain }
+			remove_trait = redrain
+		}
+		if = {
+			limit = { trait = widowswail }
+			remove_trait = widowswail
+		}
+		if = {
+			limit = { trait = oathkeeper }
+			remove_trait = oathkeeper
+		}
+		if = {
+			limit = { trait = crabspincer }
+			remove_trait = crabspincer
+		}
+		if = {
+			limit = { trait = strangers_mercy }
+			remove_trait = strangers_mercy
+		}
+		if = {
+			limit = { trait = palemoon }
+			remove_trait = palemoon
+		}
+		if = {
+			limit = { trait = vigilance }
+			remove_trait = vigilance
+		}
+		if = {
+			limit = { trait = orphan_maker }
+			remove_trait = orphan_maker
+		}
+		if = {
+			limit = { trait = truth }
+			remove_trait = truth
+		}
+		if = {
+			limit = { trait = lamentation }
+			remove_trait = lamentation
+		}
+		if = {
+			limit = { trait = poison }
+			remove_trait = poison
+		}
+					if = {
+						limit = { trait = anger }
+						remove_trait = anger
+					}
+					if = {
+						limit = { trait = black_death }
+						remove_trait = black_death
+					}
+					if = {
+						limit = { trait = compassion }
+						remove_trait = compassion
+					}
+					if = {
+						limit = { trait = blackpaw }
+						remove_trait = blackpaw
+					}
+					if = {
+						limit = { trait = del_pino }
+						remove_trait = del_pino
+					}
+					if = {
+						limit = { trait = el_swordo }
+						remove_trait = el_swordo
+					}
+					if = {
+						limit = { trait = gold_sword }
+						remove_trait = gold_sword
+					}
+					if = {
+						limit = { trait = happyness }
+						remove_trait = happyness
+					}
+					if = {
+						limit = { trait = hubris }
+						remove_trait = hubris
+					}
+					if = {
+						limit = { trait = justice }
+						remove_trait = justice
+					}
+					if = {
+						limit = { trait = kingmaker }
+						remove_trait = kingmaker
+					}
+					if = {
+						limit = { trait = passion }
+						remove_trait = passion
+					}
+					if = {
+						limit = { trait = rage }
+						remove_trait = rage
+					}
+					if = {
+						limit = { trait = sightblinder }
+						remove_trait = sightblinder
+					}
+					if = {
+						limit = { trait = the_monarchist }
+						remove_trait = the_monarchist
+					}
+					if = {
+						limit = { trait = the_usurper }
+						remove_trait = the_usurper
+					}
+					if = {
+						limit = { trait = worldeater }
+						remove_trait = worldeater
+					}
+					if = {
+						limit = { trait = worlds_envy }
+						remove_trait = worlds_envy
+					}
+		prestige = -100
+	}
+}
+
+########################
+### Written by Tycho ###
+########################
+
+### Valyrian swords flavour events ###
+
+#Tywin Lannister (OR any other ruthless Lannister) melts down Ice and reforges it into Widow's Wail and Oathkeeper.
+character_event = {
+	id = 250280
+	desc = "EVTDESC250280"
+	picture = "GFX_evt_valyrian_steel"
+	
+	only_playable = yes
+	capable_only = yes
+	prisoner = no
+	min_age = 16
+
+	trigger = {
+		year = 8299
+		trait = ice
+		dynasty = 190
+		OR = {
+			trait = ruthless
+			trait = cruel
+			trait = ambitious
+		}
+		NOT = { trait = imbecile }
+		
+		#Must NOT be at war with Starks
+		NOT = {
+			any_current_enemy = { dynasty = 59 }
+		}	
+		#The smith who can forge valyrian steel is in King's Landing
+		c_kings_landing = {
+			holder_scope = {	
+				OR = {
+					character = ROOT
+					dynasty = ROOT
+					is_liege_or_above = ROOT
+				}
+			}
+		}		
+		NOT = { has_character_flag = ice_reforged }
+	}
+
+	mean_time_to_happen = {
+		months = 7
+	}
+
+	immediate = { 
+		set_character_flag = ice_reforged 
+	}
+
+	#Do it!
+	option = {
+		name = "EVTOPTA250280"
+		ai_chance = { factor = 100 }
+		remove_trait = ice
+		remove_character_modifier = owns_valyrian_steel_sword
+		#Give Widow's Wail to Joffrey, Tommen OR Myrcella, if they have the Iron Throne.
+		e_iron_throne = {		
+			holder_scope = {
+				if = {
+					limit = { dynasty = ROOT }
+					add_trait = widowswail
+					add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+					opinion = {
+						who = ROOT
+						modifier = opinion_gave_sword_to_me
+						months = 360
+					}
+				}	
+			}	
+		}
+		#Give Widow's Wail to Tywin, if Tommen, Joffrey and Myrcella are dead OR landless.
+		if = {
+			limit = { 
+				e_iron_throne = {		
+					holder_scope = { 							
+						NOT = { dynasty = ROOT }
+					}
+				}
+			}
+			add_trait = widowswail
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		#Give Oathkeeper to Jaime if possible.
+		random_child = {
+			limit = { 
+				has_character_flag = jaime_lannister
+				prisoner = no
+			} 
+			add_trait = oathkeeper
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			opinion = {
+				who = ROOT
+				modifier = opinion_gave_sword_to_me
+				months = 360
+			}
+		}
+		#Give Oathkeeper to Tywin, if Jaime is still a prisoner and if Tywin does NOT have Widow's Wail already.
+		if = {
+			limit = {
+				NOT = {
+					any_child = {
+						has_character_flag = jaime_lannister 
+						prisoner = no
+					}
+				}	
+				e_iron_throne = {		
+					holder_scope = { 							
+						dynasty = ROOT
+					}
+				}
+				#NOT = { trait = widowswail }
+			}
+			add_trait = oathkeeper
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		#Give Oathkeeper to a random Lannister who can use it, if Jaime is still a prisoner and Tywin has Widow's Wail already.
+		if = {
+			limit = { 
+				NOT = {
+					any_child = {
+						has_character_flag = jaime_lannister 
+						prisoner = no
+					}
+				}	
+				e_iron_throne = {		
+					holder_scope = { 							
+						NOT = { dynasty = ROOT }
+					}
+				}
+				#trait = widowswail
+			}
+			random_dynasty_member = {
+				limit = {
+					age = 16
+					is_female = no
+					prisoner = no
+					NOT = {
+						OR = {
+							trait = disinherited
+							trait = bastard
+							trait = incapable
+							trait = imbecile
+							trait = infirm
+							is_weak_trigger = yes
+							is_dumb_trigger = yes
+							trait = lunatic
+						}
+					}
+					OR = {
+						trait = master_warrior
+						trait = skilled_warrior
+						trait = trained_warrior
+					}
+				}
+				add_trait = oathkeeper
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+				opinion = {
+					who = ROOT
+					modifier = opinion_gave_sword_to_me
+					months = 360
+				}
+			}
+		}
+		#Make Stark heirs hate Tywin even more for melting down Ice
+		random_playable_ruler = {
+			limit = { dynasty = 59 }
+			opinion = {
+				who = ROOT
+				modifier = opinion_furious
+				years = 20
+			}
+			any_dynasty_member = {
+				limit = { 
+					is_alive = yes
+					NOT = { character = PREV }
+				}
+				opinion = {
+					who = ROOT
+					modifier = opinion_furious
+					years = 20
+				}
+			}
+		}
+	}
+
+	#Let it be.
+	option = {
+		name = "EVTOPTB250280"
+		ai_chance = { factor = 0 }
+		custom_tooltip = { text = TOOLTIPEVTOPTB250280 }
+	}
+}
+
+#A merchant FROM Essos offers to sell a valyrian sword.
+
+character_event = {
+	id = 250281
+	desc = "EVTDESC250281"
+	picture = "GFX_evt_valyrian_steel"
+	
+	only_playable = yes
+	prisoner = no
+	capable_only = yes
+	
+	trigger = {
+		age = 16
+		#wealth = 500
+		has_ambition = obj_obtain_valyrian_sword
+		NOT = { has_character_flag = obj_valyrian_sword }
+		NOT = { has_character_modifier = owns_valyrian_steel_sword }
+	}
+
+	mean_time_to_happen = {
+		months = 90001
+		
+		modifier = {
+			factor = 0.25
+			wealth = 500
+		}
+		modifier = {
+			factor = 0.25
+			wealth = 1000
+		}
+		modifier = {
+			factor = 0.25
+			wealth = 5000
+		}
+		modifier = {
+			factor = 0.25
+			wealth = 10000
+		}
+		modifier = {
+			factor = 0.25
+			ai = no
+		}
+		modifier = {
+			factor = 0.5
+			trait = ambitious 
+		}
+		modifier = {
+			factor = 0.9
+			trait = charitable 
+		}
+		modifier = {
+			factor = 0.9
+			trait = trusting 
+		}
+		modifier = {
+			factor = 1.1
+			trait = paranoid 
+		}
+		modifier = {
+			factor = 1.1
+			trait = greedy 
+		}
+	}
+
+	#Suspicious characters can inquire about the authenticity of the sword.
+	option = {
+		name = "EVTOPTA250281"
+		tooltip_info = intrigue
+		trigger = {
+			intrigue = 13
+		}
+		ROOT = { character_event = { id = 250282 } }
+	}
+
+	#Buy the sword.
+	option = {
+		name = "EVTOPTB250281"
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+			modifier = {
+				factor = 0.5
+				trait = greedy
+			}
+		}
+		wealth = -1000
+		#The sword has a chance to be fake.		
+		random_list = {		
+			50 = { 
+				add_trait = valyrian_steel 
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+			}
+			50 = { 
+				set_character_flag = fake_valyrian_sword
+				ROOT = { character_event = { id = 250282 } } 
+			}
+		}
+	}
+
+	#Don't buy the sword.
+	option = {
+		name = "EVTOPTC250281"
+		ai_chance = { factor = 150 }
+		custom_tooltip = { text = TOOLTIPEVTOPTB250280 }
+	}	
+}
+
+character_event = {
+	id = 250282
+	desc = "EVTDESC250282"
+	picture = "GFX_evt_into_the_dungeon" 
+	
+	is_triggered_only = yes
+	
+	#Throw him into the dungeon.
+	option = {
+		name = "EVTOPTA250282"
+		ai_chance = { 
+			factor = 50 
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 0.5
+				trait = kind
+			}
+		}
+		random_list = {		
+			50 = {
+				if = {
+					limit = { has_character_flag = fake_valyrian_sword }
+					wealth = 1000
+					clr_character_flag = fake_valyrian_sword
+				}
+				create_character = {
+					female = no
+					age = 40
+					random_traits = yes
+					dynasty = none
+					culture = pentosi
+					religion = rhllor
+					trait = deceitful
+					trait = amateurish_plotter
+				}
+				new_character = {
+					imprison = ROOT
+					opinion = {
+						modifier = opinion_arrest_attempt
+						who = ROOT
+						years = 15
+					}
+				}
+				custom_tooltip = { text = TOOLTIPEVTOPTA250282 }
+			}
+			50 = {
+				ROOT = { character_event = { id = 250283 } }
+			}
+		}
+	}
+
+	#Throw him out of the castle.
+	option = {
+		name = "EVTOPTB250282"
+		ai_chance = { factor = 50 }
+		if = {
+			limit = { has_character_flag = fake_valyrian_sword }
+			random_list = {		
+				50 = {
+					wealth = 1000
+					custom_tooltip = { text = TOOLTIPEVTOPTB250282 }
+					clr_character_flag = fake_valyrian_sword
+				}
+				50 = { 
+					ROOT = { character_event = { id = 250283 } }
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = fake_valyrian_sword } }
+			custom_tooltip = { text = TOOLTIPEVTOPTB250282 }
+		}
+	}
+}
+
+character_event = {
+	id = 250283
+	desc = "EVTDESC250283"
+	picture = "GFX_evt_scandal"
+
+	is_triggered_only = yes
+
+	#The deceitful merchant escapes.
+	option = {
+		name = "EVTOPT250283"
+		if = {
+			limit = { NOT = { has_character_flag = fake_valyrian_sword } }
+			custom_tooltip = { text = TOOLTIPEVTOPTB250280 }
+		}
+		if = {
+			limit = { has_character_flag = fake_valyrian_sword }
+			prestige = -10
+			clr_character_flag = fake_valyrian_sword
+		}
+	}
+}
+
+#REFORGE VALYRAIN STEEL
+character_event = {
+	id = 250285
+	desc = "EVTDESC250285" #Two Blacksmiths offer you their services.
+	picture = "GFX_smith"
+
+	is_triggered_only = yes
+	
+	trigger = { trait = valyrian_steel }
+
+	immediate = {
+		create_random_steward = {
+			random_traits = yes
+			dynasty = NONE
+			
+			add_trait = blacksmith
+		}
+		new_character = {
+			random_list = {
+				10 = { add_trait = dishonorable5 set_variable = { which = "dishonorable" value = 50 } }
+				10 = { add_trait = dishonorable2 set_variable = { which = "dishonorable" value = 20 } }
+				10 = { add_trait = greedy }
+				10 = { add_trait = selfish }
+				10 = { add_trait = envious }
+				10 = { add_trait = deceitful }
+				120 = { add_trait = diligent}
+			}
+			random_list = {
+				20 = { change_stewardship = 2}
+				10 = { change_stewardship = 4 }
+				10 = { change_stewardship = 6 }
+				10 = { change_stewardship = 8 }
+				10 = { change_learning = 2 }
+				10 = { change_learning = 4 }
+				10 = { change_learning = 6 }			
+			}
+			set_character_flag = blacksmith1
+		}
+		capital_scope = {
+			ROOT = {
+				create_random_steward = {
+					female = yes
+					random_traits = yes
+					dynasty = NONE
+					
+					add_trait = blacksmith
+				}
+				new_character = {
+					random_list = {
+						10 = { add_trait = dishonorable5 set_variable = { which = "dishonorable" value = 50 } }
+						10 = { add_trait = dishonorable2 set_variable = { which = "dishonorable" value = 20 } }
+						10 = { add_trait = greedy }
+						10 = { add_trait = selfish }
+						10 = { add_trait = envious }
+						10 = { add_trait = deceitful }
+						120 = { add_trait = diligent}
+					}
+					random_list = {
+						20 = { change_stewardship = 2}
+						10 = { change_stewardship = 4 }
+						10 = { change_stewardship = 6 }
+						10 = { change_stewardship = 8 }
+						10 = { change_learning = 2 }
+						10 = { change_learning = 4 }
+						10 = { change_learning = 6 }			
+					}
+					set_character_flag = blacksmith2
+				}
+			}
+		}	
+	}
+
+	option = {
+		name = "EVTOPTA250285" #I choose you!
+		random_courtier = {
+			limit = { has_character_flag = blacksmith1 }
+			prestige = 50
+			clr_character_flag = blacksmith1
+			hidden_tooltip = { save_event_target_as = valyrian_steel_blacksmith }
+		}
+		hidden_tooltip = { 
+			any_courtier = {
+				limit = {
+					has_character_flag = blacksmith2
+				}	
+				death = { death_reason = death_missing }
+			}
+			character_event = { id = 250286 } 
+			remove_trait = valyrian_steel
+		}
+	}
+	option = {
+		name = "EVTOPTB250285"
+		random_courtier = {
+			limit = { has_character_flag = blacksmith2 }
+			prestige = 50
+			clr_character_flag = blacksmith2
+			hidden_tooltip = { save_event_target_as = valyrian_steel_blacksmith }
+		}
+		hidden_tooltip = { 
+			any_courtier = {
+				limit = {
+					has_character_flag = blacksmith1
+				}	
+				death = { death_reason = death_missing }
+			}
+			character_event = { id = 250286 } 
+			remove_trait = valyrian_steel
+		}
+	}
+	option = {
+		name = "EVTOPTC250285" #These two are useless, find me a better blacksmith!
+		wealth = -50
+		hidden_tooltip = { 
+			character_event = { id = 250285 days = 1 } 
+			any_courtier = {
+				limit = {
+					OR = {
+						has_character_flag = blacksmith1
+						has_character_flag = blacksmith2
+					}	
+				}	
+				clr_character_flag = blacksmith1
+				clr_character_flag = blacksmith2
+				death = { death_reason = death_missing }
+			}
+		}
+		
+	}
+	option = {
+		name = "EVTOPTD250285" #I will never reforge this sword!
+		wealth = 100
+		clr_character_flag = reforge_valyrian_steel
+		hidden_tooltip = { 
+			any_courtier = {
+				limit = {
+					OR = {
+						has_character_flag = blacksmith1
+						has_character_flag = blacksmith2
+					}	
+				}
+				death = { death_reason = death_missing }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = 250286
+	desc = "EVTDESC250286"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT250286" #Use this design
+		trigger = { NOT = { anger = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = anger
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { black_death = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = black_death
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { compassion = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = compassion
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPTB250286" #More
+		character_event = { id = 250287 }
+	}
+}
+
+character_event = {
+	id = 250287
+	desc = "EVTDESC250286"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT250286" #Use this design
+		trigger = { NOT = { blackpaw = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = blackpaw
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { del_pino = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = del_pino
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { el_swordo = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = el_swordo
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPTB250286" #More
+		character_event = { id = 250288 }
+	}
+}
+
+character_event = {
+	id = 250288
+	desc = "EVTDESC250286"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT250286" #Use this design
+		trigger = { NOT = { gold_sword = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = gold_sword
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286"
+		trigger = { NOT = { happyness = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = happyness
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { hubris = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = hubris
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPTB250286" #More
+		character_event = { id = 250289 }
+	}
+}
+
+character_event = {
+	id = 250289
+	desc = "EVTDESC250286"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT250286" #Use this design
+		trigger = { NOT = { justice = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = justice
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { kingmaker = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = kingmaker
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { passion = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = passion
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPTB250286" #More
+		character_event = { id = 250290 }
+	}
+}
+character_event = {
+	id = 250290
+	desc = "EVTDESC250286"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT250286" #Use this design
+		trigger = { NOT = { rage = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = rage
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { sightblinder = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = sightblinder
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { the_monarchist = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = the_monarchist
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPTB250286" #More
+		character_event = { id = 250291 }
+	}
+}
+
+character_event = {
+	id = 250291
+	desc = "EVTDESC250286"
+	picture = "GFX_evt_valyrian_steel"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPT250286" #Use this design
+		trigger = { NOT = { the_usurper = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = the_usurper
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { worldeater = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = worldeater
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPT250286" 
+		trigger = { NOT = { worlds_envy = { is_alive = yes } } }
+		event_target:valyrian_steel_blacksmith = {
+			add_trait = worlds_envy
+			custom_tooltip = { text = CUSTOMTOOLTIPthissword } #this will return when the sword is complete.
+			hidden_tooltip = { character_event = { id = 250296 } }
+		}					
+	}
+	option = {
+		name = "EVTOPTB250286" #More
+		character_event = { id = 250286 }
+	}
+}
+
+##Instant instead of 2 week delay due to getting married/banished and other inheritance shenannigans.
+character_event = {
+	id = 250296
+	desc = "EVTDESC250292"
+	picture = "GFX_evt_scandal"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA250292" #Yoink!
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {					
+						trait = dishonorable5
+						trait = dishonorable2
+						trait = greedy
+						trait = deceitful
+						trait = envious
+						trait = selfish
+						trait = ruthless
+					}
+				}	
+			}
+			#You're a retard if you hire this blacksmith.
+			modifier = {
+				factor = 10
+				trait = dishonorable5
+			}
+			modifier = {
+				factor = 5
+				trait = dishonorable2 
+			}
+			modifier = {
+				factor = 5
+				trait = greedy
+			}
+			modifier = {
+				factor = 5
+				trait = deceitful
+			}
+			#You may have overlooked these
+			modifier = {
+				factor = 2
+				trait = envious
+			}
+			modifier = {
+				factor = 2
+				trait = selfish
+			}
+			modifier = {
+				factor = 2
+				trait = ruthless
+			}
+		}
+		FROM = { character_event = { id = 250293 } } #YOINK
+		change_intrigue = 5
+		set_character_flag = black_thief
+		character_event = { id = valyrian_steel.999 days = 1 } #sword ownership check
+		random_playable_ruler = {
+			limit = { 
+				valid_exile_destination_ROOT_trigger = yes
+				OR = {
+					higher_tier_than = DUKE
+					culture_group = ROOT
+				}			
+			}
+			ROOT = { move_character = PREV }
+		}
+	}
+	option = {
+		name = "EVTOPTB250292" #Here!
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10
+				trait = honest
+			}
+			modifier = {
+				factor = 10
+				trait = honorable
+			}
+			modifier = {
+				factor = 5
+				trait = charitable
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}			
+			modifier = {
+				factor = 2
+				trait = just
+			}
+		}
+		FROM = { character_event = { id = 250294 } } #Here
+	}
+	option = {
+		name = "EVTOPTB250292" #Oops!
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					learning = 12
+					stewardship = 12
+				}
+			}
+			modifier = {
+				factor = 0.75
+				learning = 10
+			}
+			modifier = {
+				factor = 0.75
+				learning = 8
+			}
+			modifier = {
+				factor = 1.33
+				NOT = { learning = 6 }
+			}
+			modifier = {
+				factor = 1.33
+				NOT = { learning = 4 }
+			}
+			modifier = {
+				factor = 1.33
+				NOT = { learning = 2 }
+			}
+			modifier = {
+				factor = 0.75
+				stewardship = 10
+			}
+			modifier = {
+				factor = 0.75
+				stewardship = 8
+			}
+			modifier = {
+				factor = 1.33
+				NOT = { stewardship = 6 }
+			}
+			modifier = {
+				factor = 1.33
+				NOT = { stewardship = 4 }
+			}
+			modifier = {
+				factor = 1.33
+				NOT = { stewardship = 2 }
+			}
+			modifier = {
+				factor = 10
+				trait = incapable
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = lunatic
+					trait = inbred
+					trait = possessed
+					is_ill = yes
+					has_epidemic = yes
+					has_severe_disability_trigger = yes
+				}
+			}
+		}
+		FROM = { character_event = { id = 250295 } } #Oops
+		remove_trait = anger
+		remove_trait = black_death
+		remove_trait = compassion
+		remove_trait = blackpaw
+		remove_trait = del_pino
+		remove_trait = el_swordo
+		remove_trait = gold_sword
+		remove_trait = happyness
+		remove_trait = hubris
+		remove_trait = justice
+		remove_trait = kingmaker
+		remove_trait = passion
+		remove_trait = rage
+		remove_trait = sightblinder
+		remove_trait = the_monarchist
+		remove_trait = the_usurper
+		remove_trait = worldeater
+		remove_trait = worlds_envy
+	}
+}	
+
+# YOINK - hiding in FROM.location.getname. You have 1 year to do it.
+character_event = {
+	id = 250293
+	desc = "EVTDESC250293"
+	picture = "GFX_evt_scandal"
+
+	is_triggered_only = yes
+
+	option = { #Traitor for +reasons. Stolesword for logic. Rival for plot allow + easyfinding.
+		name = "EVTOPTA250293"
+		opinion = {
+			who = FROM
+			modifier = opinion_traitor
+		}
+		opinion = {
+			who = FROM
+			modifier = opinion_stole_sword
+			years = 200
+		}
+		add_rival = FROM
+		#wont accept invites
+		reverse_opinion = {
+			who = FROM
+			modifier = opinion_resentful_agot
+			years = 200
+		}
+		hidden_tooltip = { 
+			character_event = { id = valyrian_steel.999 days = 1 } #sword ownership check
+			character_event = { id = valyrian_steel.100 days = 30 random = 15 } #Spymaster seek sword?
+		} 
+		if = { 
+			limit = { FROM = { trait = anger } }
+			set_dynasty_flag = reforge_anger
+		}
+		if = { 
+			limit = { FROM = { trait = black_death } }
+			set_dynasty_flag = reforge_black_death
+		}
+		if = { 
+			limit = { FROM = { trait = compassion } }
+			set_dynasty_flag = reforge_compassion
+		}
+		if = { 
+			limit = { FROM = { trait = blackpaw } }
+			set_dynasty_flag = reforge_blackpaw
+		}
+		if = { 
+			limit = { FROM = { trait = del_pino } }
+			set_dynasty_flag = reforge_del_pino
+		}
+		if = { 
+			limit = { FROM = { trait = gold_sword } }
+			set_dynasty_flag = reforge_gold_Sword
+		}
+		if = { 
+			limit = { FROM = { trait = happyness} }
+			set_dynasty_flag = reforge_happyness
+		}
+		if = { 
+			limit = { FROM = { trait = hubris } }
+			set_dynasty_flag = reforge_hubris
+		}
+		if = { 
+			limit = { FROM = { trait = justice } }
+			set_dynasty_flag = reforge_justice
+		}
+		if = { 
+			limit = { FROM = { trait = kingmaker } }
+			set_dynasty_flag = reforge_kingmaker
+		}
+		if = { 
+			limit = { FROM = { trait = passion } }
+			set_dynasty_flag = reforge_passion
+		}
+		if = { 
+			limit = { FROM = { trait = rage } }
+			set_dynasty_flag = reforge_rage
+		}
+		if = { 
+			limit = { FROM = { trait = sightblinder } }
+			set_dynasty_flag = reforge_sightblinder
+		}
+		if = { 
+			limit = { FROM = { trait = the_monarchist } }
+			set_dynasty_flag = reforge_the_monarchist
+		}
+		if = { 
+			limit = { FROM = { trait = the_usurper } }
+			set_dynasty_flag = reforge_the_usurper
+		}
+		if = { 
+			limit = { FROM = { trait = worldeater} }
+			set_dynasty_flag = reforge_worldeater
+		}
+		if = { 
+			limit = { FROM = { trait = worlds_envy } }
+			set_dynasty_flag = reforge_worlds_envy
+		}
+	}
+}
+#HERE 
+character_event = {
+	id = 250294
+	desc = "EVTDESC250294"
+	picture = "GFX_evt_scandal"
+
+	is_triggered_only = yes
+
+	option = { 
+		name = {
+			text = "EVTOPTA250294"
+			trigger = {
+				NOT = { has_house_words_trigger = yes }
+			}
+		}
+		name = {
+			text = "EVTOPTGETHOUSEWORDS"
+			trigger = {
+				has_house_words_trigger = yes
+			}
+		} 
+		opinion = {
+			who = FROM
+			modifier = opinion_very_grateful
+			years = 10
+		}
+		reverse_opinion = {
+			who = FROM
+			modifier = opinion_very_grateful
+			years = 10
+		}
+		if = { 
+			limit = { FROM = { trait = anger } }
+			FROM = { remove_trait = anger
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = anger
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = black_death } }
+			FROM = { remove_trait = black_death
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = black_death
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = compassion } }
+			FROM = { remove_trait = compassion
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = compassion
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = blackpaw } }
+			FROM = { remove_trait = blackpaw
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = blackpaw
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = del_pino } }
+			FROM = { remove_trait = del_pino
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = del_pino
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = gold_sword } }
+			FROM = { remove_trait = gold_sword
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = gold_sword
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = happyness} }
+			FROM = { remove_trait = happyness
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = happyness
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = hubris } }
+			FROM = { remove_trait = hubris
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = hubris
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = justice } }
+			FROM = { remove_trait = justice
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = justice
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = kingmaker } }
+			FROM = { remove_trait = kingmaker
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = kingmaker
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = passion } }
+			FROM = { remove_trait = passion
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = passion
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = rage } }
+			FROM = { remove_trait = rage
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = rage
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = sightblinder } }
+			FROM = { remove_trait = sightblinder
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = sightblinder
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = the_monarchist } }
+			FROM = { remove_trait = the_monarchist
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = the_monarchist
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = the_usurper } }
+			FROM = { remove_trait = the_usurper
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = the_usurper
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = worldeater} }
+			FROM = { remove_trait = worldeater
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = worldeater
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		if = { 
+			limit = { FROM = { trait = worlds_envy } }
+			FROM = { remove_trait = worlds_envy
+			remove_character_modifier = owns_valyrian_steel_sword }
+			add_trait = worlds_envy
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+
+		clr_character_flag = reforge_valyrian_steel
+	}
+}
+#OOPS
+character_event = {
+	id = 250295
+	desc = "EVTDESC250295"
+	picture = "GFX_evt_scandal"
+
+	is_triggered_only = yes
+
+	option = { #Oops i did it that one time.
+		name = "EVTOPTA250295"
+		opinion = {
+			who = FROM
+			modifier = opinion_traitor
+			years = 200
+		}
+		clr_character_flag = reforge_valyrian_steel
+		hidden_tooltip = { character_event = { id = valyrian_steel.999 days = 1 } } #sword ownership check
+	}
+}
+#Spymaster seek sword
+character_event = {   
+	id = valyrian_steel.100
+	desc = "EVTDESCvalyrian_steel.100"
+	picture = GFX_evt_spymaster
+	border = GFX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+	only_rulers = yes
+	
+	trigger = {
+		event_target:valyrian_steel_blacksmith = {
+			is_alive = yes
+			has_character_modifier = owns_valyrian_steel_sword
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTAvalyrian_steel.100" #Yes
+		wealth = -100
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 0.5
+					NOT = { job_spymaster = { always = yes } }
+				}
+				modifier = {
+					factor = 0.66
+					job_spymaster = { NOT = { intrigue = 6 } }
+				}
+				modifier = {
+					factor = 0.66
+					job_spymaster = { NOT = { intrigue = 8 } }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 12 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 14 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 16 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 18 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 20 }
+				}
+				character_event = { id = valyrian_steel.101 days = 60 random = 30 tooltip = TOOLTIPvalyrian_steel.101 }
+			}
+			50 = {
+				character_event = { id = valyrian_steel.102 days = 60 random = 30 tooltip = TOOLTIPvalyrian_steel.102 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBvalyrian_steel.100" #No
+		ai_chance = { factor = 0 }
+	}
+}
+#Sword found
+character_event = {   
+	id = valyrian_steel.101	
+	picture = "GFX_evt_valyrian_steel"
+	border = GFX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+	only_rulers = yes
+	
+	trigger = {
+		event_target:valyrian_steel_blacksmith = {
+			is_alive = yes
+			has_character_modifier = owns_valyrian_steel_sword
+		}	
+	}
+	
+	desc = {
+		text = "EVTDESCvalyrian_steel.101A" #Found in tavern, murdered
+		trigger = { has_character_flag = blacksmith_murdered }
+	}
+	desc = {
+		text = "EVTDESCvalyrian_steel.101B" #Found in blacksmith, captured
+		trigger = { has_character_flag = blacksmith_captured }
+	}
+	desc = {
+		text = "EVTDESCvalyrian_steel.101C" #Sellsword took it, escaped
+		trigger = { has_character_flag = blacksmith_escaped }
+	}
+	
+	immediate = {
+		random_list = {
+			1 = { set_character_flag = blacksmith_murdered }
+			1 = { set_character_flag = blacksmith_captured }
+			1 = { 
+				set_character_flag = blacksmith_escaped 
+				event_target:valyrian_steel_blacksmith = {
+					location = {
+						ROOT = {
+							create_random_intriguer = {
+								random_traits = yes
+								dynasty = none
+								female = no
+								religion = PREV
+								culture = PREV
+							}	
+							new_character = {
+								set_character_flag = recovered_blacksmith_sword
+								change_intrigue = 4
+								random_list = {
+									20 = { add_trait = poor_warrior }
+									50 = { add_trait = trained_warrior }
+									30 = { add_trait = skilled_warrior }
+								}
+								remove_trait = craven
+								remove_trait = greedy
+								
+								remove_trait = imbecile
+								remove_trait = slow
+								remove_trait = inbred
+								remove_trait = infirm
+								remove_trait = incapable
+								remove_trait = leper
+								remove_trait = possessed
+								remove_trait = ill
+								remove_trait = pneumonic
+								remove_trait = maimed
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAvalyrian_steel.101" #Yes
+		job_spymaster = {	
+			hidden_tooltip = { change_variable = { which = "services_rendered" value = 3 } }
+			reverse_opinion = {
+				modifier = opinion_service_rendered
+				who = ROOT
+				multiplier = 3
+				years = 6
+			}
+		}
+		event_target:valyrian_steel_blacksmith = {
+			if = { 
+				limit = { trait = anger }
+				remove_trait = anger
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = anger
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = black_death }
+				remove_trait = black_death
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = black_death
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = compassion }
+				remove_trait = compassion
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = compassion
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = blackpaw }
+				remove_trait = blackpaw
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = blackpaw
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = del_pino }
+				remove_trait = del_pino
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = del_pino
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = gold_sword }
+				remove_trait = gold_sword
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = gold_sword
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = happyness }
+				remove_trait = happyness
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = happyness
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = hubris }
+				remove_trait = hubris
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = hubris
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = justice }
+				remove_trait = justice
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = justice
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = kingmaker }
+				remove_trait = kingmaker
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = kingmaker
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = passion }
+				remove_trait = passion
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = passion
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = rage }
+				remove_trait = rage
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = rage
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = sightblinder }
+				remove_trait = sightblinder
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = sightblinder
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = the_monarchist }
+				remove_trait = the_monarchist
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = the_monarchist
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = the_usurper }
+				remove_trait = the_usurper
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = the_usurper
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}
+			if = { 
+				limit = { trait = worldeater }
+				remove_trait = worldeater
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = worldeater
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }				}
+			}
+			if = { 
+				limit = { trait = worlds_envy }
+				remove_trait = worlds_envy
+				remove_character_modifier = owns_valyrian_steel_sword
+				ROOT = { add_trait = worlds_envy 
+				add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 } }
+			}	
+			if = {
+				limit = { ROOT = { has_character_flag = blacksmith_murdered } }
+				death = {
+					death_reason = death_murder
+					killer = ROOT
+				}
+				ROOT = { clr_character_flag = blacksmith_murdered }
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = blacksmith_captured } }
+				imprison = ROOT
+				ROOT = { clr_character_flag = blacksmith_captured }
+			}
+			if = {
+				limit = { ROOT = { has_character_flag = blacksmith_escaped } }
+				ROOT = {
+					random_courtier = {
+						limit = { has_character_flag = recovered_blacksmith_sword }
+						move_character = ROOT
+						prestige = 25
+						wealth = 50
+						reverse_opinion = {
+							who = PREV
+							modifier = opinion_very_grateful
+							years = 10
+						}
+						clr_character_flag = recovered_blacksmith_sword
+					}
+					clr_character_flag = blacksmith_escaped
+				}
+			}
+		}
+	}
+}
+#Sword NOT found
+character_event = {   
+	id = valyrian_steel.102
+	desc = "EVTDESCvalyrian_steel.102"
+	picture = GFX_evt_spymaster
+	border = GFX_event_normal_frame_intrigue
+	
+	is_triggered_only = yes
+	only_rulers = yes
+	
+	trigger = {
+		event_target:valyrian_steel_blacksmith = {
+			is_alive = yes
+			has_character_modifier = owns_valyrian_steel_sword
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTAvalyrian_steel.102" #Try again
+		ai_chance = { 
+			factor = 100 
+			modifier = {
+				factor = 0
+				NOT = { wealth = 50 }
+			}			
+		}	
+		wealth = -100
+		random_list = {
+			50 = {
+				modifier = {
+					factor = 0.5
+					NOT = { job_spymaster = { always = yes } }
+				}
+				modifier = {
+					factor = 0.66
+					job_spymaster = { NOT = { intrigue = 6 } }
+				}
+				modifier = {
+					factor = 0.66
+					job_spymaster = { NOT = { intrigue = 8 } }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 12 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 14 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 16 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 18 }
+				}
+				modifier = {
+					factor = 1.5
+					job_spymaster = { intrigue = 20 }
+				}
+				character_event = { id = valyrian_steel.101 days = 60 random = 30 tooltip = TOOLTIPvalyrian_steel.101 }
+			}
+			50 = {
+				character_event = { id = valyrian_steel.102 days = 60 random = 30 tooltip = TOOLTIPvalyrian_steel.102 }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTBvalyrian_steel.102" #No
+		ai_chance = { 
+			factor = 1
+		}	
+	}
+}	
+#A rich lord offers to buy a character's valyrian sword
+
+#Character plot: Steal a valyrian sword
+
+#Surrender Valyrian Steel Negotiation
+#Inform inherited sword
+# character_event = {   
+	# id = 250277
+	# desc = "EVTDESC250277"
+	# picture = "GFX_evt_valyrian_steel"
+	
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "EVTOPTA250277"
+	# }
+# }
+
+#Character claims dawn
+character_event = {
+	id = valyrian_steel.150
+	desc = "EVTDESCvalyrian_steel.150"
+	picture = "GFX_evt_kingsguard"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTAvalyrian_steel.150"
+		add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+	}
+}
+character_event = { #inform others
+	id = valyrian_steel.151
+	desc = "EVTDESCvalyrian_steel.151"
+	picture = "GFX_evt_kingsguard"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTAvalyrian_steel.151"
+		FROM = { add_trait = dawn }
+	}
+}
+
+#Sword ownership check
+character_event = {
+	id = valyrian_steel.999
+	desc = "EVTDESCvalyrian_steel.999"
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		remove_character_modifier = owns_valyrian_steel_sword
+		if = {
+			limit = { 
+				OR = {
+					trait = valyrian_steel 
+					trait = longclaw 
+					trait = longclaw_snow
+					trait = blackfyre 
+					trait = dawn
+					trait = brightroar
+					trait = heartsbane
+					trait = ice
+					trait = nightfall
+					trait = darksister
+					trait = ladyforlorn
+					trait = redrain
+					trait = widowswail
+					trait = oathkeeper
+					trait = crabspincer
+					trait = strangers_mercy
+					trait = palemoon
+					trait = anger
+					trait = black_death
+					trait = compassion
+					trait = blackpaw
+					trait = del_pino
+					trait = el_swordo
+					trait = gold_sword
+					trait = happyness
+					trait = hubris
+					trait = justice
+					trait = kingmaker
+					trait = passion
+					trait = rage
+					trait = sightblinder
+					trait = the_monarchist
+					trait = the_usurper
+					trait = worldeater
+					trait = worlds_envy
+					trait = vigilance
+					trait = orphan_maker
+					trait = truth
+					trait = lamentation
+					trait = poison
+				}
+			}
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+	}
+
+	option = {
+		name = OK
+	}	
+}
