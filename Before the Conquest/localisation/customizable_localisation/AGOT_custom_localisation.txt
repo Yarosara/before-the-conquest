@@ -1,0 +1,3902 @@
+#a Valyrian steel sword
+defined_text = {
+	name = GetValyrianSword
+	
+	text = { 
+		localisation_key = ValyrianSword
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = {
+		trigger = { trait = dawn }
+		localisation_key = ValyrianSworddawn
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = ice }
+		localisation_key = ValyrianSwordice
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { 
+			OR = {
+				trait = longclaw
+				trait = longclaw_snow
+			}	
+		}
+		localisation_key = ValyrianSwordlongclaw
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = blackfyre }
+		localisation_key = ValyrianSwordblackfyre
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = lightbringer }
+		localisation_key = ValyrianSwordlightbringer
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = brightroar }
+		localisation_key = ValyrianSwordbrightroar
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = heartsbane }
+		localisation_key = ValyrianSwordheartsbane
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = nightfall }
+		localisation_key = ValyrianSwordnightfall
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = darksister }
+		localisation_key = ValyrianSworddarksister
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = ladyforlorn }
+		localisation_key = ValyrianSwordladyforlorn
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = redrain }
+		localisation_key = ValyrianSwordredrain
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = widowswail }
+		localisation_key = ValyrianSwordwidowswail
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = oathkeeper }
+		localisation_key = ValyrianSwordoathkeeper
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = crabspincer }
+		localisation_key = ValyrianSwordcrabspincer
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = strangers_mercy }
+		localisation_key = ValyrianSwordstrangers_mercy
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = palemoon }
+		localisation_key = ValyrianSwordpalemoon
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = anger }
+		localisation_key = ValyrianSwordanger
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = black_death }
+		localisation_key = ValyrianSwordblack_death
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = compassion }
+		localisation_key = ValyrianSwordcompassion
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = blackpaw }
+		localisation_key = ValyrianSwordblackpaw
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = del_pino }
+		localisation_key = ValyrianSworddel_pino
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = el_swordo }
+		localisation_key = ValyrianSwordel_swordo
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = gold_sword }
+		localisation_key = ValyrianSwordgold_sword
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = happyness }
+		localisation_key = ValyrianSwordhappyness
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = hubris }
+		localisation_key = ValyrianSwordhubris
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = justice }
+		localisation_key = ValyrianSwordjustice
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = kingmaker }
+		localisation_key = ValyrianSwordkingmaker
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = passion }
+		localisation_key = ValyrianSwordpassion
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = rage }
+		localisation_key = ValyrianSwordrage
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = sightblinder }
+		localisation_key = ValyrianSwordsightblinder
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = the_monarchist }
+		localisation_key = ValyrianSwordthe_monarchist
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = the_usurper }
+		localisation_key = ValyrianSwordthe_usurper
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = worldeater }
+		localisation_key = ValyrianSwordworldeater
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = worlds_envy }
+		localisation_key = ValyrianSwordworlds_envy
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = vigilance }
+		localisation_key = ValyrianSwordvigilance
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = orphan_maker }
+		localisation_key = ValyrianSwordorphan_maker
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = truth }
+		localisation_key = ValyrianSwordtruth
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = lamentation }
+		localisation_key = ValyrianSwordlamentation
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = poison }
+		localisation_key = ValyrianSwordpoison
+		weight_multiplier = { factor = 1000 }
+	}
+}
+defined_text = { #your Valyrian steel sword (other named swords identical to above)
+	name = GetValyrianSwordOwned
+	
+	text = { 
+		trigger = { 
+			NOR = {
+				#trait = valyrian_steel 
+				trait = lightbringer
+				trait = longclaw 
+				trait = longclaw_snow
+				trait = blackfyre 
+				trait = dawn
+				trait = brightroar
+				trait = heartsbane
+				trait = ice
+				trait = nightfall
+				trait = darksister
+				trait = ladyforlorn
+				trait = redrain
+				trait = widowswail
+				trait = oathkeeper
+				trait = crabspincer
+				trait = strangers_mercy
+				trait = anger
+				trait = black_death
+				trait = compassion
+				trait = blackpaw
+				trait = del_pino
+				trait = el_swordo
+				trait = gold_sword
+				trait = happyness
+				trait = hubris
+				trait = justice
+				trait = kingmaker
+				trait = passion
+				trait = rage
+				trait = sightblinder
+				trait = the_monarchist
+				trait = the_usurper
+				trait = worldeater
+				trait = worlds_envy
+				trait = vigilance
+				trait = orphan_maker
+				trait = truth
+				trait = lamentation
+				trait = poison
+			}
+		}
+		localisation_key = ValyrianSwordYours
+	}
+	text = {
+		trigger = { trait = dawn }
+		localisation_key = ValyrianSworddawn
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = ice }
+		localisation_key = ValyrianSwordice
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { 
+			OR = {
+				trait = longclaw
+				trait = longclaw_snow
+			}	
+		}
+		localisation_key = ValyrianSwordlongclaw
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = blackfyre }
+		localisation_key = ValyrianSwordblackfyre
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = lightbringer }
+		localisation_key = ValyrianSwordlightbringer
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = brightroar }
+		localisation_key = ValyrianSwordbrightroar
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = heartsbane }
+		localisation_key = ValyrianSwordheartsbane
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = nightfall }
+		localisation_key = ValyrianSwordnightfall
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = darksister }
+		localisation_key = ValyrianSworddarksister
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = ladyforlorn }
+		localisation_key = ValyrianSwordladyforlorn
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = redrain }
+		localisation_key = ValyrianSwordredrain
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = widowswail }
+		localisation_key = ValyrianSwordwidowswail
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = oathkeeper }
+		localisation_key = ValyrianSwordoathkeeper
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = crabspincer }
+		localisation_key = ValyrianSwordcrabspincer
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = strangers_mercy }
+		localisation_key = ValyrianSwordstrangers_mercy
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = anger }
+		localisation_key = ValyrianSwordanger
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = black_death }
+		localisation_key = ValyrianSwordblack_death
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = compassion }
+		localisation_key = ValyrianSwordcompassion
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = blackpaw }
+		localisation_key = ValyrianSwordblackpaw
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = del_pino }
+		localisation_key = ValyrianSworddel_pino
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = el_swordo }
+		localisation_key = ValyrianSwordel_swordo
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = gold_sword }
+		localisation_key = ValyrianSwordgold_sword
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = happyness }
+		localisation_key = ValyrianSwordhappyness
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = hubris }
+		localisation_key = ValyrianSwordhubris
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = justice }
+		localisation_key = ValyrianSwordjustice
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = kingmaker }
+		localisation_key = ValyrianSwordkingmaker
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = passion }
+		localisation_key = ValyrianSwordpassion
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = rage }
+		localisation_key = ValyrianSwordrage
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = sightblinder }
+		localisation_key = ValyrianSwordsightblinder
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = the_monarchist }
+		localisation_key = ValyrianSwordthe_monarchist
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = the_usurper }
+		localisation_key = ValyrianSwordthe_usurper
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = worldeater }
+		localisation_key = ValyrianSwordworldeater
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = worlds_envy }
+		localisation_key = ValyrianSwordworlds_envy
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = vigilance }
+		localisation_key = ValyrianSwordvigilance
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = orphan_maker }
+		localisation_key = ValyrianSwordorphan_maker
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = truth }
+		localisation_key = ValyrianSwordtruth
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = lamentation }
+		localisation_key = ValyrianSwordlamentation
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = poison }
+		localisation_key = ValyrianSwordpoison
+		weight_multiplier = { factor = 1000 }
+	}
+}
+defined_text = { #her/his Valyrian steel sword (other named swords identical to above)
+	name = GetValyrianSwordHerHis
+	
+	text = { 
+		trigger = { 
+			is_female = no
+		}
+		localisation_key = ValyrianSwordHis
+		weight_multiplier = { 
+			factor = 1 
+		}
+	}
+	text = { 
+		trigger = { 
+			is_female = yes
+		}
+		localisation_key = ValyrianSwordHer
+		weight_multiplier = { 
+			factor = 1 
+		}
+	}
+	text = {
+		trigger = { trait = dawn }
+		localisation_key = ValyrianSworddawn
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = ice }
+		localisation_key = ValyrianSwordice
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { 
+			OR = {
+				trait = longclaw
+				trait = longclaw_snow
+			}	
+		}
+		localisation_key = ValyrianSwordlongclaw
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = blackfyre }
+		localisation_key = ValyrianSwordblackfyre
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = lightbringer }
+		localisation_key = ValyrianSwordlightbringer
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = brightroar }
+		localisation_key = ValyrianSwordbrightroar
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = heartsbane }
+		localisation_key = ValyrianSwordheartsbane
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = nightfall }
+		localisation_key = ValyrianSwordnightfall
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = darksister }
+		localisation_key = ValyrianSworddarksister
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = ladyforlorn }
+		localisation_key = ValyrianSwordladyforlorn
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = redrain }
+		localisation_key = ValyrianSwordredrain
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = widowswail }
+		localisation_key = ValyrianSwordwidowswail
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = oathkeeper }
+		localisation_key = ValyrianSwordoathkeeper
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = crabspincer }
+		localisation_key = ValyrianSwordcrabspincer
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = strangers_mercy }
+		localisation_key = ValyrianSwordstrangers_mercy
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = anger }
+		localisation_key = ValyrianSwordanger
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = black_death }
+		localisation_key = ValyrianSwordblack_death
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = compassion }
+		localisation_key = ValyrianSwordcompassion
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = blackpaw }
+		localisation_key = ValyrianSwordblackpaw
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = del_pino }
+		localisation_key = ValyrianSworddel_pino
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = el_swordo }
+		localisation_key = ValyrianSwordel_swordo
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = gold_sword }
+		localisation_key = ValyrianSwordgold_sword
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = happyness }
+		localisation_key = ValyrianSwordhappyness
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = hubris }
+		localisation_key = ValyrianSwordhubris
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = justice }
+		localisation_key = ValyrianSwordjustice
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = kingmaker }
+		localisation_key = ValyrianSwordkingmaker
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = passion }
+		localisation_key = ValyrianSwordpassion
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = rage }
+		localisation_key = ValyrianSwordrage
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = sightblinder }
+		localisation_key = ValyrianSwordsightblinder
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = the_monarchist }
+		localisation_key = ValyrianSwordthe_monarchist
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = the_usurper }
+		localisation_key = ValyrianSwordthe_usurper
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = worldeater }
+		localisation_key = ValyrianSwordworldeater
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = worlds_envy }
+		localisation_key = ValyrianSwordworlds_envy
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = vigilance }
+		localisation_key = ValyrianSwordvigilance
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = orphan_maker }
+		localisation_key = ValyrianSwordorphan_maker
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = truth }
+		localisation_key = ValyrianSwordtruth
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = lamentation }
+		localisation_key = ValyrianSwordlamentation
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = poison }
+		localisation_key = ValyrianSwordpoison
+		weight_multiplier = { factor = 1000 }
+	}
+}
+
+defined_text = { #First, Second, Third etc
+	name = GetRegnalOrdinal
+	
+	text = { 
+		trigger = { 
+			primary_title = {
+				NOT = {
+					any_previous_holder = {
+						count = 2
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalFirst
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 2
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 3
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalSecond
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 3
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 4
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalThird
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 4
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 5
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalFourth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 5
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 6
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalFifth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 6
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 7
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalSixth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 7
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 8
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalSeventh
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 8
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 9
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalEighth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 9
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 10
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalNinth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 10
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 11
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 11
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 12
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalEleventh
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 12
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 13
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwelth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 13
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 14
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalThirteenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 14
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 15
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalFourteenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 15
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 16
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalFifteenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 16
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 17
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalSixteenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 17
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 18
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalSeventeenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 18
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 19
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalEighteenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 19
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 20
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalNineteenth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 20
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 21
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwetienth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 21
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 22
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentyfirst
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 22
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 23
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentysecond
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 23
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 24
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentythird
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 24
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 25
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentyfourth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 25
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 26
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentyfifth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 26
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 27
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentysixth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 27
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 28
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentyseventh
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 28
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 29
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentyeighth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 29
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 30
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalTwentyninth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 30
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 31
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalThirtieth
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 31
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 32
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalThirtyfirst
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 32
+					same_regnal_name = PREVPREV
+				}
+				NOT = {
+					any_previous_holder = {
+						count = 33
+						same_regnal_name = PREVPREV
+					}
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalThirtysecond
+	}
+	text = { 
+		trigger = { 
+			primary_title = {
+				any_previous_holder = {
+					count = 33
+					same_regnal_name = PREVPREV
+				}
+			}
+		}
+		localisation_key = RegnalOrdinalLarge
+	}
+}
+#Skinchanger animal
+defined_text = {
+	name = GetAnimalCompanion
+	
+	text = { 
+		localisation_key = AnimalCompanion
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = {
+		trigger = { trait = crow }
+		localisation_key = AnimalCompanioncrow
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { trait = wolf }
+		localisation_key = AnimalCompanionwolf
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = sea_lion }
+		localisation_key = AnimalCompanionsea_lion
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = whale }
+		localisation_key = AnimalCompanionwhale
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = eagle }
+		localisation_key = AnimalCompanioneagle
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = shadowcat }
+		localisation_key = AnimalCompanionshadowcat
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = boar }
+		localisation_key = AnimalCompanionboar
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = snowbear }
+		localisation_key = AnimalCompanionsnowbear
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = direwolf }
+		localisation_key = AnimalCompaniondirewolf
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = dog }
+		localisation_key = AnimalCompaniondog
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { trait = brownbear }
+		localisation_key = AnimalCompanionbrownbear
+		weight_multiplier = { factor = 1000 }
+	}
+}
+#Ship name, must have find_ship_name_effect = yes in immediate, prints (flag)ship (name) so it can be used to display just ship or a specific name
+#use it as 'the [Root.GetShipName] has sunk' to display 'the ship has sunk' if no flagship or to display 'the flagship 'Crowed Stag' has sunk'
+defined_text = {
+	name = GetShipName
+	
+	text = {
+		localisation_key = ShipName_no_flagship
+		weight_multiplier = { factor = 1 }
+	}	
+	text = {
+		trigger = { has_character_flag = flagship_name_SELF }
+		localisation_key = ShipName_flagship_name_SELF
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { has_character_flag = flagship_name_FATHER }
+		localisation_key = ShipName_flagship_name_FATHER
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { has_character_flag = flagship_name_SPOUSE }
+		localisation_key = ShipName_flagship_name_SPOUSE
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { has_character_flag = flagship_name_GOD }
+		localisation_key = ShipName_flagship_name_GOD
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { has_character_flag = flagship_name_DYNASTY }
+		localisation_key = ShipName_flagship_name_DYNASTY
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { has_character_flag = flagship_name_PROVINCE }
+		localisation_key = ShipName_flagship_name_PROVINCE
+		weight_multiplier = { factor = 1000 }
+	}	
+	text = {
+		trigger = { 
+			OR = {
+				has_character_modifier = enormous_flagship
+				has_character_modifier = regular_flagship
+				has_character_modifier = small_flagship
+			}
+			NOR = {
+				has_character_flag = flagship_name_SELF
+				has_character_flag = flagship_name_FATHER
+				has_character_flag = flagship_name_SPOUSE
+				has_character_flag = flagship_name_GOD
+				has_character_flag = flagship_name_PROVINCE
+				has_character_flag = flagship_name_DYNASTY
+			}
+		}
+		localisation_key = ShipName_flagship_name_TARGET
+		weight_multiplier = { factor = 1000 }
+	}
+	text = {
+		trigger = { 
+			has_character_flag = wikid_no_take_flagship
+		}
+		localisation_key = ShipName_no_flagship
+		weight_multiplier = { factor = 10000 }
+	}
+}
+defined_text = {
+	name = GetDragonColour
+	
+	text = { 
+		localisation_key = DragonColour_Black
+		trigger = { 
+			OR = {
+				trait = dragon_1
+				character = 77990001
+				trait = dragon_17
+				trait = dragon_23
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Green
+		trigger = { 
+			OR = {
+				trait = dragon_2 
+				trait = dragon_8
+				trait = dragon_16
+				trait = dragon_25
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Cream
+		trigger = { trait = dragon_3 }
+	}
+	text = { 
+		localisation_key = DragonColour_Red
+		trigger = { 
+			OR = {
+				trait = dragon_4 
+				trait = dragon_9
+				trait = dragon_20
+				trait = dragon_22
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Scarlet
+		trigger = { trait = dragon_9 }
+	}
+	text = { 
+		localisation_key = DragonColour_Silver
+		trigger = { trait = dragon_5 }
+	}
+	text = { 
+		localisation_key = DragonColour_Steel
+		trigger = { trait = dragon_5 }
+	}
+	text = { 
+		localisation_key = DragonColour_White
+		trigger = { 
+			OR = {
+				trait = dragon_6 
+				trait = dragon_14
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Bronze
+		trigger = { 
+			OR = {
+				trait = dragon_7 
+				trait = dragon_24
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Yellow
+		trigger = { trait = dragon_10 }
+	}
+	text = { 
+		localisation_key = DragonColour_Golden
+		trigger = { 
+			OR = {
+				trait = dragon_11 
+				trait = dragon_21
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Blue
+		trigger = { 
+			OR = {
+				trait = dragon_12 
+				trait = dragon_26
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Brown
+		trigger = { 
+			OR = {
+				trait = dragon_13 
+				trait = dragon_24
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Purple
+		trigger = { 
+			OR = {
+				trait = dragon_15 
+				trait = dragon_18
+			}	
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Dark
+		trigger = { 
+			OR = {
+				trait = dragon_17
+				trait = dragon_23
+			}
+		}
+	}
+	text = { 
+		localisation_key = DragonColour_Orange
+		trigger = { trait = dragon_19 }
+	}
+	text = { 
+		localisation_key = DragonColour_Amber
+		trigger = { trait = dragon_19 }
+	}
+	text = { 
+		localisation_key = DragonColour_Crimson
+		trigger = { 
+			OR = {
+				trait = dragon_20 
+				trait = dragon_22
+			}	
+		}
+	}	
+	text = { 
+		localisation_key = DragonColour_Emerald
+		trigger = { trait = dragon_25	}
+	}
+	text = { 
+		localisation_key = DragonColour_Sapphire
+		trigger = { trait = dragon_26	}
+	}
+}
+#House Words, when used it must be in a seperate option with the trigger has_house_words_trigger = yes
+#If more canon words are revealed add them here and add the dynasty to the scripted trigger
+defined_text = {
+	name = GetHouseWords
+	
+	text = { 
+		localisation_key = HouseWords_Allyrion
+		trigger = { dynasty = 9 }
+	}
+	text = { 
+		localisation_key = HouseWords_Ambrose
+		trigger = { dynasty = 297 }
+	}
+	text = { 
+		localisation_key = HouseWords_Arryn
+		trigger = { 
+			OR = {
+				dynasty = 178
+				dynasty = 8000178
+			}
+		}
+	}
+	text = { 
+		localisation_key = HouseWords_Ashford
+		trigger = { dynasty = 265 }
+	}
+	text = { 
+		localisation_key = HouseWords_Baratheon
+		trigger = { 
+			OR = {
+				dynasty = 317
+				dynasty = 1544
+			}
+		}
+	}
+	text = { 
+		localisation_key = HouseWords_Beesbury
+		trigger = { dynasty = 282 }
+	}
+	text = { 
+		localisation_key = HouseWords_Bolton
+		trigger = { dynasty = 87 }
+	}
+	text = { 
+		localisation_key = HouseWords_Buckwell
+		trigger = { dynasty = 34 }
+	}
+	text = { 
+		localisation_key = HouseWords_Bulwer
+		trigger = { dynasty = 284 }
+	}
+	text = { 
+		localisation_key = HouseWords_Caron
+		trigger = { dynasty = 301 }
+	}
+	text = { 
+		localisation_key = HouseWords_Cerwyn
+		trigger = { dynasty = 61 }
+	}
+	text = { 
+		localisation_key = HouseWords_Codd
+		trigger = { dynasty = 174419 }
+	}
+	text = { 
+		localisation_key = HouseWords_Crakehall
+		trigger = { dynasty = 227 }
+	}
+	text = { 
+		localisation_key = HouseWords_Egen
+		trigger = { dynasty = 175 }
+	}
+	text = { 
+		localisation_key = HouseWords_Flint
+		trigger = { dynasty = 84 }
+	}
+	text = { 
+		localisation_key = HouseWords_Follard
+		trigger = { dynasty = 21 }
+	}
+	text = { 
+		localisation_key = HouseWords_Footly
+		trigger = { dynasty = 248 }
+	}
+	text = { 
+		localisation_key = HouseWords_Forrester
+		trigger = { dynasty = 1443 }
+	}
+	text = { 
+		localisation_key = HouseWords_Fossoway #of Cider Hall
+		trigger = { dynasty = 261 }
+	}
+	text = { 
+		localisation_key = HouseWords_Fowler
+		trigger = { dynasty = 14 }
+	}
+	text = { 
+		localisation_key = HouseWords_Graceford
+		trigger = { dynasty = 242 }
+	}
+	text = { 
+		localisation_key = HouseWords_Grandison
+		trigger = { dynasty = 308 }
+	}
+	text = { 
+		localisation_key = HouseWords_Greyjoy
+		trigger = { dynasty = 107 }
+	}
+	text = { 
+		localisation_key = HouseWords_Hastwyck
+		trigger = { dynasty = 267 }
+	}
+	text = { 
+		localisation_key = HouseWords_Hightower
+		trigger = { dynasty = 285 }
+	}
+	text = { 
+		localisation_key = HouseWords_Hornwood
+		trigger = { dynasty = 83 }
+	}
+	text = { 
+		localisation_key = HouseWords_Jordayne
+		trigger = { dynasty = 10 }
+	}
+	text = { 
+		localisation_key = HouseWords_Karstark
+		trigger = { dynasty = 89 }
+	}
+	text = { 
+		localisation_key = HouseWords_Lannister
+		trigger = { dynasty = 190 }
+	}
+	text = { 
+		localisation_key = HouseWords_Lonmouth
+		trigger = { dynasty = 305 }
+	}
+	text = { 
+		localisation_key = HouseWords_Marbrand
+		trigger = { dynasty = 212 }
+	}
+	text = { 
+		localisation_key = HouseWords_Martell
+		trigger = { dynasty = 1 }
+	}
+	text = { 
+		localisation_key = HouseWords_Mormont
+		trigger = { dynasty = 102 }
+	}
+	text = { 
+		localisation_key = HouseWords_Mallister
+		trigger = { dynasty = 128 }
+	}
+	text = { 
+		localisation_key = HouseWords_Merryweather
+		trigger = { dynasty = 263 }
+	}
+	text = { 
+		localisation_key = HouseWords_Mooton
+		trigger = { dynasty = 138 }
+	}
+	text = { 
+		localisation_key = HouseWords_Oakheart
+		trigger = { dynasty = 237 }
+	}
+	text = { 
+		localisation_key = HouseWords_Peckledon
+		trigger = { dynasty = 219 }
+	}
+	text = { 
+		localisation_key = HouseWords_Penrose
+		trigger = { dynasty = 320 }
+	}
+	text = { 
+		localisation_key = HouseWords_Piper
+		trigger = { dynasty = 157 }
+	}
+	text = { 
+		localisation_key = HouseWords_Plumm
+		trigger = { dynasty = 226 }
+	}
+	text = { 
+		localisation_key = HouseWords_Redfort
+		trigger = { dynasty = 183 }
+	}
+	text = { 
+		localisation_key = HouseWords_Royce
+		trigger = { dynasty = 187 }
+	}
+	text = { 
+		localisation_key = HouseWords_Sarsfield
+		trigger = { dynasty = 233 }
+	}
+	text = { 
+		localisation_key = HouseWords_Sarwyck
+		trigger = { dynasty = 2159 }
+	}
+	text = { 
+		localisation_key = HouseWords_Serrett
+		trigger = { dynasty = 221 }
+	}
+	text = { 
+		localisation_key = HouseWords_Smallwood
+		trigger = { dynasty = 156 }
+	}
+	text = { 
+		localisation_key = HouseWords_Stark
+		trigger = { dynasty = 59 }
+	}
+	text = { 
+		localisation_key = HouseWords_Stokeworth
+		trigger = { dynasty = 35 }
+	}
+	text = { 
+		localisation_key = HouseWords_Swygert
+		trigger = { dynasty = 361 }
+	}
+	text = { 
+		localisation_key = HouseWords_Swyft
+		trigger = { dynasty = 228 }
+	}
+	text = { 
+		localisation_key = HouseWords_Tallhart
+		trigger = { dynasty = 101 }
+	}
+	text = { 
+		localisation_key = HouseWords_Targaryen
+		trigger = { dynasty = 496 }
+	}
+	text = { 
+		localisation_key = HouseWords_Tarly
+		trigger = { dynasty = 296 }
+	}
+	text = { 
+		localisation_key = HouseWords_Tollett
+		trigger = { dynasty = 162 }
+	}
+	text = { 
+		localisation_key = HouseWords_Toyne
+		trigger = { dynasty = 307 }
+	}
+	text = { 
+		localisation_key = HouseWords_Trant
+		trigger = { dynasty = 304 }
+	}
+	text = { 
+		localisation_key = HouseWords_Tully
+		trigger = { dynasty = 159 }
+	}
+	text = { 
+		localisation_key = HouseWords_Tyrell
+		trigger = { dynasty = 253 }
+	}
+	text = { 
+		localisation_key = HouseWords_Velaryon
+		trigger = { dynasty = 52 }
+	}
+	text = { 
+		localisation_key = HouseWords_Waxley
+		trigger = { dynasty = 189 }
+	}
+	text = { 
+		localisation_key = HouseWords_Wendwater
+		trigger = { dynasty = 44 }
+	}
+	text = { 
+		localisation_key = HouseWords_Wensington
+		trigger = { dynasty = 333 }
+	}
+	text = { 
+		localisation_key = HouseWords_Westerling
+		trigger = { dynasty = 199 }
+	}
+	text = { 
+		localisation_key = HouseWords_Westford
+		trigger = { dynasty = 2158 }
+	}
+	text = { 
+		localisation_key = HouseWords_Whitehill
+		trigger = { dynasty = 70 }
+	}
+	text = { 
+		localisation_key = HouseWords_Wode
+		trigger = { dynasty = 136 }
+	}
+	text = { 
+		localisation_key = HouseWords_Wydman
+		trigger = { dynasty = 180 }
+	}
+	text = { 
+		localisation_key = HouseWords_Yronwood
+		trigger = { dynasty = 12 }
+	}
+}
+defined_text = {
+	name = GetConsortName
+	
+	text = { 
+		localisation_key = Consort_salt_wife
+		trigger = { 
+			OR = {
+				culture = ironborn
+				religion = drowned_god
+			}			
+		}
+	}
+	text = { 
+		localisation_key = Consort_paramour
+		trigger = { 
+			culture_group = dornish			
+		}
+	}
+	text = { 
+		localisation_key = Consort_concubine
+		trigger = { 
+			NOR = {
+				culture = ironborn
+				religion = drowned_god
+				culture_group = dornish
+			}			
+		}
+	}
+}
+defined_text = {
+	name = GetConsortNameCap
+	
+	text = { 
+		localisation_key = Consort_salt_wifeCAP
+		trigger = { 
+			OR = {
+				culture = ironborn
+				religion = drowned_god
+			}			
+		}
+	}
+	text = { 
+		localisation_key = Consort_paramourCAP
+		trigger = { 
+			culture_group = dornish			
+		}
+	}
+	text = { 
+		localisation_key = Consort_concubineCAP
+		trigger = { 
+			NOR = {
+				culture = ironborn
+				religion = drowned_god
+				culture_group = dornish
+			}			
+		}
+	}
+}
+defined_text = {
+	name = GetTitledFirstNameWithDynasty
+	
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyA
+		trigger = {
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyB #Exclude dynasty
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyC #bastard name
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+}		
+defined_text = {
+	name = GetTitledFirstNameWithDynastyNoRegnal
+	
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyNoRegnalA
+		trigger = {
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyNoRegnalB #Exclude dynasty
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyNoRegnalC #bastard name
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+}	
+defined_text = {
+	name = GetTitledFirstNameWithNickAndDynasty
+	
+	text = { 
+		localisation_key = GetTitledFirstNameWithNickAndDynastyA
+		trigger = {
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithNickAndDynastyB #Exclude dynasty
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+		}
+	}
+}	
+defined_text = {
+	name = GetTitledFirstNameWithDynastyAndTitle
+	
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleA
+		trigger = {
+			is_ruler = yes
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleB #Exclude dynasty
+		trigger = {
+			is_ruler = yes
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleC #bastard name
+		trigger = {
+			is_ruler = yes
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleD
+		trigger = {
+			is_ruler = no
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleE #Exclude dynasty
+		trigger = {
+			is_ruler = no
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleF #bastard name
+		trigger = {
+			is_ruler = no
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+}		
+defined_text = {
+	name = GetTitledFirstNameWithDynastyAndTitleNoRegnal
+	
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleNoRegnalA
+		trigger = {
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleNoRegnalB #Exclude dynasty
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleNoRegnalC #bastard name
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleNoRegnalD
+		trigger = {
+			is_ruler = no
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleNoRegnalE #Exclude dynasty
+		trigger = {
+			is_ruler = no
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetTitledFirstNameWithDynastyAndTitleNoRegnalF #bastard name
+		trigger = {
+			is_ruler = no
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+}
+defined_text = {
+	name = GetFirstNameWithDynasty
+	
+	text = { 
+		localisation_key = GetFirstNameWithDynastyA
+		trigger = {
+			NOT = { trait = bastard } 
+			NOT = { dynasty = 0 }
+		}
+	}
+	text = { 
+		localisation_key = GetFirstNameWithDynastyB #Exclude dynasty
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = no
+		}
+	}
+	text = { 
+		localisation_key = GetFirstNameWithDynastyC #bastard name
+		trigger = {
+			OR = {
+				trait = bastard
+				dynasty = 0
+			}	
+			has_bastard_nickname_trigger = yes
+		}
+	}
+}	
+defined_text = {
+	name = GetTrialCharge
+	text = { 
+		localisation_key = GetTrialCharge_Sedition #Generic Default
+		weight_multiplier = { factor = 1 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Mutilation
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_me }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_me }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_mutilated_me }
+					}
+				}
+			}			
+		}
+		weight_multiplier = { factor = 9999 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_MutilatedRelativeA
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_son }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_spouse }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_child }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_spouse }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_mutilated_family }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_mutilated_close_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_friend }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_child }
+					}
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = yes }
+		}
+		weight_multiplier = { factor = 5000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_MutilatedRelativeB #no victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_son }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_castrated_spouse }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_child }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blinded_spouse }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_mutilated_family }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_mutilated_close_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_friend }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_flayed_child }
+					}
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = no }
+		}
+		weight_multiplier = { factor = 1000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Torture
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_me }
+				}
+			}			
+		}
+		weight_multiplier = { factor = 9999 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_TortureB
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						has_character_modifier = the_cruel
+						has_character_modifier = master_impaler
+						has_character_modifier = suspected_impaler
+						trait = impaler	
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_peasant_hunting }
+					}	
+				}	
+			}	
+		}
+		weight_multiplier = { factor = 25 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_TorturedRelativeA
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_family }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_close_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_friend }
+					}
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = yes }
+		}
+		weight_multiplier = { factor = 5000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_TorturedRelativeB #no victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_family }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_close_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_tortured_friend }
+					}
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = no }
+		}
+		weight_multiplier = { factor = 1000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Rape
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_me }	
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_consort }
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage }
+				}
+			}			
+		}
+		weight_multiplier = { factor = 9999 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Rape
+		trigger = {		
+			event_target:accused = {
+				has_character_modifier = took_illegal_first_night
+			}			
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_RapedRelativeA
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_wife_consort }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_relative_consort }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_spouse }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_friend }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_child }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_friend }
+					}
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = yes }
+		}
+		weight_multiplier = { factor = 5000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_RapedRelativeB #no victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_wife_consort }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_relative_consort }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_spouse }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_upon_friend }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_child }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_kin }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_lover }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_forced_marriage_friend }
+					}
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = no }
+		}
+		weight_multiplier = { factor = 1000 }		
+	}
+	
+	text = { 
+		localisation_key = GetTrialCharge_Abused
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_abused_opinion_trigger = yes
+				}
+			}			
+		}
+		weight_multiplier = { factor = 500 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_AbusedRelativeA
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_abused_relative_opinion_trigger = yes
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = yes }
+		}
+		weight_multiplier = { factor = 100 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_AbusedRelativeB #no victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_abused_relative_opinion_trigger = yes
+				}
+			}	
+			event_target:third_party_abuse_victim = { always = no }
+		}
+		weight_multiplier = { factor = 100 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_MurderA
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_murder_opinion_trigger = yes
+				}
+			}	
+			event_target:third_party_murder_victim = { always = yes }			
+		}
+		weight_multiplier = { factor = 9999 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_MurderB #No victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_murder_opinion_trigger = yes
+				}
+			}	
+			event_target:third_party_murder_victim = { always = no }			
+		}
+		weight_multiplier = { factor = 5000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_MurderC #No victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						has_character_modifier = suspected_assassin
+						has_character_modifier = known_murderer
+						reverse_has_opinion_modifier = { who = PREV modifier = attempted_murder_of_vassal }
+						reverse_has_opinion_modifier = { who = PREV modifier = evil_murderer }
+						reverse_has_opinion_modifier = { who = PREV modifier = suspect_of_murder }
+						reverse_has_opinion_modifier = { who = PREV modifier = accused_of_murder }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_murderer }
+					}	
+				}	
+			}	
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_AttemptedMurderA
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_attempted_murder_opinion_trigger = yes
+				}
+			}	
+			event_target:third_party_murder_attempt_victim = { always = yes }			
+		}
+		weight_multiplier = { factor = 5000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_AttemptedMurderB #No victim found
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_attempted_murder_opinion_trigger = yes
+				}
+			}	
+			event_target:third_party_murder_attempt_victim = { always = no }			
+		}
+		weight_multiplier = { factor = 1000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Treason
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_treason_opinion_trigger = yes
+				}
+			}			
+		}
+		weight_multiplier = { factor = 1000 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Adultery
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						PREV_has_adultery_opinion_trigger = yes
+						has_character_modifier = adulterer
+						has_character_modifier = adulteress
+						has_character_modifier = adulterous_priest
+						has_character_modifier = unfaithful_rumors
+					}	
+				}
+			}			
+		}
+		weight_multiplier = { factor = 500 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Looting
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_looted }
+				}
+			}			
+		}
+		weight_multiplier = { factor = 500 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Slaving
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_slaver }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_illegal_slave_trader }
+					}	
+				}
+			}			
+		}
+		weight_multiplier = { factor = 500 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Theft
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_thief }
+				}
+			}			
+		}
+		weight_multiplier = { factor = 250 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_War
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					reverse_has_opinion_modifier = { who = PREV modifier = declared_war }
+				}
+			}			
+		}
+		weight_multiplier = { factor = 250 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Corruption
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_corrupt }
+						reverse_has_opinion_modifier = { who = PREV modifier = abuse_of_office }
+					}	
+				}
+			}			
+		}
+		weight_multiplier = { factor = 250 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Blackmail
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					PREV_has_blackmail_opinion_trigger = yes
+				}
+			}			
+		}
+		weight_multiplier = { factor = 250 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Witchcraft
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_witch }
+				}
+			}			
+		}
+		weight_multiplier = { factor = 250 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Blasphemy
+		trigger = {		
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_accused_apostate }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_burned_godswood }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_burned_temple }
+						AND = {
+							PREV = { religion = the_seven }
+							trait = excommunicated
+						}	
+						has_character_modifier = suspected_demon_spawn
+						AND = {
+							religion = PREV
+							PREV = { NOT = { trait = cynical } }
+							OR = {
+								has_character_modifier = known_satanist
+								has_character_modifier = accused_apostate
+								has_character_modifier = modifier_witch
+								has_character_modifier = esoteric_religion
+								has_character_modifier = voice_of_satan
+								has_character_modifier = highly_suspect	
+								has_character_modifier = impious_teachings
+								has_character_modifier = consorts_with_mystics
+								has_character_modifier = consorts_with_infidels
+							}
+						}
+						AND = {
+							NOT = { religion = PREV }
+							OR = {
+								trait = chosen_by_rhllor
+								trait = resurrected_by_rhllor
+								AND = {
+									has_priest_trait_trigger = yes
+									PREV = { NOT = { trait = cynical } }
+								}
+							}
+						}
+						AND = {
+							PREV = { 
+								NOR = { 
+									religion = old_gods
+									religion_group = wildling_religion
+								}	
+							}
+							OR = {
+								has_character_modifier = suspected_skinchanger
+								trait = greensight
+							}
+						}
+					}	
+				}
+			}			
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Incest
+		trigger = {		
+			event_target:accuser = { NOT = { religion = valyrian_rel } }
+			event_target:accused = {
+				NOT = { religion = valyrian_rel }
+				OR = {
+					has_character_modifier = incestuous_adulterer
+					has_character_modifier = incestuous_adulteress
+					has_character_modifier = suspected_of_incest
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_proven_incest }
+				}	
+			}		
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Sodomy
+		trigger = {		
+			event_target:accuser = { 
+				NOT = { religion = summer_rel } 
+				NOT = { culture_group = dornish }
+			}
+			event_target:accused = {
+				has_character_modifier = known_sodomite	
+			}		
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Cannabalism
+		trigger = {		
+			event_target:accuser = { 
+				NOT = { trait = cannibal_trait }
+			}
+			event_target:accused = {
+				trait = cannibal_trait
+			}		
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Desertion
+		trigger = {		
+			event_target:accuser = { 
+				NOT = { trait = wildling }
+				event_target:accused = {
+					trait = deserter
+				}
+			}			
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Piracy
+		trigger = {	
+			event_target:accuser = { 
+				NOT = { trait = pirate }
+				event_target:accused = {
+					trait = pirate
+				}
+			}			
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_OathBreaking
+		trigger = {	
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						PREV_has_oath_breaking_opinion_trigger = yes
+						has_character_modifier = truce_breaker	
+						has_character_modifier = alliance_breaker			
+						has_character_modifier = broken_non_aggression_pact_char_modifier
+						has_character_modifier = NW_broken_vows
+					}
+				}				
+			}	
+						
+		}
+		weight_multiplier = { factor = 50 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_DebtDefault
+		trigger = {	
+			event_target:accuser = { 
+				event_target:accused = {
+					OR = {
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_cancelled_loan }
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_loan_default }
+						has_character_modifier = offended_moneylenders	
+						has_character_modifier = gambler
+					}
+				}				
+			}	
+						
+		}
+		weight_multiplier = { factor = 25 }		
+	}
+	text = { 
+		localisation_key = GetTrialCharge_Drunkenness
+		trigger = {	
+			event_target:accuser = { 
+				NOT = { trait = dunkard }				
+			}	
+			event_target:accused = {
+				OR = {
+					has_character_modifier = drunken_tournament
+					has_character_modifier = drunk_commander
+					has_character_modifier = slept_in_church
+				}
+			}			
+		}
+		weight_multiplier = { factor = 25 }		
+	}	
+}	
+defined_text = {
+	name = GetSpokenLanguage
+	
+	text = { 
+		localisation_key = GetSpokenLanguage_Culture
+		trigger = {
+			NOR = {
+				culture_group = andal
+				culture_group = first_men
+				culture_group = iron_isles_culture
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+				AND = { #high valyrian only speak common tongue in westeros
+					culture = high_valyrian
+					OR = {
+						capital_scope = { region = world_westeros }
+						AND = {
+							is_ruler = no
+							liege = { capital_scope = { region = world_westeros } }
+						}
+					}
+				}
+				culture_group = ghiscari_group
+				culture_group = free_cities
+				culture = mantaryan
+				culture = tolosi
+				culture = elyrian
+				culture_group = free_folk
+				culture = giant
+				culture_group = summer_islands
+				culture = children_forest
+				culture_group = sarnor_group
+				culture_group = hyrkoon_group
+			}
+		}
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_CultureGroup
+		trigger = {
+			#OR = {
+				culture_group = hyrkoon_group
+			#}
+		}
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_CommonTongue
+		trigger = {
+			OR = {
+				culture_group = andal
+				culture_group = first_men
+				culture_group = iron_isles_culture
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+				AND = { #high valyrian only speak common tongue in westeros
+					culture = high_valyrian
+					OR = {
+						capital_scope = { region = world_westeros }
+						AND = {
+							is_ruler = no
+							liege = { capital_scope = { region = world_westeros } }
+						}
+					}
+				}
+			}
+		}		
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_BastardValyrian
+		trigger = {
+			OR = {
+				culture_group = ghiscari_group
+				culture_group = free_cities
+				culture = mantaryan
+				culture = tolosi
+				culture = elyrian
+			}
+		}		
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_OldTongue
+		trigger = {
+			OR = {
+				culture_group = free_folk
+				culture = giant
+			}
+		}		
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_SummerTongue
+		trigger = {
+			culture_group = summer_islands
+		}		
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_TrueTongue
+		trigger = {
+			culture = children_forest
+		}		
+	}
+	text = { 
+		localisation_key = GetSpokenLanguage_TagaezFen
+		trigger = {
+			culture_group = sarnor_group
+		}		
+	}
+}	
+defined_text = {
+	name = GetMyPhysicianName
+	
+	text = { 
+		localisation_key = GetMyPhysicianName_Current
+		trigger = {
+			job_physician = { always = yes }
+		}
+	}
+	text = { 
+		localisation_key = GetMyPhysicianName_Physician
+		trigger = {
+			NOT = { job_physician = { always = yes } }
+		}
+	}
+}	
+defined_text = {
+	name = GetAlcoholicDrink
+	
+	#Wines
+	text = { 
+		localisation_key = AlcoholicDrink_RedWine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_tyrosh
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_WhiteWine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_tyrosh
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_StrongWine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_tyrosh
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 10
+				trait = drunkard
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_MulledWine
+		trigger = {
+			trait = nightswatch
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_PepperedWine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_tyrosh
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_BlackberryWine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_tyrosh
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	
+	text = { 
+		localisation_key = AlcoholicDrink_ArborGold
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				any_demesne_province = {
+					duchy = { title = d_the_arbor }	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 2
+				capital_scope = { duchy = { title = d_the_arbor } }
+			}
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_far_east }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_ReachRed
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_reach
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_far_east }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_DornishRed
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_dorne
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_far_east }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_LyseneSweetRed
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_lys
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_VolanteneSweetRed
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_volantis
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_MyrishFirewine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_myr
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_SelhorysPaleGreen
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				any_demesne_province = {
+					duchy = { title = d_selhorys }	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_PentosiPaleAmber
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_pentos
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_PaleGhiscari
+		trigger = {
+			capital_scope = {
+				region = world_ghiscar
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_QartheenDreamwine
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_qarth
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_westeros }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_ShadeoftheEvening
+		trigger = {
+			religion = qarth_warlocks
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_YiTishGolden
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_yi_ti
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_westeros }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_AsshaiGolden
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_asshai
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_westeros }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_JadeSeaGolden
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_jade_sea
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_westeros }
+			}
+		}
+	}
+	
+	#Hippocras
+	text = { 
+		localisation_key = GetHippocras
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_westeros_south
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 2.5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_far_east }
+			}
+		}
+	}
+	text = { 
+		localisation_key = GetHighgardenHippocras
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					province_id = 267
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+			modifier = {
+				factor = 0.25
+				capital_scope = { region = world_far_east }
+			}
+		}
+	}
+	
+	#Brandy
+	text = { 
+		localisation_key = AlcoholicDrink_Brandy
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_TyroshPearBrandy
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_tyrosh
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	
+	#Beer
+	text = { 
+		localisation_key = AlcoholicDrink_BrownAle
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 5
+				capital_scope = { region = world_westeros_north }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_BlackBeer
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 5
+				capital_scope = { region = world_westeros_north }
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_BarleyBeer
+		trigger = {
+			capital_scope = {
+				region = world_riverlands
+			}
+		}
+		weight_multiplier = {
+			factor = 2.5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_AutumnBeer
+		trigger = {
+			capital_scope = {
+				region = world_north
+			}
+		}
+		weight_multiplier = {
+			factor = 2.5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_WhiteHarborStout
+		trigger = {
+			capital_scope = {
+				duchy = { title = d_whiteharbor }
+			}
+		}
+		weight_multiplier = {
+			factor = 2.5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_SweetBeer
+		weight_multiplier = {
+			factor = 1
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_PepperBeer
+		trigger = {
+			culture = dothraki
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_PaleAle
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 5
+				capital_scope = { region = world_pentos }
+			}
+		}
+	}
+	#Licqour
+	text = { 
+		localisation_key = AlcoholicDrink_Rum
+		trigger = {
+			trait = pirate		
+		}	
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_SpicedRum
+		trigger = {
+			trait = pirate		
+		}
+		weight_multiplier = {
+			factor = 5
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_SpicedLicqour
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 10
+				trait = drunkard
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_PaleGreenVolanteneLiquor
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					region = world_volantis
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 5
+				trait = drunkard
+			}
+		}
+	}
+	#Other
+	text = { 
+		localisation_key = AlcoholicDrink_Mead
+		trigger = {
+			OR = {
+				wealth = 300
+				yearly_income = 100
+				capital_scope = {
+					OR = {
+						region = world_westeros_south
+						region = world_pentos
+						region = world_rhoynar
+						region = world_myr
+						region = world_tyrosh
+						region = world_lys
+						region = world_volantis
+						region = world_north_valyria
+						region = world_jade_sea
+						region = world_summer_sea
+					}	
+				}
+			}
+		}
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 5
+				capital_scope = { province_id = 283 } #honeyholt
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_Cider
+		weight_multiplier = {
+			factor = 1
+			modifier = {
+				factor = 10
+				capital_scope = { province_id = 268 } #cider hall
+			}
+		}
+	}
+	text = { 
+		localisation_key = AlcoholicDrink_MaresMilk
+		trigger = {
+			culture = dothraki
+		}
+		weight_multiplier = {
+			factor = 10
+		}
+	}
+}
+defined_text = {
+	name = GetNicknameWarrior #used in 'the wolfknight' type nicknames
+	
+	text = { 
+		localisation_key = GetNicknameWarrior_Blank #'the wolf'
+		trigger = {
+			NOT = { dynasty = 1 }
+			NOT = { dynasty = 288 }
+			NOT = { dynasty = 221 }
+			NOT = { dynasty = 253 }
+		}
+	}
+	text = { 
+		localisation_key = GetNicknameWarrior_Warrior #'the wolf warrior'
+		trigger = { NOT = { trait = knight } }
+	}
+	text = { 
+		localisation_key = GetNicknameWarrior_Knight #'the wolfknight'
+		trigger = { trait = knight }
+	}
+	text = { 
+		localisation_key = GetNicknameWarrior_Reaver #'the wolf reaver'
+		trigger = { culture = ironborn }
+	}
+	text = { 
+		localisation_key = GetNicknameWarrior_Ranger #'the wolf ranger'
+		trigger = { 
+			trait = nightswatch
+			has_character_modifier = nw_ranger
+		}
+	}
+	text = { 
+		localisation_key = GetNicknameWarrior_LordLady #'the wolf lord'
+		trigger = { 
+			is_ruler = yes
+			is_feudal = yes
+			OR = {
+				lower_tier_than = KING
+				government = feudal_government_LP
+			}
+			NOT = { trait = wildling }
+		}
+	}
+	text = { 
+		localisation_key = GetNicknameWarrior_KingQueen #'the wolf king'
+		trigger = { 
+			is_ruler = yes
+			is_feudal = yes
+			higher_tier_than = DUKE
+			OR = {
+				tier = EMPEROR
+				government = feudal_government
+			}
+		}
+	}
+}	
+defined_text = {
+	name = GetNobleName
+	
+	text = {
+		localisation_key = String_noble
+		trigger = {
+			NOR = {
+				culture_group = andal
+				culture_group = dornish
+				culture_group = first_men
+				culture_group = iron_isles_culture
+				capital_scope = { region = world_westeros }
+				culture_group = free_folk
+				culture_group = further_east
+				culture = dothraki
+				culture = brindlemen
+			}
+		}
+	}
+	text = {
+		localisation_key = String_lord
+		trigger = {
+			OR = {
+				culture_group = andal
+				culture_group = dornish
+				culture_group = first_men
+				culture_group = iron_isles_culture
+				capital_scope = { region = world_westeros }
+			}
+		}
+	}
+	text = {
+		localisation_key = String_chief
+		trigger = {
+			OR = {
+				culture_group = free_folk
+				culture_group = further_east
+				culture = brindlemen
+			}
+		}
+	}
+	text = {
+		localisation_key = String_ko
+		trigger = {
+			culture = dothraki
+		}
+	}
+	text = {
+		localisation_key = String_jhat
+		trigger = {
+			culture = jogos_nhai
+		}
+	}
+}	
+defined_text = {
+	name = GetMyCastellanName
+	
+	# text = { 
+		# localisation_key = GetMyCastellanName_Current
+		# trigger = {
+			# job_castellan = { always = yes }
+		# }
+	# }
+	text = { 
+		localisation_key = job_castellan #seneschal
+		weight_multiplier = { factor = 1 }
+	}
+	text = { 
+		localisation_key = emperor_job_castellan_andal #hand of the king
+		trigger = {
+			OR = {
+				AND = {
+					higher_tier_than = DUKE
+					government = feudal_government
+				}
+				AND = {
+					tier = EMPEROR
+					government = feudal_government_LP
+				}	
+			}	
+			OR = {
+				culture_group = andal
+				culture_group = first_men
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+			}
+			NAND = {
+				tier = KING
+				culture_group = dornish
+			}
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = emperor_job_castellan_ironborn #Lord Steward
+		trigger = {
+			OR = {
+				AND = {
+					culture_group = iron_isles_culture
+					OR = {	
+						AND = {
+							higher_tier_than = COUNT
+							government = feudal_government
+						}
+						government = feudal_government_LP
+						is_republic = yes
+					}				
+				}	
+				AND = {
+					government = noble_oligarchy
+					OR = {
+						culture_group = andal
+						culture_group = first_men
+						culture_group = iron_isles_culture
+						AND = {
+							culture_group = dornish
+							NOT = { culture = rhoynar }
+						}
+						culture = western_valyrian
+					}
+				}	
+			}				
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = city_emperor_job_castellan_andal #High Steward
+		trigger = {
+			higher_tier_than = DUKE
+			is_republic = yes	
+			OR = {
+				culture_group = andal
+				culture_group = first_men
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+			}				
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = city_job_castellan_andal #Steward
+		trigger = {
+			NOT = { higher_tier_than = DUKE }
+			is_republic = yes	
+			OR = {
+				culture_group = andal
+				culture_group = first_men
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+			}				
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = job_castellan_andal #castellan
+		trigger = {
+			OR = {
+				culture_group = andal
+				culture_group = first_men
+				culture_group = iron_isles_culture
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+				culture = high_valyrian
+			}
+			NAND = {
+				tier = KING
+				culture_group = dornish
+			}
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = emperor_job_castellan #Imperial Magister
+		trigger = {
+			tier = EMPEROR
+			is_feudal = yes
+			NOR = {
+				culture_group = andal
+				culture_group = first_men
+				culture_group = iron_isles_culture
+				AND = {
+					culture_group = dornish
+					NOT = { culture = rhoynar }
+				}
+				culture = western_valyrian
+				culture_group = valyrian
+			}
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = job_castellan_dothraki
+		trigger = {
+			culture = dothraki
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = nomadic_job_castellan_jogos_nhai
+		trigger = {
+			culture = jogos_nhai
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = job_castellan_moon_clansman
+		trigger = {
+			culture = moon_clansman
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = NW_duke_job_castellan #First Steward
+		trigger = {
+			higher_tier_than = COUNT
+			government = NW_government
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = NW_count_job_castellan #Steward
+		trigger = {
+			NOT = { higher_tier_than = COUNT }
+			government = NW_government
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = pirate_emperor_job_castellan #Vice Admiral
+		trigger = {
+			higher_tier_than = DUKE
+			government = pirate_government
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = pirate_job_castellan #Quartermaster
+		trigger = {
+			NOT = { higher_tier_than = DUKE }
+			government = pirate_government
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = job_castellan_braavosi #Chief Scribe
+		trigger = {
+			culture = braavosi
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = king_job_castellan_high_valyrian #hand of the king
+		trigger = {
+			OR = {
+				culture = high_valyrian
+				culture = western_valyrian
+			}
+			OR = {
+				AND = {
+					tier = KING
+					government = feudal_government
+				}
+				AND = {
+					tier = EMPEROR
+					capital_scope = { region = world_westeros }
+					OR = {
+						government = feudal_government
+						government = feudal_government_LP
+					}	
+				}	
+			}		
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = emperor_job_castellan_valyrian #archon
+		trigger = {
+			culture_group = valyrian
+			OR = {
+				government = feudal_government
+				government = feudal_government_LP
+				government = noble_oligarchy
+			}
+			OR = {
+				AND = {
+					tier = EMPEROR
+					NOT = { capital_scope = { region = world_westeros } }
+				}
+				AND = {
+					higher_tier_than = DUKE
+					NOR = {
+						culture = high_valyrian
+						culture = western_valyrian
+					}
+				}
+			}
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = triarchy_king_job_castellan #archon
+		trigger = {
+			government = triarch_merchant_republic_government
+			higher_tier_than = DUKE
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = job_castellan_ibbenese #First Councillor
+		trigger = {
+			culture = ibbenese
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = job_castellan_asshai #First Councillor
+		trigger = {
+			culture = asshai
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = emperor_job_castellan_yi_ti_group #Imperial Chancellor
+		trigger = {
+			culture_group = yi_ti_group
+			tier = EMPEROR
+		}
+		weight_multiplier = { factor = 99999 }
+	}
+	text = { 
+		localisation_key = job_castellan_yi_ti_group #Chancellor
+		trigger = {
+			culture_group = yi_ti_group
+			NOT = { tier = EMPEROR }
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = job_castellan_free_folk #overseer
+		trigger = {
+			culture_group = free_folk
+			NOT = { tier = EMPEROR }
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+	text = { 
+		localisation_key = emperor_job_castellan_free_folk #High overseer
+		trigger = {
+			culture_group = free_folk
+			tier = EMPEROR
+		}
+		weight_multiplier = { factor = 1000 }
+	}
+}	
+defined_text = {
+	name = GetIronThroneRealmName
+	
+	text = { 
+		localisation_key = e_iron_throne
+		trigger = { NOT = { has_global_flag = non_iron_throne_westeros } }
+	}
+	text = { 
+		localisation_key = E_WESTEROS
+		trigger = { has_global_flag = non_iron_throne_westeros }
+	}	
+}
+defined_text = {
+	name = GetIronThroneThroneName
+	
+	text = { 
+		localisation_key = String_IronThrone
+		trigger = { NOT = { has_global_flag = non_iron_throne_westeros } }
+	}
+	text = { 
+		localisation_key = String_Throne
+		trigger = { has_global_flag = non_iron_throne_westeros }
+	}	
+}	
