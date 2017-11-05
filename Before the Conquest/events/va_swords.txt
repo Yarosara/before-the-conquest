@@ -1,0 +1,347 @@
+#############################################
+#
+# Written by Rodri
+#
+#############################################
+#
+# 
+character_event = {
+	id = 251400
+	desc = "EVTDESC251400"
+	picture = GFX_evt_council
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA251400"
+		if = {
+			limit = { trait = ice }
+			custom_tooltip = { text = TOOLTIPICEWIELDER }
+		}
+		if = {
+			limit = { trait = dawn }
+			custom_tooltip = { text = TOOLTIPDAWNWIELDER }
+		}
+		if = {
+			limit = { 
+				OR = { 
+					trait = longclaw 
+					trait = longclaw_snow 
+				}	
+			}
+			custom_tooltip = { text = TOOLTIPLONGCLAWWIELDER }
+		}
+		if = {
+			limit = { trait = blackfyre }
+			custom_tooltip = { text = TOOLTIPBLACKFYREWIELDER }
+		}
+		if = {
+			limit = { trait =brightroar  }
+			custom_tooltip = { text = TOOLTIPBRIGHTROARWIELDER }
+		}
+		if = {
+			limit = { trait = heartsbane }
+			custom_tooltip = { text = TOOLTIPHEARTSBANEWIELDER }
+		}
+		if = {
+			limit = { trait = nightfall }
+			custom_tooltip = { text = TOOLTIPNIGHTFALLWIELDER }
+		}
+		if = {
+			limit = { trait = darksister }
+			custom_tooltip = { text = TOOLTIPDARKSISTERWIELDER }
+		}
+		if = {
+			limit = { trait = ladyforlorn }
+			custom_tooltip = { text = TOOLTIPLADYFORLORNWIELDER }
+		}
+		if = {
+			limit = { trait = redrain }
+			custom_tooltip = { text = TOOLTIPREDRAINWIELDER }
+		}
+		if = {
+			limit = { trait = widowswail }
+			custom_tooltip = { text = TOOLTIPWIDOWSWAILWIELDER }
+		}
+		if = {
+			limit = { trait = oathkeeper }
+			custom_tooltip = { text = TOOLTIPOATHKEEPERWIELDER }
+		}
+		if = {
+			limit = { trait = crabspincer }
+			custom_tooltip = { text = TOOLTIPCRABSPINCERWIELDER }
+		}
+		if = {
+			limit = { trait = strangers_mercy }
+			custom_tooltip = { text = TOOLTIPSTRANGERSMERCYWIELDER }
+		}
+		if = {
+			limit = { trait = palemoon }
+			custom_tooltip = { text = TOOLTIPPALEMOONWIELDER }
+		}
+		if = {
+			limit = { trait = vigilance }
+			custom_tooltip = { text = TOOLTIPVIGILANCEWIELDER }
+		}
+		if = {
+			limit = { trait = orphan_maker }
+			custom_tooltip = { text = TOOLTIPORPHANMAKERWIELDER }
+		}
+		if = {
+			limit = { trait = truth }
+			custom_tooltip = { text = TOOLTIPTRUTHWIELDER }
+		}
+		if = {
+			limit = { trait = lamentation }
+			custom_tooltip = { text = TOOLTIPLAMENTATIONWIELDER }
+		}
+		if = {
+			limit = { trait = poison }
+			custom_tooltip = { text = TOOLTIPPOISONWIELDER }
+		}
+		ice = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPICEWIELDER }
+		}
+		dawn = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPDAWNWIELDER }
+		}
+		longclaw = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPLONGCLAWWIELDER }
+		}
+		longclaw_snow = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPLONGCLAWWIELDER }
+		}
+		blackfyre = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPBLACKFYREWIELDER }
+		}
+		brightroar = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPBRIGHTROARWIELDER }
+		}
+		heartsbane = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPHEARTSBANEWIELDER }
+		}
+		nightfall = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPNIGHTFALLWIELDER }
+		}
+		darksister = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPDARKSISTERWIELDER }
+		}
+		ladyforlorn = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPLADYFORLORNWIELDER }
+		}
+		redrain = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPREDRAINWIELDER }
+		}
+		
+		widowswail = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPWIDOWSWAILWIELDER }
+		}
+		
+		oathkeeper = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPOATHKEEPERWIELDER }
+		}
+		crabspincer = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPCRABSPINCERWIELDER }
+		}
+		strangers_mercy = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPSTRANGERSMERCYWIELDER }
+		}
+		vigilance = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPVIGILANCEWIELDER }
+		}
+		orphan_maker = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPORPHANMAKERWIELDER }
+		}
+		truth = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPTRUTHWIELDER }
+		}
+		lamentation = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPLAMENTATIONWIELDER }
+		}
+		poison = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPPOISONWIELDER }
+		}
+		if = {
+			limit = { trait = anger }
+			custom_tooltip = { text = TOOLTIPANGERWIELDER }
+		}
+		anger = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPANGERWIELDER }
+		}
+		if = {
+			limit = { trait = black_death }
+			custom_tooltip = { text = TOOLTIPBLACK_DEATHWIELDER }
+		}
+		black_death = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPBLACK_DEATHWIELDER }
+		}
+		if = {
+			limit = { trait = compassion }
+			custom_tooltip = { text = TOOLTIPCOMPASSIONWIELDER }
+		}
+		compassion = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPCOMPASSIONWIELDER }
+		}
+		if = {
+			limit = { trait = blackpaw }
+			custom_tooltip = { text = TOOLTIPBLACKPAWWIELDER }
+		}
+		blackpaw = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPBLACKPAWWIELDER }
+		}
+		if = {
+			limit = { trait = nightfall }
+			custom_tooltip = { text = TOOLTIPDEL_PINOWIELDER }
+		}
+		del_pino = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPDEL_PINOWIELDER }
+		}
+		if = {
+			limit = { trait = el_swordo }
+			custom_tooltip = { text = TOOLTIPEL_SWORDOWIELDER }
+		}
+		el_swordo = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPEL_SWORDOWIELDER }
+		}
+		if = {
+			limit = { trait = gold_sword }
+			custom_tooltip = { text = TOOLTIPGOLD_SWORDWIELDER }
+		}
+		gold_sword = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPGOLD_SWORDWIELDER }
+		}
+		if = {
+			limit = { trait = happyness }
+			custom_tooltip = { text = TOOLTIPHAPPYNESSWIELDER }
+		}
+		happyness = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPHAPPYNESSWIELDER }
+		}
+		if = {
+			limit = { trait = hubris }
+			custom_tooltip = { text = TOOLTIPHUBRISWIELDER }
+		}
+		hubris = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPHUBRISWIELDER }
+		}
+		if = {
+			limit = { trait = justice }
+			custom_tooltip = { text = TOOLTIPJUSTICEWIELDER }
+		}
+		justice = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPJUSTICEWIELDER }
+		}
+		if = {
+			limit = { trait = kingmaker }
+			custom_tooltip = { text = TOOLTIPKINGMAKERWIELDER }
+		}
+		kingmaker = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPKINGMAKERWIELDER }
+		}
+		if = {
+			limit = { trait = passion }
+			custom_tooltip = { text = TOOLTIPPASSIONWIELDER }
+		}
+		passion = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPPASSIONWIELDER }
+		}
+		if = {
+			limit = { trait = rage }
+			custom_tooltip = { text = TOOLTIPRAGEWIELDER }
+		}
+		rage = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPRAGEWIELDER }
+		}
+		if = {
+			limit = { trait = sightblinder }
+			custom_tooltip = { text = TOOLTIPSIGHTBLINDERWIELDER }
+		}
+		sightblinder = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPSIGHTBLINDERWIELDER }
+		}
+		if = {
+			limit = { trait = the_monarchist }
+			custom_tooltip = { text = TOOLTIPTHE_MONARCHISTWIELDER }
+		}
+		the_monarchist = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPTHE_MONARCHISTWIELDER }
+		}
+		if = {
+			limit = { trait = the_usurper }
+			custom_tooltip = { text = TOOLTIPTHE_USURPERWIELDER }
+		}
+		the_usurper = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPTHE_USURPERWIELDER }
+		}
+		if = {
+			limit = { trait = worldeater }
+			custom_tooltip = { text = TOOLTIPWORLDEATERWIELDER }
+		}
+		worldeater = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPWORLDEATERWIELDER }
+		}
+		if = {
+			limit = { trait = worlds_envy }
+			custom_tooltip = { text = TOOLTIPWORLDS_ENVYWIELDER }
+		}
+		worlds_envy = {
+			limit = { is_alive = yes }
+			custom_tooltip = { text = TOOLTIPWORLDS_ENVYWIELDER }
+		}
+		any_character = {
+			limit = { 
+				is_alive = yes
+				trait = valyrian_steel
+			}
+			custom_tooltip = { text =  TOOLTIPVALYRIANSWORDWIELDER }
+		}
+		any_character = {
+			limit = { 
+				is_alive = yes
+				trait = valyrian_armour
+			}
+			custom_tooltip = { text =  TOOLTIPVALYRIANARMOURWIELDER }
+		}
+	}
+	option = {
+		name = "EVTOPTB251400"
+		custom_tooltip = { text = TOOLTIPVALYRIANSTEELINHERITANCE }
+	}	
+}
