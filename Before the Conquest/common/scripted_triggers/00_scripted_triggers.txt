@@ -3446,13 +3446,14 @@ has_valyrian_steel_sword_trigger = {
 				trait = strangers_mercy
 				trait = vigilance
 				trait = orphan_maker
+				trait = palemoon
 				trait = truth
 				trait = lamentation
 				trait = poison
 				trait = anger
 				trait = black_death
 				trait = compassion
-				trait = concession
+				trait = blackpaw
 				trait = del_pino
 				trait = el_swordo
 				trait = gold_sword
@@ -3844,7 +3845,7 @@ allow_temple_buildings_trigger = {
 		religion = moonsingers
 		religion = harpy
 		religion = bearded_priests
-		religion = summer_rel
+		religion = summer_rel			   
 	}
 }
 just_execution_reason_PREV_trigger = { #PREV has a valid reason to execute/exile THIS

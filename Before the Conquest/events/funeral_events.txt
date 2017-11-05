@@ -1,0 +1,1484 @@
+### Funeral events ###
+### by blackninja9939
+
+namespace = funeral
+
+# Character has died do you want a funeral, FROM is dead person
+character_event = {
+	id = funeral.1
+	desc = EVTDESCfuneral.1
+	picture = GFX_evt_death
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_character_modifier = hosting_a_funeral } 
+		OR = { #Optimisation
+			ai = no
+			any_dynasty_member = { ai = no }
+			any_realm_lord = { ai = no }
+			FROM = { tier = EMPEROR }
+			FROM = { father = { tier = EMPEROR } }
+			FROM = { mother = { tier = EMPEROR } }
+		}
+		OR = {
+			NOT = { religion = dothraki_pagan }
+			NAND = {
+				has_dlc = "Horse Lords"
+				religion = dothraki_pagan
+			}
+			AND = {
+				has_dlc = "Horse Lords"
+				religion = dothraki_pagan
+				OR = {
+					is_child_of = FROM
+					sibling = FROM
+					is_close_relative = FROM
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { is_inaccessible_trigger = yes }
+				age = 13
+			}
+		}
+	}
+	
+	option = { # They deserve to be honoured with a funeral
+		name = EVTOPTAfuneral.1
+		#log = "[Root.GetTitledFirstName] [Root.GetOnlyDynastyName] hosts a funeral for [From.GetTitledFirstName] [From.GetOnlyDynastyName]"
+		add_character_modifier = {
+			name = hosting_a_funeral
+			duration = 100
+		}		
+		set_character_flag = do_not_disturb
+		character_event = { id = funeral.2 }
+	}
+	option = { # There will be no funeral
+		name = EVTOPBfuneral.1
+		if = {
+			limit = { 
+				FROM = { higher_tier_than = DUKE } 
+			}
+			prestige = -75
+		}
+		if = { # Do not punish the player as they are not limited in who died to get this event
+			limit = {
+				ai = yes
+				NOT = { FROM = { higher_tier_than = DUKE } }
+			}
+			prestige = -15
+		}
+		clr_character_flag = funeral_for_courtier
+		clr_character_flag = funeral_for_ruler
+	}
+}
+# Who to invite? FROMFROM is dead person
+character_event = {
+	id = funeral.2
+	desc = EVTDESCfuneral.2
+	picture = GFX_evt_death
+	
+	is_triggered_only = yes
+	
+	immediate = { character_event = { id = funeral.4 days = 10 } }
+	
+	option = { # Family
+		name = EVTOPTAfuneral.2	
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 3
+				trait = humble
+			}
+			modifier = {
+				factor = 3
+				trait = shy
+			}
+		}
+		any_dynasty_member = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { war_with = ROOT }
+				NOT = { liege = { war_with = ROOT } }
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		any_courtier = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { dynasty = ROOT }
+				OR = {
+					is_close_relative = ROOT
+					spouse = { character = FROMFROM }
+				}	
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		if = {
+			limit = { higher_tier_than = DUKE }
+			wealth = -30
+		}	
+		if = {
+			limit = { tier = DUKE }
+			wealth = -20
+		}
+		if = {
+			limit = { lower_tier_than = DUKE }
+			wealth = -10
+		}
+	}
+	option = { # Court
+		name = EVTOPTBfuneral.2
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			any_courtier = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { dynasty = ROOT }
+			}
+		}	
+		any_dynasty_member = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { war_with = ROOT }
+				NOT = { liege = { war_with = ROOT } }
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		any_courtier = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { dynasty = ROOT }
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		if = {
+			limit = { higher_tier_than = DUKE }
+			wealth = -50
+			prestige = 30
+		}	
+		if = {
+			limit = { tier = DUKE }
+			wealth = -32
+			prestige = 20
+		}
+		if = {
+			limit = { lower_tier_than = DUKE }
+			wealth = -16
+			prestige = 10
+		}
+	}
+	option = { # Vassals
+		name = EVTOPTCfuneral.2
+		ai_chance = {
+			factor = 25
+			
+			modifier = {
+				factor = 0
+				NOT = { wealth = 50 }
+				NOT = { trait = proud }
+				OR = {
+					stewardship = 8
+					trait = temperate	
+				}	
+			}
+			modifier = {
+				factor = 0
+				NOT = { is_close_relative = FROM }
+			}
+			modifier = {
+				factor = 0.25
+				lower_tier_than = DUKE
+			}
+			modifier = {
+				factor = 0.25
+				NOT = { wealth = 100 }
+			}
+			modifier = {
+				factor = 3
+				trait = proud
+			}	
+			modifier = {
+				factor = 3
+				trait = gregarious
+			}				
+		}
+		trigger = {
+			any_vassal = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { dynasty = ROOT }
+			}
+		}		
+		any_dynasty_member = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { war_with = ROOT }
+				NOT = { liege = { war_with = ROOT } }
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		any_courtier = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { dynasty = ROOT }
+				is_ruler = no
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		any_vassal = {
+			limit = {
+				age = 14
+				NOT = { trait = dragon }
+				NOT = { culture_group = unoccupied_group }
+				NOT = { culture_group = winter_group }
+				prisoner = no
+				NOT = { trait = incapable }
+				NOT = { trait = slave }
+				NOT = { character = ROOT }
+				NOT = { dynasty = ROOT }
+			}
+			set_character_flag = funeral_invite
+			letter_event = { id = funeral.3 days = 1 tooltip = TOOLTIPfuneral_invite }
+		}
+		if = {
+			limit = { higher_tier_than = DUKE }
+			wealth = -100
+			prestige = 60
+		}	
+		if = {
+			limit = { tier = DUKE }
+			wealth = -65
+			prestige = 40
+		}
+		if = {
+			limit = { lower_tier_than = DUKE }
+			wealth = -30
+			prestige = 20
+		}
+	}
+	option = { # Realm
+		name = EVTOPTDfuneral.2
+		ai_chance = {
+			factor = 15
+			
+			modifier = {
+				factor = 0
+				trait = humble
+			}	
+			modifier = {
+				factor = 0
+				NOT = { wealth = 100 }
+				NOT = { trait = proud }
+				OR = {
+					stewardship = 8
+					trait = temperate	
+				}	
+			}			
+			modifier = {
+				factor = 0
+				FROM = {
+					NOR = {
+						is_ruler = yes
+						spouse = { character = ROOT }
+					}
+				}
+			}
+			modifier = {
+				factor = 0.25
+				lower_tier_than = KING
+			}
+			modifier = {
+				factor = 0.25
+				NOT = { wealth = 200 }
+			}
+			modifier = {
+				factor = 3
+				trait = proud
+			}	
+			modifier = {
+				factor = 3
+				trait = gregarious
+			}				
+		}
+		wealth = -150
+		prestige = 100
+		custom_tooltip = {
+			text = TOOLTIPrealm_funeral_invite
+			hidden_tooltip = {
+				any_dynasty_member = {
+					limit = {
+						age = 14
+						NOT = { trait = dragon }
+						NOT = { culture_group = unoccupied_group }
+						NOT = { culture_group = winter_group }
+						prisoner = no
+						NOT = { trait = incapable }
+						NOT = { trait = slave }
+						NOT = { character = ROOT }
+						NOT = { war_with = ROOT }
+						NOT = { liege = { war_with = ROOT } }
+					}
+					set_character_flag = funeral_invite
+					letter_event = { id = funeral.3 days = 7 }
+				}
+				top_liege = {
+					any_realm_character = {
+						limit = {
+							age = 14
+							NOT = { trait = dragon }
+							NOT = { culture_group = unoccupied_group }
+							NOT = { culture_group = winter_group }
+							prisoner = no
+							NOT = { trait = incapable }
+							NOT = { trait = slave }
+							NOT = { character = ROOT }	
+							NOT = { dynasty = ROOT }	
+							OR = { #Only important characters
+								higher_tier_than = BARON
+								is_patrician = yes
+								AND = {
+									tier = BARON
+									ROOT = { tier = DUKE }
+								}
+								dynasty = ROOT
+								is_close_relative = ROOT
+								trait = dragon_rider
+								liege = { character = ROOT }
+								any_heir_title = {
+									OR = {
+										higher_tier_than = COUNT
+										AND = {
+											tier = COUNT
+											ROOT = { tier = DUKE }
+										}
+									}
+								}
+							}
+						}
+						set_character_flag = funeral_invite
+						letter_event = { id = funeral.3 days = 7 }
+					}
+				}
+			}
+		}
+	}
+}
+# Invited to the funeral, FROMFROMFROM is dead person
+letter_event = {
+	id = funeral.3
+	desc = EVTDESCfuneral.3
+	
+	is_triggered_only = yes
+	
+	trigger = { NOT = { is_inaccessible_trigger = yes } }
+	
+	option = { # Accept
+		name = EVTOPTAfuneral.3
+		trigger = {
+			NOT = { has_character_flag = do_not_disturb }
+		}
+		ai_chance = {
+			factor = 50
+			
+			modifier = {
+				factor = 0.15
+				NOR = {
+					is_liege_or_above = FROM
+					is_friend = FROM
+					dynasty = FROM
+					is_close_relative = FROM
+					dynasty = FROMFROM
+					is_close_relative = FROMFROM					
+					opinion = { who = FROM value = 40 }
+					has_non_aggression_pact_with = FROM	
+					is_allied_with = FROM	
+				}
+			}
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
+			modifier = {
+				factor = 0.75
+				war = yes
+			}
+			modifier = {
+				factor = 2
+				is_ruler = no
+				liege = { character = FROM }
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					dynasty = FROM
+					dynasty = FROMFROM
+				}	
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					is_close_relative = FROM
+					is_close_relative = FROMFROM
+				}	
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 5
+				liege = { character = FROM }
+				is_ruler = no
+			}
+			modifier = {
+				factor = 2
+				liege = { character = FROM }
+				is_ruler = yes
+			}
+			modifier = {
+				factor = 0.9
+				trait = stressed
+			}
+			modifier = {
+				factor = 0.8
+				trait = depressed
+			}
+			modifier = {
+				factor = 0.3
+				is_ill = yes
+			}
+			modifier = {
+				factor = 2
+				trait = gregarious
+			}
+			modifier = {
+				factor = 0.4
+				trait = shy
+			}
+			modifier = {
+				factor = 0.5
+				trait = paranoid
+			}
+			modifier = {
+				factor = 0.75
+				NOT = { religion = FROM }
+			}
+		}
+		hidden_tooltip = {
+			opinion = {
+				modifier = opinion_attending_funeral
+				who = FROM
+				months = 3
+			}
+			reverse_opinion = {
+				modifier = opinion_attending_funeral
+				who = FROM
+				months = 3
+			}
+		}
+		set_character_flag = do_not_disturb
+		set_character_flag = attending_funeral
+		clr_character_flag = funeral_invite
+	}
+	option = { # No thanks
+		name = EVTOPTBfuneral.3
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				NOT = { religion = FROM }
+				trait = zealous
+			}
+		}
+		if = {
+			limit = { has_character_flag = do_not_disturb }
+			break = yes
+		}
+		reverse_opinion = {
+			modifier = opinion_not_attending_funeral
+			who = FROM
+			months = 3
+		}
+		piety = -10
+	}
+}
+# Everyone is invited lets get this going, FROMFROMFROM is dead person
+character_event = {
+	id = funeral.4
+	desc = EVTDESCfuneral.4
+	picture = GFX_evt_death
+	
+	is_triggered_only = yes
+	
+	option = { # Let the feasting commence!
+		name = EVTOPTAfuneral.4	
+		add_character_modifier = {
+			name = holding_large_feast
+			duration = 365
+		}
+		hidden_tooltip = {
+			character_event = { id = 72003 days = 4 } #Food prep	
+			character_event = { id = feast.1 } #Random Events
+			character_event = { id = funeral.5 days = 30 }
+		}
+	}
+}
+#The guests have arrived, FROMFROMFROMFROM is dead person
+character_event = {
+	id = funeral.5
+	desc = EVTDESCfuneral.5
+	picture = GFX_evt_feast
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAfuneral.5
+		set_character_flag = host_feast_started
+		if = { # Abbreviate list if too many people
+			limit = { ai = no }
+			if = { 
+				limit = {
+					any_opinion_modifier_target = {
+						has_character_flag = attending_funeral
+						has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+						count = 40
+					}
+				}
+				custom_tooltip = { text = TOOLTIPdynasty.23ARRIVEDB } # No need to make my own one
+				any_opinion_modifier_target = {
+					limit = {
+						has_character_flag = attending_funeral
+						has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+						OR = { # Show important ones
+							ai = no
+							higher_tier_than = COUNT
+							AND = {
+								liege = { higher_tier_than = COUNT }
+								liege = { regent = { character = PREVPREV } }
+							}
+							AND = { #Closely related dynasts
+								dynasty = ROOT
+								is_close_relative = ROOT
+							}
+						}
+					}
+					custom_tooltip = { text = EVTTOOLTIPdynasty.24 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_opinion_modifier_target = {
+							has_character_flag = attending_funeral
+							has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+							count = 40
+						}
+					}
+				}
+				custom_tooltip = { text = TOOLTIPdynasty.23ARRIVED } # No need to make my own one
+				any_opinion_modifier_target = {
+					limit = {
+						has_character_flag = attending_funeral
+						has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+					}
+					custom_tooltip = { text = EVTTOOLTIPdynasty.24 }
+				}
+			}	
+		}	
+		hidden_tooltip = { 
+			FROMFROMFROMFROM = {  #4 FROMs is max
+				save_event_target_as = funeral_target
+			}
+			any_opinion_modifier_target = {
+				limit = {
+					has_character_flag = attending_funeral
+					has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+				}
+				set_character_flag = guest_feast_started
+				hidden_tooltip = { character_event = { id = feast.3 } } #random events
+				if = {
+					limit = { ai = no }
+					narrative_event = { id = funeral.7 days = 20 } # The funeral
+				}	
+			}		
+			narrative_event = { id = funeral.7 days = 20 } # The funeral
+			character_event = { id = feast.2 days = 1 } #Random Events
+		}	
+	}
+}
+# After feast, now time for actual funeral, funeral_target is the dead person
+narrative_event = {
+	id = funeral.7
+	title = EVTTITLEfuneral.7
+	picture = GFX_evt_death
+	
+	desc = { # Generic
+		text = EVTDESCfuneral.7
+		trigger = {
+			event_target:funeral_target = {
+				NOR = {
+					dynasty = 496
+					religion = rhllor
+					dynasty = 159
+					dynasty = 1443
+					AND = {
+						dynasty = 59
+						capital_scope = { has_building = ca_cellar_2 } # Has the crypts at capital
+					}
+					religion = the_seven
+					religion = old_gods
+					religion_group = drowned_god_group
+					religion_group = wildling_religion
+					religion = dothraki_pagan
+				}
+			}	
+		}
+	}
+	desc = { # Cremate - Targ/Rhllor
+		text = EVTDESCcremate_funeral.7
+		trigger = {
+			event_target:funeral_target = {
+				OR = {
+					dynasty = 496
+					religion = rhllor
+				}
+			}	
+		}
+	}
+	desc = { # Stark Crypts
+		text = EVTDESCcrypts_funeral.7
+		trigger = { 
+			event_target:funeral_target = {
+				dynasty = 59			
+			}	
+			capital_holding = { has_building = ca_cellar_2 } # Has the crypts at capital
+		}
+	}
+	desc = { # Tullys
+		text = EVTDESCriver_funeral.7
+		trigger = { event_target:funeral_target = { dynasty = 159 } }
+	}
+	desc = { # Forresters
+		text = EVTDESCironwood_funeral.7
+		trigger = { event_target:funeral_target = { dynasty = 1443 } }
+	}
+	desc = { # The Seven
+		text = EVTDESCseven_funeral.7
+		trigger = { event_target:funeral_target = { religion = the_seven } }
+	}
+	desc = { # Old Gods
+		text = EVTDESColdgods_funeral.7
+		trigger = { event_target:funeral_target = { religion = old_gods } }
+	}
+	desc = { # Drowned God
+		text = EVTDESCdrownedgod_funeral.7
+		trigger = { event_target:funeral_target = { religion_group = drowned_god_group } }
+	}
+	desc = { # Beyond the Wall
+		text = EVTDESCbtwgods_funeral.7
+		trigger = { event_target:funeral_target = { religion_group = wildling_religion } }
+	}
+	desc = { # Dothraki Married
+		text = EVTDESCdothraki_funeral.7
+		trigger = { 
+			event_target:funeral_target = {
+				religion = dothraki_pagan
+				spouse = { is_alive = yes }
+			}	
+		}
+	}
+	desc = { # Dothraki Not-Married
+		text = EVTDESCBdothraki_funeral.7
+		trigger = {
+			event_target:funeral_target = {
+				religion = dothraki_pagan
+				NOT = { spouse = { is_alive = yes } }
+			}	
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_character_flag = host_feast_started
+		clr_character_flag = feast_jongleur
+		clr_character_flag = feast_musicians
+		clr_character_flag = feast_rains_of_castamere
+		clr_character_flag = feast_minstrel
+		clr_character_flag = feast_fireeaters
+		clr_character_flag = feast_conjurer
+		clr_character_flag = lavishly_food
+		clr_character_flag = medium_food
+		clr_character_flag = low_food
+		clr_character_flag = castle_problems
+		clr_character_flag = feast_jester 
+		clr_character_flag = feast_drunkard_guest
+		clr_character_flag = feast_duel
+		clr_character_flag = feast_boar_hunt
+	}
+	
+	option = { # And so it is done...
+		name = EVTOPTAfuneral.7
+		if = {
+			limit = { ai = no }
+			event_target:funeral_target = { # Notable things about the dead person, most copied from the white book or slighly modified where necessary
+				custom_tooltip = { text = TOOLTIPfuneral.7 }
+				if = {
+					limit = {
+						trait = honorable
+					}
+					custom_tooltip = { text = TOOLTIPKGHONOURABLE }
+				}
+				if = {
+					limit = {
+						trait = ruthless
+						NOT = { trait = honorable }
+					}
+					custom_tooltip = { text = TOOLTIPKGRUTHLESS }
+				}
+				if = {
+					limit = {
+						trait = brave
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+					}
+					custom_tooltip = { text = TOOLTIPKGBRAVE }
+				}
+				if = {
+					limit = {
+						trait = diligent
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+					}
+					custom_tooltip = { text = TOOLTIPKGDILIGENT }
+				}
+				if = {
+					limit = {
+						trait = kind
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+					}
+					custom_tooltip = { text = TOOLTIPKGKIND }
+				}
+				if = {
+					limit = {
+						trait = lunatic
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+					}
+					custom_tooltip = { text = TOOLTIPKGLUNATIC }
+				}
+				if = {
+					limit = {
+						trait = drunkard
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+						NOT = { trait = lunatic }
+					}
+					custom_tooltip = { text = TOOLTIPKGDRUNKARD }
+				}
+				if = {
+					limit = {
+						trait = lustful
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+						NOT = { trait = lunatic }
+						NOT = { trait = drunkard }
+					}
+					custom_tooltip = { text = TOOLTIPKGLUSTFUL }
+				}
+				if = {
+					limit = {
+						trait = gluttonous
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+						NOT = { trait = lunatic }
+						NOT = { trait = drunkard }
+						NOT = { trait = lustful }
+					}
+					custom_tooltip = { text = TOOLTIPKGLUTTONOUS }
+				}
+				if = {
+					limit = {
+						trait = wroth
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+						NOT = { trait = lunatic }
+						NOT = { trait = drunkard }
+						NOT = { trait = lustful }
+						NOT = { trait = gluttonous }
+					}
+					custom_tooltip = { text = TOOLTIPKwroth }
+				}
+				if = {
+					limit = {
+						trait = humble
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+						NOT = { trait = lunatic }
+						NOT = { trait = drunkard }
+						NOT = { trait = lustful }
+						NOT = { trait = gluttonous }
+						NOT = { trait = wroth }
+					}
+					custom_tooltip = { text = TOOLTIPKhumble }
+				}
+				if = {
+					limit = {
+						NOT = { trait = humble }
+						NOT = { trait = honorable }
+						NOT = { trait = ruthless }
+						NOT = { trait = brave }
+						NOT = { trait = diligent }
+						NOT = { trait = kind }
+						NOT = { trait = lunatic }
+						NOT = { trait = drunkard }
+						NOT = { trait = lustful }
+						NOT = { trait = gluttonous }
+						NOT = { trait = wroth }
+					}
+					custom_tooltip = { text = TOOLTIPno_personality_funeral.7 } # Custom to fill if they have no other personaltiy traits at all -.-
+				}
+				if = {
+					limit = {
+						trait = fair
+					}
+					custom_tooltip = { text = TOOLTIPKGfair }
+				}
+				if = {
+					limit = {
+						is_strong_trigger = yes
+						NOT = { trait = fair }
+					}
+					custom_tooltip = { text = TOOLTIPKGstrong }
+				}
+				if = {
+					limit = {
+						trait = tall
+						NOT = { trait = fair }
+						NOT = { is_strong_trigger = yes }
+					}
+					custom_tooltip = { text = TOOLTIPKGtall }
+				}
+				custom_tooltip = { text = TOOLTIPKGENDLINE }
+				if = {
+					limit = {
+						trait = master_warrior
+					}
+					custom_tooltip = { text = TOOLTIPKGMASTERWARRIOR  }
+				}
+				if = {
+					limit = {
+						trait = skilled_warrior
+					}
+					custom_tooltip = { text = TOOLTIPfuneralSKILLEDWARRIOR  }# modified
+				}
+				if = {
+					limit = {
+						trait = trained_warrior
+					}
+					custom_tooltip = { text = TOOLTIPKGTRAINEDWARRIOR  }
+				}
+				if = {
+					limit = {
+						OR = {
+							trait = valyrian_steel
+							trait = anger
+							trait = black_death
+							trait = compassion
+							trait = concession
+							trait = del_pino
+							trait = el_swordo
+							trait = gold_sword
+							trait = happyness
+							trait = hubris
+							trait = justice
+							trait = kingmaker
+							trait = passion
+							trait = rage
+							trait = sightblinder
+							trait = the_monarchist
+							trait = the_usurper
+							trait = worldeater
+							trait = worlds_envy
+						}
+					}
+					custom_tooltip = { text = TOOLTIPfuneralVALYRIANSTEEL  } # modified
+				}
+				if = {
+					limit = {
+						trait = dawn
+					}
+					custom_tooltip = { text = TOOLTIPfuneralDAWN } # modified
+				}
+				if = {
+					limit = {
+						trait = ice
+					}
+					custom_tooltip = { text = TOOLTIPfuneralICE } # modified
+				}
+				if = {
+					limit = {
+						OR = {
+							trait = longclaw
+							trait = longclaw_snow
+						}	
+					}
+					custom_tooltip = { text = TOOLTIPfuneralLONGCLAW } # modified
+				}
+				if = {
+					limit = {
+						trait = blackfyre
+					}
+					custom_tooltip = { text = TOOLTIPfuneralBLACKFYRE } # modified
+				}
+				if = {
+					limit = {
+						trait = brightroar
+					}
+					custom_tooltip = { text = TOOLTIPfuneralBRIGHTROAR } # modified
+				}
+				if = {
+					limit = {
+						trait = heartsbane
+					}
+					custom_tooltip = { text = TOOLTIPfuneralHEARTSBANE } # modified
+				}
+				if = {
+					limit = {
+						trait = nightfall
+					}
+					custom_tooltip = { text = TOOLTIPfuneralNIGHTFALL } # modified
+				}
+				if = {
+					limit = {
+						trait = darksister
+					}
+					custom_tooltip = { text = TOOLTIPfuneralDARKSISTER } # modified
+				}
+				if = {
+					limit = {
+						trait = ladyforlorn
+					}
+					custom_tooltip = { text = TOOLTIPfuneralLADYFORLORN } # modified
+				}
+				if = {
+					limit = {
+						trait = redrain
+					}
+					custom_tooltip = { text = TOOLTIPfuneralREDRAIN } # modified
+				}
+				if = {
+					limit = {
+						trait = widowswail
+					}
+					custom_tooltip = { text = TOOLTIPfuneralWIDOWSWAIL } # modified
+				}
+				if = {
+					limit = {
+						trait = oathkeeper
+					}
+					custom_tooltip = { text = TOOLTIPfuneralOATHKEEPER } # modified
+				}
+				if = {
+					limit = {
+						trait = crabspincer
+					}
+					custom_tooltip = { text = TOOLTIPfuneralCRABSPINCER } # modified
+				}
+				if = {
+					limit = {
+						trait = strangers_mercy
+					}
+					custom_tooltip = { text = TOOLTIPfuneralSTRANGERSMERCY } # modified
+				}
+				if = {
+					limit = {
+						trait = vigilance
+					}
+					custom_tooltip = { text = TOOLTIPfuneralVIGILANCE } # modified
+				}	
+				if = {
+					limit = {
+						trait = orphan_maker
+					}
+					custom_tooltip = { text = TOOLTIPfuneralORPHANMAKER } # modified
+				}	
+				if = {
+					limit = {
+						trait = palemoon
+					}
+					custom_tooltip = { text = TOOLTIPfuneralPALEMOON} # modified
+				}	
+				if = {
+					limit = {
+						trait = truth
+					}
+					custom_tooltip = { text = TOOLTIPfuneralTRUTH } # modified
+				}		
+				if = {
+					limit = {
+						trait = lamentation
+					}
+					custom_tooltip = { text = TOOLTIPfuneralLAMENTATION } # modified
+				}	
+				if = {
+					limit = {
+						trait = poison
+					}
+					custom_tooltip = { text = TOOLTIPfuneralPOISON } # modified
+				}			
+				if = {
+					limit = {
+						trait = dragon_rider
+					}
+					if = {
+						limit = {
+							OR = {
+								trait = valyrian_steel
+								trait = dawn
+								trait = ice
+								trait = longclaw
+								trait = blackfyre
+								trait = longclaw_snow
+								trait = brightroar
+								trait = heartsbane
+								trait = nightfall
+								trait = darksister
+								trait = ladyforlorn
+								trait = redrain
+								trait = widowswail
+								trait = oathkeeper
+								trait = crabspincer
+								trait = strangers_mercy
+								trait = vigilance
+								trait = orphan_maker
+								trait = palemoon
+								trait = truth
+								trait = lamentation
+								trait = poison
+								trait = anger
+								trait = black_death
+								trait = compassion
+								trait = concession
+								trait = del_pino
+								trait = el_swordo
+								trait = gold_sword
+								trait = happyness
+								trait = hubris
+								trait = justice
+								trait = kingmaker
+								trait = passion
+								trait = rage
+								trait = sightblinder
+								trait = the_monarchist
+								trait = the_usurper
+								trait = worldeater
+								trait = worlds_envy
+							}
+						}
+						custom_tooltip = { text = TOOLTIPKGDRAGONAND }
+						if = {
+							limit = {
+								trait = direwolf
+							}
+							custom_tooltip = { text = TOOLTIPKGWOLFand  }
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								OR = {
+									trait = valyrian_steel
+									trait = dawn
+									trait = ice
+									trait = longclaw
+									trait = blackfyre
+									trait = longclaw_snow
+									trait = brightroar
+									trait = heartsbane
+									trait = nightfall
+									trait = darksister
+									trait = ladyforlorn
+									trait = redrain
+									trait = widowswail
+									trait = oathkeeper
+									trait = crabspincer
+									trait = strangers_mercy
+									trait = vigilance
+									trait = orphan_maker
+									trait = palemoon
+									trait = truth
+									trait = lamentation
+									trait = poison
+									trait = anger
+									trait = black_death
+									trait = compassion
+									trait = concession
+									trait = del_pino
+									trait = el_swordo
+									trait = gold_sword
+									trait = happyness
+									trait = hubris
+									trait = justice
+									trait = kingmaker
+									trait = passion
+									trait = rage
+									trait = sightblinder
+									trait = the_monarchist
+									trait = the_usurper
+									trait = worldeater
+									trait = worlds_envy
+								}
+							}	
+						}
+						custom_tooltip = { text = TOOLTIPfuneralDRAGON } # modified
+						if = {
+							limit = {
+								trait = direwolf
+							}
+							custom_tooltip = { text = TOOLTIPKGWOLFand  }
+						}
+					}		
+				}
+				if = {
+					limit = {
+						trait = direwolf
+						NOT = { trait = dragon_rider }
+					}
+					if = {
+						limit = {
+							OR = {
+								trait = valyrian_steel
+								trait = dawn
+								trait = ice
+								trait = longclaw
+								trait = blackfyre
+								trait = longclaw_snow
+								trait = brightroar
+								trait = heartsbane
+								trait = nightfall
+								trait = darksister
+								trait = ladyforlorn
+								trait = redrain
+								trait = widowswail
+								trait = oathkeeper
+								trait = crabspincer
+								trait = strangers_mercy
+								trait = vigilance
+								trait = orphan_maker
+								trait = palemoon
+								trait = truth
+								trait = lamentation
+								trait = poison
+								trait = anger
+								trait = black_death
+								trait = compassion
+								trait = concession
+								trait = del_pino
+								trait = el_swordo
+								trait = gold_sword
+								trait = happyness
+								trait = hubris
+								trait = justice
+								trait = kingmaker
+								trait = passion
+								trait = rage
+								trait = sightblinder
+								trait = the_monarchist
+								trait = the_usurper
+								trait = worldeater
+								trait = worlds_envy
+							}
+						}
+						custom_tooltip = { text = TOOLTIPKGWOLFAND }
+					}
+					if = {
+						limit = {
+							NOT = {
+								OR = {
+									trait = valyrian_steel
+									trait = dawn
+									trait = ice
+									trait = longclaw
+									trait = blackfyre
+									trait = longclaw_snow
+									trait = brightroar
+									trait = heartsbane
+									trait = nightfall
+									trait = darksister
+									trait = ladyforlorn
+									trait = redrain
+									trait = widowswail
+									trait = oathkeeper
+									trait = crabspincer
+									trait = strangers_mercy
+									trait = vigilance
+									trait = orphan_maker
+									trait = palemoon
+									trait = truth
+									trait = lamentation
+									trait = poison
+									trait = anger
+									trait = black_death
+									trait = compassion
+									trait = concession
+									trait = del_pino
+									trait = el_swordo
+									trait = gold_sword
+									trait = happyness
+									trait = hubris
+									trait = justice
+									trait = kingmaker
+									trait = passion
+									trait = rage
+									trait = sightblinder
+									trait = the_monarchist
+									trait = the_usurper
+									trait = worldeater
+									trait = worlds_envy
+								}
+							}	
+						}
+						custom_tooltip = { text = TOOLTIPfuneralWOLF } # modified
+					}		
+				}
+				if = {
+					limit = {
+						trait = dragon_slayer
+					}
+					custom_tooltip = { text = TOOLTIPKGDRAGONSLAYER }
+				}
+				custom_tooltip = { text = TOOLTIPdynasty.23ENDLINE }
+			}
+		}	
+		if = {
+			limit = { 
+				character = FROM
+				has_character_modifier = hosting_a_funeral				
+			}
+			remove_character_modifier = hosting_a_funeral	
+			piety = 40
+			
+			if = { # Abbreviate list if too many people
+				limit = { ai = no }
+				if = { 
+					limit = {
+						any_opinion_modifier_target = {
+							has_character_flag = attending_funeral
+							has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+							count = 40
+						}
+					}
+					custom_tooltip = { text = TOOLTIPFUNERALGUESTLEAVEB }
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_opinion_modifier_target = {
+								has_character_flag = attending_funeral
+								has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+								count = 40
+							}
+						}
+					}
+					custom_tooltip = { text = TOOLTIPFUNERALGUESTLEAVE }
+				}	
+			}
+			hidden_tooltip = {
+				any_opinion_modifier_target = {
+					limit = {
+						has_character_flag = attending_funeral
+						has_opinion_modifier = { who = ROOT modifier = opinion_attending_funeral }
+					}
+					remove_opinion = {
+						modifier = opinion_attending_funeral
+						who = ROOT
+					}
+					reverse_remove_opinion = {
+						modifier = opinion_attending_funeral
+						who = ROOT
+					}
+					clr_character_flag = coming_to_feast
+					clr_character_flag = guest_feast_started
+					clr_character_flag = wounded_opponent
+					clr_character_flag = maimed_opponent
+					clr_character_flag = killed_opponent
+					if = {
+						limit = { tier = EMPEROR } 
+						ROOT = { prestige = 40 }
+					}
+					if = {
+						limit = { tier = KING } 
+						ROOT = { prestige = 20 }
+					}			
+					if = {
+						limit = { tier = DUKE } 
+						ROOT = { prestige = 10 }
+					}
+					if = {
+						limit = { tier = COUNT } 
+						ROOT = {
+							if = {
+								limit = { higher_tier_than = DUKE }
+								hidden_tooltip = { prestige = 5 }
+							}	
+							if = {
+								limit = { NOT = { higher_tier_than = DUKE } }
+								prestige = 5
+							}
+						}
+					}
+				}
+			}
+			wikid = {
+				limit = {
+					has_character_flag = foreign_adventure
+					has_opinion_modifier = { who = ROOT modifier = opinion_attending_wedding }
+				}
+				hidden_tooltip = {
+					character_event = {
+						id = 72111
+						tooltip = EVTTOOLTIP72111
+					}
+					remove_opinion = {
+						modifier = opinion_enjoyed_feast
+						who = ROOT			
+					}
+					remove_opinion = {
+						modifier = opinion_attending_wedding
+						who = ROOT			
+					}
+				}
+				opinion = {
+					modifier = opinion_enjoyed_feast
+					who = ROOT
+					years = 2
+				}			
+				clr_character_flag = coming_to_feast
+				clr_character_flag = guest_feast_started
+				clr_character_flag = wounded_opponent
+				clr_character_flag = maimed_opponent
+				clr_character_flag = killed_opponent
+			}		
+			any_friend = {
+				limit = {
+					has_character_flag = friend_coming_to_feast
+					has_opinion_modifier = { who = ROOT modifier = opinion_attending_wedding }
+				}
+				hidden_tooltip = {
+					character_event = {
+						id = 72111
+						tooltip = EVTTOOLTIP72111
+					}
+					remove_opinion = {
+						modifier = opinion_enjoyed_feast
+						who = ROOT			
+					}
+					remove_opinion = {
+						modifier = opinion_attending_wedding
+						who = ROOT			
+					}
+				}			
+				clr_character_flag = friend_coming_to_feast
+				clr_character_flag = guest_feast_started
+				clr_character_flag = wounded_opponent
+				clr_character_flag = maimed_opponent
+				clr_character_flag = killed_opponent
+			}
+			hidden_tooltip = {
+				character_event = { id = 72999 } #clear feast flags	
+				clr_character_flag = funeral_for_ruler
+				clr_character_flag = funeral_for_courtier				
+			}
+		}
+		hidden_tooltip = {
+			clr_character_flag = attending_funeral
+			clr_character_flag = do_not_disturb		
+		}
+	}
+}

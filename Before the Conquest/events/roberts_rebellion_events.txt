@@ -1,0 +1,6022 @@
+# roberts_rebellion.1 -Scenario Initialisation
+#This event will occur at the beginning of the game
+
+##8282- Roberts rebellion
+##8284- Crowned Stag
+##Feb 8299- A Clash of Kings
+
+namespace = roberts_rebellion
+
+character_event = {
+	id = roberts_rebellion.1
+	desc = "EVTDESCroberts_rebellion.1"
+	
+	is_triggered_only = yes #Triggered from on_startup
+	only_rulers = yes
+	
+	trigger = {
+		NOT = { has_global_flag = scenario_initialised }
+		has_landed_title = c_the_citadel
+		
+		e_rebels = { holder_scope = { character = 450999 } } #Double check in case vanilla bug deletes global_flag = scenario_initialised
+	}
+	
+	immediate = { 
+		set_global_flag = scenario_initialised 
+		#set_global_flag = maintenance_pulse
+		e_rebels = { holder_scope = { death = yes } }
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.1" 
+		#Shattered Realm Game Rule
+		if = {
+			limit = { 
+				NOT = { has_game_rule = { name = shattered_realms value = off } }
+			}
+			shattered_realms_effect = yes
+		}
+		#Symmetrical Start Game Rule
+		if = { #Remove all base value buildings
+			limit = {
+				has_game_rule = { name = symmetrical_start value = on }
+			}
+			symmetrical_start_effect = yes
+		}
+		#Day 1 Events
+		#random_playable_ruler = {
+			#limit = { ai = no } 
+			#character_event = { id = seasons.1 } #Season length event
+		#}	
+		any_playable_ruler = {
+			limit = { 
+				ai = no 
+			}	
+			if = { #Employ Maester
+				limit = {
+					maester_culture_trigger = yes 
+					NOT = { has_landed_title = c_the_citadel }
+					NOT = { has_landed_title = d_kingsguard }
+					NAND = {
+						has_landed_title = e_iron_throne 
+						NOT = { has_global_flag = aegons_conquest }
+					}
+					NOT = { has_landed_title = k_the_most_devout }			
+					NOT = { 
+						any_courtier = { 
+							trait = maester 
+							NOT = { trait = incapable }
+							prisoner = no
+						} 
+					}
+				}
+				scaled_wealth = -0.2
+				random_playable_ruler = { #This picks a random westerosi culture
+					limit = {
+						OR = {
+							culture_group = andal
+							#culture = ironborn
+							culture_group = dornish
+							#culture = high_valyrian
+							culture = western_valyrian
+							culture_group = first_men
+							#culture = skagosi
+						}
+						NOT = { culture = rhoynar }
+						NOT = { culture = old_andal }
+						NOT = { culture = moon_clansman }
+					}
+					create_random_priest = {
+						random_traits = yes
+						trait = maester
+						dynasty = none
+						female = no
+						culture = THIS
+						religion = THIS
+						historical = yes
+					}
+					new_character = {
+						move_character = PREVPREV
+						remove_trait = martial_cleric
+						remove_trait = scholarly_theologian
+						remove_trait = mastermind_theologian
+						remove_trait = detached_priest
+						random_list = {
+							40 = {
+								modifier = {
+									factor = 0.5
+									PREVPREV = { higher_tier_than = DUKE }
+								}
+								add_trait = detached_priest
+							}
+							30 = {
+								modifier = {
+									factor = 0.75
+									PREVPREV = { higher_tier_than = DUKE }
+								}
+								add_trait = martial_cleric
+							}
+							20 = {
+								add_trait = scholarly_theologian
+							}
+							10 = {
+								add_trait = mastermind_theologian
+							}
+						}
+						random_list = { # Is the Physician a Quack?
+							90 = {
+							}
+							10 = {
+								set_character_flag = physician_is_quack
+							}
+						}
+						if = { 	
+							limit = { PREVPREV = { trait = nightswatch } }
+							add_trait = nightswatch
+							remove_trait = wildling
+						}			
+						set_character_flag = serving_with_lord
+						remove_trait = imbecile
+						remove_trait = inbred
+						remove_trait = slow
+						remove_trait = infirm
+						remove_trait = incapable
+						remove_trait = leper
+						remove_trait = possessed
+						remove_trait = ill
+						remove_trait = pneumonic
+						remove_trait = maimed
+						set_special_character_title = title_maester
+						change_stewardship = 3
+						change_diplomacy = 3
+						change_intrigue = 3
+						give_job_title = job_physician
+						character_event = { id = maester.2399 } #Give important maesters a father to avoid culling
+					}
+				}	
+			}
+			if = { #Employ Priest
+				limit = {
+					NOT = {
+						any_courtier = {
+							has_job_title = job_spiritual
+							NOT = { trait = incapable }
+						}
+					}
+				}
+				scaled_wealth = -0.2
+				capital_scope = {
+					if = {
+						limit = { PREV = { NOT = { religion = harpy } } }
+						create_random_priest = {
+							random_traits = yes
+							dynasty = NONE
+							religion = PREV
+							culture = THIS
+							female = no
+						}	
+					}	
+					if = {
+						limit = { PREV = { religion = harpy } }
+						create_random_priest = {
+							random_traits = yes
+							dynasty = NONE
+							religion = PREV
+							culture = THIS
+							female = yes
+						}	
+					}	
+					new_character = {
+						add_priest_trait_effect = yes	
+						remove_trait = imbecile
+						remove_trait = inbred
+						remove_trait = slow
+						remove_trait = incapable
+						remove_trait = leper
+						remove_trait = possessed
+						remove_trait = ill
+						remove_trait = pneumonic
+						remove_trait = maimed
+						give_job_title = job_spiritual
+					}
+				}	
+			}		
+		}	
+		#Day 2 Initialisation
+		character_event = { id = roberts_rebellion.2 days = 1 }
+		#Set Seasons	
+		if = { #Preceding Summer
+			limit = { 
+				year = 8124
+				NOT = { year = 8130 }
+			}
+			set_global_flag = normal_summer
+			set_character_flag = season_set
+		}
+		if = { #Post Dance Hard Winter
+			limit = { 
+				year = 8130
+				NOT = { year = 8136 }
+			}
+			set_global_flag = asoiaf_harsh_winter
+			set_character_flag = season_set
+			if = { #End 
+				limit = { year = 8135 }
+				character_event = {
+					id = seasons.6
+					days = 150
+					random = 50
+				}
+			}
+		}
+		if = { #Following Summer
+			limit = { 
+				year = 8136
+				NOT = { year = 8140 }
+			}
+			set_global_flag = normal_summer
+			set_character_flag = season_set
+		}
+		if = { #Great Spring
+			limit = { 
+				year = 8206
+				NOT = { year = 8210 }
+			}
+			set_global_flag = asoiaf_normal_winter
+			set_character_flag = season_set
+			if = { #End 
+				limit = { year = 8209 }
+				character_event = {
+					id = seasons.6
+					days = 150
+					random = 50
+				}
+			}
+		}
+		if = { #Following Summer
+			limit = { 
+				year = 8210
+				NOT = { year = 8215 }
+			}
+			set_global_flag = normal_summer
+			set_character_flag = season_set
+		}
+		if = { #Following Winter
+			limit = { 
+				year = 8215
+				NOT = { year = 8221 }
+			}
+			set_global_flag = asoiaf_normal_winter
+			set_character_flag = season_set
+		}
+		if = { #Maekar's Summer
+			limit = { 
+				year = 8221
+				NOT = { year = 8228 }
+			}
+			set_global_flag = long_summer
+			set_character_flag = season_set
+			if = { #End 
+				limit = { year = 8226 }
+				character_event = {
+					id = seasons.5
+					days = 600
+					random = 200
+				}
+			}
+		}
+		if = { #Followed by terrible winter
+			limit = { 
+				year = 8228
+				NOT = { year = 8238 }
+			}
+			set_global_flag = asoiaf_harsh_winter
+			set_character_flag = season_set
+			if = { #End 
+				limit = { year = 8235 }
+				character_event = {
+					id = seasons.6
+					days = 600
+					random = 200
+				}
+			}
+		}
+		if = { #254
+			limit = { 
+				year = 8252 
+				NOT = { year = 8256 }
+			}
+			set_global_flag = asoiaf_normal_winter
+			set_character_flag = season_set
+		}
+		if = { #Three year Winter
+			limit = { 
+				year = 8273 
+				NOT = { year = 8276 }
+			}
+			set_global_flag = asoiaf_normal_winter
+			set_character_flag = season_set
+		}	
+		if = { #Following Summer
+			limit = {
+				year = 8276
+				NOT = { year = 8279 }
+			}
+			set_global_flag = normal_summer
+			set_character_flag = season_set
+		}		
+		if = { #Year of the False Spring
+			limit = { 
+				year = 8279 
+				NOT = { year = 8282 }
+			}
+			set_global_flag = asoiaf_normal_winter
+			set_character_flag = season_set
+		}
+		if = { #Following Summer
+			limit = {
+				year = 8282 
+				NOT = { year = 8285 }
+			}
+			set_global_flag = normal_summer
+			set_character_flag = season_set
+		}
+		if = { #Following Winter
+			limit = {
+				year = 8285 
+				NOT = { year = 8288 }
+			}
+			set_global_flag = asoiaf_normal_winter
+			set_character_flag = season_set
+		}
+		if = { #The Long Summer
+			limit = {
+				year = 8288
+				NOT = { year = 8300 }
+			}
+			set_global_flag = long_summer
+			set_character_flag = season_set
+			if = { #End durin AFFC
+				limit = { year = 8298 }
+				character_event = {
+					id = seasons.5
+					days = 600
+					random = 200
+				}
+			}
+		}
+		if = { #AFFC
+			limit = { year = 8300 }
+			set_global_flag = asoiaf_harsh_winter
+			set_character_flag = season_set
+		}
+		if = { #If not set, set random season
+			limit = { NOT = { has_character_flag = season_set } }
+			random_list = {
+				50 = {
+					random_list = {
+						20 = {
+							set_global_flag = short_summer
+						}
+						60 = {		
+							set_global_flag = normal_summer
+						}
+						20 = {
+							set_global_flag = long_summer
+						}
+					}
+				}
+				50 = {
+					random_list = {
+						20 = {
+							set_global_flag = asoiaf_mild_winter
+						}
+						60 = {		
+							set_global_flag = asoiaf_normal_winter
+						}
+						20 = {
+							set_global_flag = asoiaf_harsh_winter
+						}
+					}
+				}
+			}
+		}
+		clr_character_flag = season_set
+		#Robert's Rebellion, effects moved to history files
+		# if = { 
+			# limit = { 
+				# year = 8282 
+				# NOT = { year = 8284 }
+			# } 		
+		# }
+		#Crowned Stag
+		# if = { 
+			# limit = { 
+				# year = 8284 
+				# OR = {
+					# NOT = { year = 8299 }
+					# AND = {
+						# year = 8299 
+						# NOT = { month = 1 }
+					# }
+				# }	
+			# }
+		# }	
+		###A Clash of Kings/ A Storm of Swords ###
+		# if = { 
+			# limit = { 
+				# year = 8299 
+				# month = 1
+			# }	
+			# ##Storm of Swords
+			# if = {
+				# limit = { month = 6 } 
+			# }	
+		# }	
+		#Oldtown Commander
+		c_oldtown = {
+			holder_scope = {
+				character_event = { id = roberts_rebellion.20  }
+			}
+		}
+		#Kingsguard Counter
+		d_kingsguard = {
+			holder_scope = {
+				character_event = { id = kingsguard.16  days = 1 }
+			}
+		}
+		#Citadel Maintenance
+		if = {
+			limit = { NOT = { has_landed_title = b_the_citadel } }
+			b_the_citadel = { gain_title = ROOT }
+			d_oldtown = {
+				holder_scope = {
+					ROOT = { set_defacto_liege = PREV }
+				}
+			}
+		}	
+		set_government_type = republic_government
+		if = {
+			limit = { NOT = { trait = archmaester } }
+			culture = reachman
+			religion = the_seven
+			add_trait = archmaester
+			change_learning = 5
+			remove_trait = amateurish_plotter
+			remove_trait = flamboyant_schemer
+			remove_trait = intricate_webweaver
+			remove_trait = elusive_shadow
+			remove_trait = naive_appeaser
+			remove_trait = underhanded_rogue
+			remove_trait = charismatic_negotiator
+			remove_trait = grey_eminence
+			remove_trait = indulgent_wastrel
+			remove_trait = thrifty_clerk
+			remove_trait = fortune_builder
+			remove_trait = midas_touched
+			remove_trait = misguided_warrior
+			remove_trait = tough_soldier
+			remove_trait = skilled_tactician
+			remove_trait = brilliant_strategist
+			remove_trait = detached_priest
+			remove_trait = martial_cleric
+			remove_trait = scholarly_theologian
+			remove_trait = mastermind_theologian
+			random_list = {
+				15 = { add_trait = detached_priest }
+				40 = { add_trait = martial_cleric }
+				55 = { add_trait = scholarly_theologian }
+				40 = { add_trait = mastermind_theologian }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { 
+					any_courtier = {
+						trait = archmaester 
+						NOT = { character = ROOT }
+					}	
+				} 
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = reachman
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = valeman
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = stormlander
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = northman
+				religion = old_gods
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = crownlander
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = reachman
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = westerman
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+			create_random_priest = {
+				random_traits = yes
+				trait = archmaester 
+				dynasty = none
+				female = no
+				culture = salt_dornish
+				religion = the_seven
+				historical = yes
+			}
+			new_character = {
+				set_character_flag = random_archmaester
+			}
+		}	
+		any_courtier = {
+			limit = { has_character_flag = random_archmaester }
+			clr_character_flag = random_archmaester
+			remove_trait = martial_cleric
+			remove_trait = scholarly_theologian
+			remove_trait = mastermind_theologian
+			remove_trait = detached_priest
+			random_list = {
+				15 = { add_trait = detached_priest }
+				40 = { add_trait = martial_cleric }
+				55 = { add_trait = scholarly_theologian }
+				40 = { add_trait = mastermind_theologian }
+			}
+			remove_trait = imbecile
+			remove_trait = inbred
+			remove_trait = slow
+			remove_trait = infirm
+			remove_trait = incapable
+			remove_trait = leper
+			remove_trait = possessed
+			remove_trait = ill
+			remove_trait = pneumonic
+			remove_trait = maimed
+			change_stewardship = 3
+			change_diplomacy = 3
+			change_intrigue = 3
+		}
+		any_courtier = {
+			limit = { trait = archmaester }
+			give_minor_title = title_archmaester
+		}
+		# #Religious Authority
+		# if = {
+			# limit = { NOT = { year = 8058 } }
+			# k_the_most_devout = {
+				# holder_scope = {
+					# religion_authority = 0.2
+				# }
+			# }
+		# }
+		# if = {
+			# limit = { year = 8058 } 
+			# k_the_most_devout = {
+				# holder_scope = {
+					# religion_authority = -0.4
+				# }
+			# }
+		# }
+		# c_pyke = {
+			# holder_scope = {
+				# religion_authority = -0.25
+			# }
+		# }
+		# c_winterfell = {
+			# holder_scope = {
+				# religion_authority = -0.4
+			# }
+		# }
+		#golden company
+		k_golden_company = {
+			holder_scope = {
+				d_golden_company = {
+					holder_scope = {
+						abdicate_to = PREVPREV
+					}
+					copy_title_history = k_golden_company
+				}
+				activate_title = { title = k_golden_company status = no }
+				k_golden_company = { destroy_landed_title = PREV }
+			}
+		}
+		#Initialise unoccupied provinces
+		character_event = { id = unoccupied.1 }
+		if = { #If Nightswatch has no holder choose one randomly
+			limit = { 
+				c_castle_black = {
+					holder_scope = {
+						NOT = { trait = nightswatch }
+					}
+				}
+			}
+			top_liege = {
+				random_realm_character = {
+					limit = {
+						is_female = no
+						age = 16
+						is_primary_heir = no
+						is_ruler = no
+						is_married = no
+						NOT = { num_of_children = 1 }
+						can_press_claims_trigger = yes
+						NOT = { trait = wildling }
+						father_even_if_dead = {
+							always = yes
+						}
+					}
+					add_trait = nightswatch
+					c_castle_black = { gain_title = PREV }
+					d_nightswatch = { gain_title = PREV }
+					set_government_type = NW_government
+					character_event = { id = nightswatch.21 }
+				}
+			}	
+		}
+		#Night's Watch Initialisation
+		d_nightswatch = {
+			holder_scope = {
+				character_event = { id = nightswatch.999 }
+			}
+		}		
+		#The Pentosi Maids
+		d_prince_pentos = {
+			holder_scope = {
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					religion = rhllor
+					age = 15
+				}
+				new_character = {
+					remove_trait = imbecile
+					remove_trait = inbred
+					remove_trait = slow
+					remove_trait = infirm
+					remove_trait = incapable
+					remove_trait = leper
+					remove_trait = possessed
+					remove_trait = ill
+					remove_trait = pneumonic
+					remove_trait = maimed
+					remove_trait = crippled
+					add_trait = fair
+					add_trait = disinherited
+					add_trait = forbid_marriage
+					give_minor_title = title_maid_fields
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = yes
+					religion = rhllor
+					age = 15
+				}
+				new_character = {
+					remove_trait = imbecile
+					remove_trait = inbred
+					remove_trait = slow
+					remove_trait = infirm
+					remove_trait = incapable
+					remove_trait = leper
+					remove_trait = possessed
+					remove_trait = ill
+					remove_trait = pneumonic
+					remove_trait = maimed
+					remove_trait = crippled
+					add_trait = fair
+					add_trait = disinherited
+					add_trait = forbid_marriage
+					give_minor_title = title_maid_seas
+				}
+			}
+		}
+		#wildling event
+		any_playable_ruler = {
+			limit = {
+				culture_group = free_folk
+			}
+			character_event = { id = wildling.1 }
+			#make sure capital holding has level 1 barracks
+			if = {
+				limit = {
+					NOT = { has_game_rule = { name = symmetrical_start value = on } }
+				}
+				capital_holding = {
+					if = {
+						limit = {
+							holding_type = castle
+							NOT = { has_building = ca_wildling_barracks }
+						}
+						add_building = ca_wildling_barracks
+						holder_scope = { character_event = { id = maintenance.34 days = 2 } } #refill levy
+					}
+				}
+			}	
+		}
+		#pirate event
+		any_playable_ruler = {
+			limit = {
+				OR = {
+					religion = pirate
+					religion = corsair
+				}
+			}
+			character_event = { id = pirate.1 }
+			character_event = { id = pirate.199 }
+			if = {
+				limit = {
+					NOT = { has_game_rule = { name = symmetrical_start value = on } }
+				}
+				#make sure capital holding has level 1 pirate den
+				capital_holding = {
+					if = {
+						limit = {
+							holding_type = castle
+							NOT = { has_building = ca_asoiaf_pirateshipyard }
+						}
+						add_building = ca_asoiaf_pirateshipyard
+						holder_scope = { character_event = { id = maintenance.34 days = 2 } } #refill levy
+					}
+				}
+			}	
+		}
+		#dothraki events
+		character_event = { id = dothraki.900 } #Initialise Dothraki Domain
+		#High Septon
+		k_the_most_devout = {
+			holder_scope = {
+				if = {
+					limit = { year = 8165 }
+					k_the_most_devout = {
+						holder_scope = {
+							b_great_sept_of_baelor = {
+								gain_title = PREV
+							}
+						}
+					}	
+				}			
+			}
+		}
+		#Kill rogue 40000 year old Valkyn
+		if = {
+			limit = { NOT = { year = 8271 } }
+			strangers_mercy = {
+				limit = { dynasty=10003 }
+				remove_trait = strangers_mercy
+				death = yes
+			}
+		}		
+		#If Iron Throne does not exist, destroy dejure
+		if = {
+			limit = { e_iron_throne = { has_holder = no } }
+			k_north = { de_jure_liege = e_north }
+			k_riverlands = { de_jure_liege = e_riverlands }
+			k_vale = { de_jure_liege = e_vale }
+			k_westerlands = { de_jure_liege = e_westerlands }
+			k_reach = { de_jure_liege = e_reach }
+			k_dorne = { de_jure_liege = e_dorne }
+			k_stormlands = { de_jure_liege = e_stormlands }
+			k_iron_isles = { de_jure_liege = e_iron_isles }
+			d_kings_landing = { de_jure_liege = k_stormlands }
+			d_kingswood = { de_jure_liege = k_stormlands }
+			d_masseys_hook = { de_jure_liege = k_stormlands }
+			d_blackwater_rush = { de_jure_liege = k_riverlands }
+			d_rosby = { de_jure_liege = k_riverlands }
+			d_duskendale = { de_jure_liege = k_riverlands }
+			if = {
+				limit = { year = 8001 }
+				d_crackclaw_point = { de_jure_liege = k_riverlands }
+				d_dragonstone = { de_jure_liege = k_stormlands }
+			}
+		}
+		#Set title law flags in other realms
+		any_independent_ruler = {
+			limit = {
+				NOT = { culture_group = unoccupied_group }
+				NOT = { has_landed_title = e_dorne }
+				NOT = { has_landed_title = e_new_valyria }
+				NOT = { has_landed_title = e_iron_throne }
+				NOT = { has_landed_title = e_yi_ti }
+				OR = {
+					NOT = { capital_scope = { region = world_westeros } }
+					trait = wildling
+					trait = nightswatch
+				}
+			}
+			any_demesne_title = { 
+				limit = { 
+					NOT = { tier = BARON } 
+					NOT = { tier = EMPEROR }
+				}
+				set_variable = { which = "de_facto_empire" value = 0 } 
+			}
+			any_realm_lord = { 
+				any_demesne_title = { 
+					limit = { 
+						NOT = { tier = BARON } 
+						NOT = { tier = EMPEROR }
+					}
+					set_variable = { which = "de_facto_empire" value = 0 } 
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { year = 8001 } }
+			k_dragonstone = {
+				any_de_jure_vassal_title = { 
+					limit = { NOT = { tier = BARON } }
+					set_variable = { which = "de_facto_empire" value = 0 } 
+				} 
+			}
+			k_crackclaw_point = {
+				any_de_jure_vassal_title = { 
+					limit = { NOT = { tier = BARON } }
+					set_variable = { which = "de_facto_empire" value = 0 } 
+				}
+			}
+		}
+		#Set mega war title law flags
+		e_rebels = { set_variable = { which = "de_facto_empire" value = 21 } } #e_rebels counts how many empires have been flagged
+		e_iron_throne = { set_variable = { which = "de_facto_empire" value = 1 } }
+		e_north = { set_variable = { which = "de_facto_empire" value = 2 } }
+		e_iron_isles = { set_variable = { which = "de_facto_empire" value = 3 } }
+		e_vale = { set_variable = { which = "de_facto_empire" value = 4 } }
+		e_westerlands = { set_variable = { which = "de_facto_empire" value = 5 } }
+		e_reach = { set_variable = { which = "de_facto_empire" value = 6 } }
+		e_stormlands = { set_variable = { which = "de_facto_empire" value = 7 } }
+		e_dorne = { set_variable = { which = "de_facto_empire" value = 8 } }
+		e_riverlands = { set_variable = { which = "de_facto_empire" value = 9 } }
+		e_mexikha = { set_variable = { which = "de_facto_empire" value = 10 } }
+		e_new_valyria = { set_variable = { which = "de_facto_empire" value = 11 } }
+		e_three_daughters = { set_variable = { which = "de_facto_empire" value = 12 } }
+		e_braavos = { set_variable = { which = "de_facto_empire" value = 13 } }
+		e_ghiscar = { set_variable = { which = "de_facto_empire" value = 14 } }
+		e_qarth = { set_variable = { which = "de_facto_empire" value = 15 } }
+		e_yi_ti = { set_variable = { which = "de_facto_empire" value = 17 } }
+		e_summer_sea = { set_variable = { which = "de_facto_empire" value = 18 } }
+		e_khalasar = { set_variable = { which = "de_facto_empire" value = 19 } }
+		e_jkhalasar = { set_variable = { which = "de_facto_empire" value = 20 } }
+		
+		e_rebels = { set_variable = { which = "de_facto_kingdom" value = 46 } } #e_rebels counts how many kingdoms have been flagged
+		k_the_most_devout = { set_variable = { which = "de_facto_kingdom" value = 1 } }
+		k_north = { set_variable = { which = "de_facto_kingdom" value = 2 } }
+		k_riverlands = { set_variable = { which = "de_facto_kingdom" value = 3 } }
+		k_vale = { set_variable = { which = "de_facto_kingdom" value = 4 } }
+		k_iron_isles = { set_variable = { which = "de_facto_kingdom" value = 5 } }
+		k_reach = { set_variable = { which = "de_facto_kingdom" value = 6 } }
+		k_dorne = { set_variable = { which = "de_facto_kingdom" value = 7 } }
+		k_stormlands = { set_variable = { which = "de_facto_kingdom" value = 8 } }
+		k_westerlands = { set_variable = { which = "de_facto_kingdom" value = 9 } }
+		k_beyond_wall = { set_variable = { which = "de_facto_kingdom" value = 10 } }
+		k_summer_islands = { set_variable = { which = "de_facto_kingdom" value = 11 } }
+		k_basilisk_isles = {set_variable = { which = "de_facto_kingdom" value = 12 } }
+		k_stepstones = { set_variable = { which = "de_facto_kingdom" value = 13 } }
+		k_pentos = { set_variable = { which = "de_facto_kingdom" value = 14 } }
+		k_lys = { set_variable = { which = "de_facto_kingdom" value = 15 } }
+		k_qohor = { set_variable = { which = "de_facto_kingdom" value = 16 } }
+		k_norvos = { set_variable = { which = "de_facto_kingdom" value = 17 } }
+		k_myr = { set_variable = { which = "de_facto_kingdom" value = 18 } }
+		k_tyrosh = { set_variable = { which = "de_facto_kingdom" value = 19 } }
+		k_volantis = { set_variable = { which = "de_facto_kingdom" value = 20 } }
+		k_lorath = { set_variable = { which = "de_facto_kingdom" value = 21 } }
+		k_braavos = { set_variable = { which = "de_facto_kingdom" value = 22 } }
+		k_yunkai = { set_variable = { which = "de_facto_kingdom" value = 23 } }
+		k_astapor = { set_variable = { which = "de_facto_kingdom" value = 24 } }
+		k_meereen = { set_variable = { which = "de_facto_kingdom" value = 25 } }
+		k_new_ghis = { set_variable = { which = "de_facto_kingdom" value = 26 } }
+		k_lhazar = { set_variable = { which = "de_facto_kingdom" value = 27 } }
+		k_hazdahn = { set_variable = { which = "de_facto_kingdom" value = 28 } }
+		k_ibben = { set_variable = { which = "de_facto_kingdom" value = 29 } }
+		k_qarth = { set_variable = { which = "de_facto_kingdom" value = 30 } }
+		k_leng = { set_variable = { which = "de_facto_kingdom" value = 31 } }
+		k_asabhad = { set_variable = { which = "de_facto_kingdom" value = 32 } }
+		k_asshai = { set_variable = { which = "de_facto_kingdom" value = 33 } }
+		k_yin = { set_variable = { which = "de_facto_kingdom" value = 34 } }
+		k_jinqi = { set_variable = { which = "de_facto_kingdom" value = 35 } }
+		k_tiqui = { set_variable = { which = "de_facto_kingdom" value = 36 } }
+		k_linqi = { set_variable = { which = "de_facto_kingdom" value = 37 } }
+		k_piqui = { set_variable = { which = "de_facto_kingdom" value = 38 } }
+		k_xin = { set_variable = { which = "de_facto_kingdom" value = 39 } }
+		k_trader_town = { set_variable = { which = "de_facto_kingdom" value = 40 } }
+		k_nghai = { set_variable = { which = "de_facto_kingdom" value = 41 } }
+		k_dothraki = { set_variable = { which = "de_facto_kingdom" value = 42 } }
+		k_ifeqevron = { set_variable = { which = "de_facto_kingdom" value = 43 } }
+		k_jogos_nhai = { set_variable = { which = "de_facto_kingdom" value = 44 } }
+		k_sarnor = { set_variable = { which = "de_facto_kingdom" value = 45 } }
+		
+		#Westerosi kingdoms also get defacto kingdom flag for independence wars
+		e_north = { set_variable = { which = "de_facto_kingdom" value = 2 } }
+		e_riverlands = { set_variable = { which = "de_facto_kingdom" value = 3 } }
+		e_vale = { set_variable = { which = "de_facto_kingdom" value = 4 } }
+		e_iron_isles = { set_variable = { which = "de_facto_kingdom" value = 5 } }
+		e_reach = { set_variable = { which = "de_facto_kingdom" value = 6 } }
+		e_dorne = { set_variable = { which = "de_facto_kingdom" value = 7 } }
+		e_stormlands = { set_variable = { which = "de_facto_kingdom" value = 8 } }
+		e_westerlands = { set_variable = { which = "de_facto_kingdom" value = 9 } }
+		
+		e_iron_throne = {
+			if = {
+				limit = { has_holder = yes }
+				any_de_jure_vassal_title = { 
+					limit = { 
+						NOT = { holder_scope = { culture = ruin } } 
+						NOT = { tier = BARON }
+						NOT = { tier = EMPEROR }
+					}
+					set_variable = { which = "de_facto_empire" value = 1 }
+				}
+			}	
+		}
+		
+		#Set mega war links
+		any_independent_ruler = {
+			limit = {
+				NOT = { tier = EMPEROR }
+				NOT = { culture_group = unoccupied_group }
+				primary_title = { check_variable = { which = "de_facto_empire" value = 1 } }
+			}
+			character_event = { id = mega_wars.42 }
+		}
+		# if = { #Rebuild split empire realms if mega wars are off
+			# limit = {
+				# has_game_rule = { name = mega_wars value = off }
+			# }
+			# any_playable_ruler = {
+				# limit = { 
+					# OR = {
+						# trait = civil_war 
+						# trait = rebel_leader
+					# }	
+				# }
+				# remove_trait = civil_war
+				# clr_character_flag = harsh_justice
+				# clr_character_flag = issue_punishments
+				# clr_character_flag = supporting_king 
+				# clr_character_flag = neutral
+				# clr_character_flag = against_king 
+				# clr_character_flag = rebel_leader
+				# clr_character_flag = join_independance_asked
+				# clr_character_flag = no_kingship
+				# remove_trait = rebel_leader
+				# clr_character_flag = mega_war_decision_cooldown
+				# any_opinion_modifier_target = {
+					# remove_opinion = { who = ROOT modifier = opinion_with_rebel_leader }		
+					# remove_opinion = { who = ROOT modifier = opinion_with_king }	
+					# remove_opinion = { who = ROOT modifier = opinion_emperor_rebel_leader }			
+				# }	
+			# }
+			# any_independent_ruler = {
+				# limit = {
+					# tier = KING
+					# NOT = { has_character_flag = independant }
+					# primary_title = { check_variable = { which = "de_facto_empire" value = 1 } }
+					# NOT = { liege_before_war = { NOT = { character = PREV } } }
+				# }
+				# set_character_flag = mega_wars_disabled
+				# character_event = { id = mega_wars.9 days = 1 }
+			# }
+			# any_independent_ruler = {
+				# limit = {
+					# OR = {
+						# tier = KING
+						# tier = DUKE
+					# }
+					# NOT = { has_character_flag = independant }
+					# primary_title = { check_variable = { which = "de_facto_empire" value = 1 } }
+					# NOT = { liege_before_war = { NOT = { character = PREV } } }
+				# }
+				# set_character_flag = mega_wars_disabled
+				# character_event = { id = mega_wars.900 days = 1 }
+			# }
+		# }	
+		#Canon feauds
+		d_southstone = { #blackwood/bracken
+			holder_scope = {
+				character_event = { id = dynastic_rivalry.200 }
+			}
+		}
+		d_blackwood = {
+			holder_scope = {
+				character_event = { id = dynastic_rivalry.200 }
+			}
+		}	
+		c_blackgrove = { # Forrester/Whitehill rivalry
+			holder_scope = {
+				character_event = { id = dynastic_rivalry.201 }
+			}
+		}
+		c_aylesvale = {
+			holder_scope = {
+				character_event = { id = dynastic_rivalry.201 }
+			}
+		}
+		c_yronwood = { # Yronwood/Fowler rivalry
+			holder_scope = {
+				character_event = { id = dynastic_rivalry.202 }
+			}
+		}
+		c_skyreach = {
+			holder_scope = {
+				character_event = { id = dynastic_rivalry.202 }
+			}
+		}
+		#Trigger Mega War if valid
+		if = {
+			limit = {
+				e_iron_throne = { holder_scope = { NOT = { trait = civil_war } } }
+				year = 8001
+				OR = {
+					NOT = { year = 8129 }
+					year = 8130
+				}
+				OR = {
+					NOT = { year = 8195 }
+					year = 8196
+				}
+				OR = {
+					NOT = { year = 8282 }
+					year = 8284
+				}
+				NOT = { year = 8299 }
+			}
+			e_iron_throne = {
+				holder_scope = {
+					character_event = { id = mega_wars.3 }
+				}
+			}
+		}	
+		any_independent_ruler = {
+			limit = {
+				tier = EMPEROR
+				NOT = { has_landed_title = e_iron_throne }
+				demesne_size = 1
+				is_nomadic = no				
+			}
+			character_event = { id = mega_wars.3 }
+		}
+		#primogeniture for all
+		# any_independent_ruler = {
+			# limit = { 
+				# NOT = { trait = wildling }
+			# }	
+			# any_realm_lord = {
+				# limit = { 
+					# is_feudal = yes
+					# is_patrician = no
+					# NOT = { trait = kingsguard }
+					# NOT = { trait = archmaester }
+					# NOT = { trait = nightswatch }
+					# NOT = { trait = wildling }
+					# NOT = { seniority_culture_trigger = yes }
+					# NOT = { culture = lhazareen }
+					# NOT = { religion = pirate }
+					# NOT = { religion = corsair }
+				# }	
+				# any_demesne_title = {
+					# limit = { 
+						# NOT = { duchy = { title = d_the_wall } }	
+						# NOT = { title = c_bloody_gate } 	
+						# NOT = { title = d_poor_fellows } 	
+						# NOT = { title = d_warriors_sons } 	
+						# NOT = { title = c_driftmark }
+						# NOT = { is_landless_type_title = yes }
+					# }
+					# succession = primogeniture
+				# }
+				# if = {
+					# limit = { culture = ironborn } #ironborn are agnatic
+					# any_demesne_title = {
+						# limit = { 
+							# NOT = { duchy = { title = d_the_wall } }	
+							# NOT = { title = c_bloody_gate } 	
+							# NOT = { title = d_poor_fellows } 	
+							# NOT = { title = d_warriors_sons } 
+							# NOT = { is_landless_type_title = yes }
+						# }
+						# gender_succ = agnatic
+					# }
+				# }
+				# if = {
+					# limit = { 
+						# culture_group = dornish #dornish are cognatic
+					# } 
+					# any_demesne_title = {
+						# limit = { 
+							# NOT = { duchy = { title = d_the_wall } }	
+							# NOT = { title = c_bloody_gate } 	
+							# NOT = { title = d_poor_fellows } 	
+							# NOT = { title = d_warriors_sons } 
+							# NOT = { is_landless_type_title = yes }
+						# }
+						# gender_succ = true_cognatic
+					# }
+				# }
+				# recalc_succession = yes
+			# }
+			# if = {
+				# limit = { 
+					# culture_group = dornish #dornish are cognatic
+				# } 
+				# any_demesne_title = {
+					# limit = { 
+						# NOT = { duchy = { title = d_the_wall } }	
+						# NOT = { title = c_bloody_gate } 	
+						# NOT = { title = d_poor_fellows } 	
+						# NOT = { title = d_warriors_sons } 
+						# NOT = { is_landless_type_title = yes }
+					# }
+					# gender_succ = true_cognatic
+				# }
+			# }
+			# recalc_succession = yes
+		# }
+		##Give Slavers some slaves
+		if = {
+			limit = {
+				NOT = { has_game_rule = { name = symmetrical_start value = on } }
+			}
+			if = {
+				limit = { NOT = { year = 8300 } }
+				k_meereen = {
+					holder_scope = {
+						set_dynasty_flag = flag_slaver_tradition
+						add_trait = slave_trader
+						add_trait = slave_owner
+						family_palace = {
+							add_building = fp_asoiaf_slavepit_1
+							add_building = fp_asoiaf_slavepit_2
+							add_building = fp_asoiaf_slavepit_3
+						}
+						character_event = { id = slavery.4004 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						any_vassal = {
+							limit = { is_patrician = yes }
+							set_dynasty_flag = flag_slaver_tradition
+							add_trait = slave_trader
+							add_trait = slave_owner
+							family_palace = {
+								add_building = fp_asoiaf_slavepit_1
+								add_building = fp_asoiaf_slavepit_2
+								add_building = fp_asoiaf_slavepit_3
+							}
+							character_event = { id = slavery.4004 }
+							character_event = { id = maintenance.34 days = 2 } #refill levy
+						}
+					}
+				}
+				k_astapor = {
+					holder_scope = {
+						set_dynasty_flag = flag_slaver_tradition
+						add_trait = slave_trader
+						add_trait = slave_owner
+						family_palace = {
+							add_building = fp_asoiaf_slavepit_1
+							add_building = fp_asoiaf_slavepit_2
+							add_building = fp_asoiaf_unsullied_1
+							add_building = fp_asoiaf_unsullied_2
+						}
+						character_event = { id = slavery.4004 days = 1 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						any_vassal = {
+							limit = { is_patrician = yes }
+							set_dynasty_flag = flag_slaver_tradition
+							add_trait = slave_trader
+							add_trait = slave_owner
+							family_palace = {
+								add_building = fp_asoiaf_slavepit_1
+								add_building = fp_asoiaf_slavepit_2
+								add_building = fp_asoiaf_unsullied_1
+								add_building = fp_asoiaf_unsullied_2
+							}
+							character_event = { id = slavery.4004 days = 2 }
+							character_event = { id = maintenance.34 days = 2 } #refill levy
+						}
+					}
+				}
+			}
+			k_yunkai = {
+				holder_scope = {
+					set_dynasty_flag = flag_slaver_tradition
+					add_trait = slave_trader
+					add_trait = slave_owner
+					family_palace = {
+						add_building = fp_asoiaf_slavepit_1
+						add_building = fp_asoiaf_slavepit_2
+						add_building = fp_asoiaf_slavepit_3
+					}
+					character_event = { id = slavery.4004 days = 3 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+					any_vassal = {
+						limit = { is_patrician = yes }
+						set_dynasty_flag = flag_slaver_tradition
+						add_trait = slave_trader
+						add_trait = slave_owner
+						family_palace = {
+							add_building = fp_asoiaf_slavepit_1
+							add_building = fp_asoiaf_slavepit_2
+							add_building = fp_asoiaf_slavepit_3
+						}
+						character_event = { id = slavery.4004 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+					}
+				}
+			}
+			d_gogossos = {
+				holder_scope = {
+					if = {
+						limit = { is_merchant_republic = yes }
+						set_dynasty_flag = flag_slaver_tradition
+						add_trait = slave_trader
+						add_trait = slave_owner
+						family_palace = {
+							add_building = fp_asoiaf_slavepit_1
+							add_building = fp_asoiaf_slavepit_2
+							add_building = fp_asoiaf_slavepit_3
+						}
+						character_event = { id = slavery.4004 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						any_vassal = {
+							limit = { is_patrician = yes }
+							set_dynasty_flag = flag_slaver_tradition
+							add_trait = slave_trader
+							add_trait = slave_owner
+							family_palace = {
+								add_building = fp_asoiaf_slavepit_1
+								add_building = fp_asoiaf_slavepit_2
+								add_building = fp_asoiaf_slavepit_3
+							}
+							character_event = { id = slavery.4004 }
+							character_event = { id = maintenance.34 days = 2 } #refill levy
+						}
+					}	
+				}
+			}
+			k_volantis = {
+				holder_scope = {
+					add_trait = slave_trader
+					add_trait = slave_owner
+					family_palace = {
+						add_building = fp_asoiaf_slavepit_1
+						add_building = fp_asoiaf_slavepit_2
+					}
+					character_event = { id = slavery.4004 days = 1 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+					any_vassal = {
+						limit = { is_patrician = yes }
+						add_trait = slave_trader
+						add_trait = slave_owner
+						family_palace = {
+							add_building = fp_asoiaf_slavepit_1
+							add_building = fp_asoiaf_slavepit_2
+						}
+						character_event = { id = slavery.4004 days = 2 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+					}
+				}
+			}
+			k_qarth = {
+				holder_scope = {
+					any_vassal = {
+						limit = { is_merchant_republic = yes }
+						add_trait = slave_trader
+						add_trait = slave_owner
+						family_palace = { add_building = fp_asoiaf_slavepit_1 }
+						character_event = { id = slavery.4004 days = 3 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						any_vassal = {
+							limit = { is_patrician = yes }
+							family_palace = { add_building = fp_asoiaf_slavepit_1 }
+							add_trait = slave_trader
+							add_trait = slave_owner
+							character_event = { id = slavery.4004 }
+							character_event = { id = maintenance.34 days = 2 } #refill levy
+						}
+					}
+				}
+			}
+			k_lys = {
+				holder_scope = {
+					family_palace = { add_building = fp_asoiaf_slavepit_1 }
+					character_event = { id = slavery.4004 days = 1 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+					add_trait = slave_trader
+					add_trait = slave_owner
+					any_vassal = {
+						limit = { is_patrician = yes }
+						family_palace = { add_building = fp_asoiaf_slavepit_1 }
+						character_event = { id = slavery.4004 days = 2 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						add_trait = slave_trader
+						add_trait = slave_owner
+					}
+				}
+			}
+			k_myr = {
+				holder_scope = {
+					family_palace = { add_building = fp_asoiaf_slavepit_1 }
+					character_event = { id = slavery.4004 days = 3 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+					add_trait = slave_trader
+					add_trait = slave_owner
+					any_vassal = {
+						limit = { is_patrician = yes }
+						family_palace = { add_building = fp_asoiaf_slavepit_1 }
+						character_event = { id = slavery.4004 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						add_trait = slave_trader
+						add_trait = slave_owner
+					}
+				}
+			}
+			d_tyrosh = {
+				holder_scope = {
+					family_palace = { add_building = fp_asoiaf_slavepit_1 }
+					character_event = { id = slavery.4004 days = 1 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+					add_trait = slave_trader
+					add_trait = slave_owner
+					any_vassal = {
+						limit = { is_patrician = yes }
+						family_palace = { add_building = fp_asoiaf_slavepit_1}
+						character_event = { id = slavery.4004 days = 2 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						add_trait = slave_trader
+						add_trait = slave_owner
+					}
+				}
+			}
+			k_essaria = {
+				holder_scope = {
+					if = {
+						limit = { is_nomadic = no }
+						capital_holding = { add_building = ca_asoiaf_slavepit_1 }
+						character_event = { id = slavery.4004 days = 3 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+						add_trait = slave_owner
+						any_vassal = {
+							limit = { higher_tier_than = COUNT }
+							capital_holding = { add_building = ca_asoiaf_slavepit_1 }
+							character_event = { id = slavery.4004 }
+							character_event = { id = maintenance.34 days = 2 } #refill levy
+							add_trait = slave_owner
+						}
+					}	
+				}
+			}
+			k_new_ghis = {
+				holder_scope = {
+					add_trait = slave_owner
+					capital_holding = {
+						add_building = ca_asoiaf_slavepit_1
+						add_building = ca_asoiaf_slavepit_2
+					}
+					character_event = { id = slavery.4004 days = 3 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+				}
+			}
+			k_hazdahn = {
+				holder_scope = {
+					add_trait = slave_owner
+					capital_holding = {
+						add_building = ca_asoiaf_slavepit_1
+						add_building = ca_asoiaf_slavepit_2
+					}
+					character_event = { id = slavery.4004 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+				}
+			}
+			d_mantarys = {
+				holder_scope = {
+					add_trait = slave_owner
+					capital_holding = {
+						add_building = ca_asoiaf_slavepit_1
+					}
+					character_event = { id = slavery.4004 days = 1 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+				}
+			}
+			d_tolos = {
+				holder_scope = {
+					add_trait = slave_owner
+					capital_holding = {
+						add_building = ca_asoiaf_slavepit_1
+					}
+					character_event = { id = slavery.4004 days = 2 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+				}
+			}
+			d_elyria = {
+				holder_scope = {
+					add_trait = slave_owner
+					capital_holding = {
+						add_building = ca_asoiaf_slavepit_1
+					}
+					character_event = { id = slavery.4004 days = 3 }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+				}
+			}
+			k_skahazadhan = {
+				holder_scope = {
+					if = {
+						limit = { is_nomadic = no }
+						add_trait = slave_owner
+						capital_holding = {
+							add_building = ca_asoiaf_slavepit_1
+							add_building = ca_asoiaf_slavepit_2
+						}
+						character_event = { id = slavery.4004 }
+						character_event = { id = maintenance.34 days = 2 } #refill levy
+					}	
+				}
+			}
+		}	
+		#matrilineal inheritance check
+		any_playable_ruler = { #check own marriage
+			limit = { 
+				is_female = yes	
+				is_married = yes
+				is_married_matrilineally = no
+				spouse = { is_ruler = no }
+			}	
+			set_character_flag = no_wedding_event
+			spouse = {
+				set_character_flag = no_wedding_event
+				remove_spouse = spouse
+				add_spouse_matrilineal = PREV
+				clr_character_flag = no_wedding_event
+			}
+			clr_character_flag = no_wedding_event
+			prestige = 150
+		}
+		any_playable_ruler = { #check female relative marriages
+			limit = { 
+				OR = {
+					primary_title = { 
+						OR = {
+							has_law = true_cognatic_succession 
+							has_law = enatic_cognatic_succession
+							has_law = enatic_succession
+						}	
+					}
+					culture_group = dornish
+					AND = { #God Empresses
+						culture = yi_ti
+						higher_tier_than = DUKE
+						capital_scope = { kingdom = { title = k_leng } }
+					}
+				}	
+			}	
+			any_dynasty_member = {
+				limit = {
+					is_female = yes
+					is_married = yes
+					is_married_matrilineally = no
+					is_ruler = no
+					is_close_relative = PREV
+				}
+				if = { #If married to some bozo change to matrilineal immediately
+					limit = { 
+						spouse = {
+							is_ruler = no
+							OR = {
+								dynasty = 0
+								trait = bastard
+								AND = {
+									NOT = { father_even_if_dead = { always = yes } }
+									NOT = { mother_even_if_dead = { always = yes } }
+								}
+							}
+						}
+					}
+					spouse = {
+						set_character_flag = no_wedding_event
+						remove_spouse = spouse
+						add_spouse_matrilineal = PREV
+						clr_character_flag = no_wedding_event
+						prestige = -150
+					}
+					prestige = 150
+					clr_character_flag = no_wedding_event			
+				}
+				if = { #Else add disinherited trait
+					limit = { 
+						is_married = yes
+						is_married_matrilineally = no
+					}
+					add_trait = disinherited
+					PREV = { set_character_flag = matri_inheritance_check }		
+				}
+			}
+			recalc_succession = yes
+		}
+		# #Ibben no religion fix
+		# any_playable_ruler = {
+			# limit = { 
+				# culture = ibbenese
+			# }	
+			# any_realm_character = { religion = gods_ibben }
+			# any_realm_province = { religion = gods_ibben }
+		# }
+		#Triarchy setup
+		e_three_daughters = { 
+			holder_scope = { 
+				set_character_flag = elected_triarchy_leader
+				character_event = { id = free_cities.17 } 
+			} 
+		}
+		#roads
+		if = {
+			limit = { 
+				year = 8070 
+				NOT = { has_game_rule = { name = symmetrical_start value = on } }
+			}
+			set_global_flag = building_westeros_road_network
+			#Kingsroad		
+			304 = { #storm's end
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			299 = { #parchments
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			296 = { #bronzegate
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			230 = { #woodmere
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			226 = { #king's landing
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			225 = { #stokeworth
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			210 = { #rollingford
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			205 = { #sow's horn
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			115 = { #shoreham
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			107 = { #harrenhal
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			97 = { #lord harroway's town
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			108 = { #Darry
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			84 = { #wycombe
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			83 = { #erenford
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			78 = { #freylands
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			61 = { #whitford
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			57 = { #king's course
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			49 = { #castle cerwyn
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			47 = { #winterfell
+				add_province_modifier = { name = kingsroad duration = -1 }
+				#set_province_flag = kingsroad
+			}
+			#river road
+			97 = { #lord harroway's town
+				#set_province_flag = river_road
+			}
+			96 = { #lychester
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			91 = { #stone hedge
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			101 = { #riverrun
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			102 = { #branstone
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			175 = { #nunn's deep
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			174 = { #golden tooth
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			176 = { #oxcross
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			178 = { #sarsfield
+				add_province_modifier = { name = river_road duration = -1 }
+				#set_province_flag = river_road
+			}
+			182 = { #casterly rock
+				#set_province_flag = river_road
+			}
+			183 = { #lannisport
+				#set_province_flag = river_road
+			}
+			#Goldroad
+			182 = { #casterly rock
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			183 = { #lannisport
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			184 = { #tendring
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			1132 = { #moreland
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			191 = { #deep den
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			192 = { #drox castle
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			194 = { #payne hall
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			202 = { #byford
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			222 = { #bramsfort
+				add_province_modifier = { name = goldroad duration = -1 }
+				#set_province_flag = goldroad
+			}
+			226 = { #king's landing
+				#set_province_flag = goldroad
+			}
+			#roseroad
+			226 = { #king's landing
+				#set_province_flag = roseroad
+			}
+			295 = { #Langward Hall
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			227 = { #dalston keep
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			255 = { #roseford
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			253 = { #bitterbridge
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			254 = { #longtable
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			256 = { #inchfield
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			267 = { #highgarden
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			276 = { #middlebury
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			275 = { #darkdell
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			284 = { #sommerset
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			283 = { #honeyholt
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			286 = { #oldtown
+				add_province_modifier = { name = roseroad duration = -1 }
+				#set_province_flag = roseroad
+			}
+			#oceanroad
+			267 = { #highgarden
+				#set_province_flag = oceanroad
+			}
+			265 = { #westbrook
+				add_province_modifier = { name = oceanroad duration = -1 }
+				#set_province_flag = oceanroad
+			}
+			240 = { #catswold
+				add_province_modifier = { name = oceanroad duration = -1 }
+				#set_province_flag = oceanroad
+			}
+			235 = { #old oak
+				add_province_modifier = { name = oceanroad duration = -1 }
+				#set_province_flag = oceanroad
+			}
+			197 = { #crakehall
+				add_province_modifier = { name = oceanroad duration = -1 }
+				#set_province_flag = oceanroad
+			}
+			185 = { #hawthorne
+				add_province_modifier = { name = oceanroad duration = -1 }
+				#set_province_flag = oceanroad
+			}
+			183 = { #lannisport
+				#set_province_flag = oceanroad
+			}
+			182 = { #casterly rock
+				#set_province_flag = oceanroad
+			}
+			#high road
+			97 = { #lord harroway's town
+				#set_province_flag = high_road
+			}
+			95 = { #chiltern
+				add_province_modifier = { name = high_road duration = -1 }
+				#set_province_flag = high_road
+			}
+			134 = { #darkmoor
+				add_province_modifier = { name = high_road duration = -1 }
+				#set_province_flag = high_road
+			}
+			140 = { #bloody gate
+				add_province_modifier = { name = high_road duration = -1 }
+				#set_province_flag = high_road
+			}		
+			136 = { #the eyrie
+				add_province_modifier = { name = high_road duration = -1 }
+				#set_province_flag = high_road
+			}
+		}
+		#sword ownership flags
+		any_character = {
+			limit = { 
+				trait = valyrian_steel
+			}
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		ice = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		longclaw = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		longclaw_snow = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		blackfyre = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		brightroar = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		heartsbane = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		nightfall = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		darksister = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		ladyforlorn = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		redrain = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}		
+		widowswail = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}		
+		oathkeeper = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		crabspincer = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		strangers_mercy = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		vigilance = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		orphan_maker = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		palemoon = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		truth = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		lamentation = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		poison = {
+			limit = { is_alive = yes }
+			add_character_modifier = { name = owns_valyrian_steel_sword  duration = -1 }
+		}
+		#Grandchild Princes
+		any_independent_ruler = {
+			limit = { tier = EMPEROR }
+			character_event = { id = 66115 }
+		}
+		#Check the capital of rulers with two or more provinces
+		any_playable_ruler = {
+			limit = {
+				num_of_count_titles = 2
+				demesne_size = 2
+				higher_tier_than = COUNT
+			}
+			character_event = { id = maintenance.42 }
+		}
+		#Add ser title to all knights
+		any_character = {
+			limit = {
+				trait = knight
+				is_ruler = no
+				NOT = { has_minor_title = title_prince }
+				NOT = { has_minor_title = title_queen_mother }
+				NOT = { has_minor_title = title_ruler_consort }
+			}
+			if = {
+				limit = { is_female = no } 
+				set_special_character_title = title_ser
+			}
+			if = {
+				limit = { is_female = yes }
+				set_special_character_title = title_lady	
+			}
+		}
+		#Add maester title to all maesters
+		any_character = {
+			limit = {
+				trait = maester
+			}
+			set_special_character_title = title_maester
+		}
+		#Add septon title to all septons
+		any_character = {
+			limit = {
+				trait = septon
+				lower_tier_than = KING
+			}
+			set_special_character_title = title_septon
+		}
+		#Add septa title to all septas
+		any_character = {
+			limit = {
+				trait = septa
+				lower_tier_than = KING
+			}
+			set_special_character_title = title_septa
+		}
+		#Distribute fighting/knight traits
+		any_playable_ruler = {
+			limit = {
+				NOT = { #has own courtier maintenance
+					culture_group = hyrkoon_group
+				}
+			}	
+			if = { #spread random seed
+				limit = { 
+					OR = {
+						ai = no
+						NOT = { age = 16 }
+					}	
+				}
+				character_event = { id = combat_trait.8 }
+			}
+			if = {
+				limit = {					
+					age = 16
+					NOT = { age = 32 } 
+					ai = yes
+				}
+				character_event = { id = combat_trait.8 days = 1 }
+			}
+			if = {
+				limit = {					
+					age = 32
+					NOT = { age = 48 } 
+					ai = yes
+				}
+				character_event = { id = combat_trait.8 days = 2 }
+			}
+			if = {
+				limit = {					
+					age = 48
+					ai = yes
+				}
+				character_event = { id = combat_trait.8 days = 3 }
+			}				
+		}
+		#move all dynasty members to baron's court
+		any_independent_ruler = {
+			any_realm_lord = {
+				limit = { 
+					tier = BARON
+					is_feudal = yes
+					dynasty_head = { character = PREV }
+					OR = {
+						any_sibling = { always = yes }
+						num_of_children = 1
+					}	
+					NOT = { trait = nightswatch }
+				}
+				any_dynasty_member = {
+					limit = {
+						is_ruler = no
+						NOT = { trait = nightswatch }
+						NOT = { trait = kingsguard }
+						NOT = { trait = maester }
+						NOT = { trait = archmaester }
+						is_priest = no
+					}
+					move_character = PREV
+				}
+			}
+		}
+		# Add random father to Balerion to stop culling
+		 # dragon = {
+			# limit = { character = 77990000 }
+			# dragon = {
+				# limit = { character = 77990001 }
+				# set_father = PREV 
+			# }
+		# }
+		#AI job action control
+		any_playable_ruler = {
+			limit = { ai = yes }
+			character_event = { id = maintenance.49 days = 1 }
+		}
+		#Childhood trait removal
+		if = {
+			limit = {
+				has_dlc = "Zeus"
+			}
+			any_character = {
+				limit = {
+					is_adult = no
+					personality_traits = 3
+				}
+				remove_trait = haughty
+				remove_trait = affectionate
+				remove_trait = timid
+				remove_trait = rowdy
+				remove_trait = willful
+				remove_trait = brooding
+				remove_trait = indolent
+				remove_trait = playful
+				remove_trait = conscientious
+				remove_trait = fussy
+				remove_trait = curious
+				remove_trait = idolizer
+			}
+		}	
+		#Tyranny/Dishonour decay
+		any_character = {
+			limit = { 
+				check_variable = { which = "tyrant" value = 0.9 } 
+				NOT = { has_character_flag = tyranny_decay_check }
+			}
+			set_character_flag = tyranny_decay_check
+			character_event = { id = maintenance.2 days = 1825 } #Tyranny decays every 5 years
+		}
+		any_character = {
+			limit = { 
+				check_variable = { which = "dishonorable" value = 0.9 }
+				NOT = { has_character_flag = dishonor_decay_check }
+			}
+			set_character_flag = dishonor_decay_check
+			character_event = { id = maintenance.4 days = 3650 } #Dishonor decays every 10 years
+		}
+		# Distribute level of education for conclave users
+		if = {
+			limit = { has_dlc = "Zeus" }
+			any_character = {
+				limit = {
+					age = 12
+					NOT = { age = 16 }
+					NOT = { has_character_modifier = maester_education }
+					NOT_mythical_creature_trigger = yes
+					NOT = { culture = dothraki } 
+					NOT = { culture = jogos_nhai }
+				}
+				character_event = { id = reeducation.22 }
+			}
+		}	
+		# Fix Valyrian priests post Aegon's conversion
+		any_playable_ruler = {
+			limit = { 
+				culture_group = valyrian
+				religion = the_seven
+			}
+			any_vassal = {
+				limit = { religion = valyrian_rel }
+				religion = the_seven
+				if = {
+					limit = { 
+						culture = high_valyrian 
+						has_game_rule = { name = high_valyrian_cull value = on }
+					}
+					culture = western_valyrian
+				}
+			}
+		}
+		#Add religious traits to baron theocracies
+		any_playable_ruler = {
+			limit = { 
+				OR = {
+					religion = the_seven
+					religion = rhllor
+					religion = harpy
+					religion = qarth_warlocks
+					religion = shadowbinders
+					religion = bearded_priests
+					religion = summer_rel
+				}
+			}
+			any_vassal = {
+				limit = { 
+					demesne_size = 1
+					is_theocracy = yes	
+				}
+				character_event = { id = religious.1 }
+			}
+		}
+		if = { # Randomly place dark sister if Bloodraven is dead
+			limit = {
+				darksister = { 
+					character = 77026
+					is_alive = no
+				}
+			}
+			random_province = {
+				limit ={
+					region = world_beyond_the_wall
+				}
+				set_province_flag = dark_sister_location
+			}
+		}
+		# Godswoods
+		b_woodhaven = { # Last Hearth
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_snowdell = { # Karhold
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_shadythicket = { # Deepwood
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_godshill = { # Barrowton
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_winterwood = { # Winterfell
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+			add_building = tp_large_godswood
+		}
+		b_windygrove = { # Dreadfort
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_hightree = { # Hornwood
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_septofsnow = { # White Harbor
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_thesunkgrove = { # Greywater Watch
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+		}
+		b_raventreehall_temple = { # Raventree Hall
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_casterly_rocksept = { # Casterly Rock
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+		}
+		b_darry_sept = { # Darry
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+		}
+		b_harrenhal_sept = { # Harrenhal
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+			add_building = tp_large_godswood
+			add_building = tp_godswood_forest
+		}
+		b_rose_sept = { # Highgarden
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_great_sept_of_baelor = { # King's Landing
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		b_riverrunsept = { # Riverrun
+			add_building = tp_weirwood_tree
+			add_building = tp_small_godswood
+			add_building = tp_godswood
+		}
+		if = {
+			limit = { 
+				OR = { #burned by stannis
+					NOT = { year = 8299 }
+					NOT = { month = 6 }
+				}	
+			}	
+			b_storms_end_sept = { # Storm's End
+				add_building = tp_weirwood_tree
+				add_building = tp_small_godswood
+				add_building = tp_godswood
+			}
+		}
+		b_the_whispers_sept = { # The Whispers
+			add_building = tp_weirwood_tree
+		}
+		#Princes of Lorath setup
+		k_lorath = {
+			holder_scope = {
+				character_event = { id = free_cities.11027 days = 2 }
+			}
+		}
+		#Royal privileges
+		any_playable_ruler = {
+			limit = { 
+				tier = KING 
+				is_feudal = yes
+				OR = {
+					independent = no
+					primary_title = { check_variable = { which = "de_facto_empire" value = 0.9 } }
+				}
+				any_demesne_title = {
+					tier = KING
+					controls_religion = no
+					is_landless_type_title = no
+					has_law = privilege_vassal_king
+					NOT = { check_variable = { which = "lord_paramount_status" value = 0.9 } } #1 = lord paramount, 2 = interregnum
+				}
+			}
+			add_character_modifier = {
+				name = granted_royal_privilege_modifier
+				duration = -1
+			}
+		}
+		#Prohibit battle nicknames in certain locations
+		any_province = {
+			limit = {
+				OR = {
+					province_id = 3 #North Frostfangs
+					province_id = 4 #The Frozen Shire
+					province_id = 7 #Ice Bay Shore
+					province_id = 8 #Central Frostfangs
+					province_id = 9 #Fist of the First Men
+					province_id = 13 #The Haunted Forest
+					province_id = 16 #The Shadow Tower
+					province_id = 34 #Sea Dragon Point
+					province_id = 42 #Withered Heath
+					province_id = 43 #Rillwater Crossing
+					province_id = 55 #Sheapshead Hills
+					province_id = 76 #Cape of Eagles
+					province_id = 177 #Pendric Hills
+					province_id = 203 #Chyttering Brook
+					province_id = 215 #Crackclaw Barren
+					province_id = 218 #North Crackclaw
+					province_id = 242 #Derring Downs
+					province_id = 341 #Scorched Rock
+					province_id = 345 #The Red Dunes
+					province_id = 369 #Tyroshi Landing
+					province_id = 370 #Disputed Peninsula
+					province_id = 373 #Vysos Plains
+					province_id = 374 #Lysene Forest
+					province_id = 375 #Forest of Myr
+					province_id = 376 #Disputed Forest
+					province_id = 380 #Bay of Myr
+					province_id = 387 #Lake of Myrth
+					province_id = 389 #The Great Arm
+					province_id = 399 #Plains of Maegys
+					province_id = 407 #Prince's Shore
+					province_id = 409 #Sunrise Road
+					province_id = 416 #Vedys Lands
+					province_id = 418 #The Great PLaza
+					province_id = 426 #Rhoyne Vale
+					province_id = 437 #Deep Forest
+					province_id = 446 #Lorathi Shore
+					province_id = 448 #White CLiffs
+					province_id = 449 #Ny Rhon valley
+					province_id = 456 #East Andalos
+					province_id = 458 #Andal Coast
+					province_id = 459 #Mother's VAlley
+					province_id = 463 #Braavos Hills
+					province_id = 467 #Braavos Fields
+					province_id = 468 #Braavos Shore
+					province_id = 469 #The Marshes
+					province_id = 475 #Axe Mountains
+					province_id = 479 #Qohorik Coast
+					province_id = 483 #Volantene Coast
+					province_id = 486 #Death Swamps
+					province_id = 490 #Painted March
+					province_id = 501 #The Citrus Coves
+					province_id = 510 #The SInging Stones
+					province_id = 519 #Golden Mountains
+					province_id = 520 #Lotus Hills
+					province_id = 526 #Red flower bay
+					province_id = 540 #Forest Road
+					province_id = 554 #King's Hills
+					province_id = 560 #Bay of Tusks
+					province_id = 566 #Walrus Point
+					province_id = 600 #The Demon Pass
+					province_id = 603 #The Black Cliffs
+					province_id = 605 #The Demon Road
+					province_id = 608 #No mans land
+					province_id = 612 #slavers road
+					province_id = 617 #baked shore
+					province_id = 635 #bone coast
+					province_id = 655 #cape of skulls
+					province_id = 666 #jade point
+					province_id = 671 #sand road
+					province_id = 677 #stone road
+					province_id = 682 #steel road
+					province_id = 691 #painted valleys
+					province_id = 735 #wyvern point
+					province_id = 763 #jade road
+					province_id = 787 #isle of whips
+					province_id = 789 #manticore isles
+					province_id = 798 #saffron lands
+					province_id = 799 #saffron isles
+					province_id = 804 #shadow mountains
+					province_id = 809 #hidden valley
+					province_id = 821 #pass of the morn
+					province_id = 822 #the blood marsh
+					province_id = 829 #east nghai
+					province_id = 831 #west nghai
+					province_id = 832 #bay of nefer
+					province_id = 836 #fields of nefer
+					province_id = 838 #leviathan sounds
+					province_id = 839 #howling x
+					province_id = 840
+					province_id = 841
+					province_id = 842 #east steel road
+					province_id = 844 #great sand road
+					province_id = 855 #bleeding shore
+				}
+			}
+			set_province_flag = prohibited_nickname_location
+		}
+		if = { # Change AGOT disfigured into Reaper's Due disfigured
+			limit = { has_dlc = "Reapers" }
+			any_character = {
+				limit = { trait = disfigured_AGOT }
+				remove_trait = disfigured_AGOT
+				add_trait = disfigured
+			}
+		}
+		# Fix characters who somehow end up in court of unlanded/dead characters
+		any_character = {
+			limit = {
+				is_ruler = no
+				liege = { is_ruler = no }
+			}
+			liege = { liege = { reverse_banish = PREVPREV } }
+		}
+		# Add prosperity modifiers to provinces based on base values
+		if = {
+			limit = { 
+				has_dlc = "Reapers" 
+				NOT = { has_game_rule = { name = symmetrical_start value = on } }
+			}
+			startup_prosperity_effect = yes
+		}
+		#Fear calculation
+		any_playable_ruler = {
+			character_event = { id = faction_event_new.90 days = 1 }
+		}
+		#Cadet opinion
+		any_playable_ruler = {
+			character_event = { id = cadet.10 days = 1 }
+		}
+		#Royal Proclamations
+		any_independent_ruler = {
+			limit = { tier = EMPEROR ai = yes }
+			character_event = { id = royal_proclamations.998 }
+		}
+		#Nomadic marriage setup
+		any_independent_ruler = {
+			limit = { 
+				is_nomadic = yes 
+				ai = yes
+			}
+			any_vassal = {
+				limit = { 
+					is_nomadic = yes 
+					ai = yes
+				}
+				character_event = { id = dothraki.870 days = 2 random = 2 }
+			}
+			character_event = { id = dothraki.870 days = 2 random = 2 }
+		}
+		#Syncretic Faith
+		any_playable_ruler = {
+			limit = { 
+				ai = yes
+				OR = {
+					religion = moonsingers
+					religion = valyrian_rel
+				}
+			}
+			character_event = { id = religious.65 days = 1 }
+		}
+		#Populate Alchemists Guild
+		character_event = { id = wildfire.40 }
+		#Auto Generate missing wives/mothers
+		any_playable_ruler = {
+			limit = {
+				NOT = { tier = BARON }
+				is_female = no
+				is_married = no
+				is_betrothed = no
+				can_marry_trigger = yes
+				any_child_even_if_dead = {
+					NOT = { trait = bastard }
+					NOT = { trait = child_of_consort }
+					NOT = { mother_even_if_dead = { always = yes } }
+				}
+			}
+			character_event = { id = roberts_rebellion.150 }
+		}
+		any_playable_ruler = { #also check westerosi courtiers
+			limit = {
+				NOT = { tier = BARON }
+				capital_scope = { region = world_westeros }
+			}
+			any_courtier = {
+				limit = {
+					is_ruler = no
+					NOT = { dynasty = 0 }
+					is_female = no
+					is_married = no
+					is_betrothed = no
+					can_marry_trigger = yes
+					any_child_even_if_dead = {
+						NOT = { trait = bastard }
+						NOT = { trait = child_of_consort }
+						NOT = { mother_even_if_dead = { always = yes } }
+					}
+				}
+				character_event = { id = roberts_rebellion.150 }
+			}
+		}
+		#Auto Generate additional children
+		if = {
+			limit = { NOT = { year = 8260 } }
+			any_playable_ruler = {
+				limit = {
+					NOT = { tier = BARON }
+					is_married = yes
+					spouse = { is_alive = yes }
+					NOR = {
+						num_of_children = 3
+						any_sibling_even_if_dead = { count = 2 }
+					}	
+				}
+				character_event = { id = roberts_rebellion.151 }
+			}
+		}	
+		#make sure patricians have at least one trade post
+		any_playable_ruler = {
+			limit = { is_merchant_republic = yes }
+			if = {
+				limit = { NOT = { num_of_trade_posts = 1 } }
+				random_demesne_province = {
+					limit = {
+						has_trade_post = no
+						port = yes
+					}	
+					build_holding = {
+					   type = trade_post 
+					   holder = PREV
+					}
+				}
+				if = {
+					limit = { NOT = { num_of_trade_posts = 1 } }
+					random_realm_province = {
+						limit = {
+							has_trade_post = no
+							port = yes
+						}	
+						build_holding = {
+						   type = trade_post 
+						   holder = PREV
+						}
+					}
+					if = {
+						limit = { NOT = { num_of_trade_posts = 1 } }
+						capital_scope = {
+							random_province = {
+								limit = {
+									port = yes
+									has_trade_post = no							
+									NOT = { distance = { where = PREVPREV value = 300 } }
+									NOT = { has_province_flag = ruined_province }
+								}	
+								build_holding = {
+								   type = trade_post 
+								   holder = PREVPREV
+								}
+							}
+						}	
+					}
+				}	
+			}
+			any_vassal = {
+				limit = { 
+					is_patrician = yes
+					NOT = { num_of_trade_posts = 1 } 
+				}
+				random_demesne_province = {
+					limit = {
+						has_trade_post = no
+						port = yes
+					}	
+					build_holding = {
+					   type = trade_post 
+					   holder = PREV
+					}
+				}
+				if = {
+					limit = { NOT = { num_of_trade_posts = 1 } }
+					liege = {
+						random_realm_province = {
+							limit = {
+								has_trade_post = no
+								port = yes
+							}	
+							build_holding = {
+							   type = trade_post 
+							   holder = PREVPREV
+							}
+						}
+					}	
+					if = {
+						limit = { NOT = { num_of_trade_posts = 1 } }
+						capital_scope = {
+							random_province = {
+								limit = {
+									port = yes
+									has_trade_post = no							
+									NOT = { distance = { where = PREVPREV value = 300 } }
+									NOT = { has_province_flag = ruined_province }
+								}	
+								build_holding = {
+								   type = trade_post 
+								   holder = PREVPREV
+								}
+							}
+						}	
+					}
+				}
+			}
+		}
+		#Remove learning educations from westeros
+		any_character = {
+			limit = {
+				has_education_learning_trigger = yes
+				location = { region = world_westeros }
+				is_theocracy = no
+				NOT = { has_priest_trait_trigger = yes }
+				NOT = { trait = maester }
+				NOT = { trait = archmaester }
+			}
+			remove_education_effect = yes
+			random_list = {
+				1 = { 
+					trigger = { is_female = no }
+					add_random_education_trait = martial
+				}
+				1 = { 
+					add_random_education_trait = diplomacy
+				}
+				1 = { 
+					add_random_education_trait = intrigue
+				}
+				1 = { 
+					add_random_education_trait = stewardship
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_game_rule = { name = symmetrical_start value = on } }
+			}
+			#Household Guard buildings
+			b_newcastle = { add_building = ca_household_guard }
+			b_casterly_rock = { add_building = ca_household_guard }
+			b_the_eyrie = { add_building = ca_household_guard }
+			b_dreadfort = { add_building = ca_household_guard }
+			b_riverrun = { add_building = ca_household_guard }
+			b_highgarden = { add_building = ca_household_guard }
+			b_winterfell = { add_building = ca_household_guard }
+			b_the_hightower = { add_building = ca_household_guard }
+		}	
+	}
+}
+#Day 2 Initialisation
+character_event = {
+	id = roberts_rebellion.2
+	desc = "EVTDESCroberts_rebellion.2"
+	
+	is_triggered_only = yes
+	only_rulers = yes
+	
+	trigger = {
+		has_landed_title = c_the_citadel	
+	}
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.1" 	
+		##any_playable_ruler does not work for ruler designer characters on day one##	
+		any_playable_ruler = {
+			limit = { 
+				ai = no 
+			}	
+			if = {
+				limit = { trait = house_customizer }
+				character_event = { id = customizer_houses.1 }
+			}	
+			#Check Sword ownership
+			if = {
+				limit = { trait = valyrian_steel }
+				character_event = { id = valyrian_steel.999 }	
+			}
+			#Mega war setup
+			if = {
+				limit = { 
+					NOT = { trait = civil_war }
+					NOT = { trait = rebel_leader }
+					NOT = { has_character_flag = supporting_king }
+					NOT = { has_character_flag = neutral }
+					NOT = { has_character_flag = against_king }
+					OR = {
+						AND = {
+							independent = yes
+							primary_title = { check_variable = { which = "de_facto_empire" value = 1 } }
+						}
+						liege = { 
+							OR = {
+								trait = civil_war
+								trait = rebel_leader
+								has_character_flag = supporting_king
+								has_character_flag = neutral
+								has_character_flag = against_king
+							}	
+						}
+					}	
+				}
+				set_character_flag = neutral
+			}
+			#wildling event
+			if = {
+				limit = {
+					culture_group = free_folk
+				}
+				character_event = { id = wildling.1 }
+				if = {
+					limit = { NOT = { has_game_rule = { name = symmetrical_start value = on } } }
+					#make sure capital holding has level 1 barracks
+					capital_holding = {
+						if = {
+							limit = {
+								holding_type = castle
+								NOT = { has_building = ca_wildling_barracks }
+							}
+							add_building = ca_wildling_barracks
+							holder_scope = { character_event = { id = maintenance.34 days = 2 } } #refill levy
+						}
+					}
+				}	
+			}
+			#pirate event
+			if = {
+				limit = {
+					OR = {
+						religion = pirate
+						religion = corsair
+					}
+				}
+				character_event = { id = pirate.1 }
+				character_event = { id = pirate.199 }
+				if = {
+					limit = { NOT = { has_game_rule = { name = symmetrical_start value = on } } }
+					#make sure capital holding has level 1 pirate den
+					capital_holding = {
+						if = {
+							limit = {
+								holding_type = castle
+								NOT = { has_building = ca_asoiaf_pirateshipyard }
+							}
+							add_building = ca_asoiaf_pirateshipyard
+							holder_scope = { character_event = { id = maintenance.34 days = 2 } } #refill levy
+						}
+					}
+				}	
+			}
+			##Give Slavers some slaves
+			if = {
+				limit = {
+					primary_title = { has_law = slavery_2 }
+					NOT = { trait = slave_owner }
+					NOT = { has_game_rule = { name = symmetrical_start value = on } }
+				}
+				add_trait = slave_owner
+				character_event = { id = slavery.1000 tooltip = "EVTTOOLTIPSLAVERY1000" }
+				character_event = { id = slavery.1000 tooltip = "EVTTOOLTIPSLAVERY1000" }
+				character_event = { id = maintenance.34 days = 2 } #refill levy
+				character_event = { id = slavery.4004 }
+				any_vassal = {
+					limit = { 
+						is_patrician = yes 
+						NOT = { trait = slave_owner }
+					}
+					add_trait = slave_owner
+					character_event = { id = slavery.1000 tooltip = "EVTTOOLTIPSLAVERY1000" }
+					character_event = { id = slavery.1000 tooltip = "EVTTOOLTIPSLAVERY1000" }
+					character_event = { id = maintenance.34 days = 2 } #refill levy
+				}			
+			}
+			#Night's Watch Initialisation
+			if = {
+				limit = {
+					has_landed_title = d_nightswatch
+					NOT = { government = NW_government }
+				}
+				character_event = { id = nightswatch.999 }
+			}
+			#High Valyrian Initialisation
+			if = {
+				limit = {
+					culture = high_valyrian
+					NOT = { has_dynasty_flag = high_valyrian }
+					NOT = { has_character_flag = high_valyrian }
+					NOT = { trait = house_customizer }
+				}
+				character_event = { id = high_valyrian.1 }
+			}
+			#Royal Proclamations
+			if = {
+				limit = { tier = EMPEROR }
+				character_event = { id = royal_proclamations.998 }
+			}
+			#Critical events
+			character_event = { id = critical.0 }
+		}
+		##Moved these here in case ruler designer character holds them##
+		#Prince of Pentos
+		d_prince_pentos = {
+			holder_scope = {
+				add_weak_claim = k_pentos
+				add_trait = disinherited
+				recalc_succession = yes
+			}
+		}
+		#Prince of Lorath
+		d_prince_lorath = {
+			holder_scope = {
+				add_weak_claim = k_lorath
+				add_trait = disinherited
+				recalc_succession = yes
+			}
+		}
+		#Volantis setup
+		k_volantis = {
+			holder_scope = {
+				character_event = { id = volantis.301 days = 1 } #Choose Party
+				any_realm_character = { #Correct cultures/religions
+					limit = {
+						culture = eastern_valyrian
+						OR = {
+							is_ruler = yes
+							NOT = { location = { province_id = 419 } }
+						}
+						NOT = { dynasty = 174371 }
+						NOT = { dynasty = 174372 }
+						NOT = { dynasty = 174373 }
+						NOT = { dynasty = 174396 }
+						NOT = { dynasty = 174397 }
+						NOT = { dynasty = 174600 }
+						NOT = { dynasty = 174601 }
+						NOT = { dynasty = 174602 }
+						ai = yes
+						NOT = { father_even_if_dead = { ai = no } }
+						NOT = { mother_even_if_dead = { ai = no } }
+						NOT = { spouse = { ai = no } }
+						NOT = { is_patrician = yes }
+					}
+					culture = volantene
+					set_graphical_culture = volantene
+					religion = rhllor
+				}
+				if = { #Select Triarchs
+					limit = {
+						NOT = {
+							any_realm_lord = {
+								has_character_flag = triarch
+							}
+						}
+					}
+					random_realm_lord = {
+						limit = { 
+							age = 15
+							prisoner = no
+							NOT = { trait = incapable }
+							can_press_claims_trigger = yes
+							NOT = { trait = former_slave }
+							OR = { #Must be of Valyrian blood, or not be in a valyrian republic
+								culture = high_valyrian
+								culture = western_valyrian
+								culture = eastern_valyrian
+							}
+						}
+						set_character_flag = triarch
+						give_minor_title = title_triarch
+					}
+				}	
+				if = {
+					limit = {
+						NOT = {
+							any_realm_lord = {
+								has_character_flag = triarch
+								count = 2
+							}
+						}
+					}
+					random_realm_lord = {
+						limit = { 
+							NOT = { has_character_flag = triarch }
+							age = 15
+							prisoner = no
+							NOT = { trait = incapable }
+							can_press_claims_trigger = yes
+							NOT = { trait = former_slave }
+							OR = { #Must be of Valyrian blood, or not be in a valyrian republic
+								culture = high_valyrian
+								culture = western_valyrian
+								culture = eastern_valyrian
+							}
+						}
+						set_character_flag = triarch
+						give_minor_title = title_triarch
+					}
+				}	
+			}
+		}
+		#Hyrkoon courtier maintenance
+		any_playable_ruler = {
+			limit = { 
+				culture_group = hyrkoon_group
+			}	
+			character_event = { id = essos.52 }
+		}
+		#Lengi are tall
+		k_leng = {
+			holder_scope = {
+				any_realm_character = {
+					limit = { 
+						culture = lengi
+						NOT = { trait = tall }
+						NOT = { trait = dwarf }
+						NOT = { has_character_flag = no_tallness }
+						NOT = { father_even_if_dead = { always = yes } }
+						NOT = { real_father_even_if_dead = { always = yes } }
+					}
+					character_event = { id = essos.448 }
+				}
+			}
+		}
+		#First Generation Mantarys deformities.
+		d_mantarys = {
+			holder_scope = {
+				if = {
+					limit = { 
+						culture = mantaryan 
+					}
+					character_event = { id = essos.4 }
+				}
+				any_realm_character = {
+					limit = { 
+						culture = mantaryan 
+						NOT = { character = PREV }
+					}
+					character_event = { id = essos.4 }
+				}
+			}
+		}			
+	}
+}
+#Auto generate wife
+character_event = {
+	id = roberts_rebellion.150
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { age = 20 }
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 16
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		if = {
+			limit = {
+				age = 20
+				NOT = { age = 30 }
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 26
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		if = {
+			limit = {
+				age = 30
+				NOT = { age = 40 }
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 36
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		if = {
+			limit = {
+				age = 40
+				NOT = { age = 50 }
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 46
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		if = {
+			limit = {
+				age = 50
+				NOT = { age = 65 }
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 58
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		if = {
+			limit = {
+				age = 65
+				NOT = { age = 80 }
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 73
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		if = {
+			limit = { age = 80 }
+			create_character = {
+				random_traits = yes
+				dynasty = NONE
+				female = yes
+				age = 85
+				historical = yes
+				culture = THIS
+				religion = THIS
+			}
+			new_character = { save_event_target_as = random_wife }
+		}
+		add_spouse = event_target:random_wife
+		any_child_even_if_dead = {
+			limit = {
+				NOT = { trait = bastard }
+				NOT = { trait = child_of_consort }
+				NOT = { mother_even_if_dead = { always = yes } }
+			}	
+			set_mother = event_target:random_wife
+		}
+		event_target:random_wife = {
+			random = {
+				chance = 2
+				modifier = {
+					factor = 5
+					age = 40
+				}
+				modifier = {
+					factor = 2
+					age = 50
+				}
+				modifier = {
+					factor = 2.5
+					age = 60
+				}
+				modifier = {
+					factor = 1.5
+					age = 70
+				}
+				death = yes
+				random = {
+					chance = 25
+					ROOT = { add_trait = widowed }
+				}
+			}
+		}
+		prestige = 100
+	}
+	
+	option = {
+		name = OK	
+	}
+}
+	
+#Auto generate additional children/siblings
+character_event = {
+	id = roberts_rebellion.151
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		can_press_claims_trigger = yes
+		is_theocracy = no
+		#excluded dynasties
+		NOT = { dynasty = 0 }
+		NOT = { dynasty = 496 }
+		NOT = { dynasty = 52 }
+		NOT = { dynasty = 57 }
+		NOT = { dynasty = 1 }
+		NOT = { dynasty = 107 }
+		NOT = { dynasty = 66 }
+		NOT = { dynasty = 59 }
+		NOT = { dynasty = 1254 }
+		NOT = { dynasty = 253 }
+		NOT = { dynasty = 285 }
+		NOT = { dynasty = 159 }
+		NOT = { dynasty = 1544 }
+		NOT = { dynasty = 317 }
+		NOT = { dynasty = 178 }
+		NOT = { dynasty = 190 }
+	}
+	
+	immediate = {
+		random = {
+			chance = 8
+			break = yes
+		}
+		if = {
+			limit = {
+				fertility = 0.1
+				spouse = { fertility = 0.1 }
+				current_heir = { 
+					is_child_of = ROOT 
+					dynasty = ROOT
+					age = 1 
+				}
+			}
+			spouse = { save_event_target_as = second_parent }
+			current_heir = {
+				if = {
+					limit = {
+						age = 40
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 36
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 36
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 30
+						NOT = { age = 40 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 28
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 28
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 25
+						NOT = { age = 30 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 23
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 23
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 20
+						NOT = { age = 25 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 18
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 18
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 15
+						NOT = { age = 20 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 12
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 12
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 10
+						NOT = { age = 15 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 7
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 7
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 5
+						NOT = { age = 10 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 2
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 2
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						NOT = { age = 5 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 0
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 0
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				event_target:new_child = {
+					if = {
+						limit = { ROOT = { is_female = no } }
+						set_father = ROOT
+						set_mother = event_target:second_parent
+					}
+					if = {
+						limit = { ROOT = { is_female = yes } }
+						set_mother = ROOT
+						set_father = event_target:second_parent
+					}
+					if = {
+						limit = { 
+							age = 16 
+							is_female = no
+						}
+						if = {
+							limit = { religion = the_seven }
+							random = {
+								chance = 66
+								knight_character_effect = yes
+							}	
+						}
+						random_list = {
+							15 = { }
+							20 = { add_trait = poor_warrior }
+							50 = { add_trait = trained_warrior }
+							15 = { add_trait = skilled_warrior }
+						}
+					}	
+				}
+				#second child
+				if = {
+					limit = {
+						age = 40
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 35
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 35
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 30
+						NOT = { age = 40 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 26
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 26
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 25
+						NOT = { age = 30 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 22
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 22
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 20
+						NOT = { age = 25 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 16
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 16
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 15
+						NOT = { age = 20 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 11
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 11
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 10
+						NOT = { age = 15 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 5
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 5
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				if = {
+					limit = {
+						age = 5
+						NOT = { age = 10 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 1
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 1
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = ROOT
+								genetic_mother = event_target:second_parent
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_child }
+				}
+				event_target:new_child = {
+					if = {
+						limit = { ROOT = { is_female = no } }
+						set_father = ROOT
+						set_mother = event_target:second_parent
+					}
+					if = {
+						limit = { ROOT = { is_female = yes } }
+						set_mother = ROOT
+						set_father = event_target:second_parent
+					}
+					if = {
+						limit = { 
+							age = 16 
+							is_female = no
+						}
+						if = {
+							limit = { religion = the_seven }
+							random = {
+								chance = 66
+								knight_character_effect = yes
+							}	
+						}
+						random_list = {
+							15 = { }
+							20 = { add_trait = poor_warrior }
+							50 = { add_trait = trained_warrior }
+							15 = { add_trait = skilled_warrior }
+						}
+					}	
+				}
+			}
+		}
+		#add siblings
+		if = {
+			limit = {
+				age = 5
+				NOT = { any_sibling_even_if_dead = { count = 2 } }
+				NOT = { 
+					any_sibling = {
+						is_alive = yes
+						is_older_than = ROOT
+					}
+				}
+				OR = {
+					father_even_if_dead = { always = yes }
+					NOT = { age = 30 }
+				}				
+			}			
+			if = { #create parents if needed
+				limit = { NOT = { father_even_if_dead = { always = yes } } }
+				create_character = {
+					random_traits = yes
+					dynasty = ROOT
+					age = 58
+					culture = ROOT
+					religion = ROOT
+				}
+				new_character = {
+					ROOT = { set_father = PREV }
+					death = yes
+				}
+			}
+			father_even_if_dead = { save_event_target_as = ROOT_father }
+			if = {
+				limit = { NOT = { mother_even_if_dead = { always = yes } } }
+				create_character = {
+					random_traits = yes
+					dynasty = none
+					female = yes
+					age = 59
+					culture = ROOT
+					religion = ROOT
+				}
+				new_character = {
+					ROOT = { set_mother = PREV }
+					add_spouse = event_target:ROOT_father
+					death = yes
+				}
+			}
+			mother_even_if_dead = { save_event_target_as = ROOT_mother }
+			if = {
+				limit = {
+					age = 70
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 65
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 65
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 60
+					NOT = { age = 70 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 56
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 56
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 50
+					NOT = { age = 60 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 47
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 47
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 45
+					NOT = { age = 50 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 43
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 43
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 40
+					NOT = { age = 45 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 38
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 38
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 35
+					NOT = { age = 40 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 33
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 33
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 30
+					NOT = { age = 35 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 27
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 27
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 25
+					NOT = { age = 30 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 23
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 23
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 20
+					NOT = { age = 25 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 18
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 18
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 15
+					NOT = { age = 20 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 13
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 13
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 10
+					NOT = { age = 15 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 7
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 7
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			if = {
+				limit = {
+					age = 5
+					NOT = { age = 10 }
+				}
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							age = 3
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}	
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = ROOT
+							female = yes
+							age = 3
+							historical = yes
+							culture = ROOT
+							religion = ROOT
+							genetic_father = event_target:ROOT_father
+							genetic_mother = event_target:ROOT_mother
+						}
+					}
+				}	
+				new_character = { save_event_target_as = new_sibling }
+			}
+			event_target:new_sibling = {
+				set_father = event_target:ROOT_father
+				set_mother = event_target:ROOT_mother
+				if = {
+					limit = { 
+						age = 16 
+						is_female = no
+					}
+					if = {
+						limit = { religion = the_seven }
+						random = {
+							chance = 66
+							knight_character_effect = yes
+						}	
+					}
+					random_list = {
+						15 = { }
+						20 = { add_trait = poor_warrior }
+						50 = { add_trait = trained_warrior }
+						15 = { add_trait = skilled_warrior }
+					}
+				}	
+			}
+			random = {
+				chance = 50
+				if = {
+					limit = {
+						age = 70
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 63
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 63
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 60
+						NOT = { age = 70 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 54
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 54
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 50
+						NOT = { age = 60 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 46
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 46
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 45
+						NOT = { age = 50 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 41
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 41
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 40
+						NOT = { age = 45 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 36
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 36
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 35
+						NOT = { age = 40 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 32
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 32
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 30
+						NOT = { age = 35 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 25
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 25
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 25
+						NOT = { age = 30 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 21
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 21
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 20
+						NOT = { age = 25 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 16
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 16
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 15
+						NOT = { age = 20 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 11
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 11
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 10
+						NOT = { age = 15 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 6
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 6
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				if = {
+					limit = {
+						age = 5
+						NOT = { age = 10 }
+					}
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								age = 1
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}	
+						50 = {
+							create_character = {
+								random_traits = yes
+								dynasty = ROOT
+								female = yes
+								age = 1
+								historical = yes
+								culture = ROOT
+								religion = ROOT
+								genetic_father = event_target:ROOT_father
+								genetic_mother = event_target:ROOT_mother
+							}
+						}
+					}	
+					new_character = { save_event_target_as = new_sibling }
+				}
+				event_target:new_sibling = {
+					set_father = event_target:ROOT_father
+					set_mother = event_target:ROOT_mother
+					if = {
+						limit = { 
+							age = 16 
+							is_female = no
+						}
+						if = {
+							limit = { religion = the_seven }
+							random = {
+								chance = 66
+								knight_character_effect = yes
+							}	
+						}
+						random_list = {
+							15 = { }
+							20 = { add_trait = poor_warrior }
+							50 = { add_trait = trained_warrior }
+							15 = { add_trait = skilled_warrior }
+						}
+					}	
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK	
+	}
+}
+#Rhaegar imprisons Lyanna
+character_event = {
+	id = roberts_rebellion.3
+	desc = "EVTDESCroberts_rebellion.3"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.3" #Yes
+	}
+
+}
+
+#Aerys Targaryen
+character_event = {
+	id = roberts_rebellion.4
+	desc = "EVTDESCroberts_rebellion.4"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTBroberts_rebellion.4" #No
+	}
+}
+
+#Robert opinions
+character_event = {
+	id = roberts_rebellion.5
+	desc = "EVTDESCroberts_rebellion.5"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.5" #Yes
+		custom_tooltip = {
+			text = RR_grand_council_warning
+		}
+	}
+
+}
+
+#Ned's opinions
+character_event = {
+	id = roberts_rebellion.6
+	desc = "EVTDESCroberts_rebellion.6"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.6" #Yes
+	}
+
+}
+
+#Jon Arryn's opinions
+character_event = {
+	id = roberts_rebellion.7
+	desc = "EVTDESCroberts_rebellion.7"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.7" #Yes
+	}
+
+}
+
+#Tywin's opinions
+character_event = {
+	id = roberts_rebellion.8
+	desc = "EVTDESCroberts_rebellion.8"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.8" #Yes
+	}
+
+}
+
+#Doran's opinions
+character_event = {
+	id = roberts_rebellion.9
+	desc = "EVTDESCroberts_rebellion.9"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.9" #Yes		
+	}
+
+}
+
+#Balon greyjoy message
+character_event = {
+	id = roberts_rebellion.10
+	desc = "EVTDESCroberts_rebellion.10"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.10" #Yes					
+	}
+
+}
+
+#Mace Tyrell message
+character_event = {
+	id = roberts_rebellion.11
+	desc = "EVTDESCroberts_rebellion.11"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.11" #Yes	
+	}
+
+}
+
+#Hoster Tully
+character_event = {
+	id = roberts_rebellion.12
+	desc = "EVTDESCroberts_rebellion.12"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = ROOT
+	}
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.12" #Yes	
+	}
+}
+
+###Crowned Stag events
+#Robert opinions
+character_event = {
+	id = roberts_rebellion.13
+	desc = "EVTDESCroberts_rebellion.13"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.13" #Yes
+	}
+}
+
+#Ned's opinions
+character_event = {
+	id = roberts_rebellion.14
+	desc = "EVTDESCroberts_rebellion.14"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.14" #Yes	
+	}
+
+}
+
+#Jon Arryn's opinions
+character_event = {
+	id = roberts_rebellion.15
+	desc = "EVTDESCroberts_rebellion.15"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.15" #Yes
+	}
+
+}
+
+#Tywin's opinions
+character_event = {
+	id = roberts_rebellion.16
+	desc = "EVTDESCroberts_rebellion.16"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.16" #Yes		
+	}
+
+}
+
+#Doran's opinions
+character_event = {
+	id = roberts_rebellion.17
+	desc = "EVTDESCroberts_rebellion.17"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.17" #Yes		
+	}
+
+}
+
+#Stannis 
+character_event = {
+	id = roberts_rebellion.18
+	desc = "EVTDESCroberts_rebellion.18"
+	picture = GFX_evt_mannis
+
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.18"
+	}	
+
+}
+#Balon greyjoy message
+character_event = {
+	id = roberts_rebellion.19
+	desc = "EVTDESCroberts_rebellion.19"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTAroberts_rebellion.19" #Yes					
+	}
+
+}
+
+##Misc
+#Hightowers
+character_event = {
+	id = roberts_rebellion.20
+	desc = "EVTDESCroberts_rebellion.20"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.20" #Yes	
+		# hidden_tooltip = {
+			# b_oldtown = {
+				# holder_scope = {
+					# give_minor_title = title_commander_city_watch_oldtown
+				# }
+			# }
+		# }	
+	}
+}
+#Glovers
+character_event = {
+	id = roberts_rebellion.21
+	desc = "EVTDESCroberts_rebellion.21"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	only_rulers = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.21" #Yes	
+		#Forrester
+		#create_character = {
+		#	dynasty = 1443 
+		#	random_traits = yes
+		#	age = 30
+		#	female = no
+		#	religion=old_gods
+		#	culture=northman
+		#}
+		#new_character = {
+		#	create_character = {
+		#		dynasty = none
+		#		random_traits = yes
+		#		age = 28
+		#		female = yes
+		#		religion=old_gods
+		#		culture=northman
+		#	}
+		#	new_character = {
+		#		add_spouse = PREV
+		#		create_character = {
+		#			dynasty = 1443 #Forrester
+		#			random_traits = yes
+		#			age = 10
+		#			female = no
+		#			religion=old_gods
+		#			culture=northman
+		#		}
+		#		new_character = {
+		#			set_mother = PREV
+		#			set_father = PREVPREV
+		#		}
+		#		create_character = {
+		#			dynasty = 1443 #Forrester
+		#			random_traits = yes
+		#			age = 8
+		#			female = yes
+		#			religion=old_gods
+		#			culture=northman
+		#		}
+		#		new_character = {
+		#			set_mother = PREV
+		#			set_father = PREVPREV
+		#		}
+		#	}
+		#}
+		#Woods
+		#if = {
+		#	limit = { NOT = { year = 8253 } }
+		#	create_character = {
+		#		dynasty = 1444 
+		#		random_traits = yes
+		#		age = 35
+		#		female = no
+		#		religion=old_gods
+		#		culture=northman
+		#	}
+		#	new_character = {
+		#		create_character = {
+		#			dynasty = none
+		#			random_traits = yes
+		#			age = 31
+		#			female = yes
+		#			religion=old_gods
+		#			culture=northman
+		#		}
+		#		new_character = {
+		#			add_spouse = PREV
+		#			create_character = {
+		#				dynasty = 1444 #Woods
+		#				random_traits = yes
+		#				age = 13
+		#				female = no
+		#				religion=old_gods
+		#				culture=northman
+		#			}
+		#			new_character = {
+		#				set_mother = PREV
+		#				set_father = PREVPREV
+		#			}
+		#			create_character = {
+		#				dynasty = 1444 #Woods
+		#				random_traits = yes
+		#				age = 10
+		#				female = yes
+		#				religion=old_gods
+		#				culture=northman
+		#			}
+		#			new_character = {
+		#				set_mother = PREV
+		#				set_father = PREVPREV
+		#			}
+		#		}
+		#	}
+		#}
+		##Branch
+		#if = {
+		#	limit = { NOT = { year = 8260 } }
+		#	create_character = {
+		#		dynasty = 1445 
+		#		random_traits = yes
+		#		age = 33
+		#		female = no
+		#		religion=old_gods
+		#		culture=northman
+		#	}
+		#	new_character = {
+		#		create_character = {
+		#			dynasty = none
+		#			random_traits = yes
+		#			age = 35
+		#			female = yes
+		#			religion=old_gods
+		#			culture=northman
+		#		}
+		#		new_character = {
+		#			add_spouse = PREV
+		#			create_character = {
+		#				dynasty = 1445 
+		#				random_traits = yes
+		#				age = 12
+		#				female = no
+		#				religion=old_gods
+		#				culture=northman
+		#			}
+		#			new_character = {
+		#				set_mother = PREV
+		#				set_father = PREVPREV
+		#			}
+		#			create_character = {
+		#				dynasty = 1445 
+		#				random_traits = yes
+		#				age = 13
+		#				female = yes
+		#				religion=old_gods
+		#				culture=northman
+		#			}
+		#			new_character = {
+		#				set_mother = PREV
+		#				set_father = PREVPREV
+		#			}
+		#		}
+		#	}
+		#}	
+		#Bole
+		#create_character = {
+		#	dynasty = 1446
+		#	random_traits = yes
+		#	age = 28
+		#	female = no
+		#	religion=old_gods
+		#	culture=northman
+		#}
+		#new_character = {
+		#	create_character = {
+		#		dynasty = none
+		#		random_traits = yes
+		#		age = 27
+		#		female = yes
+		#		religion=old_gods
+		#		culture=northman
+		#	}
+		#	new_character = {
+		#		add_spouse = PREV
+		#		create_character = {
+		#			dynasty = 1446
+		#			random_traits = yes
+		#			age = 5
+		#			female = no
+		#			religion=old_gods
+		#			culture=northman
+		#		}
+		#		new_character = {
+		#			set_mother = PREV
+		#			set_father = PREVPREV
+		#		}
+		#		create_character = {
+		#			dynasty = 1446
+		#			random_traits = yes
+		#			age = 3
+		#			female = yes
+		#			religion=old_gods
+		#			culture=northman
+		#		}
+		#		new_character = {
+		#			set_mother = PREV
+		#			set_father = PREVPREV
+		#		}
+		#	}
+		#}	
+	}
+}
+
+#Reeds
+character_event = {
+	id = roberts_rebellion.22
+	desc = "EVTDESCroberts_rebellion.22"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.22" #Yes	
+		#Tamm
+		create_character = {
+			dynasty = none
+			random_traits = yes
+			age = 30
+			female = no
+			religion=old_gods
+			culture=crannogman
+		}
+		new_character = {
+			dynasty = 1447
+			create_character = {
+				dynasty = none
+				random_traits = yes
+				age = 28
+				female = yes
+				religion=old_gods
+				culture=crannogman
+			}
+			new_character = {
+				random_list = {
+					50 = { add_trait = trained_warrior }
+					40 = { add_trait = poor_warrior }
+					10 = { add_trait = skilled_warrior }
+				}
+				add_spouse = PREV
+				create_character = {
+					dynasty = none
+					random_traits = yes
+					age = 10
+					female = no
+					religion=old_gods
+					culture=crannogman
+				}
+				new_character = {
+					dynasty = 1447
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = none
+					random_traits = yes
+					age = 8
+					female = yes
+					religion=old_gods
+					culture=crannogman
+				}
+				new_character = {
+					dynasty = 1447
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+			}
+		}
+		#Greengood
+		create_character = {
+			dynasty = none
+			random_traits = yes
+			age = 33
+			female = no
+			religion=old_gods
+			culture=crannogman
+		}
+		new_character = {
+			dynasty = 1449 #Greengood 
+			create_character = {
+				dynasty = none
+				random_traits = yes
+				age = 35
+				female = yes
+				religion=old_gods
+				culture=crannogman
+			}
+			new_character = {
+				random_list = {
+					50 = { add_trait = trained_warrior }
+					40 = { add_trait = poor_warrior }
+					10 = { add_trait = skilled_warrior }
+				}
+				add_spouse = PREV
+				create_character = {
+					dynasty = none
+					random_traits = yes
+					age = 12
+					female = no
+					religion=old_gods
+					culture=crannogman
+				}
+				new_character = {
+					dynasty = 1449 #Greengood 
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = none
+					random_traits = yes
+					age = 13
+					female = yes
+					religion=old_gods
+					culture=crannogman
+				}
+				new_character = {
+					dynasty = 1449 #Greengood 
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+			}
+		}
+		#Quagg
+		create_character = {
+			dynasty = none
+			random_traits = yes
+			age = 28
+			female = no
+			religion=old_gods
+			culture=crannogman
+		}
+		new_character = {
+			dynasty = 1451 #Quagg
+			create_character = {
+				dynasty = none
+				random_traits = yes
+				age = 27
+				female = yes
+				religion=old_gods
+				culture=crannogman
+			}
+			new_character = {
+				add_spouse = PREV
+				random_list = {
+					50 = { add_trait = trained_warrior }
+					40 = { add_trait = poor_warrior }
+					10 = { add_trait = skilled_warrior }
+				}
+				create_character = {
+					dynasty = none
+					random_traits = yes
+					age = 5
+					female = no
+					religion=old_gods
+					culture=crannogman
+				}
+				new_character = {
+					dynasty = 1451 #Quagg
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = none
+					random_traits = yes
+					age = 3
+					female = yes
+					religion=old_gods
+					culture=crannogman
+				}
+				new_character = {
+					dynasty = 1451 #Quagg
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+			}
+		}	
+	}
+}
+#Lannisport cadets
+character_event = {
+	id = roberts_rebellion.23
+	
+	hide_from = yes
+	is_triggered_only = yes
+	hide_window = yes
+	
+	option = {
+		name = OK
+		#Lanny
+		create_character = {
+			dynasty = 802043
+			random_traits = yes
+			female = no
+			religion = the_seven
+			culture = westerman
+			dna=ljjefnamfnm
+		}
+		new_character = {
+			b_lannisporttwo = { gain_title = PREV }
+			random_list = {
+				50 = { add_trait = trained_warrior }
+				40 = { add_trait = poor_warrior }
+				10 = { add_trait = skilled_warrior }
+			}
+			random = {
+				chance = 50
+				knight_character_effect = yes
+			}
+			create_character = {
+				dynasty = none
+				random_traits = yes
+				religion = the_seven
+				culture = westerman
+				female = yes
+				dna=ahongqoafqg
+			}
+			new_character = {
+				add_spouse = PREV
+				create_character = {
+					dynasty = 802043
+					random_traits = yes
+					age = 3
+					female = no
+					religion = the_seven
+					culture = westerman
+					dna=inakhfklfee
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = 802043
+					random_traits = yes
+					age = 1
+					female = yes
+					religion = the_seven
+					culture = westerman
+					dna=ookqpdlqfej
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = 802043
+					random_traits = yes
+					age = 2
+					female = no
+					religion = the_seven
+					culture = westerman
+					dna=bqlajbbnfea
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+			}
+		}
+		#Lannett
+		create_character = {
+			dynasty = 802044
+			random_traits = yes
+			female = no
+			religion = the_seven
+			culture = westerman
+			age = 48
+			dna=fgfqqgecfck
+		}
+		new_character = {
+			b_lannisportthree = { gain_title = PREV }
+			random_list = {
+				50 = { add_trait = trained_warrior }
+				40 = { add_trait = poor_warrior }
+				10 = { add_trait = skilled_warrior }
+			}
+			random = {
+				chance = 50
+				knight_character_effect = yes
+			}
+			create_character = {
+				dynasty = none
+				random_traits = yes
+				religion = the_seven
+				culture = westerman
+				female = yes
+				age = 50
+				dna=ghmfkddjfbh
+			}
+			new_character = {
+				add_spouse = PREV
+				create_character = {
+					dynasty = 802044
+					random_traits = yes
+					age = 23
+					female = no
+					religion = the_seven
+					culture = westerman
+					dna=pengepkkfhb
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+					random_list = {
+						50 = { add_trait = trained_warrior }
+						40 = { add_trait = poor_warrior }
+						10 = { add_trait = skilled_warrior }
+					}
+					random = {
+						chance = 50
+						knight_character_effect = yes
+					}
+				}
+				create_character = {
+					dynasty = 802044
+					random_traits = yes
+					age = 24
+					female = yes
+					religion = the_seven
+					culture = westerman
+					dna=jlpoajphfli
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = 802044
+					random_traits = yes
+					age = 20
+					female = no
+					religion = the_seven
+					culture = westerman
+					dna=ihggeaeqfbg
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+					random_list = {
+						50 = { add_trait = trained_warrior }
+						40 = { add_trait = poor_warrior }
+						10 = { add_trait = skilled_warrior }
+					}
+					random = {
+						chance = 50
+						knight_character_effect = yes
+					}
+				}
+			}
+		}
+		#Lantell
+		create_character = {
+			dynasty = 802045
+			random_traits = yes
+			female = no
+			religion = the_seven
+			culture = westerman
+			age = 37
+			dna=giciekjcfpl
+		}
+		new_character = {
+			random_list = {
+				50 = { add_trait = trained_warrior }
+				40 = { add_trait = poor_warrior }
+				10 = { add_trait = skilled_warrior }
+			}
+			random = {
+				chance = 50
+				knight_character_effect = yes
+			}
+			create_character = {
+				dynasty = none
+				random_traits = yes
+				religion = the_seven
+				culture = westerman
+				female = yes
+				age = 36
+				dna=igbnhmkofad
+			}
+			new_character = {
+				add_spouse = PREV
+				create_character = {
+					dynasty = 802045
+					random_traits = yes
+					age = 14
+					female = no
+					religion = the_seven
+					culture = westerman
+					dna=bbfcajljfob
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = 802045
+					random_traits = yes
+					age = 10
+					female = no
+					religion = the_seven
+					culture = westerman
+					dna=dlhgclpjfbm
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+				create_character = {
+					dynasty = 802045
+					random_traits = yes
+					age = 9
+					female = yes
+					religion = the_seven
+					culture = westerman
+					dna=ghidfbkcfpb
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = PREVPREV
+				}
+			}
+		}
+	}
+}
+#Robert dish's out titles to brothers
+character_event = {
+	id = roberts_rebellion.50
+	
+	is_triggered_only = yes
+	
+	trigger = { 
+		ai = yes
+		#OR = {
+			character = 317
+			#character = 4317
+		#}
+		any_sibling = {
+			OR ={
+				character = 4317
+				character = 5317
+			}	
+			is_alive = yes
+			can_press_claims_trigger = yes	
+			NOT = { character = ROOT }
+		}
+	}	
+
+	option = {
+		name = "EVTOPTA9999002230" #Renly Stormlands, Stannis Dragonstone	
+		trigger = {
+			character = 317
+			any_sibling = {
+				character = 4317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+			any_sibling = {
+				character = 5317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+		}
+		ai_chance = { factor = 80 }
+		random_sibling = {
+			limit = {
+				character = 4317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+			c_dragonstone = { grant_title = PREV }
+			d_dragonstone = { grant_title = PREV }
+			opinion = {
+				modifier = opinion_denied_title
+				who = ROOT
+				months = 120
+				multiplier = 2
+			}
+			if = {
+				limit = { NOT = { liege = { character = ROOT } } }
+				set_defacto_liege = ROOT
+			}
+		}
+		random_sibling = {
+			limit = {
+				character = 5317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+			k_stormlands = { grant_kingdom_w_adjudication = PREV }
+			letter_event = { id = 63078 tooltip = EVTTOOLTIP63078 days = 1 }
+			if = {
+				limit = { NOT = { liege = { character = ROOT } } }
+				set_defacto_liege = ROOT
+			}
+		}		
+	}
+	
+	option = {
+		name = "EVTOPTB9999002230" #Renly Dragonstone, Stannis Stormlands	
+		trigger = {
+			character = 317
+			any_sibling = {
+				character = 4317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+			any_sibling = {
+				character = 5317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+		}
+		ai_chance = { factor = 20 }
+		random_sibling = {
+			limit = {
+				character = 4317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+			k_stormlands = { grant_kingdom_w_adjudication = PREV }
+			letter_event = { id = 63078 tooltip = EVTTOOLTIP63078 days = 1 }
+			if = {
+				limit = { NOT = { liege = { character = ROOT } } }
+				set_defacto_liege = ROOT
+			}
+		}
+		random_sibling = {
+			limit = {
+				character = 5317
+				is_alive = yes
+				can_press_claims_trigger = yes	
+			}
+			c_dragonstone = { grant_title = PREV }
+			d_dragonstone = { grant_title = PREV }
+			if = {
+				limit = { NOT = { liege = { character = ROOT } } }
+				set_defacto_liege = ROOT
+			}		
+		}		
+	}
+	
+	option = {
+		name = "EVTOPTC9999002230" #One sibling alive, grant Stormlands
+		trigger = {
+			NOT = {
+				any_sibling = {
+					OR ={
+						character = 4317
+						character = 5317
+					}	
+					is_alive = yes
+					can_press_claims_trigger = yes	
+					NOT = { character = ROOT }
+					count = 2
+				}
+			}	
+		}
+		random_sibling = {
+			limit = {
+				OR ={
+					character = 4317
+					character = 5317
+				}	
+				is_alive = yes
+				can_press_claims_trigger = yes	
+				NOT = { character = ROOT }
+			}
+			k_stormlands = { grant_kingdom_w_adjudication = PREV }
+			letter_event = { id = 63078 tooltip = EVTTOOLTIP63078 days = 1 }
+			if = {
+				limit = { NOT = { liege = { character = ROOT } } }
+				set_defacto_liege = ROOT
+			}
+		}		
+	}
+}
+#Robert died before rebels won- Interregnum
+character_event = {
+	id = roberts_rebellion.51
+	desc = "EVTDESCroberts_rebellion.51"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_in_interregnum_trigger = yes
+	}
+	
+	immediate = {	
+		set_character_flag = interregnum_title_claimant
+		b_red_keep = { 
+			ROOT = { capital = PREV }
+		}
+		if = {
+			limit = {
+				NOT = { government = feudal_government_LP }
+				controls_religion = no
+				is_patrician = no
+				NOT = { trait = nightswatch }
+				primary_title = {
+					higher_tier_than = DUKE
+					is_variable_equal = { which = "lord_paramount_status" value = 2 }
+				}
+			}
+			set_government_type = feudal_government_LP
+		}
+		any_demesne_title = {
+			limit = { 
+				tier = ROOT
+				is_variable_equal = { which = "lord_paramount_status" value = 2 }
+				NOT = { has_law = succ_feudal_elective }
+			}
+			succession = feudal_elective
+		}
+		recalc_succession = yes
+		clr_character_flag = interregnum_regent
+		clr_character_flag = interregnum_councillor
+		clr_character_flag = interregnum_castellan	
+		
+		set_global_flag = roberts_rebellion_interregnum
+		any_playable_ruler = {
+			limit = { 
+				ai = no 
+				NOT = { character = ROOT }
+				OR = {
+					is_liege_or_above = ROOT
+					primary_title = { is_variable_equal = { which = "de_facto_empire" value = 1 } }
+				}
+			}
+			character_event = { id = roberts_rebellion.52 }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.51" #Call a great council
+		trigger = { war = no }
+		set_character_flag = called_interregnum_council
+		clr_character_flag = suspended_interregnum_council
+		custom_tooltip = {
+			text = TOOLTIPinterregnum.1COUNCIL
+			hidden_tooltip = {
+				primary_title = { #mark all claimants
+					any_playable_ruler = {
+						limit = { 
+							has_claim = PREV 
+							can_press_claims_trigger = yes
+							NOT = { dynasty = 496 }
+						}
+						set_character_flag = interregnum_title_claimant
+						add_trait = dead_target
+					}
+					ROOT = {
+						any_realm_character = {
+							limit = { 
+								has_claim = PREVPREV 
+								can_press_claims_trigger = yes
+								NOT = { dynasty = 496 }
+							}
+							set_character_flag = interregnum_title_claimant
+							add_trait = dead_target
+						}
+					}
+				}
+				character_event = { id = interregnum.2 days = 1 }
+			}
+		}	
+	}
+	option = {
+		name = "EVTOPTBroberts_rebellion.51" 
+		trigger = { war = yes }
+		primary_title = {
+			any_playable_ruler = {
+				limit = { 
+					has_claim = PREV 
+					can_press_claims_trigger = yes
+					OR = {
+						ROOT = { war = yes }
+						NOT = { vassal_of = ROOT } 
+					}
+					NOT = { dynasty = 496 }
+				}
+				opinion = { who = ROOT modifier = opinion_suspended_council }
+			}
+			ROOT = {
+				any_realm_character = {
+					limit = { 
+						has_claim = PREVPREV 
+						can_press_claims_trigger = yes
+						OR = {
+							ROOT = { war = yes }
+							is_ruler = no
+							NOT = { vassal_of = ROOT } 
+						}
+						NOT = { dynasty = 496 }
+					}
+					opinion = { who = ROOT modifier = opinion_suspended_council }
+				}
+			}
+		}
+		hidden_tooltip = {
+			set_character_flag = suspended_interregnum_council
+			clr_character_flag = called_interregnum_council
+			character_event = { id = interregnum.1 days = 365 } #check again in a year
+		}
+	}
+}
+character_event = { #inform realm
+	id = roberts_rebellion.52
+	desc = "EVTDESCroberts_rebellion.51"
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAroberts_rebellion.51"
+		trigger = { FROM = { war = no } }
+	}
+	option = {
+		name = "EVTOPTBroberts_rebellion.52"
+		trigger = { FROM = { war = yes } }
+	}
+}	
+character_event = { # Cause it really pisses me off it does not work from the cb
+	id = roberts_rebellion.53
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { is_female = no }
+			set_special_character_title = LORD_PROTECTOR
+		}
+		if = {
+			limit = { is_female = yes }
+			set_special_character_title = LADY_PROTECTOR
+		}
+	}
+	option = {
+		name = Ok
+	}
+}
+
+#Kingswood Broherhood
+character_event = {
+	id = roberts_rebellion.60
+	desc = "EVTDESCroberts_rebellion.60"
+	
+	hide_from = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		create_title = {
+			tier = DUKE
+			landless = yes
+			temporary = yes
+			rebel = yes
+			culture = ROOT
+			name = "KINGSWOOD_BROTHERHOOD"
+			holder = THIS
+		}
+		230 = { #Woodmere
+			ROOT = {
+				spawn_unit = {
+					province = PREV
+					home = PREV
+					owner = THIS
+					leader = THIS
+					scaled_by_biggest_garrison = 0.8
+					troops = {
+						archers = { 6 6 }
+						light_cavalry = { 4 4 }
+						pikemen = { 5 5 }
+						light_infantry = { 5 5 }
+					}
+					attrition = 1.0
+				}
+				c_164307 = { #the smiling knight
+					move_character = PREV
+					spawn_unit = {
+						province = PREVPREV
+						home = PREVPREV
+						owner = PREV
+						scaled_by_biggest_garrison = 0.8
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							pikemen = { 5 5 }
+							light_infantry = { 5 5 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+					}
+				}
+				create_character = {
+					name = Oswyn
+					random_traits = yes
+					dynasty = none
+					religion = THIS
+					culture = THIS
+					female = no
+					age = 31
+					trait = peasant_leader
+					trait = tough_soldier
+				}
+				new_character = {
+					give_nickname = nick_the_thrice_hanged
+					random_list = {
+						10 = { add_trait = skilled_warrior }
+						30 = { add_trait = trained_warrior }
+						60 = { add_trait = poor_warrior }
+					}
+					spawn_unit = {
+						province = PREVPREV
+						home = PREVPREV
+						owner = PREV
+						scaled_by_biggest_garrison = 0.8
+						troops = {
+							archers = { 6 6 }
+							light_cavalry = { 4 4 }
+							pikemen = { 5 5 }
+							light_infantry = { 5 5 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+					}
+				}
+			}
+			owner = {
+				top_liege = {
+#					set_defacto_vassal = PREVPREVPREV
+					reverse_war = {
+						target = ROOT
+						casus_belli = peasant_revolt
+						thirdparty_title = PREVPREV # The county
+					}
+					reverse_opinion = {
+						who = ROOT
+						modifier = opinion_evil_tyrant
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "OK"
+	}
+}

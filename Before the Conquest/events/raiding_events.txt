@@ -106,7 +106,6 @@ letter_event = {
 	}
 	
 	min_age = 14
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	religion_group = drowned_god_group 
@@ -392,8 +391,10 @@ character_event = {
 		add_trait = on_reaving
 		hidden_tooltip = {
 			set_character_flag = reaving_begins
-			character_event = { id = raid_events.4 days = 365 }
-			character_event = { id = raid_events.32 days = 50 random = 20 } #trigger fleet attack	
+			set_variable = { which = number_of_reaving_events value = 1 }
+			character_event = { id = raid_events.4 days = 365 } #end raid
+			character_event = { id = raid_events.32 days = 40 random = 15 } #trigger fleet attack
+			character_event = { id = raid_events.699 days = 80 random = 15 } #random event generator			
 			liege = {
 				if = {
 					limit = {
@@ -545,70 +546,79 @@ character_event = {
 		clr_character_flag = reaving_duel
 		clr_character_flag = finger_dance
 		clr_character_flag = flagship_on_reaving
-		if = {
-			limit = { demesne_size = 1 }
-			any_vassal = {
-				limit = {
-					NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
-					religion_group = drowned_god_group 
-					culture = ironborn
-					is_female = no
-					age = 10
-				}
-				opinion = {
-					modifier = opinion_went_reaving
-					who = ROOT
-					years = 5
-				}
-			}	
-			any_courtier = {
-				limit = {
-					NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
-					religion_group = drowned_god_group 
-					culture = ironborn
-					is_female = no
-					age = 10
-				}
-				opinion = {
-					modifier = opinion_went_reaving
-					who = ROOT
-					years = 5
-				}
-			}	
-		}
-		if = {
-			limit = { NOT = { demesne_size = 1 } }
-			liege = {
+		clr_character_flag = had_reaving_village_raid
+		clr_character_flag = had_reaving_duel
+		clr_character_flag = had_reaving_ship_attack
+		hidden_tooltip = { set_variable = { which = number_of_reaving_events value = 0 } }
+		custom_tooltip = {
+			text = TOOLTIPraid_events.4RESPECT
+			hidden_tooltip = {
 				if = {
-					limit = {
-						NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
-						religion_group = drowned_god_group 
-						culture = ironborn
-						is_female = no
-						age = 10
-					}
-					opinion = {
-						modifier = opinion_went_reaving
-						who = ROOT
-						years = 5
-					}
-				}	
-				any_courtier = {
-					limit = {
-						NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
-						religion_group = drowned_god_group 
-						culture = ironborn
-						is_female = no
-						age = 10
-					}
-					opinion = {
-						modifier = opinion_went_reaving
-						who = ROOT
-						years = 5
-					}
-				}	
+					limit = { demesne_size = 1 }
+					any_vassal = {
+						limit = {
+							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
+							religion_group = drowned_god_group 
+							culture = ironborn
+							is_female = no
+							age = 10
+						}
+						opinion = {
+							modifier = opinion_went_reaving
+							who = ROOT
+							years = 5
+						}
+					}	
+					any_courtier = {
+						limit = {
+							NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
+							religion_group = drowned_god_group 
+							culture = ironborn
+							is_female = no
+							age = 10
+						}
+						opinion = {
+							modifier = opinion_went_reaving
+							who = ROOT
+							years = 5
+						}
+					}	
+				}
+				if = {
+					limit = { NOT = { demesne_size = 1 } }
+					liege = {
+						if = {
+							limit = {
+								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
+								religion_group = drowned_god_group 
+								culture = ironborn
+								is_female = no
+								age = 10
+							}
+							opinion = {
+								modifier = opinion_went_reaving
+								who = ROOT
+								years = 5
+							}
+						}	
+						any_courtier = {
+							limit = {
+								NOT = { has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving } }
+								religion_group = drowned_god_group 
+								culture = ironborn
+								is_female = no
+								age = 10
+							}
+							opinion = {
+								modifier = opinion_went_reaving
+								who = ROOT
+								years = 5
+							}
+						}	
+					}	
+				}
 			}	
-		}
+		}	
 		any_opinion_modifier_target = {
 			limit = {
 				trait = on_reaving
@@ -709,27 +719,205 @@ character_event = {
 		}	
 	}
 }
+###Random event generator###
+character_event = {
+	id = raid_events.699
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		trait = on_reaving
+		has_character_flag = reaving_begins
+	}
+	
+	immediate = {
+		character_event = { id = raid_events.699 days = 35 random = 10 } #re-iterate
+		if = {
+			limit = {
+				OR = {
+					is_incapable = yes
+					prisoner = yes
+				}
+			}
+			break = yes
+		}
+		#main raid events
+		random_list = {
+			200 = {
+				#minimum of 4 events
+				modifier = {
+					factor = 0
+					had_character_flag = { flag = reaving_begins days = 150 }
+					NOT = { check_variable = { which = number_of_reaving_events value = 2 } }
+				}
+				modifier = {
+					factor = 0
+					had_character_flag = { flag = reaving_begins days = 300 }
+					NOT = { check_variable = { which = number_of_reaving_events value = 4 } }
+				}
+			}
+			40 = { #Village Raid
+				modifier = {
+					factor = 2
+					NOT = { has_character_flag = had_reaving_village_raid }
+				}
+				set_character_flag = had_reaving_village_raid
+				change_variable = { which = number_of_reaving_events value = 1 }
+				character_event = { id = raid_events.7 } 
+			}
+			40 = { #Duel!
+				modifier = {
+					factor = 2
+					NOT = { has_character_flag = had_reaving_duel }
+				}
+				set_character_flag = had_reaving_duel
+				change_variable = { which = number_of_reaving_events value = 1 }
+				character_event = { id = raid_events.20 } 
+			}
+			40 = { #Attack a ship
+				modifier = {
+					factor = 2
+					NOT = { has_character_flag = had_reaving_ship_attack }
+				}
+				set_character_flag = had_reaving_ship_attack
+				change_variable = { which = number_of_reaving_events value = 1 }
+				character_event = { id = raid_events.32 } 
+			}
+			1 = { #Kraken Attacks!
+				modifier = {
+					factor = 0.1
+				}
+				modifier = {
+					factor = 10
+					magic_returned_trigger = yes
+				}
+				character_event = { id = raid_events.60 } 
+			}
+		}
+		random = { #duel for follower
+			chance = 25
+			random_opinion_modifier_target = {
+				limit = {
+					trait = on_reaving
+					has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving }
+				}
+				character_event = { id = raid_events.20 days = 10 random = 5 } 
+			}
+		}
+		#flavour events
+		random_list = {
+			50 = {
+			}
+			5 = { #Befriending
+				modifier = {
+					factor = 2
+					trait = gregarious
+				}
+				modifier = {
+					factor = 0.5
+					trait = shy
+				}
+				character_event = { id = raid_events.43 days = 12 random = 6 } 
+			}
+			5 = { #Rival
+				modifier = {
+					factor = 0.5
+					trait = patient
+				}
+				modifier = {
+					factor = 2
+					trait = wroth
+				}
+				character_event = { id = raid_events.45 days = 12 random = 6 } 
+			}
+			3 = { #Finger Dance
+				trigger = {
+					NOT = { trait = wounded }
+					NOT = { is_maimed_trigger = yes }
+				}	
+				modifier = {
+					factor = 1.5
+					OR = {
+						trait = drunkard
+						trait = impaler
+						trait = duelist
+						has_character_flag = fingerdance_expert
+					}
+				}
+				modifier = {
+					factor = 1.25
+					OR = {
+						trait = brave
+						trait = arbitrary
+						trait = wroth
+					}
+				}
+				modifier = {
+					factor = 1.25
+					trait = proud
+				}
+				modifier = {
+					factor = 1.25
+					NOT = { trait = craven }
+					has_character_flag = fingerdance_refused   #Other Ironborn calling him a chicken and egging him on
+				}
+				modifier = {
+					factor = 0.5
+					trait = craven
+				}
+				character_event = { id = raid_events.47 days = 12 random = 6 } 
+			}
+		}
+		#flavour for followers
+		random = { #Befriending
+			chance = 10
+			random_opinion_modifier_target = {
+				limit = {
+					trait = on_reaving
+					has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving }
+					NOT = { trait = shy }
+				}
+				character_event = { id = raid_events.43 days = 10 random = 5 } 
+			}
+		}
+		random = { #Rival
+			chance = 10
+			random_opinion_modifier_target = {
+				limit = {
+					trait = on_reaving
+					has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving }
+					NOT = { trait = shy }
+				}
+				character_event = { id = raid_events.45 days = 10 random = 5 } 
+			}
+		}
+		random = { #Finger Dance
+			chance = 5
+			random_opinion_modifier_target = {
+				limit = {
+					trait = on_reaving
+					has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving }
+					NOT = { trait = craven }
+					NOT = { trait = wounded }
+					NOT = { is_maimed_trigger = yes }
+				}
+				character_event = { id = raid_events.47 days = 10 random = 5 } 
+			}
+		}
+	}
+
+	option = {
+		name = OK
+	}
+}	
 ###Village Raid###
 character_event = {
 	id = raid_events.7
 	desc = "EVTDESCraid_events.7"
 	picture = "GFX_evt_reavingvillageraid"
 
-	min_age = 14
-	only_men = yes
-	capable_only = yes
-	prisoner = no
-	
-	trigger = {
-		trait = on_reaving
-		has_character_flag = reaving_begins
-		NOT = { has_character_flag = reaving_village_raid }
-		NOT = { has_character_flag = reaving_ship_attack }
-	}
-	
-	mean_time_to_happen = {
-		days = 200
-	}
+	is_triggered_only = yes
 	
 	immediate = { set_character_flag = reaving_village_raid }
 
@@ -2190,49 +2378,40 @@ character_event = {
 	}
 }
 ###Duel!!!###
+character_event = { #on map looting trigger
+	id = raid_events.2099
+	
+	min_age = 14
+	capable_only = yes
+	prisoner = no
+	hide_window = yes
+	
+	trigger = {
+		is_looting = yes	
+		in_command = yes
+		NOT = { is_at_sea = yes }	
+		location = { owner = { NOT = { same_realm = ROOT } } }
+	}
+	
+	mean_time_to_happen = {
+		days = 450
+	}
+	
+	immediate = { character_event = { id = raid_events.20 } }
+	
+	option = {
+		name = OK
+	}
+}	
 character_event = {
 	id = raid_events.20
 	desc = "EVTDESCraid_events.20"
 	picture = "GFX_evt_melee"
 
-	min_age = 14
-	#only_men = yes
+	is_triggered_only = yes
 	capable_only = yes
 	prisoner = no
 	
-	trigger = {
-		OR = {
-			AND = {
-				trait = on_reaving
-				OR = {
-					has_character_flag = reaving_begins
-					has_character_flag = reaving_begins_reaver
-				}
-				NOT = { 
-					on_reaving = {
-						is_alive = yes
-						has_character_flag = reaving_duel
-					}
-				}
-			}	
-			AND = {
-				#religion = drowned_god
-				is_looting = yes	
-				in_command = yes
-				NOT = { is_at_sea = yes }	
-				location = { owner = { NOT = { same_realm = ROOT } } }
-			}
-		}	
-	}
-	
-	mean_time_to_happen = {
-		days = 450
-		modifier = {
-			factor = 2
-			trait = on_reaving
-		}
-	}
-
 	immediate = {
 		set_character_flag = reaving_duel
 		if = {
@@ -3325,40 +3504,30 @@ character_event = {
 	}
 }
 ###Attack a ship###
-character_event = {
-	id = raid_events.32
-	desc = "EVTDESCraid_events.32"
-	picture = "GFX_evt_reaving3"
-
+character_event = { #trigger for on map looting
+	id = raid_events.3299
+	
+	hide_window = yes
 	min_age = 14
-	only_men = yes
 	capable_only = yes
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = { #Off Map
-				trait = on_reaving
-				has_character_flag = reaving_begins
-			}
-			AND = { #On Map
-				#religion = drowned_god
-				is_allowed_to_loot = yes
-				in_command = yes
-				is_at_sea = yes
-				location = {
-					any_neighbor_province = {
-						any_province_lord = { 
-							war_with = ROOT 
-							OR = {
-								has_opinion_modifier = { who = ROOT modifier = opinion_looted }
-								any_liege = { has_opinion_modifier = { who = ROOT modifier = opinion_looted } }
-							}	
-						}	
+		#religion = drowned_god
+		is_allowed_to_loot = yes
+		in_command = yes
+		is_at_sea = yes
+		location = {
+			any_neighbor_province = {
+				any_province_lord = { 
+					war_with = ROOT 
+					OR = {
+						has_opinion_modifier = { who = ROOT modifier = opinion_looted }
+						any_liege = { has_opinion_modifier = { who = ROOT modifier = opinion_looted } }
 					}	
-				}				
-			}
-		}
+				}	
+			}	
+		}				
 		NOT = { has_character_flag = reaving_village_raid }
 		NOT = { has_character_flag = reaving_ship_attack }		
 	}
@@ -3367,6 +3536,21 @@ character_event = {
 		days = 200
 	}
 	
+	immediate = {
+		character_event = { id = raid_events.32 } 
+	}
+
+	option = {
+		name = OK
+	}
+}	
+character_event = {
+	id = raid_events.32
+	desc = "EVTDESCraid_events.32"
+	picture = "GFX_evt_reaving3"
+
+	is_triggered_only = yes
+
 	immediate = {
 		set_character_flag = reaving_ship_attack
 	}
@@ -4279,8 +4463,7 @@ character_event = {
 	desc = "EVTDESCraid_events.43"
 	picture = "GFX_evt_feast"
 
-	min_age = 14
-	only_men = yes
+	is_triggered_only = yes
 	capable_only = yes
 	prisoner = no
 	
@@ -4300,28 +4483,10 @@ character_event = {
 			NOT = { is_friend = ROOT }
 			NOT = { is_rival = ROOT }
 		}
-		NOT = { 
-			on_reaving = {
-				is_alive = yes
-				has_character_flag = reaving_befriending
-			}
-		}
 	}
 	
 	immediate = { set_character_flag = reaving_befriending }
 	
-	mean_time_to_happen = {
-		days = 750
-		modifier = {
-			factor = 0.5
-			trait = gregarious
-		}
-		modifier = {
-			factor = 2
-			trait = shy
-		}
-	}
-
 	option = {
 		name = "EVTOPTAraid_events.43" 
 		on_reaving = {
@@ -4366,8 +4531,7 @@ character_event = {
 	desc = "EVTDESCraid_events.45"
 	picture = GFX_evt_courtiers_talking
 
-	min_age = 14
-	only_men = yes
+	is_triggered_only = yes
 	capable_only = yes
 	prisoner = no
 	
@@ -4397,18 +4561,6 @@ character_event = {
 	
 	immediate = { set_character_flag = reaving_rival }
 	
-	mean_time_to_happen = {
-		days = 600
-		modifier = {
-			factor = 2
-			trait = patient
-		}
-		modifier = {
-			factor = 0.5
-			trait = wroth
-		}
-	}
-
 	option = {
 		name = "EVTOPTAraid_events.45" 
 		on_reaving = {
@@ -4453,8 +4605,7 @@ character_event = {
 	desc = "EVTDESCraid_events.47"
 	picture = GFX_fingerdance
 
-	min_age = 14
-	only_men = yes
+	is_triggered_only = yes
 	capable_only = yes
 	prisoner = no
 	
@@ -4463,16 +4614,6 @@ character_event = {
 		NOT = { trait = wounded }
 		NOT = { is_maimed_trigger = yes }
 		NOT = { has_character_flag = finger_dance }
-		OR = {
-			has_character_flag = reaving_begins
-			has_character_flag = reaving_begins_reaver
-		}
-		NOT = { 
-			on_reaving = {
-				is_alive = yes
-				has_character_flag = finger_dance
-			}
-		}
 		on_reaving = {
 			NOT = { trait = wounded }
 			NOT = { is_maimed_trigger = yes }
@@ -4485,40 +4626,6 @@ character_event = {
 					has_opinion_modifier = { who = ROOT modifier = opinion_on_reaving }
 				}				
 			}			
-		}
-	}
-	
-	mean_time_to_happen = {
-		days = 1200
-		modifier = {
-			factor = 0.75
-			OR = {
-				trait = drunkard
-				trait = impaler
-				trait = duelist
-				has_character_flag = fingerdance_expert
-			}
-		}
-		modifier = {
-			factor = 0.85
-			OR = {
-				trait = brave
-				trait = arbitrary
-				trait = wroth
-			}
-		}
-		modifier = {
-			factor = 0.85
-			trait = proud
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { trait = craven }
-			has_character_flag = fingerdance_refused   #Other Ironborn calling him a chicken and egging him on
-		}
-		modifier = {
-			factor = 2
-			trait = craven
 		}
 	}
 	
@@ -5180,25 +5287,7 @@ character_event = {
 	desc = "EVTDESCraid_events.60"
 	picture = GFX_evt_kraken
 
-	min_age = 14
-	only_men = yes
-	capable_only = yes
-	prisoner = no
-	
-	trigger = {
-		trait = on_reaving
-		has_character_flag = reaving_begins
-		NOT = { has_character_flag = reaving_village_raid }
-		NOT = { has_character_flag = reaving_ship_attack }
-	}
-	
-	mean_time_to_happen = {
-		years = 200
-		modifier = {
-			factor = 0.15
-			magic_returned_trigger = yes
-		}
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTAraid_events.60" #To arms!
@@ -7797,7 +7886,6 @@ character_event = { #Sword owner surrenders
 					years = 100
 				}
 			}
-			if = {
 				limit = { trait = vigilance }
 				remove_trait = vigilance
 				ROOT = { add_trait = vigilance prestige = 50 }
@@ -8297,7 +8385,7 @@ character_event = { #Sword owner defeated
 				}
 			}
 			if = {
-				limit = { trait = vigilance }
+			limit = { trait = vigilance }
 				if = {
 					limit = { is_alive = yes }
 					remove_trait = vigilance
@@ -9196,9 +9284,6 @@ character_event = {
 				}
 				character_event = { id = raid_events.103 }	
 				set_character_flag = sword_event
-			}
-			if = { 
-				limit = { 
 					trait = vigilance
 					NOT = { has_character_flag = sword_event }
 					FROM = {
@@ -9649,10 +9734,6 @@ character_event = {
 								}
 							}
 						}
-						AND = {
-							trait = vigilance
-							FROM = {
-								any_realm_character = {
 									has_opinion_modifier = { who = PREVPREV modifier = opinion_stole_vigilance }
 								}
 							}
@@ -10827,7 +10908,7 @@ character_event = { #AI seeks redress, player has decision
 			opinion = {
 				who = ROOT
 				modifier = opinion_demanded_raiding_redress
-				months = 12
+				months = 60
 			}
 			letter_event = { id = raid_events.151 tooltip = TOOLTIPraid_events.151 }
 		}
@@ -11023,7 +11104,8 @@ letter_event = {
 			tooltip = {
 				transfer_scaled_wealth = {
 					to = FROMFROM
-					value = 1
+					value = 0.5
+					min = 10
 				}
 			}		
 		}
@@ -11212,7 +11294,8 @@ letter_event = { #Vassal receives demand to stop raiding
 		tooltip = {
 			transfer_scaled_wealth = {
 				to = FROMFROMFROM
-				value = 1
+				value = 0.5
+				min = 10
 			}
 		}
 		hidden_tooltip = { 			
@@ -11287,7 +11370,8 @@ letter_event = { #Inform ROOT accept
 			}
 			transfer_scaled_wealth = {
 				to = ROOT
-				value = 1
+				value = 0.5
+				min = 10
 			}			
 		}
 	}
@@ -11559,5 +11643,9 @@ character_event = {
 		clr_character_flag = reaving_duel
 		clr_character_flag = reaving_begins_reaver
 		clr_character_flag = finger_dance
+		clr_character_flag = had_reaving_village_raid
+		clr_character_flag = had_reaving_duel
+		clr_character_flag = had_reaving_ship_attack
+		hidden_tooltip = { set_variable = { which = number_of_reaving_events value = 0 } }
 	}
 }

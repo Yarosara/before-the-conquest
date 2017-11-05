@@ -1,0 +1,1724 @@
+#New
+
+opinion_job_security_concerns = {
+	opinion = -10
+	months = 12
+	stacking = no
+}
+
+# Added by Van Diemen
+
+opinion_independent = {
+	opinion = -50
+}
+
+opinion_fired_from_office = {
+	opinion = -10
+	months = 120
+}
+
+opinion_defending_liege = {
+	opinion = 15
+}
+
+opinion_defending_me = {
+	opinion = 10
+}
+
+opinion_not_defending_me = {
+	opinion = -5
+}
+
+opinion_approved_law = {
+	opinion = 10
+}
+
+opinion_ignored_law = {
+	opinion = -10
+}
+
+opinion_refused_convert = {
+	opinion = -25
+}
+
+opinion_converted = {
+	opinion = 25
+}
+
+####################
+# Family relations #
+####################
+
+# opinion_father = {
+	# opinion = 20
+# }
+
+# opinion_mother = {
+	# opinion = 20
+# }
+
+# opinion_sibling = {
+	# opinion = 15
+# }
+
+# opinion_grandfather = {
+	# opinion = 10
+# }
+
+# opinion_grandmother = {
+	# opinion = 10
+# }
+
+# opinion_grandchild = {
+	# opinion = 10
+# }
+
+# opinion_uncle = {
+	# opinion = 5
+# }
+
+# opinion_aunt = {
+	# opinion = 5
+# }
+
+# opinion_nephew = {
+	# opinion = 5
+# }
+
+# opinion_niece = {
+	# opinion = 5
+# }
+
+# opinion_cousin = {
+	# opinion = 5
+# }
+opinion_cadet_affection = {
+	opinion = 5
+}
+###Added by knuckey
+opinion_beaten = {
+	opinion = -10
+	months = 60
+}
+opinion_forced_take_black = {
+	opinion = -30
+	months = 120
+}
+opinion_refused_citadel = {
+	opinion = -10
+	months = 120
+}
+opinion_sent_to_citadel = {
+	opinion = -20
+	months = 120
+}
+opinion_unzealous = {
+	opinion = -10
+	months = 12
+}
+opinion_humliated = {
+	opinion = -10
+}
+opinion_banned_from_sowing = {
+	opinion = -10
+}
+opinion_executed_lover = {
+	opinion = -25
+}
+opinion_gelded_lover = {
+	opinion = -20
+}
+opinion_refused_church_career = {
+	opinion = -10
+}
+opinion_preferred_high_septon = {
+	opinion = 10
+}
+opinion_selected_non_septon = {
+	opinion = -5
+}
+opinion_not_preferred_high_septon = {
+	opinion = -20
+}
+opinion_helped_first_ranger = {
+	opinion = 10
+}
+opinion_murdered_first_ranger = {
+	opinion = -50
+	prison_reason = yes
+	execute_reason = yes
+	banish_reason = yes
+}
+opinion_spear_wifes_men = {
+	opinion = 100
+	months = 1200
+}
+opinion_common_personal_steward = {
+	opinion = -15
+	months = 60
+}
+opinion_slayed_kinsman = {
+	opinion = -20
+	months = 60
+}
+opinion_nominated_heir = {
+	opinion = 10
+}
+opinion_nominated_female_heir = {
+	opinion = -10
+}
+opinion_new_lord_paramount = {
+	opinion = 30
+}
+opinion_debt_insurer = {
+	opinion = -10
+	inherit = yes
+	months = 1200
+}
+######### added by Rodri
+
+opinion_gave_sword_to_me = {
+	opinion = 25
+}
+
+opinion_didnt_give_sword_to_me = {
+	opinion = -10
+}
+
+opinion_dead_men_scholar = {
+	opinion = 10
+}
+
+opinion_dead_men_cynical = {
+	opinion = 10
+}
+
+opinion_dead_men_paranoid = {
+	opinion = 10
+}
+
+opinion_dead_men_paranoid_neg = {
+	opinion = -10
+}
+
+opinion_dead_men_scholar_neg = {
+	opinion = -10
+}
+
+opinion_dead_men_cynical_neg = {
+	opinion = -10
+}
+
+opinion_swinged_the_sword = {
+	opinion = 10
+}
+
+opinion_swinged_the_sword_neg = {
+	opinion = -10
+}
+
+opinion_sent_to_wall = {
+	opinion = 10
+}
+
+opinion_sent_to_wall_neg = {
+	opinion = -10
+}
+
+opinion_debt_remembered = {
+	opinion = 25
+}
+
+######### End of added by Rodri
+opinion_refused_nightswatch = {
+	opinion = -10
+	months = 120
+}
+
+opinion_targaryen_loyalist = {
+	opinion = 30
+}
+
+opinion_pyromancer = {
+	opinion = 20
+}
+
+opinion_burned_closed_relative = {
+	opinion = -40
+	crime = yes
+}
+
+opinion_attending_tournament = {
+	opinion = 0
+}
+opinion_queen_love_beauty = {
+	opinion = 10
+}
+opinion_queen_love_beauty_chosen = {
+	opinion = 20
+	stacking = no
+}
+opinion_potential_tourny_rival = {
+	opinion = 0
+}
+opinion_spectating_tournament = {
+	opinion = 0
+}	
+opinion_tournament_spectator = {
+	opinion = 5
+}	
+opinion_squire_honoured = {
+	opinion = 10
+}
+opinion_squire_humiliated = {
+	opinion = -10
+}
+opinion_attending_melee = {
+	opinion = 0
+}
+opinion_melee_spectator = {
+	opinion = 5
+}	
+
+opinion_accepted_legit = {
+	opinion = 15
+}
+opinion_refused_legit = {
+	opinion = -15
+}
+opinion_legitimised_kin_angry = {
+	opinion = -15
+}
+##Tower of Joy
+opinion_coward_TOJ = {
+	opinion = -15
+}
+opinion_companion_TOJ = {
+	opinion = 25
+}
+opinion_subjugated_AGOT = {
+	opinion = -40
+}
+##Misc Knuckey##
+# opinion_kidnapped = {	#Use ck2+ kidnapped_me modifier instead
+	# opinion = -25
+	# crime = yes
+# }
+# opinion_attempted_kidnapped = { #Use ck2+ attempted_kidnapping modifier instead
+	# opinion = -20
+	# prison_reason = yes # This one gives righteous cause to imprison a character
+	# crime = yes
+# }
+opinion_loyalty_bought = {
+	opinion = 20
+	obedient = yes
+}
+opinion_bribe_rejected = {
+	opinion = -10
+}
+opinion_loyal = {
+	opinion = 25
+}
+opinion_rejected_approach = {
+	opinion = -20
+}
+opinion_betrayed_loyalty = {
+	opinion = -25
+}
+opinion_impressed_loyalty = {
+	opinion = 30
+}
+opinion_mildly_impressed_loyalty = {
+	opinion = 15
+}
+opinion_unimpressed_loyalty = {
+	opinion = -10
+}
+opinion_fabricate_claims_bribe = {
+	opinion = 0
+}
+opinion_resentful_agot = {
+	opinion = -75
+}
+champion_of_relative = {
+	opinion = 25
+	months = 120
+}
+champion_of_liege = {
+	opinion = 10
+}
+refused_championing = {
+	opinion = -15
+}
+host_of_prisoner = {
+	opinion = 0
+}
+denied_trial_by_combat = {
+	opinion = -20
+}
+opinion_vassal_transfer_target = {
+	opinion = 0
+}
+opinion_accepted_request = {
+	opinion = 15
+}
+opinion_usurped_throne = {
+	opinion = -25
+}
+bestowed_dragon_egg = {
+	opinion = 15
+}
+opinion_hoarding_titles = {
+	opinion = -5
+}
+opinion_hoarding_titles_vassal = {
+	opinion = -15
+}
+opinion_surrendered = {
+	opinion = -10
+}
+opinion_estranged = {
+	opinion = -40
+}
+asked_to_stand_down = {
+	opinion = 0
+}
+opinion_flayed_kin = {
+	opinion = -40
+	prison_reason = yes
+	crime = yes
+}
+opinion_flayed_lover = {
+	opinion = -40
+	prison_reason = yes
+	crime = yes
+}
+opinion_flayed_friend = {
+	opinion = -40
+	prison_reason = yes
+	crime = yes
+}
+opinion_flayed_child = {
+	opinion = -60
+	prison_reason = yes
+	crime = yes
+}
+opinion_found_liege_lord = {
+	opinion = 25
+	months = 120
+}
+opinion_respects = {
+	opinion = 40
+	months = 120
+}
+opinion_unjust = {
+	opinion = -15
+	months = 36
+}
+opinion_found_me_innocent = {
+	opinion = 30
+	months = 120
+}
+opinion_found_me_guilty = {
+	opinion = -30
+	months = 120
+}
+opinion_ignored_my_verdict = {
+	opinion = -15
+	months = 36
+}
+opinion_found_guilty = {
+	opinion = -10
+	months = 36
+	execute_reason = yes
+	banish_reason = yes
+}
+opinion_blood_feud = {
+	opinion = -100
+	months = 1200
+}
+opinion_blood_feud_truce = {
+	opinion = -25
+	months = 1200
+}
+opinion_showed_restraint = {
+	opinion = 10
+	months = 12
+}
+opinion_disrepected_hospitality = {
+	opinion = -15
+	months = 24
+}
+opinion_liege_loan = {
+	opinion = -10
+}
+opinion_loan_default = {
+	opinion = -25
+}
+opinion_cancelled_loan = {
+	opinion = -60
+	crime = yes
+}
+opinion_extended_loan = {
+	opinion = 10
+}
+opinion_restored_stark = {
+	opinion = 30
+}
+opinion_recent_marriage = {
+	opinion = 0
+}
+opinion_attending_wedding = {
+	opinion = 0
+}
+opinion_large_dowry = {
+	opinion = 10
+	months = 48
+}
+opinion_small_dowry = {
+	opinion = -15
+	months = 48
+}
+opinion_kingsmoot_candidate_link = {
+	opinion = 0
+}
+opinion_kingsmoot_champion = {
+	opinion = 10
+	months = 12
+}
+opinion_election_champion = {
+	opinion = 10
+	months = 12
+}
+loan_kingsguard = {
+	opinion = 0
+}
+opinion_withheld_kingsguard = {
+	opinion = -10
+}
+opinion_added_kin_to_kingsguard_pos = {
+	opinion = 10
+}
+opinion_added_kin_to_kingsguard_neg = {
+	opinion = -20
+}
+appointed_non_faith_kingsguard = {
+	opinion = -15
+}
+appointed_foreign_kingsguard = {
+	opinion = -15
+}
+appointed_lowborn_kingsguard = {
+	opinion = -15
+}
+###Added by Oga###
+opinion_grew_up_together = {
+	opinion = 5
+}
+opinion_refused_kingsguard = {
+	opinion = -10
+}
+###Added by Galle###
+opinion_duel_target = {
+	opinion = -5
+	months = 2400
+}
+opinion_battle_duel_target = {
+	opinion = 10
+	months = 2400
+}
+opinion_kingsguard_protection = {
+	opinion = 5
+	months = 2400
+}
+opinion_ignored_accusation = {
+	opinion = -30
+	months = 240
+}
+opinion_pressed_accusation = {
+	opinion = 15
+	months = 240
+}
+opinion_disinherited_me = {
+	opinion = -50
+	prison_reason = yes
+	crime = yes
+}
+opinion_bastard_spawn = {
+	opinion = -50
+	months = 240
+	prison_reason = yes
+}
+opinion_disinherited_my_child = {
+	opinion = -30
+	months = 240
+	prison_reason = yes
+}
+opinion_ignored_false_accusation = {
+	opinion = 10
+	months = 240
+}
+opinion_conspired_against_me = {
+	opinion = -40
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+opinion_conspired_against_child = {
+	opinion = -20
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+opinion_ignored_my_judgement = {
+	opinion = -20
+	months = 240
+	prison_reason = yes
+}
+opinion_unfaithful_deceiver = {
+	opinion = -40
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+opinion_cuckolded_AGOT = {
+	opinion = -50
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+opinion_suspected_bastard = {
+	opinion = -25
+	months = 240
+	inherit = yes
+}
+opinion_implicated_sibling = {
+	opinion = 0
+	months = 240
+}
+opinion_dangerous = {
+	opinion = -20
+	months = 60
+}
+opinion_intimidated = {
+	opinion = 10
+	months = 24
+}
+opinion_resentful = {
+	opinion = -10
+	months = 240
+}
+opinion_murderer = {
+	opinion = -20
+	months = 120
+	prison_reason = yes
+}
+opinion_plot_depose_liege = {
+	opinion = 0
+	months = 2400
+}
+opinion_potential_target = {
+	opinion = -5
+	months = 2400
+}
+
+opinion_council_sponsor = {
+	opinion = 10
+	months = 120
+}
+opinion_former_council_sponsor = {
+	opinion = 5
+	months = 120
+}
+opinion_rival_council_candidate = {
+	opinion = -10
+	months = 120
+}
+opinion_rival_council_sponsor = {
+	opinion = -10
+	months = 120
+}
+opinion_rejected_council_candidate = {
+	opinion = -10
+	months = 60
+}
+opinion_approved_council_candidate = {
+	opinion = 10
+	months = 60
+}
+opinion_replaced_council_candidate = {
+	opinion = -15
+	months = 60
+}
+opinion_rejected_rival_council_candidate = {
+	opinion = 5
+	months = 60
+}
+opinion_sponsor_betrayed_me = {
+	opinion = -15
+	months = 120
+}
+opinion_appointed_to_council = {
+	opinion = 10
+	months = 60
+}
+
+###Added by Wolfgang Pauli###
+rescued_my_sorry_ass = {
+	opinion = 20
+	months = 120
+}
+opinion_prison_break = {
+	opinion = -40
+	months = 120
+	prison_reason = yes # This one gives righteous cause to imprison a character	
+}
+opinion_attempted_prison_break = {
+	opinion = -30
+	months = 120
+	prison_reason = yes # This one gives righteous cause to imprison a character	
+}
+
+opinion_vengeance = {
+	opinion = -100
+	months = 300
+	prison_reason = yes
+	execute_reason = yes
+	banish_reason = yes
+	crime = yes
+}
+opinion_killed_me = { opinion = 0 }
+opinion_killed_you = { opinion = 0 }
+
+##Reaving Opinions
+opinion_on_reaving = {
+	opinion = 0
+}
+opinion_went_reaving = {
+	opinion = 10
+}
+opinion_sucessful_raid = {
+	opinion = 5
+}
+opinion_rewarded_reaving = {
+	opinion = 10
+}
+opinion_denied_rewarded_reaving = {
+	opinion = -10
+}
+opinion_failed_raid = {
+	opinion = -5
+}
+opinion_salt_wife = {
+	opinion = -20
+}
+opinion_reaver_no_attack = {
+	opinion = -5
+}
+looting_vengeance_war  = {
+	opinion = 0
+}
+opinion_stole_sword = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_longclaw = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_blackfyre  = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_brightroar = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_heartsbane = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_ice = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_nightfall = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_darksister = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_ladyforlorn = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_redrain = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_widowswail = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_oathkeeper = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_crabspincer = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_strangers_mercy = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_palemoon = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_vigilance = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_orphan_maker = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_truth = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_lamentation = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_poison = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_anger = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_black_death = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_compassion = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_blackpaw = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_del_pino = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_el_swordo = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_gold_sword = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_happyness = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_hubris = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_justice = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_kingmaker = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_passion = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_rage = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_sightblinder = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_the_monarchist= {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_the_usurper = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_worldeater = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_worlds_envy = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+opinion_stole_valyrian_armour  = {
+	opinion = -50
+	inherit = yes
+	prison_reason = yes
+}
+##Warden opinions
+opinion_warden_north = {
+	opinion = 5
+}
+opinion_warden_east = {
+	opinion = 5
+}
+opinion_warden_west = {
+	opinion = 5
+}
+opinion_warden_south = {
+	opinion = 5
+}
+opinion_denied_traditional_title = {
+	opinion = -20
+}
+# opinion_denied_title_flag = {
+	# opinion = 0
+# }
+
+opinion_defected_to_me = {
+	opinion = 75
+	months = 240
+}
+
+#Slaver
+opinion_slaver = {
+	opinion = -30
+	prison_reason = yes
+}
+
+opinion_castrated_son = {
+	opinion = -40
+	months = 360
+	prison_reason = yes
+	crime = yes
+}
+opinion_castrated_kin = {
+	opinion = -25
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+opinion_castrated_spouse = {
+	opinion = -40
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+
+opinion_blinded_child = {
+	opinion = -40
+	months = 360
+	prison_reason = yes
+	crime = yes
+}
+opinion_blinded_kin = {
+	opinion = -25
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+opinion_blinded_spouse = {
+	opinion = -40
+	months = 240
+	prison_reason = yes
+	crime = yes
+}
+
+opinion_tortured_me = {
+	opinion = -100
+	months = 360
+	prison_reason = yes
+	crime = yes
+	stacking = no
+}
+opinion_tortured_kin = {
+	opinion = -25
+	months = 180
+	prison_reason = yes
+	crime = yes
+}
+opinion_tortured_lover = {
+	opinion = -25
+	months = 180
+	prison_reason = yes
+	crime = yes
+}
+opinion_tortured_friend = {
+	opinion = -25
+	months = 180
+	prison_reason = yes
+	crime = yes
+}
+
+opinion_forced_upon_me = {
+	opinion = -50
+	months = 120
+	prison_reason = yes
+	crime = yes
+	stacking = no
+}
+opinion_forced_upon_kin = {
+	opinion = -40
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_upon_spouse = {
+	opinion = -40
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_upon_lover = {
+	opinion = -40
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_upon_friend = {
+	opinion = -25
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+
+opinion_scandalised_me = {
+	opinion = -20
+	months = 60
+	prison_reason = yes
+	crime = yes
+}
+opinion_scandalised_kin = {
+	opinion = -20
+	months = 60
+	prison_reason = yes
+	crime = yes
+}
+
+
+opinion_humbled = {
+	opinion = 10
+}
+opinion_gracious_host = {
+	opinion = 15
+}	
+opinion_aborted_my_child = {
+	opinion = -15
+	months = 120
+	prison_reason = yes
+}
+opinion_coerced_into_having_child = {
+	opinion = -10
+	months = 60
+}
+opinion_using_moon_tea = {
+	opinion = 0
+	months = 9
+}
+opinion_knighted_me = {
+	opinion = 10
+}
+opinion_siezed_republic = {
+	opinion = -20
+}
+opinion_did_not_stand_down = {
+	opinion = -20
+	months = 100
+}
+opinion_lowered_faith_authority = {
+	opinion = -20
+	stacking = no
+}
+opinion_raised_faith_authority = {
+	opinion = 20
+	stacking = no
+}
+opinion_lowered_faith_authority_good = {
+	opinion = 20
+	stacking = no
+}
+opinion_raised_faith_authority_bad = {
+	opinion = -20
+	stacking = no
+}
+opinion_investiture_law_0 = {
+	opinion = -30
+	months = 1200
+	stacking = no
+}
+opinion_investiture_law_1 = {
+	opinion = -15
+	months = 1200
+	stacking = no
+}
+opinion_investiture_law_3 = {
+	opinion = 30
+	months = 1200
+	stacking = no
+}
+
+
+opinion_band_of_nine = {
+	opinion = 50
+}
+opinion_no_execution = {
+	opinion = -10
+	months = 36
+}
+claim_backer = {
+	opinion = 0
+}
+opinion_abolished_first_night_bad = {
+	opinion = -15
+	stacking = no
+}
+opinion_abolished_first_night_good = {
+	opinion = 15
+	stacking = no
+}
+opinion_legalised_first_night_good = {
+	opinion = 15
+	stacking = no
+}
+opinion_legalised_first_night_bad = {
+	opinion = -15
+	stacking = no
+}
+opinion_confirmed_first_night = {
+	opinion = 10
+}
+opinion_restricted_first_night = {
+	opinion = -10
+}
+opinion_took_first_night_bride = {
+	opinion = -50
+	months = 240
+	crime = yes
+}
+opinion_took_first_night_groom = {
+	opinion = -50
+	months = 240
+	crime = yes
+}
+opinion_took_first_night_host = {
+	opinion = -50
+	months = 120
+	crime = yes
+}
+opinion_took_first_night_guest = {
+	opinion = -25
+	months = 60
+}
+opinion_imprisoned_fellow_vassal = {
+	opinion = -10
+}
+opinion_invasion_bad = {
+	opinion = -20
+}
+opinion_invasion_good = {
+	opinion = 10
+}
+opinion_left_grand_council = {
+	opinion = -10
+}
+opinion_council_persuaded = {
+	opinion = 2
+	months = 1
+}
+opinion_council_dissuaded = {
+	opinion = -2
+	months = 1
+}
+dragon_egg_mother = {
+	opinion = 0
+	months = 1200
+}
+opinion_dragon_duel = {
+	opinion = 0
+	months = 1
+}
+opinion_revived_freehold = {
+	opinion = 15
+	months = 240
+}
+opinion_rejected_coalition = {
+	opinion = -20
+	months = 60
+}
+opinion_rejected_service = {
+	opinion = -5
+	months = 120
+}
+opinion_new_liege = {
+	opinion = 0
+}
+opinion_unjust_coup = {
+	opinion = -15
+	months = 120
+}
+declared_me_insane = {
+	opinion = -20
+	prison_reason = yes
+}
+declared_relative_insane = {
+	opinion = -15
+}
+usurped_relatives_title = {
+	opinion = -40
+}
+opinion_backed_adventure = {
+	opinion = 25
+	months = 240
+}
+opinion_service_rendered = {
+	opinion = 5
+}
+opinion_unrewarded = {
+	opinion = -20
+}
+opinion_rewarded = {
+	opinion = 10
+}
+opinion_visited_chamber = {
+	opinion = 0
+}
+opinion_forced_marriage = {
+	opinion = -50
+	months = 1200
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_marriage_child = {
+	opinion = -50
+	months = 1200
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_marriage_kin = {
+	opinion = -25
+	months = 1200
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_marriage_lover = {
+	opinion = -25
+	months = 1200
+	prison_reason = yes
+	crime = yes
+}
+opinion_forced_marriage_friend = {
+	opinion = -25
+	months = 1200
+	prison_reason = yes
+	crime = yes
+}
+opinion_cuckold_child = {
+	opinion = -30
+}
+become_dragon_good = {
+	opinion = 25
+}
+become_dragon_bad = {
+	opinion = -25
+}
+opinion_raised_to_nobility = {
+	opinion = 15
+}
+opinion_my_abducted_spouse = {
+	opinion = 0
+}
+opinion_removed_designated_regent = {
+	opinion = -20
+	months = 120
+}
+opinion_refused_regent = {
+	opinion = -15
+	months = 120
+}
+opinion_knight_of_the_greenhand = {
+	opinion = 10
+	months = 120
+}
+opinion_knight_of_the_greenhand_refused = {
+	opinion = -10
+	months = 120
+}
+opinion_triarchy_three_daughters = {
+	opinion = 50
+	months = 120
+}
+opinion_great_council_candidate = {
+	opinion = 0
+	months = 12
+}
+opinion_spoke_for_me_great_council = {
+	opinion = 10
+	months = 240
+}
+opinion_disinherited_me_great_council = {
+	opinion = -10
+}
+opinion_adopted_me = {
+	opinion = 40
+	months = 120
+}
+opinion_adopted_a_son = {
+	opinion = -25
+	months = 120
+	stacking = no
+}
+opinion_outlawed_prostitution = {
+	opinion = -10
+	months = 60
+}
+opinion_legalised_prostitution = {
+	opinion = 10
+	months = 60
+}
+opinion_excessive_donation = {
+	opinion = -10
+	months = 24
+}
+opinion_took_septons_vows = {
+	opinion = -15
+	months = 60
+}
+opinion_burned_books = {
+	opinion = -15
+	months = 60
+}
+opinion_gave_refuge = {
+	opinion = 25
+}
+opinion_revoked_titular_kingdom = {
+	opinion = -40
+}
+opinion_revoked_royal_privilege = {
+	opinion = -40
+}
+opinion_granted_royal_privliege = {
+	opinion = 25
+}
+opinion_gave_famine_relief = {
+	opinion = 10
+}
+opinion_refused_famine_relief = {
+	opinion = -15
+}
+opinion_ai_refused_embargo = {
+	opinion = 50
+}
+opinion_proven_incest = {
+	opinion = -20
+}
+opinion_enforced_truce = {
+	opinion = 0
+}
+opinion_road_tax = {
+	opinion = -10
+	months = 36
+}
+opinion_funded_trip = {
+	opinion = 20
+}
+opinion_exiled_me = {
+	opinion = -50
+	months = 120
+	prison_reason = yes
+}
+opinion_exiled_kin = {
+	opinion = -20
+	months = 120
+}
+opinion_exiled_lover = {
+	opinion = -20
+	months = 120
+}
+opinion_exiled_friend = {
+	opinion = -20
+	months = 120
+}
+opinion_peasant_hunting = {
+	opinion = -15
+	months = 36
+	prison_reason = yes
+}
+opinion_assaulted_me = {
+	opinion = -20
+	months = 24
+	prison_reason = yes
+}
+arranged_betrothal = {
+	opinion = 10
+}
+force_marriage_target = {
+	opinion = 0
+}
+opinion_religion_threatened = {
+	opinion = -20
+}
+opinion_sorting_rebellion = {
+	opinion = -10
+	months = 24
+}
+opinion_sorted_rebellion = {
+	opinion = 15
+	months = 48
+}
+opinion_executed_realm_character = {
+	opinion = -15
+	prison_reason = yes
+	months = 120
+}
+opinion_nominated_military_command = {
+	opinion = 20
+}
+opinion_accepted_nomination_military_command = {
+	opinion = 20
+}
+opinion_rejected_military_command = {
+	opinion = -10
+}
+opinion_refused_prisoner_transfer = {
+	opinion = -20
+	prison_reason = yes
+}
+opinion_chosen_inheritor = {
+	opinion = 30
+	months = 120
+}
+opinion_denied_inheritance = {
+	opinion = -15
+	months = 120
+}
+opinion_suspended_council = {
+	opinion = -15
+	months = 60
+}
+opinion_seven_champion = {
+	opinion = 0
+	months = 3
+}
+opinion_seven_championing_for = {
+	opinion = 0
+	months = 3
+}
+opinion_seven_trial_enemy = {
+	opinion = 0
+	months = 2
+}
+opinion_trial_by_seven = {
+	opinion = 0
+	months = 2
+}
+opinion_restored_high_priest = {
+	opinion = 20
+	months = 60
+}
+opinion_studying_religion = {
+	opinion = 40
+	months = 120
+}
+opinion_did_not_give_me_title = {
+	opinion = -15
+}
+opinion_demanded_raiding_redress = {
+	opinion = -15
+}
+opinion_forbid_raiding = {
+	opinion = -15
+}
+opinion_stopped_raiding = {
+	opinion = 5
+}
+opinion_failed_to_stop_raiding = {
+	opinion = -10
+}
+opinion_attending_funeral = {
+	opinion = 10
+}
+opinion_not_attending_funeral = {
+	opinion = -20
+}
+opinion_rebuilt_our_ships = {
+	opinion = 25
+}
+opinion_destroyed_our_ships = {
+	opinion = -25
+}
+opinion_abstained_law = {
+	opinion = -10
+}
+opinion_someone_granted_royal_privilege = {
+	opinion = -15
+}
+voted_on_stand_down = {
+	opinion = 0
+}
+opinion_granted_redress = {
+	opinion = 10
+}
+opinion_forced_compensation = {
+	opinion = -15
+}
+opinion_denied_redress = {
+	opinion = -15
+}
+opinion_did_not_prosecute = {
+	opinion = 10
+}
+opinion_sought_liege_redress = {
+	opinion = -15
+}
+
+opinion_unfaithful_consort = {
+	opinion = -50
+	months = 120
+	prison_reason = yes
+	divorce_reason = yes
+}
+
+opinion_slept_with_my_consort = {
+	opinion = -50
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_wikid_quest_dislike = {
+	opinion = -10
+	months = 60
+}
+opinion_wikid_quest_like = {
+	opinion = 10
+	months = 60
+}
+opinion_healed_me = {
+	opinion = 15
+	months = 120
+}
+opinion_failed_to_heal_me = {
+	opinion = -15
+	months = 60
+}
+opinion_confessed = { #confessed under torture
+	opinion = -10
+	months = 60
+	revoke_reason = yes # This one gives righteous cause to revoke ONE title
+	execute_reason = yes
+	banish_reason = yes
+	stacking = no
+}
+opinion_gained_torture_confession = {
+	opinion = -10
+	months = 60
+}
+opinion_burned_a_prisoner = {
+	opinion = -15
+	months = 12
+}
+opinion_burned_godswood = {
+	opinion = -15
+	months = 36
+}
+opinion_burned_temple = {
+	opinion = -15
+	months = 36
+}
+opinion_ironborn_business_focus = {
+	opinion = -10
+	months = 60
+}
+opinion_handmaiden = {
+	opinion = 15
+}
+opinion_ai_imprison_cooldown = {
+	opinion = 0
+}
+opinion_sent_me_to_nightswatch = {
+	opinion = -50
+	months = 120
+}
+opinion_sent_me_to_the_citadel = {
+	opinion = -50
+	months = 120
+}
+opinion_refused_duel_retraining = {
+	opinion = -10
+	months = 24
+}
+opinion_duel_retraining_success = {
+	opinion = 25
+	months = 120
+}
+opinion_duel_retraining_fail = {
+	opinion = -10
+	months = 120
+}
+opinion_agreed_annexation = {
+	opinion = 30
+	months = 120
+}
+opinion_agreed_annexation_bad = {
+	opinion = -20
+	months = 360
+}
+opinion_annexation_failed = {
+	opinion = -20
+	months = 60
+}
+opinion_granted_relative_title = {
+	opinion = 15
+	months = 120
+}
+
+opinion_oubilette_me = {
+	opinion = -40
+	months = 120
+	prison_reason = yes
+	crime = yes
+	stacking = no
+}
+opinion_oubilette_kin = {
+	opinion = -15
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_oubilette_friend = {
+	opinion = -15
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_oubilette_lover = {
+	opinion = -15
+	months = 120
+	prison_reason = yes
+	crime = yes
+}
+opinion_eloped = {
+	opinion = -30
+	months = 120
+}
+
+opinion_eloped_with_my_child = {
+	opinion = -40
+	months = 120
+}
+
+opinion_refused_faction_scheme = {
+	opinion = -15
+	months = 60
+}
+opinion_delined_faction_scheme = {
+	opinion = 0
+}
+
+opinion_executed_religion_head = {
+	opinion = -40
+	months = 120
+}
+opinion_murdered_religion_head = {
+	opinion = -50
+	months = 120
+}
+opinion_placated_for_levies = {
+	opinion = 5
+	months = 60
+}
+opinion_unhappy_with_guardian_choice = {
+	opinion = -10
+	months = 60
+}
+opinion_fabricated_claim = {
+	opinion = -30
+	prison_reason = yes
+	inherit = yes
+}
+opinion_threatened_by_claim = {
+	opinion = -20
+	months = 60
+	inherit = yes
+}
+opinion_tourney_bet_target = {
+	opinion = 0
+}
+opinion_supporting_claim = {
+	opinion = 30
+}
+opinion_good_student = {
+	opinion = 20
+}
+opinion_bad_student = {
+	opinion = -20
+}
+opinion_good_mentor = {
+	opinion = 20
+}
+opinion_bad_mentor = {
+	opinion = -20
+}
+opinion_ignored_NW_call = {
+	opinion = -15
+}
+opinion_polygamous_marriage = {
+	opinion = -15
+}

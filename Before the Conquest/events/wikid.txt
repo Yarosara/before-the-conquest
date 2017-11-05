@@ -3716,6 +3716,13 @@ character_event = {
 			}
 			if = {
 				limit = {
+					not = { palemoon = { is_alive = yes } }
+					dynasty = 69157
+				}
+				FROM = { add_trait = palemoon }
+			}
+			if = {
+				limit = {
 					not = { truth = { is_alive = yes } }
 					dynasty = 55999
 				}
@@ -3764,6 +3771,7 @@ character_event = {
 						NOT = { trait = strangers_mercy}
 						NOT = { trait = vigilance}
 						NOT = { trait = orphan_maker}
+						NOT = { trait = palemoon}
 						NOT = { trait = truth}
 						NOT = { trait = lamentation}
 						NOT = { trait = poison}
@@ -3811,6 +3819,7 @@ character_event = {
 					remove_trait = strangers_mercy
 					remove_trait = vigilance
 					remove_trait = orphan_maker
+					remove_trait = palemoon
 					remove_trait = truth
 					remove_trait = lamentation
 					remove_trait = poison
@@ -3948,6 +3957,14 @@ character_event = {
 				dynasty = 247
 			}
 			add_trait = orphan_maker
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = { palemoon = { is_alive = yes } }
+				dynasty = 69157
+			}
+			add_trait = palemoon
 			break = yes
 		}
 		if = {
@@ -4136,6 +4153,14 @@ character_event = {
 				dynasty = 247
 			}
 			add_trait = orphan_maker
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = { palemoon = { is_alive = yes } }
+				dynasty = 69157
+			}
+			add_trait = palemoon
 			break = yes
 		}
 		if = {
@@ -6662,6 +6687,14 @@ character_event = { #dragon tamed! time to return
 		}
 		if = {
 			limit = {
+				NOT = { palemoon = { is_alive = yes } }
+				dynasty = 69157
+			}
+			add_trait = palemoon
+			break = yes
+		}
+		if = {
+			limit = {
 				NOT = { truth = { is_alive = yes } }
 				dynasty = 55999
 			}
@@ -6857,6 +6890,14 @@ character_event = { #dragon killed! time to return
 				dynasty = 247
 			}
 			add_trait = orphan_maker
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = { palemoon = { is_alive = yes } }
+				dynasty = 69157
+			}
+			add_trait = palemoon
 			break = yes
 		}
 		if = {
@@ -7149,6 +7190,14 @@ character_event = { #dragon/companion killed! time to return
 		}
 		if = {
 			limit = {
+				NOT = { palemoon = { is_alive = yes } }
+				dynasty = 69157
+			}
+			add_trait = palemoon
+			break = yes
+		}
+		if = {
+			limit = {
 				NOT = { truth = { is_alive = yes } }
 				dynasty = 55999
 			}
@@ -7339,6 +7388,14 @@ character_event = { #dragon/companion kills you!
 				add_trait = orphan_maker
 				break = yes
 			}
+			if = {
+			limit = {
+				NOT = { palemoon = { is_alive = yes } }
+				dynasty = 69157
+			}
+			add_trait = palemoon
+			break = yes
+		}
 			if = {
 				limit = {
 					NOT = { truth = { is_alive = yes } }
