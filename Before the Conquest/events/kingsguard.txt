@@ -1,0 +1,8481 @@
+########################################
+###Written by Ogaburan aka Ran Miller###
+########################################
+
+#########Kingsguard############
+namespace = kingsguard
+###############################
+
+#Oga & Cabe events
+#kingsguard.1 - Kingsguard Dies. (On death) [Ai only].
+#kingsguard.2 - Choose a new Kingsguard.
+#kingsguard.3 - Choose form among the strongest fighters in the realm.
+#kingsguard.4 - Choose someone i can trust.
+#kingsguard.5 - Choose a prominent son of a prominent family. (Duke)
+#kingsguard.6 - Choose a prominent son of a very prominent family. (King)
+#kingsguard.7 - Choose any bozo
+#kingsguard.8 - Drafted to the Kingsguard. [Ai only]
+#kingsguard.9 - King Notification ( Accept )
+#kingsguard.10 - King Notification ( Refuse )
+#kingsguard.11 - Father Reaction?
+#kingsguard.12 - Father Approves (king notification)
+#kingsguard.13 - Father Disaproves (king notification)
+#kingsguard.57 - Son & hair refuses kingsguard. (Notification)
+#kingsguard.14 - Death of the lord commander of the kingsguard. [Ai only] [Disabled]
+#kingsguard.15 - No women in the kingsguard. [AI only][Disabled]
+#kingsguard.16 - Kingsguard Maintenance. [AI only]
+
+#kingsguard.18 - Character gets the title of Lord Commander. [AI only]
+#kingsguard.23 - King gets notified of new Lord Commander.
+#kingsguard.22 - King gets notified of the death of a member of the Kingsguard.
+
+#Oga & Cabe
+#kingsguard.24 - Kingsguard family at war with the king.
+#kingsguard.25 - You are at war with your Kingsguard family.
+#kingsguard.26 - Your kin betrayed you and remained on the kingsguard. (Notification)
+#kingsguard.27 - Your kin has been imprisoned! (Notification)
+#kingsguard.28 - Your kin has been killed! (Notification)
+#kingsguard.62 - You successfuly executed one of your kingsguard. (notification)
+#On failed of capture - DRAMA!
+#kingsguard.29 - Kingsguard Drama. [Ai only]
+#kingsguard.30 - Kingsguard Drama - I try to escape. [Ai only]
+#kingsguard.35 - Kingsguard Drama - I try to kill the king.. [Ai only]
+#kingsguard.49 - Kingsguard Drama - I try to kidnap the kings children... [Ai only]
+#Kin Notificaitons
+#kingsguard.33 - Your kin in the kingsguard died trying to flee the kings court. (Notification)
+#kingsguard.34 - Your kin in the kingsguard has fled the kings court and joined yours. (Notification)
+#kingsguard.47 - Your kin in the kingsguard died trying to kill the king! (Notification)
+#kingsguard.48 - Your kin in the kingsguard has fled the kings court after trying to kill the king, injuring him in the procces! (Notification)
+#kingsguard.43 - Your kin in the kingsguard has fled the kings court after trying to kill the king! (Notification)
+#kingsguard.46 - Your kin in the kingsguard has fled to your court, after killing the king! (Notification)
+#kingsguard.50 - Your kin in the kingsguard died trying to kidnap a member of the royal family! (Notification)
+#kingsguard.51 - Your kin in the kingsguard has fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)
+#kingsguard.52 - Your kin in the kingsguard just showed up, with one of the royal children! (Notification)
+#Kings notifications
+#kingsguard.31 - One of your kingsguard died trying to flee your court. (Notification)
+#kingsguard.32 - One of your kingsguard has fled your court. (Notification)
+#kingsguard.39 - One of your kingsguard died trying to kill you! (Notification)
+#kingsguard.40 - One of your kingsguard has fled your court after trying to kill you, injuring you in the procces! (Notification)
+#kingsguard.42 - One of your kingsguard flad your court after trying to kill you! (Notification)
+#kingsguard.45 - One of your kingsguard has killed you and fled! (Notification)	
+#kingsguard.53 - One of your kingsguard died trying to kidnap a member of the royal family! (Notification)
+#kingsguard.54 - One of your kingsguard fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)	
+#kingsguard.55 - One of your kingsguard kidnapped one of your children! (Notification)
+#kingsguard.61 - You succesfully imprisoned one of your kingsguard! (Notification)	
+
+#Wolfgang Pauli
+#kingsguard.63 - non-Kingsguard men hanging around White Sword Tower get kicked out DISABLED- merged with maintenance
+
+#knuckey
+#kingsguard.65 - The White Book
+#kingsguard.76 - Loan Kingsguard to Royal Family
+
+#Future Development Ideas
+#KG's for all the andal kingdoms.
+#Add events that deal with the kidnapped children of the king.
+#Add events to cause drama even if the king chooses to trust the KG.
+
+#################################
+
+#kingsguard.1 - Kingsguard Dies. (On death and other things) - Only for Ai.
+#on_death
+character_event = {
+	id = kingsguard.1
+	desc = "EVTDESCkingsguard.1"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = kingsguard
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_landed_title = d_kingsguard
+			}
+			#clr_global_flag = kingsguard_initialised
+			d_kingsguard_dummy = { copy_title_history = d_kingsguard }
+			set_global_flag = change_kingsguard_history
+			set_global_flag = need_commander_kingsguard
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.1"
+		if = {
+			limit = { 
+				is_alive = yes 
+				is_dying = no
+			}
+			remove_trait = kingsguard
+		}
+		e_iron_throne = {
+			holder_scope = {
+				character_event = { id = kingsguard.22 }
+			}
+		}
+	}
+}
+
+#kingsguard.2 - Choose a new Kingsguard.
+character_event = {
+	id = kingsguard.295
+
+	only_independent = yes
+	hide_window = yes
+	
+	trigger = {
+		has_landed_title = e_iron_throne
+		OR = {
+			has_global_flag = kingsguard_initialising
+			is_title_active = d_kingsguard
+		}
+		#has_global_flag = kingsguard_initialised	
+		NOT = {
+			kingsguard = {
+				is_alive = yes
+				count = 7
+			}
+		}	
+		OR = {
+			NOT = { has_character_flag = selecting_kingsguard }
+			had_character_flag = { flag = selecting_kingsguard days = 100 }
+		}
+		OR = {
+			had_character_flag = { flag = ignore_kg days = 365 } 
+			NOT = { has_character_flag = ignore_kg }	
+		}		
+	}
+	
+	immediate = {
+		clr_character_flag = selecting_kingsguard
+		set_character_flag = selecting_kingsguard
+		if = {
+			limit = {
+				any_realm_character = {
+					can_be_kingsguard_candidate_trigger = yes
+				}	
+			}
+			#Regent chooses
+			if = {
+				limit = {
+					has_regent = yes
+					OR = {
+						NOT = { age = 16 }
+						prisoner = yes
+						is_incapable = yes
+					}
+				}
+				regent = { character_event = { id = kingsguard.2 } }
+				break = yes
+			}
+			#Else King chooses
+			character_event = { id = kingsguard.2 }
+		}	
+	}
+	
+	option = {
+		name = OK
+	}
+}
+character_event = { #Regent/King chooses
+	id = kingsguard.2
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = EVTDESCkingsguard.2
+		trigger = { has_landed_title = e_iron_throne }
+	}
+	desc = {
+		text = EVTDESCkingsguard.2B #REGENT
+		trigger = { NOT = { has_landed_title = e_iron_throne } }
+	}
+	
+	immediate = {
+		#determine what categories are available
+		if = { #Bad-Ass
+			limit = {		
+				top_liege = {
+					any_realm_character = {
+						can_be_kingsguard_candidate_trigger = yes	
+						combat_rating = 6.64
+					}
+				}	
+			}
+			set_character_flag = kingsguard_bad_ass
+		}
+		if = { #Crony
+			limit = {		
+				top_liege = {
+					any_realm_character = {
+						can_be_kingsguard_candidate_trigger = yes		
+						opinion = { who = ROOT value = 30 }
+						reverse_opinion = { who = ROOT value = 30 }
+						combat_rating = 5.17
+					}
+				}	
+			}
+			set_character_flag = kingsguard_crony
+		}
+		if = { #Prominent son
+			limit = {
+				top_liege = {
+					any_realm_character = {
+						can_be_kingsguard_candidate_trigger = yes	
+						highborn_kingsguard_candidate_trigger = yes	 #combat_rating = 5.17										
+					}
+				}	
+			}
+			set_character_flag = kingsguard_prominent_son
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.2" #Choose from among the strongest fighters in the realm.		
+		trigger = {
+			has_character_flag = kingsguard_bad_ass
+		}		
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 2
+				trait = honest
+			}
+			modifier = {
+				factor = 2
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+		}		
+		character_event = { id = kingsguard.3 }
+		clr_character_flag = kingsguard_bad_ass
+		clr_character_flag = kingsguard_crony
+		clr_character_flag = kingsguard_prominent_son
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.2" #Choose someone i can trust.	
+		trigger = {
+			has_character_flag = kingsguard_crony
+		}		
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 3
+				trait = deceitful
+			}
+			modifier = {
+				factor = 3
+				trait = paranoid
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 3
+				trait = lunatic
+			}
+			modifier = {
+				factor = 3
+				trait = selfish
+			}
+			modifier = {
+				factor = 0.33
+				trait = just
+			}
+		}
+		
+		character_event = { id = kingsguard.4 }
+		clr_character_flag = kingsguard_bad_ass
+		clr_character_flag = kingsguard_crony
+		clr_character_flag = kingsguard_prominent_son
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.2" #Choose a prominent son of a prominent family.	
+		trigger = {
+			has_character_flag = kingsguard_prominent_son
+		}	
+		ai_chance = {
+			factor = 2
+			
+			modifier = {
+				factor = 4
+				trait = proud
+			}
+			modifier = {
+				factor = 2
+				trait = ruthless
+			}		
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+		}		
+		character_event = { id = kingsguard.5 }
+		clr_character_flag = kingsguard_bad_ass
+		clr_character_flag = kingsguard_crony
+		clr_character_flag = kingsguard_prominent_son
+	}
+	
+	#No suitable candidates
+	option = {
+		name = "EVTOPTFkingsguard.2" #Choose any bozo
+		trigger = {
+			NOT = { has_character_flag = kingsguard_bad_ass }
+			NOT = { has_character_flag = kingsguard_crony }
+			NOT = { has_character_flag = kingsguard_prominent_son }	
+		}
+		ai_chance = {
+			factor = 0.5
+		}	
+		character_event = { id = kingsguard.7 }
+	}	
+	option = {
+		name = "EVTOPTEkingsguard.2" #Choose later.
+		ai_chance = {
+			factor = 1
+			modifier = { #only wait if at war and have at least 4 kingsguard
+				factor = 0
+				top_liege = {
+					OR = {
+						war = no
+						NOT = { trait = civil_war }
+						NOT = {
+							kingsguard = {
+								is_alive = yes
+								count = 4
+							}
+						}
+					}
+				}	
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_character_flag = kingsguard_bad_ass
+					has_character_flag = kingsguard_crony
+					has_character_flag = kingsguard_prominent_son
+				}	
+			}
+			modifier = {
+				factor = 2
+				trait = patient
+			}
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+			modifier = {
+				factor = 0.5
+				trait = wroth
+			}
+			modifier = {
+				factor = 0.5
+				trait = paranoid
+			}
+		}
+		top_liege = { set_character_flag = ignore_kg }
+		clr_character_flag = kingsguard_bad_ass
+		clr_character_flag = kingsguard_crony
+		clr_character_flag = kingsguard_prominent_son
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.3 - Choose form among the strongest fighters in the realm.
+character_event = {
+	id = kingsguard.3
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = EVTDESCkingsguard.3
+		trigger = { has_landed_title = e_iron_throne }
+	}
+	desc = {
+		text = EVTDESCkingsguard.3B #REGENT
+		trigger = { NOT = { has_landed_title = e_iron_throne } }
+	}
+
+	immediate = {
+		top_liege = {
+			#16
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes		
+					combat_rating = 8
+				}
+				save_event_target_as = KG_1
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					combat_rating = 8
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_2
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes		
+					combat_rating = 8
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_3
+				set_character_flag = KG_candidate
+				break = yes
+			}
+			#13
+			if = {
+				limit = { NOT = { event_target:KG_1 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 7.4
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_1
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_2 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 7.4
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_2
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_3 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 7.4
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_3
+					set_character_flag = KG_candidate
+					break = yes
+				}
+			}
+			#10
+			if = {
+				limit = { NOT = { event_target:KG_1 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 6.64
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_1
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_2 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 6.64
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_2
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_3 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 6.64
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_3
+					set_character_flag = KG_candidate
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_1 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_1 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_1 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = genius }
+			}
+		}
+		event_target:KG_1 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate		
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_2 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_2 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_2 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = genius }
+			}
+		}		
+		event_target:KG_2 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_1 = { clr_character_flag = KG_candidate }
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_3 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_3 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_3 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = genius }
+			}
+		}		
+		event_target:KG_3 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTDkingsguard.3" #None
+		trigger = { ai = no }
+		hidden_tooltip = {
+			event_target:KG_3 = { clr_character_flag = KG_candidate }
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.4 - Choose someone i can trust.
+character_event = {
+	id = kingsguard.4
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = EVTDESCkingsguard.4
+		trigger = { has_landed_title = e_iron_throne }
+	}
+	desc = {
+		text = EVTDESCkingsguard.4B #REGENT
+		trigger = { NOT = { has_landed_title = e_iron_throne } }
+	}
+
+	immediate = {
+		top_liege = {
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes		
+					opinion = { who = ROOT value = 30 }
+					reverse_opinion = { who = ROOT value = 30 }
+					combat_rating = 5.17
+				}
+				save_event_target_as = KG_1
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					opinion = { who = ROOT value = 30 }
+					reverse_opinion = { who = ROOT value = 30 }
+					combat_rating = 5.17
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_2
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					opinion = { who = ROOT value = 30 }
+					reverse_opinion = { who = ROOT value = 30 }
+					combat_rating = 5.17
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_3
+			}
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_1 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_1 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_1 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = genius }
+			}
+		}
+		event_target:KG_1 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate	
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_2 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_2 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_2 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = genius }
+			}
+		}		
+		event_target:KG_2 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate
+			show_portrait = yes			
+		}
+		hidden_tooltip = {
+			event_target:KG_1 = { clr_character_flag = KG_candidate }
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_3 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_3 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_3 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = genius }
+			}
+		}		
+		event_target:KG_3 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTDkingsguard.3" #None
+		trigger = { ai = no }
+		hidden_tooltip = {
+			event_target:KG_3 = { clr_character_flag = KG_candidate }
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.5 - Choose a prominent son of a prominent family.
+character_event = {
+	id = kingsguard.5
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = EVTDESCkingsguard.5
+		trigger = { has_landed_title = e_iron_throne }
+	}
+	desc = {
+		text = EVTDESCkingsguard.5B #REGENT
+		trigger = { NOT = { has_landed_title = e_iron_throne } }
+	}
+
+	immediate = {
+		top_liege = {
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					highborn_kingsguard_candidate_trigger = yes	
+				}
+				save_event_target_as = KG_1
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes		
+					highborn_kingsguard_candidate_trigger = yes	
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_2
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes		
+					highborn_kingsguard_candidate_trigger = yes	
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_3
+			}
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_1 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_1 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_1 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = genius }
+			}
+		}
+		event_target:KG_1 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate
+			show_portrait = yes			
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_2 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_2 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_2 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = genius }
+			}
+		}		
+		event_target:KG_2 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_1 = { clr_character_flag = KG_candidate }
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_3 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_3 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_3 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = genius }
+			}
+		}		
+		event_target:KG_3 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTDkingsguard.3" #None
+		trigger = { ai = no }
+		hidden_tooltip = {
+			event_target:KG_3 = { clr_character_flag = KG_candidate }
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.6 - Choose a prominent son of a very prominent family. (King)
+###REMOVED###
+
+#kingsguard.7 - Choose any old bozo
+character_event = {
+	id = kingsguard.7
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = EVTDESCkingsguard.7
+		trigger = { has_landed_title = e_iron_throne }
+	}
+	desc = {
+		text = EVTDESCkingsguard.7B #REGENT
+		trigger = { NOT = { has_landed_title = e_iron_throne } }
+	}
+
+	immediate = {
+		top_liege = {
+			#8
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					combat_rating = 6
+				}
+				save_event_target_as = KG_1
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					combat_rating = 6
+					NOT = { has_character_flag = KG_candidate }					
+				}
+				save_event_target_as = KG_2
+				set_character_flag = KG_candidate
+			}
+			random_realm_character = {
+				limit = {
+					can_be_kingsguard_candidate_trigger = yes	
+					combat_rating = 6
+					NOT = { has_character_flag = KG_candidate }
+				}
+				save_event_target_as = KG_3
+			}
+			#5
+			if = {
+				limit = { NOT = { event_target:KG_1 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 4.64
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_1
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_2 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 4.64
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_2
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_3 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						combat_rating = 4.64
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_3
+					set_character_flag = KG_candidate
+					break = yes
+				}
+			}
+			#any
+			if = {
+				limit = { NOT = { event_target:KG_1 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_1
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_2 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_2
+					set_character_flag = KG_candidate
+				}
+			}
+			if = {
+				limit = { NOT = { event_target:KG_3 = { always = yes } } }
+				random_realm_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes		
+						NOT = { has_character_flag = KG_candidate }
+					}
+					save_event_target_as = KG_3
+					set_character_flag = KG_candidate
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_1 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_1 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_1 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_1 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_1 = { trait = genius }
+			}
+		}
+		event_target:KG_1 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate
+			show_portrait = yes			
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_2 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_2 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_2 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_2 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_2 = { trait = genius }
+			}
+		}		
+		event_target:KG_2 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			clr_character_flag = KG_candidate
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_1 = { clr_character_flag = KG_candidate }
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.3" #Choose him!	
+		trigger = { event_target:KG_3 = { always = yes }	}
+		ai_chance = {
+			factor = 10
+			
+			modifier = {
+				factor = 0
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -45 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { NOT = { reverse_opinion = { who = ROOT value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 20 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 45 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 70 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { reverse_opinion = { who = ROOT value = 95 } }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = BARON } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { father_even_if_dead = { higher_tier_than = DUKE } }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_3 = { dynasty = 0 }
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_3 = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_3 = { trait = skilled_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { is_smart_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_3 = { trait = genius }
+			}
+		}		
+		event_target:KG_3 = {		
+			character_event = { id = kingsguard.8 tooltip = TOOLTIPinteraction.7 }	
+			show_portrait = yes
+		}
+		hidden_tooltip = {
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+	
+	option = {
+		name = "EVTOPTDkingsguard.3" #None
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = {
+					kingsguard = {
+						is_alive = yes
+						count = 4
+					}
+				}	
+			}
+		}	
+		hidden_tooltip = {
+			event_target:KG_3 = { clr_character_flag = KG_candidate }
+			event_target:KG_2 = { clr_character_flag = KG_candidate }
+			event_target:KG_1 = { clr_character_flag = KG_candidate }	
+		}
+		if = {
+			limit = { ai = yes }
+			top_liege = { set_character_flag = ignore_kg }
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.8 - Drafted to the Kingsguard. [Ai only]
+character_event = {
+	id = kingsguard.8
+	# desc = "EVTDESCkingsguard.8"
+	# picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		#consider parent's reaction?
+		if = {
+			limit = {
+				#is_primary_heir = yes
+				mother = {
+					is_alive = yes
+					OR = {
+						is_primary_heir = yes
+						is_ruler = yes
+					}	
+					NOT = { character = FROM }
+					NOT = { character = FROMFROM }
+					NOT = { character = ROOT }
+					NOT = { has_landed_title = e_iron_throne }
+				}
+			}
+			set_character_flag = mother_reaction
+		}
+		if = {
+			limit = {
+				#is_primary_heir = yes
+				father = {
+					is_alive = yes
+					OR = {
+						is_primary_heir = yes
+						is_ruler = yes
+					}	
+					NOT = { character = FROM }
+					NOT = { character = FROMFROM }
+					NOT = { character = ROOT }
+					NOT = { has_landed_title = e_iron_throne }
+				}
+			}
+			set_character_flag = father_reaction
+			break = yes
+		}		
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.8" #Accept	
+		ai_chance = {
+			factor = 25
+			
+			modifier = {
+				factor = 0
+				OR = {
+					trait = chosen_by_rhllor
+					has_character_flag = demon_child_non_pagan
+				}
+			}
+			#consider father's reaction
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { NOT = { reverse_opinion = { who = ROOT value = -24 } } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { NOT = { reverse_opinion = { who = ROOT value = -49 } } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { NOT = { reverse_opinion = { who = ROOT value = -74 } } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { NOT = { reverse_opinion = { who = ROOT value = -99 } } }
+			}
+			#consider mother's reaction
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { NOT = { reverse_opinion = { who = ROOT value = -24 } } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { NOT = { reverse_opinion = { who = ROOT value = -49 } } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { NOT = { reverse_opinion = { who = ROOT value = -74 } } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { NOT = { reverse_opinion = { who = ROOT value = -99 } } }
+			}
+			
+			modifier = {
+				factor = 3
+				OR = {
+					trait = skilled_warrior
+					trait = master_warrior
+				}	
+			}
+			modifier = {
+				factor = 1.5
+				top_liege = { dynasty = ROOT }
+			}
+			modifier = {
+				factor = 1.5
+				top_liege = { is_close_relative = ROOT }
+			}
+			modifier = {
+				factor = 2.5
+				trait = familyperson
+				top_liege = { 
+					OR = {
+						dynasty = ROOT
+						is_close_relative = ROOT
+					}	
+				}
+			}
+			modifier = {
+				factor = 2
+				top_liege = { is_friend = ROOT }
+			}
+			modifier = {
+				factor = 0
+				top_liege = { is_rival = ROOT }
+			}
+			modifier = {
+				factor = 1.5
+				top_liege = { culture = high_valyrian }
+			}
+			modifier = {
+				factor = 4
+				trait = ambitious
+				NOR = {
+					is_primary_heir = yes
+					any_heir_title = { always = yes }
+					is_pretender = yes
+					has_ambition = obj_get_married
+					has_ambition = obj_marry_ruler
+					has_ambition = obj_find_lover
+					has_ambition = obj_wants_landed_title
+					has_ambition = obj_become_heir
+					culture = ironborn
+					trait = dragon_rider
+					num_of_claims = 1
+				}
+			}
+			modifier = {
+				factor = 1.5
+				is_strong_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.5
+				trait = celibate
+			}
+			modifier = {
+				factor = 1.5
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = brave
+			}
+			modifier = {
+				factor = 1.5
+				trait = just
+			}
+			modifier = {
+				factor = 1.5
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.5
+				trait = honorable
+			}
+			modifier = {
+				factor = 1.25
+				top_liege = { reverse_opinion = { who = ROOT value = 25 } }
+			}
+			modifier = {
+				factor = 1.25
+				top_liege = { reverse_opinion = { who = ROOT value = 50 } }
+			}
+			modifier = {
+				factor = 1.25
+				top_liege = { reverse_opinion = { who = ROOT value = 75 } }
+			}
+			modifier = {
+				factor = 1.25
+				top_liege = { reverse_opinion = { who = ROOT value = 100 } }
+			}
+			modifier = {
+				factor = 1.25
+				FROMFROM = { 
+					NOT = { has_landed_title = e_iron_throne }
+					reverse_opinion = { who = ROOT value = 25 } 
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROMFROM = { 
+					NOT = { has_landed_title = e_iron_throne }
+					reverse_opinion = { who = ROOT value = 50 } 
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROMFROM = { 
+					NOT = { has_landed_title = e_iron_throne }
+					reverse_opinion = { who = ROOT value = 75 } 
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROMFROM = { 
+					NOT = { has_landed_title = e_iron_throne }
+					reverse_opinion = { who = ROOT value = 100 } 
+				}
+			}
+		}
+		if = {
+			limit = { is_betrothed = yes }
+			betrothed = {
+				if = {
+					limit = { 
+						is_ruler = yes 
+						NOT = { has_landed_title = e_iron_throne }
+					}
+					opinion = {
+						who = ROOT
+						modifier = opinion_betrothal_broken
+					}
+				}
+				if = {
+					limit = { 
+						is_ruler = no 
+						liege = { 
+							is_close_relative = PREV 
+							NOT = { has_landed_title = e_iron_throne }
+						}
+					}
+					opinion = {
+						who = ROOT
+						modifier = opinion_betrothal_broken
+					}
+					liege = {
+						opinion = {
+							who = ROOT
+							modifier = opinion_betrothal_broken
+						}
+					}	
+				}
+				break_betrothal = PREV
+			}	
+		}
+		if = {
+			limit = { is_primary_heir = yes }
+			set_character_flag = renounced_inheritance
+		}
+		#Inform family/reaction
+		if = {
+			limit = { has_character_flag = father_reaction }
+			father = { 
+				if = {
+					limit = { current_heir = { character = ROOT } }
+					set_character_flag = KG_renounced_inheritance
+				}
+				set_character_flag = KG_reaction_event
+				character_event = { id = kingsguard.11 days = 1 } 
+			}
+			clr_character_flag = father_reaction
+		}
+		if = {
+			limit = { has_character_flag = mother_reaction }
+			mother = { 
+				if = {
+					limit = { current_heir = { character = ROOT } }
+					set_character_flag = KG_renounced_inheritance
+				}
+				set_character_flag = KG_reaction_event
+				character_event = { id = kingsguard.11 days = 1 } 
+			}
+			clr_character_flag = mother_reaction
+		}
+		any_dynasty_member = {
+			if = {
+				limit = {
+					is_ruler = yes
+					is_close_relative = ROOT
+					NOT = { any_child = { character = ROOT } }
+					OR = {
+						ai = no
+						current_heir = { character = ROOT }
+						current_heir = { any_child = { character = ROOT } }
+					}
+					
+					is_alive = yes
+					NOT = { character = FROM }
+					NOT = { character = FROMFROM }
+					NOT = { character = ROOT }
+					NOT = { has_landed_title = e_iron_throne }
+				}
+				if = {
+					limit = { current_heir = { character = ROOT } }
+					set_character_flag = KG_renounced_inheritance
+				}
+				set_character_flag = KG_reaction_event
+				character_event = { id = kingsguard.11 days = 1 } 
+			}
+		}	
+		if = { #If no other Kingsguard present, become lord Commander
+			limit = {
+				NOT = { kingsguard = { is_alive = yes } }
+				is_title_active = d_kingsguard
+			}
+			d_kingsguard = { grant_title = ROOT }
+			e_iron_throne = { holder_scope = { ROOT = { set_defacto_liege = PREV } } }
+			clr_global_flag = need_commander_kingsguard
+			set_government_type = KG_government
+			character_event = { id = kingsguard.16 }
+		}
+		#add_trait = bastard
+		add_trait = kingsguard
+		recalc_succession = yes
+		if = { #if Kingsguard is currently inactive, become Lord Commander
+			limit = {
+				NOT = { is_title_active = d_kingsguard }
+			}
+			activate_title = { title = d_kingsguard status = yes }
+			d_kingsguard = { grant_title = ROOT }
+			e_iron_throne = { holder_scope = { ROOT = { set_defacto_liege = PREV } } }
+			set_government_type = KG_government
+			#clr_global_flag = kingsguard_initialised
+			character_event = { id = kingsguard.16 }
+		}
+		if = {
+			limit = { trait = wikid }
+			remove_trait = wikid
+			if = {
+				limit = { has_character_flag = foreign_adventure }
+				clr_character_flag = foreign_adventure
+				prestige = 75	
+				add_character_modifier = { 
+					name = went_on_foreign_tour
+					duration = -1
+				}
+			}	
+		}
+		if = {
+			limit = {
+				NOT = { trait = knight }
+				OR = {
+					trait = squire
+					has_ambition = obj_become_a_knight
+					AND = {
+						religion = the_seven
+						NOT = { trait = cynical }
+					}
+				}
+			}
+			knight_character_effect = yes
+		}	
+		top_liege = { character_event = { id = kingsguard.9 } }
+		FROMFROM = { #regent
+			if = {
+				limit = { NOT = { has_landed_title = e_iron_throne } }
+				character_event = { id = kingsguard.9 }
+			}
+		}
+		#Make sure they a parent to avoid culling
+		if = {
+			limit = { 
+				NOT = { father_even_if_dead = { always = yes } } 
+				NOT = { mother_even_if_dead = { always = yes } }
+			}
+			if = {
+				limit = { NOT = { age = 20 } }
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 36
+					culture = ROOT
+					religion = ROOT
+				}
+				new_character = {
+					ROOT = { set_father = PREV }
+					death = yes
+				}
+			}
+			if = {
+				limit = { 
+					age = 20
+					NOT = { age = 35 } 
+				}
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 51
+					culture = ROOT
+					religion = ROOT
+				}
+				new_character = {
+					ROOT = { set_father = PREV }
+					death = yes
+				}
+			}
+			if = {
+				limit = { age = 35 }
+				create_character = {
+					random_traits = yes
+					dynasty = NONE
+					female = no
+					age = 66
+					culture = ROOT
+					religion = ROOT
+				}
+				new_character = {
+					ROOT = { set_father = PREV }
+					death = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.8" #Refuse
+		
+		ai_chance = {
+			factor = 10	
+			
+			#Motives for refusal
+			modifier = {
+				factor = 0
+				OR = { #is a bad warrior
+					trait = trained_warrior
+					trait = skilled_warrior
+					trait = master_warrior
+				}	
+				NOT = { is_female = yes }#is female
+				NAND = { #Is an ambitious claimant
+					OR = {
+						num_of_claims = 1
+						is_pretender = yes
+						has_ambition = obj_wants_landed_title
+					}	
+					OR = {
+						trait = ambitious
+						trait = envious
+						trait = greedy
+					}
+				}
+				NOT = { #Iron Throne claimant
+					e_iron_throne = { 
+						ROOT = { 
+							OR = {
+								has_claim = PREV 
+								father = { has_claim = PREVPREV }
+							}	
+						} 
+					}
+				}
+				NOR = { #Is an heir
+					is_primary_heir = yes
+					any_heir_title = { always = yes }
+				}	
+				NOT = { trait = dragon_rider } #Is a dragon rider
+				OR = { #Foreigner
+					top_liege = { culture_group = ROOT }
+					culture_group = andal
+					culture_group = dornish
+					culture = high_valyrian
+					culture = western_valyrian
+					culture = crackclawmen
+					religion = the_seven
+				}
+				NOT = { #Is incapable of guarding
+					has_severe_disability_trigger = yes
+				}
+				OR = { #doesn't like celibacy
+					NOR = { 
+						trait = hedonist
+						trait = lustful
+					}
+					trait = eunuch
+					trait = arbitrary #doesnt mind breaking vows
+				}	
+				top_liege = { #despises the king
+					reverse_opinion = { who = ROOT value = -49 }
+					NOT = { is_rival = ROOT }
+				} 
+				FROMFROM = {  #Despises regent
+					OR = {
+						NOT = { has_landed_title = e_iron_throne }
+						reverse_opinion = { who = ROOT value = -49 } 
+					}	
+				}				
+				top_liege = {  #enemy dynasty
+					reverse_has_opinion_modifier = { who = ROOT modifier = opinion_blood_feud }
+				}
+				#Higher calling
+				NOT = { trait = chosen_by_rhllor }
+				NOT = { has_character_flag = demon_child_non_pagan }
+			}
+			
+			#consider father's reaction
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { reverse_opinion = { who = ROOT value = 25 } } 
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { reverse_opinion = { who = ROOT value = 50 } } 
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { reverse_opinion = { who = ROOT value = 75 } } 
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = father_reaction	
+				father = { reverse_opinion = { who = ROOT value = 100 } } 
+			}
+			#consider mother's reaction
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { reverse_opinion = { who = ROOT value = 25 } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { reverse_opinion = { who = ROOT value = 50 } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { reverse_opinion = { who = ROOT value = 75 } }
+			}
+			modifier = {
+				factor = 1.5
+				has_character_flag = mother_reaction	
+				mother = { reverse_opinion = { who = ROOT value = 100 } }
+			}
+			
+			modifier = {
+				factor = 2
+				trait = poor_warrior
+			}
+			modifier = {
+				factor = 4
+				NOT = {
+					OR = {
+						trait = poor_warrior
+						trait = trained_warrior
+						trait = skilled_warrior
+						trait = master_warrior
+					}	
+				}	
+			}
+			
+			modifier = {
+				factor = 30
+				is_female = yes
+				trait = just
+			}
+			modifier = {
+				factor = 30
+				is_female = yes
+				NOT = { trait = skilled_warrior }
+				NOT = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				num_of_claims = 1
+			}
+			modifier = {
+				factor = 3
+				is_pretender = yes
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					is_primary_heir = yes
+					any_heir_title = { always = yes }
+				}	
+			}
+			modifier = {
+				factor = 2
+				trait = dragon_rider
+			}
+			modifier = {
+				factor = 3
+				OR = {
+					has_ambition = obj_get_married
+					has_ambition = obj_marry_ruler
+					has_ambition = obj_find_lover
+					has_ambition = obj_wants_landed_title
+					has_ambition = obj_become_heir
+				}
+			}
+			modifier = {
+				factor = 1.5
+				e_iron_throne = { 
+					ROOT = { 
+						OR = {
+							has_claim = PREV 
+							father = { has_claim = PREVPREV }
+						}	
+					} 
+				}
+			}	
+			modifier = {
+				factor = 3
+				top_liege = { NOT = { dynasty = ROOT } }
+				OR = {
+					trait = ambitious
+					trait = envious
+					trait = greedy
+				}
+				e_iron_throne = { 
+					ROOT = { 
+						OR = {
+							has_claim = PREV 
+							father = { has_claim = PREVPREV }
+						}	
+					} 
+				}
+			}				
+			modifier = {
+				factor = 1.5
+				NOT = { age = 16 }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = knight }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { top_liege = { culture_group = ROOT } }
+				NOT = { culture_group = andal }
+				NOT = { culture_group = dornish }
+				NOT = { culture = high_valyrian }
+				NOT = { culture = western_valyrian }
+				NOT = { culture = crackclawmen }
+			}
+			modifier = {
+				factor = 2
+				NOT = { religion = the_seven }
+				NOT = { top_liege = { religion = ROOT } }
+			}
+			modifier = {
+				factor = 1.5
+				is_ill = yes
+			}
+			modifier = {
+				factor = 3
+				trait = familyperson
+				top_liege = { 
+					NOT = { dynasty = ROOT }
+					NOT = { is_close_relative = ROOT }
+				}
+			}
+			modifier = {
+				factor = 10
+				has_severe_disability_trigger = yes
+			}
+			modifier = { #doesn't like celibacy
+				factor = 5
+				OR = {
+					trait = hedonist
+					trait = lustful
+				}
+				NOT = { trait = eunuch }
+			}
+			modifier = {
+				factor = 2
+				is_weak_trigger = yes
+			}
+			modifier = {
+				factor = 2
+				trait = poet
+			}
+			modifier = {
+				factor = 2
+				trait = craven
+			}
+			modifier = {
+				factor = 4
+				trait = ambitious
+				OR = {
+					is_primary_heir = yes
+					any_heir_title = { always = yes }
+					is_pretender = yes
+					has_ambition = obj_get_married
+					has_ambition = obj_marry_ruler
+					has_ambition = obj_find_lover
+					has_ambition = obj_wants_landed_title
+					has_ambition = obj_become_heir
+					culture = ironborn
+					trait = dragon_rider
+					num_of_claims = 1
+					e_iron_throne = { ROOT = { father = { has_claim = PREVPREV } } }
+				}
+			}
+			modifier = {
+				factor = 5
+				top_liege = {  
+					reverse_has_opinion_modifier = { who = ROOT modifier = opinion_blood_feud }
+				}
+			}	
+			modifier = {
+				factor = 2
+				trait = ruthless
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 2
+				trait = cynical
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}			
+			modifier = {
+				factor = 1.4
+				NOT = { top_liege = { reverse_opinion = { who = ROOT value = -24 } } }
+			}
+			modifier = {
+				factor = 1.4
+				NOT = { top_liege = { reverse_opinion = { who = ROOT value = -49 } } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { top_liege = { reverse_opinion = { who = ROOT value = -74 } } }
+			}
+			modifier = {
+				factor = 2
+				NOT = { top_liege = { reverse_opinion = { who = ROOT value = -99 } } }
+			}
+			modifier = {
+				factor = 1.4
+				NOT = { 
+					FROMFROM = { 
+						NOT = { has_landed_title = e_iron_throne }
+						reverse_opinion = { who = ROOT value = -24 } 
+					} 
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = { 
+					FROMFROM = { 
+						NOT = { has_landed_title = e_iron_throne }
+						reverse_opinion = { who = ROOT value = -49 } 
+					} 
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = { 
+					FROMFROM = { 
+						NOT = { has_landed_title = e_iron_throne }
+						reverse_opinion = { who = ROOT value = -74 } 
+					} 
+				}
+			}
+			modifier = {
+				factor = 1.4
+				NOT = { 
+					FROMFROM = { 
+						NOT = { has_landed_title = e_iron_throne }
+						reverse_opinion = { who = ROOT value = -99 } 
+					} 
+				}
+			}
+			
+		}
+		top_liege = { character_event = { id = kingsguard.10 } }
+		FROMFROM = { #regent
+			if = {
+				limit = { NOT = { has_landed_title = e_iron_throne } }
+				character_event = { id = kingsguard.10 }
+			}
+		}
+		if = {
+			limit = { has_character_flag = father_reaction }
+			father = { character_event = { id = kingsguard.57 } } #Son & hair refuses kingsguard. (Notification)
+			clr_character_flag = father_reaction
+		}
+		if = {
+			limit = { has_character_flag = mother_reaction }
+			mother = { character_event = { id = kingsguard.57 } } #Son & hair refuses kingsguard. (Notification)
+			clr_character_flag = mother_reaction
+		}
+	}
+}
+
+#kingsguard.9 - King Notification ( Accept )
+character_event = {
+	id = kingsguard.9
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = "EVTDESCkingsguard.9"
+		trigger = {
+			has_landed_title = e_iron_throne
+			character = FROMFROMFROM
+			FROM = { NOT = { has_character_flag = renounced_inheritance } }
+		}
+	}
+	desc = {
+		text = "EVTDESCkingsguard.60"
+		trigger = {
+			has_landed_title = e_iron_throne
+			character = FROMFROMFROM
+			FROM = { has_character_flag = renounced_inheritance }
+		}
+	}
+	
+	desc = {
+		text = "EVTDESCkingsguard.9B" #regent appointment
+		trigger = {
+			has_landed_title = e_iron_throne
+			NOT = { character = FROMFROMFROM }
+		}
+	}
+	
+	desc = {
+		text = "EVTDESCkingsguard.9C" #regent
+		trigger = {
+			NOT = { has_landed_title = e_iron_throne }
+			character = FROMFROMFROM
+			FROM = { NOT = { has_character_flag = renounced_inheritance } }
+		}
+	}
+	desc = {
+		text = "EVTDESCkingsguard.9D" #regent
+		trigger = {
+			NOT = { has_landed_title = e_iron_throne }
+			character = FROMFROMFROM
+			FROM = { has_character_flag = renounced_inheritance }
+		}
+	}
+	
+	option = {
+		name = "Ok"
+		FROMFROMFROM = { tooltip = { show_portrait = yes } }
+		if = {
+			limit = { has_global_flag = kingsguard_initialising }
+			clr_global_flag = kingsguard_initialising
+		}	
+		if = {
+			limit = { character = FROMFROMFROM }
+			FROM = {
+				prestige = 100
+				opinion = {
+					modifier = opinion_happy
+					who = ROOT
+					years = 20
+				}
+				clr_character_flag = renounced_inheritance
+			}
+		}	
+		if = {
+			limit = { has_landed_title = e_iron_throne }
+			d_kingsguard = {
+				holder_scope = {
+					if = {
+						limit = { NOT = { character = FROM } }
+						FROM = { move_character = PREV }
+					}	
+				}
+			}
+		}	
+		#Dynasty is happy
+		FROM = {
+			any_dynasty_member = {
+				limit = {
+					is_close_relative = PREV	
+					OR = {
+						is_ruler = yes
+						is_father = PREV
+						is_mother = PREV
+					}				
+					is_alive = yes
+					NOT = { character = ROOT_FROMFROMFROM }
+					NOT = { character = ROOT_FROMFROM }
+					NOT = { character = ROOT_FROM }					
+					NOT = { character = ROOT }
+					NOT = { has_landed_title = e_iron_throne }
+					NOT = { has_character_flag = KG_reaction_event }
+				}
+				opinion = {
+					modifier = opinion_added_kin_to_kingsguard_pos
+					who = ROOT
+					years = 20
+				}
+			}	
+		}	
+		#Penalties for certain appointments
+		if = { #General unrest at females
+			limit = { FROM = { is_female = yes } }
+			add_character_modifier = {
+				name = appointed_female_kingsguard
+				duration = 730
+			}
+			prestige = -100
+		}
+		if = { #Appointing non faith/knights upsets faith
+			limit = { 
+				FROM = { 
+					NOT = { religion = the_seven }
+					NOT = { trait = knight } 					
+				} 
+			}
+			custom_tooltip = {
+				text = TOOLTIPappointed_non_faith_kingsguard
+				hidden_tooltip = {
+					any_courtier_or_vassal = {
+						limit = {
+							religion = the_seven
+							OR = {
+								trait = zealous
+								trait = wroth
+								trait = proud
+								trait = just
+								is_theocracy = yes
+							}
+							NOT = { trait = cynical }
+							NOT = { trait = slave }
+							age = 12
+							is_incapable = no
+						}
+						opinion = { who = ROOT modifier = appointed_non_faith_kingsguard months = 48 }
+					}
+				}	
+			}	
+			if = {
+				limit = { religion = the_seven }
+				piety = -100
+			}
+		}
+		if = { #Appointing foreigners upsets some
+			limit = { 
+				FROM = { 
+					NOT = { culture_group = andal }
+					NOT = { culture = high_valyrian } 		
+					NOT = { culture = western_valyrian }					
+				} 
+			}
+			custom_tooltip = {
+				text = TOOLTIPappointed_foreign_kingsguard
+				hidden_tooltip = {
+					any_courtier_or_vassal = {
+						limit = {
+							OR = {
+								culture_group = andal
+								top_liege = { culture_group = PREV }
+							}
+							NOT = { culture_group = FROM }
+							OR = {
+								trait = zealous
+								trait = wroth
+								trait = proud
+								trait = just
+							}
+							NOT = { trait = humble }
+							NOT = { trait = patient }
+							NOT = { trait = slave }
+							age = 12
+							is_incapable = no
+							NOT = { dynasty = FROM }
+							NOT = { is_close_relative = FROM }
+						}
+						opinion = { who = ROOT modifier = appointed_foreign_kingsguard months = 48 }
+					}
+				}	
+			}
+		}
+		if = { #Appointing lowborns upsets some
+			limit = { 
+				FROM = { dynasty = 0 } 
+			}
+			custom_tooltip = {
+				text = TOOLTIPappointed_lowborn_kingsguard
+				hidden_tooltip = {
+					any_courtier_or_vassal = {
+						limit = {
+							OR = {
+								is_feudal = yes
+								is_ruler = no
+							}	
+							NOT = { dynasty = 0 }
+							OR = {
+								trait = zealous
+								trait = wroth
+								trait = proud
+								trait = just
+							}
+							NOT = { trait = humble }
+							NOT = { trait = patient }
+							NOT = { trait = slave }
+							age = 12
+							is_incapable = no
+							NOT = { dynasty = FROM }
+							NOT = { is_close_relative = FROM }
+						}
+						opinion = { who = ROOT modifier = appointed_lowborn_kingsguard months = 48 }
+					}
+				}	
+			}
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.10 - King Notification ( Refuse )
+character_event = {
+	id = kingsguard.10
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { character = FROMFROMFROM } #is the asker (king or regent)
+	
+	desc = {
+		text = EVTDESCkingsguard.10
+		trigger = {
+			OR = {
+				ai = yes
+				FROM = {
+					NOR = {
+						is_primary_heir = yes
+						any_heir_title = { always = yes }
+					}
+					OR = {
+						opinion = { who = ROOT value = -49 }
+						trait = patient
+					}
+					OR = {
+						trait = proud
+						OR = {
+							trait = trained_warrior
+							trait = skilled_warrior
+							trait = master_warrior
+						}
+					}
+					is_female = no
+					OR = {
+						top_liege = { culture_group = PREV }
+						culture_group = andal
+						culture_group = dornish
+						culture = high_valyrian
+						culture = western_valyrian
+						culture = crackclawmen
+						opinion = { who = ROOT value = 0 }
+					}
+					NOT = {
+						has_severe_disability_trigger = yes
+					}
+					NAND = {
+						is_female = no
+						OR = {
+							trait = hedonist
+							trait = lustful
+						}
+						NOT = { trait = eunuch }
+					}
+					NAND = { #Is an ambitious claimant
+						OR = {
+							num_of_claims = 1
+							is_pretender = yes
+							has_ambition = obj_wants_landed_title
+						}	
+						OR = {
+							trait = ambitious
+							trait = envious
+							trait = greedy
+						}
+					}	
+					NOT = { #Iron Throne claimant
+						e_iron_throne = { 
+							ROOT_FROM = { 
+								OR = {
+									has_claim = PREV 
+									father = { has_claim = PREVPREV }
+								}	
+							} 
+						}
+					}	
+					top_liege = {  #enemy dynasty
+						reverse_has_opinion_modifier = { who = PREV modifier = opinion_blood_feud }
+					}					
+				}
+			}	
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.58 #heir
+		trigger = {
+			FROM = {
+				OR = {
+					is_primary_heir = yes
+					any_heir_title = { always = yes }
+				}
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.10B #dislikes
+		trigger = {
+			has_landed_title = e_iron_throne
+			FROM = {
+				NOT = { opinion = { who = ROOT value = -49 } }
+				NOT = { trait = patient }
+			}
+		}
+	}
+	desc = {
+		text = EVTDESCkingsguard.10BREGENT #dislikes (regent)
+		trigger = {
+			NOT = { has_landed_title = e_iron_throne }
+			FROM = {
+				NOT = { opinion = { who = ROOT value = -49 } }
+				NOT = { trait = patient }
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.10C #not good enough
+		trigger = {
+			FROM = {
+				is_female = no
+				NOT = { trait = proud }
+				NOT = {
+					OR = {
+						trait = trained_warrior
+						trait = skilled_warrior
+						trait = master_warrior
+					}
+				}
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.10D #female
+		trigger = {
+			FROM = {
+				is_female = yes
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.10E #culture
+		trigger = {
+			has_landed_title = e_iron_throne
+			FROM = {
+				NOT = { top_liege = { culture_group = PREV } }
+				NOT = { culture_group = andal }
+				NOT = { culture_group = dornish }
+				NOT = { culture = high_valyrian }
+				NOT = { culture = western_valyrian }
+				NOT = { culture = crackclawmen }
+				NOT = { opinion = { who = ROOT value = 0 } }
+			}
+		}
+	}
+	desc = {
+		text = EVTDESCkingsguard.10EREGENT #culture, REGENT
+		trigger = {
+			NOT = { has_landed_title = e_iron_throne }
+			FROM = {
+				NOT = { top_liege = { culture_group = PREV } }
+				NOT = { culture_group = andal }
+				NOT = { culture_group = dornish }
+				NOT = { culture = high_valyrian }
+				NOT = { culture = western_valyrian }
+				NOT = { culture = crackclawmen }
+				NOT = { opinion = { who = ROOT value = 0 } }
+			}
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.10F #injury
+		trigger = {
+			has_landed_title = e_iron_throne
+			FROM = {
+				has_severe_disability_trigger = yes
+			}	
+		}
+	}
+	desc = {
+		text = EVTDESCkingsguard.10FREGENT #injury
+		trigger = {
+			NOT = { has_landed_title = e_iron_throne }
+			FROM = {
+				has_severe_disability_trigger = yes
+			}	
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.10G #ilustful
+		trigger = {
+			FROM = {
+				is_female = no
+				OR = {
+					trait = hedonist
+					trait = lustful
+				}
+				NOT = { trait = eunuch }
+			}	
+		}
+	}
+	desc = {
+		text = EVTDESCkingsguard.10H #ambitious
+		trigger = {
+			FROM = {
+				OR = {
+					trait = dragon_rider
+					trait = chosen_by_rhllor
+					has_character_flag = demon_child_non_pagan
+					AND = {
+						OR = {
+							num_of_claims = 1
+							is_pretender = yes
+							has_ambition = obj_wants_landed_title
+						}	
+						OR = {
+							trait = ambitious
+							trait = envious
+							trait = greedy
+						}
+					}
+					e_iron_throne = { 
+						ROOT_FROM = { 
+							OR = {
+								has_claim = PREV 
+								father = { has_claim = PREVPREV }
+							}	
+						} 
+					}
+				}	
+			}
+		}
+	}
+	desc = {
+		text = EVTDESCkingsguard.10I #enemy dynasty
+		trigger = {
+			FROM = {
+				top_liege = { 
+					reverse_has_opinion_modifier = { who = PREV modifier = opinion_blood_feud }
+				}	
+			}
+		}
+	}
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			reverse_opinion = {
+				modifier = opinion_refused_kingsguard
+				who = root
+				years = 100
+			}
+			set_character_flag = refused_kingsguard
+		}
+		e_iron_throne = { holder_scope = { clr_character_flag = selecting_kingsguard } }
+	}
+}
+
+#kingsguard.11 - Father/Mother Reaction?
+character_event = {
+	id = kingsguard.11
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	desc = {
+		text = "EVTDESCkingsguard.11"
+		trigger = {
+			FROMFROMFROM = { has_landed_title = e_iron_throne }
+		}
+	}
+	desc = {
+		text = "EVTDESCkingsguard.11B" #regent
+		trigger = {
+			FROMFROMFROM = { NOT = { has_landed_title = e_iron_throne } }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.11" #approves	
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 2
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				trait = patient
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+			
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { reverse_opinion = { who = ROOT value = 25 } } }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { reverse_opinion = { who = ROOT value = 50 } } }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { reverse_opinion = { who = ROOT value = 75 } } }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { reverse_opinion = { who = ROOT value = 100 } } }
+			}
+		}	
+		prestige = 25
+		hidden_tooltip = {
+			FROMFROMFROM = { character_event = { id = kingsguard.12 } }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.11" #disapprove	
+		trigger = {
+			OR = {
+				has_character_flag = KG_renounced_inheritance
+				any_child = { character = FROM }
+				any_child = { any_child = { character = FROM } }
+				current_heir = { any_child = { character = FROM } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				has_character_flag = KG_renounced_inheritance
+			}	
+			modifier = {
+				factor = 2
+				NOT = { FROM = { top_liege = { religion = ROOT } } }
+			}		
+			modifier = {
+				factor = 2
+				NOT = { culture_group = andal }
+				NOT = { culture_group = dornish }
+				NOT = { culture = high_valyrian }
+				NOT = { culture = western_valyrian }
+				NOT = { culture = crackclawmen }
+			}
+			
+			modifier = {
+				factor = 2
+				trait = deceitful
+			}
+			modifier = {
+				factor = 2
+				trait = familyperson
+			}
+			modifier = {
+				factor = 2
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ruthless
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}	
+			modifier = {
+				factor = 2
+				trait = cynical
+			}	
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { NOT = { reverse_opinion = { who = ROOT value = -24 } } } }
+			}	
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { NOT = { reverse_opinion = { who = ROOT value = -49 } } } }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { NOT = { reverse_opinion = { who = ROOT value = -74 } } } }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { top_liege = { NOT = { reverse_opinion = { who = ROOT value = -99 } } } }
+			}			
+		}
+		prestige = 25		
+		hidden_tooltip = {
+			FROMFROMFROM = { character_event = { id = kingsguard.13 } }
+		}	
+	}
+	
+	after = {
+		clr_character_flag = KG_renounced_inheritance
+		clr_character_flag = KG_reaction_event
+	}
+}
+
+#kingsguard.12 - Relative Approves (king notification)
+character_event = {
+	id = kingsguard.12
+	desc = "EVTDESCkingsguard.12"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		reverse_opinion = {
+			modifier = opinion_added_kin_to_kingsguard_pos
+			who = FROM
+			years = 20
+		}
+	}
+}
+
+#kingsguard.13 - Relative Disapproves (king notification)
+character_event = {
+	id = kingsguard.13
+	desc = "EVTDESCkingsguard.13"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		reverse_opinion = {
+			modifier = opinion_added_kin_to_kingsguard_neg
+			who = FROM
+			years = 20
+		}
+	}
+}
+
+
+#kingsguard.57 - Child refuses kingsguard. (Notification)
+character_event = {
+	id = kingsguard.57
+	desc = "EVTDESCkingsguard.57"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+#kingsguard.14 - Death of the lord commander of the kingsguard. [Ai only]
+#on_death
+#character_event = {
+#	id = kingsguard.14
+#	desc = "EVTDESCkingsguard.14"
+#	picture = "GFX_kingsguard"
+#
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		trait = kingsguard
+#		has_landed_title = d_kingsguard
+#	}
+# 
+#	option = {
+#		name = "Ok"
+#		set_global_flag = need_commander_kingsguard
+#		#random_courtier = {
+#		#	limit = { trait = kingsguard }
+#		#	character_event = { id = kingsguard.18 }
+#		#}
+#	}
+#}
+
+#kingsguard.15 - No women in the kingsguard. [AI only] superceded by catch all maintenance event
+#on_yearly_pulse (999999)
+# character_event = {
+	# id = kingsguard.15
+	# desc = "Ok"
+
+	# is_triggered_only = yes
+
+	# trigger = {
+		# liege = { has_landed_title = d_kingsguard }
+		# is_female = yes
+	# }
+ 
+	# mean_time_to_happen = {
+		# days = 1
+	# }
+
+	# option = {
+		# name = "Ok"
+		# #add_trait = bastard
+		# add_trait = silent_sister
+		# recalc_succession = yes
+	# }
+# }
+
+#kingsguard.16 - Kingsguard counter. [AI only]
+character_event = {
+	id = kingsguard.16
+	# desc = "EVTDESCkingsguard.16"
+	# picture = GFX_kingsguard
+	
+	is_triggered_only = yes
+	hide_window = yes
+	only_playable = yes
+	
+	trigger = {	
+		has_landed_title = d_kingsguard	
+		#NOT = { has_global_flag = kingsguard_initialised }
+		NOT = { has_global_flag = need_commander_kingsguard }
+	}
+	
+	immediate = {
+		#The Kingsguard is sworn to the Iron Throne
+		if = {
+			limit = { NOT = { trait = kingsguard } }
+			if = {
+				limit = { NOT = { kingsguard = { is_alive = yes } } }
+				random_character = {
+					limit = {
+						can_be_kingsguard_candidate_trigger = yes	
+						is_primary_heir = no
+						age = 16
+						trait = knight						
+					}	
+					add_trait = kingsguard
+					recalc_succession = yes
+					d_kingsguard = { grant_title = PREV }
+					if = {
+						limit = { NOT = { has_global_flag = KL_not_capital } }
+						b_white_sword_tower = { grant_title = PREV }
+					}
+					set_government_type = KG_government
+					#clr_global_flag = kingsguard_initialised
+					clr_global_flag = need_commander_kingsguard
+					hidden_tooltip = { character_event = { id = kingsguard.16 days = 1 } }
+				}
+			}	
+			if = {
+				limit = { kingsguard = { is_alive = yes } }
+				kingsguard = {
+					limit = { is_alive = yes }
+					d_kingsguard = { grant_title = PREV }
+					if = {
+						limit = { NOT = { has_global_flag = KL_not_capital } }
+						b_white_sword_tower = { grant_title = PREV }
+					}
+					#clr_global_flag = kingsguard_initialised
+					set_government_type = KG_government
+					clr_global_flag = need_commander_kingsguard
+					hidden_tooltip = { character_event = { id = kingsguard.16 days = 1 } }
+				}
+				
+			}
+			hidden_tooltip = {
+				if = {
+					limit = {
+						is_feudal = yes
+						NOT = { trait = nightswatch }
+						NOT = { trait = kingsguard }
+					}
+					primary_title = {
+						if = {
+							limit = { has_law = succ_open_elective }
+							add_law = succ_primogeniture
+						}
+					}
+					recalc_succession = yes
+				}	
+			}	
+			break = yes
+		}
+		
+		#Move missing members into court
+		any_character = { 
+			limit = {
+				trait = kingsguard
+				is_alive = yes
+				NOT = { character = ROOT }
+			}
+			if = {
+				limit = { e_iron_throne = { has_holder = no } }
+				remove_trait = kingsguard
+			}
+			if = {
+				limit = {
+					is_ruler = no
+					liege = { 
+						NOT = { has_landed_title = d_kingsguard } 
+						NOT = {
+							AND = {
+								reverse_has_opinion_modifier = { who = PREV modifier = loan_kingsguard }
+								OR = {
+									any_heir_title = { title = e_iron_throne }
+									any_sibling = { has_landed_title = e_iron_throne } 
+									father = { has_landed_title = e_iron_throne }
+									mother = { has_landed_title = e_iron_throne }
+									spouse = { father = { has_landed_title = e_iron_throne } }
+									spouse = { mother = { has_landed_title = e_iron_throne } }
+								}
+							}	
+						}	
+					}
+				}
+				move_character = ROOT			
+			}	
+			if = {
+				limit = { 
+					is_ruler = yes 
+					NOT = { has_landed_title = d_kingsguard } 
+				}
+				character_event = { id = kingsguard.64 }
+			}
+		}
+		#Check liege and government
+		if = {
+			limit = { 
+				liege = { NOT = { has_landed_title = e_iron_throne } }
+			}	
+			set_government_type = KG_government
+			e_iron_throne = {
+				if = {
+					limit = { has_holder = yes }
+					holder_scope = {
+						ROOT = { set_defacto_liege = PREV }
+					}
+				}	
+				if = { #If The iron Throne no longer exists dissolve the Kingsguard
+					limit = { has_holder = no }
+					clr_global_flag = kingsguard_initialising
+					clr_global_flag = need_commander_kingsguard
+					ROOT = {
+						remove_trait = kingsguard
+						any_courtier = { remove_trait = kingsguard }
+						activate_title = { title = d_kingsguard status = no }
+						d_kingsguard = { destroy_landed_title = PREV }
+					}	
+				}	
+			}
+		}
+		#Move courtiers out of court
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				liege = { character = ROOT }
+				can_press_claims_trigger = yes
+				NOT = { trait = kingsguard }
+			}
+			character_event = { id = kingsguard.17 }
+		}
+		#Check ownership of white sword tower
+		if = {
+			limit = {
+				NOT = { has_landed_title = b_white_sword_tower }
+				226 = { has_province_flag = kings_landing_established }			
+				b_white_sword_tower = { 
+					is_capital = no 
+					holder_scope = {
+						top_liege = { has_landed_title = e_iron_throne }
+					}
+				}
+			}
+			b_white_sword_tower = { gain_title = ROOT }
+		}
+		
+		
+		#set_global_flag = kingsguard_initialised
+	}
+	
+	option = { 
+		name = OK
+	}
+}
+character_event = { #move courtier out
+	id = kingsguard.17
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = { is_ruler = no }
+	
+	option = { 
+		name = "I have other family, I'll go to them"
+		random_spouse = {
+			limit = {
+				is_alive = yes
+				can_press_claims_trigger = yes
+				NOT = { same_liege = ROOT }
+				NOT = { is_liege_of = ROOT }
+			}
+			if = { 	
+				limit = { is_ruler = yes }
+				ROOT = { move_character = PREV }
+			}
+			if = { 
+				limit = { is_ruler = no }
+				liege = { ROOT = { move_character = PREV } }
+			}
+			break = yes
+		}
+		father = {
+			if = {
+				limit = {
+					is_alive = yes
+					can_press_claims_trigger = yes
+					NOT = { same_liege = ROOT }
+					NOT = { is_liege_of = ROOT }
+				}
+				if = { 	
+					limit = { is_ruler = yes }
+					ROOT = { move_character = PREV }
+				}
+				if = { 
+					limit = { is_ruler = no }
+					liege = { ROOT = { move_character = PREV } }
+				}
+				break = yes
+			}	
+		}
+		mother = {
+			if = {
+				limit = {
+					is_alive = yes
+					can_press_claims_trigger = yes
+					NOT = { same_liege = ROOT }
+					NOT = { is_liege_of = ROOT }
+				}
+				if = { 	
+					limit = { is_ruler = yes }
+					ROOT = { move_character = PREV }
+				}
+				if = { 
+					limit = { is_ruler = no }
+					liege = { ROOT = { move_character = PREV } }
+				}
+				break = yes
+			}	
+		}
+		if = {
+			limit = { NOT = { dynasty = 0 } }
+			if = {
+				limit = {
+					dynasty_head = {
+						NOT = { character = ROOT }
+						can_press_claims_trigger = yes
+						NOT = { same_liege = ROOT }
+						NOT = { is_liege_of = ROOT }
+					}
+				}
+				dynasty_head = {
+					if = {
+						limit = { is_ruler = yes }
+						ROOT = { move_character = PREV }
+					}
+					if = {
+						limit = { NOT = { is_ruler = yes } }
+						liege = { ROOT = { move_character = PREV } }
+					}
+				}
+				break = yes
+			}
+			random_dynasty_member = {
+				limit = {
+					is_alive = yes
+					is_ruler = yes
+					can_press_claims_trigger = yes
+					NOT = { same_liege = ROOT }
+					NOT = { is_liege_of = ROOT }
+				}
+				ROOT = { move_character = PREV }
+				break = yes
+			}
+			random_spouse = {
+				random_dynasty_member = {
+					limit = {
+						is_alive = yes
+						is_ruler = yes
+						can_press_claims_trigger = yes
+						NOT = { same_liege = ROOT }
+						NOT = { is_liege_of = ROOT }
+					}
+					ROOT = { move_character = PREV }
+					break = yes
+				}	
+			}
+			random_dynasty_member = {
+				limit = {
+					is_alive = yes
+					can_press_claims_trigger = yes
+					NOT = { same_liege = ROOT }
+					NOT = { is_liege_of = ROOT }
+				}
+				if = { 	
+					limit = { is_ruler = yes }
+					ROOT = { move_character = PREV }
+				}
+				if = { 
+					limit = { is_ruler = no }
+					liege = { ROOT = { move_character = PREV } }
+				}
+				break = yes
+			}	
+		}	
+		random_friend = {
+			limit = {
+				is_alive = yes
+				can_press_claims_trigger = yes
+				NOT = { same_liege = ROOT }
+				NOT = { is_liege_of = ROOT }
+			}
+			if = { 	
+				limit = { is_ruler = yes }
+				ROOT = { move_character = PREV }
+			}
+			if = { 
+				limit = { is_ruler = no }
+				liege = { ROOT = { move_character = PREV } }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					num_of_claims = 1
+					father_even_if_dead = { always = yes }					
+					mother_even_if_dead = { always = yes }
+					real_father_even_if_dead = { always = yes }
+					NOT = { age = 14 }
+				}
+			}
+			random_playable_ruler = {
+				limit = {
+					demesne_size = 1
+					OR = {
+						higher_tier_than = DUKE
+						culture_group = ROOT
+					}
+					is_within_diplo_range = ROOT		
+					NOT = { same_liege = ROOT }
+					NOT = { is_liege_of = ROOT }					
+					can_press_claims_trigger = yes
+					NOT = { culture_group = unoccupied_group }
+					OR = {
+						NOT = { trait = wildling }
+						ROOT = { trait = wildling }
+					}	
+					OR = {
+						NOT = { culture = old_andal }
+						higher_tier_than = DUKE
+						ROOT = { culture = old_andal }
+					}
+					OR = {
+						NOT = { culture = rhoynar }
+						higher_tier_than = DUKE
+						ROOT = { culture = rhoynar }
+					}	
+					OR = {
+						NOT = { trait = pirate }
+						ROOT = { trait = pirate }
+					}			
+				}
+				ROOT = { move_character = PREV }
+				break = yes
+			}
+		}
+		if = { #sends them to King's Landing for now
+			limit = { is_female = no }
+			b_kings_landing = {
+				holder_scope = {
+					ROOT = { move_character = PREV }
+				}
+			}
+		}	
+		if = {
+			limit = { is_female = yes }
+			add_trait = silent_sister
+			recalc_succession = yes
+		}
+	}
+}
+
+#1110016 - Character gets the title of Lord Commander. [AI only]
+character_event = {
+	id = kingsguard.18
+	desc = "EVTDESCkingsguard.18"
+	picture = GFX_kingsguard
+	
+	has_global_flag = need_commander_kingsguard
+	
+	trigger = {	
+		trait = kingsguard
+		e_iron_throne = {
+			holder_scope = {
+				ai = yes
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 20
+		modifier = {
+			factor = 0.8
+			prestige = 100
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 200
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 300
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 400
+		}
+		modifier = {
+			factor = 0.8
+			prestige = 500
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { martial = 10 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { martial = 12 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { martial = 14 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { martial = 16 }
+		}
+		modifier = {
+			factor = 1.2
+			NOT = { martial = 18 }
+		}
+		modifier = {
+			factor = 0.8
+			martial = 20
+		}
+		modifier = {
+			factor = 0.8
+			martial = 22
+		}
+		modifier = {
+			factor = 0.8
+			martial = 24
+		}
+		modifier = {
+			factor = 0.8
+			martial = 26
+		}
+		modifier = {
+			factor = 0.8
+			martial = 28
+		}
+		modifier = {
+			factor = 0.75
+			trait = skilled_warrior
+		}
+		modifier = {
+			factor = 0.5
+			trait = master_warrior
+		}
+		modifier = {
+			factor = 0.001
+			has_landed_title = d_kingsguard
+		}
+	}
+	
+	immediate = {
+		appoint_KG_lord_commander_effect = yes
+		clr_global_flag = need_commander_kingsguard					
+	}
+	
+	option = { 
+		name = "Ok"
+		
+		#Summoning to the KG lord commander. 					#Possible BUG_2
+		# any_independent_ruler = {
+			# any_realm_character = {
+				# limit = {
+					# trait = kingsguard
+					# NOT = { character = ROOT }
+				# }
+				# ROOT = {
+					# reverse_banish = PREV
+				# }
+			# }
+		# }
+		
+		#clr_global_flag = kingsguard_initialised
+		
+		e_iron_throne = {
+			holder_scope = {
+				character_event = { id = kingsguard.23 }
+			}
+		}
+		
+	}
+}
+character_event = {
+	id = kingsguard.19
+	desc = "EVTDESCkingsguard.19"
+	picture = GFX_kingsguard
+	
+	ai = no # AI gets old event, auto-given to most prestigious, highest martial or best warrior.
+	only_independent = yes
+	has_global_flag = need_commander_kingsguard
+	
+	trigger = {		
+		has_landed_title = e_iron_throne
+		kingsguard = { is_alive = yes }
+	}
+	
+	immediate = {	
+		# Next, give every member of the KG a flag so they show up in the next events.
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_1
+			set_character_flag = kg_lc_candidate
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_2
+			set_character_flag = kg_lc_candidate
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_3
+			set_character_flag = kg_lc_candidate
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_4
+			set_character_flag = kg_lc_candidate
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_5
+			set_character_flag = kg_lc_candidate
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_6
+			set_character_flag = kg_lc_candidate
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				NOT = { has_character_flag = kg_lc_candidate }
+			}
+			save_event_target_as = kg_lc_candidate_7
+			set_character_flag = kg_lc_candidate
+		}
+	}
+	
+	option = {
+		name = EVTOPTAkingsguard.19	
+		trigger = { 
+			event_target:kg_lc_candidate_1 = { is_alive = yes }
+			NOT = { has_character_flag = kingsguard_commander_page_2 }
+			NOT = { has_character_flag = kingsguard_commander_page_3 }			
+		}
+		event_target:kg_lc_candidate_1 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	
+	option = {
+		name = EVTOPTBkingsguard.19
+		trigger = { 
+			event_target:kg_lc_candidate_2 = { is_alive = yes }
+			NOT = { has_character_flag = kingsguard_commander_page_2 }
+			NOT = { has_character_flag = kingsguard_commander_page_3 }			
+		}
+		event_target:kg_lc_candidate_2 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_global_flag = change_kingsguard_history
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	
+	option = {
+		name = EVTOPTCkingsguard.19
+		trigger = { 
+			event_target:kg_lc_candidate_3 = { is_alive = yes }
+			NOT = { has_character_flag = kingsguard_commander_page_2 }
+			NOT = { has_character_flag = kingsguard_commander_page_3 }			
+		}
+		event_target:kg_lc_candidate_3 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_global_flag = change_kingsguard_history
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	
+	# SHOW MOAR
+	option = {
+		name = "EVTOPTkingsguard.19MORE"
+		trigger = { 
+			NOT = { has_character_flag = kingsguard_commander_page_2 }
+			NOT = { has_character_flag = kingsguard_commander_page_3 } 	
+			OR = {
+				event_target:kg_lc_candidate_4 = { is_alive = yes }
+				event_target:kg_lc_candidate_7 = { is_alive = yes }
+			}
+		}
+		if = {
+			limit = { event_target:kg_lc_candidate_4 = { is_alive = yes } }
+			set_character_flag = kingsguard_commander_page_2
+		}	
+		if = {
+			limit = { NOT = { has_character_flag = kingsguard_commander_page_2 } }
+			set_character_flag = kingsguard_commander_page_3
+		}
+		character_event = { id = kingsguard.19 }
+	}
+	
+	option = {
+		name = EVTOPTDkingsguard.19
+		trigger = { 
+			event_target:kg_lc_candidate_4 = { is_alive = yes }
+			has_character_flag = kingsguard_commander_page_2		
+		}
+		event_target:kg_lc_candidate_4 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_global_flag = change_kingsguard_history
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	
+	option = {
+		name = EVTOPTEkingsguard.19
+		trigger = { 
+			event_target:kg_lc_candidate_5 = { is_alive = yes }
+			has_character_flag = kingsguard_commander_page_2		
+		}
+		event_target:kg_lc_candidate_5 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_global_flag = change_kingsguard_history
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	
+	option = {
+		name = EVTOPTFkingsguard.19
+		trigger = { 
+			event_target:kg_lc_candidate_6 = { is_alive = yes }
+			has_character_flag = kingsguard_commander_page_2		
+		}
+		event_target:kg_lc_candidate_6 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_global_flag = change_kingsguard_history
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	
+	
+	option = {
+		name = "EVTOPTkingsguard.19MORE"
+		trigger = { has_character_flag = kingsguard_commander_page_2 }
+		clr_character_flag = kingsguard_commander_page_2
+		if = {
+			limit = { event_target:kg_lc_candidate_7 = { is_alive = yes } }
+			set_character_flag = kingsguard_commander_page_3
+		}	
+		character_event = { id = kingsguard.19 }
+	}
+	option = {
+		name = EVTOPTGkingsguard.19
+		trigger = { 
+			event_target:kg_lc_candidate_7 = { is_alive = yes }
+			has_character_flag = kingsguard_commander_page_3		
+		}
+		event_target:kg_lc_candidate_7 = {
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			hidden_tooltip = {
+				appoint_KG_lord_commander_effect = yes
+			}
+		}
+		clr_global_flag = need_commander_kingsguard
+		clr_global_flag = change_kingsguard_history
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		hidden_tooltip = {
+			event_target:kg_lc_candidate_1 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_2 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_3 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_4 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_5 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_6 = { clr_character_flag = kg_lc_candidate }
+			event_target:kg_lc_candidate_7 = { clr_character_flag = kg_lc_candidate }
+		}
+	}
+	option = {
+		name = "EVTOPTkingsguard.19MORE"
+		trigger = { has_character_flag = kingsguard_commander_page_3 }
+		clr_character_flag = kingsguard_commander_page_3
+		clr_character_flag = kingsguard_commander_page_2
+		character_event = { id = kingsguard.19 }
+	}
+}
+
+character_event = {
+	id = kingsguard.20
+	desc = "LOCISFORCHUMPS"
+	picture = GFX_kingsguard
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "NOPENOPENOPE"
+		e_iron_throne = { holder_scope = { character_event = { id = kingsguard.23 } } }
+	}
+}
+#Destroy kingsguard history altering title
+character_event = {
+	id = kingsguard.21
+	desc = "LOCISFORCHUMPS"
+	picture = GFX_kingsguard
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = { has_landed_title = d_kingsguard_dummy }
+	
+	immediate = { d_kingsguard_dummy = { destroy_landed_title = ROOT } }
+	
+	option = {
+		name = OK
+	}
+}
+
+#kingsguard.22 - King gets notified of the death of a member of the Kingsguard.
+character_event = {
+	id = kingsguard.22	
+	picture = GFX_kingsguard
+	
+	desc = {
+		text = "EVTDESCkingsguard.22"
+		trigger = { 
+			FROM = { 
+				OR = {
+					is_alive = no
+					is_dying = yes
+				}	
+			} 
+		}
+	}	
+	desc = {
+		text = "EVTDESCkingsguard.22B"
+		trigger = { 
+			FROM = { 
+				NOR = {
+					is_alive = no
+					is_dying = yes
+				}	
+			} 
+		}
+	}
+	
+	is_triggered_only = yes
+	notification = yes
+	
+	option = { 
+		name = "EVTOPTAkingsguard.22"
+	}
+}
+
+#kingsguard.23 - King gets notified of new Lord Commander
+character_event = {
+	id = kingsguard.23
+	desc = "EVTDESCkingsguard.23"
+	picture = GFX_kingsguard
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "EVTOPTAkingsguard.23"
+	}
+}
+
+#kingsguard.24 - Kingsguard family at war with the king.
+character_event = {
+	id = kingsguard.24
+	desc = "EVTDESCkingsguard.24"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	only_playable = yes
+	
+	trigger = {
+		demesne_size = 1
+		e_iron_throne = {
+			holder_scope = {
+				war_with = ROOT
+				NOT = { dynasty = ROOT }
+				has_regent = no
+			}
+		}	
+		NOT = { dynasty = 0 }
+		is_theocracy = no	
+		kingsguard = {
+			is_alive = yes
+			dynasty = ROOT
+			NOT = { has_character_flag = kingsguard_kin_while_at_war }
+		}
+	}
+
+	immediate = {
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				dynasty = ROOT
+				NOT = { has_character_flag = kingsguard_kin_while_at_war }
+			}
+			save_event_target_as = kingsguard_kin_while_at_war
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.24" #What will the king decide?
+		e_iron_throne = {
+			holder_scope = {
+				character_event = { id = kingsguard.25 }
+			}
+		}
+	}
+}
+
+#kingsguard.25 - You are at war with your Kingsguard family.
+character_event = {
+	id = kingsguard.25
+	desc = "EVTDESCkingsguard.25"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:kingsguard_kin_while_at_war = { dynasty = FROM }
+	}
+	
+	immediate = {
+		event_target:kingsguard_kin_while_at_war = {
+			set_character_flag = kingsguard_kin_while_at_war
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.25" #I trust him!	
+		#Trust
+		ai_chance = {
+			factor = 10
+
+			modifier = {
+				factor = 5
+				event_target:kingsguard_kin_while_at_war = { is_friend = ROOT }
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					reverse_opinion = { who = ROOT value =  10 }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					reverse_opinion = { who = ROOT value =  40 }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					reverse_opinion = { who = ROOT value =  70 }
+				}
+			}
+			modifier = {
+				factor = 4
+				event_target:kingsguard_kin_while_at_war = {
+					opinion = { who = ROOT value =  25 }
+				}
+			}
+			modifier = {
+				factor = 20
+				FROM = {
+					top_liege = { NOT = { character = ROOT_FROM } }
+					liege = { NOT = { character = ROOT } }
+				}
+			}
+			modifier = {
+				factor = 1.2
+				trait = charitable
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = brave
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 4
+				trait = trusting
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { personality_traits = 6 } 
+				NOT = { trait = trusting }
+				NOT = { trait = paranoid } 
+			}
+			random = {
+				chance = 20
+				add_trait = trusting
+				hidden_tooltip = {
+					character_event ={
+						id = 38250 #Notify
+					}
+				}
+			}
+		}	
+		event_target:kingsguard_kin_while_at_war = {
+			if = {
+				limit = { 
+					NOT = { personality_traits = 6 } 
+					NOT = { trait = trusting }
+					NOT = { trait = paranoid } 
+				}
+				random = {
+					chance = 20
+					add_trait = trusting
+					hidden_tooltip = {
+						character_event ={
+							id = 38250 #Notify
+						}
+					}
+				}
+			}
+			opinion = {
+				modifier = opinion_defended_me
+				who = ROOT
+				years = 10
+			}
+			opinion = {
+				modifier = opinion_angry
+				who = FROM
+				years = 10
+			}
+			character_event = { id = kingsguard.66 } #Duty to house or king?
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.25" #Imprison him!
+		
+		#Imprison
+		ai_chance = {
+			factor = 5
+			
+			modifier = {
+				factor = 0
+				NOR = {
+					trait = paranoid
+					trait = lunatic
+					trait = arbitrary
+					trait = wroth
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					trait = honorable
+					trait = just
+					event_target:kingsguard_kin_while_at_war = { reverse_opinion = { who = ROOT value =  20 } }
+				}	
+				NOT = { trait = paranoid }
+				NOT = { trait = lunatic }
+			}	
+			modifier = {
+				factor = 5
+				event_target:kingsguard_kin_while_at_war = { is_rival = ROOT }
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { reverse_opinion = { who = ROOT value =  -10 } }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { reverse_opinion = { who = ROOT value =  -40 } }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { reverse_opinion = { who = ROOT value =  -70 } }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { opinion = { who = ROOT value =  -25 } }
+				}
+			}
+			modifier = {
+				factor = 4
+				trait = paranoid
+			}
+			modifier = {
+				factor = 4
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.2
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.5
+				trait = envious
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.5
+				trait = deceitful
+			}
+			modifier = {
+				factor = 1.5
+				trait = arbitrary
+			}
+		}
+		
+		event_target:kingsguard_kin_while_at_war = {		
+			add_rival = ROOT		
+			random_list = {
+				60 = {
+					modifier = {
+						factor = 0.57
+						ROOT = { NOT = { realm_intrigue = 10 } }
+					}
+					modifier = {
+						factor = 0.57
+						ROOT = { NOT = { realm_intrigue = 18 } }
+					}
+					modifier = {
+						factor = 1.75
+						ROOT = { realm_intrigue = 25 }
+					}
+					modifier = {
+						factor = 1.75
+						ROOT = { realm_intrigue = 37 }
+					}
+					imprison = ROOT
+					remove_trait = kingsguard
+					ROOT = { character_event = { id = kingsguard.61 } } #You imprisoned one of your kingsguard!
+					hidden_tooltip = { FROM = { character_event = { id = kingsguard.27 } } } #Notification
+				}
+				40 = {
+					hidden_tooltip = { character_event = { id = kingsguard.29 } } #Kingsguard Drama. [Ai only]
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.25" #Execute him!
+		
+		#Execute him!
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				NOR = {
+					trait = paranoid
+					trait = lunatic
+					trait = arbitrary
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					trait = honorable
+					trait = just
+					event_target:kingsguard_kin_while_at_war = { reverse_opinion = { who = ROOT value =  0 } }
+				}	
+				NOT = { trait = paranoid }
+				NOT = { trait = lunatic }
+			}	
+			modifier = {
+				factor = 5
+				event_target:kingsguard_kin_while_at_war = { is_rival = ROOT }
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { reverse_opinion = { who = ROOT value =  -10 } }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { reverse_opinion = { who = ROOT value =  -40 } }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { reverse_opinion = { who = ROOT value =  -70 } }
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:kingsguard_kin_while_at_war = {
+					NOT = { opinion = { who = ROOT value =  -25 } }
+				}
+			}
+			modifier = {
+				factor = 4
+				trait = paranoid
+			}
+			modifier = {
+				factor = 4
+				trait = lunatic
+			}
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+			modifier = {
+				factor = 1.5
+				trait = envious
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.5
+				trait = deceitful
+			}
+			modifier = {
+				factor = 1.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 4
+				trait = cruel
+			}
+		}		
+		event_target:kingsguard_kin_while_at_war = {			
+			add_rival = ROOT
+			
+			random_list = {
+				60 = {
+					modifier = {
+						factor = 0.57
+						ROOT = { NOT = { realm_intrigue = 10 } }
+					}
+					modifier = {
+						factor = 0.57
+						ROOT = { NOT = { realm_intrigue = 18 } }
+					}
+					modifier = {
+						factor = 1.75
+						ROOT = { realm_intrigue = 25 }
+					}
+					modifier = {
+						factor = 1.75
+						ROOT = { realm_intrigue = 37 }
+					}
+					imprison = ROOT
+					hidden_tooltip = { 
+						FROM = { character_event = { id = kingsguard.28 } } #Notification
+						FROM = { character_event = { id = 154 } } #'on execution event
+					} 
+					death = {
+						death_reason = death_execution
+						killer = ROOT
+					}	
+					ROOT = { character_event = { id = kingsguard.62 } } #You successfuly executed one of your kingsguard.
+				}
+				40 = {
+					hidden_tooltip = { character_event = { id = kingsguard.29 } } #Kingsguard Drama. [Ai only]	
+				}
+			}
+		}
+	}
+}
+
+#kingsguard.26 - Your kin betrayed you and remained on the kingsguard. (Notification)
+character_event = {
+	id = kingsguard.26
+	desc = "EVTDESCkingsguard.26"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		event_target:kingsguard_kin_while_at_war = {
+			reverse_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				years = 10
+			}
+		}
+	}
+}
+
+#kingsguard.27 - Your kin has been imprisoned! (Notification)
+character_event = {
+	id = kingsguard.27
+	desc = "EVTDESCkingsguard.27"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.28 - Your kin has been killed! (Notification)
+character_event = {
+	id = kingsguard.28
+	desc = "EVTDESCkingsguard.28"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.29 - Kingsguard Drama. [Ai only]
+character_event = {
+	id = kingsguard.29
+	desc = "EVTDESCkingsguard.29"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Run" 
+		
+		#To run away.
+		ai_chance = {
+			factor = 2
+			
+			###KG health
+			modifier = {
+				factor = 10
+				OR = {
+					has_epidemic = yes
+					is_ill = yes
+				}
+			}
+			
+			###KG fighting skills
+			modifier = {
+				factor = 3
+				NOT = {
+					OR = {
+						trait = poor_warrior
+						trait = trained_warrior
+						trait = skilled_warrior
+						trait = master_warrior
+					}
+				}	
+			}
+			modifier = {
+				factor = 2
+				trait = poor_warrior
+			}
+			modifier = {
+				factor = 2
+				is_weak_trigger = yes
+			}
+			
+			###KG Character
+			modifier = {
+				factor = 2
+				trait = craven
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 2
+				trait = paranoid
+			}
+			modifier = {
+				factor = 2
+				trait = selfish
+			}
+			modifier = {
+				factor = 2
+				trait = patient
+			}
+			modifier = {
+				factor = 2
+				trait = content
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+			modifier = {
+				factor = 2
+				NOT  = { trait = proud }
+			}
+			###Strong King
+			modifier = {
+				factor = 1.5
+				FROM = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { 
+					OR = {
+						is_smart_trigger = yes
+						trait = genius
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = { trait = skilled_warrior   }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					trait = master_warrior  
+				}
+			}
+			###Good King
+			modifier = {
+				factor = 2
+				NOT = { trait = arbitrary }
+				FROM = { trait = just }
+			}
+			modifier = {
+				factor = 2
+				NOT = { trait = cruel }
+				FROM = { trait = kind }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = greedy }
+				FROM = { trait = charitable }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = diligent }
+				FROM = { trait = diligent }
+			}
+			modifier = {
+				factor = 2
+				NOT = { trait = ruthless }
+				FROM = { trait = honorable }
+			}
+		}
+		
+		character_event = { id = kingsguard.30 } #Escape to kin court.
+	}
+
+	option = {
+		name = "Kill the King"
+		trigger = {
+			NOT = { has_severe_disability_trigger = yes }	
+		}
+		#To try and kill the king
+		ai_chance = {
+			factor = 1
+			
+			###KG fighting skills
+			modifier = {
+				factor = 2
+				is_strong_trigger = yes
+			}
+			modifier = {
+				factor = 1.5
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 2
+				trait = master_warrior
+			}
+			
+			###KG personality
+			modifier = {
+				factor = 0.1
+				trait = just
+			}
+			modifier = {
+				factor = 0
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = impaler
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.5
+				trait = brave
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = ruthless
+			}
+			modifier = {
+				factor = 0.1
+				trait = kind
+			}
+			modifier = {
+				factor = 0.25
+				trait = patient
+			}
+			modifier = {
+				factor = 0.1
+				trait = content
+			}
+
+			###Weak King
+			modifier = {
+				factor = 1.5
+				FROM = { is_weak_trigger = yes }
+			}
+			modifier = {
+				factor = 0.15
+				FROM = { NOT = { age = 16 } }
+			}
+			modifier = {
+				factor = 1.25
+				FROM = { trait = poor_warrior }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					NOT = {
+						OR = {
+							trait = poor_warrior
+							trait = trained_warrior
+							trait = skilled_warrior
+							trait = master_warrior
+						}
+					}
+				}
+			}
+			###Bad King
+			modifier = {
+				factor = 2
+				NOT = { trait = arbitrary }
+				FROM = { trait = arbitrary }
+			}
+			modifier = {
+				factor = 2
+				NOT = { trait = cruel }
+				FROM = { trait = cruel }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = greedy }
+				FROM = { trait = greedy }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = slothful }
+				FROM = { trait = slothful }
+			}
+			modifier = {
+				factor = 2
+				FROM = { trait = lunatic }
+			}
+		}
+		
+		character_event = { id = kingsguard.35 } #Try to kill the king.
+	}
+	
+	option = {
+		name = "Kidnap king's children"
+		
+		trigger = {
+			top_liege = {
+				any_child = {
+					NOT = { age = 15 }
+					prisoner = no
+				}				
+			}
+		}
+		
+		#Try and kindnap one of the kings children.
+		ai_chance = {
+			factor = 1
+			
+			###KG intrigue orientated
+			modifier = {
+				factor = 2
+				OR = {
+					trait = amateurish_plotter
+					trait = flamboyant_schemer
+					trait = intricate_webweaver
+					trait = elusive_shadow
+				}
+			}
+			modifier = {
+				factor = 2
+				intrigue = 10
+			}
+			
+			###KG fighting skills
+			modifier = {
+				factor = 1.5
+				is_strong_trigger = yes
+			}
+			modifier = {
+				factor = 1.2
+				trait = skilled_warrior
+			}
+			modifier = {
+				factor = 1.5
+				trait = master_warrior
+			}
+			
+			###KG Character
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = deceitful
+			}
+			modifier = {
+				factor = 1.2
+				trait = brave
+			}
+			modifier = {
+				factor = 0.5
+				trait = just
+			}
+			modifier = {
+				factor = 0
+				trait = honorable
+			}
+			modifier = {
+				factor = 0.1
+				trait = kind
+			}
+			modifier = {
+				factor = 0.25
+				trait = patient
+			}
+			modifier = {
+				factor = 0.1
+				trait = content
+			}
+			###Strong King
+			modifier = {
+				factor = 1.5
+				FROM = { is_strong_trigger = yes }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { 
+					OR = {
+						is_smart_trigger = yes
+						trait = genius
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = { trait = skilled_warrior   }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					trait = master_warrior  
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = {
+					NOT = { intrigue = 10 }
+				}
+			}
+			###Bad King
+			modifier = {
+				factor = 2
+				NOT = { trait = arbitrary }
+				FROM = { trait = arbitrary }
+			}
+			modifier = {
+				factor = 2
+				NOT = { trait = cruel }
+				FROM = { trait = cruel }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = greedy }
+				FROM = { trait = greedy }
+			}
+			modifier = {
+				factor = 1.5
+				NOT = { trait = slothful }
+				FROM = { trait = slothful }
+			}
+			modifier = {
+				factor = 2
+				FROM = { trait = lunatic }
+			}
+		}
+
+		character_event = { id = kingsguard.49 } #Try to kidnap the kings sons!
+	}
+}
+
+#kingsguard.30 - Kingsguard Drama - I try to escape. [Ai only]
+character_event = {
+	id = kingsguard.30
+	desc = "EVTDESCkingsguard.30"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok" #I fail & I die!
+		
+		#Escape - Try and die.
+		ai_chance = {
+			factor = 1
+			
+			###KG health
+			modifier = {
+				factor = 4
+				OR = {
+					has_epidemic = yes
+					is_ill = yes
+				}
+			}
+			
+			###KG fighting skills
+			modifier = {
+				factor = 2
+				NOT = { martial = 8 }
+			}
+			modifier = {
+				factor = 2
+				is_weak_trigger = yes
+			}
+			modifier = {
+				factor = 1.2
+				trait = trained_warrior 
+			}
+
+			###Other KG
+			modifier = {
+				factor = 2
+				any_realm_character = {
+					trait = kingsguard
+					OR = {
+						trait = master_warrior
+						is_strong_trigger = yes
+					}
+				}
+			}
+			
+			###KG inteligence
+			modifier = {
+				factor = 2
+				OR = {
+					trait = imbecile
+					trait = inbred
+				}
+			}
+			
+			###KG character
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+			
+			###KG Intrigue
+			modifier = {
+				factor = 2
+				NOT = { intrigue = 6 }
+			}
+		}
+		
+		top_liege = { 
+			character_event = { id = kingsguard.31 } #One of your kingsguard died trying to flee your court. (Notification)
+			ROOT = {
+				any_dynasty_member = {
+					limit = { war_with = PREVPREV }
+					character_event = { id = kingsguard.33 } #Your kin in the kingsguard died trying to flee the kings court. (Notification)
+				}
+			}	
+		}	
+	}
+	
+	option = {
+		name = "Ok" #I fail & I get away injured!
+		
+		#Escape - succeed & get injured.
+		ai_chance = {
+			factor = 1
+			
+			###KG fighting skills
+			modifier = {
+				factor = 1.5
+				trait = trained_warrior 
+			}
+			
+			###Other KG
+			modifier = {
+				factor = 2
+				any_realm_character = {
+					trait = kingsguard
+					OR = {
+						trait = master_warrior
+						is_strong_trigger = yes
+					}
+				}
+			}
+			
+			###Kg Inteligence
+			modifier = {
+				factor = 2
+				is_dumb_trigger = yes
+			}
+			
+			###KG Character
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.2
+				trait = rude 
+			}
+		}
+		remove_trait = kingsguard
+		#remove_trait = bastard
+		if = {
+			limit = {
+				has_landed_title = d_kingsguard
+			}
+			#clr_global_flag = kingsguard_initialised
+			set_global_flag = need_commander_kingsguard
+		}
+		# if = {
+			# limit = {
+				# NOT = { has_landed_title = d_kingsguard }
+			# }
+			# d_kingsguard = {
+				# holder_scope = {
+					# change_variable = { which = "kingsguard_count" value = -1 }
+				# }					
+			# }
+		# }
+		if = {
+			limit = {
+				NOT = { trait = wounded }
+				NOT = { is_maimed_trigger = yes }
+			}
+			random_list = {
+				70 = { 
+					add_trait = wounded 
+					hidden_tooltip = {
+						character_event ={
+							id = 38280 #Notify
+						}
+					}
+				}
+				30 = { 
+					add_maimed_trait_effect = yes
+				}
+			}
+		}	
+		top_liege = { character_event = { id = kingsguard.32 } } #One of your kingsguard has fled your court. (Notification)
+		random_dynasty_member = {
+			limit = {
+				NOT = { character = ROOT }
+				demesne_size = 1
+			}
+			character_event = { id = kingsguard.34 } #Your kin in the kingsguard has fled the kings court and joined yours. (Notification)
+		}
+		#any_dynasty_member = {
+		#	limit = { war_with = top_liege }
+		#	character_event = { id = kingsguard.34 } #Your kin in the kingsguard has fled the kings court and joined yours. (Notification)
+		#}
+	}
+	
+	option = {
+		name = "Ok" #I get away!
+		
+		#Escape Succeed.
+		ai_chance = {
+			factor = 1
+			
+			###KG fighting skills
+			modifier = {
+				factor = 2
+				martial = 14 
+			}
+			modifier = {
+				factor = 2
+				trait = skilled_warrior 
+			}
+			modifier = {
+				factor = 3
+				trait = master_warrior 
+			}
+			modifier = {
+				factor = 2
+				trait = duelist
+			}
+			modifier = {
+				factor = 2
+				is_strong_trigger = yes
+			}
+			
+			###KG Inteligence
+			modifier = {
+				factor = 2
+				OR = {
+					trait = genius
+					is_smart_trigger = yes
+				}
+			}
+
+			###KG Character
+			modifier = {
+				factor = 2
+				trait = authoritative
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 2
+				trait = deceitful 
+			}
+			
+			###KG Intrigue
+			modifier = {
+				factor = 2
+				intrigue = 9 
+			}
+		}
+		remove_trait = kingsguard
+		#remove_trait = bastard
+		if = {
+			limit = {
+				has_landed_title = d_kingsguard
+			}
+			#clr_global_flag = kingsguard_initialised
+			set_global_flag = need_commander_kingsguard
+		}
+		# if = {
+			# limit = {
+				# NOT = { has_landed_title = d_kingsguard }
+			# }
+			# d_kingsguard = {
+				# holder_scope = {
+					# change_variable = { which = "kingsguard_count" value = -1 }
+				# }					
+			# }
+		# }
+		top_liege = { character_event = { id = kingsguard.32 } } #One of your kingsguard has fled your court. (Notification)
+		#Reverse_Banishment
+		random_dynasty_member = {
+			limit = {
+				NOT = { character = ROOT }
+				demesne_size = 1
+			}
+			character_event = { id = kingsguard.34 } #Your kin in the kingsguard has fled the kings court and joined yours. (Notification)
+		}
+		#random_dynasty_member = { character_event = { id = kingsguard.34 } } #Your kin in the kingsguard has fled the kings court and joined yours. (Notification)
+		set_character_flag = kingsguard_escaped
+	}
+}
+#kingsguard.31 - One of your kingsguard died trying to flee your court. (Notification)
+character_event = {
+	id = kingsguard.31
+	desc = "EVTDESCkingsguard.31"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = unjust_execution #This give family the vengeance modifier
+		FROM = {
+			hidden_tooltip = {
+				character_event = { id = 154 } #on_executed event
+			}	
+		}	
+	}
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+		}	
+	}
+}
+
+#kingsguard.32 - One of your kingsguard has fled your court. (Notification)
+character_event = {
+	id = kingsguard.32
+	desc = "EVTDESCkingsguard.32"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+#kingsguard.33 - Your kin in the kingsguard died trying to flee the kings court. (Notification)
+character_event = {
+	id = kingsguard.33
+	desc = "EVTDESCkingsguard.33"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.34 - Your kin in the kingsguard has fled the kings court and joined yours. (Notification)
+character_event = {
+	id = kingsguard.34
+	desc = "EVTDESCkingsguard.34"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			clr_character_flag = escaped_kingsguard
+			move_character = ROOT
+		}
+	}
+}
+#kingsguard.35 - Kingsguard Drama - I try to kill the king.. [Ai only]
+character_event = {
+	id = kingsguard.35
+	desc = "EVTDESCkingsguard.35"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok" #Kingsguard duel
+		trigger = {
+			kingsguard = { 
+				is_alive = yes 
+				NOT = { character = ROOT }
+				prisoner = no
+				NOT = { has_severe_disability_trigger = yes }		
+			}	
+		}
+		set_character_flag = rogue_kg_vs_KG
+		kingsguard = { 
+			limit = {
+				is_alive = yes 
+				NOT = { character = ROOT }
+				prisoner = no
+				NOT = { has_severe_disability_trigger = yes }	
+			}
+			character_event = { id = kingsguard.36 }
+		}	
+		FROM = { 
+			FROM = {
+				opinion = { who = ROOT modifier = attempted_murder years = 25 }
+			}	
+		}		
+	}	
+	
+	option = {
+		name = "Ok" #King duel
+		trigger = {
+			NOT = {
+				kingsguard = { 
+					is_alive = yes 
+					NOT = { character = ROOT }
+					prisoner = no
+					NOT = { has_severe_disability_trigger = yes }	
+				}
+			}	
+		}
+		set_character_flag = rogue_kg_vs_KING
+		set_character_flag = flag_duel_to_the_death
+		FROM = { 
+			FROM = {
+				character_event = { id = kingsguard.38 }
+				opinion = { who = ROOT modifier = attempted_murder years = 25 }
+			}	
+		}	
+	}	
+}
+#Inform KG of duel
+character_event = {
+	id = kingsguard.36
+	desc = "EVTDESCkingsguard.36"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok" #Kingsguard duel
+		set_character_flag = KG_vs_rogue_kg
+		e_rebels = { holder_scope = { character_event = { id = duel.0 days = 1 } } }
+		top_liege = { character_event = { id = kingsguard.37 } } #Inform KG fight eachother
+	}	
+}	
+#Inform King of duel
+character_event = {
+	id = kingsguard.37
+	desc = "EVTDESCkingsguard.37"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	show_from_from = yes
+	
+	option = {
+		name = "Ok" #Kingsguard duel
+		FROM = { tooltip = { show_portrait = yes } } 
+	}	
+}	
+#kingsguard.38 - One of your kingsguard wants to kill you!
+character_event = {
+	id = kingsguard.38
+	desc = "EVTDESCkingsguard.38"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		set_character_flag = KING_vs_rogue_kg
+		set_character_flag = flag_duel_to_the_death
+		hidden_tooltip = { e_rebels = { holder_scope = { character_event = { id = duel.0 } } } }
+	}
+}	
+#kingsguard.39 - One of your kingsguard has killed a fellow KG and now wants to kill you!
+character_event = {
+	id = kingsguard.39
+	desc = "EVTDESCkingsguard.39"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			set_character_flag = rogue_kg_vs_KING
+			set_character_flag = flag_duel_to_the_death
+		}
+		set_character_flag = KING_vs_rogue_kg
+		set_character_flag = flag_duel_to_the_death
+		hidden_tooltip = { e_rebels = { holder_scope = { character_event = { id = duel.0 } } } }
+	}
+}	
+#kingsguard.40 - One of your kingsguard has been defeated by a KG after trying to kill you
+character_event = {
+	id = kingsguard.40
+	desc = "EVTDESCkingsguard.40"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+		trigger = { FROM = { FROM = { is_alive = no } } }
+	}
+	
+	option = {
+		name = "Seize Him!"
+		trigger = { FROM = { FROM = { is_alive = yes } } }
+		FROM = {
+			FROM = {
+				remove_trait = kingsguard
+				#remove_trait = bastard
+				if = {
+					limit = {
+						has_landed_title = d_kingsguard
+					}
+					#clr_global_flag = kingsguard_initialised
+					set_global_flag = need_commander_kingsguard
+				}
+				# if = {
+					# limit = {
+						# NOT = { has_landed_title = d_kingsguard }
+					# }
+					# d_kingsguard = {
+						# holder_scope = {
+							# hidden_tooltip = { change_variable = { which = "kingsguard_count" value = -1 } }
+						# }					
+					# }
+				# }
+			}
+		}	
+		random_list = {
+			50 = {
+				FROM = { FROM = { character_event = { id = kingsguard.41 tooltip = TOOLTIPkingsguard.41 } } }
+			}
+			50 = {
+				FROM = { FROM = { imprison = ROOT } }
+			}
+		}
+	}
+}
+#kingsguard.41 - successfully fled
+character_event = {
+	id = kingsguard.41
+	desc = "EVTDESCkingsguard.41"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		set_character_flag = kingsguard_escaped
+		FROM = { character_event = { id = kingsguard.42 } }
+		random_dynasty_member = {
+			limit = {
+				NOT = { character = ROOT }
+				demesne_size = 1
+			}
+			character_event = { id = kingsguard.43 } #Your kin in the kingsguard has fled the kings court after trying to kill the king! (Notification)
+		}	
+	}
+}
+#kingsguard.42 - One of your kingsguard flad your court after trying to kill you! (Notification)
+character_event = {
+	id = kingsguard.42
+	desc = "EVTDESCkingsguard.42"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+#kingsguard.43 - Your kin in the kingsguard has fled the kings court after trying to kill the king! (Notification)
+character_event = {
+	id = kingsguard.43
+	desc = "EVTDESCkingsguard.43"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			clr_character_flag = escaped_kingsguard
+			move_character = ROOT
+		}
+	}
+}
+#kingsguard.40 - One of your kingsguard has been defeated by you after trying to kill you
+character_event = {
+	id = kingsguard.44
+	desc = "EVTDESCkingsguard.44"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "OK"
+		trigger = { FROM = { FROM = { is_alive = no } } }
+	}
+	
+	option = {
+		name = "Guards! Seize Him!"
+		trigger = { FROM = { FROM = { is_alive = yes } } }
+		FROM = {
+			FROM = {
+				remove_trait = kingsguard
+				#remove_trait = bastard
+				if = {
+					limit = {
+						has_landed_title = d_kingsguard
+					}
+					#clr_global_flag = kingsguard_initialised
+					set_global_flag = need_commander_kingsguard
+				}
+				# if = {
+					# limit = {
+						# NOT = { has_landed_title = d_kingsguard }
+					# }
+					# d_kingsguard = {
+						# holder_scope = {
+							# hidden_tooltip = { change_variable = { which = "kingsguard_count" value = -1 } }
+						# }					
+					# }
+				# }
+			}
+		}	
+		random_list = {
+			50 = {
+				FROM = { FROM = { character_event = { id = kingsguard.41 tooltip = TOOLTIPkingsguard.41 } } }
+			}
+			50 = {
+				FROM = { FROM = { imprison = ROOT } }
+			}
+		}
+	}
+}
+
+# #kingsguard.45 - One of your kingsguard has killed you and fled! (Notification)	
+# character_event = {
+	# id = kingsguard.45
+	# desc = "EVTDESCkingsguard.45"
+	# picture = "GFX_kingsguard"
+	
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "Ok"
+	# }
+# }
+#kingsguard.46 - Your kin in the kingsguard has fled to your court, after killing the king! (Notification)
+character_event = {
+	id = kingsguard.46
+	desc = "EVTDESCkingsguard.46"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			if = {
+				limit = { character = FROM }
+				remove_trait = kingsguard
+				#remove_trait = bastard
+				if = {
+					limit = {
+						has_landed_title = d_kingsguard
+					}
+					#clr_global_flag = kingsguard_initialised
+					set_global_flag = need_commander_kingsguard
+				}
+				# if = {
+					# limit = {
+						# NOT = { has_landed_title = d_kingsguard }
+					# }
+					# d_kingsguard = {
+						# holder_scope = {
+							# hidden_tooltip = { change_variable = { which = "kingsguard_count" value = -1 } }
+						# }					
+					# }
+				# }
+				if = {
+					limit = {
+						NOT = { trait = kinslayer }
+						NOT = { religion = dothraki_pagan }
+						FROMFROM = {
+							OR = {
+								AND = {
+									NOT = { dynasty = 0 }
+									dynasty = ROOT
+								}	
+								AND = {
+									is_close_relative = ROOT
+									OR = { #If married must be blood relation
+										NOT = { is_married = ROOT }
+										sibling = ROOT
+										is_child_of = ROOT
+										any_child = { character = ROOT }
+										father_even_if_dead = { sibling = ROOT }
+										mother_even_if_dead = { sibling = ROOT }
+										any_sibling = { any_child = { character = ROOT } }
+									}
+								}
+							}
+						}
+					}
+					add_trait = kinslayer
+					hidden_tooltip = {
+						if = {
+							limit = { has_nickname = no }
+							random = {
+								chance = 25
+								give_nickname = nick_the_kinslayer
+							}
+						}
+					}
+				}
+					
+				if = {
+					limit = { NOT = { has_character_modifier = known_murderer } }
+					add_character_modifier = {
+						name = known_murderer
+						duration = -1
+					}
+				}
+				
+				FROMFROM = {
+					if = {
+						limit = {
+							mother = {
+								NOT = { character = ROOT }
+								NOT = { is_mother = ROOT }
+							}
+						}
+						mother = {
+							opinion = {
+								who = ROOT
+								modifier = opinion_vengeance
+								#modifier = opinion_killed_close_kin
+								#months = 120
+							}
+							add_rival = ROOT
+						}
+					}	
+					if = {
+						limit = {
+							father = {
+								NOT = { character = ROOT }
+								NOT = { is_father = ROOT }
+							}
+						}
+						father = {
+							opinion = {
+								who = ROOT
+								modifier = opinion_vengeance
+								#modifier = opinion_killed_close_kin
+								#months = 120
+							}
+							add_rival = ROOT
+						}
+					}	
+					any_child = {
+						limit = {
+							NOT = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = opinion_vengeance
+								}						
+							}
+							NOT = { character = ROOT }
+							NOT = { is_child_of = ROOT }
+						}
+						opinion = {
+							who = ROOT
+							modifier = opinion_vengeance
+							#modifier = opinion_killed_close_kin
+							#months = 120
+						}
+						add_rival = ROOT
+					}
+					any_sibling = {
+						limit = {
+							NOT = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = opinion_vengeance
+								}						
+							}
+							NOT = { character = ROOT }
+							NOT = { sibling = ROOT }
+						}
+						opinion = {
+							who = ROOT
+							modifier = opinion_vengeance
+							#modifier = opinion_killed_close_kin
+							#months = 120
+						}
+					}
+					spouse = {
+						if = {
+							limit = {
+								NOT = {
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = opinion_vengeance
+									}						
+								}
+							}
+							opinion = {
+								who = ROOT
+								modifier = opinion_vengeance
+							}				
+						}
+					}
+					any_dynasty_member = {
+						limit = {
+							is_close_relative = FROM
+							NOT = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = opinion_vengeance
+								}						
+							}
+						}
+						opinion = {
+							who = ROOT
+							modifier = opinion_vengeance
+						}				
+					}
+					any_friend = {
+						limit = {
+							NOT = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = opinion_vengeance
+								}						
+							}
+						}
+						opinion = {
+							who = ROOT
+							modifier = opinion_vengeance
+						}
+					}
+					liege = {
+						if = {
+							limit = {
+								NOT = {
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = opinion_vengeance
+									}							
+								}
+							}
+							opinion = {
+								who = ROOT
+								modifier = killed_vassal
+								months = 60
+							}				
+						}
+					}			
+					religion_head = {
+						opinion = {
+							who = ROOT
+							modifier = opinion_dishonorable
+							months = 60
+						}
+					}
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = "Ok"
+		if = {
+			limit = { NOT = { character = FROM } }
+			FROM = {
+				clr_character_flag = escaped_kingsguard
+				move_character = ROOT
+			}
+			clr_character_flag = flee_target
+		}	
+	}
+}
+
+
+#kingsguard.47 - Your kin in the kingsguard died trying to kill the king! (Notification)
+character_event = {
+	id = kingsguard.47
+	desc = "EVTDESCkingsguard.47"
+	picture = "GFX_kingsguard"
+	
+	show_from_from = yes
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+	}
+}
+#kingsguard.48 - King killed by kignsguard!!!
+character_event = {
+	id = kingsguard.48
+	desc = "EVTDESCkingsguard.48"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.49 - Kingsguard Drama - I try to kidnap the kings children... [Ai only]
+character_event = {
+	id = kingsguard.49
+	desc = "EVTDESCkingsguard.49"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok" #I fail & I die!
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 4
+				NOT = { martial = 8 }
+			}
+
+			###KG fighting skills
+			modifier = {
+				factor = 2
+				NOT = { martial = 10 }
+			}
+			modifier = {
+				factor = 2
+				is_weak_trigger = yes
+			}
+			modifier = {
+				factor = 1.2
+				trait = trained_warrior 
+			}
+
+			###Other KG
+			modifier = {
+				factor = 2
+				any_realm_character = {
+					trait = kingsguard
+					OR = {
+						trait = master_warrior
+						is_strong_trigger = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				any_realm_character = {
+					trait = kingsguard
+					intrigue = 12
+				}
+			}
+			
+			###KG inteligence
+			modifier = {
+				factor = 2
+				OR = {
+					trait = imbecile
+					trait = inbred
+				}
+			}
+			
+			###KG character
+			modifier = {
+				factor = 2
+				trait = trusting
+			}
+			
+			###KG Intrigue
+			modifier = {
+				factor = 2
+				NOT = { intrigue = 6 }
+			}
+		}
+		
+		top_liege = { 
+			character_event = { id = kingsguard.53 }  #One of your kingsguard died trying to kidnap a member of the royal family! (Notification)
+			ROOT = {
+				any_dynasty_member = {
+					limit = { war_with = PREVPREV }
+					character_event = { id = kingsguard.50 } #Your kin in the kingsguard died trying to kidnap a member of the royal family! (Notification)
+				}
+			}
+		}
+		
+		
+		any_dynasty_member = {
+			limit = { 
+				OR = {
+					is_father = ROOT
+					any_child = { character = ROOT }
+					sibling = ROOT
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "Ok" #I fail & i get away injured!
+		
+		ai_chance = {
+			factor = 1
+			
+			###Other KG
+			modifier = {
+				factor = 2
+				any_realm_character = {
+					trait = kingsguard
+					OR = {
+						trait = master_warrior
+						is_strong_trigger = yes
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				any_realm_character = {
+					trait = kingsguard
+					intrigue = 9
+				}
+			}
+			
+			###KG fighting skills
+			modifier = {
+				factor = 2
+					is_strong_trigger = yes
+			}
+			modifier = {
+				factor = 2
+					trait = master_warrior
+			}
+			modifier = {
+				factor = 1.5
+					trait = skilled_warrior 
+			}
+			
+			###KG Inteligence
+			modifier = {
+				factor = 2
+				is_dumb_trigger = yes
+			}
+			
+			###KG Character
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.2
+				trait = rude 
+			}
+		}
+		remove_trait = kingsguard
+		#remove_trait = bastard
+		if = {
+			limit = {
+				has_landed_title = d_kingsguard
+			}
+			#clr_global_flag = kingsguard_initialised
+			set_global_flag = need_commander_kingsguard
+		}
+		# if = {
+			# limit = {
+				# NOT = { has_landed_title = d_kingsguard }
+			# }
+			# d_kingsguard = {
+				# holder_scope = {
+					# change_variable = { which = "kingsguard_count" value = -1 }
+				# }					
+			# }
+		# }
+		if = {
+			limit = {
+				NOT = { trait = wounded }
+				NOT = { is_maimed_trigger = yes }
+			}
+			random_list = {
+				70 = { 
+					add_trait = wounded 
+					hidden_tooltip = {
+						character_event ={
+							id = 38280 #Notify
+						}
+					}
+				}
+				30 = { 
+					add_maimed_trait_effect = yes
+				}
+			}
+		}	
+		
+		prestige = 50
+
+		top_liege = { character_event = { id = kingsguard.54 } } #One of your kingsguard fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)		
+
+		#Reverse_Banishment
+		random_dynasty_member = {
+			limit = {
+				NOT = { character = ROOT }
+				demesne_size = 1
+			}
+			character_event = { id = kingsguard.51 } #Your kin in the kingsguard has fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)
+		}
+		#random_dynasty_member = { character_event = { id = kingsguard.51 } } #Your kin in the kingsguard has fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)
+		set_character_flag = kingsguard_escaped
+	}
+	
+	option = {
+		name = "Ok" #Kidnapped one of the royal children!
+		#May need to add reverse_banish											#BUG_1
+		
+		ai_chance = {
+			factor = 1
+			
+			###KG fighting skills
+			modifier = {
+				factor = 2
+				martial = 14 
+			}
+			modifier = {
+				factor = 2
+				trait = master_warrior 
+			}
+			modifier = {
+				factor = 2
+				trait = duelist
+			}
+			modifier = {
+				factor = 2
+				is_strong_trigger = yes
+			}
+			
+			###Other KG
+			modifier = {
+				factor = 4
+				any_realm_character = {
+					trait = kingsguard
+					NOT = { intrigue = 9 }
+				}
+			}
+			
+			###KG Inteligence
+			modifier = {
+				factor = 2
+				OR = {
+					trait = genius
+					is_smart_trigger = yes
+				}
+			}
+
+			###KG Character
+			modifier = {
+				factor = 2
+				trait = authoritative
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 2
+				trait = deceitful 
+			}
+			
+			###KG Intrigue
+			modifier = {
+				factor = 2
+				intrigue = 9 
+			}
+		}
+		remove_trait = kingsguard
+		#remove_trait = bastard
+		if = {
+			limit = {
+				has_landed_title = d_kingsguard
+			}
+			#clr_global_flag = kingsguard_initialised
+			set_global_flag = need_commander_kingsguard
+		}
+		# if = {
+			# limit = {
+				# NOT = { has_landed_title = d_kingsguard }
+			# }
+			# d_kingsguard = {
+				# holder_scope = {
+					# change_variable = { which = "kingsguard_count" value = -1 }
+				# }					
+			# }
+		# }
+		#The kidnapping.
+		top_liege = {
+			character_event = { id = kingsguard.55 } #One of your kingsguard kidnapped one of your children! (Notification)
+			random_child = {
+				limit = {
+					NOT = { age = 15 }
+					prisoner = no
+				}
+				#random_playable_ruler = {
+				#	limit = {
+				#		any_dynasty_member = {
+				#			character = ROOT
+				#		}
+				#	}
+				#	PREV = { imprison = PREV }
+				#}
+			
+				random_dynasty_member = {
+					limit = {
+						NOT = { character = ROOT }
+						demesne_size = 1
+					}
+					reverse_banish = PREVPREV
+					character_event = { id = kingsguard.52 } #Your kin in the kingsguard just showed up, with one of the royal children! (Notification)
+				}
+				imprison = yes
+				if = {
+					limit = {
+						NOT = { trait = wounded }
+						NOT = { is_maimed_trigger = yes }
+					}
+					random_list = {
+						20 = { 
+							add_trait = wounded 
+							hidden_tooltip = {
+								character_event ={
+									id = 38280 #Notify
+								}
+							}
+						}
+						10 = { 
+							add_maimed_trait_effect = yes
+						}
+						70 = { }
+					}
+				}	
+			}
+		}
+		prestige = 250
+		
+		#Reverse_Banishmentf
+		#random_independent_ruler = {
+		#	limit = {
+		#		any_realm_character = {
+		#			dynasty = ROOT
+		#			NOT = { character = ROOT }
+		#			demesne_size = 1
+		#		}
+		#	}
+		#	random_realm_character = {
+		#		limit = {
+		#			dynasty = ROOT
+		#			NOT = { character = ROOT }
+		#			demesne_size = 1
+		#		}
+		#		character_event = { id = kingsguard.52 } #Your kin in the kingsguard just showed up, with one of the royal children! (Notification)
+		#	}
+		#}
+		#random_dynasty_member = { character_event = { id = kingsguard.52 } } #Your kin in the kingsguard just showed up, with one of the royal children! (Notification)
+		set_character_flag = kingsguard_escaped
+		#top_liege = { character_event = { id = kingsguard.55 } } #One of your kingsguard kidnapped one of your children! (Notification)
+	}
+}
+#kingsguard.50 - Your kin in the kingsguard died trying to kidnap a member of the royal family! (Notification)
+character_event = {
+	id = kingsguard.50
+	desc = "EVTDESCkingsguard.50"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.51 - Your kin in the kingsguard has fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)
+character_event = {
+	id = kingsguard.51
+	desc = "EVTDESCkingsguard.51"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			clr_character_flag = escaped_kingsguard
+			move_character = ROOT
+		}
+	}
+}
+
+#kingsguard.52 - Your kin in the kingsguard just showed up, with one of the royal children! (Notification)
+character_event = {
+	id = kingsguard.52
+	desc = "EVTDESCkingsguard.52"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	trigger = { is_ruler = yes }
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			clr_character_flag = escaped_kingsguard
+			move_character = ROOT
+		}
+	}
+}
+
+#kingsguard.53 - One of your kingsguard died trying to kidnap a member of the royal family! (Notification)	
+character_event = {
+	id = kingsguard.53
+	desc = "EVTDESCkingsguard.53"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+		FROM = {
+			hidden_tooltip = { 
+				character_event = { id = 154 } #on_executed
+				#ROOT = { set_character_flag = special_execution_found }
+			} 
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+			if = {
+				limit = { 
+					OR = {
+						AND = {
+							NOT = { dynasty = 0 }
+							dynasty = ROOT
+						}	
+						AND = {
+							is_close_relative = ROOT
+							OR = { #If married must be blood relation
+								NOT = { is_married = ROOT }
+								sibling = ROOT
+								is_child_of = ROOT
+								any_child = { character = ROOT }
+								father_even_if_dead = { sibling = ROOT }
+								mother_even_if_dead = { sibling = ROOT }
+								any_sibling = { any_child = { character = ROOT } }
+							}
+						}
+					}
+					NOT = { religion = dothraki_pagan } 
+				}
+				ROOT = { 
+					add_trait = kinslayer 
+					hidden_tooltip = {
+						if = {
+							limit = { has_nickname = no }
+							random = {
+								chance = 15
+								give_nickname = nick_the_kinslayer
+							}
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+#kingsguard.54 - One of your kingsguard fled the kings court after to kidnap a member of the royal family, getting injured in the procces! (Notification)	
+character_event = {
+	id = kingsguard.54
+	desc = "EVTDESCkingsguard.54"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.55 - One of your kingsguard kidnapped one of your children! (Notification)	
+character_event = {
+	id = kingsguard.55
+	desc = "EVTDESCkingsguard.55"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+
+#kingsguard.61 - You succesfully imprisoned one of your kingsguard! (Notification)	
+character_event = {
+	id = kingsguard.61
+	desc = "EVTDESCkingsguard.61"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Ok"
+	}
+}
+
+#kingsguard.62 - You succesfully executed one of your kingsguard! (Notification)		
+character_event = {
+	id = kingsguard.62
+	desc = "EVTDESCkingsguard.62"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "Ok"
+		if = {
+			limit = { NOT = { personality_traits = 5 } }
+			random_list = {
+				50 = { 
+					if = {
+						limit = { NOT = { trait = wroth } }
+						if = {
+							limit = { trait = patient }
+							remove_trait = patient
+						}
+						add_trait = wroth	
+						hidden_tooltip = {
+							character_event ={
+								id = 38254 #Notify
+							}
+						}
+					}
+				}
+				25 = { 
+					if = {
+						limit = { NOT = { trait = arbitrary } }
+						if = {
+							limit = { trait = just }
+							remove_trait = just
+						}
+						add_trait = arbitrary	
+						hidden_tooltip = {
+							character_event ={
+								id = 38266 #Notify
+							}
+						}
+					}
+				}
+				25 = { 
+					if = {
+						limit = { 
+							NOT = { trait = just } 
+							NOT = { trait = arbitrary }
+						}
+						add_trait = just	
+						hidden_tooltip = {
+							character_event ={
+								id = 38267 #Notify
+							}
+						}
+					}
+				}
+				100 = { 
+					if = {
+						limit = { NOT = { trait = authoritative } }
+						add_trait = authoritative 	
+						hidden_tooltip = {
+							character_event ={
+								id = trait_notification.7 #Notify
+							}
+						}
+					}
+				}
+				100 = { }
+			}
+		}	
+	}
+}
+
+# #non-Kingsguard men hanging around White Sword Tower get kicked out
+# character_event = {
+	# id = kingsguard.63
+	# desc = "EVTDESCkingsguard.63"
+	
+	# is_triggered_only = yes
+	
+# }
+
+#Kingsguard cannot have land (triggered from maintenance)
+character_event = {
+	id = kingsguard.64
+	desc = "EVTDESCkingsguard.64"
+	
+	only_rulers = yes
+	is_triggered_only = yes
+	
+	trigger = {		
+		trait = kingsguard
+		NOT = { has_landed_title = d_kingsguard }		
+	}
+	
+	option = {
+		name = OK
+		d_nightswatch = { 
+			holder_scope = {		
+				ROOT = {
+					any_demesne_title = {
+						limit = { 
+							OR = { 			
+								title = d_the_wall
+								location = { duchy = { title = d_the_wall } }
+							}
+						}
+						grant_title = PREVPREV
+					}	
+				}
+			}
+		}	
+		if = {
+			limit = { 
+				current_heir = {
+					NOT = { trait = kingsguard }
+					NOT = { trait = nightswatch }
+					NOT = { trait = maester }
+					NOT = { trait = archmaester }
+					is_priest = no
+				}
+			}	
+			hidden_tooltip = { #Universal on death/abdication event
+				if = {
+					limit = { has_character_modifier = owns_valyrian_steel_sword }
+					set_character_flag = do_not_inherit_sword
+				}
+				set_character_flag = abdication
+				character_event = { id = 45341 } 
+				clr_character_flag = abdication
+				clr_character_flag = do_not_inherit_sword
+				current_heir = { save_event_target_as = wealth_heir }
+				transfer_scaled_wealth = { to = event_target:wealth_heir value = all }
+			}
+			abdicate = yes
+			set_character_flag = abdicated
+		}
+		if = {
+			limit = { NOT = { has_character_flag = abdicated } }	
+			primary_title = { add_law = succ_primogeniture }
+			recalc_succession = yes
+			if = {
+				limit = { 
+					current_heir = {
+						NOT = { trait = kingsguard }
+						NOT = { trait = nightswatch }
+						NOT = { trait = maester }
+						NOT = { trait = archmaester }
+						is_priest = no
+					}
+				}	
+				hidden_tooltip = { #Universal on death/abdication event
+					if = {
+						limit = { has_character_modifier = owns_valyrian_steel_sword }
+						set_character_flag = do_not_inherit_sword
+					}
+					set_character_flag = abdication
+					character_event = { id = 45341 } 
+					clr_character_flag = abdication
+					clr_character_flag = do_not_inherit_sword
+					current_heir = { save_event_target_as = wealth_heir }
+					transfer_scaled_wealth = { to = event_target:wealth_heir value = all }
+				}
+				abdicate = yes
+				set_character_flag = abdicated
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = abdicated } }	
+			primary_title = { add_law = cognatic_succession }
+			recalc_succession = yes
+			if = {
+				limit = { 
+					current_heir = {
+						NOT = { trait = kingsguard }
+						NOT = { trait = nightswatch }
+						NOT = { trait = maester }
+						NOT = { trait = archmaester }
+						is_priest = no
+					}
+				}	
+				hidden_tooltip = { #Universal on death/abdication event
+					if = {
+						limit = { has_character_modifier = owns_valyrian_steel_sword }
+						set_character_flag = do_not_inherit_sword
+					}
+					set_character_flag = abdication
+					character_event = { id = 45341 } 
+					clr_character_flag = abdication
+					clr_character_flag = do_not_inherit_sword
+					current_heir = { save_event_target_as = wealth_heir }
+					transfer_scaled_wealth = { to = event_target:wealth_heir value = all }
+				}
+				abdicate = yes
+				set_character_flag = abdicated
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = abdicated } }	
+			random_dynasty_member = {
+				limit = {
+					is_close_relative = ROOT
+					NOT = { trait = kingsguard }
+					NOT = { trait = nightswatch }
+					NOT = { trait = maester }
+					NOT = { trait = archmaester }
+					is_priest = no
+				}
+				ROOT = { 
+					abdicate_to = PREV 
+					set_character_flag = abdicated
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = abdicated } }	
+			random_dynasty_member = {
+				limit = {
+					NOT = { trait = kingsguard }
+					NOT = { trait = nightswatch }
+					NOT = { trait = maester }
+					NOT = { trait = archmaester }
+					is_priest = no
+				}
+				ROOT = { 
+					abdicate_to = PREV 
+					set_character_flag = abdicated
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = abdicated } }			
+			liege = {
+				if = {
+					limit = { NOT = { character = ROOT } }
+					ROOT = { 
+						abdicate_to = PREV 
+						set_character_flag = abdicated
+					}
+				}	
+			}
+		}
+		if = {
+			limit = { NOT = { has_character_flag = abdicated } }			
+			random_courtier = {
+				limit = { 
+					NOT = { character = ROOT }
+					NOT = { trait = kingsguard }
+					NOT = { trait = nightswatch }
+					NOT = { trait = maester }
+					NOT = { trait = archmaester }
+					is_priest = no					
+				}
+				ROOT = { abdicate_to = PREV }	
+			}
+		}
+		d_kingsguard = {
+			holder_scope = {
+				ROOT = { move_character = PREV }
+			}
+		}
+		clr_character_flag = abdicated
+	}
+}	
+
+# #The White Book
+character_event = {
+	id = kingsguard.65
+	picture = "GFX_kingsguard"
+	desc = "EVTDESCkingsguard.65"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			kingsguard = {
+				limit = { 
+					is_alive = yes
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { has_character_flag = kg_list_1 }
+					NOT = { has_character_flag = kg_list_2 }
+					NOT = { has_character_flag = kg_list_3 }
+					NOT = { has_character_flag = kg_list_4 }
+					NOT = { has_character_flag = kg_list_5 }
+					NOT = { has_character_flag = kg_list_6 }
+					NOT = { kingsguard = { NOT = { has_landed_title = d_kingsguard } has_character_flag = kg_list_1 } }
+				}
+				set_character_flag = kg_list_1
+			}
+			kingsguard = {
+				limit = { 
+					is_alive = yes
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { has_character_flag = kg_list_1 }
+					NOT = { has_character_flag = kg_list_2 }
+					NOT = { has_character_flag = kg_list_3 }
+					NOT = { has_character_flag = kg_list_4 }
+					NOT = { has_character_flag = kg_list_5 }
+					NOT = { has_character_flag = kg_list_6 }
+					NOT = { kingsguard = { NOT = { has_landed_title = d_kingsguard } has_character_flag = kg_list_2 } }
+				}
+				set_character_flag = kg_list_2
+			}
+			kingsguard = {
+				limit = { 
+					is_alive = yes
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { has_character_flag = kg_list_1 }
+					NOT = { has_character_flag = kg_list_2 }
+					NOT = { has_character_flag = kg_list_3 }
+					NOT = { has_character_flag = kg_list_4 }
+					NOT = { has_character_flag = kg_list_5 }
+					NOT = { has_character_flag = kg_list_6 }
+					NOT = { kingsguard = { NOT = { has_landed_title = d_kingsguard } has_character_flag = kg_list_3 } }
+				}
+				set_character_flag = kg_list_3
+			}
+			kingsguard = {
+				limit = { 
+					is_alive = yes
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { has_character_flag = kg_list_1 }
+					NOT = { has_character_flag = kg_list_2 }
+					NOT = { has_character_flag = kg_list_3 }
+					NOT = { has_character_flag = kg_list_4 }
+					NOT = { has_character_flag = kg_list_5 }
+					NOT = { has_character_flag = kg_list_6 }
+					NOT = { kingsguard = { NOT = { has_landed_title = d_kingsguard } has_character_flag = kg_list_4 } }
+				}
+				set_character_flag = kg_list_4
+			}
+			kingsguard = {
+				limit = { 
+					is_alive = yes
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { has_character_flag = kg_list_1 }
+					NOT = { has_character_flag = kg_list_2 }
+					NOT = { has_character_flag = kg_list_3 }
+					NOT = { has_character_flag = kg_list_4 }
+					NOT = { has_character_flag = kg_list_5 }
+					NOT = { has_character_flag = kg_list_6 }
+					NOT = { kingsguard = { NOT = { has_landed_title = d_kingsguard } has_character_flag = kg_list_5 } }
+				}
+				set_character_flag = kg_list_5
+			}
+			kingsguard = {
+				limit = { 
+					is_alive = yes
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { has_character_flag = kg_list_1 }
+					NOT = { has_character_flag = kg_list_2 }
+					NOT = { has_character_flag = kg_list_3 }
+					NOT = { has_character_flag = kg_list_4 }
+					NOT = { has_character_flag = kg_list_5 }
+					NOT = { has_character_flag = kg_list_6 }
+					NOT = { kingsguard = { NOT = { has_landed_title = d_kingsguard } has_character_flag = kg_list_6 } }
+				}
+				set_character_flag = kg_list_6
+			}
+			
+			kingsguard = { #notable past member
+				limit = { 
+					is_alive = no
+					NOT = { has_landed_title = d_kingsguard }
+					OR = {
+						trait = genius
+						is_smart_trigger = yes
+						trait = brave
+						is_strong_trigger = yes
+						trait = valyrian_steel
+						trait = dawn
+						trait = ice
+						trait = longclaw
+						trait = blackfyre
+						trait = longclaw_snow
+						trait = brightroar
+						trait = heartsbane
+						trait = nightfall
+						trait = darksister
+						trait = ladyforlorn
+						trait = redrain
+						trait = widowswail
+						trait = oathkeeper
+						trait = crabspincer
+						trait = strangers_mercy
+						trait = vigilance
+						trait = orphan_maker
+						trait = palemoon
+						trait = truth
+						trait = lamentation
+						trait = poison
+						trait = anger
+						trait = black_death
+						trait = compassion
+						trait = blackpaw
+						trait = del_pino
+						trait = el_swordo
+						trait = gold_sword
+						trait = happyness
+						trait = hubris
+						trait = justice
+						trait = kingmaker
+						trait = passion
+						trait = rage
+						trait = sightblinder
+						trait = the_monarchist
+						trait = the_usurper
+						trait = worldeater
+						trait = worlds_envy
+						trait = dragon_rider
+						trait = direwolf
+						trait = kinslayer
+						trait = dwarf
+						trait = dragon_slayer
+					}
+				}
+				save_event_target_as = kg_past_member_1
+				if = { #add ser title
+					limit = { 
+						trait = knight
+						is_ruler = no 
+						NOT = { has_minor_title = title_prince }
+						NOT = { has_minor_title = title_prince_AGOT }
+						NOT = { has_minor_title = title_queen_mother }
+						NOT = { has_minor_title = title_ruler_consort }
+					}
+					if = {
+						limit = { is_female = no } 
+						set_special_character_title = title_ser
+					}
+					if = {
+						limit = { is_female = yes }
+						set_special_character_title = title_lady	
+					}
+				}
+			}
+			kingsguard = { #notable past member
+				limit = { 
+					is_alive = no
+					NOT = { has_landed_title = d_kingsguard }
+					NOT = { character = event_target:kg_past_member_1 }
+				}
+				save_event_target_as = kg_past_member_2
+				if = { #add ser title
+					limit = { 
+						trait = knight
+						is_ruler = no 
+						NOT = { has_minor_title = title_prince }
+						NOT = { has_minor_title = title_prince_AGOT }
+						NOT = { has_minor_title = title_queen_mother }
+						NOT = { has_minor_title = title_ruler_consort }
+					}
+					if = {
+						limit = { is_female = no } 
+						set_special_character_title = title_ser
+					}
+					if = {
+						limit = { is_female = yes }
+						set_special_character_title = title_lady	
+					}
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = "OPTAkingsguard.65" #Living members
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				has_landed_title = d_kingsguard
+			}
+			custom_tooltip = { text = TOOLTIPKGCOMMANDER }		
+		}
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				NOT = { has_landed_title = d_kingsguard }
+				has_character_flag = kg_list_1
+			}
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			clr_character_flag = kg_list_1
+		}
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				NOT = { has_landed_title = d_kingsguard }
+				has_character_flag = kg_list_2
+			}
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			clr_character_flag = kg_list_2
+		}
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				NOT = { has_landed_title = d_kingsguard }
+				has_character_flag = kg_list_3
+			}
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			clr_character_flag = kg_list_3
+		}
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				NOT = { has_landed_title = d_kingsguard }
+				has_character_flag = kg_list_4
+			}
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			clr_character_flag = kg_list_4
+		}
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				NOT = { has_landed_title = d_kingsguard }
+				has_character_flag = kg_list_5
+			}
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			clr_character_flag = kg_list_5
+		}
+		kingsguard = {
+			limit = { 
+				is_alive = yes
+				NOT = { has_landed_title = d_kingsguard }
+				has_character_flag = kg_list_6
+			}
+			custom_tooltip = { text = TOOLTIPKGCURRENT }
+			clr_character_flag = kg_list_6
+		}
+	}
+	
+	option = {
+		name = "OPTBkingsguard.65" #Notable Past Commander
+		kingsguard = {
+			limit = { 
+				is_alive = no
+				has_landed_title = d_kingsguard
+			}
+			custom_tooltip = { text = TOOLTIPKGNOTABLEPASTCOMMANDER }
+		}
+	}
+	
+	option = {
+		name = "OPTCkingsguard.65" #Notable members
+		trigger = {
+			event_target:kg_past_member_1 = { always = yes }
+		}
+		event_target:kg_past_member_1 = {
+			custom_tooltip = { text = TOOLTIPKGPASTMEMBER }
+		}	
+	}
+	
+	option = {
+		name = "OPTCkingsguard.65" #Notable members
+		trigger = {
+			event_target:kg_past_member_2 = { always = yes }
+		}
+		event_target:kg_past_member_2 = {
+			custom_tooltip = { text = TOOLTIPKGPASTMEMBER }
+		}
+	}
+}
+
+#Sent by 777019 - Duty to house or king?
+character_event = {
+	id = kingsguard.66
+	desc = "EVTDESCkingsguard.66"
+	picture = "GFX_kingsguard"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAkingsguard.66" #My duty is to my house
+		ai_chance = {
+			factor = 10 
+
+			modifier = {
+				factor = 10
+				FROM = { FROM = { higher_tier_than = DUKE } } #is son of LP
+			}
+			modifier = {
+				factor = 10
+				FROM = { FROM = {  trait = rebel_leader }  } #is son of rebel leader
+			}
+			modifier = {
+				factor = 2
+				trait = familyperson
+			}
+			modifier = {
+				factor = 2
+				FROM = { trait = lunatic }
+			}
+			modifier = {
+				factor = 1.5
+				OR = { 
+					trait = dishonorable1
+					trait =	dishonorable2
+					trait =	dishonorable3
+					trait =	dishonorable4
+					trait =	dishonorable5
+					trait =	dishonorable6
+					trait =	dishonorable7
+					trait =	dishonorable8
+					trait =	dishonorable9
+					trait =	dishonorable10
+				}
+				
+					
+			}
+
+		}#endai
+		character_event = { id = kingsguard.29 } #Kingsguard drama start [ai only]
+		give_nickname = nick_the_oathbreaker
+	}#endopt
+
+	option = { 
+		name = "EVTOPTBkingsguard.66" #My duty is to the king
+		ai_chance = {
+			factor = 100
+
+			modifier = {
+				factor = 5
+				trait = honorable
+			}
+			modifier = {
+				factor = 5
+				trait = just
+			}
+			modifier = {
+				factor = 5
+				trait = honest
+			}
+		}#endai
+
+		FROM = { FROM = { character_event = { id = kingsguard.26 tooltip = EVTTOOLTIPkingsguard.26 } } }#Notification 'kin stays with king' to dynasty memeber
+	}
+}
+#Take a lover?
+character_event = {
+	id = kingsguard.67
+	desc = "EVTDESCkingsguard.67"
+	picture = GFX_evt_lovers
+	
+	capable_only = yes
+	prisoner = no
+	only_men = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = kingsguard
+		has_epidemic = no
+		is_ill = no
+		is_pregnant = no
+		trait = lustful
+		NOT = { trait = celibate }
+		NOT = { trait = chaste }
+		e_iron_throne = {
+			holder_scope = {
+				any_courtier = {
+					has_epidemic = no
+					is_ill = no
+					prisoner = no
+					is_abroad = no
+					is_pregnant = no
+					age = 16
+					NOT = { is_female = no }
+					OR = {
+						AND = {
+							NOT = { trait = homosexual }
+							ROOT = { NOT = { trait = homosexual } }
+							NOT = { is_female = no }
+						}	
+						AND = {
+							trait = homosexual 
+							ROOT = { trait = homosexual } 
+							is_female = no
+						}
+					}	
+					NOT = {
+						trait = celibate
+					}
+				}
+			}	
+		}	
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.67"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 10
+				trait = hedonist
+			}
+			modifier = {
+				factor = 3
+				trait = greedy
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+		}
+
+		set_character_flag = oathbreaker
+
+		e_iron_throne = {
+			holder_scope = {
+				random_courtier = {
+					limit = {
+						has_epidemic = no
+						is_ill = no
+						prisoner = no
+						is_abroad = no
+						is_pregnant = no
+						age = 16
+						OR = {
+							AND = {
+								is_female = yes
+								NOT = { trait = homosexual }
+								ROOT = { NOT = { trait = homosexual } }			
+							}	
+							AND = {
+								trait = homosexual 
+								is_female = no
+								ROOT = { trait = homosexual } 	
+							}
+						}	
+						NOT = {
+							trait = celibate
+						}
+					}
+					character_event = {
+						id = 64017
+						tooltip = "EVTTOOLTIPA64011"
+					}
+				}
+			}
+		}	
+	}
+	option = {
+		name = "EVTOPTBkingsguard.67" #I took a vow
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 10
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = shy
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = honorable
+				}
+			}
+			random = {
+				chance = 25
+				add_trait = honorable
+			}	
+		}
+	}
+}
+#Fellow KG finds out about lover
+character_event = {
+	id = kingsguard.68
+	desc = "EVTDESCkingsguard.68"
+	picture = GFX_evt_lovers
+	
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		trait = kingsguard
+		has_epidemic = no
+		is_ill = no
+		has_lover = no		
+		kingsguard = {
+			is_alive = yes
+			has_lover = yes
+			any_lover = { 
+				NOT = { same_sex = PREV } 
+				NOT = { has_landed_title = e_iron_throne }
+			}
+		}	
+		OR = {
+			NOT = { has_character_flag = dont_care_about_KG_lover }
+			had_character_flag = { flag = dont_care_about_KG_lover days = 1000 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 400
+		modifier = {
+			factor = 1.25
+			NOT = { intrigue = 4 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { intrigue = 6 }
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 10
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 12
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 14
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 16
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 18
+		}
+	}
+	
+	immediate = {
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				has_lover = yes
+				any_lover = { 
+					NOT = { same_sex = PREV } 
+					NOT = { has_landed_title = e_iron_throne }
+				}
+			}	
+			save_event_target_as = KG_has_the_lover
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.68" #Tell the King!
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 5
+				trait = honorable
+			}
+			modifier = {
+				factor = 5
+				trait = just
+			}
+			modifier = {
+				factor = 2
+				trait = honest
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+		}
+		event_target:KG_has_the_lover = {
+			tooltip = { show_portrait = yes }
+		}
+		e_iron_throne = {
+			holder_scope = {
+				character_event = { id = kingsguard.69 tooltip = TOOLTIPkingsguard.69 }
+			}
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.68" #It does no harm
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 2
+				trait = ruthless
+			}
+			modifier = {
+				factor = 5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 10
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+		}
+		set_character_flag = dont_care_about_KG_lover
+		clear_event_target = KG_has_the_lover
+	}
+}
+#Inform King, (also triggered by general adultery discovered event)
+character_event = {
+	id = kingsguard.69
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KG_has_the_lover = {
+			trait = kingsguard
+			is_alive = yes
+			has_lover = yes
+		}
+	}
+	
+	desc = {
+		text = EVTDESCkingsguard.69
+		trigger = { event_target:KG_has_the_lover = { NOT = { character = FROM } } }
+	}
+	desc = {
+		text = EVTDESCkingsguard.69B
+		trigger = { event_target:KG_has_the_lover = { character = FROM } }
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.69" #Execute Him!
+		trigger = { 
+			OR = {
+				NOT = { has_dlc = "Zeus" }
+				AND = {
+					has_regent = no
+					NOT = { primary_title = { has_law = justice_voting_power_1 } }
+				}	
+			}
+		}
+		ai_chance = {
+			factor = 25
+			
+			modifier = {
+				factor = 0.2
+				event_target:KG_has_the_lover = {
+					OR = {
+						dynasty = ROOT
+						is_close_relative = ROOT
+					}
+				}
+			}	
+			modifier = {
+				factor = 2.5
+				trait = just
+			}
+			modifier = {
+				factor = 1.5
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 3
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+			modifier = {
+				factor = 3
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						dynasty = ROOT
+						NOT = { character = ROOT }
+					}
+				}
+			}	
+			modifier = {
+				factor = 3
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						is_close_relative = ROOT
+						NOT = { character = ROOT }
+					}
+				}
+			}
+			modifier = {
+				factor = 4
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						is_married = ROOT
+					}
+				}
+			}
+		}
+		event_target:KG_has_the_lover = {	
+			any_lover = {
+				opinion = {
+					who = ROOT
+					modifier = opinion_executed_lover
+					years = 15		
+				}
+				if = {
+					limit = {
+						is_married = ROOT
+					}
+					set_character_flag = cheated_on_king
+					if = {
+						limit = { NOT = { event_target:KG_has_the_lover = { character = FROM } } }
+						reverse_opinion = {
+							modifier = opinion_unfaithful_wife
+							who = ROOT
+						}
+					}	
+					ROOT = {
+						character_event = { id = kingsguard.75 tooltip="TOOLTIPkingsguard.75" } 
+					}
+				}
+			}
+			character_event = { id = kingsguard.70 tooltip = TOOLTIPkingsguard.70 } 
+		}
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = kingsguard.71 }
+			}
+		}	
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.69" #Geld and send him to the wall
+		trigger = { 
+			OR = {
+				NOT = { has_dlc = "Zeus" }
+				AND = {
+					has_regent = no
+					NOT = { primary_title = { has_law = justice_voting_power_1 } }
+				}	
+			}
+			event_target:KG_has_the_lover = { is_female = no }
+			d_nightswatch = {
+				holder_scope = {
+					trait = nightswatch
+					demesne_size = 1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				trait = just
+			}
+			modifier = {
+				factor = 3
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 4
+				trait = cruel
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						dynasty = ROOT
+					}
+				}
+			}	
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						is_close_relative = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						is_married = ROOT
+					}
+				}
+			}
+		}
+		event_target:KG_has_the_lover = {
+			any_lover = {
+				opinion = {
+					who = ROOT
+					modifier = opinion_gelded_lover
+					years = 15		
+				}
+				if = {
+					limit = {
+						is_married = ROOT
+					}
+					if = {
+						limit = { NOT = { event_target:KG_has_the_lover = { character = FROM } } }
+						reverse_opinion = {
+							modifier = opinion_unfaithful_wife
+							who = ROOT
+						}
+					}	
+					set_character_flag = cheated_on_king
+					ROOT = {
+						character_event = { id = kingsguard.75 tooltip="TOOLTIPkingsguard.75" } 
+					}
+				}
+			}
+			add_trait = eunuch
+			remove_trait = kingsguard
+			custom_tooltip = { 
+				text = TOOLTIPBANISHTONW 
+				hidden_tooltip = { character_event = { id = nightswatch.2098 } } #set banisher as FROMFROM
+			}
+			
+			opinion = {
+				modifier = opinion_castrated_me
+				who = ROOT
+			}
+			hidden_tooltip = { 
+				character_event = { id = kingsguard.72 }			
+			}
+		}
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = kingsguard.73 }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTDkingsguard.69" #Imprison and remove fom kingsguard
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				trait = just
+			}
+			modifier = {
+				factor = 3
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 4
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						dynasty = ROOT
+					}
+				}
+			}	
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						is_close_relative = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				event_target:KG_has_the_lover = {
+					any_lover = {
+						is_married = ROOT
+					}
+				}
+			}
+		}
+		event_target:KG_has_the_lover = {
+			any_lover = {
+				if = {
+					limit = {
+						is_married = ROOT
+					}
+					if = {
+						limit = { NOT = { event_target:KG_has_the_lover = { character = FROM } } }
+						reverse_opinion = {
+							modifier = opinion_unfaithful_wife
+							who = ROOT
+						}
+					}	
+					set_character_flag = cheated_on_king
+					ROOT = {
+						character_event = { id = kingsguard.75 tooltip="TOOLTIPkingsguard.75" } 
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							NOT = { has_dlc = "Zeus" }
+							AND = {
+								has_regent = no
+								NOT = { primary_title = { has_law = justice_voting_power_1 } }
+							}	
+						}
+					}
+				}
+				remove_trait = kingsguard
+			}	
+			imprison = ROOT
+			hidden_tooltip = { 
+				character_event = { id = kingsguard.7299 }			
+			}
+		}
+		hidden_tooltip = {
+			FROM = {
+				character_event = { id = kingsguard.7399 }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.68" #It does no harm
+		trigger = { 
+			OR = {
+				NOT = { has_dlc = "Zeus" }				
+				NOT = { primary_title = { has_law = justice_voting_power_1 } }
+				has_regent = no
+			}
+		}
+		ai_chance = {
+			factor = 40
+						
+			modifier = {
+				factor = 1.5
+				event_target:KG_has_the_lover = { reverse_opinion = { who = ROOT value = 25 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_has_the_lover = { reverse_opinion = { who = ROOT value = 50 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_has_the_lover = { reverse_opinion = { who = ROOT value = 75 } }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_has_the_lover = { reverse_opinion = { who = ROOT value = 100 } }
+			}
+			modifier = {
+				factor = 0.66
+				event_target:KG_has_the_lover = { NOT = { reverse_opinion = { who = ROOT value = -24 } } }
+			}
+			modifier = {
+				factor = 0.66
+				event_target:KG_has_the_lover = { NOT = { reverse_opinion = { who = ROOT value = -49 } } }
+			}
+			modifier = {
+				factor = 0.66
+				event_target:KG_has_the_lover = { NOT = { reverse_opinion = { who = ROOT value = -74 } } }
+			}
+			modifier = {
+				factor = 0.66
+				event_target:KG_has_the_lover = { NOT = { reverse_opinion = { who = ROOT value = -99 } } }
+			}
+			modifier = {
+				factor = 3
+				event_target:KG_has_the_lover = { is_friend = ROOT }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:KG_has_the_lover = { is_close_relative = ROOT }
+			}
+			modifier = {
+				factor = 0.33
+				event_target:KG_has_the_lover = { is_rival = ROOT }
+			}
+			
+			modifier = {
+				factor = 3
+				trait = hedonist
+			}
+			modifier = {
+				factor = 3
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 3
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+			modifier = {
+				factor = 2
+				trait = patient
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 0
+				NOT = { trait = arbitrary }
+				NOT = { trait = lunatic }
+				primary_title = { has_law = justice_voting_power_1 }
+			}
+		}
+		event_target:KG_has_the_lover = {
+			random_lover = {
+				limit = { is_married = ROOT }
+				if = {
+					limit = { NOT = { event_target:KG_has_the_lover = { character = FROM } } }
+					reverse_opinion = {
+						modifier = opinion_unfaithful_wife
+						who = ROOT
+					}
+				}	
+				ROOT = { prestige = -250 }
+			}			
+		}
+		extrajudicial_action_tyranny_effect = yes
+		FROM = {
+			if = {
+				limit = {
+					trait = kingsguard
+					NOT = { character = event_target:KG_has_the_lover }
+				}
+				hidden_tooltip = { character_event = { id = kingsguard.74 } }
+				opinion = {
+					modifier = opinion_ignored_accusation
+					who = ROOT
+				}
+			}	
+		}
+	}
+}
+#Inform KG executed
+character_event = {
+	id = kingsguard.70
+	desc = "EVTDESCkingsguard.70"
+	picture = "GFX_evt_beheading"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Oh dear" 
+		tooltip = {
+			death = {
+				death_reason = death_execution
+				killer = FROM
+			}
+		}	
+		hidden_tooltip = { FROM = { character_event = { id = imprisoned.10 } } } #Select execution method		
+	}
+}
+#Inform informer
+character_event = {
+	id = kingsguard.71
+	desc = "EVTDESCkingsguard.71"
+	picture = "GFX_evt_beheading"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAkingsguard.71" 
+		reverse_opinion = {
+			modifier = opinion_loyal
+			who = FROM
+			years = 5
+		}	
+	}
+}	
+#Inform KG gelded
+character_event = {
+	id = kingsguard.72
+	desc = "EVTDESCkingsguard.72"
+	picture = "GFX_evt_torture"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		father = { opinion = { who = FROM modifier = opinion_castrated_son } }
+		mother = { opinion = { who = FROM modifier = opinion_castrated_son } }
+		any_dynasty_member = {
+			limit = {
+				is_close_relative = ROOT
+				NOT = { any_child = { character = ROOT } } 
+			}
+			opinion = { who = FROM modifier = opinion_castrated_kin }
+		}
+	}
+	
+	option = {
+		name = "Not my manhood!" 
+		add_trait = eunuch
+		remove_trait = kingsguard
+	}
+}
+#Inform informer
+character_event = {
+	id = kingsguard.73
+	desc = "EVTDESCkingsguard.73"
+	picture = "GFX_evt_torture"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAkingsguard.71" 
+		reverse_opinion = {
+			modifier = opinion_loyal
+			who = FROM
+			years = 5
+		}	
+	}
+}
+#Inform informer ignored
+character_event = {
+	id = kingsguard.74
+	desc = "EVTDESCkingsguard.74"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAkingsguard.74" 
+	}
+}
+#Inform KG imprisoned
+character_event = {
+	id = kingsguard.7299
+	desc = "EVTDESCkingsguard.7299"
+	picture = "GFX_evt_into_the_dungeon"
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		banish = yes
+		random_dynasty_member = { 
+			limit = { 
+				is_alive = yes
+				NOT = { character = FROM }
+			}
+			if = {
+				limit = { is_ruler = yes }
+				ROOT = { move_character = PREV }
+			}
+			if = {
+				limit = { NOT = { is_ruler = yes } }
+				liege = { ROOT = { move_character = PREV } }
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTAkingsguard.7299" 
+		remove_trait = kingsguard
+		imprison = FROM
+	}
+}
+#Inform informer
+character_event = {
+	id = kingsguard.7399
+	desc = "EVTDESCkingsguard.7399"
+	picture = "GFX_evt_into_the_dungeon"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAkingsguard.71" 
+		reverse_opinion = {
+			modifier = opinion_loyal
+			who = FROM
+			years = 5
+		}	
+	}
+}
+#What to do with cheating spouse?
+character_event = {
+	id = kingsguard.75
+	desc = "EVTDESCkingsguard.75"
+	picture = GFX_evt_lovers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTAkingsguard.75" #Execute!
+		trigger = { 
+			OR = {
+				NOT = { has_dlc = "Zeus" }
+				AND = {
+					has_regent = no
+					NOT = { primary_title = { has_law = justice_voting_power_1 } }
+				}	
+			}
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2.5
+				trait = just
+			}
+			modifier = {
+				factor = 1.5
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 3
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+			modifier = {
+				factor = 3
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 2
+				trait = cruel
+			}
+		}
+		any_spouse = {
+			limit = { has_character_flag = cheated_on_king }
+			hidden_tooltip = { character_event = { id = 154 } } #on_executed event
+			death = {
+				death_reason = death_execution
+				killer = ROOT
+			}
+			clr_character_flag = cheated_on_king
+		}
+	}
+	
+	option = {
+		name = "EVTOPTBkingsguard.75" #Imprison
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				trait = just
+			}
+			modifier = {
+				factor = 3
+				trait = honorable
+			}
+			modifier = {
+				factor = 2
+				trait = diligent
+			}
+			modifier = {
+				factor = 2
+				trait = zealous
+			}
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+			modifier = {
+				factor = 2
+				trait = wroth
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 4
+				trait = cruel
+			}
+		}
+		any_spouse = {
+			limit = { has_character_flag = cheated_on_king }
+			imprison = ROOT
+			clr_character_flag = cheated_on_king
+		}
+	}
+	
+	option = {
+		name = "EVTOPTCkingsguard.75" #Forgive
+		trigger = { 
+			OR = {
+				NOT = { has_dlc = "Zeus" }				
+				NOT = { primary_title = { has_law = justice_voting_power_1 } }
+				has_regent = no
+			}
+		}
+		ai_chance = {
+			factor = 25
+			
+			modifier = {
+				factor = 0
+				NOT = { trait = arbitrary }
+				NOT = { trait = lunatic }
+				primary_title = { has_law = justice_voting_power_1 }
+			}
+			modifier = {
+				factor = 5
+				trait = hedonist
+			}
+			modifier = {
+				factor = 5
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 3
+				trait = cynical
+			}
+			modifier = {
+				factor = 10
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				trait = kind
+			}
+		}
+		prestige = -50
+		extrajudicial_action_tyranny_effect = yes
+		any_spouse = {
+			limit = { has_character_flag = cheated_on_king }
+			opinion = {
+				who = ROOT
+				modifier = opinion_merciful
+				years = 3
+			}
+			clr_character_flag = cheated_on_king
+		}
+	}
+}
+###Loaning Kignsguard Events###
+character_event = {
+	id = kingsguard.76
+	
+	is_triggered_only = yes
+	hide_window = yes
+	only_rulers = yes
+	
+	trigger = {
+		demesne_size = 1
+		e_iron_throne = { #Must either be child of King or married to a son of the king
+			holder_scope = {			
+				OR = {
+					any_child = { character = ROOT }
+					current_heir = { 
+						dynasty = PREV	
+						OR = {
+							character = ROOT 
+							spouse = { 
+								character = ROOT 
+								top_liege = { has_landed_title = e_iron_throne }					
+							}	
+						}
+					}
+					any_child = {
+						is_female = no
+						is_ruler = no
+						NOT = { trait = bastard } 
+						spouse = { 
+							character = ROOT 
+							top_liege = { has_landed_title = e_iron_throne }					
+						}				
+					}
+				}
+				NOT = { war_with = ROOT }
+				NOT = { character = ROOT }
+				NOT = { reverse_has_opinion_modifier = { who = ROOT modifier = opinion_withheld_kingsguard } }
+			}
+		}
+		NAND = {
+			prisoner = yes
+			host = { has_landed_title = e_iron_throne }
+		}
+		NOT = { trait = bastard }
+		NOT = { trait = kingsguard }
+		NOT = { trait = nightswatch }
+		NOT = { trait = archmaester }
+		NOT = { trait = maester }
+		NOT = { is_inaccessible_trigger = yes }
+		is_priest = no
+		is_theocracy = no
+		kingsguard = {
+			is_alive = yes
+			is_ruler = no
+			liege = { has_landed_title = d_kingsguard }
+			NOT = { trait = incapable }
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			NOT = { has_severe_disability_trigger = yes }
+			is_ill = no
+		}
+		NOT = { any_courtier = { trait = kingsguard } }		
+	}
+	
+	immediate = {
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				is_ruler = no
+				liege = { has_landed_title = d_kingsguard }
+				prisoner = no
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { has_severe_disability_trigger = yes }
+				is_ill = no
+			}
+			set_character_flag = loan_candidate
+			save_event_target_as = loan_candidate_1
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				is_ruler = no
+				liege = { has_landed_title = d_kingsguard }
+				prisoner = no
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { has_severe_disability_trigger = yes }
+				is_ill = no
+				NOT = { has_character_flag = loan_candidate }
+			}
+			set_character_flag = loan_candidate
+			save_event_target_as = loan_candidate_2
+		}
+		kingsguard = {
+			limit = {
+				is_alive = yes
+				is_ruler = no
+				liege = { has_landed_title = d_kingsguard }
+				prisoner = no
+				NOT = { is_inaccessible_trigger = yes }
+				NOT = { has_severe_disability_trigger = yes }
+				is_ill = no
+				NOT = { has_character_flag = loan_candidate }
+			}
+			save_event_target_as = loan_candidate_3
+		}
+		e_iron_throne = { holder_scope = { character_event = { id = kingsguard.77 } } }
+	}
+	
+	option = {
+		name = OK
+	}
+}
+#King decides
+character_event = {
+	id = kingsguard.77
+	desc = "EVTDESCkingsguard.77"
+	picture = GFX_kingsguard
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = e_iron_throne
+		NOT = { character = FROM }
+	}
+	
+	option = { #Send candidate 1
+		name = "EVTOPTAkingsguard.77"
+		trigger = { 
+			NOT = { trait = incapable } 
+			event_target:loan_candidate_1 = { always = yes }
+		}
+		event_target:loan_candidate_1 = {
+			move_character = FROM
+			hidden_tooltip = { opinion = { who = FROM modifier = loan_kingsguard years = 100 } }
+			clr_character_flag = loan_candidate
+		}
+		hidden_tooltip = {
+			FROM = { letter_event = { id = kingsguard.78 } }
+			event_target:loan_candidate_2 = { clr_character_flag = loan_candidate }
+		}
+	}
+	
+	option = { #Send candidate 2
+		name = "EVTOPTBkingsguard.77"
+		trigger = { 
+			NOT = { trait = incapable } 
+			event_target:loan_candidate_2 = { always = yes }
+		}
+		event_target:loan_candidate_2 = {
+			move_character = FROM
+			hidden_tooltip = { opinion = { who = FROM modifier = loan_kingsguard years = 100 } }
+			clr_character_flag = loan_candidate
+		}
+		hidden_tooltip = {
+			FROM = { letter_event = { id = kingsguard.78 } }
+			event_target:loan_candidate_1 = { clr_character_flag = loan_candidate }
+		}
+	}
+	
+	option = { #Send candidate 3
+		name = "EVTOPTCkingsguard.77"
+		trigger = { 
+			NOT = { trait = incapable } 
+			event_target:loan_candidate_3 = { always = yes }
+		}
+		event_target:loan_candidate_3 = {
+			move_character = FROM
+			hidden_tooltip = { opinion = { who = FROM modifier = loan_kingsguard years = 100 } }
+		}
+		hidden_tooltip = {
+			FROM = { letter_event = { id = kingsguard.78 } }
+			event_target:loan_candidate_1 = { clr_character_flag = loan_candidate }
+			event_target:loan_candidate_2 = { clr_character_flag = loan_candidate }
+		}
+	}
+	
+	option = { #Send no-one
+		name = "EVTOPTDkingsguard.77"
+		trigger = { NOT = { trait = incapable } }
+		reverse_opinion = { who = FROM modifier = opinion_withheld_kingsguard years = 10 }
+		hidden_tooltip = {
+			FROM = { character_event = { id = kingsguard.79 } }
+			event_target:loan_candidate_1 = { clr_character_flag = loan_candidate }
+			event_target:loan_candidate_2 = { clr_character_flag = loan_candidate }
+		}
+	}
+	
+	option = { #incapable
+		name = "EVTOPTEkingsguard.77"
+		trigger = { trait = incapable }
+		tooltip_info = incapable
+		event_target:loan_candidate_1 = {
+			move_character = FROM
+			hidden_tooltip = { opinion = { who = FROM modifier = loan_kingsguard years = 100 } }
+			clr_character_flag = loan_candidate
+		}
+		hidden_tooltip = {
+			FROM = { letter_event = { id = kingsguard.78 } }
+			event_target:loan_candidate_2 = { clr_character_flag = loan_candidate }
+		}
+	}
+}
+#Inform KG sent
+letter_event = {
+	id = kingsguard.78
+	desc = "EVTDESCkingsguard.78"
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = OK
+		random_courtier = {
+			limit = {
+				trait = kingsguard
+				has_opinion_modifier = { who = ROOT modifier = loan_kingsguard }
+			}
+			tooltip = { show_portrait = yes }
+		}
+	}
+}
+#Inform KG not sent
+character_event = {
+	id = kingsguard.79
+	desc = "EVTDESCkingsguard.79"
+	picture = GFX_kingsguard
+	
+	is_triggered_only = yes
+
+	option = { 
+		name = "EVTOPTAkingsguard.79"
+	}
+}		
