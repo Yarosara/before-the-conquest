@@ -1843,7 +1843,7 @@ spriteTypes = {
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
-	}		   
+	}
 #added by Rodri 
 	spriteType = {
 		name = "GFX_trait_valyrian_steel"
@@ -2454,7 +2454,7 @@ spriteTypes = {
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
-	spriteType = {	   
+	spriteType = {
 		name = "GFX_trait_septon"
 		texturefile = "gfx/traits/septon.tga"
 		noOfFrames = 1
@@ -2597,7 +2597,7 @@ spriteTypes = {
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
-	spriteType = {							   	   
+	spriteType = {
 		name = "GFX_trait_wikid"
 		texturefile = "gfx/traits/wikid.tga"
 		noOfFrames = 1
@@ -2633,8 +2633,8 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
-		name = "GFX_trait_concession"
-		texturefile = "gfx/traits/concession.tga"
+		name = "GFX_trait_blackpaw"
+		texturefile = "gfx/traits/blackpaw.tga"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"
