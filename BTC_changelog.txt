@@ -1,21 +1,27 @@
-===========
+============
  Changelog
-=========== 
+============
 
-V.0.1 - Black Bear's Tale
+V.0.1 - The Tale of the Moon King
 -----------
 
-general/traits
+common/traits
 - added exalted traits (blue heart)
- > added "Exalted Blood"
- > added "Touched by Fate"
- > added "Blessed by R'hllor"
+ > added "Exalted Blood" congenital trait
+ > added "Touched by Fate" special trait
+ > added "Blessed by R'hllor" religious trait
 - changed "Dragon Dreams" trait
  > "Dragon Dreams" is now cogenital and can occur naturally at birth
+- added "Blacksmith" lifestyle trait
+
+common/dynasties
+- added House Myrth (replaces House Denorys)
+- added custom coa for House Tomburu
 
 gfx/interface
 - new icon "Nighswatch" governament
 - new icon "Triarch" governament
+- new icon "Abdicate" decision
 
 gfx/traits
 - new icon "Valyrian Armor" (improved colors)
@@ -25,3 +31,14 @@ history/characters
 - added "Edrick the Black Bear" (House Mormont)
 - added "Daryn the Little Bear" (House Mormont)
 - added "Lyra the Wise Wolf" (House Stark)
+- added "Baldo the Moon King" (House Myrth)
+- added "Phara the Dreamer" (House Tomburu)
+
+miscellaneous
+- ????
+
+credits
+- talias (trait icons)
+- Daniel (valyrian steel sword icons)
+- LancelotLoire (congenital overhaul inspiration)
+- blackninja9939 (so many things I don't even)
