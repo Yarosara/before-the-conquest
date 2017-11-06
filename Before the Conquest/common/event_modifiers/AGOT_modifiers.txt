@@ -1,0 +1,850 @@
+#custom
+employed_cityguard = 
+{
+	heavy_infantry = 80
+	knights = 10
+	castle_tax_modifier = -0.10
+	city_tax_modifier = -0.10
+	temple_tax_modifier = -0.10
+	icon = 13
+}
+cityguard_busy = 
+{
+	castle_tax_modifier = -0.05
+	city_tax_modifier = -0.05
+	temple_tax_modifier = -0.05
+	icon = 12
+}
+cityguard_drilling = {
+	land_morale = 0.05
+	levy_size = 0.05
+	icon = 13
+}
+forced_training = {
+	local_revolt_risk = 0.025
+	levy_reinforce_rate = 0.15
+	city_tax_modifier = -0.05
+	icon = 13
+}
+capital_defense = {
+	fort_level = 1
+	garrison_size = 0.125
+	icon = 13
+}
+burned_land = {
+	max_attrition = 0.5
+	supply_limit = -3
+	city_tax_modifier = -0.3
+	temple_tax_modifier = -0.3
+	icon = 29
+}
+tyranny = {
+	local_revolt_risk = -0.1
+	supply_limit = -1
+	city_tax_modifier = -0.15
+	temple_tax_modifier = -0.2
+	#assassinate_chance_modifier = 0.2
+	plot_power_modifier = 0.1
+	arrest_chance_modifier = 0.4
+	icon = 29
+}
+
+###Added by Oga###
+suspected_skinchanger = {
+	learning = 2
+	monthly_character_piety = 1	
+	wildling_religion_opinion = 10
+	old_gods_opinion = 10
+	general_opinion = -5
+	icon = 2
+}
+squiering_refused = {
+	monthly_character_prestige = -0.1
+	icon = 31
+}
+court_education = {
+	diplomacy = 1
+	intrigue = 1
+	icon = 18
+}
+martial_education = {
+	martial = 1
+	icon = 13
+}
+steward_education = {
+	stewardship = 1
+	icon = 4
+}
+maester_education = {
+	learning = 1
+	icon = 2
+}
+no_education = {
+	icon = 20
+}
+education_high = {
+	icon = 2
+	learning = 4
+}
+education_medium = {
+	icon = 2
+	learning = 2
+}
+education_low = {
+	icon = 2
+	#learning = 2
+}
+education_almost_nothing = {
+	icon = 2
+	learning = -2
+}
+##Nightswatch roles##
+
+nw_ranger = {
+	monthly_character_prestige = 0.1
+	#same_opinion = 5
+	general_opinion = 5
+	free_folk_opinion = -10
+	icon = 1
+}
+nw_steward = {
+	monthly_character_prestige = 0.05
+	#same_opinion = 5
+	icon = 4
+}
+nw_builder = {
+	monthly_character_prestige = 0.05
+	#same_opinion = 5
+	icon = 12
+}
+##Fire obssessed
+reading_valyrian_books = {
+	learning = 2
+	icon = 20
+}
+pyromancer = {
+	learning = 2
+	intrigue = 2
+	icon = 29
+}
+dragon_eggs = {
+	monthly_character_prestige = 0.2
+	intrigue = 2
+	icon = 4
+}
+troops_likes_maester = {
+	land_morale = 0.1
+	icon = 13
+}
+troops_unnerve_maester = {
+	land_morale = -0.1
+	icon = 13
+}
+cultural_tech_sabotage = {
+	tech_growth_modifier_culture = -0.05
+	icon = 12
+}
+burned_peasant = {
+	local_tax_modifier = -0.1
+	city_levy_size = -0.1
+	castle_levy_size = -0.1
+	temple_levy_size = -0.1
+	local_revolt_risk = 0.04
+	icon = 36 #91
+}
+
+## Secret Bastard Modifiers
+secretly_inbred = {
+	fertility = -0.3
+	health = -1.5
+	diplomacy = -5
+	intrigue = -5
+	stewardship = -5
+	martial = -5
+	learning = -5
+	icon = 36
+	is_visible = {
+		OR = { #only biological parents know this
+			is_mother = FROM
+			FROM = { real_father = { character = PREVPREV } }
+		}	
+	}
+}
+
+suspected_bastard = {
+	monthly_character_prestige = -0.5
+	diplomacy = -2
+	icon = 36
+}
+##Mega wars
+new_rebel_leader = {
+	icon = 36
+}
+mega_war_no_levies = {
+	castle_vassal_max_levy = -1
+	city_vassal_max_levy = -1
+	temple_vassal_max_levy = -1
+	castle_vassal_min_levy = -1
+	city_vassal_min_levy = -1
+	temple_vassal_min_levy = -1
+	icon = 36
+}
+indep_war = {
+	icon = 36
+}
+indep_faction_won = {
+	icon = 36
+}
+asoiaf_peasants_dying = {
+	levy_reinforce_rate = -0.4
+	city_tax_modifier = -0.3
+	temple_tax_modifier = -0.3
+	icon = 29
+}
+loan_vassals = {
+general_opinion = -5
+stewardship = -1
+icon = 24
+}
+
+## Rebuilding Harrenhal
+rebuilding_harrenhal = { icon = 9 }
+debris0 = { icon = 22 }
+debris1 = { icon = 22 }
+debris2 = { icon = 22 }
+debris3 = { icon = 22 }
+hbuild1 = { icon = 4 }
+hbuild2 = { icon = 4 }
+hbuild3 = { icon = 4 }
+completeharren1 = { icon = 7 }
+completeharren2 = { icon = 7 }
+completeharren3 = { icon = 7 }
+goodstuff1 = { icon = 2 }
+goodstuff2 = { icon = 2 }
+goodstuff3 = { icon = 2 }
+goodstuff4 = { icon = 2 }
+goodstuff5 = { icon = 2 }
+goodstuff6 = { icon = 2 }
+badstuff1 = { icon = 20 }
+badstuff2 = { icon = 20 }
+badstuff3 = { icon = 20 }
+badstuff4 = { icon = 20 }
+badstuff5 = { icon = 20 }
+badstuff6 = { icon = 20 }
+
+wedding = {
+icon = 39
+}
+holding_ball = {
+	vassal_opinion = 10
+	#monthly_character_prestige = -1
+    global_revolt_risk = -0.025
+	icon = 7
+}
+ball_timer = { icon = 1 }
+lavish_wedding = {
+	vassal_opinion = 10
+	global_revolt_risk = -0.025
+	icon = 7
+}
+medium_wedding = {
+	vassal_opinion = 5
+	icon = 7
+}
+
+betrayal_attempt = {
+icon = 13
+}
+abomination_of_incest = {
+	general_opinion = -20
+	valyrian_rel_group_opinion = 20
+	valyrian_opinion = 20
+	icon = 36
+}
+grandchild_of_incest = {
+	general_opinion = -10
+	valyrian_rel_group_opinion = 10
+	valyrian_opinion = 10
+	icon = 36
+}
+unholy_king_deposed = {
+	icon = 36
+}
+killed_spouse = {
+	icon = 36
+}
+sacked = {
+	supply_limit = -3
+	local_tax_modifier = -0.75
+	levy_size = -0.75
+	garrison_size = -0.25
+	fort_level = -4
+	icon = 29
+}
+utterly_defeated = {
+	supply_limit = -3
+	local_tax_modifier = -0.5
+	levy_size = -0.9
+	garrison_size = -0.25
+	icon = 29
+}
+child = {
+	fertility = -1000
+	icon = 36
+}
+court_jester_mt = {
+	general_opinion = -5
+	icon = 36
+}
+liege_loan = {
+	icon = 24
+}
+madetheeight = {
+	monthly_character_prestige = 0.1
+	monthly_character_piety = -0.05
+	icon = 26
+}
+deposed_AGOT = {
+	general_opinion = -5
+	diplomacy = -5
+	icon = 36
+}
+abolished_first_night = {
+	global_revolt_risk = -0.03
+	icon = 32
+}
+legalised_first_night = {
+	global_revolt_risk = 0.03
+	icon = 35
+}
+claimed_first_night = {
+	local_revolt_risk = 0.03
+	icon = 35
+}
+##House of the Undying##
+false_visions_1 = {
+	intrigue = -1
+	icon = 23
+}
+false_visions_2 = {
+	intrigue = -2
+	icon = 23
+}
+false_visions_3 = {
+	intrigue = -3
+	icon = 23
+}
+insight_into_the_past_1 = {
+	learning = 1
+	icon = 2
+}
+insight_into_the_past_2 = {
+	learning = 2
+	icon = 2
+}
+insight_into_the_past_3 = {
+	learning = 3
+	icon = 2
+}
+prophesied_future_1 = {
+	intrigue = 1
+	icon = 9
+}
+prophesied_future_2 = {
+	intrigue = 2
+	icon = 9
+}
+prophesied_future_3 = {
+	intrigue = 3
+	icon = 9
+}
+high_faith_authority = {
+	icon = 9
+}
+foreign_trainer = {
+	icon = 13
+}
+installed_pretender = {
+	icon = 13
+}
+looted_by_clansmen = {
+	supply_limit = -1
+	local_revolt_risk = 0.04
+	local_tax_modifier = -0.25
+	levy_size = -0.15
+	icon = 29
+}
+clansmen_subdued = {
+	local_revolt_risk = -0.04
+	local_tax_modifier = 0.15
+	levy_size = 0.1
+	icon = 13
+}
+lonely_campaign_bastard = {
+	icon = 13
+}
+gift_zorse = {
+	monthly_character_prestige = 0.1
+	icon = 1
+}
+zorse_rider = {
+	monthly_character_prestige = 0.1
+	martial = 1
+	#morale_defence = 0.1
+	#cavalry = 0.1
+	icon = 1
+}
+nominated_heir = {
+	monthly_character_prestige = 0.1
+	icon = 7
+}
+
+challenged_child = {
+	learning = -4
+	icon = 36
+	is_visible = {
+		always = no
+	}
+}
+NW_broken_vows = {
+	vassal_opinion = -25
+	first_men_opinion = -15
+	andal_opinion = -15
+	dornish_opinion = -15
+	general_opinion = -10
+	icon = 36
+}
+NW_neglected_ranger = {
+	vassal_opinion = -10
+	icon = 36
+}
+
+force_trained = {
+	icon = 1
+}
+training_son = {
+	icon = 1
+}
+appointed_female_kingsguard = {
+	vassal_opinion = -5
+	icon = 29
+}
+great_council_heir = {
+	diplomacy = 1
+	icon = 7
+}
+wol_war_fit = {
+	health = 2
+	combat_rating = 1.17
+	icon = 5
+}
+
+weak_triarch = {
+	vassal_opinion = -5
+	diplomacy = -2
+	icon = 36
+}
+
+prostitution_illegal = {
+	local_revolt_risk = 0.07
+	local_tax_modifier = -0.1
+	icon = 35
+}
+donated_to_poor = {
+	local_revolt_risk = -0.07
+	local_tax_modifier = 0.05
+	levy_size = 0.05
+	icon = 8
+}
+chastity_belt = {
+	fertility = -1
+	icon = 8
+}
+fired_from_council_by_regent = {
+	icon = 31
+}
+suspected_of_incest = {
+	general_opinion = -15
+	valyrian_rel_group_opinion = 15
+	valyrian_opinion = 15
+	monthly_character_piety = -0.2
+	monthly_character_prestige = -0.2
+	icon = 36
+}
+went_on_foreign_tour = {
+	icon = 7
+}
+red_death = {
+	city_tax_modifier = -0.8
+	supply_limit = -4
+	max_attrition = 0.05
+	icon = 89
+}
+disguised_at_nightswatch = {
+	icon = 8
+}
+married_a_lowborn = {
+	vassal_opinion = -10
+	icon = 36
+}
+wildling_revolt_timer = {
+	icon = 36
+}
+general_unrest = {
+	global_revolt_risk = 0.05
+	global_tax_modifier = -0.1
+	icon = 29
+}
+crushed_religious_revolt = {
+	global_revolt_risk = -0.05
+	icon = 35
+}
+hunting_white_lemur = {
+	martial = 1
+	icon = 1
+}
+dwelling_temple_of_love = {
+	fertility = -10 #to discourage marriage
+	monthly_character_piety = 4
+	icon = 8
+}
+unicorn_rider = {
+	monthly_character_prestige = 0.1
+	martial = 1
+	#morale_defence = 0.1
+	#cavalry = 0.1
+	icon = 1
+}
+buidling_summerhall = {
+	icon = 9
+}
+summerhall_stage1 = {
+	icon = 4
+}
+summerhall_stage2 = {
+	icon = 4
+}
+summerhall_stage3 = { 
+	icon = 4
+}
+summerhall_complete = { 
+	icon = 9
+}
+summerhall_ore_found = { 
+	icon = 11
+}
+summerhall_trader_investment = { 
+	icon = 6
+} 
+reevaluate_loyalist_faction = { 
+	icon = 6
+} 
+owns_valyrian_steel_sword = {
+	vassal_opinion = 5
+	combat_rating = 2
+	icon = 79
+}
+jhattar_of_jogos_nhai = {
+	general_opinion = 5
+	global_revolt_risk = -0.05
+	land_morale = 0.25
+	icon = 1
+}
+stannis_granting_north = {
+	icon = 6
+}
+owns_a_brothel = {
+	icon = 4
+	monthly_character_piety = -1
+	church_opinion = -15
+	summer_rel_opinion = 10
+	monthly_character_wealth = 2.5
+}
+redgod_reveal_plots_timer = {
+	icon = 15
+}
+redgod_healing_timer = {
+	icon = 15
+}
+hosting_a_funeral = {
+	icon = 8
+	monthly_character_piety = 0.25
+}
+held_funeral = {
+	icon = 8
+	monthly_character_piety = 0.1
+}
+dragon_dreams_reveal_plots_timer = {
+	icon = 15
+}
+abandoned_holding = {
+	icon = 29
+	levy_size = -2
+	garrison_size = -0.25
+	local_tax_modifier = -1
+	fort_level = 9000
+}
+province_neglect = {
+	icon = 29
+	local_tax_modifier = -0.1
+}
+enormous_flagship = {
+	icon = 1
+	martial = 1
+	monthly_character_prestige = 0.5
+}
+regular_flagship = {
+	icon = 1
+	martial = 1
+	monthly_character_prestige = 0.25
+}
+small_flagship = {
+	icon = 1
+	monthly_character_prestige = 0.1
+}
+flagship_morale = {
+	land_morale = 0.1
+	icon = 13
+}
+defeated_pirate = { 
+	icon = 13
+}
+cut_on_iron_throne = {
+	vassal_opinion = -5
+	icon = 36
+}
+granted_royal_privilege_modifier = {
+	icon = 7
+	monthly_character_prestige = 1.5
+	vassal_opinion = 5
+}
+burned_for_rhllor = {
+	levy_size = -0.5
+	levy_reinforce_rate = -0.5
+	local_tax_modifier = -0.5
+	icon = 19
+}
+high_valyrian_modifier = {
+	icon = 7
+
+	global_revolt_risk = -0.03
+}
+elected_triarch_1 = {	
+	vassal_opinion = 18
+	icon = 7
+}
+elected_triarch_2 = {
+	vassal_opinion = 9
+	icon = 7
+}
+# Bankruptcy
+negative_money_1 = {
+	icon = 24
+	
+	land_morale = -0.25
+	general_opinion = -10
+	global_revolt_risk = 0.01
+}
+
+negative_money_2 = {
+	icon = 24
+	
+	land_morale = -0.375
+	general_opinion = -20
+	global_revolt_risk = 0.02
+}
+
+negative_money_3 = {
+	icon = 24
+	
+	land_morale = -0.5
+	general_opinion = -30
+	global_revolt_risk = 0.03
+}
+ironborn_business_criticised = { 
+	icon = 13
+}
+guardian_friend_found = { 
+	icon = 13
+}
+reputation_damaged = {
+	general_opinion = -10
+	icon = 36
+}
+plagued_by_wolfs = {
+	castle_tax_modifier = -0.05
+	city_tax_modifier = -0.05
+	temple_tax_modifier = -0.05
+	icon = 24
+}
+plagued_by_basilisks = {
+	castle_tax_modifier = -0.05
+	city_tax_modifier = -0.05
+	temple_tax_modifier = -0.05
+	icon = 24
+}
+ransom_timer = { icon = 1 }
+
+stalwart_defender = {
+	martial = 2
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 1
+	icon = 9
+}
+
+modifier_hidden = {
+	diplomacy = -10
+	intrigue = -5
+	icon = 5
+}
+
+escaped_siege = {
+	intrigue = 2
+	icon = 14
+}
+
+# left_at_siege = {
+	# martial = 1
+	# icon = 9
+# }
+massacred_foreigners_lite = {
+	local_tax_modifier = -0.33
+	city_levy_size = -0.2
+	castle_levy_size = -0.2
+	temple_levy_size = -0.2
+	local_revolt_risk = 0.04
+	icon = 36 #91
+}
+massacred_foreigners = {
+	local_tax_modifier = -0.75
+	city_levy_size = -0.5
+	castle_levy_size = -0.5
+	temple_levy_size = -0.5
+	local_revolt_risk = 0.15
+	icon = 36 #91
+}
+overcrowding = {
+	local_tax_modifier = -0.05
+	city_levy_size = -0.05
+	local_revolt_risk = 0.04
+	icon = 36 #91
+}
+improved_realm_admin = {
+	tax_income = 0.1
+	global_revolt_risk = -0.02
+	icon = 6
+}
+improved_spy_network = {
+	plot_power_modifier = 0.15
+	plot_discovery_chance = -0.15
+	arrest_chance_modifier = 0.15
+	icon = 5
+}
+syncretic_faith_westerosi_religion = {
+	westerosi_religion_opinion = 10
+	icon = 8
+}
+syncretic_faith_wildling_religion = {
+	wildling_religion_opinion = 10
+	icon = 8
+}
+syncretic_faith_drowned_god_group = {
+	drowned_god_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_essos_group = {
+	essos_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_valyrian_rel_group = {
+	valyrian_rel_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_sarnor_rel = {
+	sarnor_rel_opinion = 10
+	icon = 8
+}
+syncretic_faith_qarth_rel = {
+	qarth_rel_opinion = 10
+	icon = 8
+}
+syncretic_faith_ghiscar_rel = {
+	ghiscar_rel_opinion = 10
+	icon = 8
+}
+syncretic_faith_far_east_group = {
+	far_east_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_ibben_rel = {
+	ibben_rel_opinion = 10
+	icon = 8
+}
+syncretic_faith_dothraki_rel_group = {
+	dothraki_rel_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_jogos_rel_group = {
+	jogos_rel_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_lhazar_rel_group = {
+	lhazar_rel_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_summer_rel_group = {
+	summer_rel_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_pirate_group = {
+	pirate_group_opinion = 10
+	corsair_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_islands_rel = {
+	islands_rel_opinion = 10
+	icon = 8
+}
+syncretic_faith_sothoryos_rel_group = {
+	sothoryos_rel_group_opinion = 10
+	icon = 8
+}
+syncretic_faith_pagan_group = {
+	pagan_group_opinion = 10
+	icon = 8
+}
+failed_council_petition = {
+	icon = 34
+}
+merchant_ships_conscripted = {
+	icon = 29
+	local_tax_modifier = -0.2
+	supply_limit = -4
+}
+golden_company_hired = {
+	icon = 34
+}
+defending_anti_slavery_war = {
+	icon = 34
+}
+defending_pro_slavery_war = {
+	icon = 34
+}
+defending_anti_piracy_war = {
+	icon = 34
+}
+glass_candle_reveal_plots_timer = {
+	icon = 34
+}
+glass_candle_visions_timer = {
+	icon = 34
+}
+wine_cellar = {
+	fertility = 0.15
+	health = -0.5
+	icon = 135
+}
+took_illegal_first_night = {
+	general_opinion = -5
+	icon = 78
+}
