@@ -5,6 +5,15 @@
 V.0.1 - The Tale of the Moon King
 -----------
 
+author's note
+- exalted traits are tailored for the discerning player that wants an excellent start for their games
+- congenital trais (all of them) are slightly more common, including the bad ones
+- congenital traits also have better chances of being inherited if both parents have them (mendelian genetics)
+ > yes you can make dwarfism a Lannister family trait, just hook up Tyrion with the right girl
+ > imagine all the beautiful tall children Brienne and Tormund will have
+- please ignore the random summer island with a dragon egg, I'm still deciding if I should let her keep it
+- also, marrying a Mormont to a Stark princess might seem pretencious at first but...
+
 common/traits
 - added exalted traits (blue heart)
  > added "Exalted Blood" congenital trait
@@ -35,9 +44,6 @@ history/characters
 - added "Lyra the Wise Wolf" (House Stark)
 - added "Baldo the Moon King" (House Myrth)
 - added "Phara the Dreamer" (House Tomburu)
-
-miscellaneous
-- ????
 
 credits
 - talias (trait icons)
