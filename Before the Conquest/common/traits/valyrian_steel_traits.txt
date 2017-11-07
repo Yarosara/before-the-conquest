@@ -2,8 +2,8 @@ blacksmith = {
 	lifestyle = yes
 	
 	monthly_character_prestige = 0.25
-	stewardship = 2
-	learning = 1
+	stewardship = 4
+	learning = 2
 	same_opinion = 10
 	
 	ai_greed = 30
@@ -13,13 +13,14 @@ blacksmith = {
 }
 valyrian_steel = {
 	monthly_character_prestige = 0.25
-	martial = 1
 	
 	cached = yes
-	ruler_designer_cost = 5
+	ruler_designer_cost = 10
 }
 valyrian_armour = {
 	monthly_character_prestige = 0.5
+	martial = 2
+	
 	vassal_opinion = 5
 	combat_rating = 2
 	
@@ -29,19 +30,25 @@ valyrian_armour = {
 lightbringer = {
 	monthly_character_prestige = 0.5
 	monthly_character_piety = 1
-	martial = 2
+	martial = 1
+	intrigue = 1
+	diplomacy = 1
+	stewardship = 1
+	learning = 1
 	
 	infidel_opinion = -10
 	same_religion_opinion = 10
 	church_opinion = 5
 	
+	religious = yes
 	customizer = no
 	cached = yes
 }
 dawn = {
 	monthly_character_prestige = 0.5
 	martial = 1
-	intrigue = -3
+	intrigue = -2
+	diplomacy = 1
 	
 	dynasty_opinion = 25
 	general_opinion = 10
@@ -51,16 +58,21 @@ dawn = {
 }
 ice = {
 	monthly_character_prestige = 0.5
-	martial = -1
-	intrigue = -2
-	diplomacy = 2
+	martial = -4
+	intrigue = -1
+	stewardship = 3
+	diplomacy = 3
+	
+	ai_honor = 50
 	
 	customizer = no	
 	cached = yes
 }
 longclaw = {
 	monthly_character_prestige = 0.25
-	stewardship = 1	
+	intrigue = -1
+	stewardship = 2
+	
 	
 	customizer = no	
 	cached = yes
@@ -68,6 +80,7 @@ longclaw = {
 longclaw_snow = {
 	monthly_character_prestige = 0.25
 	intrigue = -1
+	stewardship = 1
 	diplomacy = 1
 	
 	customizer = no	
@@ -76,45 +89,68 @@ longclaw_snow = {
 blackfyre = {
 	monthly_character_prestige = 0.25
 	martial = 1
-	stewardship = -2
+	intrigue = -2
+	stewardship = 2
 	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
 darksister = {
 	monthly_character_prestige = 0.25
+	martial = 1
+	intrigue = 2
+	stewardship = -2
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger  
 }
 brightroar = {
 	monthly_character_prestige = 0.25
+	intrigue = -1
+	diplomacy = 2
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
 
 heartsbane = {
 	monthly_character_prestige = 0.25
+	martial = 2
+	diplomacy = -1
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
 nightfall = {
 	monthly_character_prestige = 0.25
+	intrigue = 1
+	learning = -1
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
 
 ladyforlorn = {
 	monthly_character_prestige = 0.25
+	diplomacy = 1
+	learning = -1
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger  
 }
 redrain = {
 	monthly_character_prestige = 0.25
+	intrigue = -1
+	stewardship = 1
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
 vigilance = {
 	monthly_character_prestige = 0.25
+	intrigue = -1
+	learning = 2
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger  
 }
@@ -146,7 +182,8 @@ strangers_mercy = {
 palemoon = {
 	monthly_character_prestige = 0.25
 	martial = -1
-	levy_reinforce_rate = 10
+	
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
@@ -170,7 +207,7 @@ poison = {
 ##Reforgeing Swords##
 blackpaw = {
 	monthly_character_prestige = 0.25
-	martial = 1
+	martial = 3
 	stewardship = -2
 	
 	customizer = no	
@@ -178,6 +215,8 @@ blackpaw = {
 }
 del_pino = {
 	monthly_character_prestige = 0.25
+	
+	
 	customizer = no	
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger 
 }
