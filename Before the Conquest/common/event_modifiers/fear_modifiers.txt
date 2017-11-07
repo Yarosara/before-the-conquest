@@ -1,0 +1,20 @@
+feared_1 = {
+	icon = 9
+	global_revolt_risk = -0.01
+}
+feared_2 = {
+	icon = 9
+	global_revolt_risk = -0.02
+}
+feared_3 = {
+	icon = 9
+	global_revolt_risk = -0.03
+}
+feared_4 = {
+	icon = 9
+	global_revolt_risk = -0.04
+}
+feared_5 = {
+	icon = 9
+	global_revolt_risk = -0.05
+}

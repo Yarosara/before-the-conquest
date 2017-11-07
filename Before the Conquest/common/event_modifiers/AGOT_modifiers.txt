@@ -56,7 +56,7 @@ suspected_skinchanger = {
 	wildling_religion_opinion = 10
 	old_gods_opinion = 10
 	general_opinion = -5
-	icon = 2
+	icon = 81
 }
 squiering_refused = {
 	monthly_character_prestige = -0.1
@@ -105,17 +105,17 @@ nw_ranger = {
 	#same_opinion = 5
 	general_opinion = 5
 	free_folk_opinion = -10
-	icon = 1
+	icon = 73
 }
 nw_steward = {
 	monthly_character_prestige = 0.05
 	#same_opinion = 5
-	icon = 4
+	icon = 73
 }
 nw_builder = {
 	monthly_character_prestige = 0.05
 	#same_opinion = 5
-	icon = 12
+	icon = 73
 }
 ##Fire obssessed
 reading_valyrian_books = {
@@ -676,13 +676,13 @@ plagued_by_wolfs = {
 	castle_tax_modifier = -0.05
 	city_tax_modifier = -0.05
 	temple_tax_modifier = -0.05
-	icon = 24
+	icon = 72
 }
 plagued_by_basilisks = {
 	castle_tax_modifier = -0.05
 	city_tax_modifier = -0.05
 	temple_tax_modifier = -0.05
-	icon = 24
+	icon = 76
 }
 ransom_timer = { icon = 1 }
 
