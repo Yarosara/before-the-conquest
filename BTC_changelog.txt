@@ -31,6 +31,7 @@ gfx/interface
 - new icon "Nighswatch" governament
 - new icon "Triarch" governament
 - new icon "Abdicate" decision (with improved crown symbol)
+- restored "Modifier" icons to their vanilla state
 
 gfx/traits
 - new icon "Valyrian Armor" (improved colors)
